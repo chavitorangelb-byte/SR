@@ -38,8 +38,16 @@ cues.sort((a, b) => a.f - b.f || a.name.localeCompare(b.name));
 for (const c of cues) if (!T.sfx_lib[c.name]) throw new Error(`SFX sin descripción: ${c.name}`);
 
 // ---- Tablas ----
-const voz = ['| # | Entra | Frase | Dura máx. | Termina a más tardar |', '|---|---|---|---|---|',
-  ...T.voz.map((v) => `| ${v.id} | ${fr(v.f)} · ${s(v.f)} s | ${v.texto} | ${v.max.toFixed(1)} s | ${(v.f / FPS + v.max).toFixed(2)} s |`)].join('\n');
+const locked = T.voz.every((v) => v.palabras);
+const voz = [
+  ...(T.notas_voz ? [T.notas_voz.map((n) => `- ${n}`).join('\n'), ''] : []),
+  locked ? '| # | Entra | Termina | Dura | Frase |' : '| # | Entra | Frase | Dura máx. | Termina a más tardar |',
+  locked ? '|---|---|---|---|---|' : '|---|---|---|---|---|',
+  ...T.voz.map((v) => (locked
+    ? `| ${v.id} | ${fr(v.f)} · ${s(v.f)} s | ${fr(v.termina_f)} · ${s(v.termina_f)} s | ${v.dur.toFixed(2)} s | ${v.texto} |`
+    : `| ${v.id} | ${fr(v.f)} · ${s(v.f)} s | ${v.texto} | ${v.max.toFixed(1)} s | ${(v.f / FPS + v.max).toFixed(2)} s |`)),
+  ...(locked ? ['', '**Cuadro de cada palabra**', '', ...T.voz.map((v) => `- **${v.id}:** ${v.palabras.map((w) => `${w.w.replace(/[¿?¡!.,]/g, '')} f${w.f}`).join(' · ')}`)] : []),
+].join('\n');
 
 const secciones = T.secciones.map((sec) => {
   const rows = [
@@ -55,8 +63,8 @@ const secciones = T.secciones.map((sec) => {
   return `### ${sec.nombre} · ${fr(sec.f)}–${fr(sec.fin)} · ${s(sec.f)}–${s(sec.fin + 1)} s\n\n*${sec.musica}.*\n\n${lines.join('\n')}`;
 }).join('\n\n');
 
-const tipo = ['| # | Texto | Entra | Sale | Aterriza en | Posición | Tamaño |', '|---|---|---|---|---|---|---|',
-  ...T.tipo.map((t) => `| ${t.id} | ${t.texto} | ${fr(t.f)} · ${s(t.f)} s | ${fr(t.sale)} · ${s(t.sale)} s | ${t.aterriza} | ${t.pos} | ${t.px} px |`)].join('\n');
+const tipo = ['| # | Texto | Empieza | Primer glifo aterriza | Sale | Aterriza en | Posición | Tamaño |', '|---|---|---|---|---|---|---|---|',
+  ...T.tipo.map((t) => `| ${t.id} | ${t.texto} | ${fr(t.f)} | ${fr(t.f + 14)} · ${s(t.f + 14)} s | ${fr(t.sale)} | ${t.aterriza} | ${t.pos} | ${t.px} px |`)].join('\n');
 
 const musica = ['| Compás | Desde | Acorde | Capas |', '|---|---|---|---|',
   ...T.musica.map((m) => `| ${m.compas} | ${fr(m.f)} · ${s(m.f)} s | ${m.acorde} | ${m.capas} |`)].join('\n');
@@ -71,13 +79,23 @@ ok(T.frames === 1680, `Duración total: ${T.frames} cuadros (${(T.frames / FPS).
 ok(cues.length >= 70, `SFX: ${cues.length} cues (mínimo 70).`);
 const last = T.secciones[T.secciones.length - 1];
 ok(last.fin === T.frames - 1 && T.secciones.every((x, i) => i === 0 || x.f === T.secciones[i - 1].fin + 1), 'Las secciones cubren el video sin huecos ni encimes.');
-const overl = T.voz.slice(0, -1).filter((v, i) => v.f / FPS + v.max > T.voz[i + 1].f / FPS);
+const endOf = (v) => (v.termina_f ? v.termina_f / FPS : v.f / FPS + v.max);
+const overl = T.voz.slice(0, -1).filter((v, i) => endOf(v) > T.voz[i + 1].f / FPS);
 ok(!overl.length, overl.length ? `Se enciman frases: ${overl.map((v) => v.id).join(', ')}` : 'Ninguna frase de voz se encima con la siguiente si respeta su duración máxima.');
 const lastV = T.voz[T.voz.length - 1];
-ok(lastV.f / FPS + lastV.max <= T.frames / FPS - 0.2, `La última frase termina ${(T.frames / FPS - lastV.f / FPS - lastV.max).toFixed(1)} s antes del final.`);
+ok(endOf(lastV) <= T.frames / FPS - 0.2, `La última frase termina ${(T.frames / FPS - endOf(lastV)).toFixed(1)} s antes del final.`);
+if (locked) {
+  const land = T.tipo.filter((t) => t.aterriza.includes('(L')).map((t) => {
+    const k = t.aterriza.match(/“([^”]+)”/)[1].split(' ')[0].toLowerCase();
+    const v = T.voz.find((x) => t.aterriza.includes(`(${x.id})`));
+    const w = v.palabras.find((p) => p.w.toLowerCase().replace(/[¿?¡!.,]/g, '') === k);
+    return { id: t.id, diff: w ? t.f + 14 - w.f : null };
+  });
+  ok(land.every((l) => l.diff !== null && Math.abs(l.diff) <= 2), `Kinetic type amarrado a la voz: ${land.map((l) => `${l.id} ${l.diff >= 0 ? '+' : ''}${l.diff} cuadros`).join(', ')}.`);
+}
 let maxWords = 0;
 for (let f = 0; f < T.frames; f++) {
-  const w = T.tipo.filter((t) => f >= t.f && f < t.sale).reduce((n, t) => n + t.texto.replace('/', ' ').split(/\s+/).filter(Boolean).length, 0);
+  const w = T.tipo.filter((t) => f >= t.f && f < t.sale + 16).reduce((n, t) => n + t.texto.replace('/', ' ').split(/\s+/).filter(Boolean).length, 0);
   maxWords = Math.max(maxWords, w);
 }
 ok(maxWords <= 4, `Kinetic type: máximo ${maxWords} palabras en pantalla a la vez (límite 3 o 4).`);

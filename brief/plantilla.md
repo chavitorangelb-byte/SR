@@ -2,9 +2,8 @@
 
 Video vertical que le enseña a la dueña cómo se vería su página. Un solo plano continuo, sin cortes, guiado por el tallo. La interfaz manda; los gráficos la sirven.
 
-## Cambios que propongo al brief original
+## Cambios al brief original (aprobados)
 
-Necesito tu OK en estos seis puntos:
 
 1. **28 s en vez de 27 s (end card de 4 s).** La última frase, "Florería Roma. Así se vería con Elevate.", dura unos 3 s a ritmo tranquilo y no cabe entre 24.40 y 27.00 sin acelerar la voz. Con 4 s cabe, y además da tiempo de leer la línea legal.
 2. **Las tres tarjetas salen al 3D antes de los filtros.** Con "Ramos" activo, la caja de tulipanes queda abajo y no se vería. En "Todos" se ven las tres: rosas rojas, caja de tulipanes y girasoles.
@@ -29,7 +28,7 @@ Además, el tap en la tarjeta de $820 cae en el tiempo fuerte del compás 5 (9.6
 
 ## Voz
 
-La generas tú en ElevenLabs con [el guion](../voz/guion_elevenlabs.md). Yo la corto por frase y la coloco en estos cuadros. En la fase 3 ajusto la línea de tiempo a la toma real.
+Bloqueada a la toma 1 (fase 3). Cada frase empieza en su cuadro y cada palabra tiene el suyo; el kinetic type y los subrayados del tallo están amarrados a esas palabras. Stem procesado en `voz/voz_stem_48k.wav` (−16 LUFS).
 
 {{voz}}
 
@@ -41,7 +40,7 @@ En cuadros a 60 fps. Las pistas son Cámara, Celular, Pantalla (captura real de 
 
 ## Kinetic type
 
-Playfair Display SemiBold, en mayúsculas y crema #F5F1E6. Cada glifo sale de una máscara con 2 cuadros de separación (33 ms), con desenfoque de 8 → 0 px y curva ease-out. Sale subiendo en 16 cuadros.
+Playfair Display SemiBold, en mayúsculas y crema #F5F1E6. Cada glifo sale de una máscara con 2 cuadros de separación (33 ms), con desenfoque de 8 → 0 px y curva ease-out, y tarda 14 cuadros en aterrizar: el primer glifo aterriza justo en su palabra. Sale subiendo en 16 cuadros.
 
 {{tipo}}
 

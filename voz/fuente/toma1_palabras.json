@@ -1,0 +1,341 @@
+{
+ "texto": "Alguien busca flores en aguas calientes. ¿Qué te encuentre a ti? Tus ramos, con foto, tamaño y precio. Y el pedido en tres pasos, directo a tu whatsapp, a domicilio o para recoger y con reseñas que hablan por ti. Tus flores ya enamoran, que también se vendan solas. Florería Roma. Así se vería con Elevate.",
+ "palabras": [
+  {
+   "w": "Alguien",
+   "start": 0.0,
+   "end": 0.46,
+   "p": 0.833
+  },
+  {
+   "w": "busca",
+   "start": 0.46,
+   "end": 0.66,
+   "p": 0.994
+  },
+  {
+   "w": "flores",
+   "start": 0.66,
+   "end": 1.14,
+   "p": 0.99
+  },
+  {
+   "w": "en",
+   "start": 1.14,
+   "end": 1.34,
+   "p": 0.997
+  },
+  {
+   "w": "aguas",
+   "start": 1.34,
+   "end": 1.58,
+   "p": 0.989
+  },
+  {
+   "w": "calientes.",
+   "start": 1.58,
+   "end": 2.1,
+   "p": 0.994
+  },
+  {
+   "w": "¿Qué",
+   "start": 2.92,
+   "end": 3.02,
+   "p": 0.878
+  },
+  {
+   "w": "te",
+   "start": 3.02,
+   "end": 3.12,
+   "p": 0.998
+  },
+  {
+   "w": "encuentre",
+   "start": 3.12,
+   "end": 3.52,
+   "p": 0.988
+  },
+  {
+   "w": "a",
+   "start": 3.52,
+   "end": 3.62,
+   "p": 0.955
+  },
+  {
+   "w": "ti?",
+   "start": 3.62,
+   "end": 3.74,
+   "p": 0.862
+  },
+  {
+   "w": "Tus",
+   "start": 4.22,
+   "end": 4.36,
+   "p": 0.931
+  },
+  {
+   "w": "ramos,",
+   "start": 4.36,
+   "end": 4.78,
+   "p": 0.947
+  },
+  {
+   "w": "con",
+   "start": 5.12,
+   "end": 5.22,
+   "p": 0.99
+  },
+  {
+   "w": "foto,",
+   "start": 5.22,
+   "end": 5.58,
+   "p": 0.983
+  },
+  {
+   "w": "tamaño",
+   "start": 5.82,
+   "end": 6.38,
+   "p": 0.999
+  },
+  {
+   "w": "y",
+   "start": 6.38,
+   "end": 6.6,
+   "p": 0.956
+  },
+  {
+   "w": "precio.",
+   "start": 6.6,
+   "end": 7.0,
+   "p": 0.995
+  },
+  {
+   "w": "Y",
+   "start": 7.44,
+   "end": 7.6,
+   "p": 0.976
+  },
+  {
+   "w": "el",
+   "start": 7.6,
+   "end": 7.68,
+   "p": 0.996
+  },
+  {
+   "w": "pedido",
+   "start": 7.68,
+   "end": 8.04,
+   "p": 0.99
+  },
+  {
+   "w": "en",
+   "start": 8.04,
+   "end": 8.18,
+   "p": 0.996
+  },
+  {
+   "w": "tres",
+   "start": 8.18,
+   "end": 8.42,
+   "p": 0.857
+  },
+  {
+   "w": "pasos,",
+   "start": 8.42,
+   "end": 8.96,
+   "p": 0.998
+  },
+  {
+   "w": "directo",
+   "start": 9.1,
+   "end": 9.64,
+   "p": 0.984
+  },
+  {
+   "w": "a",
+   "start": 9.64,
+   "end": 9.7,
+   "p": 0.98
+  },
+  {
+   "w": "tu",
+   "start": 9.7,
+   "end": 9.78,
+   "p": 0.994
+  },
+  {
+   "w": "whatsapp,",
+   "start": 9.78,
+   "end": 10.26,
+   "p": 0.714
+  },
+  {
+   "w": "a",
+   "start": 10.64,
+   "end": 10.72,
+   "p": 0.981
+  },
+  {
+   "w": "domicilio",
+   "start": 10.72,
+   "end": 11.38,
+   "p": 0.994
+  },
+  {
+   "w": "o",
+   "start": 11.38,
+   "end": 11.54,
+   "p": 0.977
+  },
+  {
+   "w": "para",
+   "start": 11.54,
+   "end": 11.68,
+   "p": 0.998
+  },
+  {
+   "w": "recoger",
+   "start": 11.68,
+   "end": 12.22,
+   "p": 0.989
+  },
+  {
+   "w": "y",
+   "start": 12.22,
+   "end": 12.6,
+   "p": 0.454
+  },
+  {
+   "w": "con",
+   "start": 12.6,
+   "end": 12.76,
+   "p": 0.996
+  },
+  {
+   "w": "reseñas",
+   "start": 12.76,
+   "end": 13.28,
+   "p": 0.98
+  },
+  {
+   "w": "que",
+   "start": 13.28,
+   "end": 13.5,
+   "p": 0.994
+  },
+  {
+   "w": "hablan",
+   "start": 13.5,
+   "end": 13.86,
+   "p": 0.993
+  },
+  {
+   "w": "por",
+   "start": 13.86,
+   "end": 14.04,
+   "p": 0.999
+  },
+  {
+   "w": "ti.",
+   "start": 14.04,
+   "end": 14.24,
+   "p": 0.96
+  },
+  {
+   "w": "Tus",
+   "start": 14.6,
+   "end": 14.74,
+   "p": 0.99
+  },
+  {
+   "w": "flores",
+   "start": 14.74,
+   "end": 15.14,
+   "p": 0.999
+  },
+  {
+   "w": "ya",
+   "start": 15.14,
+   "end": 15.52,
+   "p": 0.989
+  },
+  {
+   "w": "enamoran,",
+   "start": 15.52,
+   "end": 16.14,
+   "p": 0.961
+  },
+  {
+   "w": "que",
+   "start": 16.46,
+   "end": 16.54,
+   "p": 0.993
+  },
+  {
+   "w": "también",
+   "start": 16.54,
+   "end": 16.96,
+   "p": 0.997
+  },
+  {
+   "w": "se",
+   "start": 16.96,
+   "end": 17.14,
+   "p": 0.996
+  },
+  {
+   "w": "vendan",
+   "start": 17.14,
+   "end": 17.46,
+   "p": 0.917
+  },
+  {
+   "w": "solas.",
+   "start": 17.46,
+   "end": 17.96,
+   "p": 0.996
+  },
+  {
+   "w": "Florería",
+   "start": 18.3,
+   "end": 18.82,
+   "p": 0.858
+  },
+  {
+   "w": "Roma.",
+   "start": 18.82,
+   "end": 19.16,
+   "p": 0.582
+  },
+  {
+   "w": "Así",
+   "start": 19.54,
+   "end": 19.92,
+   "p": 0.927
+  },
+  {
+   "w": "se",
+   "start": 19.92,
+   "end": 20.1,
+   "p": 0.991
+  },
+  {
+   "w": "vería",
+   "start": 20.1,
+   "end": 20.42,
+   "p": 0.989
+  },
+  {
+   "w": "con",
+   "start": 20.42,
+   "end": 20.6,
+   "p": 0.995
+  },
+  {
+   "w": "Elevate.",
+   "start": 20.6,
+   "end": 21.04,
+   "p": 0.902
+  }
+ ]
+}

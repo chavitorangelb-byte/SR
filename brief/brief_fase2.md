@@ -2,9 +2,8 @@
 
 Video vertical que le enseña a la dueña cómo se vería su página. Un solo plano continuo, sin cortes, guiado por el tallo. La interfaz manda; los gráficos la sirven.
 
-## Cambios que propongo al brief original
+## Cambios al brief original (aprobados)
 
-Necesito tu OK en estos seis puntos:
 
 1. **28 s en vez de 27 s (end card de 4 s).** La última frase, "Florería Roma. Así se vería con Elevate.", dura unos 3 s a ritmo tranquilo y no cabe entre 24.40 y 27.00 sin acelerar la voz. Con 4 s cabe, y además da tiempo de leer la línea legal.
 2. **Las tres tarjetas salen al 3D antes de los filtros.** Con "Ramos" activo, la caja de tulipanes queda abajo y no se vería. En "Todos" se ven las tres: rosas rojas, caja de tulipanes y girasoles.
@@ -29,17 +28,31 @@ Además, el tap en la tarjeta de $820 cae en el tiempo fuerte del compás 5 (9.6
 
 ## Voz
 
-La generas tú en ElevenLabs con [el guion](../voz/guion_elevenlabs.md). Yo la corto por frase y la coloco en estos cuadros. En la fase 3 ajusto la línea de tiempo a la toma real.
+Bloqueada a la toma 1 (fase 3). Cada frase empieza en su cuadro y cada palabra tiene el suyo; el kinetic type y los subrayados del tallo están amarrados a esas palabras. Stem procesado en `voz/voz_stem_48k.wav` (−16 LUFS).
 
-| # | Entra | Frase | Dura máx. | Termina a más tardar |
+- Toma 1 (voz “Hope”, eleven v4): 21.6 s, las 7 frases caben en su ventana.
+- Transcripción sin guion previo: coincide palabra por palabra; no leyó las etiquetas de pausa.
+- Con esta toma “pedido” y “en tres pasos” quedan a 0.35 s: el relevo “TU PEDIDO” → “EN 3 PASOS” no se alcanza a leer, así que queda solo “EN 3 PASOS”.
+
+| # | Entra | Termina | Dura | Frase |
 |---|---|---|---|---|
-| L1 | f24 · 0.40 s | Alguien busca flores en Aguascalientes. | 2.5 s | 2.90 s |
-| L2 | f180 · 3.00 s | Que te encuentre a ti. | 1.9 s | 4.90 s |
-| L3 | f312 · 5.20 s | Tus ramos, con foto, tamaño y precio. | 3.6 s | 8.80 s |
-| L4 | f582 · 9.70 s | Y el pedido en tres pasos, directo a tu WhatsApp. | 4.2 s | 13.90 s |
-| L5 | f944 · 15.73 s | A domicilio o para recoger, y con reseñas que hablan por ti. | 4.2 s | 19.93 s |
-| L6 | f1200 · 20.00 s | Tus flores ya enamoran. Que también se vendan solas. | 4.0 s | 24.00 s |
-| L7 | f1464 · 24.40 s | Florería Roma. Así se vería con Elevate. | 3.3 s | 27.70 s |
+| L1 | f24 · 0.40 s | f162 · 2.70 s | 2.31 s | Alguien busca flores en Aguascalientes. |
+| L2 | f180 · 3.00 s | f235 · 3.92 s | 0.92 s | Que te encuentre a ti. |
+| L3 | f312 · 5.20 s | f485 · 8.08 s | 2.88 s | Tus ramos, con foto, tamaño y precio. |
+| L4 | f582 · 9.70 s | f749 · 12.48 s | 2.79 s | Y el pedido en tres pasos, directo a tu WhatsApp. |
+| L5 | f944 · 15.73 s | f1164 · 19.40 s | 3.67 s | A domicilio o para recoger, y con reseñas que hablan por ti. |
+| L6 | f1200 · 20.00 s | f1401 · 23.35 s | 3.35 s | Tus flores ya enamoran. Que también se vendan solas. |
+| L7 | f1464 · 24.40 s | f1641 · 27.35 s | 2.96 s | Florería Roma. Así se vería con Elevate. |
+
+**Cuadro de cada palabra**
+
+- **L1:** Alguien f24 · busca f44 · flores f56 · en f85 · Aguascalientes f97
+- **L2:** Que f180 · te f186 · encuentre f192 · a f216 · ti f222
+- **L3:** Tus f312 · ramos f319 · con f364 · foto f370 · tamaño f406 · y f440 · precio f453
+- **L4:** Y f582 · el f588 · pedido f593 · en f614 · tres f623 · pasos f637 · directo f678 · a f710 · tu f714 · WhatsApp f719
+- **L5:** A f945 · domicilio f950 · o f989 · para f999 · recoger f1007 · y f1040 · con f1062 · reseñas f1072 · que f1103 · hablan f1116 · por f1138 · ti f1149
+- **L6:** Tus f1200 · flores f1207 · ya f1231 · enamoran f1253 · Que f1310 · también f1315 · se f1340 · vendan f1351 · solas f1370
+- **L7:** Florería f1465 · Roma f1496 · Así f1540 · se f1562 · vería f1573 · con f1592 · Elevate f1603
 
 ## Línea de tiempo
 
@@ -76,17 +89,17 @@ En cuadros a 60 fps. Las pistas son Cámara, Celular, Pantalla (captura real de 
 *Compases 3 y 4 · entra el shaker.*
 
 - **f288–f346 · 4.80 s · Pantalla.** Un dedo (círculo de contacto de 44 px, blanco al 35 %) arrastra hacia arriba y suelta: scroll con inercia y fricción hasta el catálogo (scrollY de 0 a 828 px CSS). *SFX: scroll_friccion (f288).*
+- **f298–f332 · 4.97 s · Tipo.** “TUS RAMOS,” aterriza sobre “Tus ramos”: glifo por glifo cada 2 cuadros (33 ms), subiendo desde una máscara con desenfoque de 8 → 0 px. *SFX: tipo_entra (f298).*
 - **f300–f330 · 5.00 s · Cámara.** Truck: el celular se corre 210 px a la derecha y baja a 62 %, girando −6° para dejar espacio al texto a la izquierda.
-- **f312–f340 · 5.20 s · Tipo.** “TUS RAMOS,” aterriza sobre “Tus ramos”: glifo por glifo cada 2 cuadros (33 ms), subiendo desde una máscara con desenfoque de 8 → 0 px. *SFX: tipo_entra (f312).*
 - **f312 · 5.20 s · Voz.** L3: “Tus ramos, con foto, tamaño y precio.”
-- **f352–f382 · 5.87 s · 3D.** Sobre “con foto”, tres tarjetas salen de la pantalla al espacio 3D: rosas rojas, caja de tulipanes y girasoles. Son la misma pieza de interfaz con 6 px de grosor y sombra sobre la pantalla; su lugar queda vacío en la captura. *SFX: tarjeta_sale (f352), tarjeta_sale (f358), tarjeta_sale (f364).*
-- **f382–f428 · 6.37 s · Cámara.** Órbita de 6° y push-in leve: las tarjetas flotan a tres profundidades con parallax. La caja de tulipanes y los girasoles nunca pasan de 400 px de ancho en cuadro. *SFX: aire_flota (f382).*
+- **f358–f388 · 5.97 s · 3D.** Sobre “con foto”, tres tarjetas salen de la pantalla al espacio 3D: rosas rojas, caja de tulipanes y girasoles. Son la misma pieza de interfaz con 6 px de grosor y sombra sobre la pantalla; su lugar queda vacío en la captura. *SFX: tarjeta_sale (f358), tarjeta_sale (f364), tarjeta_sale (f370).*
+- **f388–f424 · 6.47 s · Cámara.** Órbita de 6° y push-in leve: las tarjetas flotan a tres profundidades con parallax. La caja de tulipanes y los girasoles nunca pasan de 400 px de ancho en cuadro. *SFX: aire_flota (f388).*
 - **f404–f420 · 6.73 s · Tallo.** Subraya “S · M · L” en la tarjeta de rosas rojas, sobre “tamaño”. *SFX: subraya (f404).*
-- **f428–f452 · 7.13 s · 3D.** Las tarjetas regresan a su lugar con resorte y la pantalla se completa. *SFX: tarjeta_regresa (f444), tarjeta_regresa (f448), tarjeta_regresa (f452).*
+- **f424–f448 · 7.07 s · 3D.** Las tarjetas regresan a su lugar con resorte y la pantalla se completa. *SFX: tarjeta_regresa (f440), tarjeta_regresa (f444), tarjeta_regresa (f448).*
+- **f440–f456 · 7.33 s · Tipo.** “TUS RAMOS,” sube y sale.
 - **f452–f468 · 7.53 s · Tallo.** Subraya “$820” en la primera tarjeta, sobre “precio”. *SFX: subraya (f456).*
-- **f468–f484 · 7.80 s · Tipo.** “TUS RAMOS,” sube y sale.
+- **f456–f486 · 7.60 s · Tipo.** “A UN TAP” aterriza en ese tap. *SFX: tipo_entra (f456).*
 - **f470 · 7.83 s · Pantalla.** Tap en “Tulipanes”: las tarjetas se reacomodan con resorte (captura real del filtro). *SFX: tap (f470), filtro (f472), resorte (f490).*
-- **f470–f492 · 7.83 s · Tipo.** “A UN TAP” aterriza en ese tap. *SFX: tipo_entra (f470).*
 - **f522 · 8.70 s · Pantalla.** Tap en “Ramos”: segundo reacomodo. Quedan arriba “Tulipanes y rosas · $820” y “Ramo kraft pastel · $1,400”. *SFX: tap (f522), filtro (f524), resorte (f542).*
 - **f552–f574 · 9.20 s · Tallo.** Rodea la tarjeta “Tonos rosas y blush · $820”, la que se va a tocar. *SFX: rodea (f552).*
 - **f556–f572 · 9.27 s · Tipo.** “A UN TAP” sale.
@@ -99,9 +112,8 @@ En cuadros a 60 fps. Las pistas son Cámara, Celular, Pantalla (captura real de 
 - **f576 · 9.60 s · Pantalla.** Tap en la tarjeta de $820 en el tiempo fuerte del compás 5: se abre la hoja y la foto viaja a la ficha (captura real). *SFX: tap (f576), hoja_abre (f578).*
 - **f582 · 9.70 s · Voz.** L4: “Y el pedido en tres pasos, directo a tu WhatsApp.”
 - **f584–f608 · 9.73 s · Cámara.** Truck: el celular se corre 210 px a la izquierda (62 %); el texto va a la derecha.
-- **f590–f614 · 9.83 s · Tipo.** “TU PEDIDO” aterriza sobre “pedido”. *SFX: tipo_entra (f590).*
+- **f600–f632 · 10.00 s · Tipo.** “EN 3 PASOS” aterriza sobre “en tres pasos”. *SFX: tipo_entra (f600).*
 - **f618 · 10.30 s · Pantalla.** Paso 1: tap en “M”; el indicador se desliza con resorte. *SFX: tap (f618), detente (f620).*
-- **f626–f650 · 10.43 s · Tipo.** “EN 3 PASOS” reemplaza a “TU PEDIDO” sobre “tres pasos”. *SFX: tipo_entra (f626).*
 - **f644 · 10.73 s · Pantalla.** Tap en “Continuar”: entra el paso 2 y se llena la segunda barra del indicador. *SFX: tap (f644), paso_desliza (f646).*
 - **f676 · 11.27 s · Pantalla.** Tap en “A domicilio”: aparece el campo de dirección. *SFX: tap (f676), toggle (f678).*
 - **f694 · 11.57 s · Pantalla.** Tap en “Pick up”: el indicador se desliza y aparece la dirección real de su tienda. Se ven las dos opciones sin escribir una dirección inventada. *SFX: tap (f694), toggle (f696).*
@@ -121,19 +133,18 @@ En cuadros a 60 fps. Las pistas son Cámara, Celular, Pantalla (captura real de 
 
 *Compases 7 y 8 · entran las cuerdas.*
 
-- **f916–f940 · 15.27 s · Pantalla.** La hoja se cierra hacia abajo. *SFX: hoja_cierra (f916).*
-- **f936–f966 · 15.60 s · Pantalla.** Scroll con inercia a “Cómo funciona”: “Entrega a domicilio” con la reseña 2 debajo. *SFX: scroll_friccion (f936).*
+- **f912–f934 · 15.20 s · Pantalla.** La hoja se cierra hacia abajo. *SFX: hoja_cierra (f912).*
+- **f930–f956 · 15.50 s · Pantalla.** Scroll con inercia a “Cómo funciona”: “Entrega a domicilio” con la reseña 2 debajo. *SFX: scroll_friccion (f930).*
 - **f944 · 15.73 s · Voz.** L5: “A domicilio o para recoger, y con reseñas que hablan por ti.”
-- **f966–f982 · 16.10 s · Tallo.** Subraya “Entrega a domicilio”, sobre “a domicilio”. *SFX: subraya (f966).*
-- **f986–f1004 · 16.43 s · Pantalla.** El scroll avanza un poco: “Pick up” y su dirección. *SFX: scroll_corto (f986).*
-- **f1000–f1014 · 16.67 s · Tallo.** Subraya “Pick up”, sobre “para recoger”. *SFX: subraya (f1000).*
-- **f1014–f1040 · 16.90 s · Pantalla.** Scroll al carrusel “Lo que dicen de Roma”. *SFX: scroll_friccion (f1014).*
-- **f1046–f1064 · 17.43 s · Pantalla.** Swipe de la reseña 1 a la 3, con rebote suave en el borde. *SFX: swipe (f1046).*
-- **f1060–f1084 · 17.67 s · 3D.** Las reseñas 1, 3 y 4 salen al espacio 3D como cristal, en abanico (−10°, 0° y +10°) y legibles: mismo texto, mismas estrellas, “Reseña en Google”. *SFX: cristal_sale (f1060), cristal_sale (f1066), cristal_sale (f1072).*
-- **f1066–f1086 · 17.77 s · Tipo.** “HABLAN” aterriza sobre “hablan”. *SFX: tipo_entra (f1066).*
-- **f1084–f1104 · 18.07 s · Tipo.** “POR TI” aterriza sobre “por ti”. *SFX: tipo_entra (f1084).*
-- **f1100–f1146 · 18.33 s · Cámara.** Push-in a la reseña 3 hasta leer “las flores llegaron frescas” al tamaño de un celular real (≈ 2.5 px de video por px CSS), con profundidad de campo al fondo. *SFX: aire_push (f1100).*
-- **f1146–f1152 · 19.10 s · Tipo.** “HABLAN POR TI” sale.
+- **f950–f966 · 15.83 s · Tallo.** Subraya “Entrega a domicilio”, sobre “a domicilio”. *SFX: subraya (f950).*
+- **f986–f1002 · 16.43 s · Pantalla.** El scroll avanza un poco: “Pick up” y su dirección. *SFX: scroll_corto (f986).*
+- **f1004–f1018 · 16.73 s · Tallo.** Subraya “Pick up”, sobre “para recoger”. *SFX: subraya (f1004).*
+- **f1018–f1042 · 16.97 s · Pantalla.** Scroll al carrusel “Lo que dicen de Roma”. *SFX: scroll_friccion (f1018).*
+- **f1044–f1062 · 17.40 s · Pantalla.** Swipe de la reseña 1 a la 3, con rebote suave en el borde. *SFX: swipe (f1044).*
+- **f1064–f1088 · 17.73 s · 3D.** Las reseñas 1, 3 y 4 salen al espacio 3D como cristal, en abanico (−10°, 0° y +10°) y legibles: mismo texto, mismas estrellas, “Reseña en Google”. *SFX: cristal_sale (f1064), cristal_sale (f1070), cristal_sale (f1076).*
+- **f1090–f1140 · 18.17 s · Cámara.** Push-in a la reseña 3 hasta leer “las flores llegaron frescas” al tamaño de un celular real (≈ 2.5 px de video por px CSS), con profundidad de campo al fondo. *SFX: aire_push (f1090).*
+- **f1102–f1130 · 18.37 s · Tipo.** “HABLAN” aterriza sobre “hablan”. *SFX: tipo_entra (f1102).*
+- **f1124–f1150 · 18.73 s · Tipo.** “POR TI” aterriza sobre “por ti”. *SFX: tipo_entra (f1124).*
 
 ### Cierre · f1152–f1439 · 19.20–24.00 s
 
@@ -142,6 +153,7 @@ En cuadros a 60 fps. Las pistas son Cámara, Celular, Pantalla (captura real de 
 - **f1152 · 19.20 s · Música.** Lift: entran todas las capas. *SFX: lift (f1152).*
 - **f1152–f1182 · 19.20 s · 3D.** Las reseñas de cristal regresan al carrusel. *SFX: cristal_regresa (f1152).*
 - **f1160–f1208 · 19.33 s · Cámara.** El celular se aleja a la derecha: retrocede en profundidad hasta 38 % de alto, gira −18° en Y y su pantalla baja al pie de la página (logo y “Spread love, send flowers”). *SFX: celular_se_aleja (f1160).*
+- **f1166–f1182 · 19.43 s · Tipo.** “HABLAN POR TI” sale.
 - **f1200 · 20.00 s · Voz.** L6: “Tus flores ya enamoran. Que también se vendan solas.”
 - **f1204–f1262 · 20.07 s · Tallo.** Escribe “SPREAD LOVE,”: cada glifo se revela cuando pasa la punta. *SFX: escritura_tallo (f1204).*
 - **f1266–f1322 · 21.10 s · Tallo.** Escribe “SEND FLOWERS”. *SFX: escritura_tallo (f1266).*
@@ -156,23 +168,22 @@ En cuadros a 60 fps. Las pistas son Cámara, Celular, Pantalla (captura real de 
 - **f1440 · 24.00 s · Música.** Golpe grave: sub y octava grave de piano. El fondo pasa a olivo (#6F7048 → #5D5E3B). *SFX: golpe_grave (f1440).*
 - **f1440–f1476 · 24.00 s · End card.** El logo viaja al centro (y 820) y crece a 520 px con un leve giro 3D (22° → 0°) y sombra suave. El texto, la flor y el celular se desvanecen. *SFX: logo_giro (f1440).*
 - **f1464 · 24.40 s · Voz.** L7: “Florería Roma. Así se vería con Elevate.”
-- **f1478–f1500 · 24.63 s · End card.** “Así se vería tu página · Elevate Negocios” (DM Sans SemiBold 44 px, crema, y 1190). *SFX: texto_aparece (f1478).*
-- **f1500–f1520 · 25.00 s · End card.** Línea obligatoria: “Demo de cortesía de Elevate Negocios · pieza no oficial” (DM Sans 30 px, crema al 75 %, y 1480).
+- **f1530–f1552 · 25.50 s · End card.** “Así se vería tu página · Elevate Negocios” (DM Sans SemiBold 44 px, crema, y 1190). *SFX: texto_aparece (f1530).*
+- **f1560–f1580 · 26.00 s · End card.** Línea obligatoria: “Demo de cortesía de Elevate Negocios · pieza no oficial” (DM Sans 30 px, crema al 75 %, y 1480).
 - **f1560–f1680 · 26.00 s · Música.** Cola de la música hasta el final.
 
 ## Kinetic type
 
-Playfair Display SemiBold, en mayúsculas y crema #F5F1E6. Cada glifo sale de una máscara con 2 cuadros de separación (33 ms), con desenfoque de 8 → 0 px y curva ease-out. Sale subiendo en 16 cuadros.
+Playfair Display SemiBold, en mayúsculas y crema #F5F1E6. Cada glifo sale de una máscara con 2 cuadros de separación (33 ms), con desenfoque de 8 → 0 px y curva ease-out, y tarda 14 cuadros en aterrizar: el primer glifo aterriza justo en su palabra. Sale subiendo en 16 cuadros.
 
-| # | Texto | Entra | Sale | Aterriza en | Posición | Tamaño |
-|---|---|---|---|---|---|---|
-| T1 | TUS RAMOS, | f312 · 5.20 s | f468 · 7.80 s | “Tus ramos” (L3) | izquierda · x 64–440 · y 640 | 52 px |
-| T2 | A UN TAP | f470 · 7.83 s | f556 · 9.27 s | el tap en “Tulipanes” (no se dice en la voz) | izquierda · y 640 | 52 px |
-| T3 | TU PEDIDO | f590 · 9.83 s | f626 · 10.43 s | “pedido” (L4) | derecha · x 640–1016 · y 640 | 52 px |
-| T4 | EN 3 PASOS | f626 · 10.43 s | f706 · 11.77 s | “tres pasos” (L4) | derecha · y 640 | 52 px |
-| T5 | HABLAN | f1066 · 17.77 s | f1146 · 19.10 s | “hablan” (L5) | arriba del celular · y 300 | 64 px |
-| T6 | POR TI | f1084 · 18.07 s | f1146 · 19.10 s | “por ti” (L5) | arriba del celular · y 380 | 64 px |
-| T7 | SPREAD LOVE, / SEND FLOWERS | f1204 · 20.07 s | f1440 · 24.00 s | la escribe el tallo (frase de su marca) | izquierda · x 64 · y 780 y 880 | 76 px |
+| # | Texto | Empieza | Primer glifo aterriza | Sale | Aterriza en | Posición | Tamaño |
+|---|---|---|---|---|---|---|---|
+| T1 | TUS RAMOS, | f298 | f312 · 5.20 s | f440 | “Tus ramos” (L3) | izquierda · x 64–440 · y 640 | 52 px |
+| T2 | A UN TAP | f456 | f470 · 7.83 s | f556 | el tap en “Tulipanes” (no se dice en la voz) | izquierda · y 640 | 52 px |
+| T4 | EN 3 PASOS | f600 | f614 · 10.23 s | f706 | “en tres pasos” (L4) | derecha · y 640 | 52 px |
+| T5 | HABLAN | f1102 | f1116 · 18.60 s | f1166 | “hablan” (L5) | arriba del celular · y 300 | 64 px |
+| T6 | POR TI | f1124 | f1138 · 18.97 s | f1166 | “por ti” (L5) | arriba del celular · y 380 | 64 px |
+| T7 | SPREAD LOVE, / SEND FLOWERS | f1204 | f1218 · 20.30 s | f1440 | la escribe el tallo (frase de su marca) | izquierda · x 64 · y 780 y 880 | 76 px |
 
 ## Música
 
@@ -196,7 +207,7 @@ Original, compuesta en código, a 100 BPM en Fa mayor. El piano y el pizzicato s
 
 Todos sintetizados en código, uno por cada movimiento visible.
 
-**116 cues** (el mínimo era 70).
+**115 cues** (el mínimo era 70).
 
 | # | Cuadro | Cue | Sonido |
 |---|---|---|---|
@@ -234,18 +245,18 @@ Todos sintetizados en código, uno por cada movimiento visible.
 | 32 | f216 · 3.60 s | logo_pop | Pop suave con caída de tono |
 | 33 | f230 · 3.83 s | asienta | Golpe de peso muy suave |
 | 34 | f288 · 4.80 s | scroll_friccion | Fricción que sigue la velocidad del scroll |
-| 35 | f312 · 5.20 s | tipo_entra | Swish de tipografía |
-| 36 | f352 · 5.87 s | tarjeta_sale | Despegue de papel con aire |
-| 37 | f358 · 5.97 s | tarjeta_sale | Despegue de papel con aire |
-| 38 | f364 · 6.07 s | tarjeta_sale | Despegue de papel con aire |
-| 39 | f382 · 6.37 s | aire_flota | Cama de aire sutil |
+| 35 | f298 · 4.97 s | tipo_entra | Swish de tipografía |
+| 36 | f358 · 5.97 s | tarjeta_sale | Despegue de papel con aire |
+| 37 | f364 · 6.07 s | tarjeta_sale | Despegue de papel con aire |
+| 38 | f370 · 6.17 s | tarjeta_sale | Despegue de papel con aire |
+| 39 | f388 · 6.47 s | aire_flota | Cama de aire sutil |
 | 40 | f404 · 6.73 s | subraya | Roce corto de lápiz |
-| 41 | f444 · 7.40 s | tarjeta_regresa | Toque suave de papel |
-| 42 | f448 · 7.47 s | tarjeta_regresa | Toque suave de papel |
-| 43 | f452 · 7.53 s | tarjeta_regresa | Toque suave de papel |
+| 41 | f440 · 7.33 s | tarjeta_regresa | Toque suave de papel |
+| 42 | f444 · 7.40 s | tarjeta_regresa | Toque suave de papel |
+| 43 | f448 · 7.47 s | tarjeta_regresa | Toque suave de papel |
 | 44 | f456 · 7.60 s | subraya | Roce corto de lápiz |
-| 45 | f470 · 7.83 s | tap | Tap de vidrio suave |
-| 46 | f470 · 7.83 s | tipo_entra | Swish de tipografía |
+| 45 | f456 · 7.60 s | tipo_entra | Swish de tipografía |
+| 46 | f470 · 7.83 s | tap | Tap de vidrio suave |
 | 47 | f472 · 7.87 s | filtro | Clic de selección |
 | 48 | f490 · 8.17 s | resorte | Rebote muy sutil |
 | 49 | f522 · 8.70 s | tap | Tap de vidrio suave |
@@ -254,68 +265,67 @@ Todos sintetizados en código, uno por cada movimiento visible.
 | 52 | f552 · 9.20 s | rodea | Trazo circular |
 | 53 | f576 · 9.60 s | tap | Tap de vidrio suave |
 | 54 | f578 · 9.63 s | hoja_abre | Deslizamiento hacia arriba |
-| 55 | f590 · 9.83 s | tipo_entra | Swish de tipografía |
+| 55 | f600 · 10.00 s | tipo_entra | Swish de tipografía |
 | 56 | f618 · 10.30 s | tap | Tap de vidrio suave |
 | 57 | f620 · 10.33 s | detente | Detente de selector |
-| 58 | f626 · 10.43 s | tipo_entra | Swish de tipografía |
-| 59 | f644 · 10.73 s | tap | Tap de vidrio suave |
-| 60 | f646 · 10.77 s | paso_desliza | Swipe lateral |
-| 61 | f676 · 11.27 s | tap | Tap de vidrio suave |
-| 62 | f678 · 11.30 s | toggle | Clic de interruptor |
-| 63 | f694 · 11.57 s | tap | Tap de vidrio suave |
-| 64 | f696 · 11.60 s | toggle | Clic de interruptor |
-| 65 | f712 · 11.87 s | tap | Tap de vidrio suave |
-| 66 | f714 · 11.90 s | calendario_abre | Pop suave de panel |
-| 67 | f744 · 12.40 s | tap | Tap de vidrio suave |
-| 68 | f746 · 12.43 s | fecha_elige | Tic |
-| 69 | f756 · 12.60 s | calendario_cierra | Panel que se cierra |
-| 70 | f772 · 12.87 s | tap | Tap de vidrio suave |
-| 71 | f774 · 12.90 s | teclado_sube | Deslizamiento corto hacia arriba |
-| 72 | f792 · 13.20 s | tecla_tactil “F” | Tecla táctil, más ligera que la física |
-| 73 | f797 · 13.28 s | tecla_tactil “e” | Tecla táctil, más ligera que la física |
-| 74 | f799 · 13.32 s | tecla_tactil “l” | Tecla táctil, más ligera que la física |
-| 75 | f804 · 13.40 s | tecla_tactil “i” | Tecla táctil, más ligera que la física |
-| 76 | f809 · 13.48 s | tecla_tactil “z” | Tecla táctil, más ligera que la física |
-| 77 | f812 · 13.53 s | tecla_tactil “espacio” | Tecla táctil, más ligera que la física |
-| 78 | f815 · 13.58 s | tecla_tactil “c” | Tecla táctil, más ligera que la física |
-| 79 | f821 · 13.68 s | tecla_tactil “u” | Tecla táctil, más ligera que la física |
-| 80 | f824 · 13.73 s | tecla_tactil “m” | Tecla táctil, más ligera que la física |
-| 81 | f828 · 13.80 s | tap | Tap de vidrio suave |
-| 82 | f840 · 14.00 s | tap | Tap de vidrio suave |
-| 83 | f842 · 14.03 s | teclado_baja | Deslizamiento corto hacia abajo |
-| 84 | f846 · 14.10 s | paso_desliza | Swipe lateral |
-| 85 | f866 · 14.43 s | subraya | Roce corto de lápiz |
-| 86 | f876 · 14.60 s | rodea | Trazo circular |
-| 87 | f880 · 14.67 s | boton_pop | Pop con cuerpo y brillo |
-| 88 | f904 · 15.07 s | tap | Tap de vidrio suave |
-| 89 | f912 · 15.20 s | boton_regresa | Golpe suave de regreso |
-| 90 | f916 · 15.27 s | hoja_cierra | Deslizamiento hacia abajo |
-| 91 | f936 · 15.60 s | scroll_friccion | Fricción que sigue la velocidad del scroll |
-| 92 | f966 · 16.10 s | subraya | Roce corto de lápiz |
-| 93 | f986 · 16.43 s | scroll_corto | Fricción corta |
-| 94 | f1000 · 16.67 s | subraya | Roce corto de lápiz |
-| 95 | f1014 · 16.90 s | scroll_friccion | Fricción que sigue la velocidad del scroll |
-| 96 | f1046 · 17.43 s | swipe | Swipe horizontal |
-| 97 | f1060 · 17.67 s | cristal_sale | Barrido de cristal |
-| 98 | f1066 · 17.77 s | cristal_sale | Barrido de cristal |
-| 99 | f1066 · 17.77 s | tipo_entra | Swish de tipografía |
-| 100 | f1072 · 17.87 s | cristal_sale | Barrido de cristal |
-| 101 | f1084 · 18.07 s | tipo_entra | Swish de tipografía |
-| 102 | f1100 · 18.33 s | aire_push | Aire de push-in |
-| 103 | f1152 · 19.20 s | cristal_regresa | Barrido de cristal inverso |
-| 104 | f1152 · 19.20 s | lift | Riser corto |
-| 105 | f1160 · 19.33 s | celular_se_aleja | Whoosh grave |
-| 106 | f1204 · 20.07 s | escritura_tallo | Roce vegetal continuo que sigue la punta |
-| 107 | f1266 · 21.10 s | escritura_tallo | Roce vegetal continuo que sigue la punta |
-| 108 | f1326 · 22.10 s | petalo | Pluck suave afinado en la armonía |
-| 109 | f1332 · 22.20 s | petalo | Pluck suave afinado en la armonía |
-| 110 | f1338 · 22.30 s | petalo | Pluck suave afinado en la armonía |
-| 111 | f1344 · 22.40 s | petalo | Pluck suave afinado en la armonía |
-| 112 | f1350 · 22.50 s | petalo | Pluck suave afinado en la armonía |
-| 113 | f1352 · 22.53 s | logo_aparece | Brillo suave |
-| 114 | f1440 · 24.00 s | golpe_grave | Sub con piano grave |
-| 115 | f1440 · 24.00 s | logo_giro | Swish de giro |
-| 116 | f1478 · 24.63 s | texto_aparece | Brillo mínimo |
+| 58 | f644 · 10.73 s | tap | Tap de vidrio suave |
+| 59 | f646 · 10.77 s | paso_desliza | Swipe lateral |
+| 60 | f676 · 11.27 s | tap | Tap de vidrio suave |
+| 61 | f678 · 11.30 s | toggle | Clic de interruptor |
+| 62 | f694 · 11.57 s | tap | Tap de vidrio suave |
+| 63 | f696 · 11.60 s | toggle | Clic de interruptor |
+| 64 | f712 · 11.87 s | tap | Tap de vidrio suave |
+| 65 | f714 · 11.90 s | calendario_abre | Pop suave de panel |
+| 66 | f744 · 12.40 s | tap | Tap de vidrio suave |
+| 67 | f746 · 12.43 s | fecha_elige | Tic |
+| 68 | f756 · 12.60 s | calendario_cierra | Panel que se cierra |
+| 69 | f772 · 12.87 s | tap | Tap de vidrio suave |
+| 70 | f774 · 12.90 s | teclado_sube | Deslizamiento corto hacia arriba |
+| 71 | f792 · 13.20 s | tecla_tactil “F” | Tecla táctil, más ligera que la física |
+| 72 | f797 · 13.28 s | tecla_tactil “e” | Tecla táctil, más ligera que la física |
+| 73 | f799 · 13.32 s | tecla_tactil “l” | Tecla táctil, más ligera que la física |
+| 74 | f804 · 13.40 s | tecla_tactil “i” | Tecla táctil, más ligera que la física |
+| 75 | f809 · 13.48 s | tecla_tactil “z” | Tecla táctil, más ligera que la física |
+| 76 | f812 · 13.53 s | tecla_tactil “espacio” | Tecla táctil, más ligera que la física |
+| 77 | f815 · 13.58 s | tecla_tactil “c” | Tecla táctil, más ligera que la física |
+| 78 | f821 · 13.68 s | tecla_tactil “u” | Tecla táctil, más ligera que la física |
+| 79 | f824 · 13.73 s | tecla_tactil “m” | Tecla táctil, más ligera que la física |
+| 80 | f828 · 13.80 s | tap | Tap de vidrio suave |
+| 81 | f840 · 14.00 s | tap | Tap de vidrio suave |
+| 82 | f842 · 14.03 s | teclado_baja | Deslizamiento corto hacia abajo |
+| 83 | f846 · 14.10 s | paso_desliza | Swipe lateral |
+| 84 | f866 · 14.43 s | subraya | Roce corto de lápiz |
+| 85 | f876 · 14.60 s | rodea | Trazo circular |
+| 86 | f880 · 14.67 s | boton_pop | Pop con cuerpo y brillo |
+| 87 | f904 · 15.07 s | tap | Tap de vidrio suave |
+| 88 | f912 · 15.20 s | boton_regresa | Golpe suave de regreso |
+| 89 | f912 · 15.20 s | hoja_cierra | Deslizamiento hacia abajo |
+| 90 | f930 · 15.50 s | scroll_friccion | Fricción que sigue la velocidad del scroll |
+| 91 | f950 · 15.83 s | subraya | Roce corto de lápiz |
+| 92 | f986 · 16.43 s | scroll_corto | Fricción corta |
+| 93 | f1004 · 16.73 s | subraya | Roce corto de lápiz |
+| 94 | f1018 · 16.97 s | scroll_friccion | Fricción que sigue la velocidad del scroll |
+| 95 | f1044 · 17.40 s | swipe | Swipe horizontal |
+| 96 | f1064 · 17.73 s | cristal_sale | Barrido de cristal |
+| 97 | f1070 · 17.83 s | cristal_sale | Barrido de cristal |
+| 98 | f1076 · 17.93 s | cristal_sale | Barrido de cristal |
+| 99 | f1090 · 18.17 s | aire_push | Aire de push-in |
+| 100 | f1102 · 18.37 s | tipo_entra | Swish de tipografía |
+| 101 | f1124 · 18.73 s | tipo_entra | Swish de tipografía |
+| 102 | f1152 · 19.20 s | cristal_regresa | Barrido de cristal inverso |
+| 103 | f1152 · 19.20 s | lift | Riser corto |
+| 104 | f1160 · 19.33 s | celular_se_aleja | Whoosh grave |
+| 105 | f1204 · 20.07 s | escritura_tallo | Roce vegetal continuo que sigue la punta |
+| 106 | f1266 · 21.10 s | escritura_tallo | Roce vegetal continuo que sigue la punta |
+| 107 | f1326 · 22.10 s | petalo | Pluck suave afinado en la armonía |
+| 108 | f1332 · 22.20 s | petalo | Pluck suave afinado en la armonía |
+| 109 | f1338 · 22.30 s | petalo | Pluck suave afinado en la armonía |
+| 110 | f1344 · 22.40 s | petalo | Pluck suave afinado en la armonía |
+| 111 | f1350 · 22.50 s | petalo | Pluck suave afinado en la armonía |
+| 112 | f1352 · 22.53 s | logo_aparece | Brillo suave |
+| 113 | f1440 · 24.00 s | golpe_grave | Sub con piano grave |
+| 114 | f1440 · 24.00 s | logo_giro | Swish de giro |
+| 115 | f1530 · 25.50 s | texto_aparece | Brillo mínimo |
 
 ## Mezcla
 
@@ -344,10 +354,11 @@ Todos sintetizados en código, uno por cada movimiento visible.
 ## Verificaciones automáticas
 
 - ✅ Duración total: 1680 cuadros (28.0 s).
-- ✅ SFX: 116 cues (mínimo 70).
+- ✅ SFX: 115 cues (mínimo 70).
 - ✅ Las secciones cubren el video sin huecos ni encimes.
 - ✅ Ninguna frase de voz se encima con la siguiente si respeta su duración máxima.
-- ✅ La última frase termina 0.3 s antes del final.
+- ✅ La última frase termina 0.6 s antes del final.
+- ✅ Kinetic type amarrado a la voz: T1 +0 cuadros, T4 +0 cuadros, T5 +0 cuadros, T6 +0 cuadros.
 - ✅ Kinetic type: máximo 4 palabras en pantalla a la vez (límite 3 o 4).
 - ✅ Kinetic type de 42 px o más.
 - ✅ Todos los eventos terminan dentro del video.
