@@ -1,19 +1,57 @@
 // Guion de la interfaz: qué se hace en la página real y en qué cuadro (60 fps, cuadros del video).
-// La captura (video/captura.mjs) ejecuta esto sobre web/index.html con reloj virtual.
+// La captura (video/captura.mjs) lo ejecuta sobre web/index.html con reloj virtual.
+// Los cuadros coinciden con brief/timeline.json (taps y SFX).
 
 export const PANTALLA = { ancho: 390, alto: 880, barraEstado: 47 }; // pantalla del celular en px CSS
 export const VIEWPORT = { width: PANTALLA.ancho, height: PANTALLA.alto - PANTALLA.barraEstado }; // 390 × 833
 export const FECHA = '2026-11-05T12:00:00-06:00'; // "hoy" dentro de la página (calendario de noviembre 2026)
+export const ULTIMO = 1470; // después de esto el celular ya no se ve
 
 export const TRIO = ['rosas-rojas', 'caja-de-tulipanes', 'girasoles'];
+export const RESENAS = ['1', '3', '4'];
+const trioSel = TRIO.map((id) => `.card[data-id="${id}"]`);
+const resSel = RESENAS.map((n) => `.review[data-review="${n}"]`);
 
 export const PLAN = [
-  // Se enciende la pantalla: arranca el reloj virtual y la entrada real de la portada.
   { f: 196, tipo: 'encender' },
-  // Dedo arrastra y suelta: scroll con inercia hasta ver las filas 2 y 3 del catálogo con el precio de la fila 1 arriba.
-  { f: 288, tipo: 'scroll', destino: 'catalogo-trio', dur: 64, dedo: { x: 205, y: 640, arrastre: 14, dy: -170 } },
-  // Texturas de las tres tarjetas justo antes de que salgan al 3D.
-  { f: 357, tipo: 'texturas', cards: TRIO },
-  { f: 358, tipo: 'ocultar', cards: TRIO },
-  { f: 448, tipo: 'mostrar', cards: TRIO },
+  // Catálogo
+  { f: 288, tipo: 'scroll', destino: 'catalogo-trio', dur: 64, dedo: { x: 205, y: 640, arrastre: 14 } },
+  { f: 357, tipo: 'texturas', items: TRIO.map((id, i) => ({ id, sel: trioSel[i], partes: { tallas: '.card-sizes' } })) },
+  { f: 358, tipo: 'ocultar', sel: trioSel },
+  { f: 448, tipo: 'mostrar', sel: trioSel },
+  { f: 450, tipo: 'rect', nombre: 'precio820', sel: '.card[data-id="tulipanes-y-rosas"] .price' },
+  { f: 470, tipo: 'tap', sel: '[data-filter="tulipanes"]' },
+  { f: 522, tipo: 'tap', sel: '[data-filter="ramos"]' },
+  { f: 552, tipo: 'rect', nombre: 'tarjeta820', sel: '.card[data-id="tulipanes-y-rosas"]' },
+  // Pedido
+  { f: 576, tipo: 'tap', sel: '.card[data-id="tulipanes-y-rosas"] .card-media' },
+  { f: 618, tipo: 'tap', sel: '[data-seg="size"] [data-value="M"]' },
+  { f: 644, tipo: 'tap', sel: '#next' },
+  { f: 676, tipo: 'tap', sel: '[data-seg="mode"] [data-value="domicilio"]' },
+  { f: 694, tipo: 'tap', sel: '[data-seg="mode"] [data-value="pickup"]' },
+  { f: 712, tipo: 'tap', sel: '#dateBtn' },
+  { f: 744, tipo: 'tap', sel: '#calGrid [data-date="2026-11-07"]' },
+  { f: 772, tipo: 'tap', sel: '#msg', teclado: 'subir' },
+  { f: 790, tipo: 'rect', nombre: 'mensaje', sel: '#msg' },
+  { f: 792, tipo: 'tipear', texto: 'Feliz cum', dur: 32 },
+  { f: 828, tipo: 'tap', sel: '#kb-sug-1' },
+  { f: 840, tipo: 'tap', sel: '#next', teclado: 'bajar' },
+  { f: 858, tipo: 'rect', nombre: 'anticipo', sel: '.deposit strong' },
+  { f: 872, tipo: 'rect', nombre: 'enviar', sel: '#send' },
+  { f: 885, tipo: 'texturas', items: [{ id: 'enviar', sel: '#send' }] },
+  { f: 886, tipo: 'ocultar', sel: ['#send'] },
+  { f: 912, tipo: 'mostrar', sel: ['#send'] },
+  { f: 914, tipo: 'swipe', sel: '.grabber', dy: 200, dur: 9 },
+  // Confianza
+  { f: 940, tipo: 'scroll', destino: 'como-funciona', dur: 36, dedo: { x: 200, y: 660, arrastre: 8 } },
+  { f: 972, tipo: 'rect', nombre: 'entrega', sel: '#como-funciona .how-item:nth-child(1) h3' },
+  { f: 988, tipo: 'scroll', destino: 'pick-up', dur: 16, dedo: { x: 210, y: 620, arrastre: 6 } },
+  { f: 1004, tipo: 'rect', nombre: 'pickup', sel: '#como-funciona .how-item:nth-child(2) h3' },
+  { f: 1018, tipo: 'scroll', destino: 'resenas', dur: 26, dedo: { x: 200, y: 650, arrastre: 8 } },
+  { f: 1044, tipo: 'carrusel', indice: 1, dur: 18 },
+  { f: 1063, tipo: 'texturas', items: RESENAS.map((n, i) => ({ id: `resena${n}`, sel: resSel[i], carrusel: true, frase: n === '3' ? 'las flores llegaron frescas' : null })) },
+  { f: 1064, tipo: 'ocultar', sel: resSel },
+  { f: 1166, tipo: 'mostrar', sel: resSel },
+  // Cierre
+  { f: 1168, tipo: 'scroll', destino: 'pie', dur: 44, rebote: 64 },
 ];

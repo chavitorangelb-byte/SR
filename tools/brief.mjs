@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { typingFrames } from '../brief/tiempos.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const T = JSON.parse(fs.readFileSync(path.join(ROOT, 'brief', 'timeline.json'), 'utf8'));
@@ -11,16 +12,6 @@ const s = (f) => (f / FPS).toFixed(2);
 const fr = (f, d) => (d ? `f${f}–f${f + d}` : `f${f}`);
 
 // ---- SFX expandidos (misma regla que usará el render) ----
-export function typingFrames(f, d, text) {
-  const n = [...text].length;
-  const out = [];
-  for (let i = 0; i < n; i++) {
-    const base = n === 1 ? f : f + Math.round((i * d) / (n - 1));
-    const jitter = [0, 1, -1, 0, 1, 0, -1, 1][i % 8];
-    out.push(Math.max(out.length ? out[out.length - 1] + 1 : f, Math.min(f + d, base + (i && i < n - 1 ? jitter : 0))));
-  }
-  return out;
-}
 const cues = [];
 for (const ev of T.eventos) {
   for (const raw of ev.sfx || []) {

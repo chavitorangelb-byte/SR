@@ -862,6 +862,12 @@
       "t": "“EN 3 PASOS” sale."
     },
     {
+      "f": 706,
+      "d": 24,
+      "p": "Cámara",
+      "t": "El celular regresa al centro tras “EN 3 PASOS”."
+    },
+    {
       "f": 712,
       "p": "Pantalla",
       "t": "Tap en la fecha: se abre el calendario de noviembre de 2026.",
@@ -890,6 +896,12 @@
       ]
     },
     {
+      "f": 780,
+      "d": 20,
+      "p": "Cámara",
+      "t": "Push-in al mensaje para la tarjeta y al teclado (1.45×): “Feliz cumpleaños” se lee al tamaño de un celular real."
+    },
+    {
       "f": 792,
       "d": 32,
       "p": "Pantalla",
@@ -908,6 +920,12 @@
       ]
     },
     {
+      "f": 838,
+      "d": 18,
+      "p": "Cámara",
+      "t": "Regresa del push-in mientras entra el resumen."
+    },
+    {
       "f": 840,
       "p": "Pantalla",
       "t": "Tap en “Continuar”: baja el teclado y entra el paso 3, el resumen.",
@@ -918,8 +936,14 @@
       ]
     },
     {
-      "f": 866,
-      "d": 20,
+      "f": 852,
+      "d": 16,
+      "p": "Cámara",
+      "t": "Push-in al anticipo y al botón (1.3×)."
+    },
+    {
+      "f": 858,
+      "d": 14,
       "p": "Tallo",
       "t": "Subraya “Anticipo del 50 % (no reembolsable)”.",
       "sfx": [
@@ -927,8 +951,8 @@
       ]
     },
     {
-      "f": 876,
-      "d": 20,
+      "f": 872,
+      "d": 14,
       "p": "Tallo",
       "t": "Rodea el botón “Enviar pedido por WhatsApp”.",
       "sfx": [
@@ -936,8 +960,8 @@
       ]
     },
     {
-      "f": 880,
-      "d": 24,
+      "f": 886,
+      "d": 18,
       "p": "3D",
       "t": "El botón se levanta en 3D con pop: la misma pieza con grosor y sombra sube hacia la cámara; su lugar queda vacío en la captura.",
       "sfx": [
@@ -954,25 +978,32 @@
       ]
     },
     {
-      "f": 912,
+      "f": 914,
       "d": 22,
+      "p": "Cámara",
+      "t": "Regresa del push-in mientras se cierra la hoja."
+    },
+    {
+      "f": 914,
+      "d": 28,
       "p": "Pantalla",
-      "t": "La hoja se cierra hacia abajo.",
+      "t": "Un dedo desliza la hoja hacia abajo y se cierra.",
       "sfx": [
-        "hoja_cierra"
+        "swipe",
+        "hoja_cierra+6"
       ]
     },
     {
-      "f": 930,
-      "d": 26,
+      "f": 940,
+      "d": 36,
       "p": "Pantalla",
-      "t": "Scroll con inercia a “Cómo funciona”: “Entrega a domicilio” con la reseña 2 debajo.",
+      "t": "Flick largo con inercia hasta “Cómo funciona”: “Entrega a domicilio” con la reseña 2 debajo.",
       "sfx": [
         "scroll_friccion"
       ]
     },
     {
-      "f": 950,
+      "f": 972,
       "d": 16,
       "p": "Tallo",
       "t": "Subraya “Entrega a domicilio”, sobre “a domicilio”.",
@@ -981,7 +1012,7 @@
       ]
     },
     {
-      "f": 986,
+      "f": 988,
       "d": 16,
       "p": "Pantalla",
       "t": "El scroll avanza un poco: “Pick up” y su dirección.",
@@ -1078,6 +1109,15 @@
       "t": "El celular se aleja a la derecha: retrocede en profundidad hasta 38 % de alto, gira −18° en Y y su pantalla baja al pie de la página (logo y “Spread love, send flowers”).",
       "sfx": [
         "celular_se_aleja"
+      ]
+    },
+    {
+      "f": 1164,
+      "d": 44,
+      "p": "Pantalla",
+      "t": "La pantalla baja hasta el pie de la página con rebote elástico al final.",
+      "sfx": [
+        "scroll_friccion"
       ]
     },
     {
