@@ -1,0 +1,6 @@
+{
+  "name": "floreria-roma-video",
+  "private": true,
+  "type": "module",
+  "dependencies": { "three": "0.187.0" }
+}
