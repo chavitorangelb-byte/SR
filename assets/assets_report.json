@@ -1,0 +1,130 @@
+{
+  "logo": {
+    "centro": [
+      659.59,
+      1261.69
+    ],
+    "radio": 434.79,
+    "lado_px": 870
+  },
+  "arreglo_03_caja_tulipanes": {
+    "desc": "Caja de tulipanes",
+    "px": [
+      400,
+      500
+    ],
+    "lo": 7.0,
+    "hi": 244.0,
+    "applied": false
+  },
+  "arreglo_04_ramo_kraft_pastel": {
+    "desc": "Ramo kraft pastel",
+    "px": [
+      400,
+      500
+    ],
+    "lo": 53.0,
+    "hi": 253.0,
+    "applied": true
+  },
+  "arreglo_05_tulipanes_y_rosas": {
+    "desc": "Tulipanes y rosas",
+    "px": [
+      400,
+      500
+    ],
+    "lo": 27.0,
+    "hi": 242.0,
+    "applied": true
+  },
+  "arreglo_06_gerberas_naranjas": {
+    "desc": "Gerberas naranjas",
+    "px": [
+      400,
+      500
+    ],
+    "lo": 6.0,
+    "hi": 188.0,
+    "applied": true
+  },
+  "arreglo_07_tulipanes_fucsia": {
+    "desc": "Tulipanes fucsia",
+    "px": [
+      400,
+      500
+    ],
+    "lo": 19.0,
+    "hi": 254.0,
+    "applied": true
+  },
+  "arreglo_08_girasoles": {
+    "desc": "Girasoles",
+    "px": [
+      400,
+      500
+    ],
+    "lo": 15.0,
+    "hi": 221.0,
+    "applied": true
+  },
+  "arreglo_09_rosas_con_hortensia": {
+    "desc": "Rosas con hortensia",
+    "px": [
+      400,
+      500
+    ],
+    "lo": 24.0,
+    "hi": 193.0,
+    "applied": true
+  },
+  "arreglo_10_rosas_rojo_y_blanco": {
+    "desc": "Rosas rojo y blanco",
+    "px": [
+      400,
+      500
+    ],
+    "lo": 21.0,
+    "hi": 202.0,
+    "applied": true
+  },
+  "arreglo_11_mixto_con_gerbera": {
+    "desc": "Mixto con gerbera",
+    "px": [
+      400,
+      500
+    ],
+    "lo": 13.0,
+    "hi": 201.0,
+    "applied": true
+  },
+  "arreglo_01_rosas_rojas": {
+    "px": [
+      1320,
+      2010
+    ],
+    "box": [
+      0,
+      340,
+      1320,
+      2350
+    ],
+    "lo": 3.0,
+    "hi": 241.0,
+    "applied": true
+  },
+  "arreglo_02_caja_rosas_eucalipto": {
+    "px": [
+      1320,
+      1916
+    ],
+    "box": [
+      0,
+      446,
+      1320,
+      2362
+    ],
+    "lo": 22.0,
+    "hi": 255.0,
+    "applied": true
+  }
+}

@@ -1,0 +1,162 @@
+[
+  {
+    "name": "Fuentes locales cargadas (Playfair Display + DM Sans)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Sin scroll horizontal en 390 px",
+    "ok": true,
+    "detail": "sobrante 0px"
+  },
+  {
+    "name": "\"Ver catálogo\" deja el título del catálogo bajo la barra",
+    "ok": true,
+    "detail": "top=86"
+  },
+  {
+    "name": "Catálogo con 11 arreglos",
+    "ok": true,
+    "detail": "tulipanes-y-rosas,ramo-kraft-pastel,rosas-rojas,caja-de-tulipanes,girasoles,caja-rosas-eucalipto,tulipanes-fucsia,rosas-con-hortensia,gerberas-naranjas,rosas-rojo-y-blanco,mixto-con-gerbera"
+  },
+  {
+    "name": "Filtro Tulipanes reordena: tulipanes primero",
+    "ok": true,
+    "detail": "tulipanes-y-rosas,caja-de-tulipanes,tulipanes-fucsia,|,ramo-kraft-pastel,rosas-rojas,girasoles,caja-rosas-eucalipto,rosas-con-hortensia,gerberas-naranjas,rosas-rojo-y-blanco,mixto-con-gerbera"
+  },
+  {
+    "name": "Filtro Ramos: 9 ramos, separador, 2 en caja",
+    "ok": true,
+    "detail": "tulipanes-y-rosas,ramo-kraft-pastel,rosas-rojas,girasoles,tulipanes-fucsia,rosas-con-hortensia,gerberas-naranjas,rosas-rojo-y-blanco,mixto-con-gerbera,|,caja-de-tulipanes,caja-rosas-eucalipto"
+  },
+  {
+    "name": "Filtro En caja",
+    "ok": true,
+    "detail": "caja-de-tulipanes,caja-rosas-eucalipto,|,tulipanes-y-rosas,ramo-kraft-pastel,rosas-rojas,girasoles,tulipanes-fucsia,rosas-con-hortensia,gerberas-naranjas,rosas-rojo-y-blanco,mixto-con-gerbera"
+  },
+  {
+    "name": "Filtro Inmediata: aviso honesto, sin inventar disponibilidad",
+    "ok": true,
+    "detail": "nota,|,tulipanes-y-rosas"
+  },
+  {
+    "name": "Ficha: nombre y precio publicado",
+    "ok": true,
+    "detail": "$820"
+  },
+  {
+    "name": "Validación paso 1: pide tamaño",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Tamaño M seleccionado",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Avanza a paso 2",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Validación paso 2: pide entrega y fecha",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Calendario: días pasados deshabilitados",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Validación: a domicilio exige dirección",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Contador de la tarjeta",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Avanza a paso 3 (resumen)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Enlace a WhatsApp 449 219 0609",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Mensaje con arreglo, tamaño, precio publicado",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Mensaje con entrega, fecha, dirección y tarjeta",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Mensaje menciona anticipo del 50 % no reembolsable",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "El botón final abre WhatsApp con el pedido escrito",
+    "ok": true,
+    "detail": "https://wa.me/524492190609?text=Hola%2C%20Roma%20%F0%9F%8C%B…"
+  },
+  {
+    "name": "Confirmación \"¡Listo!\" tras enviar",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Cierra la hoja y vuelve a la página",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Reseñas 1, 3, 4 y 5 en el carrusel",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Sin errores de consola",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Sin recursos fallidos",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Modo demo: muestra vista previa y no abre WhatsApp",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Pick up: sin dirección del cliente, con precio $1,400",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Escritorio sin scroll horizontal",
+    "ok": true,
+    "detail": "0px"
+  },
+  {
+    "name": "Entrada de portada termina con todo visible",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Archivo único: fotos, fuentes y ficha funcionan sin servidor",
+    "ok": true,
+    "detail": ""
+  }
+]
