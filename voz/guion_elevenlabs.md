@@ -35,7 +35,7 @@ Yo corto cada frase y la coloco en su cuadro; no tienes que acomodar nada.
 | L2 | 3.00 s | Que te encuentre a ti. | 1.9 s |
 | L3 | 5.20 s | Tus ramos, con foto, tamaño y precio. | 3.6 s |
 | L4 | 9.70 s | Y el pedido en tres pasos, directo a tu WhatsApp. | 4.2 s |
-| L5 | 15.73 s | A domicilio o para recoger, y con reseñas que hablan por ti. | 4.2 s |
+| L5 | 16.00 s | A domicilio o para recoger, y con reseñas que hablan por ti. | 4.2 s |
 | L6 | 20.00 s | Tus flores ya enamoran. Que también se vendan solas. | 4.0 s |
 | L7 | 24.40 s | Florería Roma. Así se vería con Elevate. | 3.3 s |
 

@@ -124,8 +124,9 @@ const RUNTIME = () => {
     sync: syncAnims,
     get vnow() { return vnow; },
     setScroll(y, max) {
-      if (max != null && y > max) { winScrollTo(0, max); document.body.style.transform = `translateY(${-(y - max)}px)`; }
-      else { winScrollTo(0, y); document.body.style.transform = ''; }
+      const mov = [document.querySelector('main'), document.getElementById('pie')];
+      if (max != null && y > max) { winScrollTo(0, max); mov.forEach((e) => { e.style.transform = `translateY(${-(y - max)}px)`; }); }
+      else { winScrollTo(0, y); mov.forEach((e) => { e.style.transform = ''; }); }
     },
     carrusel(left) { const r = document.getElementById('reviews'); r.style.scrollSnapType = 'none'; elScrollTo.call(r, { left }); },
     carruselFin() { document.getElementById('reviews').style.scrollSnapType = ''; },
@@ -136,7 +137,9 @@ const RUNTIME = () => {
       const sheet = document.getElementById('sheet');
       if (sheetH0 == null) sheetH0 = sheet.getBoundingClientRect().height;
       const opts = { duration: 300, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'forwards' };
-      kb.animate([{ transform: on ? 'translateY(100%)' : 'translateY(0)' }, { transform: on ? 'translateY(0)' : 'translateY(100%)' }], opts);
+      if (on) kb.style.display = '';
+      const ka = kb.animate([{ transform: on ? 'translateY(100%)' : 'translateY(0)' }, { transform: on ? 'translateY(0)' : 'translateY(100%)' }], opts);
+      if (!on) ka.finished.then(() => { kb.style.display = 'none'; });
       sheet.animate([{ bottom: on ? '0px' : `${KB_H}px`, height: `${on ? sheetH0 : sheetH0 - KB_H}px` }, { bottom: on ? `${KB_H}px` : '0px', height: `${on ? sheetH0 - KB_H : sheetH0}px` }], opts);
       if (on) {
         const pane = document.querySelector('.pane[data-step="2"]');
@@ -193,8 +196,8 @@ function curvaInercia(s0, s1, dur, A, rebote = 0) {
 const browser = await chromium.launch();
 const ctx = await browser.newContext({ viewport: VIEWPORT, deviceScaleFactor: DSF, isMobile: true, hasTouch: true, locale: 'es-MX', timezoneId: 'America/Mexico_City' });
 await ctx.addInitScript(RUNTIME);
-ctx.on('page', (p) => { if (p !== page) p.close().catch(() => {}); });
 const page = await ctx.newPage();
+ctx.on('page', (p) => { if (p !== page) p.close().catch(() => {}); });
 const cdp = await ctx.newCDPSession(page);
 const errores = [];
 page.on('pageerror', (e) => errores.push(String(e)));
@@ -288,6 +291,7 @@ async function accion(a, f) {
   if (a.tipo === 'tipear') {
     typingFrames(f, a.dur, a.texto).forEach((fk, i) => later(fk, async () => {
       const ch = [...a.texto][i];
+      if (a.sel) await page.evaluate((s) => { const e = document.querySelector(s); if (document.activeElement !== e) e.focus({ preventScroll: true }); }, a.sel);
       await page.keyboard.insertText(ch);
       const k = await page.evaluate((c) => window.__cap.tecla(c), ch);
       if (k) for (let j = 0; j <= 5; j++) setDedo(fk + j, { x: k.x, y: k.y, a: j < 3 ? 1 : 1 - (j - 2) / 4, p: j < 3 ? 1 : 0 });

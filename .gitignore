@@ -2,3 +2,4 @@ node_modules/
 assets/_capturas/
 review/**/*.png
 video/build/
+audio/build/

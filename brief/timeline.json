@@ -247,7 +247,7 @@
     },
     {
       "id": "L5",
-      "f": 944,
+      "f": 960,
       "texto": "A domicilio o para recoger, y con reseñas que hablan por ti.",
       "max": 4.2,
       "toma": {
@@ -255,67 +255,67 @@
         "fin": 14.291
       },
       "dur": 3.666,
-      "termina_f": 1164,
+      "termina_f": 1180,
       "palabras": [
         {
           "w": "A",
-          "f": 945,
-          "fin": 950
+          "f": 961,
+          "fin": 966
         },
         {
           "w": "domicilio",
-          "f": 950,
-          "fin": 989
+          "f": 966,
+          "fin": 1005
         },
         {
           "w": "o",
-          "f": 989,
-          "fin": 999
+          "f": 1005,
+          "fin": 1015
         },
         {
           "w": "para",
-          "f": 999,
-          "fin": 1007
+          "f": 1015,
+          "fin": 1023
         },
         {
           "w": "recoger,",
-          "f": 1007,
-          "fin": 1040
+          "f": 1023,
+          "fin": 1056
         },
         {
           "w": "y",
-          "f": 1040,
-          "fin": 1062
+          "f": 1056,
+          "fin": 1078
         },
         {
           "w": "con",
-          "f": 1062,
-          "fin": 1072
+          "f": 1078,
+          "fin": 1088
         },
         {
           "w": "reseñas",
-          "f": 1072,
-          "fin": 1103
+          "f": 1088,
+          "fin": 1119
         },
         {
           "w": "que",
-          "f": 1103,
-          "fin": 1116
+          "f": 1119,
+          "fin": 1132
         },
         {
           "w": "hablan",
-          "f": 1116,
-          "fin": 1138
+          "f": 1132,
+          "fin": 1154
         },
         {
           "w": "por",
-          "f": 1138,
-          "fin": 1149
+          "f": 1154,
+          "fin": 1165
         },
         {
           "w": "ti.",
-          "f": 1149,
-          "fin": 1161
+          "f": 1165,
+          "fin": 1177
         }
       ]
     },
@@ -459,8 +459,8 @@
     {
       "id": "T5",
       "texto": "HABLAN",
-      "f": 1102,
-      "sale": 1166,
+      "f": 1118,
+      "sale": 1182,
       "aterriza": "“hablan” (L5)",
       "pos": "arriba del celular · y 300",
       "px": 64
@@ -468,8 +468,8 @@
     {
       "id": "T6",
       "texto": "POR TI",
-      "f": 1124,
-      "sale": 1166,
+      "f": 1140,
+      "sale": 1182,
       "aterriza": "“por ti” (L5)",
       "pos": "arriba del celular · y 380",
       "px": 64
@@ -877,33 +877,33 @@
       ]
     },
     {
-      "f": 744,
+      "f": 734,
       "p": "Pantalla",
       "t": "Tap en el sábado 7; el calendario se cierra.",
       "sfx": [
         "tap",
         "fecha_elige+2",
-        "calendario_cierra+12"
+        "calendario_cierra+22"
       ]
     },
     {
-      "f": 772,
+      "f": 778,
       "p": "Pantalla",
       "t": "Tap en el mensaje para la tarjeta: sube el teclado (genérico, en español, con ñ).",
       "sfx": [
         "tap",
-        "teclado_sube+2"
+        "teclado_sube+6"
       ]
     },
     {
-      "f": 780,
+      "f": 786,
       "d": 20,
       "p": "Cámara",
       "t": "Push-in al mensaje para la tarjeta y al teclado (1.45×): “Feliz cumpleaños” se lee al tamaño de un celular real."
     },
     {
-      "f": 792,
-      "d": 32,
+      "f": 794,
+      "d": 28,
       "p": "Pantalla",
       "t": "Se teclea “Feliz cum”.",
       "escribe": "Feliz cum",
@@ -912,7 +912,7 @@
       ]
     },
     {
-      "f": 828,
+      "f": 826,
       "p": "Pantalla",
       "t": "Tap en la sugerencia “cumpleaños” de la barra del teclado: queda “Feliz cumpleaños”.",
       "sfx": [
@@ -931,19 +931,19 @@
       "t": "Tap en “Continuar”: baja el teclado y entra el paso 3, el resumen.",
       "sfx": [
         "tap",
-        "teclado_baja+2",
-        "paso_desliza+6"
+        "teclado_baja+6",
+        "paso_desliza+8"
       ]
     },
     {
-      "f": 852,
+      "f": 864,
       "d": 16,
       "p": "Cámara",
       "t": "Push-in al anticipo y al botón (1.3×)."
     },
     {
-      "f": 858,
-      "d": 14,
+      "f": 872,
+      "d": 12,
       "p": "Tallo",
       "t": "Subraya “Anticipo del 50 % (no reembolsable)”.",
       "sfx": [
@@ -951,8 +951,8 @@
       ]
     },
     {
-      "f": 872,
-      "d": 14,
+      "f": 884,
+      "d": 12,
       "p": "Tallo",
       "t": "Rodea el botón “Enviar pedido por WhatsApp”.",
       "sfx": [
@@ -960,8 +960,8 @@
       ]
     },
     {
-      "f": 886,
-      "d": 18,
+      "f": 892,
+      "d": 14,
       "p": "3D",
       "t": "El botón se levanta en 3D con pop: la misma pieza con grosor y sombra sube hacia la cámara; su lugar queda vacío en la captura.",
       "sfx": [
@@ -969,7 +969,7 @@
       ]
     },
     {
-      "f": 904,
+      "f": 906,
       "p": "3D",
       "t": "Tap en el botón 3D: se hunde (estado presionado real) y regresa a la pantalla.",
       "sfx": [
@@ -978,23 +978,23 @@
       ]
     },
     {
-      "f": 914,
-      "d": 22,
-      "p": "Cámara",
-      "t": "Regresa del push-in mientras se cierra la hoja."
-    },
-    {
-      "f": 914,
-      "d": 28,
+      "f": 916,
+      "d": 30,
       "p": "Pantalla",
       "t": "Un dedo desliza la hoja hacia abajo y se cierra.",
       "sfx": [
         "swipe",
-        "hoja_cierra+6"
+        "hoja_cierra+9"
       ]
     },
     {
-      "f": 940,
+      "f": 918,
+      "d": 24,
+      "p": "Cámara",
+      "t": "Regresa del push-in mientras se cierra la hoja."
+    },
+    {
+      "f": 950,
       "d": 36,
       "p": "Pantalla",
       "t": "Flick largo con inercia hasta “Cómo funciona”: “Entrega a domicilio” con la reseña 2 debajo.",
@@ -1003,7 +1003,7 @@
       ]
     },
     {
-      "f": 972,
+      "f": 986,
       "d": 16,
       "p": "Tallo",
       "t": "Subraya “Entrega a domicilio”, sobre “a domicilio”.",
@@ -1012,7 +1012,7 @@
       ]
     },
     {
-      "f": 988,
+      "f": 1004,
       "d": 16,
       "p": "Pantalla",
       "t": "El scroll avanza un poco: “Pick up” y su dirección.",
@@ -1021,7 +1021,7 @@
       ]
     },
     {
-      "f": 1004,
+      "f": 1020,
       "d": 14,
       "p": "Tallo",
       "t": "Subraya “Pick up”, sobre “para recoger”.",
@@ -1030,8 +1030,8 @@
       ]
     },
     {
-      "f": 1018,
-      "d": 24,
+      "f": 1034,
+      "d": 26,
       "p": "Pantalla",
       "t": "Scroll al carrusel “Lo que dicen de Roma”.",
       "sfx": [
@@ -1039,7 +1039,7 @@
       ]
     },
     {
-      "f": 1044,
+      "f": 1060,
       "d": 18,
       "p": "Pantalla",
       "t": "Swipe de la reseña 1 a la 3, con rebote suave en el borde.",
@@ -1048,7 +1048,7 @@
       ]
     },
     {
-      "f": 1064,
+      "f": 1080,
       "d": 24,
       "p": "3D",
       "t": "Las reseñas 1, 3 y 4 salen al espacio 3D como cristal, en abanico (−10°, 0° y +10°) y legibles: mismo texto, mismas estrellas, “Reseña en Google”.",
@@ -1059,7 +1059,7 @@
       ]
     },
     {
-      "f": 1090,
+      "f": 1106,
       "d": 50,
       "p": "Cámara",
       "t": "Push-in a la reseña 3 hasta leer “las flores llegaron frescas” al tamaño de un celular real (≈ 2.5 px de video por px CSS), con profundidad de campo al fondo.",
@@ -1068,7 +1068,7 @@
       ]
     },
     {
-      "f": 1102,
+      "f": 1118,
       "d": 28,
       "p": "Tipo",
       "t": "“HABLAN” aterriza sobre “hablan”.",
@@ -1077,7 +1077,7 @@
       ]
     },
     {
-      "f": 1124,
+      "f": 1140,
       "d": 26,
       "p": "Tipo",
       "t": "“POR TI” aterriza sobre “por ti”.",
@@ -1094,8 +1094,8 @@
       ]
     },
     {
-      "f": 1152,
-      "d": 30,
+      "f": 1162,
+      "d": 20,
       "p": "3D",
       "t": "Las reseñas de cristal regresan al carrusel.",
       "sfx": [
@@ -1103,7 +1103,7 @@
       ]
     },
     {
-      "f": 1160,
+      "f": 1176,
       "d": 48,
       "p": "Cámara",
       "t": "El celular se aleja a la derecha: retrocede en profundidad hasta 38 % de alto, gira −18° en Y y su pantalla baja al pie de la página (logo y “Spread love, send flowers”).",
@@ -1112,19 +1112,19 @@
       ]
     },
     {
-      "f": 1164,
-      "d": 44,
+      "f": 1182,
+      "d": 16,
+      "p": "Tipo",
+      "t": "“HABLAN POR TI” sale."
+    },
+    {
+      "f": 1184,
+      "d": 40,
       "p": "Pantalla",
       "t": "La pantalla baja hasta el pie de la página con rebote elástico al final.",
       "sfx": [
         "scroll_friccion"
       ]
-    },
-    {
-      "f": 1166,
-      "d": 16,
-      "p": "Tipo",
-      "t": "“HABLAN POR TI” sale."
     },
     {
       "f": 1204,
