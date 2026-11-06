@@ -14,11 +14,15 @@ y, en fases siguientes, el video vertical de 27 s que la presenta. Proyecto inde
 - `tools/` — scripts reproducibles (abajo).
 - `review/fase0/` — tableros, pantallas, recorrido en video y resultados de las pruebas.
 - `review/fase1/` — inventario de assets, resolución real medida y faltantes.
+- `brief/` — fase 2: línea de tiempo (`linea.mjs`, fuente única), brief cuadro por cuadro y `timeline.json`.
+- `voz/` — guion para ElevenLabs (y, en la fase 3, las tomas y la voz bloqueada).
 
 ## Comandos
 ```bash
 python3 tools/resolucion_real.py # fase 1: detalle real de cada foto (review/fase1/resolucion_real.json)
 node tools/inventario.mjs        # fase 1: tablero de assets y faltantes (review/fase1/inventario_assets.jpg)
+node tools/brief.mjs             # fase 2: brief/linea.mjs → brief_fase2.md, timeline.json y voz/guion_elevenlabs.md
+node tools/tablero_fase2.mjs     # fase 2: resumen visual de la línea de tiempo
 python3 tools/prep_img.py        # recortes, exposición suave y logo transparente → web/img
 node tools/build_web.mjs         # genera dist/
 node tools/test_web.mjs          # 26 pruebas en vista de celular 390×844 + capturas a 3× (review/fase0/pantallas_3x)

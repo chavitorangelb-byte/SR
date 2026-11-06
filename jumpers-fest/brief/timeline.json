@@ -1,0 +1,1471 @@
+{
+ "proyecto": "Jumpers Fest Ags",
+ "fps": 60,
+ "bpm": 112,
+ "frames": 1620,
+ "secciones": [
+  {
+   "id": "hook",
+   "nombre": "Hook",
+   "f": 0,
+   "fin": 128,
+   "musica": "Compás 1 · golpe en f0, ukulele en rasgueo suave"
+  },
+  {
+   "id": "llegada",
+   "nombre": "Llegada",
+   "f": 129,
+   "fin": 256,
+   "musica": "Compás 2 · entra el bajo redondo"
+  },
+  {
+   "id": "catalogo",
+   "nombre": "Catálogo",
+   "f": 257,
+   "fin": 578,
+   "musica": "Compases 3 a 5 · entra el glockenspiel"
+  },
+  {
+   "id": "aparta",
+   "nombre": "Aparta tu fecha",
+   "f": 579,
+   "fin": 899,
+   "musica": "Compases 5 a 7 · entran las palmas"
+  },
+  {
+   "id": "fiesta",
+   "nombre": "Arma tu fiesta",
+   "f": 900,
+   "fin": 1156,
+   "musica": "Compases 8 y 9 · lift: entran las cuerdas en pizzicato"
+  },
+  {
+   "id": "cierre",
+   "nombre": "Cierre",
+   "f": 1157,
+   "fin": 1439,
+   "musica": "Compases 10 y 11 · se adelgaza; respiro en f1380"
+  },
+  {
+   "id": "endcard",
+   "nombre": "End card",
+   "f": 1440,
+   "fin": 1619,
+   "musica": "Golpe grave suave en f1440 y cola hasta el final"
+  }
+ ],
+ "voz": [
+  {
+   "id": "L1",
+   "f": 6,
+   "texto": "Alguien está organizando una fiesta en Aguascalientes.",
+   "max": 3.2,
+   "brief": 0.4
+  },
+  {
+   "id": "L2",
+   "f": 204,
+   "texto": "Que te encuentre a ti.",
+   "max": 1.2,
+   "brief": 2.6
+  },
+  {
+   "id": "L3",
+   "f": 282,
+   "texto": "Tus inflables, con foto, para elegir.",
+   "max": 3.2,
+   "brief": 4.7
+  },
+  {
+   "id": "L4",
+   "f": 600,
+   "texto": "Y su fecha, apartada en un mensaje.",
+   "max": 3,
+   "brief": 10
+  },
+  {
+   "id": "L5",
+   "f": 924,
+   "texto": "Diversión y elegancia, en una sola página.",
+   "max": 3.4,
+   "brief": 15.4
+  },
+  {
+   "id": "L6",
+   "f": 1452,
+   "texto": "Jumpers Fest. Así se vería con Elevate.",
+   "max": 2.6,
+   "brief": 24.4
+  }
+ ],
+ "tipo": [
+  {
+   "id": "T1",
+   "texto": "TU / INFLABLE",
+   "f": 270,
+   "sale": 490,
+   "aterriza": "“Tus inflables” (L3)",
+   "pos": "izquierda del celular · x 64–480 · y 900 y 990",
+   "px": 88
+  },
+  {
+   "id": "T2",
+   "texto": "ELIGE",
+   "f": 396,
+   "sale": 490,
+   "aterriza": "“elegir” (L3)",
+   "pos": "izquierda · encima de “TU INFLABLE” · y 800",
+   "px": 88
+  },
+  {
+   "id": "T3",
+   "texto": "TU / FECHA",
+   "f": 600,
+   "sale": 667,
+   "aterriza": "“fecha” (L4)",
+   "pos": "derecha del celular · x 600–1016 · y 900 y 990",
+   "px": 88
+  },
+  {
+   "id": "T4",
+   "texto": "APARTA",
+   "f": 641,
+   "sale": 752,
+   "aterriza": "“apartada” (L4)",
+   "pos": "derecha · encima · y 800",
+   "px": 88
+  },
+  {
+   "id": "T5",
+   "texto": "EN UN / MENSAJE",
+   "f": 683,
+   "sale": 752,
+   "aterriza": "“en un mensaje” (L4)",
+   "pos": "derecha · en el lugar de “TU FECHA” · y 900 y 990",
+   "px": 80
+  },
+  {
+   "id": "T6",
+   "texto": "DIVERSIÓN",
+   "f": 912,
+   "sale": 1000,
+   "aterriza": "“Diversión” (L5)",
+   "pos": "izquierda del celular · x 64–510 · y 860",
+   "px": 80
+  },
+  {
+   "id": "T7",
+   "texto": "+ ELEGANCIA",
+   "f": 954,
+   "sale": 1000,
+   "aterriza": "“elegancia” (L5)",
+   "pos": "izquierda · debajo · y 960; el “+” es un cojín rosa como el de la página",
+   "px": 80
+  }
+ ],
+ "musica": [
+  {
+   "f": 0,
+   "compas": 1,
+   "acorde": "Cadd9",
+   "capas": "Golpe suave en f0 (bombo de fieltro + soplo de aire) y ukulele en rasgueo suave"
+  },
+  {
+   "f": 129,
+   "compas": 2,
+   "acorde": "G/B",
+   "capas": "+ bajo redondo y bombo en 1 y 3"
+  },
+  {
+   "f": 257,
+   "compas": 3,
+   "acorde": "Am7",
+   "capas": "+ glockenspiel (melodía corta en corcheas)"
+  },
+  {
+   "f": 386,
+   "compas": 4,
+   "acorde": "Fmaj7",
+   "capas": "Glockenspiel responde a cada tarjeta que sale"
+  },
+  {
+   "f": 514,
+   "compas": 5,
+   "acorde": "C",
+   "capas": "Igual; en f579 (tiempo 3) entran las palmas en 2 y 4"
+  },
+  {
+   "f": 643,
+   "compas": 6,
+   "acorde": "G",
+   "capas": "Ukulele, bajo, glockenspiel y palmas"
+  },
+  {
+   "f": 771,
+   "compas": 7,
+   "acorde": "Am7",
+   "capas": "Igual, con un fill de ukulele hacia el lift"
+  },
+  {
+   "f": 900,
+   "compas": 8,
+   "acorde": "F",
+   "capas": "Lift en f900: entran las cuerdas en pizzicato y el groove completo"
+  },
+  {
+   "f": 1029,
+   "compas": 9,
+   "acorde": "C/E",
+   "capas": "Groove completo"
+  },
+  {
+   "f": 1157,
+   "compas": 10,
+   "acorde": "Fmaj7",
+   "capas": "Se adelgaza: ukulele y pizzicato; una nota de glockenspiel por banda del arcoíris"
+  },
+  {
+   "f": 1286,
+   "compas": 11,
+   "acorde": "Gsus4",
+   "capas": "Pad suave; respiro en f1380: la música se detiene y queda el aire"
+  },
+  {
+   "f": 1440,
+   "compas": 12,
+   "acorde": "Cadd9",
+   "capas": "Golpe grave suave (como rebote) y acorde final de ukulele con cola"
+  }
+ ],
+ "eventos": [
+  {
+   "f": 0,
+   "p": "Música",
+   "t": "Golpe en f0: bombo de fieltro y un “pff” de aire. Fondo blanco cálido #F7F5F2 con cielo pastel muy claro (celeste #C6DFEA al 18 % arriba) y sombras suaves.",
+   "sfx": [
+    "golpe_inicio",
+    "pff_aire"
+   ]
+  },
+  {
+   "f": 0,
+   "d": 34,
+   "p": "Tubo",
+   "t": "Entra el tubo blanco desde abajo a la izquierda, como manguera de aire: 26 px de grueso, costura central punteada, brillo de vinil arriba y sombra suave. Sube en una S hasta el inicio de la barra (x 120, y 960).",
+   "sfx": [
+    "tubo_entra"
+   ]
+  },
+  {
+   "f": 12,
+   "d": 24,
+   "p": "2D",
+   "t": "La barra de búsqueda de cristal se infla desde plana con rebote de resorte (8 %): píldora de 940 × 132 px centrada (x 70–1010, y 894–1026), blur 32 px, saturación 140 %, borde de 1 px y ruido 2 %. Lupa de línea a la izquierda y flecha a la derecha. Genérica: sin logo de ningún buscador.",
+   "sfx": [
+    "cristal_infla"
+   ]
+  },
+  {
+   "f": 38,
+   "p": "2D",
+   "t": "Aparece el cursor (parpadea cada 30 cuadros)."
+  },
+  {
+   "f": 40,
+   "d": 76,
+   "p": "Tubo",
+   "t": "La punta del tubo escribe “renta de inflables aguascalientes” (DM Sans 40 px, tinta #1B1B1B): cada letra sale cuando pasa la punta, con ritmo humano.",
+   "escribe": "renta de inflables aguascalientes",
+   "sfx": [
+    "tecla*"
+   ]
+  },
+  {
+   "f": 118,
+   "d": 10,
+   "p": "Tubo",
+   "t": "La punta se levanta y se posa sobre la flecha."
+  },
+  {
+   "f": 129,
+   "p": "2D",
+   "t": "Enter en el tiempo fuerte del compás 2: la flecha se hunde (escala 0.92) y suelta con una onda suave.",
+   "sfx": [
+    "enter"
+   ]
+  },
+  {
+   "f": 131,
+   "d": 26,
+   "p": "2D",
+   "t": "La barra se desinfla hacia el tubo: pierde volumen y su contorno se vuelve parte del tubo.",
+   "sfx": [
+    "desinfla+2"
+   ]
+  },
+  {
+   "f": 136,
+   "d": 50,
+   "p": "Tubo",
+   "t": "El tubo se infla (26 → 40 px) y traza el contorno del celular: un rectángulo redondeado de 532 × 1152 px, en sentido horario desde arriba al centro.",
+   "sfx": [
+    "tubo_infla",
+    "trazo_contorno+4"
+   ]
+  },
+  {
+   "f": 186,
+   "d": 40,
+   "p": "Celular",
+   "t": "El celular 3D de cristal se materializa dentro del contorno (el tubo se vuelve el brillo del bisel). Entra a escala 0.92, girado 10° en Y y 4° en X, rebota con resorte (8 % de sobrepaso) y se asienta en −3° y 1°. Alto: 60 % del cuadro (1152 px), centro en (540, 915).",
+   "sfx": [
+    "cristal_cuerpo",
+    "rebote_vinil+20",
+    "asienta+36"
+   ]
+  },
+  {
+   "f": 196,
+   "d": 60,
+   "p": "Pantalla",
+   "t": "Se enciende la pantalla y carga la portada real con su propia entrada: el logo se infla, el arcoíris se dibuja, la foto del Rainbow Jump se infla, luego “Diversión + elegancia” y los dos botones.",
+   "sfx": [
+    "pantalla_enciende",
+    "logo_pop+8",
+    "arcoiris_dibuja+16",
+    "foto_infla+24"
+   ]
+  },
+  {
+   "f": 226,
+   "d": 30,
+   "p": "Tubo",
+   "t": "El tubo se suelta del bisel y queda enrollado en la esquina inferior izquierda del celular, respirando apenas."
+  },
+  {
+   "f": 257,
+   "d": 58,
+   "p": "Pantalla",
+   "t": "Un dedo arrastra hacia arriba y suelta: scroll con inercia hasta “Nuestros inflables” y la tarjeta de Castle Jump (captura real).",
+   "sfx": [
+    "scroll_friccion"
+   ]
+  },
+  {
+   "f": 262,
+   "d": 38,
+   "p": "Cámara",
+   "t": "Truck: el celular se corre a la derecha (centro x 790) y gira −8° en Y; queda espacio a la izquierda para el texto."
+  },
+  {
+   "f": 285,
+   "d": 30,
+   "p": "Pantalla",
+   "t": "La tarjeta de Castle Jump se infla dentro de la pantalla al entrar (animación real de la página).",
+   "sfx": [
+    "tarjeta_infla"
+   ]
+  },
+  {
+   "f": 284,
+   "p": "Tipo",
+   "t": "“TU” y “INFLABLE” aterrizan glifo por glifo y se inflan.",
+   "sfx": [
+    "tipo_infla",
+    "tipo_infla+10"
+   ]
+  },
+  {
+   "f": 321,
+   "d": 52,
+   "p": "Pantalla",
+   "t": "Segundo arrastre: Rainbow Jump queda al centro; se inflan ella y la parte de arriba de Magic Jump.",
+   "sfx": [
+    "scroll_friccion",
+    "tarjeta_infla+19"
+   ]
+  },
+  {
+   "f": 354,
+   "d": 56,
+   "p": "3D",
+   "t": "Sobre “con foto”, las tres tarjetas salen de la pantalla al espacio 3D, una por medio tiempo: Castle Jump (f354), Rainbow Jump (f370) y Magic Jump (f386). Son la misma pieza de interfaz (misma foto, mismo texto) con 8 px de grueso de vinil blanco y sombra de cojín; al salir se inflan (escala 1 → 1.08 → 1). La punta del tubo les da un soplo. Su lugar queda vacío en la captura.",
+   "sfx": [
+    "tarjeta_sale",
+    "pff_corto+2",
+    "tarjeta_sale+16",
+    "pff_corto+18",
+    "tarjeta_sale+32",
+    "pff_corto+34"
+   ]
+  },
+  {
+   "f": 354,
+   "d": 36,
+   "p": "Cámara",
+   "t": "Dolly hacia atrás (celular de 60 % a 54 %) y órbita de 5°: las tarjetas flotan a tres profundidades con parallax y ninguna foto pasa de 408 px de ancho en cuadro."
+  },
+  {
+   "f": 390,
+   "d": 56,
+   "p": "3D",
+   "t": "Flotan: vaivén de ±6 px y ±2°.",
+   "sfx": [
+    "aire_flota"
+   ]
+  },
+  {
+   "f": 410,
+   "p": "Tipo",
+   "t": "“ELIGE” aterriza encima de “TU INFLABLE” y se infla.",
+   "sfx": [
+    "tipo_infla"
+   ]
+  },
+  {
+   "f": 446,
+   "d": 32,
+   "p": "3D",
+   "t": "Regresan a su lugar con resorte: Magic (f446), Castle (f454) y Rainbow (f462). La pantalla se completa.",
+   "sfx": [
+    "tarjeta_regresa",
+    "tarjeta_regresa+8",
+    "tarjeta_regresa+16"
+   ]
+  },
+  {
+   "f": 450,
+   "d": 28,
+   "p": "Cámara",
+   "t": "El celular vuelve al 60 %."
+  },
+  {
+   "f": 482,
+   "p": "Pantalla",
+   "t": "Tap en la foto de Rainbow Jump (tiempo 3 del compás 4): sube su ficha (captura real).",
+   "sfx": [
+    "tap",
+    "hoja_sube+6"
+   ]
+  },
+  {
+   "f": 490,
+   "d": 16,
+   "p": "Tipo",
+   "t": "“ELIGE / TU INFLABLE” se desinfla y sale."
+  },
+  {
+   "f": 500,
+   "d": 30,
+   "p": "Cámara",
+   "t": "El celular regresa al centro (x 540) y a −2° en Y."
+  },
+  {
+   "f": 514,
+   "d": 62,
+   "p": "3D",
+   "t": "En el tiempo fuerte del compás 5, la descripción sale de la ficha al 3D: el mismo bloque de texto (“Un brincolín lleno de color, alegría y mucha diversión. Sus tonos vibrantes iluminan cada evento.”) sobre un cojín blanco, crece a 1.9× para leerse al tamaño de un celular real, flota y regresa en f562. Sin foto: así no se agranda la de 408 px.",
+   "sfx": [
+    "panel_sale",
+    "panel_regresa+48"
+   ]
+  },
+  {
+   "f": 579,
+   "p": "Pantalla",
+   "t": "Tap en “Lo quiero” (tiempo 3 del compás 5): la ficha baja, la página baja a “Aparta tu fecha” con Rainbow Jump elegido y se abre el calendario de noviembre de 2026 (captura real).",
+   "sfx": [
+    "tap",
+    "hoja_baja+6",
+    "scroll_suave+24",
+    "calendario_abre+58"
+   ]
+  },
+  {
+   "f": 579,
+   "d": 21,
+   "p": "Cámara",
+   "t": "Truck: el celular se corre a la izquierda (centro x 290) y gira +8° en Y; el texto va a la derecha."
+  },
+  {
+   "f": 614,
+   "p": "Tipo",
+   "t": "“TU” y “FECHA” aterrizan sobre “su fecha”.",
+   "sfx": [
+    "tipo_infla",
+    "tipo_infla+8"
+   ]
+  },
+  {
+   "f": 655,
+   "p": "Tipo",
+   "t": "“APARTA” aterriza encima, sobre “apartada”: se lee “APARTA / TU FECHA”.",
+   "sfx": [
+    "tipo_infla"
+   ]
+  },
+  {
+   "f": 675,
+   "p": "Pantalla",
+   "t": "Tap en el sábado 21: el día se infla en negro con rebote; el calendario se cierra solo (f712–f730).",
+   "sfx": [
+    "tap",
+    "fecha_infla+6",
+    "calendario_cierra+37"
+   ]
+  },
+  {
+   "f": 667,
+   "d": 16,
+   "p": "Tipo",
+   "t": "“TU FECHA” sale; “APARTA” se queda."
+  },
+  {
+   "f": 697,
+   "p": "Tipo",
+   "t": "“EN UN” y “MENSAJE” aterrizan en el lugar de “TU FECHA”: se lee “APARTA / EN UN MENSAJE”.",
+   "sfx": [
+    "tipo_infla",
+    "tipo_infla+8"
+   ]
+  },
+  {
+   "f": 707,
+   "p": "Pantalla",
+   "t": "Tap en “Colonia o salón”: sube el teclado (genérico, en español, con ñ) y el campo sube por encima de él.",
+   "sfx": [
+    "tap",
+    "teclado_sube+6"
+   ]
+  },
+  {
+   "f": 724,
+   "d": 40,
+   "p": "Pantalla",
+   "t": "Se teclea “Las Américas”.",
+   "escribe": "Las Américas",
+   "sfx": [
+    "tecla*"
+   ]
+  },
+  {
+   "f": 752,
+   "d": 16,
+   "p": "Tipo",
+   "t": "“APARTA / EN UN MENSAJE” sale."
+  },
+  {
+   "f": 766,
+   "d": 28,
+   "p": "Cámara",
+   "t": "El celular regresa al centro y hace push-in a los campos y al teclado (1.236 → 1.75 px de video por px CSS). Solo quedan a la vista las miniaturas de 98 px CSS (171 px en cuadro)."
+  },
+  {
+   "f": 771,
+   "p": "Pantalla",
+   "t": "Tap en “Horario aproximado” (tiempo fuerte del compás 7).",
+   "sfx": [
+    "tap"
+   ]
+  },
+  {
+   "f": 778,
+   "d": 24,
+   "p": "Pantalla",
+   "t": "Se teclea “4:00 pm”.",
+   "escribe": "4:00 pm",
+   "sfx": [
+    "tecla*"
+   ]
+  },
+  {
+   "f": 808,
+   "p": "Pantalla",
+   "t": "Tap en “listo” del teclado: el teclado baja.",
+   "sfx": [
+    "tap",
+    "teclado_baja+6"
+   ]
+  },
+  {
+   "f": 814,
+   "d": 24,
+   "p": "Pantalla",
+   "t": "Arrastre corto: quedan a la vista la vista previa del mensaje y el botón “Apartar por WhatsApp” (ya activo, en negro).",
+   "sfx": [
+    "scroll_friccion"
+   ]
+  },
+  {
+   "f": 814,
+   "d": 48,
+   "p": "Cámara",
+   "t": "Reencuadre a la vista previa (2.0 px por px CSS): el mensaje armado (Rainbow Jump, sábado 21 de noviembre, Las Américas, 4:00 pm) se lee al tamaño de un celular real. Sin fotos en cuadro."
+  },
+  {
+   "f": 862,
+   "d": 18,
+   "p": "Cámara",
+   "t": "Se abre a 1.45 px por px CSS, centrada en el botón."
+  },
+  {
+   "f": 868,
+   "d": 24,
+   "p": "3D",
+   "t": "En el tiempo 4 del compás 7, el botón “Apartar por WhatsApp” sale de la pantalla como cojín de vinil: la misma pieza (negra, texto blanco, ícono genérico de chat) toma volumen, las costuras se tensan, brillo especular suave, se infla con resorte (8 %) y avanza 60 px hacia la cámara. Su lugar queda vacío.",
+   "sfx": [
+    "boton_infla",
+    "pff_corto+2"
+   ]
+  },
+  {
+   "f": 896,
+   "p": "3D",
+   "t": "Tap en el cojín: se aplasta (0.9) y hace pop justo en el lift de f900 (1.06 → 1). Es el “envío”: en la captura no se toca el botón real, así que la hoja “¡Tu mensaje está listo!” no sale y no se muestra WhatsApp (es de terceros).",
+   "sfx": [
+    "tap",
+    "boton_pop+4"
+   ]
+  },
+  {
+   "f": 900,
+   "p": "Música",
+   "t": "Lift: entran las cuerdas en pizzicato y el groove completo.",
+   "sfx": [
+    "lift"
+   ]
+  },
+  {
+   "f": 900,
+   "d": 14,
+   "p": "3D",
+   "t": "El cojín regresa a la pantalla con resorte.",
+   "sfx": [
+    "boton_regresa+12"
+   ]
+  },
+  {
+   "f": 900,
+   "d": 14,
+   "p": "Cámara",
+   "t": "Regresa a 60 % y truck a la derecha (centro x 800, −8° en Y)."
+  },
+  {
+   "f": 906,
+   "d": 50,
+   "p": "Pantalla",
+   "t": "Arrastre con inercia hasta “Arma tu fiesta”: la postal de foto_08 (combo con mesitas pastel) se infla al entrar.",
+   "sfx": [
+    "scroll_friccion",
+    "tarjeta_infla+34"
+   ]
+  },
+  {
+   "f": 926,
+   "p": "Tipo",
+   "t": "“DIVERSIÓN” aterriza sobre “Diversión”.",
+   "sfx": [
+    "tipo_infla"
+   ]
+  },
+  {
+   "f": 968,
+   "p": "Tipo",
+   "t": "“+ ELEGANCIA” aterriza sobre “elegancia”: primero se infla el “+” (cojín rosa) y luego la palabra.",
+   "sfx": [
+    "pff_corto",
+    "tipo_infla+4"
+   ]
+  },
+  {
+   "f": 1000,
+   "d": 16,
+   "p": "Tipo",
+   "t": "“DIVERSIÓN + ELEGANCIA” se desinfla y sale."
+  },
+  {
+   "f": 1000,
+   "d": 40,
+   "p": "Cámara",
+   "t": "El celular vuelve al centro con un leve dolly hacia atrás (55 %)."
+  },
+  {
+   "f": 1016,
+   "d": 45,
+   "p": "3D",
+   "t": "La postal sale de la pantalla como postal grande: la misma pieza (foto_08, “Pregunta por mobiliario” y su botón) con grueso y sombra, crece a 2× (foto de ~816 px; su detalle real es de ~1300 px), gira 10° y flota al centro.",
+   "sfx": [
+    "postal_sale",
+    "aire_flota+34"
+   ]
+  },
+  {
+   "f": 1061,
+   "d": 24,
+   "p": "3D",
+   "t": "La postal regresa a su lugar con resorte (tiempo 2 del compás 9).",
+   "sfx": [
+    "postal_regresa"
+   ]
+  },
+  {
+   "f": 1093,
+   "d": 50,
+   "p": "Pantalla",
+   "t": "Arrastre hasta “Cómo funciona”: los tres pasos se inflan uno a uno (rosa, amarillo y menta): Eliges, Apartas, Lo llevamos.",
+   "sfx": [
+    "scroll_friccion",
+    "paso_infla+19",
+    "paso_infla+31",
+    "paso_infla+43"
+   ]
+  },
+  {
+   "f": 1112,
+   "d": 40,
+   "p": "Tubo",
+   "t": "La punta del tubo recorre la costura punteada que une los tres pasos.",
+   "sfx": [
+    "costura"
+   ]
+  },
+  {
+   "f": 1157,
+   "d": 58,
+   "p": "Cámara",
+   "t": "El celular se aleja a la izquierda: baja a 32 % de alto, gira 20° en Y y −5° en Z y queda abajo a la izquierda; sale del cuadro entre f1286 y f1330.",
+   "sfx": [
+    "celular_se_aleja"
+   ]
+  },
+  {
+   "f": 1165,
+   "d": 70,
+   "p": "Tubo",
+   "t": "El tubo se suelta del celular y sube en un arco grande que cruza el cuadro (x 150–930, cima en y 520, patas hasta y 1180).",
+   "sfx": [
+    "tubo_arquea"
+   ]
+  },
+  {
+   "f": 1235,
+   "d": 55,
+   "p": "3D",
+   "t": "El arco se infla en un arcoíris pastel 3D: cinco bandas de vinil (rosa, amarillo, menta, celeste y lila) que se inflan de afuera hacia adentro cada 10 cuadros, con resorte (8 %), costuras y brillo especular suave, y sombra de contacto en el piso.",
+   "sfx": [
+    "banda_infla",
+    "banda_infla+10",
+    "banda_infla+20",
+    "banda_infla+30",
+    "banda_infla+40"
+   ]
+  },
+  {
+   "f": 1286,
+   "d": 94,
+   "p": "Cámara",
+   "t": "Push-in lento y órbita de 3° alrededor del arcoíris."
+  },
+  {
+   "f": 1380,
+   "d": 60,
+   "p": "Música",
+   "t": "Respiro: la música se detiene y queda el aire; el arcoíris respira (escala 1.00 → 1.01 → 1.00).",
+   "sfx": [
+    "respiro"
+   ]
+  },
+  {
+   "f": 1440,
+   "p": "Música",
+   "t": "Golpe grave suave, como un rebote.",
+   "sfx": [
+    "golpe_final"
+   ]
+  },
+  {
+   "f": 1440,
+   "d": 36,
+   "p": "End card",
+   "t": "Bajo el arcoíris se infla una placa blanca (cojín 3D con costura) con el logo real encima (logo_jumpers_transparente.png, 620 px de ancho; nunca se redibuja ni se recolorea). Centro en (540, 1080).",
+   "sfx": [
+    "placa_infla",
+    "logo_pop+12"
+   ]
+  },
+  {
+   "f": 1500,
+   "d": 20,
+   "p": "End card",
+   "t": "“Así se vería tu página · Elevate Negocios” (DM Sans SemiBold 44 px, tinta, y 1360). Elevate va solo en texto.",
+   "sfx": [
+    "texto_aparece"
+   ]
+  },
+  {
+   "f": 1530,
+   "d": 20,
+   "p": "End card",
+   "t": "Línea obligatoria: “Demo de cortesía de Elevate Negocios · pieza no oficial” (DM Sans 28 px, #66635F, y 1520)."
+  },
+  {
+   "f": 1550,
+   "d": 69,
+   "p": "Música",
+   "t": "Cola del acorde final hasta el último cuadro; el arcoíris y la placa respiran."
+  }
+ ],
+ "sfx": [
+  {
+   "f": 0,
+   "name": "golpe_inicio"
+  },
+  {
+   "f": 0,
+   "name": "pff_aire"
+  },
+  {
+   "f": 0,
+   "name": "tubo_entra"
+  },
+  {
+   "f": 12,
+   "name": "cristal_infla"
+  },
+  {
+   "f": 40,
+   "name": "tecla",
+   "nota": "“r”"
+  },
+  {
+   "f": 43,
+   "name": "tecla",
+   "nota": "“e”"
+  },
+  {
+   "f": 44,
+   "name": "tecla",
+   "nota": "“n”"
+  },
+  {
+   "f": 47,
+   "name": "tecla",
+   "nota": "“t”"
+  },
+  {
+   "f": 51,
+   "name": "tecla",
+   "nota": "“a”"
+  },
+  {
+   "f": 52,
+   "name": "tecla",
+   "nota": "“espacio”"
+  },
+  {
+   "f": 53,
+   "name": "tecla",
+   "nota": "“d”"
+  },
+  {
+   "f": 58,
+   "name": "tecla",
+   "nota": "“e”"
+  },
+  {
+   "f": 59,
+   "name": "tecla",
+   "nota": "“espacio”"
+  },
+  {
+   "f": 62,
+   "name": "tecla",
+   "nota": "“i”"
+  },
+  {
+   "f": 63,
+   "name": "tecla",
+   "nota": "“n”"
+  },
+  {
+   "f": 66,
+   "name": "tecla",
+   "nota": "“f”"
+  },
+  {
+   "f": 70,
+   "name": "tecla",
+   "nota": "“l”"
+  },
+  {
+   "f": 71,
+   "name": "tecla",
+   "nota": "“a”"
+  },
+  {
+   "f": 72,
+   "name": "tecla",
+   "nota": "“b”"
+  },
+  {
+   "f": 77,
+   "name": "tecla",
+   "nota": "“l”"
+  },
+  {
+   "f": 78,
+   "name": "tecla",
+   "nota": "“e”"
+  },
+  {
+   "f": 81,
+   "name": "tecla",
+   "nota": "“s”"
+  },
+  {
+   "f": 82,
+   "name": "tecla",
+   "nota": "“espacio”"
+  },
+  {
+   "f": 85,
+   "name": "tecla",
+   "nota": "“a”"
+  },
+  {
+   "f": 89,
+   "name": "tecla",
+   "nota": "“g”"
+  },
+  {
+   "f": 90,
+   "name": "tecla",
+   "nota": "“u”"
+  },
+  {
+   "f": 91,
+   "name": "tecla",
+   "nota": "“a”"
+  },
+  {
+   "f": 96,
+   "name": "tecla",
+   "nota": "“s”"
+  },
+  {
+   "f": 97,
+   "name": "tecla",
+   "nota": "“c”"
+  },
+  {
+   "f": 100,
+   "name": "tecla",
+   "nota": "“a”"
+  },
+  {
+   "f": 101,
+   "name": "tecla",
+   "nota": "“l”"
+  },
+  {
+   "f": 104,
+   "name": "tecla",
+   "nota": "“i”"
+  },
+  {
+   "f": 108,
+   "name": "tecla",
+   "nota": "“e”"
+  },
+  {
+   "f": 109,
+   "name": "tecla",
+   "nota": "“n”"
+  },
+  {
+   "f": 110,
+   "name": "tecla",
+   "nota": "“t”"
+  },
+  {
+   "f": 115,
+   "name": "tecla",
+   "nota": "“e”"
+  },
+  {
+   "f": 116,
+   "name": "tecla",
+   "nota": "“s”"
+  },
+  {
+   "f": 129,
+   "name": "enter"
+  },
+  {
+   "f": 133,
+   "name": "desinfla"
+  },
+  {
+   "f": 136,
+   "name": "tubo_infla"
+  },
+  {
+   "f": 140,
+   "name": "trazo_contorno"
+  },
+  {
+   "f": 186,
+   "name": "cristal_cuerpo"
+  },
+  {
+   "f": 196,
+   "name": "pantalla_enciende"
+  },
+  {
+   "f": 204,
+   "name": "logo_pop"
+  },
+  {
+   "f": 206,
+   "name": "rebote_vinil"
+  },
+  {
+   "f": 212,
+   "name": "arcoiris_dibuja"
+  },
+  {
+   "f": 220,
+   "name": "foto_infla"
+  },
+  {
+   "f": 222,
+   "name": "asienta"
+  },
+  {
+   "f": 257,
+   "name": "scroll_friccion"
+  },
+  {
+   "f": 284,
+   "name": "tipo_infla"
+  },
+  {
+   "f": 285,
+   "name": "tarjeta_infla"
+  },
+  {
+   "f": 294,
+   "name": "tipo_infla"
+  },
+  {
+   "f": 321,
+   "name": "scroll_friccion"
+  },
+  {
+   "f": 340,
+   "name": "tarjeta_infla"
+  },
+  {
+   "f": 354,
+   "name": "tarjeta_sale"
+  },
+  {
+   "f": 356,
+   "name": "pff_corto"
+  },
+  {
+   "f": 370,
+   "name": "tarjeta_sale"
+  },
+  {
+   "f": 372,
+   "name": "pff_corto"
+  },
+  {
+   "f": 386,
+   "name": "tarjeta_sale"
+  },
+  {
+   "f": 388,
+   "name": "pff_corto"
+  },
+  {
+   "f": 390,
+   "name": "aire_flota"
+  },
+  {
+   "f": 410,
+   "name": "tipo_infla"
+  },
+  {
+   "f": 446,
+   "name": "tarjeta_regresa"
+  },
+  {
+   "f": 454,
+   "name": "tarjeta_regresa"
+  },
+  {
+   "f": 462,
+   "name": "tarjeta_regresa"
+  },
+  {
+   "f": 482,
+   "name": "tap"
+  },
+  {
+   "f": 488,
+   "name": "hoja_sube"
+  },
+  {
+   "f": 514,
+   "name": "panel_sale"
+  },
+  {
+   "f": 562,
+   "name": "panel_regresa"
+  },
+  {
+   "f": 579,
+   "name": "tap"
+  },
+  {
+   "f": 585,
+   "name": "hoja_baja"
+  },
+  {
+   "f": 603,
+   "name": "scroll_suave"
+  },
+  {
+   "f": 614,
+   "name": "tipo_infla"
+  },
+  {
+   "f": 622,
+   "name": "tipo_infla"
+  },
+  {
+   "f": 637,
+   "name": "calendario_abre"
+  },
+  {
+   "f": 655,
+   "name": "tipo_infla"
+  },
+  {
+   "f": 675,
+   "name": "tap"
+  },
+  {
+   "f": 681,
+   "name": "fecha_infla"
+  },
+  {
+   "f": 697,
+   "name": "tipo_infla"
+  },
+  {
+   "f": 705,
+   "name": "tipo_infla"
+  },
+  {
+   "f": 707,
+   "name": "tap"
+  },
+  {
+   "f": 712,
+   "name": "calendario_cierra"
+  },
+  {
+   "f": 713,
+   "name": "teclado_sube"
+  },
+  {
+   "f": 724,
+   "name": "tecla",
+   "nota": "“L”"
+  },
+  {
+   "f": 729,
+   "name": "tecla",
+   "nota": "“a”"
+  },
+  {
+   "f": 730,
+   "name": "tecla",
+   "nota": "“s”"
+  },
+  {
+   "f": 735,
+   "name": "tecla",
+   "nota": "“espacio”"
+  },
+  {
+   "f": 740,
+   "name": "tecla",
+   "nota": "“A”"
+  },
+  {
+   "f": 742,
+   "name": "tecla",
+   "nota": "“m”"
+  },
+  {
+   "f": 745,
+   "name": "tecla",
+   "nota": "“é”"
+  },
+  {
+   "f": 750,
+   "name": "tecla",
+   "nota": "“r”"
+  },
+  {
+   "f": 753,
+   "name": "tecla",
+   "nota": "“i”"
+  },
+  {
+   "f": 758,
+   "name": "tecla",
+   "nota": "“c”"
+  },
+  {
+   "f": 759,
+   "name": "tecla",
+   "nota": "“a”"
+  },
+  {
+   "f": 764,
+   "name": "tecla",
+   "nota": "“s”"
+  },
+  {
+   "f": 771,
+   "name": "tap"
+  },
+  {
+   "f": 778,
+   "name": "tecla",
+   "nota": "“4”"
+  },
+  {
+   "f": 783,
+   "name": "tecla",
+   "nota": "“:”"
+  },
+  {
+   "f": 785,
+   "name": "tecla",
+   "nota": "“0”"
+  },
+  {
+   "f": 790,
+   "name": "tecla",
+   "nota": "“0”"
+  },
+  {
+   "f": 795,
+   "name": "tecla",
+   "nota": "“espacio”"
+  },
+  {
+   "f": 798,
+   "name": "tecla",
+   "nota": "“p”"
+  },
+  {
+   "f": 802,
+   "name": "tecla",
+   "nota": "“m”"
+  },
+  {
+   "f": 808,
+   "name": "tap"
+  },
+  {
+   "f": 814,
+   "name": "scroll_friccion"
+  },
+  {
+   "f": 814,
+   "name": "teclado_baja"
+  },
+  {
+   "f": 868,
+   "name": "boton_infla"
+  },
+  {
+   "f": 870,
+   "name": "pff_corto"
+  },
+  {
+   "f": 896,
+   "name": "tap"
+  },
+  {
+   "f": 900,
+   "name": "boton_pop"
+  },
+  {
+   "f": 900,
+   "name": "lift"
+  },
+  {
+   "f": 906,
+   "name": "scroll_friccion"
+  },
+  {
+   "f": 912,
+   "name": "boton_regresa"
+  },
+  {
+   "f": 926,
+   "name": "tipo_infla"
+  },
+  {
+   "f": 940,
+   "name": "tarjeta_infla"
+  },
+  {
+   "f": 968,
+   "name": "pff_corto"
+  },
+  {
+   "f": 972,
+   "name": "tipo_infla"
+  },
+  {
+   "f": 1016,
+   "name": "postal_sale"
+  },
+  {
+   "f": 1050,
+   "name": "aire_flota"
+  },
+  {
+   "f": 1061,
+   "name": "postal_regresa"
+  },
+  {
+   "f": 1093,
+   "name": "scroll_friccion"
+  },
+  {
+   "f": 1112,
+   "name": "costura"
+  },
+  {
+   "f": 1112,
+   "name": "paso_infla"
+  },
+  {
+   "f": 1124,
+   "name": "paso_infla"
+  },
+  {
+   "f": 1136,
+   "name": "paso_infla"
+  },
+  {
+   "f": 1157,
+   "name": "celular_se_aleja"
+  },
+  {
+   "f": 1165,
+   "name": "tubo_arquea"
+  },
+  {
+   "f": 1235,
+   "name": "banda_infla"
+  },
+  {
+   "f": 1245,
+   "name": "banda_infla"
+  },
+  {
+   "f": 1255,
+   "name": "banda_infla"
+  },
+  {
+   "f": 1265,
+   "name": "banda_infla"
+  },
+  {
+   "f": 1275,
+   "name": "banda_infla"
+  },
+  {
+   "f": 1380,
+   "name": "respiro"
+  },
+  {
+   "f": 1440,
+   "name": "golpe_final"
+  },
+  {
+   "f": 1440,
+   "name": "placa_infla"
+  },
+  {
+   "f": 1452,
+   "name": "logo_pop"
+  },
+  {
+   "f": 1500,
+   "name": "texto_aparece"
+  }
+ ],
+ "sfx_lib": {
+  "golpe_inicio": "Bombo de fieltro corto con cuerda de ukulele apagada",
+  "pff_aire": "Soplo de aire comprimido de válvula, 180 ms",
+  "pff_corto": "Soplo muy corto y más agudo, 90 ms",
+  "tubo_entra": "Roce de vinil con aire que avanza, 450 ms",
+  "cristal_infla": "Cristal que toma volumen: brillo agudo y aire suave",
+  "tecla": "Tecla de celular, suave; cada una con su pequeña variación",
+  "enter": "Tecla con más cuerpo y un clic",
+  "desinfla": "Aire que sale despacio de un cojín",
+  "tubo_infla": "Aire que entra a un tubo de vinil que se estira",
+  "trazo_contorno": "Vinil que se desliza sobre cristal, ascendente",
+  "cristal_cuerpo": "Cuerpo de cristal que se materializa, resonancia suave",
+  "rebote_vinil": "Rebote amortiguado de inflable: “bomp” grave con cola",
+  "asienta": "Micro rebote final",
+  "pantalla_enciende": "Brillo suave de encendido",
+  "logo_pop": "Pop redondo de burbuja",
+  "arcoiris_dibuja": "Barrido brillante corto",
+  "foto_infla": "Aire corto y pop suave",
+  "scroll_friccion": "Dedo sobre cristal con inercia que frena",
+  "scroll_suave": "Deslizamiento automático suave",
+  "tarjeta_infla": "Inflado corto de cojín: aire y estiramiento",
+  "tipo_infla": "Palabra que se infla: aire corto y pop, afinado al acorde",
+  "tarjeta_sale": "Despegue: aire y whoosh corto",
+  "aire_flota": "Colchón de aire continuo, muy suave",
+  "tarjeta_regresa": "Asentamiento: bump suave y clic de encaje",
+  "tap": "Toque en cristal, seco y suave",
+  "hoja_sube": "Whoosh corto de panel que sube",
+  "hoja_baja": "Whoosh corto de panel que baja",
+  "panel_sale": "Cojín que se separa: aire y whoosh suave",
+  "panel_regresa": "Cojín que vuelve: bump suave",
+  "calendario_abre": "Despliegue con resorte",
+  "calendario_cierra": "Pliegue suave",
+  "fecha_infla": "Pop afinado con aire",
+  "teclado_sube": "Teclado que sube",
+  "teclado_baja": "Teclado que baja",
+  "boton_infla": "Cojín de vinil que se llena: aire más largo y costuras que se tensan",
+  "boton_pop": "Pop grande y redondo, como globo chico (sin estallido agresivo)",
+  "boton_regresa": "Bump al regresar a la pantalla",
+  "lift": "Subida del lift: platillo suave invertido",
+  "postal_sale": "Despegue más grande: aire y whoosh",
+  "postal_regresa": "Asentamiento con bump",
+  "paso_infla": "Inflado corto afinado (sube una nota por paso)",
+  "costura": "Deslizamiento a lo largo de una costura, como cierre suave",
+  "celular_se_aleja": "Whoosh largo que se aleja",
+  "tubo_arquea": "Estiramiento largo de vinil",
+  "banda_infla": "Inflado de cada banda del arcoíris, afinado en la escala",
+  "respiro": "Aire de la sala",
+  "golpe_final": "Golpe grave suave, como rebote",
+  "placa_infla": "Cojín que se llena con calma",
+  "texto_aparece": "Brillo corto y suave"
+ }
+}
