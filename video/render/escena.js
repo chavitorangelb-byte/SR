@@ -454,7 +454,7 @@ function estado(t) {
     const tx = META.texturas[id].rect;
     const [sx, sy] = pageToLocal(tx.x + tx.w / 2, tx.y + tx.h / 2);
     st.pieces[id] = {
-      visible: t >= 358 && t < 448, up, op: 1,
+      visible: Math.round(t) >= 358 && Math.round(t) < 448, up, op: 1,
       x: sx + L.dx * up + Math.sin(ts * 1.3 + L.ph) * 0.045 * hv, y: sy + L.dy * up + Math.cos(ts * 1.1 + L.ph) * 0.05 * hv,
       z: SCR_Z + 0.0015 + L.z * up, rx: (L.rx * up + Math.sin(ts * 0.9 + L.ph) * 1.5 * hv) * DEG, ry: (L.ry * up + Math.cos(ts * 0.8 + L.ph) * 2 * hv) * DEG, rz: L.rz * up * DEG,
       s: lerp(1, L.s, up), press: 0,
@@ -467,7 +467,7 @@ function estado(t) {
     let up = t >= 892 ? springF(t, 892, 260, 15) : 0;
     const press = bump(t, 905, 908, 909, 914) ;
     if (t >= 908) up = springF(908, 892, 260, 15) * (1 - eInOutCubic(seg(t, 908, 914)));
-    st.pieces.enviar = { visible: t >= 892 && t < 914, up, op: 1, x: sx, y: sy + 0.28 * up, z: SCR_Z + 0.0015 + 2.6 * up - 0.6 * press, rx: -14 * up * DEG, ry: 4 * up * DEG, rz: 0, s: lerp(1, 1.12, up) * (1 - 0.06 * press), press };
+    st.pieces.enviar = { visible: Math.round(t) >= 892 && Math.round(t) < 914, up, op: 1, x: sx, y: sy + 0.28 * up, z: SCR_Z + 0.0015 + 2.6 * up - 0.6 * press, rx: -14 * up * DEG, ry: 4 * up * DEG, rz: 0, s: lerp(1, 1.12, up) * (1 - 0.06 * press), press };
   }
   // ---- reseñas de cristal en abanico + push-in a "las flores llegaron frescas" ----
   const push = bump(t, 1106, 1146, 1156, 1180);
@@ -480,7 +480,7 @@ function estado(t) {
     const hv = clamp(up), ts = t / FPS;
     const p = id === 'resena3' ? push : 0;
     st.pieces[id] = {
-      visible: t >= 1080 && t < T_REV_OUT, up, op: lerp(A.op0, 1, clamp(up * 2.5)) * (1 - 0.65 * push * (id !== 'resena3')),
+      visible: Math.round(t) >= 1080 && Math.round(t) < T_REV_OUT, up, op: lerp(A.op0, 1, clamp(up * 2.5)) * (1 - 0.65 * push * (id !== 'resena3')),
       x: lerp(sx, A.x, up) + Math.sin(ts * 1.2 + A.f0) * 0.03 * hv * (1 - p), y: lerp(sy, A.y, up) + Math.cos(ts * 1.0 + A.f0) * 0.035 * hv * (1 - p),
       z: SCR_Z + 0.0015 + A.z * up, rx: 0, ry: A.ry * up * DEG, rz: A.rz * up * DEG, s: lerp(lerp(1, A.s, up), 1, p), press: 0,
       pushP: eInOutCubic(p), pushW: PUSH_W,
