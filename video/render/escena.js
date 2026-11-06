@@ -191,10 +191,10 @@ scrTex.colorSpace = THREE.SRGBColorSpace;
 scrTex.anisotropy = 4;
 scrTex.minFilter = THREE.LinearMipmapLinearFilter;
 const screenMat = new THREE.ShaderMaterial({
-  uniforms: { uTex: { value: scrTex }, uOn: { value: 0 }, uSize: { value: new THREE.Vector2(SCR.w, SCR.h) }, uR: { value: SCR.r } },
+  uniforms: { uTex: { value: scrTex }, uOn: { value: 0 }, uOpacity: { value: 1 }, uSize: { value: new THREE.Vector2(SCR.w, SCR.h) }, uR: { value: SCR.r } },
   vertexShader: 'varying vec2 vUv; varying vec3 vLP; void main(){ vUv = uv; vLP = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }',
   fragmentShader: GLSL + /* glsl */`
-    uniform sampler2D uTex; uniform float uOn; uniform vec2 uSize; uniform float uR;
+    uniform sampler2D uTex; uniform float uOn; uniform float uOpacity; uniform vec2 uSize; uniform float uR;
     varying vec2 vUv; varying vec3 vLP;
     void main(){
       float d = sdRR(vLP.xy, uSize * 0.5, uR);
@@ -203,7 +203,7 @@ const screenMat = new THREE.ShaderMaterial({
       c = mix(vec3(0.004, 0.0045, 0.0035), c, uOn);
       vec2 cam = vec2(0., uSize.y * 0.5 - 0.235);
       c = mix(c, vec3(0.002), 1. - smoothstep(0.055, 0.062, length(vLP.xy - cam)));
-      gl_FragColor = vec4(c, a);
+      gl_FragColor = vec4(c, a * uOpacity);
     }`,
   transparent: true,
 });
@@ -429,6 +429,7 @@ function estado(t) {
   // respiro: mecerse despacio
   const breath = seg(t, 1380, 1440);
   ry += Math.sin((t - 1380) / 40) * 0.8 * breath;
+  x += 0.8 * eInCubic(seg(t, 1440, 1458));
   st.phone = { vis, x, y, s, rx: rx * DEG, ry: ry * DEG };
   st.on = eOutCubic(seg(t, 196, 212));
   st.ui = clamp(Math.round(t), 196, 1470);
@@ -490,9 +491,10 @@ function estado(t) {
   // ---- logo (cierre → end card) ----
   const lIn = eOutCubic(seg(t, 1352, 1376));
   const lEnd = springF(t, 1440, 120, 14);
-  const lx = lerp(LAY.logoSm.x, LAY.logoEnd.x, clamp(eInOutCubic(seg(t, 1440, 1476))));
-  const ly = lerp(LAY.logoSm.y, LAY.logoEnd.y, clamp(eInOutCubic(seg(t, 1440, 1476))));
-  const ld = lerp(LAY.logoSm.d, LAY.logoEnd.d, clamp(eInOutCubic(seg(t, 1440, 1476))));
+  const lm = clamp(eInOutCubic(seg(t, 1438, 1482)));
+  const lx = lerp(LAY.logoSm.x, LAY.logoEnd.x, lm);
+  const ly = lerp(LAY.logoSm.y, LAY.logoEnd.y, lm);
+  const ld = lerp(LAY.logoSm.d, LAY.logoEnd.d, lm);
   st.logo = { vis: t >= 1352, x: lx, y: ly, d: ld * lerp(0.82, 1, lIn), op: lIn, ry: lerp(-22, 0, t < 1440 ? lIn : lEnd) * DEG + (t >= 1440 ? (1 - lEnd) * 22 * DEG : 0) };
   st.wipe = eInOutCubic(seg(t, 1440, 1462));
   return st;
@@ -520,7 +522,8 @@ function aplicar(st) {
   phone.scale.setScalar(s);
   bodyMat.uniforms.uOpacity.value = p.vis;
   dropShadow.material.uniforms.uOpacity.value = 0.55 * p.vis;
-  screenMat.uniforms.uOn.value = st.on * p.vis;
+  screenMat.uniforms.uOn.value = st.on;
+  screenMat.uniforms.uOpacity.value = p.vis;
   bodyMat.uniforms.uGlare.value = -1.4 + (p.ry / DEG) * 0.12 + (st.cam.yaw / DEG) * 0.18 + p.x * 0.35;
   const relCam = new THREE.Vector3(-pos.x, 0, DIST * st.cam.push).applyAxisAngle(Y, st.cam.yaw);
   const relLook = new THREE.Vector3(-pos.x, 0, 0).applyAxisAngle(Y, st.cam.yaw);
@@ -565,7 +568,7 @@ function aplicar(st) {
     setSoftShadow(logoShadow, 2 * r * k, 2 * r * k, r * k, 0.35 * r, 0.42 * st.logo.op);
   }
   bgMat.uniforms.uWipe.value = st.wipe;
-  bgMat.uniforms.uCenter.value.set(LAY.logoEnd.x / DW, 1 - LAY.logoEnd.y / DH);
+  bgMat.uniforms.uCenter.value.set(st.logo.x / DW, 1 - st.logo.y / DH); // el olivo se abre desde el logo
   phone.updateMatrixWorld(true);
   logoGroup.updateMatrixWorld(true);
 }
@@ -670,14 +673,19 @@ function guia() {
 function alcances() {
   const r = META.rects;
   // subrayado de derecha a izquierda: empieza por el extremo más cercano al tallo
-  const und = (rc) => () => [projPage(rc.x + rc.w + 6, rc.y + rc.h + 5), projPage(rc.x - 6, rc.y + rc.h + 5)];
+  const und = (rc, dy = 5) => () => [projPage(rc.x + rc.w + 6, rc.y + rc.h + dy), projPage(rc.x - 6, rc.y + rc.h + dy)];
+  // círculo alrededor del botón: sigue a la pieza 3D mientras está levantada
+  const circEnviar = () => {
+    const R = META.texturas.enviar.rect, vis = pieces.enviar.mesh.visible;
+    return ellipse(R.w / 2, R.h / 2, R.w / 2 + 10, R.h / 2 + 10, Math.PI - 0.15, 1.08, 72).map(([x, y]) => (vis ? projPiece('enviar', x, y) : projPage(R.x + x, R.y + y)));
+  };
   const circ = (rc, pad = 12, a0 = 0.15) => () => { const c = [rc.x + rc.w / 2, rc.y + rc.h / 2]; return ellipse(c[0], c[1], rc.w / 2 + pad, rc.h / 2 + pad, a0, 1.08, 72).map(([x, y]) => projPage(x, y)); };
   const tallas = META.texturas['rosas-rojas'].partes.tallas;
   return [
     { a: 402, b: 418, back: 430, target: () => [projPiece('rosas-rojas', tallas.x + tallas.w + 6, tallas.y + tallas.h + 4), projPiece('rosas-rojas', tallas.x - 6, tallas.y + tallas.h + 4)] },
     { a: 452, b: 466, back: 478, target: und(r.precio820) },
     { a: 552, b: 574, back: 586, target: circ(r.tarjeta820, 10) },
-    { a: 872, b: 896, back: 906, target: () => { const u = und(r.anticipo)(); const c = circ(r.enviar, 10, Math.PI - 0.15)(); return [...densify(u, 6), ...bez(u[u.length - 1], [u[u.length - 1][0] - 40, u[u.length - 1][1] + 40], [c[0][0] - 40, c[0][1] - 40], c[0], 16).slice(1), ...c.slice(1)]; }, split: 0.45 },
+    { a: 872, b: 896, back: 906, target: () => { const u = und(r.anticipo, 1.5)(); const c = circEnviar(); return [...densify(u, 6), ...bez(u[u.length - 1], [u[u.length - 1][0] - 40, u[u.length - 1][1] + 40], [c[0][0] - 40, c[0][1] - 40], c[0], 16).slice(1), ...c.slice(1)]; }, split: 0.45 },
     { a: 986, b: 1002, back: 1014, target: und(r.entrega) },
     { a: 1020, b: 1034, back: 1046, target: und(r.pickup) },
   ];

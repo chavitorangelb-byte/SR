@@ -2,6 +2,7 @@
 // Uso:
 //   node video/render.mjs --desde 144 --hasta 450 --fps 30 --w 540 --h 960 --sub 8 --out review/fase4/prueba_estilo.mp4
 //   node video/render.mjs --solo 330 --w 540 --h 960 --out /ruta/cuadro.png      (un cuadro, para revisar)
+//   node video/render.mjs --fmt 916 --w 1080 --h 1920 --fps 60 --desde 0 --hasta 839 --cuadros video/build/final_916   (finales por tramos)
 import { createRequire } from 'node:module';
 import http from 'node:http';
 import fs from 'node:fs';
@@ -48,6 +49,7 @@ async function frame(f) {
 }
 
 const LISTA = arg('lista', null);
+const CUADROS = arg('cuadros', null); // carpeta de cuadros para los finales (sin video)
 if (LISTA != null) {
   // varios cuadros sueltos en una sola sesión: --lista 196,300,412 --out carpeta/
   fs.mkdirSync(OUT, { recursive: true });
@@ -58,6 +60,20 @@ if (LISTA != null) {
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
   fs.writeFileSync(OUT, await frame(+SOLO));
   console.log(`cuadro ${SOLO} → ${path.relative(ROOT, OUT)} en ${((Date.now() - t0) / 1000).toFixed(1)} s`);
+} else if (CUADROS) {
+  // finales por tramos y reanudables: numeración absoluta (índice = cuadro / paso), no borra ni repite lo que ya existe
+  const dir = path.resolve(ROOT, CUADROS);
+  fs.mkdirSync(dir, { recursive: true });
+  const t0 = Date.now();
+  let hechos = 0;
+  for (let f = DESDE; f <= HASTA; f += STEP) {
+    const file = path.join(dir, `${String(Math.round(f / STEP)).padStart(5, '0')}.png`);
+    if (fs.existsSync(file) && fs.statSync(file).size > 0) continue;
+    fs.writeFileSync(file + '.tmp', await frame(f));
+    fs.renameSync(file + '.tmp', file);
+    if (++hechos % 10 === 0) process.stdout.write(`f${f} (${((Date.now() - t0) / 1000 / hechos).toFixed(2)} s/cuadro) `);
+  }
+  console.log(`\n${hechos} cuadros nuevos en ${path.relative(ROOT, dir)} en ${((Date.now() - t0) / 1000).toFixed(0)} s`);
 } else {
   const dir = path.join(ROOT, 'video', 'build', 'frames_' + path.basename(OUT, path.extname(OUT)));
   fs.rmSync(dir, { recursive: true, force: true });
@@ -74,7 +90,7 @@ if (LISTA != null) {
   const voz = fs.existsSync(mezcla) ? mezcla : path.join(ROOT, 'voz', 'voz_stem_48k.wav');
   const args = ['-y', '-v', 'error', '-framerate', String(FPS), '-i', path.join(dir, '%05d.png')];
   if (fs.existsSync(voz)) args.push('-ss', String(DESDE / 60), '-t', String((n) / FPS), '-i', voz);
-  args.push('-c:v', 'libx264', '-preset', 'slow', '-crf', '16', '-pix_fmt', 'yuv420p', '-movflags', '+faststart');
+  args.push('-vf', 'scale=out_color_matrix=bt709:out_range=tv,format=yuv420p', '-c:v', 'libx264', '-preset', 'slow', '-crf', '16', '-colorspace', 'bt709', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-movflags', '+faststart');
   if (fs.existsSync(voz)) args.push('-c:a', 'aac', '-b:a', '192k', '-shortest');
   args.push(OUT);
   execFileSync('ffmpeg', args, { stdio: 'inherit' });
