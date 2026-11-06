@@ -1,0 +1,425 @@
+{
+ "toma": "toma_hope_eleven_v4.mp3",
+ "frases": [
+  {
+   "id": "L1",
+   "texto": "Alguien tiene antojo de galletas.",
+   "ini": 0.98,
+   "fin": 2.75,
+   "dur": 1.77,
+   "palabras": [
+    {
+     "w": "Alguien",
+     "ini": 0.98,
+     "fin": 1.24,
+     "oido": "¿Alguien",
+     "p": 0.632
+    },
+    {
+     "w": "tiene",
+     "ini": 1.24,
+     "fin": 1.44,
+     "oido": "tiene",
+     "p": 0.944
+    },
+    {
+     "w": "antojo",
+     "ini": 1.44,
+     "fin": 1.9,
+     "oido": "antojo",
+     "p": 0.922
+    },
+    {
+     "w": "de",
+     "ini": 1.9,
+     "fin": 2.06,
+     "oido": "de",
+     "p": 0.998
+    },
+    {
+     "w": "galletas",
+     "ini": 2.06,
+     "fin": 2.54,
+     "oido": "galletas?",
+     "p": 0.987
+    }
+   ]
+  },
+  {
+   "id": "L2",
+   "texto": "Que te encuentre a ti.",
+   "ini": 3.34,
+   "fin": 4.22,
+   "dur": 0.88,
+   "palabras": [
+    {
+     "w": "Que",
+     "ini": 3.34,
+     "fin": 3.46,
+     "oido": "¿Qué",
+     "p": 0.903
+    },
+    {
+     "w": "te",
+     "ini": 3.46,
+     "fin": 3.58,
+     "oido": "te",
+     "p": 0.999
+    },
+    {
+     "w": "encuentre",
+     "ini": 3.58,
+     "fin": 3.94,
+     "oido": "encuentre",
+     "p": 0.985
+    },
+    {
+     "w": "a",
+     "ini": 3.94,
+     "fin": 4.06,
+     "oido": "a",
+     "p": 0.953
+    },
+    {
+     "w": "ti",
+     "ini": 4.06,
+     "fin": 4.16,
+     "oido": "ti?",
+     "p": 0.908
+    }
+   ]
+  },
+  {
+   "id": "L3",
+   "texto": "Tus galletas y pasteles, en tu página.",
+   "ini": 5.08,
+   "fin": 7.35,
+   "dur": 2.27,
+   "palabras": [
+    {
+     "w": "Tus",
+     "ini": 5.08,
+     "fin": 5.16,
+     "oido": "Tus",
+     "p": 0.877
+    },
+    {
+     "w": "galletas",
+     "ini": 5.16,
+     "fin": 5.62,
+     "oido": "galletas",
+     "p": 0.994
+    },
+    {
+     "w": "y",
+     "ini": 5.62,
+     "fin": 5.78,
+     "oido": "y",
+     "p": 0.996
+    },
+    {
+     "w": "pasteles",
+     "ini": 5.78,
+     "fin": 6.26,
+     "oido": "pasteles",
+     "p": 0.994
+    },
+    {
+     "w": "en",
+     "ini": 6.26,
+     "fin": 6.68,
+     "oido": "en",
+     "p": 0.966
+    },
+    {
+     "w": "tu",
+     "ini": 6.68,
+     "fin": 6.82,
+     "oido": "tu",
+     "p": 0.99
+    },
+    {
+     "w": "página",
+     "ini": 6.82,
+     "fin": 7.22,
+     "oido": "página.",
+     "p": 0.995
+    }
+   ]
+  },
+  {
+   "id": "L4",
+   "texto": "Y su pastel, idéntico a la foto que te mande.",
+   "ini": 7.92,
+   "fin": 10.63,
+   "dur": 2.71,
+   "palabras": [
+    {
+     "w": "Y",
+     "ini": 7.92,
+     "fin": 8.0,
+     "oido": "Y",
+     "p": 0.963
+    },
+    {
+     "w": "su",
+     "ini": 8.0,
+     "fin": 8.12,
+     "oido": "su",
+     "p": 0.995
+    },
+    {
+     "w": "pastel",
+     "ini": 8.12,
+     "fin": 8.48,
+     "oido": "pastel,",
+     "p": 0.995
+    },
+    {
+     "w": "idéntico",
+     "ini": 8.84,
+     "fin": 9.54,
+     "oido": "idéntico",
+     "p": 0.994
+    },
+    {
+     "w": "a",
+     "ini": 9.54,
+     "fin": 9.66,
+     "oido": "a",
+     "p": 0.991
+    },
+    {
+     "w": "la",
+     "ini": 9.66,
+     "fin": 9.74,
+     "oido": "la",
+     "p": 0.998
+    },
+    {
+     "w": "foto",
+     "ini": 9.74,
+     "fin": 9.96,
+     "oido": "foto",
+     "p": 0.998
+    },
+    {
+     "w": "que",
+     "ini": 9.96,
+     "fin": 10.14,
+     "oido": "que",
+     "p": 0.996
+    },
+    {
+     "w": "te",
+     "ini": 10.14,
+     "fin": 10.24,
+     "oido": "te",
+     "p": 0.992
+    },
+    {
+     "w": "mande",
+     "ini": 10.24,
+     "fin": 10.66,
+     "oido": "mande.",
+     "p": 0.93
+    }
+   ]
+  },
+  {
+   "id": "L5",
+   "texto": "Todo en un mensaje.",
+   "ini": 11.14,
+   "fin": 12.31,
+   "dur": 1.17,
+   "palabras": [
+    {
+     "w": "Todo",
+     "ini": 11.14,
+     "fin": 11.3,
+     "oido": "Todo",
+     "p": 0.985
+    },
+    {
+     "w": "en",
+     "ini": 11.3,
+     "fin": 11.66,
+     "oido": "en",
+     "p": 0.993
+    },
+    {
+     "w": "un",
+     "ini": 11.66,
+     "fin": 11.8,
+     "oido": "un",
+     "p": 0.998
+    },
+    {
+     "w": "mensaje",
+     "ini": 11.8,
+     "fin": 12.3,
+     "oido": "mensaje.",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "id": "L6",
+   "texto": "Y con reseñas que hablan por ti.",
+   "ini": 12.79,
+   "fin": 14.43,
+   "dur": 1.64,
+   "palabras": [
+    {
+     "w": "Y",
+     "ini": 12.79,
+     "fin": 12.88,
+     "oido": "Y",
+     "p": 0.984
+    },
+    {
+     "w": "con",
+     "ini": 12.88,
+     "fin": 13.02,
+     "oido": "con",
+     "p": 0.996
+    },
+    {
+     "w": "reseñas",
+     "ini": 13.02,
+     "fin": 13.52,
+     "oido": "reseñas",
+     "p": 0.982
+    },
+    {
+     "w": "que",
+     "ini": 13.52,
+     "fin": 13.74,
+     "oido": "que",
+     "p": 0.992
+    },
+    {
+     "w": "hablan",
+     "ini": 13.74,
+     "fin": 14.02,
+     "oido": "hablan",
+     "p": 0.995
+    },
+    {
+     "w": "por",
+     "ini": 14.02,
+     "fin": 14.18,
+     "oido": "por",
+     "p": 0.999
+    },
+    {
+     "w": "ti",
+     "ini": 14.18,
+     "fin": 14.4,
+     "oido": "ti.",
+     "p": 0.94
+    }
+   ]
+  },
+  {
+   "id": "L7",
+   "texto": "Ana Gaby Repostería. Así se vería con Elevate.",
+   "ini": 15.04,
+   "fin": 18.38,
+   "dur": 3.34,
+   "palabras": [
+    {
+     "w": "Ana Gaby",
+     "ini": 15.04,
+     "fin": 15.52,
+     "oido": "Anagavi",
+     "p": 0.666
+    },
+    {
+     "w": "Repostería",
+     "ini": 15.52,
+     "fin": 16.28,
+     "oido": "repostería.",
+     "p": 0.926
+    },
+    {
+     "w": "Así",
+     "ini": 16.72,
+     "fin": 17.04,
+     "oido": "Así",
+     "p": 0.965
+    },
+    {
+     "w": "se",
+     "ini": 17.04,
+     "fin": 17.28,
+     "oido": "se",
+     "p": 0.994
+    },
+    {
+     "w": "vería",
+     "ini": 17.28,
+     "fin": 17.62,
+     "oido": "vería",
+     "p": 0.993
+    },
+    {
+     "w": "con",
+     "ini": 17.62,
+     "fin": 17.84,
+     "oido": "con",
+     "p": 0.989
+    },
+    {
+     "w": "Elevate",
+     "ini": 17.84,
+     "fin": 18.28,
+     "oido": "Elevate.",
+     "p": 0.866
+    }
+   ],
+   "pausa_interna": {
+    "desde": 16.32,
+    "hasta": 16.72,
+    "dura": 0.4
+   }
+  },
+  {
+   "id": "L7c",
+   "texto": "Ana Gaby Repostería, con Elevate.",
+   "ini": 19.57,
+   "fin": 21.85,
+   "dur": 2.28,
+   "palabras": [
+    {
+     "w": "Ana Gaby",
+     "ini": 19.57,
+     "fin": 20.08,
+     "oido": "Anagavi",
+     "p": 0.988
+    },
+    {
+     "w": "Repostería",
+     "ini": 20.08,
+     "fin": 20.8,
+     "oido": "repostería",
+     "p": 0.988
+    },
+    {
+     "w": "con",
+     "ini": 21.3,
+     "fin": 21.38,
+     "oido": "con",
+     "p": 0.482
+    },
+    {
+     "w": "Elevate",
+     "ini": 21.38,
+     "fin": 21.94,
+     "oido": "Elevate.",
+     "p": 0.997
+    }
+   ]
+  }
+ ]
+}

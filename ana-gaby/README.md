@@ -21,6 +21,9 @@ node tools/build_web.mjs             # dist/
 node tools/test_web.mjs              # 51 pruebas en 390x844 + capturas en review/fase0
 node tools/board.mjs                 # tableros de revisión
 node tools/inventario.mjs            # fase 1: inventario de assets, límites de tamaño y faltantes
+python3 tools/transcribir.py voz/fuente/toma_hope_eleven_v4.mp3 voz/fuente/toma_palabras.json small   # requiere faster-whisper
+python3 tools/voz_medir.py           # inicio/fin reales de cada frase y tiempo de cada palabra → voz/fuente/toma_frases.json
+node tools/brief.mjs                 # fase 2: brief/timeline.json y brief/brief_fase2.md
 ```
 `?demo=1` activa el modo demo. `?captura=1` deja la página lista para capturarla cuadro por cuadro (sin auto-avances ni scroll suave) y expone `window.AnaGaby`.
 

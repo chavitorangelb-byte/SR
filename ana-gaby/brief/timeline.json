@@ -1,0 +1,1592 @@
+{
+ "fps": 60,
+ "bpm": 98,
+ "frames": 1680,
+ "tiempo_cuadros": 36.7347,
+ "compas_cuadros": 146.939,
+ "secciones": [
+  {
+   "id": "hook",
+   "nombre": "Hook",
+   "f": 0,
+   "fin": 146,
+   "musica": "Compás 1 · golpe en f0, cucharas y motivo de glockenspiel"
+  },
+  {
+   "id": "llegada",
+   "nombre": "Llegada",
+   "f": 147,
+   "fin": 293,
+   "musica": "Compás 2 · entra la guitarra de nylon"
+  },
+  {
+   "id": "catalogo",
+   "nombre": "Catálogo",
+   "f": 294,
+   "fin": 587,
+   "musica": "Compases 3–4 · entra el shaker"
+  },
+  {
+   "id": "medida",
+   "nombre": "A tu medida",
+   "f": 588,
+   "fin": 953,
+   "musica": "Compases 5–7½ · lift en f588: bajo cálido y glockenspiel una octava arriba"
+  },
+  {
+   "id": "pedido",
+   "nombre": "Pedido",
+   "f": 954,
+   "fin": 1151,
+   "musica": "Compases 7½–9 · palmas suaves"
+  },
+  {
+   "id": "confianza",
+   "nombre": "Confianza y visítanos",
+   "f": 1152,
+   "fin": 1343,
+   "musica": "Compases 9–10 · todas las capas"
+  },
+  {
+   "id": "cierre",
+   "nombre": "Cierre",
+   "f": 1344,
+   "fin": 1439,
+   "musica": "Se adelgaza; respiro en f1378 (22.96 s)"
+  },
+  {
+   "id": "end",
+   "nombre": "End card",
+   "f": 1440,
+   "fin": 1679,
+   "musica": "Golpe grave en f1440 y cadencia final"
+  }
+ ],
+ "voz": [
+  {
+   "id": "L1",
+   "f": 24,
+   "texto": "Alguien tiene antojo de galletas.",
+   "toma": {
+    "ini": 0.98,
+    "fin": 2.75
+   },
+   "dur": 1.77,
+   "termina_f": 130,
+   "palabras": [
+    {
+     "w": "Alguien",
+     "f": 24
+    },
+    {
+     "w": "tiene",
+     "f": 40
+    },
+    {
+     "w": "antojo",
+     "f": 52
+    },
+    {
+     "w": "de",
+     "f": 79
+    },
+    {
+     "w": "galletas",
+     "f": 89
+    }
+   ]
+  },
+  {
+   "id": "L2",
+   "f": 174,
+   "texto": "Que te encuentre a ti.",
+   "toma": {
+    "ini": 3.34,
+    "fin": 4.22
+   },
+   "dur": 0.88,
+   "termina_f": 227,
+   "palabras": [
+    {
+     "w": "Que",
+     "f": 174
+    },
+    {
+     "w": "te",
+     "f": 181
+    },
+    {
+     "w": "encuentre",
+     "f": 188
+    },
+    {
+     "w": "a",
+     "f": 210
+    },
+    {
+     "w": "ti",
+     "f": 217
+    }
+   ]
+  },
+  {
+   "id": "L3",
+   "f": 318,
+   "texto": "Tus galletas y pasteles, en tu página.",
+   "toma": {
+    "ini": 5.08,
+    "fin": 7.35
+   },
+   "dur": 2.27,
+   "termina_f": 454,
+   "palabras": [
+    {
+     "w": "Tus",
+     "f": 318
+    },
+    {
+     "w": "galletas",
+     "f": 323
+    },
+    {
+     "w": "y",
+     "f": 350
+    },
+    {
+     "w": "pasteles",
+     "f": 360
+    },
+    {
+     "w": "en",
+     "f": 389
+    },
+    {
+     "w": "tu",
+     "f": 414
+    },
+    {
+     "w": "página",
+     "f": 422
+    }
+   ]
+  },
+  {
+   "id": "L4",
+   "f": 612,
+   "texto": "Y su pastel, idéntico a la foto que te mande.",
+   "toma": {
+    "ini": 7.92,
+    "fin": 10.63
+   },
+   "dur": 2.71,
+   "termina_f": 775,
+   "palabras": [
+    {
+     "w": "Y",
+     "f": 612
+    },
+    {
+     "w": "su",
+     "f": 617
+    },
+    {
+     "w": "pastel",
+     "f": 624
+    },
+    {
+     "w": "idéntico",
+     "f": 667
+    },
+    {
+     "w": "a",
+     "f": 709
+    },
+    {
+     "w": "la",
+     "f": 716
+    },
+    {
+     "w": "foto",
+     "f": 721
+    },
+    {
+     "w": "que",
+     "f": 734
+    },
+    {
+     "w": "te",
+     "f": 745
+    },
+    {
+     "w": "mande",
+     "f": 751
+    }
+   ]
+  },
+  {
+   "id": "L5",
+   "f": 972,
+   "texto": "Todo en un mensaje.",
+   "toma": {
+    "ini": 11.14,
+    "fin": 12.31
+   },
+   "dur": 1.17,
+   "termina_f": 1042,
+   "palabras": [
+    {
+     "w": "Todo",
+     "f": 972
+    },
+    {
+     "w": "en",
+     "f": 982
+    },
+    {
+     "w": "un",
+     "f": 1003
+    },
+    {
+     "w": "mensaje",
+     "f": 1012
+    }
+   ]
+  },
+  {
+   "id": "L6",
+   "f": 1200,
+   "texto": "Y con reseñas que hablan por ti.",
+   "toma": {
+    "ini": 12.79,
+    "fin": 14.43
+   },
+   "dur": 1.64,
+   "termina_f": 1298,
+   "palabras": [
+    {
+     "w": "Y",
+     "f": 1200
+    },
+    {
+     "w": "con",
+     "f": 1205
+    },
+    {
+     "w": "reseñas",
+     "f": 1214
+    },
+    {
+     "w": "que",
+     "f": 1244
+    },
+    {
+     "w": "hablan",
+     "f": 1257
+    },
+    {
+     "w": "por",
+     "f": 1274
+    },
+    {
+     "w": "ti",
+     "f": 1283
+    }
+   ]
+  },
+  {
+   "id": "L7",
+   "f": 1458,
+   "texto": "Ana Gaby Repostería. Así se vería con Elevate.",
+   "toma": {
+    "ini": 15.04,
+    "fin": 18.38
+   },
+   "dur": 3.223,
+   "termina_f": 1651,
+   "palabras": [
+    {
+     "w": "Ana Gaby",
+     "f": 1458
+    },
+    {
+     "w": "Repostería",
+     "f": 1487
+    },
+    {
+     "w": "Así",
+     "f": 1552
+    },
+    {
+     "w": "se",
+     "f": 1571
+    },
+    {
+     "w": "vería",
+     "f": 1585
+    },
+    {
+     "w": "con",
+     "f": 1606
+    },
+    {
+     "w": "Elevate",
+     "f": 1619
+    }
+   ]
+  }
+ ],
+ "tipo": [
+  {
+   "id": "K1",
+   "texto": "RECIÉN / HORNEADAS",
+   "palabras": [
+    [
+     "RECIÉN",
+     478
+    ],
+    [
+     "HORNEADAS",
+     514
+    ]
+   ],
+   "sale": 566,
+   "aterriza": "el pulso (tiempos 13 y 14): no está en la voz, entra cuando termina la L3",
+   "pos": "Columna derecha · x 680–1040 · y 830 y 910",
+   "px": 62
+  },
+  {
+   "id": "K2",
+   "texto": "MÁNDANOS / LA FOTO.",
+   "palabras": [
+    [
+     "MÁNDANOS",
+     700
+    ],
+    [
+     "LA",
+     716
+    ],
+    [
+     "FOTO.",
+     721
+    ]
+   ],
+   "sale": 770,
+   "aterriza": "«la foto» (L4)",
+   "pos": "Abajo a la derecha · x 610–1040 · y 1340 y 1420",
+   "px": 60
+  },
+  {
+   "id": "K3",
+   "texto": "TE LO / HACEMOS / IGUAL.",
+   "palabras": [
+    [
+     "TE",
+     776
+    ],
+    [
+     "LO",
+     782
+    ],
+    [
+     "HACEMOS",
+     792
+    ],
+    [
+     "IGUAL.",
+     814
+    ]
+   ],
+   "sale": 844,
+   "aterriza": "la última cereza del pastel 3D (f814)",
+   "pos": "Abajo a la derecha · x 610–1040 · y 1300–1520",
+   "px": 56
+  },
+  {
+   "id": "K4",
+   "texto": "TU PEDIDO",
+   "palabras": [
+    [
+     "TU",
+     930
+    ],
+    [
+     "PEDIDO",
+     936
+    ]
+   ],
+   "sale": 980,
+   "aterriza": "el tap en «¿Qué dice tu pastel?» (no está en la voz)",
+   "pos": "Columna derecha · x 680–1040 · y 870",
+   "px": 62
+  },
+  {
+   "id": "K5",
+   "texto": "EN UN / MENSAJE",
+   "palabras": [
+    [
+     "EN",
+     982
+    ],
+    [
+     "UN",
+     1003
+    ],
+    [
+     "MENSAJE",
+     1012
+    ]
+   ],
+   "sale": 1090,
+   "aterriza": "«en un mensaje» (L5)",
+   "pos": "Columna derecha · x 680–1040 · y 830 y 910",
+   "px": 62
+  },
+  {
+   "id": "K6",
+   "texto": "HABLAN / POR TI",
+   "palabras": [
+    [
+     "HABLAN",
+     1257
+    ],
+    [
+     "POR TI",
+     1274
+    ]
+   ],
+   "sale": 1302,
+   "aterriza": "«hablan por ti» (L6)",
+   "pos": "Columna derecha · x 680–1040 · y 860 y 940",
+   "px": 62
+  },
+  {
+   "id": "K7",
+   "texto": "Así se vería tu página · Elevate Negocios",
+   "palabras": [
+    [
+     "Así se vería tu página",
+     1552
+    ],
+    [
+     "Elevate Negocios",
+     1619
+    ]
+   ],
+   "sale": 1680,
+   "aterriza": "«Así se vería» y «Elevate» (L7)",
+   "pos": "End card · centrado · y 1170",
+   "px": 40,
+   "fuente": "DM Sans 600"
+  }
+ ],
+ "musica": [
+  {
+   "f": 0,
+   "compas": 1,
+   "acorde": "Dmaj9",
+   "capas": "Golpe suave, cucharas y motivo de glockenspiel (3 notas)"
+  },
+  {
+   "f": 147,
+   "compas": 2,
+   "acorde": "Bm11",
+   "capas": "+ guitarra de nylon en arpegio"
+  },
+  {
+   "f": 294,
+   "compas": 3,
+   "acorde": "Gmaj7",
+   "capas": "+ shaker en semicorcheas"
+  },
+  {
+   "f": 441,
+   "compas": 4,
+   "acorde": "A13sus4 → A",
+   "capas": "Todo lo anterior"
+  },
+  {
+   "f": 588,
+   "compas": 5,
+   "acorde": "Dmaj9",
+   "capas": "Lift: + bajo cálido; glockenspiel una octava arriba"
+  },
+  {
+   "f": 735,
+   "compas": 6,
+   "acorde": "Bm11",
+   "capas": "Igual"
+  },
+  {
+   "f": 882,
+   "compas": 7,
+   "acorde": "Gmaj7",
+   "capas": "Igual"
+  },
+  {
+   "f": 954,
+   "compas": 7.5,
+   "acorde": "Gmaj7",
+   "capas": "+ palmas suaves en 2 y 4"
+  },
+  {
+   "f": 1029,
+   "compas": 8,
+   "acorde": "A13sus4 → A",
+   "capas": "Igual"
+  },
+  {
+   "f": 1176,
+   "compas": 9,
+   "acorde": "Dmaj9",
+   "capas": "Todas las capas"
+  },
+  {
+   "f": 1322,
+   "compas": 10,
+   "acorde": "Bm11",
+   "capas": "Se adelgaza desde f1344"
+  },
+  {
+   "f": 1378,
+   "compas": 10.5,
+   "acorde": "—",
+   "capas": "Respiro: se van todas las capas; queda una nota de glockenspiel"
+  },
+  {
+   "f": 1440,
+   "compas": "end",
+   "acorde": "Gmaj7 → A7sus4 → Dmaj9",
+   "capas": "Golpe grave y cadencia final con guitarra y glockenspiel"
+  }
+ ],
+ "eventos": [
+  {
+   "f": 0,
+   "fin": null,
+   "p": "Música",
+   "t": "Golpe en f0: bombo de fieltro, cuchara y Re grave de guitarra de nylon. Fondo chocolate oscuro #2A1C18 con degradado radial hacia la tinta #1E1A1B.",
+   "sfx": [
+    "golpe_suave"
+   ]
+  },
+  {
+   "f": 0,
+   "fin": 20,
+   "p": "2D",
+   "t": "Barra de búsqueda de cristal genérica: píldora de 880 × 136 px, centro en y 930, lupa genérica y «Buscar» en DM Sans 40 px al 45 %. Blur 32 px de lo que hay detrás, saturación 140 %, borde de 1 px y ruido 2 %. Entra con 6° de inclinación 3D y se endereza. Sin logo de ningún buscador.",
+   "sfx": [
+    "cristal_aparece"
+   ]
+  },
+  {
+   "f": 0,
+   "fin": 8,
+   "p": "Betún",
+   "t": "La manga (bolsa translúcida con betún rosa y boquilla de estrella metálica) entra por arriba a la derecha y aprieta en f0: se encoge 6 % y sale la primera gota.",
+   "sfx": [
+    "manga_aprieta"
+   ]
+  },
+  {
+   "f": 0,
+   "fin": 146,
+   "p": "Cámara",
+   "t": "Push-in lento hacia la barra (1.00 → 1.06) con deriva lateral de 6 px.",
+   "sfx": []
+  },
+  {
+   "f": 6,
+   "fin": 128,
+   "p": "Betún",
+   "t": "Escribe «galletas aguascalientes» dentro de la barra con letra de betún (EMS Allure, un solo trazo, 88 px): una letra cada 5.5 cuadros, cada una con su tecla. «Buscar» se desvanece en f6–f14. Volumen, brillo húmedo y estrías de la boquilla.",
+   "sfx": [
+    "betun_cremoso",
+    "tecla",
+    "tecla",
+    "tecla",
+    "tecla",
+    "tecla",
+    "tecla",
+    "tecla",
+    "tecla",
+    "espacio",
+    "tecla",
+    "tecla",
+    "tecla",
+    "tecla",
+    "tecla",
+    "tecla",
+    "tecla",
+    "tecla",
+    "tecla",
+    "tecla",
+    "tecla",
+    "tecla",
+    "tecla",
+    "tecla"
+   ]
+  },
+  {
+   "f": 128,
+   "fin": 146,
+   "p": "Betún",
+   "t": "La manga sube y sale de cuadro; desde aquí solo se ve la punta, que guía la línea.",
+   "sfx": [
+    "whoosh_corto"
+   ]
+  },
+  {
+   "f": 147,
+   "fin": null,
+   "p": "2D",
+   "t": "Enter: la barra late (1.03) y el texto de betún brilla.",
+   "sfx": [
+    "enter"
+   ]
+  },
+  {
+   "f": 150,
+   "fin": 186,
+   "p": "Betún",
+   "t": "Desde la última letra, la línea corre y dibuja el contorno del celular (597 × 1248 px, centro 540, 924). La barra se encoge y sube hasta salir (f150–f176).",
+   "sfx": [
+    "trazo_contorno"
+   ]
+  },
+  {
+   "f": 160,
+   "fin": 222,
+   "p": "Celular",
+   "t": "El celular de cristal se materializa dentro del contorno, gira de 12° a 0° en Y y se asienta con un rebote leve (f210–f222). El contorno de betún se funde con el bisel.",
+   "sfx": [
+    "cristal_cuerpo",
+    "asienta"
+   ]
+  },
+  {
+   "f": 188,
+   "fin": null,
+   "p": "Pantalla",
+   "t": "Se enciende la pantalla y carga la portada real con su animación de entrada (foto 1.06 → 1, chip «5.0 en Google» y textos que suben), en «encuentre».",
+   "sfx": [
+    "pantalla_enciende"
+   ]
+  },
+  {
+   "f": 222,
+   "fin": 293,
+   "p": "Cámara",
+   "t": "Push-in suave a la portada: de 1.43 a 1.85 px por px de interfaz (tope 2.0× por el detalle de la foto).",
+   "sfx": []
+  },
+  {
+   "f": 236,
+   "fin": 258,
+   "p": "Betún",
+   "t": "Subraya «5.0 en Google».",
+   "sfx": [
+    "subrayado"
+   ]
+  },
+  {
+   "f": 296,
+   "fin": 336,
+   "p": "Pantalla",
+   "t": "Scroll con inercia de la portada al catálogo (pestaña «Galletas»), con rebote al final.",
+   "sfx": [
+    "scroll_friccion"
+   ]
+  },
+  {
+   "f": 300,
+   "fin": 336,
+   "p": "Celular",
+   "t": "Se corre a la izquierda (centro x 338) y queda en 1.43 px; la columna derecha (x 670–1040) queda libre para el texto.",
+   "sfx": []
+  },
+  {
+   "f": 336,
+   "fin": 366,
+   "p": "Betún",
+   "t": "Decora el borde de la tarjeta «Frasco de galletas de corazón» con conchitas de betún.",
+   "sfx": [
+    "betun_borde"
+   ]
+  },
+  {
+   "f": 352,
+   "fin": 440,
+   "p": "3D",
+   "t": "«Frasco de galletas de corazón» sale de la pantalla al espacio 3D con su foto (giro 8°, profundidad), flota con sombra de contacto y parallax (foto ≤ 360 px de ancho) y regresa a su lugar en f420–f440.",
+   "sfx": [
+    "tarjeta_sale",
+    "tarjeta_regresa"
+   ]
+  },
+  {
+   "f": 372,
+   "fin": 402,
+   "p": "Betún",
+   "t": "Decora el borde de la tarjeta «Caja de galletas de chocolate» con conchitas de betún.",
+   "sfx": [
+    "betun_borde"
+   ]
+  },
+  {
+   "f": 388,
+   "fin": 476,
+   "p": "3D",
+   "t": "«Caja de galletas de chocolate» sale de la pantalla al espacio 3D con su foto (giro 8°, profundidad), flota con sombra de contacto y parallax (foto ≤ 360 px de ancho) y regresa a su lugar en f456–f476.",
+   "sfx": [
+    "tarjeta_sale",
+    "tarjeta_regresa"
+   ]
+  },
+  {
+   "f": 408,
+   "fin": 438,
+   "p": "Betún",
+   "t": "Decora el borde de la tarjeta «Galletas de chispas de chocolate» con conchitas de betún.",
+   "sfx": [
+    "betun_borde"
+   ]
+  },
+  {
+   "f": 424,
+   "fin": 512,
+   "p": "3D",
+   "t": "«Galletas de chispas de chocolate» sale de la pantalla al espacio 3D con su foto (giro 8°, profundidad), flota con sombra de contacto y parallax (foto ≤ 360 px de ancho) y regresa a su lugar en f492–f512.",
+   "sfx": [
+    "tarjeta_sale",
+    "tarjeta_regresa"
+   ]
+  },
+  {
+   "f": 530,
+   "fin": 575,
+   "p": "Pantalla",
+   "t": "Tap en «Pasteles»: la pastilla rosa se desliza y la cuadrícula se reacomoda con resorte.",
+   "sfx": [
+    "tap",
+    "pestana_desliza",
+    "cuadricula"
+   ]
+  },
+  {
+   "f": 590,
+   "fin": 677,
+   "p": "Pantalla",
+   "t": "Tap en la pestaña «A tu medida» (el acceso a la mano de «Cotiza tu pastel»): cambia el panel y la acuarela pinta «de tu pastel».",
+   "sfx": [
+    "tap",
+    "panel_cambia"
+   ]
+  },
+  {
+   "f": 610,
+   "fin": 676,
+   "p": "Pantalla",
+   "t": "Tap en «Sube la foto de tu pastel»: entra la vista previa del pastel de referencia con su barra de carga real (1.1 s) y «Foto lista ✓» en f676.",
+   "sfx": [
+    "tap",
+    "subir_foto",
+    "foto_lista"
+   ]
+  },
+  {
+   "f": 640,
+   "fin": 676,
+   "p": "Celular",
+   "t": "Baja a 60 % del alto y se corre a la izquierda (x 20–572). La columna derecha (x 600–1040) es para la foto, el pastel y el texto.",
+   "sfx": []
+  },
+  {
+   "f": 650,
+   "fin": 690,
+   "p": "3D",
+   "t": "La miniatura sale del celular y se acomoda arriba a la derecha (foto 4:5 de 320 × 400 px, x 660–980, y 300–700), con grosor y sombra. Mientras está fuera, su lugar en la pantalla queda rosa palo.",
+   "sfx": [
+    "foto_sale"
+   ]
+  },
+  {
+   "f": 667,
+   "fin": 721,
+   "p": "Betún",
+   "t": "Traza el contorno del pastel sobre la foto (silueta de dos pisos y cerezas), de «idéntico» a «foto».",
+   "sfx": [
+    "betun_trazo"
+   ]
+  },
+  {
+   "f": 724,
+   "fin": 814,
+   "p": "3D",
+   "t": "Debajo de la foto (x 600–1040, y 740–1240) se construye el mismo pastel en 3D, idéntico, piso por piso: tabla f724; piso 1 cae y se asienta f728–f744; conchas y guirnaldas se pipean f744–f766; perlas f762–f770; piso 2 f768–f782; conchas y perlas f782–f794; cinco cerezas caen una por una f794–f814.",
+   "sfx": [
+    "tabla",
+    "piso_asienta",
+    "pipeo",
+    "pipeo",
+    "piso_asienta",
+    "pipeo",
+    "cereza",
+    "cereza",
+    "cereza",
+    "cereza",
+    "cereza"
+   ]
+  },
+  {
+   "f": 814,
+   "fin": 840,
+   "p": "3D",
+   "t": "Foto y pastel juntos, idénticos, 0.4 s.",
+   "sfx": []
+  },
+  {
+   "f": 840,
+   "fin": 866,
+   "p": "3D",
+   "t": "La foto regresa a su lugar en la pantalla y el pastel se encoge hacia ella. El celular vuelve a 65 % (centro x 338) y hace scroll suave hasta «¿Para cuándo?».",
+   "sfx": [
+    "whoosh_corto",
+    "scroll_friccion"
+   ]
+  },
+  {
+   "f": 866,
+   "fin": 888,
+   "p": "Pantalla",
+   "t": "Tap en «¿Para cuándo?»: sube la hoja del calendario.",
+   "sfx": [
+    "tap",
+    "hoja_sube"
+   ]
+  },
+  {
+   "f": 892,
+   "fin": 930,
+   "p": "Pantalla",
+   "t": "Tap en el sábado 14 (f892), en «Mañana» (f902) y en «Listo» (f912); la hoja baja.",
+   "sfx": [
+    "tap",
+    "tap",
+    "tap",
+    "hoja_baja"
+   ]
+  },
+  {
+   "f": 924,
+   "fin": 942,
+   "p": "Pantalla",
+   "t": "Tap en «¿Qué dice tu pastel?»: sube un teclado genérico con barra de sugerencias (dibujado en código, no copia ningún sistema).",
+   "sfx": [
+    "tap",
+    "teclado_sube"
+   ]
+  },
+  {
+   "f": 940,
+   "fin": 966,
+   "p": "Pantalla",
+   "t": "Escribe «Feliz cumpleaños»: F y e, sugerencia «Feliz» (f940, f945, f950); c y u, sugerencia «cumpleaños» (f956, f961, f966).",
+   "sfx": [
+    "tecla",
+    "tecla",
+    "sugerencia",
+    "tecla",
+    "tecla",
+    "sugerencia"
+   ]
+  },
+  {
+   "f": 970,
+   "fin": 994,
+   "p": "Pantalla",
+   "t": "Baja el teclado y hace scroll con inercia hasta «Enviar por WhatsApp».",
+   "sfx": [
+    "teclado_baja",
+    "scroll_friccion"
+   ]
+  },
+  {
+   "f": 998,
+   "fin": 1018,
+   "p": "3D",
+   "t": "Tap en «Enviar por WhatsApp»: el botón se levanta en 3D con pop (sale con su grosor y sombra) y regresa con su estado presionado real.",
+   "sfx": [
+    "tap",
+    "boton_pop"
+   ]
+  },
+  {
+   "f": 1012,
+   "fin": 1034,
+   "p": "Pantalla",
+   "t": "Sube la hoja «Tu pedido, en un mensaje» con el mensaje armado, en «mensaje».",
+   "sfx": [
+    "hoja_sube",
+    "mensaje"
+   ]
+  },
+  {
+   "f": 1040,
+   "fin": 1110,
+   "p": "Cámara",
+   "t": "Push-in a la burbuja hasta que se lee (2.3 px por px de interfaz). El betún subraya «te mando la foto en este chat.» (f1056–f1080).",
+   "sfx": [
+    "subrayado"
+   ]
+  },
+  {
+   "f": 1112,
+   "fin": 1160,
+   "p": "Pantalla",
+   "t": "Tap en «Cerrar»: baja la hoja (f1112–f1134) y hace scroll a las reseñas (f1134–f1160).",
+   "sfx": [
+    "tap",
+    "hoja_baja",
+    "scroll_friccion"
+   ]
+  },
+  {
+   "f": 1180,
+   "fin": 1222,
+   "p": "3D",
+   "t": "Swipe por las reseñas 1, 2 y 3 (f1180 y f1196): cada tarjeta sale al espacio 3D al pasar y quedan en abanico (−8°, 0°, +8°) delante del celular, legibles. Es la misma tarjeta blanca de la página, ahora con canto de cristal y sombra.",
+   "sfx": [
+    "swipe",
+    "tarjeta_sale",
+    "swipe",
+    "tarjeta_sale",
+    "tarjeta_sale"
+   ]
+  },
+  {
+   "f": 1226,
+   "fin": 1280,
+   "p": "Cámara",
+   "t": "Push-in a la reseña 1 del abanico; el betún subraya «como la imagen que solicites» (f1240–f1270).",
+   "sfx": [
+    "subrayado"
+   ]
+  },
+  {
+   "f": 1282,
+   "fin": 1298,
+   "p": "3D",
+   "t": "Las tres tarjetas regresan al carrusel.",
+   "sfx": [
+    "tarjeta_regresa"
+   ]
+  },
+  {
+   "f": 1298,
+   "fin": 1314,
+   "p": "Pantalla",
+   "t": "Scroll rápido a «Visítanos».",
+   "sfx": [
+    "scroll_friccion"
+   ]
+  },
+  {
+   "f": 1312,
+   "fin": 1330,
+   "p": "Pantalla",
+   "t": "Cae el pin en Paseo Sierra Hermosa 111 (animación de la página) con su etiqueta.",
+   "sfx": [
+    "pin"
+   ]
+  },
+  {
+   "f": 1320,
+   "fin": 1340,
+   "p": "Betún",
+   "t": "Subraya «Martes a sábado».",
+   "sfx": [
+    "subrayado"
+   ]
+  },
+  {
+   "f": 1344,
+   "fin": 1374,
+   "p": "Celular",
+   "t": "El celular se aleja hacia la izquierda (escala 45 %, centro x 250, giro 14°); todavía se leen el mapa y «Martes a sábado».",
+   "sfx": [
+    "whoosh_largo"
+   ]
+  },
+  {
+   "f": 1350,
+   "fin": 1396,
+   "p": "Betún",
+   "t": "Escribe «Lo que ya se antoja» con letra de betún (84 px, x 420–1030, y 860).",
+   "sfx": [
+    "betun_escribe"
+   ]
+  },
+  {
+   "f": 1378,
+   "fin": null,
+   "p": "Música",
+   "t": "Respiro: se van todas las capas; queda una nota de glockenspiel.",
+   "sfx": []
+  },
+  {
+   "f": 1398,
+   "fin": 1434,
+   "p": "Betún",
+   "t": "Escribe «también se busca.» (y 980), en el silencio.",
+   "sfx": [
+    "betun_escribe"
+   ]
+  },
+  {
+   "f": 1440,
+   "fin": null,
+   "p": "Música",
+   "t": "Golpe grave: bombo, Re grave y sub. El celular sale por la izquierda y la frase sube y se desvanece.",
+   "sfx": [
+    "golpe_grave",
+    "whoosh_corto"
+   ]
+  },
+  {
+   "f": 1443,
+   "fin": 1533,
+   "p": "Betún",
+   "t": "La manga vuelve y escribe «Ana Gaby Repostería» en Cormorant Garamond Itálica (el trazo sigue el esqueleto de cada letra), 112 px, centrada en y 560.",
+   "sfx": [
+    "manga_aprieta",
+    "betun_escribe"
+   ]
+  },
+  {
+   "f": 1520,
+   "fin": 1556,
+   "p": "2D",
+   "t": "Debajo aparece el letrero AG sobre una placa de cristal clara (círculo de 400 px con el letrero a 340 px, debajo de su tope de 450) con un barrido de luz.",
+   "sfx": [
+    "cristal_placa"
+   ]
+  },
+  {
+   "f": 1530,
+   "fin": null,
+   "p": "2D",
+   "t": "Línea legal: «Demo de cortesía de Elevate Negocios · pieza no oficial» (DM Sans 26 px al 70 %, y 1520).",
+   "sfx": []
+  },
+  {
+   "f": 1640,
+   "fin": 1679,
+   "p": "Música",
+   "t": "Acorde final y campanita de glockenspiel; se sostiene hasta f1679.",
+   "sfx": [
+    "campanita_final"
+   ]
+  }
+ ],
+ "cues": [
+  {
+   "f": 0,
+   "id": "golpe_suave"
+  },
+  {
+   "f": 0,
+   "id": "manga_aprieta"
+  },
+  {
+   "f": 2,
+   "id": "cristal_aparece"
+  },
+  {
+   "f": 6,
+   "id": "betun_cremoso"
+  },
+  {
+   "f": 6,
+   "id": "tecla"
+  },
+  {
+   "f": 12,
+   "id": "tecla"
+  },
+  {
+   "f": 17,
+   "id": "tecla"
+  },
+  {
+   "f": 23,
+   "id": "tecla"
+  },
+  {
+   "f": 28,
+   "id": "tecla"
+  },
+  {
+   "f": 34,
+   "id": "tecla"
+  },
+  {
+   "f": 39,
+   "id": "tecla"
+  },
+  {
+   "f": 45,
+   "id": "tecla"
+  },
+  {
+   "f": 50,
+   "id": "espacio"
+  },
+  {
+   "f": 56,
+   "id": "tecla"
+  },
+  {
+   "f": 61,
+   "id": "tecla"
+  },
+  {
+   "f": 67,
+   "id": "tecla"
+  },
+  {
+   "f": 72,
+   "id": "tecla"
+  },
+  {
+   "f": 78,
+   "id": "tecla"
+  },
+  {
+   "f": 83,
+   "id": "tecla"
+  },
+  {
+   "f": 89,
+   "id": "tecla"
+  },
+  {
+   "f": 94,
+   "id": "tecla"
+  },
+  {
+   "f": 100,
+   "id": "tecla"
+  },
+  {
+   "f": 105,
+   "id": "tecla"
+  },
+  {
+   "f": 111,
+   "id": "tecla"
+  },
+  {
+   "f": 116,
+   "id": "tecla"
+  },
+  {
+   "f": 122,
+   "id": "tecla"
+  },
+  {
+   "f": 127,
+   "id": "tecla"
+  },
+  {
+   "f": 130,
+   "id": "whoosh_corto"
+  },
+  {
+   "f": 147,
+   "id": "enter"
+  },
+  {
+   "f": 150,
+   "id": "trazo_contorno"
+  },
+  {
+   "f": 162,
+   "id": "cristal_cuerpo"
+  },
+  {
+   "f": 188,
+   "id": "pantalla_enciende"
+  },
+  {
+   "f": 214,
+   "id": "asienta"
+  },
+  {
+   "f": 236,
+   "id": "subrayado"
+  },
+  {
+   "f": 296,
+   "id": "scroll_friccion"
+  },
+  {
+   "f": 336,
+   "id": "betun_borde"
+  },
+  {
+   "f": 352,
+   "id": "tarjeta_sale"
+  },
+  {
+   "f": 372,
+   "id": "betun_borde"
+  },
+  {
+   "f": 388,
+   "id": "tarjeta_sale"
+  },
+  {
+   "f": 408,
+   "id": "betun_borde"
+  },
+  {
+   "f": 420,
+   "id": "tarjeta_regresa"
+  },
+  {
+   "f": 424,
+   "id": "tarjeta_sale"
+  },
+  {
+   "f": 456,
+   "id": "tarjeta_regresa"
+  },
+  {
+   "f": 492,
+   "id": "tarjeta_regresa"
+  },
+  {
+   "f": 530,
+   "id": "tap"
+  },
+  {
+   "f": 532,
+   "id": "pestana_desliza"
+  },
+  {
+   "f": 540,
+   "id": "cuadricula"
+  },
+  {
+   "f": 590,
+   "id": "tap"
+  },
+  {
+   "f": 592,
+   "id": "panel_cambia"
+  },
+  {
+   "f": 610,
+   "id": "tap"
+  },
+  {
+   "f": 612,
+   "id": "subir_foto"
+  },
+  {
+   "f": 650,
+   "id": "foto_sale"
+  },
+  {
+   "f": 667,
+   "id": "betun_trazo"
+  },
+  {
+   "f": 676,
+   "id": "foto_lista"
+  },
+  {
+   "f": 724,
+   "id": "tabla"
+  },
+  {
+   "f": 744,
+   "id": "piso_asienta"
+  },
+  {
+   "f": 746,
+   "id": "pipeo"
+  },
+  {
+   "f": 756,
+   "id": "pipeo"
+  },
+  {
+   "f": 782,
+   "id": "piso_asienta"
+  },
+  {
+   "f": 786,
+   "id": "pipeo"
+  },
+  {
+   "f": 796,
+   "id": "cereza"
+  },
+  {
+   "f": 800,
+   "id": "cereza"
+  },
+  {
+   "f": 804,
+   "id": "cereza"
+  },
+  {
+   "f": 808,
+   "id": "cereza"
+  },
+  {
+   "f": 812,
+   "id": "cereza"
+  },
+  {
+   "f": 840,
+   "id": "whoosh_corto"
+  },
+  {
+   "f": 848,
+   "id": "scroll_friccion"
+  },
+  {
+   "f": 866,
+   "id": "tap"
+  },
+  {
+   "f": 868,
+   "id": "hoja_sube"
+  },
+  {
+   "f": 892,
+   "id": "tap"
+  },
+  {
+   "f": 902,
+   "id": "tap"
+  },
+  {
+   "f": 912,
+   "id": "tap"
+  },
+  {
+   "f": 914,
+   "id": "hoja_baja"
+  },
+  {
+   "f": 924,
+   "id": "tap"
+  },
+  {
+   "f": 926,
+   "id": "teclado_sube"
+  },
+  {
+   "f": 940,
+   "id": "tecla"
+  },
+  {
+   "f": 945,
+   "id": "tecla"
+  },
+  {
+   "f": 950,
+   "id": "sugerencia"
+  },
+  {
+   "f": 956,
+   "id": "tecla"
+  },
+  {
+   "f": 961,
+   "id": "tecla"
+  },
+  {
+   "f": 966,
+   "id": "sugerencia"
+  },
+  {
+   "f": 970,
+   "id": "teclado_baja"
+  },
+  {
+   "f": 976,
+   "id": "scroll_friccion"
+  },
+  {
+   "f": 998,
+   "id": "tap"
+  },
+  {
+   "f": 1000,
+   "id": "boton_pop"
+  },
+  {
+   "f": 1012,
+   "id": "hoja_sube"
+  },
+  {
+   "f": 1030,
+   "id": "mensaje"
+  },
+  {
+   "f": 1056,
+   "id": "subrayado"
+  },
+  {
+   "f": 1112,
+   "id": "tap"
+  },
+  {
+   "f": 1114,
+   "id": "hoja_baja"
+  },
+  {
+   "f": 1134,
+   "id": "scroll_friccion"
+  },
+  {
+   "f": 1180,
+   "id": "swipe"
+  },
+  {
+   "f": 1184,
+   "id": "tarjeta_sale"
+  },
+  {
+   "f": 1196,
+   "id": "swipe"
+  },
+  {
+   "f": 1200,
+   "id": "tarjeta_sale"
+  },
+  {
+   "f": 1214,
+   "id": "tarjeta_sale"
+  },
+  {
+   "f": 1240,
+   "id": "subrayado"
+  },
+  {
+   "f": 1282,
+   "id": "tarjeta_regresa"
+  },
+  {
+   "f": 1298,
+   "id": "scroll_friccion"
+  },
+  {
+   "f": 1316,
+   "id": "pin"
+  },
+  {
+   "f": 1320,
+   "id": "subrayado"
+  },
+  {
+   "f": 1344,
+   "id": "whoosh_largo"
+  },
+  {
+   "f": 1350,
+   "id": "betun_escribe"
+  },
+  {
+   "f": 1398,
+   "id": "betun_escribe"
+  },
+  {
+   "f": 1440,
+   "id": "golpe_grave"
+  },
+  {
+   "f": 1442,
+   "id": "whoosh_corto"
+  },
+  {
+   "f": 1443,
+   "id": "manga_aprieta"
+  },
+  {
+   "f": 1446,
+   "id": "betun_escribe"
+  },
+  {
+   "f": 1522,
+   "id": "cristal_placa"
+  },
+  {
+   "f": 1640,
+   "id": "campanita_final"
+  }
+ ],
+ "sfx_lib": [
+  "golpe_suave",
+  "manga_aprieta",
+  "cristal_aparece",
+  "betun_cremoso",
+  "tecla",
+  "espacio",
+  "whoosh_corto",
+  "enter",
+  "trazo_contorno",
+  "cristal_cuerpo",
+  "pantalla_enciende",
+  "asienta",
+  "subrayado",
+  "scroll_friccion",
+  "betun_borde",
+  "tarjeta_sale",
+  "tarjeta_regresa",
+  "tap",
+  "pestana_desliza",
+  "cuadricula",
+  "panel_cambia",
+  "subir_foto",
+  "foto_sale",
+  "betun_trazo",
+  "foto_lista",
+  "tabla",
+  "piso_asienta",
+  "pipeo",
+  "cereza",
+  "hoja_sube",
+  "hoja_baja",
+  "teclado_sube",
+  "sugerencia",
+  "teclado_baja",
+  "boton_pop",
+  "mensaje",
+  "swipe",
+  "pin",
+  "whoosh_largo",
+  "betun_escribe",
+  "golpe_grave",
+  "cristal_placa",
+  "campanita_final"
+ ],
+ "formato": {
+  "principal": "1080x1920",
+  "cuadrado": "1080x1080",
+  "zona_segura_916": {
+   "y_min": 250,
+   "y_max": 1580
+  }
+ },
+ "notas_voz": [
+  "Toma única de ElevenLabs (voz «Hope», eleven v4, MP3 44.1 kHz): la transcripción sin guion coincide palabra por palabra.",
+  "L1: se recorta la respiración del inicio (0.05–0.85 s de la toma).",
+  "L7: la pausa entre «Repostería.» y «Así» se recorta de 0.40 a 0.28 s."
+ ]
+}
