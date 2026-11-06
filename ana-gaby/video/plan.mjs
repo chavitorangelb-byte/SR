@@ -6,13 +6,14 @@ export const VIEWPORT = { width: 390, height: 797 }; // 844 de pantalla − 47 d
 export const BARRA_ESTADO = 47;
 export const DSF = 3;
 
-// Inercia de un scroll con el dedo: arranca rápido, frena y rebota un poco al llegar.
+// Scroll con el dedo: el dedo acelera desde cero (unos 7 cuadros), suelta, la inercia frena y rebota un poco al
+// llegar. El tiempo se deforma con s^1.5: misma duración, sin el arranque a velocidad máxima.
 export function curvaScroll(f, { f0, dur, desde, hasta, rebote = 14, asentar = 12 }) {
   if (f <= f0) return desde;
   const s = Math.min(1, (f - f0) / dur);
   const dir = Math.sign(hasta - desde) || 1;
   if (s < 1) {
-    const p = 1 - (1 - s) ** 4;
+    const p = 1 - (1 - s ** 1.5) ** 4;
     return desde + (hasta + dir * rebote - desde) * p;
   }
   const r = Math.min(1, (f - f0 - dur) / asentar);

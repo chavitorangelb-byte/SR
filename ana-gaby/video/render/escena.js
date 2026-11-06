@@ -162,7 +162,8 @@ export async function preparar({ ancho, alto, medidas }) {
   // ---------------- A TU MEDIDA: la foto sale, el betún traza el pastel y se construye el mismo pastel en 3D
   {
     const rv = med(652).vista;
-    S.foto = crearTarjeta3D({ imagen: await captura(652), rect: rv, k: tel.k, radioCss: 20 });
+    // La foto limpia (sin la barra de la página), al tamaño exacto del hueco «vista» de la captura.
+    S.foto = crearTarjeta3D({ imagen: await imagen('/video/build/texturas/vista_foto.png'), rect: [0, 0, rv[2], rv[3]], k: tel.k, radioCss: 20 });
     S.foto.grupo.visible = false;
     escena.add(S.foto.grupo);
     S.fotoRect = rv;

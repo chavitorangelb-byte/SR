@@ -88,7 +88,19 @@ if (TEXTURAS) {
       return { tam: [card.width, card.height], frase: fr ? fr.map(([x, y, w, h]) => [x - card.left, y - card.top, w, h]) : null };
     }, k);
   }
-  fs.writeFileSync(path.join(OUT, 'texturas.json'), JSON.stringify({ dsf: DSF, resenas: info }, null, 1));
+  // Foto de referencia limpia: la que vuela fuera de la pantalla en «A tu medida» (la barra de cristal con
+  // «Preparando tu foto…» y «Cambiar» es de la página, no de la foto).
+  await page.evaluate(() => { const s = document.querySelector('#catalogo'); window.scrollTo(0, s.getBoundingClientRect().top + scrollY); });
+  await page.evaluate(() => window.AnaGaby.irA ? window.AnaGaby.irA('medida') : document.querySelector('#tab-medida').click());
+  await page.waitForTimeout(400);
+  await page.setInputFiles('#foto-input', path.join(ROOT, 'assets', 'pastel_referencia_ilustrado.jpg'));
+  await page.evaluate(() => window.AnaGaby.fotoLista());
+  await page.waitForTimeout(1600);
+  await page.evaluate(() => { document.querySelector('#vista').scrollIntoView({ block: 'center' }); document.querySelector('.vista-barra').style.visibility = 'hidden'; });
+  await page.waitForTimeout(300);
+  await (await page.$('#vista')).screenshot({ path: path.join(OUT, 'vista_foto.png') });
+  const vista = await page.evaluate(() => { const r = document.querySelector('#vista').getBoundingClientRect(); return [r.width, r.height]; });
+  fs.writeFileSync(path.join(OUT, 'texturas.json'), JSON.stringify({ dsf: DSF, resenas: info, vista: { tam: vista } }, null, 1));
   await browser.close(); srv.close();
   console.log('✔ texturas de reseñas en video/build/texturas/');
   process.exit(0);
