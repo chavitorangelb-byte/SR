@@ -94,7 +94,8 @@
      "w": "galletas",
      "f": 89
     }
-   ]
+   ],
+   "bloqueada": true
   },
   {
    "id": "L2",
@@ -127,7 +128,8 @@
      "w": "ti",
      "f": 217
     }
-   ]
+   ],
+   "bloqueada": true
   },
   {
    "id": "L3",
@@ -168,7 +170,8 @@
      "w": "página",
      "f": 422
     }
-   ]
+   ],
+   "bloqueada": true
   },
   {
    "id": "L4",
@@ -221,7 +224,8 @@
      "w": "mande",
      "f": 751
     }
-   ]
+   ],
+   "bloqueada": true
   },
   {
    "id": "L5",
@@ -250,7 +254,8 @@
      "w": "mensaje",
      "f": 1012
     }
-   ]
+   ],
+   "bloqueada": true
   },
   {
    "id": "L6",
@@ -291,7 +296,8 @@
      "w": "ti",
      "f": 1283
     }
-   ]
+   ],
+   "bloqueada": true
   },
   {
    "id": "L7",
@@ -332,7 +338,8 @@
      "w": "Elevate",
      "f": 1619
     }
-   ]
+   ],
+   "bloqueada": true
   }
  ],
  "tipo": [
@@ -1585,8 +1592,9 @@
   }
  },
  "notas_voz": [
-  "Toma única de ElevenLabs (voz «Hope», eleven v4, MP3 44.1 kHz): la transcripción sin guion coincide palabra por palabra.",
-  "L1: se recorta la respiración del inicio (0.05–0.85 s de la toma).",
-  "L7: la pausa entre «Repostería.» y «Así» se recorta de 0.40 a 0.28 s."
+  "Toma única de ElevenLabs (voz «Hope», eleven v4): la transcripción sin guion coincide palabra por palabra.",
+  "L1: fuera la respiración del inicio de la toma (0.05–0.85 s).",
+  "L7: la pausa entre «Repostería.» y «Así» baja de 0.40 a 0.28 s.",
+  "Stem: voz/voz_stem_48k.wav, 48 kHz, 24 bits, −16 LUFS (pasa altos 80 Hz, de-esser y compresión 2.2:1)."
  ]
 }

@@ -24,6 +24,8 @@ node tools/inventario.mjs            # fase 1: inventario de assets, límites de
 python3 tools/transcribir.py voz/fuente/toma_hope_eleven_v4.mp3 voz/fuente/toma_palabras.json small   # requiere faster-whisper
 python3 tools/voz_medir.py           # inicio/fin reales de cada frase y tiempo de cada palabra → voz/fuente/toma_frases.json
 node tools/brief.mjs                 # fase 2: brief/timeline.json y brief/brief_fase2.md
+python3 tools/voz.py                 # fase 3: voz bloqueada (voz/voz_stem_48k.wav, −16 LUFS) y preview con pulso; correr después de brief.mjs
+node tools/preview_voz.mjs           # fase 3: línea de tiempo con cursor (voz/preview_voz.mp4, review/fase3/linea_voz.jpg)
 ```
 `?demo=1` activa el modo demo. `?captura=1` deja la página lista para capturarla cuadro por cuadro (sin auto-avances ni scroll suave) y expone `window.AnaGaby`.
 

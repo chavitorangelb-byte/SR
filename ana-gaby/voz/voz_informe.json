@@ -1,0 +1,55 @@
+{
+ "lufs_integrado": -15.9,
+ "pico_real_dbtp": -2.0,
+ "frases": [
+  {
+   "id": "L1",
+   "cuadro": 24,
+   "desfase_cuadros": 0.0,
+   "termina_s": 2.17,
+   "termina_cuadro": 130
+  },
+  {
+   "id": "L2",
+   "cuadro": 174,
+   "desfase_cuadros": 0.0,
+   "termina_s": 3.78,
+   "termina_cuadro": 227
+  },
+  {
+   "id": "L3",
+   "cuadro": 318,
+   "desfase_cuadros": 0.0,
+   "termina_s": 7.57,
+   "termina_cuadro": 454
+  },
+  {
+   "id": "L4",
+   "cuadro": 612,
+   "desfase_cuadros": 0.0,
+   "termina_s": 12.91,
+   "termina_cuadro": 775
+  },
+  {
+   "id": "L5",
+   "cuadro": 972,
+   "desfase_cuadros": 0.0,
+   "termina_s": 17.37,
+   "termina_cuadro": 1042
+  },
+  {
+   "id": "L6",
+   "cuadro": 1200,
+   "desfase_cuadros": -0.03,
+   "termina_s": 21.64,
+   "termina_cuadro": 1298
+  },
+  {
+   "id": "L7",
+   "cuadro": 1458,
+   "desfase_cuadros": 0.0,
+   "termina_s": 27.523,
+   "termina_cuadro": 1651
+  }
+ ]
+}
