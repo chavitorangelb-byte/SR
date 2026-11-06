@@ -2,7 +2,7 @@
  "proyecto": "Jumpers Fest Ags",
  "fps": 60,
  "bpm": 112,
- "frames": 1620,
+ "frames": 1650,
  "secciones": [
   {
    "id": "hook",
@@ -50,8 +50,8 @@
    "id": "endcard",
    "nombre": "End card",
    "f": 1440,
-   "fin": 1619,
-   "musica": "Golpe grave suave en f1440 y cola hasta el final"
+   "fin": 1649,
+   "musica": "Golpe grave suave en f1440 y cola hasta el final (3.5 s)"
   }
  ],
  "voz": [
@@ -60,107 +60,471 @@
    "f": 6,
    "texto": "Alguien está organizando una fiesta en Aguascalientes.",
    "max": 3.2,
-   "brief": 0.4
+   "brief": 0.4,
+   "toma": [
+    {
+     "ini": 0.06,
+     "fin": 2.71
+    }
+   ],
+   "dur": 2.65,
+   "termina_f": 165,
+   "palabras": [
+    {
+     "w": "Alguien",
+     "f": 6,
+     "fin": 30
+    },
+    {
+     "w": "está",
+     "f": 30,
+     "fin": 42
+    },
+    {
+     "w": "organizando",
+     "f": 42,
+     "fin": 74
+    },
+    {
+     "w": "una",
+     "f": 74,
+     "fin": 89
+    },
+    {
+     "w": "fiesta",
+     "f": 89,
+     "fin": 110
+    },
+    {
+     "w": "en",
+     "f": 110,
+     "fin": 116
+    },
+    {
+     "w": "Aguascalientes.",
+     "f": 116,
+     "fin": 165
+    }
+   ]
   },
   {
    "id": "L2",
    "f": 204,
    "texto": "Que te encuentre a ti.",
    "max": 1.2,
-   "brief": 2.6
+   "brief": 2.6,
+   "toma": [
+    {
+     "ini": 3.08,
+     "fin": 4.12
+    }
+   ],
+   "dur": 1.04,
+   "termina_f": 266,
+   "palabras": [
+    {
+     "w": "Que",
+     "f": 204,
+     "fin": 216
+    },
+    {
+     "w": "te",
+     "f": 216,
+     "fin": 229
+    },
+    {
+     "w": "encuentre",
+     "f": 229,
+     "fin": 251
+    },
+    {
+     "w": "a",
+     "f": 251,
+     "fin": 257
+    },
+    {
+     "w": "ti.",
+     "f": 257,
+     "fin": 266
+    }
+   ]
   },
   {
    "id": "L3",
    "f": 282,
    "texto": "Tus inflables, con foto, para elegir.",
    "max": 3.2,
-   "brief": 4.7
+   "brief": 4.7,
+   "toma": [
+    {
+     "ini": 4.63,
+     "fin": 7.38
+    }
+   ],
+   "dur": 2.75,
+   "termina_f": 447,
+   "palabras": [
+    {
+     "w": "Tus",
+     "f": 282,
+     "fin": 296
+    },
+    {
+     "w": "inflables,",
+     "f": 296,
+     "fin": 357
+    },
+    {
+     "w": "con",
+     "f": 357,
+     "fin": 368
+    },
+    {
+     "w": "foto,",
+     "f": 368,
+     "fin": 413
+    },
+    {
+     "w": "para",
+     "f": 413,
+     "fin": 422
+    },
+    {
+     "w": "elegir.",
+     "f": 422,
+     "fin": 447
+    }
+   ]
   },
   {
    "id": "L4",
    "f": 600,
    "texto": "Y su fecha, apartada en un mensaje.",
    "max": 3,
-   "brief": 10
+   "brief": 10,
+   "toma": [
+    {
+     "ini": 7.88,
+     "fin": 9.81
+    }
+   ],
+   "dur": 1.93,
+   "termina_f": 716,
+   "palabras": [
+    {
+     "w": "Y",
+     "f": 600,
+     "fin": 607
+    },
+    {
+     "w": "su",
+     "f": 607,
+     "fin": 617
+    },
+    {
+     "w": "fecha,",
+     "f": 617,
+     "fin": 648
+    },
+    {
+     "w": "apartada",
+     "f": 648,
+     "fin": 677
+    },
+    {
+     "w": "en",
+     "f": 677,
+     "fin": 685
+    },
+    {
+     "w": "un",
+     "f": 685,
+     "fin": 695
+    },
+    {
+     "w": "mensaje.",
+     "f": 695,
+     "fin": 716
+    }
+   ]
   },
   {
    "id": "L5",
    "f": 924,
    "texto": "Diversión y elegancia, en una sola página.",
    "max": 3.4,
-   "brief": 15.4
+   "brief": 15.4,
+   "toma": [
+    {
+     "ini": 10.29,
+     "fin": 13.07
+    }
+   ],
+   "dur": 2.78,
+   "termina_f": 1091,
+   "palabras": [
+    {
+     "w": "Diversión",
+     "f": 924,
+     "fin": 958
+    },
+    {
+     "w": "y",
+     "f": 958,
+     "fin": 962
+    },
+    {
+     "w": "elegancia,",
+     "f": 962,
+     "fin": 1013
+    },
+    {
+     "w": "en",
+     "f": 1013,
+     "fin": 1030
+    },
+    {
+     "w": "una",
+     "f": 1030,
+     "fin": 1048
+    },
+    {
+     "w": "sola",
+     "f": 1048,
+     "fin": 1063
+    },
+    {
+     "w": "página.",
+     "f": 1063,
+     "fin": 1091
+    }
+   ]
   },
   {
    "id": "L6",
    "f": 1452,
    "texto": "Jumpers Fest. Así se vería con Elevate.",
    "max": 2.6,
-   "brief": 24.4
+   "brief": 24.4,
+   "toma": [
+    {
+     "ini": 13.43,
+     "fin": 14.3
+    },
+    {
+     "ini": 14.62,
+     "fin": 16.34
+    }
+   ],
+   "dur": 2.85,
+   "termina_f": 1623,
+   "palabras": [
+    {
+     "w": "Jumpers",
+     "f": 1452,
+     "fin": 1479
+    },
+    {
+     "w": "Fest.",
+     "f": 1479,
+     "fin": 1504
+    },
+    {
+     "w": "Así",
+     "f": 1520,
+     "fin": 1545
+    },
+    {
+     "w": "se",
+     "f": 1545,
+     "fin": 1559
+    },
+    {
+     "w": "vería",
+     "f": 1559,
+     "fin": 1574
+    },
+    {
+     "w": "con",
+     "f": 1574,
+     "fin": 1589
+    },
+    {
+     "w": "Elevate.",
+     "f": 1589,
+     "fin": 1623
+    }
+   ]
   }
  ],
  "tipo": [
   {
-   "id": "T1",
-   "texto": "TU / INFLABLE",
-   "f": 270,
+   "id": "K1",
+   "texto": "TU",
+   "voz": [
+    "L3",
+    "Tus"
+   ],
+   "plan": 284,
    "sale": 490,
-   "aterriza": "“Tus inflables” (L3)",
-   "pos": "izquierda del celular · x 64–480 · y 900 y 990",
-   "px": 88
+   "pos": "izquierda del celular · línea 2 (y 900)",
+   "px": 88,
+   "aterriza": 282,
+   "sobre": "“Tus” (L3, f282)"
   },
   {
-   "id": "T2",
+   "id": "K2",
+   "texto": "INFLABLE",
+   "voz": [
+    "L3",
+    "inflables,"
+   ],
+   "plan": 294,
+   "sale": 490,
+   "pos": "izquierda · línea 3 (y 990)",
+   "px": 88,
+   "aterriza": 296,
+   "sobre": "“inflables” (L3, f296)"
+  },
+  {
+   "id": "K3",
    "texto": "ELIGE",
-   "f": 396,
+   "voz": [
+    "L3",
+    "elegir."
+   ],
+   "plan": 410,
    "sale": 490,
-   "aterriza": "“elegir” (L3)",
-   "pos": "izquierda · encima de “TU INFLABLE” · y 800",
-   "px": 88
+   "pos": "izquierda · línea 1 (y 800), encima de “TU INFLABLE”",
+   "px": 88,
+   "aterriza": 422,
+   "sobre": "“elegir” (L3, f422)"
   },
   {
-   "id": "T3",
-   "texto": "TU / FECHA",
-   "f": 600,
-   "sale": 667,
-   "aterriza": "“fecha” (L4)",
-   "pos": "derecha del celular · x 600–1016 · y 900 y 990",
-   "px": 88
+   "id": "K4",
+   "texto": "TU",
+   "voz": [
+    "L4",
+    "su"
+   ],
+   "plan": 606,
+   "sale": 668,
+   "pos": "derecha del celular · línea 2 (y 900)",
+   "px": 80,
+   "aterriza": 607,
+   "sobre": "“su” (L4, f607)"
   },
   {
-   "id": "T4",
+   "id": "K5",
+   "texto": "FECHA",
+   "voz": [
+    "L4",
+    "fecha,"
+   ],
+   "plan": 614,
+   "sale": 668,
+   "pos": "derecha · línea 2, después de “TU”",
+   "px": 80,
+   "aterriza": 617,
+   "sobre": "“fecha” (L4, f617)"
+  },
+  {
+   "id": "K6",
    "texto": "APARTA",
-   "f": 641,
+   "voz": [
+    "L4",
+    "apartada"
+   ],
+   "plan": 655,
    "sale": 752,
-   "aterriza": "“apartada” (L4)",
-   "pos": "derecha · encima · y 800",
-   "px": 88
+   "pos": "derecha · línea 1 (y 800): se lee “APARTA / TU FECHA”",
+   "px": 88,
+   "aterriza": 648,
+   "sobre": "“apartada” (L4, f648)"
   },
   {
-   "id": "T5",
-   "texto": "EN UN / MENSAJE",
-   "f": 683,
+   "id": "K7",
+   "texto": "EN",
+   "voz": [
+    "L4",
+    "en"
+   ],
+   "plan": 690,
    "sale": 752,
-   "aterriza": "“en un mensaje” (L4)",
-   "pos": "derecha · en el lugar de “TU FECHA” · y 900 y 990",
-   "px": 80
+   "pos": "derecha · línea 2, en el lugar de “TU FECHA”",
+   "px": 80,
+   "aterriza": 677,
+   "sobre": "“en” (L4, f677)"
   },
   {
-   "id": "T6",
+   "id": "K8",
+   "texto": "UN",
+   "voz": [
+    "L4",
+    "un"
+   ],
+   "plan": 697,
+   "sale": 752,
+   "pos": "derecha · línea 2, después de “EN”",
+   "px": 80,
+   "aterriza": 685,
+   "sobre": "“un” (L4, f685)"
+  },
+  {
+   "id": "K9",
+   "texto": "MENSAJE",
+   "voz": [
+    "L4",
+    "mensaje."
+   ],
+   "plan": 705,
+   "sale": 752,
+   "pos": "derecha · línea 3 (y 990): se lee “APARTA / EN UN / MENSAJE”",
+   "px": 80,
+   "aterriza": 695,
+   "sobre": "“mensaje” (L4, f695)"
+  },
+  {
+   "id": "K10",
    "texto": "DIVERSIÓN",
-   "f": 912,
+   "voz": [
+    "L5",
+    "Diversión"
+   ],
+   "plan": 926,
    "sale": 1000,
-   "aterriza": "“Diversión” (L5)",
-   "pos": "izquierda del celular · x 64–510 · y 860",
-   "px": 80
+   "pos": "izquierda del celular · línea 1 (y 860)",
+   "px": 80,
+   "aterriza": 924,
+   "sobre": "“Diversión” (L5, f924)"
   },
   {
-   "id": "T7",
-   "texto": "+ ELEGANCIA",
-   "f": 954,
+   "id": "K11",
+   "texto": "+",
+   "voz": [
+    "L5",
+    "y"
+   ],
+   "plan": 960,
    "sale": 1000,
-   "aterriza": "“elegancia” (L5)",
-   "pos": "izquierda · debajo · y 960; el “+” es un cojín rosa como el de la página",
-   "px": 80
+   "pos": "izquierda · línea 2 (y 960): cojín rosa como el de la página; cae en la “y”",
+   "px": 80,
+   "aterriza": 958,
+   "sobre": "“y” (L5, f958)"
+  },
+  {
+   "id": "K12",
+   "texto": "ELEGANCIA",
+   "voz": [
+    "L5",
+    "elegancia,"
+   ],
+   "plan": 968,
+   "sale": 1000,
+   "pos": "izquierda · línea 2, después del “+”",
+   "px": 80,
+   "aterriza": 962,
+   "sobre": "“elegancia” (L5, f962)"
   }
  ],
  "musica": [
@@ -234,7 +598,7 @@
    "f": 1440,
    "compas": 12,
    "acorde": "Cadd9",
-   "capas": "Golpe grave suave (como rebote) y acorde final de ukulele con cola"
+   "capas": "Golpe grave suave (como rebote) y acorde final de ukulele con cola de 3.5 s"
   }
  ],
  "eventos": [
@@ -352,10 +716,10 @@
    ]
   },
   {
-   "f": 262,
-   "d": 38,
+   "f": 257,
+   "d": 24,
    "p": "Cámara",
-   "t": "Truck: el celular se corre a la derecha (centro x 790) y gira −8° en Y; queda espacio a la izquierda para el texto."
+   "t": "Truck: el celular se corre a la derecha (centro x 790) y gira −8° en Y; deja libre la izquierda antes de que entre “TU”."
   },
   {
    "f": 285,
@@ -364,15 +728,6 @@
    "t": "La tarjeta de Castle Jump se infla dentro de la pantalla al entrar (animación real de la página).",
    "sfx": [
     "tarjeta_infla"
-   ]
-  },
-  {
-   "f": 284,
-   "p": "Tipo",
-   "t": "“TU” y “INFLABLE” aterrizan glifo por glifo y se inflan.",
-   "sfx": [
-    "tipo_infla",
-    "tipo_infla+10"
    ]
   },
   {
@@ -415,14 +770,6 @@
    ]
   },
   {
-   "f": 410,
-   "p": "Tipo",
-   "t": "“ELIGE” aterriza encima de “TU INFLABLE” y se infla.",
-   "sfx": [
-    "tipo_infla"
-   ]
-  },
-  {
    "f": 446,
    "d": 32,
    "p": "3D",
@@ -447,12 +794,6 @@
     "tap",
     "hoja_sube+6"
    ]
-  },
-  {
-   "f": 490,
-   "d": 16,
-   "p": "Tipo",
-   "t": "“ELIGE / TU INFLABLE” se desinfla y sale."
   },
   {
    "f": 500,
@@ -483,26 +824,9 @@
   },
   {
    "f": 579,
-   "d": 21,
+   "d": 14,
    "p": "Cámara",
    "t": "Truck: el celular se corre a la izquierda (centro x 290) y gira +8° en Y; el texto va a la derecha."
-  },
-  {
-   "f": 614,
-   "p": "Tipo",
-   "t": "“TU” y “FECHA” aterrizan sobre “su fecha”.",
-   "sfx": [
-    "tipo_infla",
-    "tipo_infla+8"
-   ]
-  },
-  {
-   "f": 655,
-   "p": "Tipo",
-   "t": "“APARTA” aterriza encima, sobre “apartada”: se lee “APARTA / TU FECHA”.",
-   "sfx": [
-    "tipo_infla"
-   ]
   },
   {
    "f": 675,
@@ -512,21 +836,6 @@
     "tap",
     "fecha_infla+6",
     "calendario_cierra+37"
-   ]
-  },
-  {
-   "f": 667,
-   "d": 16,
-   "p": "Tipo",
-   "t": "“TU FECHA” sale; “APARTA” se queda."
-  },
-  {
-   "f": 697,
-   "p": "Tipo",
-   "t": "“EN UN” y “MENSAJE” aterrizan en el lugar de “TU FECHA”: se lee “APARTA / EN UN MENSAJE”.",
-   "sfx": [
-    "tipo_infla",
-    "tipo_infla+8"
    ]
   },
   {
@@ -547,12 +856,6 @@
    "sfx": [
     "tecla*"
    ]
-  },
-  {
-   "f": 752,
-   "d": 16,
-   "p": "Tipo",
-   "t": "“APARTA / EN UN MENSAJE” sale."
   },
   {
    "f": 766,
@@ -646,9 +949,9 @@
   },
   {
    "f": 900,
-   "d": 14,
+   "d": 10,
    "p": "Cámara",
-   "t": "Regresa a 60 % y truck a la derecha (centro x 800, −8° en Y)."
+   "t": "Regresa a 60 % y truck a la derecha (centro x 800, −8° en Y) en el lift."
   },
   {
    "f": 906,
@@ -661,31 +964,8 @@
    ]
   },
   {
-   "f": 926,
-   "p": "Tipo",
-   "t": "“DIVERSIÓN” aterriza sobre “Diversión”.",
-   "sfx": [
-    "tipo_infla"
-   ]
-  },
-  {
-   "f": 968,
-   "p": "Tipo",
-   "t": "“+ ELEGANCIA” aterriza sobre “elegancia”: primero se infla el “+” (cojín rosa) y luego la palabra.",
-   "sfx": [
-    "pff_corto",
-    "tipo_infla+4"
-   ]
-  },
-  {
-   "f": 1000,
-   "d": 16,
-   "p": "Tipo",
-   "t": "“DIVERSIÓN + ELEGANCIA” se desinfla y sale."
-  },
-  {
-   "f": 1000,
-   "d": 40,
+   "f": 1008,
+   "d": 32,
    "p": "Cámara",
    "t": "El celular vuelve al centro con un leve dolly hacia atrás (55 %)."
   },
@@ -794,25 +1074,146 @@
    ]
   },
   {
-   "f": 1500,
+   "f": 1520,
    "d": 20,
    "p": "End card",
-   "t": "“Así se vería tu página · Elevate Negocios” (DM Sans SemiBold 44 px, tinta, y 1360). Elevate va solo en texto.",
+   "t": "“Así se vería tu página · Elevate Negocios” (DM Sans SemiBold 44 px, tinta, y 1360) aparece sobre “Así” de la voz. Elevate va solo en texto.",
    "sfx": [
     "texto_aparece"
    ]
   },
   {
-   "f": 1530,
+   "f": 1556,
    "d": 20,
    "p": "End card",
    "t": "Línea obligatoria: “Demo de cortesía de Elevate Negocios · pieza no oficial” (DM Sans 28 px, #66635F, y 1520)."
   },
   {
-   "f": 1550,
+   "f": 1580,
    "d": 69,
    "p": "Música",
    "t": "Cola del acorde final hasta el último cuadro; el arcoíris y la placa respiran."
+  },
+  {
+   "f": 282,
+   "p": "Tipo",
+   "t": "“TU” aterriza sobre “Tus” (L3, f282) y se infla.",
+   "sfx": [
+    "tipo_infla"
+   ]
+  },
+  {
+   "f": 296,
+   "p": "Tipo",
+   "t": "“INFLABLE” aterriza sobre “inflables” (L3, f296) y se infla.",
+   "sfx": [
+    "tipo_infla"
+   ]
+  },
+  {
+   "f": 422,
+   "p": "Tipo",
+   "t": "“ELIGE” aterriza sobre “elegir” (L3, f422) y se infla.",
+   "sfx": [
+    "tipo_infla"
+   ]
+  },
+  {
+   "f": 607,
+   "p": "Tipo",
+   "t": "“TU” aterriza sobre “su” (L4, f607) y se infla.",
+   "sfx": [
+    "tipo_infla"
+   ]
+  },
+  {
+   "f": 617,
+   "p": "Tipo",
+   "t": "“FECHA” aterriza sobre “fecha” (L4, f617) y se infla.",
+   "sfx": [
+    "tipo_infla"
+   ]
+  },
+  {
+   "f": 648,
+   "p": "Tipo",
+   "t": "“APARTA” aterriza sobre “apartada” (L4, f648) y se infla.",
+   "sfx": [
+    "tipo_infla"
+   ]
+  },
+  {
+   "f": 677,
+   "p": "Tipo",
+   "t": "“EN” aterriza sobre “en” (L4, f677) y se infla.",
+   "sfx": [
+    "tipo_infla"
+   ]
+  },
+  {
+   "f": 685,
+   "p": "Tipo",
+   "t": "“UN” aterriza sobre “un” (L4, f685) y se infla.",
+   "sfx": [
+    "tipo_infla"
+   ]
+  },
+  {
+   "f": 695,
+   "p": "Tipo",
+   "t": "“MENSAJE” aterriza sobre “mensaje” (L4, f695) y se infla.",
+   "sfx": [
+    "tipo_infla"
+   ]
+  },
+  {
+   "f": 924,
+   "p": "Tipo",
+   "t": "“DIVERSIÓN” aterriza sobre “Diversión” (L5, f924) y se infla.",
+   "sfx": [
+    "tipo_infla"
+   ]
+  },
+  {
+   "f": 958,
+   "p": "Tipo",
+   "t": "“+” aterriza sobre “y” (L5, f958) y se infla.",
+   "sfx": [
+    "pff_corto",
+    "tipo_infla"
+   ]
+  },
+  {
+   "f": 962,
+   "p": "Tipo",
+   "t": "“ELEGANCIA” aterriza sobre “elegancia” (L5, f962) y se infla.",
+   "sfx": [
+    "tipo_infla"
+   ]
+  },
+  {
+   "f": 490,
+   "d": 12,
+   "p": "Tipo",
+   "t": "“ELIGE / TU / INFLABLE” se desinfla y sale."
+  },
+  {
+   "f": 668,
+   "d": 12,
+   "p": "Tipo",
+   "t": "“TU FECHA” se desinfla y sale."
+  },
+  {
+   "f": 752,
+   "d": 12,
+   "p": "Tipo",
+   "t": "“APARTA / EN UN / MENSAJE” se desinfla y sale."
+  },
+  {
+   "f": 1000,
+   "d": 12,
+   "p": "Tipo",
+   "t": "“DIVERSIÓN / + ELEGANCIA” se desinfla y sale."
   }
  ],
  "sfx": [
@@ -1046,7 +1447,7 @@
    "name": "scroll_friccion"
   },
   {
-   "f": 284,
+   "f": 282,
    "name": "tipo_infla"
   },
   {
@@ -1054,7 +1455,7 @@
    "name": "tarjeta_infla"
   },
   {
-   "f": 294,
+   "f": 296,
    "name": "tipo_infla"
   },
   {
@@ -1094,7 +1495,7 @@
    "name": "aire_flota"
   },
   {
-   "f": 410,
+   "f": 422,
    "name": "tipo_infla"
   },
   {
@@ -1138,11 +1539,11 @@
    "name": "scroll_suave"
   },
   {
-   "f": 614,
+   "f": 607,
    "name": "tipo_infla"
   },
   {
-   "f": 622,
+   "f": 617,
    "name": "tipo_infla"
   },
   {
@@ -1150,7 +1551,7 @@
    "name": "calendario_abre"
   },
   {
-   "f": 655,
+   "f": 648,
    "name": "tipo_infla"
   },
   {
@@ -1158,15 +1559,19 @@
    "name": "tap"
   },
   {
+   "f": 677,
+   "name": "tipo_infla"
+  },
+  {
    "f": 681,
    "name": "fecha_infla"
   },
   {
-   "f": 697,
+   "f": 685,
    "name": "tipo_infla"
   },
   {
-   "f": 705,
+   "f": 695,
    "name": "tipo_infla"
   },
   {
@@ -1321,7 +1726,7 @@
    "name": "boton_regresa"
   },
   {
-   "f": 926,
+   "f": 924,
    "name": "tipo_infla"
   },
   {
@@ -1329,11 +1734,15 @@
    "name": "tarjeta_infla"
   },
   {
-   "f": 968,
+   "f": 958,
    "name": "pff_corto"
   },
   {
-   "f": 972,
+   "f": 958,
+   "name": "tipo_infla"
+  },
+  {
+   "f": 962,
    "name": "tipo_infla"
   },
   {
@@ -1413,7 +1822,7 @@
    "name": "logo_pop"
   },
   {
-   "f": 1500,
+   "f": 1520,
    "name": "texto_aparece"
   }
  ],

@@ -3,7 +3,7 @@
 import { t } from './tiempos.mjs';
 
 export const PROYECTO = 'Jumpers Fest Ags';
-export const FRAMES = 1620; // 27.0 s: 24 s de pieza + 3 s de end card
+export const FRAMES = 1650; // 27.5 s: 24 s de pieza + 3.5 s de end card (la última frase de la toma dura 2.85 s)
 
 export const SECCIONES = [
   { id: 'hook', nombre: 'Hook', f: 0, fin: 128, musica: 'Compás 1 · golpe en f0, ukulele en rasgueo suave' },
@@ -12,7 +12,7 @@ export const SECCIONES = [
   { id: 'aparta', nombre: 'Aparta tu fecha', f: 579, fin: 899, musica: 'Compases 5 a 7 · entran las palmas' },
   { id: 'fiesta', nombre: 'Arma tu fiesta', f: 900, fin: 1156, musica: 'Compases 8 y 9 · lift: entran las cuerdas en pizzicato' },
   { id: 'cierre', nombre: 'Cierre', f: 1157, fin: 1439, musica: 'Compases 10 y 11 · se adelgaza; respiro en f1380' },
-  { id: 'endcard', nombre: 'End card', f: 1440, fin: 1619, musica: 'Golpe grave suave en f1440 y cola hasta el final' },
+  { id: 'endcard', nombre: 'End card', f: 1440, fin: 1649, musica: 'Golpe grave suave en f1440 y cola hasta el final (3.5 s)' },
 ];
 
 // Voz: entrada planeada y duración máxima. En la fase 3 se reemplaza por la toma medida (palabra por palabra).
@@ -25,15 +25,22 @@ export const VOZ = [
   { id: 'L6', f: 1452, texto: 'Jumpers Fest. Así se vería con Elevate.', max: 2.6, brief: 24.40 },
 ];
 
-// Kinetic type: f = empieza a entrar; el primer glifo aterriza en f + 14 (sobre su palabra); sale = empieza a salir (16 cuadros).
+// Kinetic type, palabra por palabra. Cada una aterriza en su palabra de la voz: con la voz bloqueada (fase 3),
+// tools/brief.mjs toma el cuadro de voz/voz_bloqueada.json; `plan` es el cuadro previsto antes de la toma.
+// Entra 14 cuadros antes de aterrizar (glifo por glifo) y sale (se desinfla) en 12 cuadros desde `sale`.
 export const TIPO = [
-  { id: 'T1', texto: 'TU / INFLABLE', f: 270, sale: 490, aterriza: '“Tus inflables” (L3)', pos: 'izquierda del celular · x 64–480 · y 900 y 990', px: 88 },
-  { id: 'T2', texto: 'ELIGE', f: 396, sale: 490, aterriza: '“elegir” (L3)', pos: 'izquierda · encima de “TU INFLABLE” · y 800', px: 88 },
-  { id: 'T3', texto: 'TU / FECHA', f: 600, sale: 667, aterriza: '“fecha” (L4)', pos: 'derecha del celular · x 600–1016 · y 900 y 990', px: 88 },
-  { id: 'T4', texto: 'APARTA', f: 641, sale: 752, aterriza: '“apartada” (L4)', pos: 'derecha · encima · y 800', px: 88 },
-  { id: 'T5', texto: 'EN UN / MENSAJE', f: 683, sale: 752, aterriza: '“en un mensaje” (L4)', pos: 'derecha · en el lugar de “TU FECHA” · y 900 y 990', px: 80 },
-  { id: 'T6', texto: 'DIVERSIÓN', f: 912, sale: 1000, aterriza: '“Diversión” (L5)', pos: 'izquierda del celular · x 64–510 · y 860', px: 80 },
-  { id: 'T7', texto: '+ ELEGANCIA', f: 954, sale: 1000, aterriza: '“elegancia” (L5)', pos: 'izquierda · debajo · y 960; el “+” es un cojín rosa como el de la página', px: 80 },
+  { id: 'K1', texto: 'TU', voz: ['L3', 'Tus'], plan: 284, sale: 490, pos: 'izquierda del celular · línea 2 (y 900)', px: 88 },
+  { id: 'K2', texto: 'INFLABLE', voz: ['L3', 'inflables,'], plan: 294, sale: 490, pos: 'izquierda · línea 3 (y 990)', px: 88 },
+  { id: 'K3', texto: 'ELIGE', voz: ['L3', 'elegir.'], plan: 410, sale: 490, pos: 'izquierda · línea 1 (y 800), encima de “TU INFLABLE”', px: 88 },
+  { id: 'K4', texto: 'TU', voz: ['L4', 'su'], plan: 606, sale: 668, pos: 'derecha del celular · línea 2 (y 900)', px: 80 },
+  { id: 'K5', texto: 'FECHA', voz: ['L4', 'fecha,'], plan: 614, sale: 668, pos: 'derecha · línea 2, después de “TU”', px: 80 },
+  { id: 'K6', texto: 'APARTA', voz: ['L4', 'apartada'], plan: 655, sale: 752, pos: 'derecha · línea 1 (y 800): se lee “APARTA / TU FECHA”', px: 88 },
+  { id: 'K7', texto: 'EN', voz: ['L4', 'en'], plan: 690, sale: 752, pos: 'derecha · línea 2, en el lugar de “TU FECHA”', px: 80 },
+  { id: 'K8', texto: 'UN', voz: ['L4', 'un'], plan: 697, sale: 752, pos: 'derecha · línea 2, después de “EN”', px: 80 },
+  { id: 'K9', texto: 'MENSAJE', voz: ['L4', 'mensaje.'], plan: 705, sale: 752, pos: 'derecha · línea 3 (y 990): se lee “APARTA / EN UN / MENSAJE”', px: 80 },
+  { id: 'K10', texto: 'DIVERSIÓN', voz: ['L5', 'Diversión'], plan: 926, sale: 1000, pos: 'izquierda del celular · línea 1 (y 860)', px: 80 },
+  { id: 'K11', texto: '+', voz: ['L5', 'y'], plan: 960, sale: 1000, pos: 'izquierda · línea 2 (y 960): cojín rosa como el de la página; cae en la “y”', px: 80 },
+  { id: 'K12', texto: 'ELEGANCIA', voz: ['L5', 'elegancia,'], plan: 968, sale: 1000, pos: 'izquierda · línea 2, después del “+”', px: 80 },
 ];
 
 export const MUSICA = [
@@ -48,7 +55,7 @@ export const MUSICA = [
   { f: t(32), compas: 9, acorde: 'C/E', capas: 'Groove completo' },
   { f: t(36), compas: 10, acorde: 'Fmaj7', capas: 'Se adelgaza: ukulele y pizzicato; una nota de glockenspiel por banda del arcoíris' },
   { f: t(40), compas: 11, acorde: 'Gsus4', capas: 'Pad suave; respiro en f1380: la música se detiene y queda el aire' },
-  { f: 1440, compas: 12, acorde: 'Cadd9', capas: 'Golpe grave suave (como rebote) y acorde final de ukulele con cola' },
+  { f: 1440, compas: 12, acorde: 'Cadd9', capas: 'Golpe grave suave (como rebote) y acorde final de ukulele con cola de 3.5 s' },
 ];
 
 const tap = (f, sel, extra = []) => ({ f, p: 'Pantalla', t: sel, sfx: [`tap`, ...extra] });
@@ -70,31 +77,23 @@ export const EVENTOS = [
   { f: 226, d: 30, p: 'Tubo', t: 'El tubo se suelta del bisel y queda enrollado en la esquina inferior izquierda del celular, respirando apenas.' },
   // ---------------- Catálogo ----------------
   { f: 257, d: 58, p: 'Pantalla', t: 'Un dedo arrastra hacia arriba y suelta: scroll con inercia hasta “Nuestros inflables” y la tarjeta de Castle Jump (captura real).', sfx: ['scroll_friccion'] },
-  { f: 262, d: 38, p: 'Cámara', t: 'Truck: el celular se corre a la derecha (centro x 790) y gira −8° en Y; queda espacio a la izquierda para el texto.' },
+  { f: 257, d: 24, p: 'Cámara', t: 'Truck: el celular se corre a la derecha (centro x 790) y gira −8° en Y; deja libre la izquierda antes de que entre “TU”.' },
   { f: 285, d: 30, p: 'Pantalla', t: 'La tarjeta de Castle Jump se infla dentro de la pantalla al entrar (animación real de la página).', sfx: ['tarjeta_infla'] },
-  { f: 284, p: 'Tipo', t: '“TU” y “INFLABLE” aterrizan glifo por glifo y se inflan.', sfx: ['tipo_infla', 'tipo_infla+10'] },
   { f: 321, d: 52, p: 'Pantalla', t: 'Segundo arrastre: Rainbow Jump queda al centro; se inflan ella y la parte de arriba de Magic Jump.', sfx: ['scroll_friccion', 'tarjeta_infla+19'] },
   { f: 354, d: 56, p: '3D', t: 'Sobre “con foto”, las tres tarjetas salen de la pantalla al espacio 3D, una por medio tiempo: Castle Jump (f354), Rainbow Jump (f370) y Magic Jump (f386). Son la misma pieza de interfaz (misma foto, mismo texto) con 8 px de grueso de vinil blanco y sombra de cojín; al salir se inflan (escala 1 → 1.08 → 1). La punta del tubo les da un soplo. Su lugar queda vacío en la captura.', sfx: ['tarjeta_sale', 'pff_corto+2', 'tarjeta_sale+16', 'pff_corto+18', 'tarjeta_sale+32', 'pff_corto+34'] },
   { f: 354, d: 36, p: 'Cámara', t: 'Dolly hacia atrás (celular de 60 % a 54 %) y órbita de 5°: las tarjetas flotan a tres profundidades con parallax y ninguna foto pasa de 408 px de ancho en cuadro.' },
   { f: 390, d: 56, p: '3D', t: 'Flotan: vaivén de ±6 px y ±2°.', sfx: ['aire_flota'] },
-  { f: 410, p: 'Tipo', t: '“ELIGE” aterriza encima de “TU INFLABLE” y se infla.', sfx: ['tipo_infla'] },
   { f: 446, d: 32, p: '3D', t: 'Regresan a su lugar con resorte: Magic (f446), Castle (f454) y Rainbow (f462). La pantalla se completa.', sfx: ['tarjeta_regresa', 'tarjeta_regresa+8', 'tarjeta_regresa+16'] },
   { f: 450, d: 28, p: 'Cámara', t: 'El celular vuelve al 60 %.' },
   tap(482, 'Tap en la foto de Rainbow Jump (tiempo 3 del compás 4): sube su ficha (captura real).', ['hoja_sube+6']),
-  { f: 490, d: 16, p: 'Tipo', t: '“ELIGE / TU INFLABLE” se desinfla y sale.' },
   { f: 500, d: 30, p: 'Cámara', t: 'El celular regresa al centro (x 540) y a −2° en Y.' },
   { f: 514, d: 62, p: '3D', t: 'En el tiempo fuerte del compás 5, la descripción sale de la ficha al 3D: el mismo bloque de texto (“Un brincolín lleno de color, alegría y mucha diversión. Sus tonos vibrantes iluminan cada evento.”) sobre un cojín blanco, crece a 1.9× para leerse al tamaño de un celular real, flota y regresa en f562. Sin foto: así no se agranda la de 408 px.', sfx: ['panel_sale', 'panel_regresa+48'] },
   // ---------------- Aparta tu fecha ----------------
   tap(579, 'Tap en “Lo quiero” (tiempo 3 del compás 5): la ficha baja, la página baja a “Aparta tu fecha” con Rainbow Jump elegido y se abre el calendario de noviembre de 2026 (captura real).', ['hoja_baja+6', 'scroll_suave+24', 'calendario_abre+58']),
-  { f: 579, d: 21, p: 'Cámara', t: 'Truck: el celular se corre a la izquierda (centro x 290) y gira +8° en Y; el texto va a la derecha.' },
-  { f: 614, p: 'Tipo', t: '“TU” y “FECHA” aterrizan sobre “su fecha”.', sfx: ['tipo_infla', 'tipo_infla+8'] },
-  { f: 655, p: 'Tipo', t: '“APARTA” aterriza encima, sobre “apartada”: se lee “APARTA / TU FECHA”.', sfx: ['tipo_infla'] },
+  { f: 579, d: 14, p: 'Cámara', t: 'Truck: el celular se corre a la izquierda (centro x 290) y gira +8° en Y; el texto va a la derecha.' },
   tap(675, 'Tap en el sábado 21: el día se infla en negro con rebote; el calendario se cierra solo (f712–f730).', ['fecha_infla+6', 'calendario_cierra+37']),
-  { f: 667, d: 16, p: 'Tipo', t: '“TU FECHA” sale; “APARTA” se queda.' },
-  { f: 697, p: 'Tipo', t: '“EN UN” y “MENSAJE” aterrizan en el lugar de “TU FECHA”: se lee “APARTA / EN UN MENSAJE”.', sfx: ['tipo_infla', 'tipo_infla+8'] },
   tap(707, 'Tap en “Colonia o salón”: sube el teclado (genérico, en español, con ñ) y el campo sube por encima de él.', ['teclado_sube+6']),
   { f: 724, d: 40, p: 'Pantalla', t: 'Se teclea “Las Américas”.', escribe: 'Las Américas', sfx: ['tecla*'] },
-  { f: 752, d: 16, p: 'Tipo', t: '“APARTA / EN UN MENSAJE” sale.' },
   { f: 766, d: 28, p: 'Cámara', t: 'El celular regresa al centro y hace push-in a los campos y al teclado (1.236 → 1.75 px de video por px CSS). Solo quedan a la vista las miniaturas de 98 px CSS (171 px en cuadro).' },
   tap(771, 'Tap en “Horario aproximado” (tiempo fuerte del compás 7).'),
   { f: 778, d: 24, p: 'Pantalla', t: 'Se teclea “4:00 pm”.', escribe: '4:00 pm', sfx: ['tecla*'] },
@@ -107,12 +106,9 @@ export const EVENTOS = [
   // ---------------- Arma tu fiesta ----------------
   { f: 900, p: 'Música', t: 'Lift: entran las cuerdas en pizzicato y el groove completo.', sfx: ['lift'] },
   { f: 900, d: 14, p: '3D', t: 'El cojín regresa a la pantalla con resorte.', sfx: ['boton_regresa+12'] },
-  { f: 900, d: 14, p: 'Cámara', t: 'Regresa a 60 % y truck a la derecha (centro x 800, −8° en Y).' },
+  { f: 900, d: 10, p: 'Cámara', t: 'Regresa a 60 % y truck a la derecha (centro x 800, −8° en Y) en el lift.' },
   { f: 906, d: 50, p: 'Pantalla', t: 'Arrastre con inercia hasta “Arma tu fiesta”: la postal de foto_08 (combo con mesitas pastel) se infla al entrar.', sfx: ['scroll_friccion', 'tarjeta_infla+34'] },
-  { f: 926, p: 'Tipo', t: '“DIVERSIÓN” aterriza sobre “Diversión”.', sfx: ['tipo_infla'] },
-  { f: 968, p: 'Tipo', t: '“+ ELEGANCIA” aterriza sobre “elegancia”: primero se infla el “+” (cojín rosa) y luego la palabra.', sfx: ['pff_corto', 'tipo_infla+4'] },
-  { f: 1000, d: 16, p: 'Tipo', t: '“DIVERSIÓN + ELEGANCIA” se desinfla y sale.' },
-  { f: 1000, d: 40, p: 'Cámara', t: 'El celular vuelve al centro con un leve dolly hacia atrás (55 %).' },
+  { f: 1008, d: 32, p: 'Cámara', t: 'El celular vuelve al centro con un leve dolly hacia atrás (55 %).' },
   { f: 1016, d: 45, p: '3D', t: 'La postal sale de la pantalla como postal grande: la misma pieza (foto_08, “Pregunta por mobiliario” y su botón) con grueso y sombra, crece a 2× (foto de ~816 px; su detalle real es de ~1300 px), gira 10° y flota al centro.', sfx: ['postal_sale', 'aire_flota+34'] },
   { f: 1061, d: 24, p: '3D', t: 'La postal regresa a su lugar con resorte (tiempo 2 del compás 9).', sfx: ['postal_regresa'] },
   { f: 1093, d: 50, p: 'Pantalla', t: 'Arrastre hasta “Cómo funciona”: los tres pasos se inflan uno a uno (rosa, amarillo y menta): Eliges, Apartas, Lo llevamos.', sfx: ['scroll_friccion', 'paso_infla+19', 'paso_infla+31', 'paso_infla+43'] },
@@ -126,9 +122,9 @@ export const EVENTOS = [
   // ---------------- End card ----------------
   { f: 1440, p: 'Música', t: 'Golpe grave suave, como un rebote.', sfx: ['golpe_final'] },
   { f: 1440, d: 36, p: 'End card', t: 'Bajo el arcoíris se infla una placa blanca (cojín 3D con costura) con el logo real encima (logo_jumpers_transparente.png, 620 px de ancho; nunca se redibuja ni se recolorea). Centro en (540, 1080).', sfx: ['placa_infla', 'logo_pop+12'] },
-  { f: 1500, d: 20, p: 'End card', t: '“Así se vería tu página · Elevate Negocios” (DM Sans SemiBold 44 px, tinta, y 1360). Elevate va solo en texto.', sfx: ['texto_aparece'] },
-  { f: 1530, d: 20, p: 'End card', t: 'Línea obligatoria: “Demo de cortesía de Elevate Negocios · pieza no oficial” (DM Sans 28 px, #66635F, y 1520).' },
-  { f: 1550, d: 69, p: 'Música', t: 'Cola del acorde final hasta el último cuadro; el arcoíris y la placa respiran.' },
+  { f: 1520, d: 20, p: 'End card', t: '“Así se vería tu página · Elevate Negocios” (DM Sans SemiBold 44 px, tinta, y 1360) aparece sobre “Así” de la voz. Elevate va solo en texto.', sfx: ['texto_aparece'] },
+  { f: 1556, d: 20, p: 'End card', t: 'Línea obligatoria: “Demo de cortesía de Elevate Negocios · pieza no oficial” (DM Sans 28 px, #66635F, y 1520).' },
+  { f: 1580, d: 69, p: 'Música', t: 'Cola del acorde final hasta el último cuadro; el arcoíris y la placa respiran.' },
 ];
 
 export const SFX_LIB = {
@@ -184,12 +180,12 @@ export const SFX_LIB = {
 };
 
 export const CAMBIOS = [
-  '**La voz entra antes y “Que te encuentre a ti” cae en su logo.** “Alguien está organizando una fiesta en Aguascalientes.” dura unos 3.1 s a ritmo tranquilo y no cabe entre 0.40 y 2.60 s sin acelerar. L1 empieza en 0.10 s (justo después del golpe) y L2 pasa a 3.40 s, cuando se infla su logo en la portada. L6 pasa a 24.20 s para terminar antes de 26.8 s; si en la toma dura más de 2.6 s, la end card crece a 3.5 s (27.5 s en total).',
+  '**La voz entra antes, “Que te encuentre a ti” cae en su logo y la end card dura 3.5 s.** “Alguien está organizando una fiesta en Aguascalientes.” no cabe entre 0.40 y 2.60 s sin acelerar: L1 empieza en 0.10 s y L2 pasa a 3.40 s, justo cuando se infla su logo. Con la toma, L6 (“Jumpers Fest. Así se vería con Elevate.”) dura 2.85 s aun recortando su pausa interna de 0.32 a 0.26 s, así que la end card crece a 3.5 s y el video dura 27.5 s (1650 cuadros); L6 entra en 24.20 s, con “Jumpers” justo cuando se infla el logo.',
   '**El celular al 60 % justo (1152 px de alto; 1.236 px de video por px CSS).** Es el máximo que permiten las fotos de 408–427 px: a ese tamaño una tarjeta completa mide 408 px en cuadro. Los push-in (hasta 2×) solo van sobre pantallas sin fotos grandes: calendario, campos, teclado y mensaje.',
   '**Las tarjetas que salen al 3D no crecen.** Avanzan en profundidad, giran y la cámara se aleja del celular (54 %): se sienten fuera de la pantalla sin pasar de 408 px.',
   '**Las tres tarjetas salen en fila (una por medio tiempo)** desde la posición en que Rainbow Jump queda al centro. Dentro de la pantalla se inflan una por una al entrar con el scroll. Sacar y regresar cada una por separado no cabe en 5.4 s junto con la ficha.',
   '**La descripción de Rainbow Jump se lee sacándola al 3D** (el mismo bloque de texto a 1.9×), no con push-in: un push-in agrandaría la foto de 408 px que está arriba.',
-  '**El kinetic type se releva para no pasar de 4 palabras:** primero “TU FECHA”, luego “APARTA” encima (“APARTA / TU FECHA”), y “EN UN MENSAJE” entra en el lugar de “TU FECHA” (“APARTA / EN UN MENSAJE”). Así cada palabra aterriza en su palabra de la voz, que dice “su fecha” antes que “apartada”.',
+  '**El kinetic type aterriza palabra por palabra y se releva para no pasar de 4 palabras.** La voz dice “y su fecha, apartada en un mensaje” en 1.9 s: “TU” y “FECHA” caen en “su fecha”, “APARTA” encima en “apartada” (“APARTA / TU FECHA”), y “EN”, “UN” y “MENSAJE” reemplazan a “TU FECHA” en sus palabras (“APARTA / EN UN / MENSAJE”). En “Diversión y elegancia”, el “+” (cojín rosa) cae en la “y”.',
   '**Lo que escribe el cliente en la demo:** sábado 21 de noviembre de 2026, “Las Américas” (colonia real y corta de Aguascalientes) y “4:00 pm”. No son datos del negocio.',
   '**El mensaje se lee en la vista previa de la página** (push-in) y el botón cojín hace pop justo en el lift de 15.00 s, como “envío”. No sale la hoja “¡Tu mensaje está listo!” ni la pantalla de WhatsApp (es de terceros): así la sección termina en el pop y no se amontona con “Arma tu fiesta”.',
   '**foto_05 no se usa:** es muy chica y el cierre es el arcoíris 3D. foto_04 sí aparece, dentro de la página (Cómo funciona).',

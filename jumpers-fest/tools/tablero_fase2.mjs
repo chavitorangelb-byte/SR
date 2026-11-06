@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { servir, LANZAR } from './servidor.mjs';
-import { SECCIONES, VOZ, TIPO } from '../brief/linea.mjs';
+import { SECCIONES } from '../brief/linea.mjs';
 
 const require = createRequire(import.meta.url);
 const { chromium } = require('playwright');
@@ -13,6 +13,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = path.join(ROOT, 'review', 'fase2');
 fs.mkdirSync(OUT, { recursive: true });
 const s = (f) => (f / 60).toFixed(2);
+const T = JSON.parse(fs.readFileSync(path.join(ROOT, 'brief', 'timeline.json'), 'utf8')); // voz bloqueada y kinetic resuelto
+const VOZ = T.voz;
 
 const RESUMEN = {
   hook: { img: null, que: 'El tubo blanco entra con un “pff” y escribe “renta de inflables aguascalientes” en una barra de búsqueda de cristal genérica.', d3: '—' },
@@ -27,7 +29,7 @@ const RESUMEN = {
 const filas = SECCIONES.map((sec) => {
   const r = RESUMEN[sec.id];
   const voz = VOZ.filter((v) => v.f >= sec.f && v.f <= sec.fin).map((v) => `<div class="voz"><b>${s(v.f)} s</b> “${v.texto}”</div>`).join('');
-  const tipo = TIPO.filter((k) => k.f >= sec.f - 20 && k.f <= sec.fin).map((k) => `<span class="kt">${k.texto.replace(' / ', ' ')}</span>`).join('');
+  const tipo = T.tipo.filter((k) => k.aterriza >= sec.f && k.aterriza <= sec.fin).map((k) => `<span class="kt">${k.texto}</span>`).join('');
   const arco = `<svg class="arco" viewBox="0 0 160 100"><g fill="none" stroke-linecap="round" stroke-width="7">${['#F3C7CF', '#F6E7A8', '#CDE8C9', '#C6DFEA', '#DCCDEB'].map((c, i) => { const r = 72 - i * 7.5; return `<path d="M${80 - r} 96 A${r} ${r} 0 0 1 ${80 + r} 96" stroke="${c}"/>`; }).join('')}</g></svg>`;
   const extra = sec.id === 'endcard' ? `<div class="placa"><img src="__URL__web/img/logo_jumpers.png"></div><div class="mini">Así se vería tu página · Elevate Negocios</div>` : '';
   const img = r.img ? `<img src="__URL__review/fase0/pantallas/${r.img}.jpg">` : sec.id === 'hook' ? `<div class="ph hook"></div>` : `<div class="ph arcoiris">${arco}${extra}</div>`;
@@ -64,10 +66,10 @@ await page.setContent(`<!doctype html><html><head><meta charset="utf-8"><style>
   .mus{margin-top:10px;font-size:15px;color:#66635F}
   footer{padding:14px 56px 50px;font-size:15px;color:#9C9893}
 </style></head><body>
-  <header><div class="k">Jumpers Fest Ags · Fase 2 · 27 s · 60 fps · 112 BPM</div><h1>Línea de tiempo</h1>
+  <header><div class="k">Jumpers Fest Ags · ${(T.frames / 60).toFixed(1)} s · 60 fps · 112 BPM · voz bloqueada</div><h1>Línea de tiempo</h1>
   <p class="sub">Un solo plano continuo. Todo lo que aparece se infla. Las capturas son de la página real (fase 0).</p></header>
   ${filas.replaceAll('__URL__', srv.url)}
-  <footer>Tiempos de voz planeados; se bloquean en la fase 3 con la toma real. Detalle cuadro por cuadro en brief/brief_fase2.md.</footer>
+  <footer>Tiempos de voz de la toma 1, bloqueados en la fase 3. Detalle cuadro por cuadro en brief/brief_fase2.md.</footer>
 </body></html>`);
 await page.waitForLoadState('networkidle');
 await page.evaluate(() => document.fonts.ready);

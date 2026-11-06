@@ -1,0 +1,240 @@
+{
+ "modelo": "medium",
+ "texto": "Alguien está organizando una fiesta en Aguascalientes. Que te encuentre a ti, tus inflables con foto para elegir y su fecha apartada en un mensaje. Diversión y elegancia en una sola página. Jumpers Fest. Así se vería con Elevate.",
+ "palabras": [
+  {
+   "w": "Alguien",
+   "start": 0.0,
+   "end": 0.48,
+   "p": 0.811
+  },
+  {
+   "w": "está",
+   "start": 0.48,
+   "end": 0.66,
+   "p": 0.976
+  },
+  {
+   "w": "organizando",
+   "start": 0.66,
+   "end": 1.18,
+   "p": 0.998
+  },
+  {
+   "w": "una",
+   "start": 1.18,
+   "end": 1.46,
+   "p": 0.995
+  },
+  {
+   "w": "fiesta",
+   "start": 1.46,
+   "end": 1.78,
+   "p": 0.995
+  },
+  {
+   "w": "en",
+   "start": 1.78,
+   "end": 1.92,
+   "p": 0.995
+  },
+  {
+   "w": "Aguascalientes.",
+   "start": 1.92,
+   "end": 2.72,
+   "p": 0.979
+  },
+  {
+   "w": "Que",
+   "start": 3.16,
+   "end": 3.3,
+   "p": 0.501
+  },
+  {
+   "w": "te",
+   "start": 3.3,
+   "end": 3.52,
+   "p": 0.994
+  },
+  {
+   "w": "encuentre",
+   "start": 3.52,
+   "end": 3.88,
+   "p": 0.985
+  },
+  {
+   "w": "a",
+   "start": 3.88,
+   "end": 4.0,
+   "p": 0.996
+  },
+  {
+   "w": "ti,",
+   "start": 4.0,
+   "end": 4.22,
+   "p": 0.934
+  },
+  {
+   "w": "tus",
+   "start": 4.64,
+   "end": 4.88,
+   "p": 0.979
+  },
+  {
+   "w": "inflables",
+   "start": 4.88,
+   "end": 5.72,
+   "p": 0.872
+  },
+  {
+   "w": "con",
+   "start": 5.72,
+   "end": 6.16,
+   "p": 0.643
+  },
+  {
+   "w": "foto",
+   "start": 6.16,
+   "end": 6.66,
+   "p": 0.989
+  },
+  {
+   "w": "para",
+   "start": 6.66,
+   "end": 7.0,
+   "p": 0.94
+  },
+  {
+   "w": "elegir",
+   "start": 7.0,
+   "end": 7.72,
+   "p": 0.999
+  },
+  {
+   "w": "y",
+   "start": 7.72,
+   "end": 8.06,
+   "p": 0.695
+  },
+  {
+   "w": "su",
+   "start": 8.06,
+   "end": 8.24,
+   "p": 0.998
+  },
+  {
+   "w": "fecha",
+   "start": 8.24,
+   "end": 8.76,
+   "p": 0.997
+  },
+  {
+   "w": "apartada",
+   "start": 8.76,
+   "end": 9.22,
+   "p": 0.972
+  },
+  {
+   "w": "en",
+   "start": 9.22,
+   "end": 9.36,
+   "p": 0.999
+  },
+  {
+   "w": "un",
+   "start": 9.36,
+   "end": 9.5,
+   "p": 0.999
+  },
+  {
+   "w": "mensaje.",
+   "start": 9.5,
+   "end": 10.18,
+   "p": 1.0
+  },
+  {
+   "w": "Diversión",
+   "start": 10.42,
+   "end": 10.96,
+   "p": 0.951
+  },
+  {
+   "w": "y",
+   "start": 10.96,
+   "end": 11.16,
+   "p": 0.998
+  },
+  {
+   "w": "elegancia",
+   "start": 11.16,
+   "end": 11.74,
+   "p": 0.991
+  },
+  {
+   "w": "en",
+   "start": 11.74,
+   "end": 12.14,
+   "p": 0.991
+  },
+  {
+   "w": "una",
+   "start": 12.14,
+   "end": 12.42,
+   "p": 0.998
+  },
+  {
+   "w": "sola",
+   "start": 12.42,
+   "end": 12.64,
+   "p": 0.996
+  },
+  {
+   "w": "página.",
+   "start": 12.64,
+   "end": 13.1,
+   "p": 0.986
+  },
+  {
+   "w": "Jumpers",
+   "start": 13.62,
+   "end": 13.96,
+   "p": 0.73
+  },
+  {
+   "w": "Fest.",
+   "start": 13.96,
+   "end": 14.36,
+   "p": 0.762
+  },
+  {
+   "w": "Así",
+   "start": 14.88,
+   "end": 15.06,
+   "p": 0.947
+  },
+  {
+   "w": "se",
+   "start": 15.06,
+   "end": 15.32,
+   "p": 0.997
+  },
+  {
+   "w": "vería",
+   "start": 15.32,
+   "end": 15.58,
+   "p": 0.994
+  },
+  {
+   "w": "con",
+   "start": 15.58,
+   "end": 15.82,
+   "p": 0.996
+  },
+  {
+   "w": "Elevate.",
+   "start": 15.82,
+   "end": 16.3,
+   "p": 0.94
+  }
+ ]
+}

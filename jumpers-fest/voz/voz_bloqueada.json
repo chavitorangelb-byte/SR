@@ -1,0 +1,303 @@
+[
+ {
+  "id": "L1",
+  "f": 6,
+  "texto": "Alguien está organizando una fiesta en Aguascalientes.",
+  "max": 3.2,
+  "brief": 0.4,
+  "toma": [
+   {
+    "ini": 0.06,
+    "fin": 2.71
+   }
+  ],
+  "dur": 2.65,
+  "termina_f": 165,
+  "palabras": [
+   {
+    "w": "Alguien",
+    "f": 6,
+    "fin": 30
+   },
+   {
+    "w": "está",
+    "f": 30,
+    "fin": 42
+   },
+   {
+    "w": "organizando",
+    "f": 42,
+    "fin": 74
+   },
+   {
+    "w": "una",
+    "f": 74,
+    "fin": 89
+   },
+   {
+    "w": "fiesta",
+    "f": 89,
+    "fin": 110
+   },
+   {
+    "w": "en",
+    "f": 110,
+    "fin": 116
+   },
+   {
+    "w": "Aguascalientes.",
+    "f": 116,
+    "fin": 165
+   }
+  ]
+ },
+ {
+  "id": "L2",
+  "f": 204,
+  "texto": "Que te encuentre a ti.",
+  "max": 1.2,
+  "brief": 2.6,
+  "toma": [
+   {
+    "ini": 3.08,
+    "fin": 4.12
+   }
+  ],
+  "dur": 1.04,
+  "termina_f": 266,
+  "palabras": [
+   {
+    "w": "Que",
+    "f": 204,
+    "fin": 216
+   },
+   {
+    "w": "te",
+    "f": 216,
+    "fin": 229
+   },
+   {
+    "w": "encuentre",
+    "f": 229,
+    "fin": 251
+   },
+   {
+    "w": "a",
+    "f": 251,
+    "fin": 257
+   },
+   {
+    "w": "ti.",
+    "f": 257,
+    "fin": 266
+   }
+  ]
+ },
+ {
+  "id": "L3",
+  "f": 282,
+  "texto": "Tus inflables, con foto, para elegir.",
+  "max": 3.2,
+  "brief": 4.7,
+  "toma": [
+   {
+    "ini": 4.63,
+    "fin": 7.38
+   }
+  ],
+  "dur": 2.75,
+  "termina_f": 447,
+  "palabras": [
+   {
+    "w": "Tus",
+    "f": 282,
+    "fin": 296
+   },
+   {
+    "w": "inflables,",
+    "f": 296,
+    "fin": 357
+   },
+   {
+    "w": "con",
+    "f": 357,
+    "fin": 368
+   },
+   {
+    "w": "foto,",
+    "f": 368,
+    "fin": 413
+   },
+   {
+    "w": "para",
+    "f": 413,
+    "fin": 422
+   },
+   {
+    "w": "elegir.",
+    "f": 422,
+    "fin": 447
+   }
+  ]
+ },
+ {
+  "id": "L4",
+  "f": 600,
+  "texto": "Y su fecha, apartada en un mensaje.",
+  "max": 3,
+  "brief": 10,
+  "toma": [
+   {
+    "ini": 7.88,
+    "fin": 9.81
+   }
+  ],
+  "dur": 1.93,
+  "termina_f": 716,
+  "palabras": [
+   {
+    "w": "Y",
+    "f": 600,
+    "fin": 607
+   },
+   {
+    "w": "su",
+    "f": 607,
+    "fin": 617
+   },
+   {
+    "w": "fecha,",
+    "f": 617,
+    "fin": 648
+   },
+   {
+    "w": "apartada",
+    "f": 648,
+    "fin": 677
+   },
+   {
+    "w": "en",
+    "f": 677,
+    "fin": 685
+   },
+   {
+    "w": "un",
+    "f": 685,
+    "fin": 695
+   },
+   {
+    "w": "mensaje.",
+    "f": 695,
+    "fin": 716
+   }
+  ]
+ },
+ {
+  "id": "L5",
+  "f": 924,
+  "texto": "Diversión y elegancia, en una sola página.",
+  "max": 3.4,
+  "brief": 15.4,
+  "toma": [
+   {
+    "ini": 10.29,
+    "fin": 13.07
+   }
+  ],
+  "dur": 2.78,
+  "termina_f": 1091,
+  "palabras": [
+   {
+    "w": "Diversión",
+    "f": 924,
+    "fin": 958
+   },
+   {
+    "w": "y",
+    "f": 958,
+    "fin": 962
+   },
+   {
+    "w": "elegancia,",
+    "f": 962,
+    "fin": 1013
+   },
+   {
+    "w": "en",
+    "f": 1013,
+    "fin": 1030
+   },
+   {
+    "w": "una",
+    "f": 1030,
+    "fin": 1048
+   },
+   {
+    "w": "sola",
+    "f": 1048,
+    "fin": 1063
+   },
+   {
+    "w": "página.",
+    "f": 1063,
+    "fin": 1091
+   }
+  ]
+ },
+ {
+  "id": "L6",
+  "f": 1452,
+  "texto": "Jumpers Fest. Así se vería con Elevate.",
+  "max": 2.6,
+  "brief": 24.4,
+  "toma": [
+   {
+    "ini": 13.43,
+    "fin": 14.3
+   },
+   {
+    "ini": 14.62,
+    "fin": 16.34
+   }
+  ],
+  "dur": 2.85,
+  "termina_f": 1623,
+  "palabras": [
+   {
+    "w": "Jumpers",
+    "f": 1452,
+    "fin": 1479
+   },
+   {
+    "w": "Fest.",
+    "f": 1479,
+    "fin": 1504
+   },
+   {
+    "w": "Así",
+    "f": 1520,
+    "fin": 1545
+   },
+   {
+    "w": "se",
+    "f": 1545,
+    "fin": 1559
+   },
+   {
+    "w": "vería",
+    "f": 1559,
+    "fin": 1574
+   },
+   {
+    "w": "con",
+    "f": 1574,
+    "fin": 1589
+   },
+   {
+    "w": "Elevate.",
+    "f": 1589,
+    "fin": 1623
+   }
+  ]
+ }
+]
