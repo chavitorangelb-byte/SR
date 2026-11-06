@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Render · Ana Gaby Repostería</title>
+<style>
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:600;src:url(/web/fonts/cormorant-garamond-latin-600-italic.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:600;src:url(/web/fonts/dm-sans-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:400;src:url(/web/fonts/dm-sans-latin-400-normal.woff2) format("woff2")}
+html,body{margin:0;background:#000}canvas{display:block}
+</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head>
+<body>
+<script type="module">
+import * as Escena from './escena.js';
+await Promise.all([
+  document.fonts.load('italic 600 62px "Cormorant Garamond"'),
+  document.fonts.load('600 46px "DM Sans"'),
+  document.fonts.load('400 40px "DM Sans"'),
+]);
+window.API = Escena;
+window.LISTO = true;
+</script>
+</body>
+</html>

@@ -54,6 +54,8 @@ async function nuevaPagina({ query = '', dsf = 2, viewport = VP } = {}) {
   page.on('response', (r) => { if (r.status() >= 400) fallidas.push(`${r.status()} ${r.url()}`); });
   await page.addInitScript(() => { window.__abiertos = []; window.open = (u) => { window.__abiertos.push(u); return null; }; });
   await page.goto(`${url}/${query}`);
+  // En modo captura la portada no se enciende sola: la enciende el video en su cuadro.
+  if (query.includes('captura')) await page.evaluate(() => window.AnaGaby.encender());
   await page.waitForFunction(() => document.body.classList.contains('cargada'));
   await page.evaluate(() => document.fonts.ready);
   await page.waitForTimeout(1600);

@@ -1136,20 +1136,24 @@ textarea.campo{padding:15px 16px;min-height:84px;resize:vertical;line-height:1.4
 
   /* ---------- Arranque ---------- */
   pintarEstado();
-  setInterval(pintarEstado, 60000);
+  if (!CAPTURA) setInterval(pintarEstado, 60000);
   irA(location.hash === '#a-tu-medida' ? 'medida' : 'galletas');
   const portadaImg = $('.portada-foto img');
-  const arrancar = () => requestAnimationFrame(() => requestAnimationFrame(() => {
+  const encender = () => {
     document.body.classList.add('cargada');
     $('#titulo-portada .acuarela').classList.add('visible');
-  }));
-  if (portadaImg.complete) arrancar(); else portadaImg.addEventListener('load', arrancar, { once: true });
-  portadaImg.addEventListener('error', arrancar, { once: true });
+  };
+  const arrancar = () => requestAnimationFrame(() => requestAnimationFrame(encender));
+  // En captura, la entrada de la portada la dispara el video en su cuadro (AnaGaby.encender()).
+  if (!CAPTURA) {
+    if (portadaImg.complete) arrancar(); else portadaImg.addEventListener('load', arrancar, { once: true });
+    portadaImg.addEventListener('error', arrancar, { once: true });
+  }
 
   // Ganchos para pruebas automatizadas y para la captura del video (misma página, mismos estados).
   window.AnaGaby = {
     NEGOCIO, CATALOGO, RESENAS, DEMO, CAPTURA, estado, cal,
-    irA, ponerFoto, fotoLista, elegirDia, elegirHora, abrirFecha, confirmarFecha, enviar, mensajeMedida,
+    irA, ponerFoto, fotoLista, elegirDia, elegirHora, abrirFecha, confirmarFecha, enviar, mensajeMedida, encender,
     waUrl, msgProducto, estadoNegocio, partesMX, irResena, resenaActual, abrirHoja, cerrarHoja,
     get tabActiva() { return tabActiva; },
     get ultimoEnvio() { return ultimoEnvio; },
