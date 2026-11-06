@@ -1,0 +1,61 @@
+{
+ "_referencia": {
+  "que_es": "foto_01 (427 px) ampliada a 1320 px",
+  "estimado_px": 422,
+  "verdadero_px": 427
+ },
+ "foto_01_rainbow_jumper.jpg": {
+  "nominal": "427×575",
+  "real": "427 px",
+  "factor": 0.96,
+  "ampliada": false
+ },
+ "foto_02_castle_jumper.jpg": {
+  "nominal": "425×498",
+  "real": "425 px",
+  "factor": 0.98,
+  "ampliada": false
+ },
+ "foto_03_castillo_resbaladilla.jpg": {
+  "nominal": "427×497",
+  "real": "427 px",
+  "factor": 1.0,
+  "ampliada": false
+ },
+ "foto_04_castillos_y_arcoiris.jpg": {
+  "nominal": "427×368",
+  "real": "427 px",
+  "factor": 1.0,
+  "ampliada": false
+ },
+ "foto_05_inflables_parque.jpg": {
+  "nominal": "427×251",
+  "real": "427 px",
+  "factor": 1.0,
+  "ampliada": false
+ },
+ "foto_06_castle_jump_jardin.jpg": {
+  "nominal": "1320×1591",
+  "real": "500 px",
+  "factor": 0.38,
+  "ampliada": true
+ },
+ "foto_07_castle_jump_terraza.jpg": {
+  "nominal": "1320×1218",
+  "real": "660 px",
+  "factor": 0.5,
+  "ampliada": true
+ },
+ "foto_08_combo_mobiliario_infantil.jpg": {
+  "nominal": "1320×975",
+  "real": "1320 px",
+  "factor": 0.9,
+  "ampliada": false
+ },
+ "logo_jumpers.jpg": {
+  "nominal": "1075×659",
+  "real": "950 px",
+  "factor": 0.88,
+  "ampliada": true
+ }
+}
