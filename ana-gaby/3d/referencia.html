@@ -82,6 +82,15 @@ const ang = +(q.get('ang') || 0) * Math.PI / 180;
 cam.position.set(Math.sin(ang) * 7.4, 2.55, Math.cos(ang) * 7.4);
 cam.lookAt(0, 0.9, 0);
 
+// Modo máscara: el mismo pastel y la misma cámara, en blanco sobre negro (para trazar su silueta).
+if (q.get('mascara')) {
+  scene.environment = null;
+  scene.background = new THREE.Color('#000000');
+  scene.children.filter((o) => o !== pastel).forEach((o) => scene.remove(o));
+  const blanco = new THREE.MeshBasicMaterial({ color: '#ffffff' });
+  pastel.traverse((o) => { if (o.isMesh) o.material = blanco; });
+  renderer.shadowMap.enabled = false;
+}
 renderer.render(scene, cam);
 window.LISTO = true;
 </script>

@@ -17,6 +17,9 @@ const ANCHO = +arg('ancho', 540), ALTO = +arg('alto', 960), FPS = +arg('fps', 30
 const DESDE = +arg('desde', 190), HASTA = +arg('hasta', 490);
 const FOTOS = arg('fotos', null);
 const OUT = path.resolve(ROOT, arg('out', 'review/fase4/prueba_estilo.mp4'));
+// Audio del video: la mezcla final si ya existe (fase 5); si no, la voz sola.
+const MEZCLA = path.join(ROOT, 'audio', 'build', 'mezcla_master.wav');
+const AUDIO = path.resolve(ROOT, arg('audio', fs.existsSync(MEZCLA) ? MEZCLA : path.join(ROOT, 'voz', 'voz_stem_48k.wav')));
 const PASO = 60 / FPS;
 const OBTURADOR = PASO * 0.5; // 180°
 
@@ -57,10 +60,10 @@ if (FOTOS) {
   }
   ff.stdin.end();
   await new Promise((r) => ff.on('close', r));
-  // Audio: la voz bloqueada en ese tramo (la música y los SFX llegan en la fase 5).
+  // Audio: el mismo tramo de la mezcla (o de la voz).
   const ini = DESDE / 60, dur = n / FPS;
-  execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', tmp, '-ss', ini.toFixed(4), '-t', dur.toFixed(4), '-i', path.join(ROOT, 'voz', 'voz_stem_48k.wav'),
-    '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ac', '2', '-shortest', '-movflags', '+faststart', OUT]);
+  execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', tmp, '-ss', ini.toFixed(4), '-t', dur.toFixed(4), '-i', AUDIO,
+    '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '256k', '-ac', '2', '-ar', '48000', '-shortest', '-movflags', '+faststart', OUT]);
   fs.unlinkSync(tmp);
   console.log(`✔ ${path.relative(ROOT, OUT)}: ${n} cuadros en ${((Date.now() - t0) / 1000).toFixed(0)} s`);
 }

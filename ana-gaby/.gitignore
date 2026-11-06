@@ -5,3 +5,4 @@ video/build/
 audio/build/
 review/**/*_sinaudio.mp4
 review/**/_*
+__pycache__/
