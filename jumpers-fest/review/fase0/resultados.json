@@ -1,0 +1,138 @@
+{
+ "fecha_simulada": "2026-11-06T12:00:00-06:00",
+ "viewport": "390x844",
+ "ok": 26,
+ "total": 26,
+ "resultados": [
+  {
+   "ok": true,
+   "nombre": "Carga sin errores de consola ni de JavaScript",
+   "detalle": ""
+  },
+  {
+   "ok": true,
+   "nombre": "Fuentes locales cargadas (Fredoka 600 y DM Sans)",
+   "detalle": ""
+  },
+  {
+   "ok": true,
+   "nombre": "Idioma, título y noindex (demo no oficial)",
+   "detalle": "Jumpers Fest Ags · Inflables monocromáticos en Aguascalientes"
+  },
+  {
+   "ok": true,
+   "nombre": "Sin desplazamiento horizontal",
+   "detalle": ""
+  },
+  {
+   "ok": true,
+   "nombre": "Portada completa en la primera pantalla (logo, Rainbow Jump, frase y botones)",
+   "detalle": "botones terminan en y=771 de 844"
+  },
+  {
+   "ok": true,
+   "nombre": "Barra superior oculta arriba y visible al bajar",
+   "detalle": ""
+  },
+  {
+   "ok": true,
+   "nombre": "Catálogo: Castle Jump, Rainbow Jump y Magic Jump con foto, marcadores y \"Lo quiero\"",
+   "detalle": ""
+  },
+  {
+   "ok": true,
+   "nombre": "Ninguna foto se muestra más grande que su resolución real (px CSS)",
+   "detalle": ""
+  },
+  {
+   "ok": true,
+   "nombre": "Cero precios inventados (no aparece \"$\" seguido de número)",
+   "detalle": ""
+  },
+  {
+   "ok": true,
+   "nombre": "Ficha de Rainbow Jump: foto, descripción de su post y marcadores",
+   "detalle": "todo cabe sin desplazar la hoja"
+  },
+  {
+   "ok": true,
+   "nombre": "Ficha de Castle Jump: galería de 3 fotos con puntos; cierra tocando fuera",
+   "detalle": ""
+  },
+  {
+   "ok": true,
+   "nombre": "Ficha de Magic Jump: solo nombre e \"Inflable monocromático\"; cierra con Escape",
+   "detalle": ""
+  },
+  {
+   "ok": true,
+   "nombre": "\"Lo quiero\" desde la ficha: baja a Aparta tu fecha, elige el inflable y abre el calendario completo",
+   "detalle": "título en y=68, calendario termina en y=802"
+  },
+  {
+   "ok": true,
+   "nombre": "Calendario: hoy marcado, días pasados bloqueados, meses y sábado 21 elegido",
+   "detalle": ""
+  },
+  {
+   "ok": true,
+   "nombre": "Mensaje armado en vivo (vista previa) con todos los datos",
+   "detalle": ""
+  },
+  {
+   "ok": true,
+   "nombre": "\"Apartar por WhatsApp\" abre wa.me/524491807242 con la solicitud escrita",
+   "detalle": "https://wa.me/524491807242?text=%C2%A1Hola%2C%20Jumpers%20Fe…"
+  },
+  {
+   "ok": true,
+   "nombre": "Arma tu fiesta: tarjeta de mobiliario sin piezas ni precios y su enlace de WhatsApp",
+   "detalle": ""
+  },
+  {
+   "ok": true,
+   "nombre": "Cómo funciona: Eliges, Apartas, Lo llevamos (sin horarios ni costos de flete)",
+   "detalle": "Eliges: Escoge tu inflable en el catálogo. / Apartas: Elige tu fecha y mándanos tu solicitud por WhatsApp. / Lo llevamos: Coordinamos contigo la entrega para tu evento."
+  },
+  {
+   "ok": true,
+   "nombre": "Pie: WhatsApp de la bio, Instagram y aviso de demo no oficial",
+   "detalle": ""
+  },
+  {
+   "ok": true,
+   "nombre": "Accesibilidad básica: fotos con texto alternativo, botones con nombre, campos con etiqueta",
+   "detalle": ""
+  },
+  {
+   "ok": true,
+   "nombre": "Peso de la página (fotos, fuentes y código)",
+   "detalle": "631 KB en 13 archivos"
+  },
+  {
+   "ok": true,
+   "nombre": "Validación: sin datos marca los 4 campos y explica qué falta",
+   "detalle": ""
+  },
+  {
+   "ok": true,
+   "nombre": "Validación: los errores se quitan al corregir y el botón se activa al final",
+   "detalle": ""
+  },
+  {
+   "ok": true,
+   "nombre": "Modo demo (?demo=1): muestra el mensaje y no abre WhatsApp",
+   "detalle": ""
+  },
+  {
+   "ok": true,
+   "nombre": "Sin desbordes en 360×740, 430×932 y escritorio 1280×800 (tarjetas en 3 columnas)",
+   "detalle": "360px ok, 430px ok, 1280px ok"
+  },
+  {
+   "ok": true,
+   "nombre": "Movimiento reducido: la página funciona sin animaciones",
+   "detalle": ""
+  }
+ ]
+}

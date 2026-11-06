@@ -1,0 +1,80 @@
+{
+ "rainbow_45": {
+  "archivo": "rainbow_45.jpg",
+  "px": [
+   408,
+   510
+  ],
+  "kb": 33
+ },
+ "rainbow_11": {
+  "archivo": "rainbow_11.jpg",
+  "px": [
+   408,
+   408
+  ],
+  "kb": 25
+ },
+ "castle_11": {
+  "archivo": "castle_11.jpg",
+  "px": [
+   1080,
+   1080
+  ],
+  "kb": 88
+ },
+ "castle_terraza_11": {
+  "archivo": "castle_terraza_11.jpg",
+  "px": [
+   1080,
+   1080
+  ],
+  "kb": 90
+ },
+ "castle_parque_11": {
+  "archivo": "castle_parque_11.jpg",
+  "px": [
+   425,
+   425
+  ],
+  "kb": 27
+ },
+ "magic_11": {
+  "archivo": "magic_11.jpg",
+  "px": [
+   427,
+   427
+  ],
+  "kb": 37
+ },
+ "fiesta": {
+  "archivo": "fiesta_mobiliario.jpg",
+  "px": [
+   1080,
+   765
+  ],
+  "kb": 156
+ },
+ "todos": {
+  "archivo": "todos_castillos_arcoiris.jpg",
+  "px": [
+   427,
+   368
+  ],
+  "kb": 33
+ },
+ "logo": {
+  "archivo": "logo_jumpers.png",
+  "px": [
+   720,
+   419
+  ],
+  "completo_px": [
+   1030,
+   599
+  ],
+  "kb": 129,
+  "dif_max_sobre_blanco": 19,
+  "dif_media": 0.225
+ }
+}

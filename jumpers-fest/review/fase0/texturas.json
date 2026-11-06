@@ -1,0 +1,122 @@
+{
+ "tarjeta_castle-jump": {
+  "archivo": "tarjeta_castle-jump.png",
+  "selector": ".card[data-id=\"castle-jump\"]",
+  "rect_css": {
+   "x": 20,
+   "y": 61.40625,
+   "w": 350,
+   "h": 499.078125
+  },
+  "radio_css": 30,
+  "escala": 3
+ },
+ "tarjeta_rainbow-jump": {
+  "archivo": "tarjeta_rainbow-jump.png",
+  "selector": ".card[data-id=\"rainbow-jump\"]",
+  "rect_css": {
+   "x": 20,
+   "y": 90.484375,
+   "w": 350,
+   "h": 499.078125
+  },
+  "radio_css": 30,
+  "escala": 3
+ },
+ "tarjeta_magic-jump": {
+  "archivo": "tarjeta_magic-jump.png",
+  "selector": ".card[data-id=\"magic-jump\"]",
+  "rect_css": {
+   "x": 20,
+   "y": 89.5625,
+   "w": 350,
+   "h": 499.078125
+  },
+  "radio_css": 30,
+  "escala": 3
+ },
+ "postal_arma_tu_fiesta": {
+  "archivo": "postal_arma_tu_fiesta.png",
+  "selector": ".postal",
+  "rect_css": {
+   "x": 20,
+   "y": 63.6875,
+   "w": 350,
+   "h": 406.5
+  },
+  "radio_css": 30,
+  "escala": 3
+ },
+ "pasos_como_funciona": {
+  "archivo": "pasos_como_funciona.png",
+  "selector": ".pasos",
+  "rect_css": {
+   "x": 20,
+   "y": 90.34375,
+   "w": 350,
+   "h": 259.8125
+  },
+  "radio_css": 0,
+  "escala": 3
+ },
+ "ficha_rainbow_jump": {
+  "archivo": "ficha_rainbow_jump.png",
+  "selector": "#ficha .hoja",
+  "rect_css": {
+   "x": 0,
+   "y": 125.171875,
+   "w": 390,
+   "h": 718.828125
+  },
+  "radio_css": 32,
+  "escala": 3
+ },
+ "calendario": {
+  "archivo": "calendario.png",
+  "selector": "#cal",
+  "rect_css": {
+   "x": 38,
+   "y": 474.078125,
+   "w": 314,
+   "h": 328
+  },
+  "radio_css": 22,
+  "escala": 3
+ },
+ "calendario_sabado_21": {
+  "archivo": "calendario_sabado_21.png",
+  "selector": "#cal",
+  "rect_css": {
+   "x": 38,
+   "y": 474.078125,
+   "w": 314,
+   "h": 328
+  },
+  "radio_css": 22,
+  "escala": 3
+ },
+ "boton_apartar_whatsapp": {
+  "archivo": "boton_apartar_whatsapp.png",
+  "selector": "#enviar",
+  "rect_css": {
+   "x": 38,
+   "y": 90.421875,
+   "w": 314,
+   "h": 58
+  },
+  "radio_css": 29,
+  "escala": 3
+ },
+ "burbuja_mensaje": {
+  "archivo": "burbuja_mensaje.png",
+  "selector": "#burbuja",
+  "rect_css": {
+   "x": 60,
+   "y": 90.15625,
+   "w": 292,
+   "h": 247.265625
+  },
+  "radio_css": 20,
+  "escala": 3
+ }
+}

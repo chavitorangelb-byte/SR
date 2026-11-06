@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="es-MX" class="intro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jumpers Fest Ags · Inflables monocromáticos en Aguascalientes</title>
+<meta name="description" content="Rentamos inflables monocromáticos en Aguascalientes, Mx. Castle Jump, Rainbow Jump y Magic Jump. Aparta tu fecha por WhatsApp.">
+<!-- Demo de cortesía de Elevate Negocios: no se indexa hasta que el dueño la apruebe. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F7F5F2">
+<link rel="preload" href="fonts/fredoka-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/dm-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* ---------- Fuentes locales (licencia OFL) ---------- */
+@font-face{font-family:"Fredoka";font-weight:500;font-style:normal;font-display:swap;src:url(fonts/fredoka-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Fredoka";font-weight:600;font-style:normal;font-display:swap;src:url(fonts/fredoka-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:400;font-style:normal;font-display:swap;src:url(fonts/dm-sans-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:500;font-style:normal;font-display:swap;src:url(fonts/dm-sans-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:600;font-style:normal;font-display:swap;src:url(fonts/dm-sans-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:700;font-style:normal;font-display:swap;src:url(fonts/dm-sans-latin-700-normal.woff2) format("woff2")}
+
+/* ---------- Marca ---------- */
+:root{
+  --blanco:#FFFFFF; --calido:#F7F5F2; --tinta:#1B1B1B;
+  --rosa:#F3C7CF; --amarillo:#F6E7A8; --menta:#CDE8C9; --celeste:#C6DFEA; --lila:#DCCDEB;
+  --t2:#66635F; --t3:#9C9893; --linea:rgba(27,27,27,.09); --linea-2:rgba(27,27,27,.16);
+  --error:#A9324C; --error-borde:#E7A3B1;
+  --f-titulo:"Fredoka", ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+  --f-texto:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r-card:30px; --r-foto:22px;
+  /* volumen de cojín: brillo arriba, costura abajo, sombra suave */
+  --cojin:inset 0 1px 0 rgba(255,255,255,.95), inset 0 -1.5px 0 rgba(27,27,27,.035), 0 1px 2px rgba(27,27,27,.05), 0 16px 34px -18px rgba(27,27,27,.26);
+  --spr:cubic-bezier(.2,1.25,.32,1); --spr-dur:620ms;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --top:64px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:calc(var(--top) + 8px)}
+body{margin:0;background:var(--calido);color:var(--tinta);font:400 15.5px/1.5 var(--f-texto);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+button,input{font:inherit;color:inherit}
+button{background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+a{color:inherit;-webkit-tap-highlight-color:transparent}
+h1,h2,h3{font-family:var(--f-titulo);font-weight:600;margin:0;letter-spacing:-.005em}
+p{margin:0}
+:focus-visible{outline:2.5px solid var(--tinta);outline-offset:3px;border-radius:12px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Botones de vinil ---------- */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:9px;height:52px;padding:0 22px;border-radius:999px;font:500 16.5px/1 var(--f-titulo);letter-spacing:.005em;text-decoration:none;white-space:nowrap;user-select:none;-webkit-user-select:none;transform-origin:50% 60%}
+.btn-pri{background:var(--tinta);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.18), inset 0 -2px 0 rgba(0,0,0,.28), 0 10px 22px -10px rgba(27,27,27,.55)}
+.btn-sec{background:#fff;color:var(--tinta);box-shadow:inset 0 0 0 1px var(--linea-2), var(--cojin)}
+.btn-block{display:flex;width:100%}
+.btn svg{flex:none}
+.btn.is-pressed,.op.is-pressed,.chip.is-pressed,.cal-dia.is-pressed,.card-foto.is-pressed{transform:scale(.955);transition:transform .12s var(--ease)}
+
+/* ---------- Mini arcoíris (firma de marca) ---------- */
+.arcoiris-mini{display:inline-block;width:18px;height:10px;flex:none}
+.eyebrow{display:flex;align-items:center;gap:8px;font:600 11.5px/1.2 var(--f-texto);letter-spacing:.14em;text-transform:uppercase;color:var(--t2)}
+
+/* ---------- Barra superior (aparece al bajar) ---------- */
+.topbar{position:fixed;left:0;right:0;top:0;z-index:40;height:var(--top);display:flex;align-items:center;justify-content:space-between;padding:0 14px 0 18px;padding-top:env(safe-area-inset-top);background:rgba(255,255,255,.74);-webkit-backdrop-filter:blur(30px) saturate(140%);backdrop-filter:blur(30px) saturate(140%);box-shadow:0 1px 0 var(--linea);transform:translateY(calc(-100% - 34px));visibility:hidden;transition:transform .42s var(--ease),visibility 0s .42s}
+.topbar.on{transform:none;visibility:visible;transition:transform .42s var(--ease),visibility 0s}
+.topbar .logo-mini{height:38px;width:auto}
+.topbar .btn{height:40px;padding:0 16px;font-size:15px}
+.topbar .btn{transition:opacity .25s var(--ease),transform .35s var(--ease)}
+.topbar.en-aparta .btn{opacity:0;transform:scale(.85);pointer-events:none}
+
+/* ---------- Portada ---------- */
+.hero{position:relative;text-align:center;padding:14px 20px 34px;background:linear-gradient(180deg,#fff 0%,#fff 40%,var(--calido) 100%);overflow:hidden}
+.hero-logo{width:152px;margin:0 auto}
+.hero .eyebrow{justify-content:center;margin-top:12px}
+.arco{position:relative;width:362px;height:384px;margin:16px auto 0;max-width:100%}
+.arco-bandas{position:absolute;left:0;top:0;width:362px;height:384px;overflow:visible}
+.arco-bandas path{fill:none;stroke-width:8.4;stroke-linecap:round}
+.arco-marco{position:absolute;left:48px;top:48px;width:266px;height:328px;padding:8px;background:#fff;border-radius:133px 133px 28px 28px;box-shadow:var(--cojin), 0 28px 40px -26px rgba(27,27,27,.45)}
+.arco-marco::after{content:"";position:absolute;inset:4px;border-radius:129px 129px 24px 24px;border:1px solid rgba(27,27,27,.05);pointer-events:none}
+.arco-foto{width:250px;height:312px;border-radius:125px 125px 21px 21px;overflow:hidden;background:var(--celeste)}
+.arco-foto img{width:100%;height:100%;object-fit:cover}
+.arco-piso{position:absolute;left:50%;bottom:-14px;width:250px;height:22px;margin-left:-125px;border-radius:50%;background:radial-gradient(closest-side,rgba(27,27,27,.16),rgba(27,27,27,0));pointer-events:none}
+.hero h1{margin-top:26px;font-size:43px;line-height:.98}
+.hero h1 .ln{display:block}
+.hero h1 .mas{position:relative;display:inline-block;width:.7em;height:.7em;margin-right:.02em;border-radius:50%;background:var(--rosa);color:transparent;overflow:hidden;vertical-align:-.09em;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.75), inset 0 -2px 0 rgba(27,27,27,.06), 0 8px 14px -9px rgba(27,27,27,.5)}
+.hero h1 .mas::before,.hero h1 .mas::after{content:"";position:absolute;left:50%;top:50%;width:.34em;height:.09em;margin:-.045em 0 0 -.17em;border-radius:9px;background:var(--tinta)}
+.hero h1 .mas::after{transform:rotate(90deg)}
+.hero .lead{margin:12px auto 0;max-width:330px;color:var(--t2);font-size:15.5px;text-wrap:balance}
+.hero-acciones{display:flex;gap:10px;justify-content:center;margin-top:22px}
+.hero-acciones .btn{flex:1 1 0;max-width:180px;padding:0 14px}
+
+/* ---------- Secciones ---------- */
+.sec{padding:58px 20px 8px;max-width:1120px;margin:0 auto}
+.sec-head{margin-bottom:22px}
+.sec-head h2{font-size:34px;line-height:1.04;margin-top:10px}
+.sec-head .sub{margin-top:8px;color:var(--t2);text-wrap:pretty}
+.nota{margin:16px 4px 0;font-size:13px;color:var(--t3);text-align:center}
+
+/* ---------- Tarjetas de inflables ---------- */
+.cards{display:grid;gap:22px}
+.card{position:relative;background:#fff;border-radius:var(--r-card);padding:10px;box-shadow:var(--cojin)}
+.card::after{content:"";position:absolute;inset:5px;border-radius:calc(var(--r-card) - 5px);border:1px solid rgba(27,27,27,.045);pointer-events:none}
+.card-foto{position:relative;display:block;width:100%;aspect-ratio:1/1;border-radius:var(--r-foto);overflow:hidden;background:var(--celeste);transform-origin:50% 50%}
+.card-foto img{width:100%;height:100%;object-fit:cover}
+.chip-foto{position:absolute;left:12px;bottom:12px;display:inline-flex;align-items:center;gap:7px;height:30px;padding:0 12px 0 10px;border-radius:999px;font:600 12.5px/1 var(--f-texto);color:var(--tinta);background:rgba(255,255,255,.62);-webkit-backdrop-filter:blur(32px) saturate(140%);backdrop-filter:blur(32px) saturate(140%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7), 0 4px 12px -6px rgba(27,27,27,.3)}
+.chip-foto i{width:9px;height:9px;border-radius:50%;background:var(--acento);box-shadow:inset 0 0 0 1px rgba(27,27,27,.12)}
+.card-cuerpo{padding:16px 8px 8px}
+.card-fila{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.card h3{font-size:27px;line-height:1.05}
+.link-ficha{display:inline-flex;align-items:center;gap:4px;margin-top:5px;font:600 14px/1.2 var(--f-texto);color:var(--t2)}
+.link-ficha svg{transition:transform .2s var(--ease)}
+.card .btn{height:48px;padding:0 20px}
+.specs{display:grid;grid-template-columns:1fr 1.38fr 1fr;gap:6px;margin:16px 0 0}
+.specs div{background:var(--calido);border-radius:16px;padding:10px 12px 9px;min-width:0}
+.specs dt{font:500 11.5px/1.2 var(--f-texto);color:var(--t2);white-space:nowrap}
+.specs dd{margin:4px 0 0;font:600 17px/1.1 var(--f-titulo);font-weight:500;letter-spacing:.02em}
+.specs dd.vacio{color:var(--tinta)}
+
+/* ---------- Hoja (ficha y mensaje listo) ---------- */
+.hoja-wrap{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;justify-content:flex-end}
+.hoja-wrap[hidden]{display:none}
+.scrim{position:absolute;inset:0;background:rgba(27,27,27,.36)}
+.hoja{position:relative;margin:0 auto;width:100%;max-width:520px;max-height:calc(100% - 26px);display:flex;flex-direction:column;background:#fff;border-radius:32px 32px 0 0;box-shadow:0 -12px 50px -10px rgba(27,27,27,.3)}
+.hoja-grip{flex:none;height:22px;display:grid;place-items:center}
+.hoja-grip::before{content:"";width:38px;height:5px;border-radius:9px;background:#E3E0DB}
+.hoja-x{position:absolute;right:14px;top:12px;z-index:2;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(247,245,242,.8);-webkit-backdrop-filter:blur(30px) saturate(140%);backdrop-filter:blur(30px) saturate(140%);box-shadow:inset 0 0 0 1px var(--linea)}
+.hoja-scroll{overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:6px 30px 12px}
+.hoja-pie{flex:none;padding:12px 20px calc(14px + env(safe-area-inset-bottom));box-shadow:0 -1px 0 var(--linea)}
+.galeria{position:relative}
+.galeria-pista{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:24px;scrollbar-width:none}
+.galeria-pista::-webkit-scrollbar{display:none}
+.galeria-pista figure{margin:0;flex:0 0 100%;scroll-snap-align:center;aspect-ratio:1/1;border-radius:24px;overflow:hidden;background:var(--celeste)}
+.galeria-pista img{width:100%;height:100%;object-fit:cover}
+.puntos{display:flex;gap:6px;justify-content:center;height:22px;align-items:end}
+.puntos i{width:6px;height:6px;border-radius:9px;background:#DAD6D0;transition:width .3s var(--ease),background .3s}
+.puntos i.on{width:18px;background:var(--tinta)}
+.ficha-cuerpo{padding-top:14px}
+.ficha-cuerpo h2{font-size:31px;line-height:1.05;margin-top:8px}
+.ficha-desc{margin-top:8px;color:var(--t2);font-size:16px;line-height:1.5}
+.ficha-nota{margin-top:12px;font-size:13px;color:var(--t3)}
+
+/* ---------- Aparta tu fecha ---------- */
+.form{background:#fff;border-radius:var(--r-card);padding:20px 18px 22px;box-shadow:var(--cojin);position:relative}
+.form::after{content:"";position:absolute;inset:5px;border-radius:calc(var(--r-card) - 5px);border:1px solid rgba(27,27,27,.045);pointer-events:none}
+.campo{border:0;margin:0;padding:0;min-width:0}
+.campo + .campo{margin-top:20px}
+.lbl{display:flex;align-items:baseline;gap:8px;margin-bottom:9px;padding:0;font:600 14px/1.2 var(--f-texto);color:var(--tinta)}
+.lbl .n{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--calido);font:600 12.5px/1 var(--f-titulo);transform:translateY(-1px)}
+.lbl em{font-style:normal;font-weight:500;color:var(--t3)}
+.opciones{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.op{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;padding:8px 6px 10px;border-radius:20px;background:var(--calido);box-shadow:inset 0 0 0 1px transparent;transition:box-shadow .2s var(--ease),background .2s}
+.op img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px}
+.op span{font:500 13px/1.15 var(--f-titulo);text-align:center;white-space:nowrap}
+.op .check{position:absolute;right:4px;top:4px;width:24px;height:24px;border-radius:50%;background:var(--tinta);display:grid;place-items:center;opacity:0;transform:scale(.4);transition:opacity .2s,transform .45s var(--spr)}
+.op[aria-pressed="true"]{background:#fff;box-shadow:inset 0 0 0 2px var(--tinta), 0 10px 20px -14px rgba(27,27,27,.5)}
+.op[aria-pressed="true"] .check{opacity:1;transform:none}
+.input{display:flex;align-items:center;gap:10px;width:100%;height:54px;padding:0 16px;border-radius:16px;background:var(--calido);border:0;box-shadow:inset 0 0 0 1px transparent;font:500 16px/1.2 var(--f-texto);color:var(--tinta);text-align:left;transition:box-shadow .2s var(--ease),background .2s}
+.input::placeholder{color:var(--t3);font-weight:400}
+.input:focus{outline:none;background:#fff;box-shadow:inset 0 0 0 2px var(--tinta)}
+.input-fecha .ph{flex:1;color:var(--t3);font-weight:400}
+.input-fecha.lleno .ph{color:var(--tinta);font-weight:500}
+.input-fecha .chev{transition:transform .35s var(--ease)}
+.input-fecha[aria-expanded="true"]{background:#fff;box-shadow:inset 0 0 0 2px var(--tinta)}
+.input-fecha[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.cal-caja{overflow:hidden}
+.cal{margin-top:10px;padding:12px 10px 10px;border-radius:22px;background:#fff;box-shadow:inset 0 0 0 1px var(--linea), 0 14px 30px -20px rgba(27,27,27,.35)}
+.cal-head{display:flex;align-items:center;justify-content:space-between;padding:0 2px 8px}
+.cal-head strong{font:600 18px/1 var(--f-titulo)}
+.cal-head button{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--calido)}
+.cal-head button:disabled{opacity:.3;cursor:default}
+.cal-sem,.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);text-align:center}
+.cal-sem span{font:600 11.5px/28px var(--f-texto);color:var(--t3)}
+.cal-sem span:nth-child(n+6){color:var(--tinta)}
+.cal-dia{position:relative;height:39px;display:grid;place-items:center;font:500 15px/1 var(--f-texto);font-variant-numeric:tabular-nums}
+.cal-dia::before{content:"";position:absolute;width:38px;height:38px;border-radius:50%;left:50%;top:50%;margin:-19px 0 0 -19px;transition:background .2s}
+.cal-dia span{position:relative}
+.cal-dia.finde::before{background:rgba(246,231,168,.42)}
+.cal-dia.hoy::before{box-shadow:inset 0 0 0 1.5px var(--t3)}
+.cal-dia:disabled{color:#CFCBC5;cursor:default}
+.cal-dia:disabled::before{background:none}
+.cal-dia.sel{color:#fff;font-weight:600}
+.cal-dia.sel::before{background:var(--tinta);box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 6px 12px -6px rgba(27,27,27,.6)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{height:40px;padding:0 16px;border-radius:999px;background:var(--calido);font:500 14.5px/1 var(--f-texto);box-shadow:inset 0 0 0 1px transparent;transition:background .2s,box-shadow .2s,color .2s}
+.chip[aria-pressed="true"]{background:var(--tinta);color:#fff}
+.switch{display:flex;align-items:center;gap:12px;margin-top:20px;padding:12px 14px;border-radius:18px;background:var(--calido);font:500 14.5px/1.3 var(--f-texto);cursor:pointer}
+.switch input{position:absolute;opacity:0;pointer-events:none}
+.switch .sw{flex:none;position:relative;width:46px;height:28px;border-radius:99px;background:#DCD8D2;transition:background .25s var(--ease)}
+.switch .sw::after{content:"";position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 2px 5px rgba(27,27,27,.25);transition:transform .45s var(--spr)}
+.switch input:checked + .sw{background:var(--tinta)}
+.switch input:checked + .sw::after{transform:translateX(18px)}
+.switch input:focus-visible + .sw{outline:2.5px solid var(--tinta);outline-offset:3px}
+.error-msg{display:none;margin-top:7px;font:500 13px/1.3 var(--f-texto);color:var(--error)}
+.invalido .error-msg{display:block}
+.invalido .input,.invalido .opciones .op{box-shadow:inset 0 0 0 1.5px var(--error-borde)}
+.vista{margin-top:22px}
+.vista .lbl{color:var(--t2);font-weight:500;font-size:13px}
+.burbuja{position:relative;padding:12px 14px 12px;border-radius:20px 20px 6px 20px;background:var(--menta);font:400 14px/1.45 var(--f-texto);white-space:pre-wrap;word-break:break-word;margin-left:22px}
+.burbuja .vacio{color:rgba(27,27,27,.4)}
+.burbuja::after{content:"";position:absolute;right:-6px;bottom:0;width:14px;height:14px;background:var(--menta);clip-path:path("M0 0 C1 9 6 13 14 14 L0 14 Z")}
+.btn-wa{margin-top:16px;height:58px;font-size:18px;background:rgba(27,27,27,.3);box-shadow:none;transition:background .3s var(--ease),box-shadow .3s}
+.btn-wa.listo{background:var(--tinta);box-shadow:inset 0 1px 0 rgba(255,255,255,.18), inset 0 -2px 0 rgba(0,0,0,.28), 0 14px 26px -12px rgba(27,27,27,.6)}
+.form-nota{margin-top:10px;font-size:13px;color:var(--t3);text-align:center;text-wrap:balance}
+
+/* ---------- Arma tu fiesta ---------- */
+.postal{position:relative;background:#fff;border-radius:var(--r-card);padding:10px;box-shadow:var(--cojin)}
+.postal::after{content:"";position:absolute;inset:5px;border-radius:calc(var(--r-card) - 5px);border:1px solid rgba(27,27,27,.045);pointer-events:none}
+.postal-foto{border-radius:var(--r-foto);overflow:hidden;aspect-ratio:1320/935;background:var(--menta)}
+.postal-foto img{width:100%;height:100%;object-fit:cover}
+.postal-cuerpo{padding:18px 10px 10px}
+.postal h3{font-size:25px;line-height:1.1}
+.postal p{margin-top:6px;color:var(--t2)}
+.postal .btn{margin-top:16px}
+
+/* ---------- Cómo funciona ---------- */
+.pasos{list-style:none;margin:0;padding:0;position:relative}
+.pasos::before{content:"";position:absolute;left:25px;top:30px;bottom:30px;border-left:2px dashed rgba(27,27,27,.16)}
+.paso{position:relative;display:flex;gap:16px;align-items:flex-start;padding:0 0 22px}
+.paso:last-child{padding-bottom:0}
+.paso .num{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--c);font:600 22px/1 var(--f-titulo);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.7), inset 0 -2px 0 rgba(27,27,27,.06), 0 8px 16px -10px rgba(27,27,27,.45)}
+.paso h3{font-size:22px;line-height:1.1;margin-top:5px}
+.paso p{margin-top:4px;color:var(--t2);text-wrap:pretty}
+.foto-ancha{margin:28px 0 0;padding:10px;background:#fff;border-radius:var(--r-card);box-shadow:var(--cojin)}
+.foto-ancha img{border-radius:var(--r-foto);width:100%}
+
+/* ---------- Pie ---------- */
+.pie{margin-top:58px;padding:40px 20px calc(34px + env(safe-area-inset-bottom));background:#fff;text-align:center;border-radius:36px 36px 0 0;box-shadow:0 -1px 0 var(--linea)}
+.pie-logo{width:150px;margin:0 auto}
+.pie .bio{margin:14px auto 0;max-width:300px;color:var(--t2)}
+.pie-acciones{display:grid;gap:10px;max-width:340px;margin:22px auto 0}
+.pie .dm{margin-top:12px;font-size:13.5px;color:var(--t2)}
+.pie .legal{margin-top:26px;padding-top:16px;border-top:1px solid var(--linea);font-size:12px;color:var(--t3)}
+
+/* ---------- Inflado al aparecer ---------- */
+.js [data-inflar]{opacity:0;transform:translateY(14px) scale(.94)}
+.js [data-inflar].inflado{opacity:1;transform:none;transition:transform var(--spr-dur) var(--spr),opacity .35s var(--ease)}
+.js.intro .hero > *{opacity:0}
+
+/* ---------- Pantallas grandes ---------- */
+@media (min-width:760px){
+  .cards{grid-template-columns:repeat(3,1fr)}
+  #aparta .form{max-width:560px;margin:0 auto}
+  #aparta .sec-head,#como-funciona .sec-head,#fiesta .sec-head{text-align:center}
+  #aparta .sec-head .eyebrow,#como-funciona .sec-head .eyebrow,#fiesta .sec-head .eyebrow{justify-content:center}
+  .postal,.pasos,.foto-ancha{max-width:560px;margin-left:auto;margin-right:auto}
+  .foto-ancha{margin-top:28px}
+}
+@media (prefers-reduced-motion:reduce){
+  .js [data-inflar]{opacity:1;transform:none}
+  *{transition-duration:0s!important;animation-duration:0s!important}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arcoiris" viewBox="0 0 18 10"><g fill="none" stroke-linecap="round" stroke-width="1.6"><path d="M1.2 9.2a7.8 7.8 0 0 1 15.6 0" stroke="#F3C7CF"/><path d="M3.1 9.2a5.9 5.9 0 0 1 11.8 0" stroke="#F6E7A8"/><path d="M5 9.2a4 4 0 0 1 8 0" stroke="#CDE8C9"/><path d="M6.9 9.2a2.1 2.1 0 0 1 4.2 0" stroke="#C6DFEA"/></g></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M12 3.2c-4.9 0-8.8 3.5-8.8 7.9 0 2.3 1.1 4.4 2.9 5.9l-.8 3.4 3.9-1.9c.9.3 1.9.4 2.8.4 4.9 0 8.8-3.5 8.8-7.8S16.9 3.2 12 3.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="8.3" cy="11.2" r="1.1" fill="currentColor"/><circle cx="12" cy="11.2" r="1.1" fill="currentColor"/><circle cx="15.7" cy="11.2" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="i-flecha" viewBox="0 0 16 16"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15.5" rx="4"/><path d="M3.5 10h17M8 3v4M16 3v4"/></g></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-arroba" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3.6"/><path d="M15.6 12v1.4a2.6 2.6 0 0 0 5.2 0V12a8.8 8.8 0 1 0-3.5 7"/></g></symbol>
+  </defs>
+</svg>
+
+<header class="topbar" id="topbar">
+  <a href="#inicio" aria-label="Jumpers Fest, inicio"><img class="logo-mini" src="img/logo_jumpers.png" alt="Jumpers Fest" width="720" height="419"></a>
+  <a class="btn btn-pri" href="#aparta" data-ir="aparta">Aparta tu fecha</a>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <img class="hero-logo" src="img/logo_jumpers.png" alt="Jumpers Fest · Inflables/mobiliario" width="720" height="419">
+    <p class="eyebrow">Inflables monocromáticos · Aguascalientes</p>
+    <figure class="arco" aria-label="Rainbow Jump">
+      <svg class="arco-bandas" viewBox="0 0 362 384" aria-hidden="true">
+        <path d="M8 256 V181 A173 173 0 0 1 354 181 V256" stroke="#F3C7CF"/>
+        <path d="M16.4 248 V181 A164.6 164.6 0 0 1 345.6 181 V248" stroke="#F6E7A8"/>
+        <path d="M24.8 240 V181 A156.2 156.2 0 0 1 337.2 181 V240" stroke="#CDE8C9"/>
+        <path d="M33.2 232 V181 A147.8 147.8 0 0 1 328.8 181 V232" stroke="#C6DFEA"/>
+        <path d="M41.6 224 V181 A139.4 139.4 0 0 1 320.4 181 V224" stroke="#DCCDEB"/>
+      </svg>
+      <div class="arco-marco"><div class="arco-foto"><img src="img/rainbow_45.jpg" alt="Rainbow Jump: inflable blanco con arcoíris pastel, sobre pasto" width="408" height="510" fetchpriority="high"></div></div>
+      <div class="arco-piso"></div>
+    </figure>
+    <h1><span class="ln">Diversión</span> <span class="ln"><span class="mas">+</span> elegancia</span></h1>
+    <p class="lead">¡Bienvenidos a Jumpers Fest! Contamos con inflables monocromáticos de primera calidad.</p>
+    <div class="hero-acciones">
+      <a class="btn btn-sec" href="#inflables" data-ir="inflables">Ver inflables</a>
+      <a class="btn btn-pri" href="#aparta" data-ir="aparta">Aparta tu fecha</a>
+    </div>
+  </section>
+
+  <section class="sec" id="inflables" aria-labelledby="t-inflables">
+    <header class="sec-head" data-inflar>
+      <p class="eyebrow"><svg class="arcoiris-mini"><use href="#i-arcoiris"/></svg>Catálogo</p>
+      <h2 id="t-inflables">Nuestros inflables</h2>
+      <p class="sub">Toca uno para ver su ficha.</p>
+    </header>
+    <div class="cards" id="cards"></div>
+    <p class="nota">Medidas, edades y precios por confirmar.</p>
+  </section>
+
+  <section class="sec" id="aparta" aria-labelledby="t-aparta">
+    <header class="sec-head" data-inflar>
+      <p class="eyebrow"><svg class="arcoiris-mini"><use href="#i-arcoiris"/></svg>En un mensaje</p>
+      <h2 id="t-aparta">Aparta tu fecha</h2>
+      <p class="sub">Elige inflable, fecha y lugar. Te dejamos el mensaje listo para WhatsApp.</p>
+    </header>
+    <form class="form" id="form" novalidate data-inflar>
+      <fieldset class="campo" id="c-inflable">
+        <legend class="lbl"><span class="n">1</span>Inflable</legend>
+        <div class="opciones" id="opciones"></div>
+        <p class="error-msg" id="e-inflable">Elige un inflable.</p>
+      </fieldset>
+
+      <div class="campo" id="c-fecha">
+        <p class="lbl" id="l-fecha"><span class="n">2</span>Fecha <em>· se confirma por WhatsApp</em></p>
+        <button type="button" class="input input-fecha" id="fechaBtn" aria-expanded="false" aria-controls="calCaja" aria-labelledby="l-fecha fechaTxt">
+          <svg width="22" height="22"><use href="#i-cal"/></svg>
+          <span class="ph" id="fechaTxt">Elige una fecha</span>
+          <svg class="chev" width="20" height="20"><use href="#i-chev"/></svg>
+        </button>
+        <div class="cal-caja" id="calCaja" hidden>
+          <div class="cal" id="cal">
+            <div class="cal-head">
+              <button type="button" id="calPrev" aria-label="Mes anterior"><svg width="18" height="18" style="transform:rotate(90deg)"><use href="#i-chev"/></svg></button>
+              <strong id="calMes" aria-live="polite"></strong>
+              <button type="button" id="calNext" aria-label="Mes siguiente"><svg width="18" height="18" style="transform:rotate(-90deg)"><use href="#i-chev"/></svg></button>
+            </div>
+            <div class="cal-sem" aria-hidden="true"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+            <div class="cal-grid" id="calGrid" role="grid"></div>
+          </div>
+        </div>
+        <p class="error-msg" id="e-fecha">Elige una fecha.</p>
+      </div>
+
+      <div class="campo" id="c-lugar">
+        <label class="lbl" for="lugar"><span class="n">3</span>Colonia o salón</label>
+        <input class="input" id="lugar" name="lugar" type="text" maxlength="70" autocomplete="off" enterkeyhint="next" placeholder="Colonia o nombre del salón" aria-describedby="e-lugar">
+        <p class="error-msg" id="e-lugar">Escribe tu colonia o salón.</p>
+      </div>
+
+      <div class="campo" id="c-hora">
+        <label class="lbl" for="hora"><span class="n">4</span>Horario aproximado</label>
+        <input class="input" id="hora" name="hora" type="text" maxlength="40" autocomplete="off" enterkeyhint="done" placeholder="Ej. 4:00 pm" aria-describedby="e-hora">
+        <p class="error-msg" id="e-hora">Escribe un horario aproximado.</p>
+      </div>
+
+      <fieldset class="campo" id="c-evento">
+        <legend class="lbl">Tipo de evento <em>(opcional)</em></legend>
+        <div class="chips" id="eventos">
+          <button type="button" class="chip" data-evento="Cumpleaños" aria-pressed="false">Cumpleaños</button>
+          <button type="button" class="chip" data-evento="Bautizo" aria-pressed="false">Bautizo</button>
+          <button type="button" class="chip" data-evento="Otro" aria-pressed="false">Otro</button>
+        </div>
+      </fieldset>
+
+      <label class="switch"><input type="checkbox" id="mobiliario"><span class="sw" aria-hidden="true"></span>También quiero preguntar por mobiliario</label>
+
+      <div class="vista" aria-live="polite">
+        <p class="lbl">Así se verá tu mensaje</p>
+        <div class="burbuja" id="burbuja"></div>
+      </div>
+
+      <button type="submit" class="btn btn-pri btn-block btn-wa" id="enviar"><svg width="22" height="22"><use href="#i-chat"/></svg>Apartar por WhatsApp</button>
+      <p class="form-nota">Se abre WhatsApp con tu solicitud ya escrita; solo tienes que enviarla.</p>
+    </form>
+  </section>
+
+  <section class="sec" id="fiesta" aria-labelledby="t-fiesta">
+    <header class="sec-head" data-inflar>
+      <p class="eyebrow"><svg class="arcoiris-mini"><use href="#i-arcoiris"/></svg>Inflables/mobiliario</p>
+      <h2 id="t-fiesta">Arma tu fiesta</h2>
+    </header>
+    <article class="postal" data-inflar>
+      <div class="postal-foto"><img src="img/fiesta_mobiliario.jpg" alt="Castillo inflable con resbaladilla junto a mesas y sillitas en colores pastel" width="1080" height="765"></div>
+      <div class="postal-cuerpo">
+        <h3>Pregunta por mobiliario</h3>
+        <p>Pregúntanos por mobiliario para tu evento.</p>
+        <a class="btn btn-sec btn-block" data-wa="mobiliario" href="#" target="_blank" rel="noopener"><svg width="20" height="20"><use href="#i-chat"/></svg>Preguntar por WhatsApp</a>
+      </div>
+    </article>
+  </section>
+
+  <section class="sec" id="como-funciona" aria-labelledby="t-como">
+    <header class="sec-head" data-inflar>
+      <p class="eyebrow"><svg class="arcoiris-mini"><use href="#i-arcoiris"/></svg>Así de fácil</p>
+      <h2 id="t-como">Cómo funciona</h2>
+    </header>
+    <ol class="pasos">
+      <li class="paso" style="--c:var(--rosa)" data-inflar><span class="num">1</span><div><h3>Eliges</h3><p>Escoge tu inflable en el catálogo.</p></div></li>
+      <li class="paso" style="--c:var(--amarillo)" data-inflar><span class="num">2</span><div><h3>Apartas</h3><p>Elige tu fecha y mándanos tu solicitud por WhatsApp.</p></div></li>
+      <li class="paso" style="--c:var(--menta)" data-inflar><span class="num">3</span><div><h3>Lo llevamos</h3><p>Coordinamos contigo la entrega para tu evento.</p></div></li>
+    </ol>
+    <figure class="foto-ancha" data-inflar><img src="img/todos_castillos_arcoiris.jpg" alt="Inflables blancos de Jumpers Fest juntos: castillos, resbaladilla y arcoíris" width="427" height="368"></figure>
+  </section>
+</main>
+
+<footer class="pie" id="contacto">
+  <img class="pie-logo" src="img/logo_jumpers.png" alt="Jumpers Fest · Inflables/mobiliario" width="720" height="419">
+  <p class="bio">Rentamos inflables monocromáticos · Aguascalientes, Mx.</p>
+  <div class="pie-acciones">
+    <a class="btn btn-pri" data-wa="general" href="#" target="_blank" rel="noopener"><svg width="22" height="22"><use href="#i-chat"/></svg>WhatsApp · <span id="waVisible"></span></a>
+    <a class="btn btn-sec" id="igLink" href="#" target="_blank" rel="noopener"><svg width="20" height="20"><use href="#i-arroba"/></svg><span id="igVisible"></span></a>
+  </div>
+  <p class="dm">También agendamos vía DM en Instagram.</p>
+  <p class="legal">Demo de cortesía de Elevate Negocios · página no oficial</p>
+</footer>
+
+<!-- Ficha del inflable -->
+<div class="hoja-wrap" id="ficha" hidden>
+  <div class="scrim" data-cerrar></div>
+  <div class="hoja" role="dialog" aria-modal="true" aria-labelledby="fichaNombre">
+    <div class="hoja-grip" aria-hidden="true"></div>
+    <button class="hoja-x" type="button" data-cerrar aria-label="Cerrar"><svg width="20" height="20"><use href="#i-x"/></svg></button>
+    <div class="hoja-scroll">
+      <div class="galeria"><div class="galeria-pista" id="fichaPista"></div><div class="puntos" id="fichaPuntos" aria-hidden="true"></div></div>
+      <div class="ficha-cuerpo">
+        <p class="eyebrow"><svg class="arcoiris-mini"><use href="#i-arcoiris"/></svg><span id="fichaChip"></span></p>
+        <h2 id="fichaNombre"></h2>
+        <p class="ficha-desc" id="fichaDesc"></p>
+        <dl class="specs" id="fichaSpecs"></dl>
+        <p class="ficha-nota">Precio y disponibilidad: te los confirmamos por WhatsApp.</p>
+      </div>
+    </div>
+    <div class="hoja-pie"><button type="button" class="btn btn-pri btn-block" id="fichaQuiero">Lo quiero</button></div>
+  </div>
+</div>
+
+<!-- Mensaje listo -->
+<div class="hoja-wrap" id="listo" hidden>
+  <div class="scrim" data-cerrar></div>
+  <div class="hoja" role="dialog" aria-modal="true" aria-labelledby="listoTitulo">
+    <div class="hoja-grip" aria-hidden="true"></div>
+    <button class="hoja-x" type="button" data-cerrar aria-label="Cerrar"><svg width="20" height="20"><use href="#i-x"/></svg></button>
+    <div class="hoja-scroll">
+      <p class="eyebrow" style="margin-top:6px"><svg class="arcoiris-mini"><use href="#i-arcoiris"/></svg>Solicitud lista</p>
+      <h2 id="listoTitulo" style="font-size:30px;line-height:1.05;margin-top:8px">¡Tu mensaje está listo!</h2>
+      <p class="ficha-desc" id="listoTexto">Abrimos WhatsApp con tu solicitud. Solo tienes que enviarla.</p>
+      <div class="burbuja" id="listoBurbuja" style="margin-top:16px"></div>
+    </div>
+    <div class="hoja-pie"><a class="btn btn-pri btn-block" id="listoAbrir" href="#" target="_blank" rel="noopener"><svg width="22" height="22"><use href="#i-chat"/></svg>Abrir WhatsApp</a></div>
+  </div>
+</div>
+
+<script>
+(() => {
+  'use strict';
+  document.documentElement.classList.add('js');
+
+  /* =========================================================
+     DATOS DEL NEGOCIO (editables). Solo datos publicados por Jumpers Fest.
+     null = por confirmar con el dueño: la página muestra "$ —", "— m" o "—".
+     ========================================================= */
+  const NEGOCIO = {
+    nombre: 'Jumpers Fest Ags',
+    // Bio de Instagram: "WA: 4491807242". POR CONFIRMAR: la etiqueta de sus inflables parece decir 449 180 72 47.
+    whatsapp: '524491807242',
+    whatsappVisible: '449 180 7242',
+    instagram: 'jumpersfestags',
+  };
+  const INFLABLES = [
+    {
+      id: 'castle-jump', nombre: 'Castle Jump', chip: 'Inflable monocromático', acento: 'var(--celeste)', desc: '',
+      foto: 'img/castle_11.jpg', alt: 'Castle Jump: castillo inflable blanco en un jardín',
+      galeria: [
+        ['img/castle_11.jpg', 'Castle Jump en un jardín'],
+        ['img/castle_terraza_11.jpg', 'Castle Jump en una terraza'],
+        ['img/castle_parque_11.jpg', 'Castle Jump sobre pasto'],
+      ],
+      medidas: null, edad: null, precio: null,
+    },
+    {
+      id: 'rainbow-jump', nombre: 'Rainbow Jump', chip: 'Lleno de color', acento: 'var(--rosa)',
+      desc: 'Un brincolín lleno de color, alegría y mucha diversión. Sus tonos vibrantes iluminan cada evento.',
+      foto: 'img/rainbow_11.jpg', alt: 'Rainbow Jump: inflable blanco con arcoíris pastel',
+      galeria: [['img/rainbow_11.jpg', 'Rainbow Jump']],
+      medidas: null, edad: null, precio: null,
+    },
+    {
+      id: 'magic-jump', nombre: 'Magic Jump', chip: 'Inflable monocromático', acento: 'var(--lila)', desc: '',
+      foto: 'img/magic_11.jpg', alt: 'Magic Jump: castillo inflable blanco con resbaladilla',
+      galeria: [['img/magic_11.jpg', 'Magic Jump']],
+      medidas: null, edad: null, precio: null,
+    },
+  ];
+
+  /* ---------- utilidades ---------- */
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const params = new URLSearchParams(location.search);
+  const DEMO = params.has('demo');
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const money = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 });
+  const fmt = {
+    medidas: (v) => (v ? `${v} m` : '— m'),
+    edad: (v) => v || '—',
+    precio: (v) => (v == null ? '$ —' : money.format(v)),
+  };
+  const DIAS = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+  const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+  const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+  const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const byId = (id) => INFLABLES.find((x) => x.id === id);
+
+  /* ---------- Resortes: curvas físicas reales vía linear() ---------- */
+  const LINEAR = window.CSS && CSS.supports && CSS.supports('transition-timing-function', 'linear(0, 1)');
+  function spring(stiffness, damping, mass = 1) {
+    const w0 = Math.sqrt(stiffness / mass);
+    const z = damping / (2 * Math.sqrt(stiffness * mass));
+    const wd = w0 * Math.sqrt(Math.max(1 - z * z, 1e-6));
+    const x = (t) => (z < 1 ? 1 - Math.exp(-z * w0 * t) * (Math.cos(wd * t) + (z * w0 / wd) * Math.sin(wd * t)) : 1 - Math.exp(-w0 * t) * (1 + w0 * t));
+    let T = 0;
+    for (let t = 0; t < 3; t += 1 / 240) if (Math.abs(1 - x(t)) > 0.002) T = t;
+    T = Math.max(T, 0.2);
+    const n = Math.min(90, Math.max(24, Math.ceil(T * 60)));
+    const pts = [];
+    let peak = 0;
+    for (let i = 0; i <= n; i++) { const v = i === n ? 1 : x((T * i) / n); peak = Math.max(peak, v); pts.push(+v.toFixed(4)); }
+    return { duration: REDUCED ? 1 : Math.round(T * 1000), easing: LINEAR ? `linear(${pts.join(',')})` : 'cubic-bezier(.2,1.2,.3,1)', overshoot: peak - 1 };
+  }
+  // Inflado: rebote amortiguado con 6–10 % de sobrepaso (como vinil que se tensa).
+  const SPR = {
+    inflar: spring(210, 15.5),  // ≈ 8 % de sobrepaso
+    pop: spring(520, 24),       // botones al soltar
+    hoja: spring(300, 31),      // hojas: firmes, casi sin rebote
+    suave: spring(240, 26),
+  };
+  document.documentElement.style.setProperty('--spr', SPR.inflar.easing);
+  document.documentElement.style.setProperty('--spr-dur', SPR.inflar.duration + 'ms');
+
+  function anim(el, frames, opts) {
+    const a = el.animate(frames, { fill: 'both', ...opts });
+    a.finished.then(() => { try { a.commitStyles(); } catch (e) {} a.cancel(); }).catch(() => {});
+    return a;
+  }
+  // "Se infla": de plano a volumen, con rebote de resorte.
+  function inflar(el, { desde = 0.86, delay = 0, y = 0 } = {}) {
+    if (REDUCED) return null;
+    return anim(el, [
+      { transform: `translateY(${y}px) scale(${desde})`, opacity: 0 },
+      { transform: 'translateY(0) scale(1)', opacity: 1 },
+    ], { duration: SPR.inflar.duration, easing: SPR.inflar.easing, delay });
+  }
+
+  /* ---------- Toques: se hunde y se infla al soltar ---------- */
+  const PRESS = '.btn, .op, .chip, .cal-dia, .card-foto, .hoja-x, .cal-head button';
+  document.addEventListener('pointerdown', (e) => {
+    const t = e.target.closest(PRESS);
+    if (!t || t.disabled) return;
+    t.classList.add('is-pressed');
+  }, { passive: true });
+  function soltar() {
+    $$('.is-pressed').forEach((el) => {
+      el.classList.remove('is-pressed');
+      if (REDUCED) return;
+      anim(el, [{ transform: 'scale(.955)' }, { transform: 'scale(1)' }], { duration: SPR.pop.duration, easing: SPR.pop.easing });
+    });
+  }
+  ['pointerup', 'pointercancel', 'dragstart'].forEach((ev) => document.addEventListener(ev, soltar, { passive: true }));
+  document.addEventListener('pointermove', (e) => { if (e.buttons && Math.abs(e.movementY) + Math.abs(e.movementX) > 6) $$('.is-pressed').forEach((el) => el.classList.remove('is-pressed')); }, { passive: true });
+
+  /* ---------- WhatsApp ---------- */
+  const waUrl = (text) => `https://wa.me/${NEGOCIO.whatsapp}?text=${encodeURIComponent(text)}`;
+  const WA_TEXT = {
+    general: '¡Hola, Jumpers Fest! Quiero información de sus inflables.',
+    mobiliario: '¡Hola, Jumpers Fest! Quiero preguntar por mobiliario para mi evento.',
+  };
+  $$('[data-wa]').forEach((a) => { a.href = waUrl(WA_TEXT[a.dataset.wa]); });
+  $('#waVisible').textContent = NEGOCIO.whatsappVisible;
+  $('#igVisible').textContent = '@' + NEGOCIO.instagram;
+  $('#igLink').href = `https://www.instagram.com/${NEGOCIO.instagram}/`;
+
+  /* ---------- Navegación suave ---------- */
+  const topbar = $('#topbar');
+  function irA(id, extra = 0) {
+    const el = document.getElementById(id);
+    const y = el.getBoundingClientRect().top + window.scrollY - (topbar.offsetHeight - 2) + extra;
+    window.scrollTo({ top: Math.max(0, y), behavior: REDUCED ? 'auto' : 'smooth' });
+  }
+  $$('[data-ir]').forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); irA(a.dataset.ir); }));
+
+  // La barra superior aparece cuando el logo de la portada sale de la vista.
+  new IntersectionObserver(([en]) => topbar.classList.toggle('on', !en.isIntersecting), { rootMargin: '-30px 0px 0px 0px' }).observe($('.hero-logo'));
+  // Dentro de "Aparta tu fecha" el botón de la barra sobra: se desinfla.
+  new IntersectionObserver(([en]) => topbar.classList.toggle('en-aparta', en.isIntersecting), { rootMargin: '-64px 0px -30% 0px' }).observe(document.getElementById('form'));
+
+  /* ---------- Catálogo ---------- */
+  const specsHTML = (it) => `
+    <div><dt>Medidas</dt><dd>${fmt.medidas(it.medidas)}</dd></div>
+    <div><dt>Edad recomendada</dt><dd>${fmt.edad(it.edad)}</dd></div>
+    <div><dt>Precio</dt><dd>${fmt.precio(it.precio)}</dd></div>`;
+  $('#cards').innerHTML = INFLABLES.map((it) => `
+    <article class="card" data-id="${it.id}" style="--acento:${it.acento}" data-inflar>
+      <button type="button" class="card-foto" data-ficha="${it.id}" aria-label="Ver ficha de ${it.nombre}">
+        <img src="${it.foto}" alt="${it.alt}" width="408" height="408" decoding="async">
+        <span class="chip-foto"><i></i>${it.chip}</span>
+      </button>
+      <div class="card-cuerpo">
+        <div class="card-fila">
+          <div>
+            <h3>${it.nombre}</h3>
+            <button type="button" class="link-ficha" data-ficha="${it.id}">Ver ficha<svg width="15" height="15"><use href="#i-flecha"/></svg></button>
+          </div>
+          <button type="button" class="btn btn-pri" data-quiero="${it.id}">Lo quiero</button>
+        </div>
+        <dl class="specs">${specsHTML(it)}</dl>
+      </div>
+    </article>`).join('');
+
+  /* ---------- Hojas (ficha y mensaje listo) ---------- */
+  let hojaAbierta = null, volverFoco = null;
+  function abrirHoja(wrap, trigger) {
+    if (hojaAbierta) cerrarHoja(hojaAbierta, true);
+    hojaAbierta = wrap;
+    volverFoco = trigger || document.activeElement;
+    wrap.hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+    const hoja = $('.hoja', wrap), scrim = $('.scrim', wrap);
+    $('.hoja-scroll', wrap).scrollTop = 0;
+    anim(scrim, [{ opacity: 0 }, { opacity: 1 }], { duration: 260, easing: 'ease-out' });
+    anim(hoja, [{ transform: 'translateY(100%)' }, { transform: 'translateY(0)' }], { duration: SPR.hoja.duration, easing: SPR.hoja.easing });
+    setTimeout(() => $('.hoja-x', wrap).focus({ preventScroll: true }), 60);
+  }
+  function cerrarHoja(wrap, inmediato = false) {
+    if (!wrap || wrap.hidden) return;
+    if (hojaAbierta === wrap) hojaAbierta = null;
+    const fin = () => {
+      wrap.hidden = true;
+      if (!hojaAbierta) document.documentElement.style.overflow = '';
+      if (volverFoco && document.contains(volverFoco)) volverFoco.focus({ preventScroll: true });
+    };
+    if (inmediato || REDUCED) return fin();
+    anim($('.scrim', wrap), [{ opacity: 1 }, { opacity: 0 }], { duration: 220, easing: 'ease-in' });
+    anim($('.hoja', wrap), [{ transform: 'translateY(0)' }, { transform: 'translateY(105%)' }], { duration: 280, easing: 'cubic-bezier(.4,0,.8,.4)' }).finished.then(fin);
+  }
+  $$('[data-cerrar]').forEach((b) => b.addEventListener('click', () => cerrarHoja(b.closest('.hoja-wrap'))));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && hojaAbierta) cerrarHoja(hojaAbierta); });
+
+  const ficha = $('#ficha');
+  let fichaId = null;
+  function abrirFicha(id, trigger) {
+    const it = byId(id);
+    fichaId = id;
+    $('#fichaChip').textContent = it.chip;
+    $('#fichaNombre').textContent = it.nombre;
+    const desc = $('#fichaDesc');
+    desc.textContent = it.desc;
+    desc.hidden = !it.desc;
+    $('#fichaSpecs').innerHTML = specsHTML(it);
+    $('#fichaPista').innerHTML = it.galeria.map(([src, alt]) => `<figure><img src="${src}" alt="${alt}" width="408" height="408"></figure>`).join('');
+    $('#fichaPuntos').innerHTML = it.galeria.length > 1 ? it.galeria.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('') : '';
+    $('#fichaPuntos').style.display = it.galeria.length > 1 ? '' : 'none';
+    $('#fichaPista').scrollLeft = 0;
+    abrirHoja(ficha, trigger);
+  }
+  $('#fichaPista').addEventListener('scroll', (e) => {
+    const p = e.currentTarget;
+    const i = Math.round(p.scrollLeft / (p.clientWidth + 12));
+    $$('#fichaPuntos i').forEach((d, k) => d.classList.toggle('on', k === i));
+  }, { passive: true });
+  document.addEventListener('click', (e) => {
+    const f = e.target.closest('[data-ficha]');
+    if (f) return abrirFicha(f.dataset.ficha, f);
+    const q = e.target.closest('[data-quiero]');
+    if (q) return quiero(q.dataset.quiero);
+  });
+  $('#fichaQuiero').addEventListener('click', () => { const id = fichaId; cerrarHoja(ficha); quiero(id, 300); });
+
+  /* ---------- "Lo quiero": baja a Aparta tu fecha con el inflable elegido y abre el calendario ---------- */
+  function altoCal() {
+    if (!calCaja.hidden) return 0;
+    pintarCal();
+    calCaja.style.visibility = 'hidden';
+    calCaja.hidden = false;
+    const h = calCaja.offsetHeight;
+    calCaja.hidden = true;
+    calCaja.style.visibility = '';
+    return h;
+  }
+  function quiero(id, espera = 0) {
+    elegirInflable(id, false);
+    setTimeout(() => {
+      // la sección arriba; si el calendario abierto no cabe, se baja lo justo para verlo completo
+      const top = topbar.offsetHeight - 2;
+      const sec = document.getElementById('aparta').getBoundingClientRect().top + window.scrollY - top;
+      const fin = fechaBtn.getBoundingClientRect().bottom + window.scrollY + (fecha ? 0 : altoCal()) + 14 - innerHeight;
+      window.scrollTo({ top: Math.max(0, Math.max(sec, Math.min(fin, fechaBtn.getBoundingClientRect().top + window.scrollY - top - 200))), behavior: REDUCED ? 'auto' : 'smooth' });
+      setTimeout(() => {
+        inflar($(`.op[data-value="${id}"]`), { desde: 0.9 });
+        if (!fecha) abrirCal();
+      }, REDUCED ? 0 : 560);
+    }, espera);
+  }
+
+  /* ---------- Formulario ---------- */
+  let inflable = null, fecha = null, evento = null;
+  $('#opciones').innerHTML = INFLABLES.map((it) => `
+    <button type="button" class="op" data-value="${it.id}" aria-pressed="false">
+      <img src="${it.foto}" alt="" width="408" height="408">
+      <span>${it.nombre}</span>
+      <i class="check" aria-hidden="true"><svg width="15" height="15"><use href="#i-check"/></svg></i>
+    </button>`).join('');
+  function elegirInflable(id, animar = true) {
+    inflable = id;
+    $$('.op').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.value === id)));
+    if (animar) inflar($(`.op[data-value="${id}"]`), { desde: 0.92 });
+    limpiarError('inflable');
+    actualizar();
+  }
+  $('#opciones').addEventListener('click', (e) => { const b = e.target.closest('.op'); if (b) elegirInflable(b.dataset.value); });
+
+  $('#eventos').addEventListener('click', (e) => {
+    const b = e.target.closest('.chip');
+    if (!b) return;
+    evento = evento === b.dataset.evento ? null : b.dataset.evento;
+    $$('#eventos .chip').forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.evento === evento)));
+    actualizar();
+  });
+  $('#mobiliario').addEventListener('change', actualizar);
+  ['lugar', 'hora'].forEach((id) => $('#' + id).addEventListener('input', () => { limpiarError(id); actualizar(); }));
+  $('#lugar').addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); $('#hora').focus(); } });
+
+  /* ---------- Calendario ---------- */
+  const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+  const MAX_MESES = 12;
+  let vista = new Date(hoy.getFullYear(), hoy.getMonth(), 1);
+  const calCaja = $('#calCaja'), fechaBtn = $('#fechaBtn');
+  function pintarCal() {
+    const y = vista.getFullYear(), m = vista.getMonth();
+    $('#calMes').textContent = `${cap(MESES[m])} ${y}`;
+    const primero = (new Date(y, m, 1).getDay() + 6) % 7; // lunes = 0
+    const dias = new Date(y, m + 1, 0).getDate();
+    let html = '';
+    for (let i = 0; i < primero; i++) html += '<span></span>';
+    for (let d = 1; d <= dias; d++) {
+      const f = new Date(y, m, d);
+      const pasado = f < hoy;
+      const dow = f.getDay();
+      const cls = ['cal-dia'];
+      if (dow === 0 || dow === 6) cls.push('finde');
+      if (+f === +hoy) cls.push('hoy');
+      if (fecha && +f === +fecha) cls.push('sel');
+      html += `<button type="button" class="${cls.join(' ')}" data-date="${iso(f)}" ${pasado ? 'disabled' : ''} aria-label="${DIAS[dow]} ${d} de ${MESES[m]} de ${y}"${fecha && +f === +fecha ? ' aria-pressed="true"' : ''}><span>${d}</span></button>`;
+    }
+    $('#calGrid').innerHTML = html;
+    const limite = new Date(hoy.getFullYear(), hoy.getMonth() + MAX_MESES, 1);
+    $('#calPrev').disabled = y === hoy.getFullYear() && m === hoy.getMonth();
+    $('#calNext').disabled = +new Date(y, m + 1, 1) >= +limite;
+  }
+  function abrirCal() {
+    if (!calCaja.hidden) return;
+    if (fecha) vista = new Date(fecha.getFullYear(), fecha.getMonth(), 1);
+    pintarCal();
+    calCaja.hidden = false;
+    fechaBtn.setAttribute('aria-expanded', 'true');
+    if (REDUCED) return;
+    const h = calCaja.scrollHeight;
+    anim(calCaja, [{ height: '0px' }, { height: h + 'px' }], { duration: SPR.suave.duration, easing: SPR.suave.easing }).finished.then(() => { calCaja.style.height = ''; });
+    inflar($('#cal'), { desde: 0.94, y: -8 });
+    $$('#calGrid .cal-dia').forEach((b, i) => inflar(b, { desde: 0.6, delay: 90 + Math.floor(i / 7) * 34 }));
+  }
+  function cerrarCal() {
+    if (calCaja.hidden) return;
+    fechaBtn.setAttribute('aria-expanded', 'false');
+    if (REDUCED) { calCaja.hidden = true; return; }
+    const h = calCaja.offsetHeight;
+    anim(calCaja, [{ height: h + 'px', opacity: 1 }, { height: '0px', opacity: 0 }], { duration: 300, easing: 'cubic-bezier(.4,0,.2,1)' }).finished.then(() => { calCaja.hidden = true; calCaja.style.height = ''; calCaja.style.opacity = ''; });
+  }
+  fechaBtn.addEventListener('click', () => (calCaja.hidden ? abrirCal() : cerrarCal()));
+  $('#calPrev').addEventListener('click', () => { vista = new Date(vista.getFullYear(), vista.getMonth() - 1, 1); pintarCal(); });
+  $('#calNext').addEventListener('click', () => { vista = new Date(vista.getFullYear(), vista.getMonth() + 1, 1); pintarCal(); });
+  $('#calGrid').addEventListener('click', (e) => {
+    const b = e.target.closest('.cal-dia');
+    if (!b || b.disabled) return;
+    const [y, m, d] = b.dataset.date.split('-').map(Number);
+    fecha = new Date(y, m - 1, d);
+    $$('#calGrid .cal-dia.sel').forEach((x) => { x.classList.remove('sel'); x.removeAttribute('aria-pressed'); });
+    b.classList.add('sel');
+    b.setAttribute('aria-pressed', 'true');
+    if (!REDUCED) anim(b, [{ transform: 'scale(.55)' }, { transform: 'scale(1)' }], { duration: SPR.inflar.duration, easing: SPR.inflar.easing });
+    $('#fechaTxt').textContent = `${cap(DIAS[fecha.getDay()])} ${fecha.getDate()} de ${MESES[fecha.getMonth()]}`;
+    fechaBtn.classList.add('lleno');
+    limpiarError('fecha');
+    actualizar();
+    setTimeout(cerrarCal, REDUCED ? 0 : 520);
+  });
+
+  /* ---------- Mensaje ---------- */
+  const valores = () => ({
+    inflable: inflable ? byId(inflable).nombre : '',
+    fecha: fecha ? `${DIAS[fecha.getDay()]} ${fecha.getDate()} de ${MESES[fecha.getMonth()]} de ${fecha.getFullYear()}` : '',
+    lugar: $('#lugar').value.trim().replace(/\s+/g, ' '),
+    hora: $('#hora').value.trim().replace(/\s+/g, ' '),
+    evento,
+    mobiliario: $('#mobiliario').checked,
+  });
+  function mensaje(v = valores(), vacio = (s) => s) {
+    const l = ['¡Hola, Jumpers Fest! Quiero apartar una fecha:'];
+    l.push(`• Inflable: ${v.inflable || vacio('—')}`);
+    l.push(`• Fecha: ${v.fecha || vacio('—')}`);
+    l.push(`• Colonia o salón: ${v.lugar || vacio('—')}`);
+    l.push(`• Horario aproximado: ${v.hora || vacio('—')}`);
+    if (v.evento) l.push(`• Evento: ${v.evento}`);
+    if (v.mobiliario) l.push('También quiero preguntar por mobiliario.');
+    l.push('¿Me confirman disponibilidad y precio? ¡Gracias!');
+    return l.join('\n');
+  }
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  function faltantes(v = valores()) {
+    const f = [];
+    if (!v.inflable) f.push('inflable');
+    if (!v.fecha) f.push('fecha');
+    if (v.lugar.length < 3) f.push('lugar');
+    if (v.hora.length < 1) f.push('hora');
+    return f;
+  }
+  let estabaListo = false;
+  function actualizar() {
+    const v = valores();
+    const MARCA = '\u0000';
+    $('#burbuja').innerHTML = esc(mensaje(v, () => MARCA)).split(MARCA).join('<span class="vacio">—</span>');
+    const listo = faltantes(v).length === 0;
+    const btn = $('#enviar');
+    btn.classList.toggle('listo', listo);
+    if (listo && !estabaListo && !REDUCED) anim(btn, [{ transform: 'scale(.94)' }, { transform: 'scale(1)' }], { duration: SPR.inflar.duration, easing: SPR.inflar.easing });
+    estabaListo = listo;
+  }
+  function mostrarError(k) { $('#c-' + k).classList.add('invalido'); }
+  function limpiarError(k) { $('#c-' + k).classList.remove('invalido'); }
+
+  $('#form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const v = valores();
+    const f = faltantes(v);
+    ['inflable', 'fecha', 'lugar', 'hora'].forEach((k) => (f.includes(k) ? mostrarError(k) : limpiarError(k)));
+    if (f.length) {
+      const primero = $('#c-' + f[0]);
+      const y = primero.getBoundingClientRect().top + window.scrollY - topbar.offsetHeight - 16;
+      window.scrollTo({ top: y, behavior: REDUCED ? 'auto' : 'smooth' });
+      if (!REDUCED) f.forEach((k) => anim($('#c-' + k), [{ transform: 'translateX(0)' }, { transform: 'translateX(-6px)' }, { transform: 'translateX(5px)' }, { transform: 'translateX(-3px)' }, { transform: 'translateX(0)' }], { duration: 380, easing: 'ease-out' }));
+      if (f[0] === 'lugar' || f[0] === 'hora') setTimeout(() => $('#' + f[0]).focus({ preventScroll: true }), 350);
+      return;
+    }
+    const texto = mensaje(v);
+    const url = waUrl(texto);
+    $('#listoBurbuja').textContent = texto;
+    $('#listoAbrir').href = url;
+    if (DEMO) {
+      $('#listoTexto').textContent = 'Modo demo: así le llega tu solicitud a Jumpers Fest. No se envió nada.';
+      $('#listoAbrir').removeAttribute('target');
+      $('#listoAbrir').onclick = (ev) => { ev.preventDefault(); };
+    } else {
+      window.open(url, '_blank', 'noopener');
+    }
+    abrirHoja($('#listo'), $('#enviar'));
+  });
+
+  /* ---------- Inflado al aparecer ---------- */
+  const io = new IntersectionObserver((ents) => ents.forEach((en) => {
+    if (!en.isIntersecting) return;
+    en.target.classList.add('inflado');
+    io.unobserve(en.target);
+  }), { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  $$('[data-inflar]').forEach((el) => io.observe(el));
+
+  /* ---------- Entrada de la portada ---------- */
+  function intro() {
+    const html = document.documentElement;
+    const piezas = [$('.hero-logo'), $('.hero .eyebrow'), $('.arco-marco'), $('.hero h1'), $('.hero .lead'), $('.hero-acciones')];
+    $$('.hero > *').forEach((el) => { el.style.opacity = '1'; });
+    html.classList.remove('intro');
+    if (REDUCED) return;
+    $$('.hero > *').forEach((el) => { el.style.opacity = ''; });
+    inflar(piezas[0], { desde: 0.7 });
+    inflar(piezas[1], { desde: 0.96, delay: 90, y: 6 });
+    $$('.arco-bandas path').forEach((p, i) => {
+      const L = p.getTotalLength();
+      p.style.strokeDasharray = L;
+      anim(p, [{ strokeDashoffset: L }, { strokeDashoffset: 0 }], { duration: 900, delay: 160 + i * 70, easing: 'cubic-bezier(.3,.7,.2,1)' }).finished.then(() => { p.style.strokeDasharray = ''; p.style.strokeDashoffset = ''; });
+    });
+    inflar(piezas[2], { desde: 0.84, delay: 140, y: 18 });
+    inflar($('.arco-piso'), { desde: 0.5, delay: 140 });
+    inflar(piezas[3], { desde: 0.9, delay: 300, y: 12 });
+    inflar(piezas[4], { desde: 0.97, delay: 380, y: 8 });
+    inflar(piezas[5], { desde: 0.86, delay: 460, y: 10 });
+  }
+
+  actualizar();
+  const listoParaIntro = () => (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve());
+  Promise.race([listoParaIntro(), new Promise((r) => setTimeout(r, 900))]).then(intro);
+
+  // Para pruebas y captura del video (solo lectura).
+  window.__jf = { NEGOCIO, INFLABLES, mensaje: () => mensaje(), faltantes: () => faltantes(), waUrl };
+})();
+</script>
+</body>
+</html>

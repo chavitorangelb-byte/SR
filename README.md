@@ -1,5 +1,7 @@
 # Florería Aguascalientes Roma · pieza spec de Elevate Negocios
 
+> Otros proyectos en este repo: **Jumpers Fest Ags** (página y video spec) en [`jumpers-fest/`](jumpers-fest/README.md).
+
 Demo de cortesía, no oficial: la página que tendría Roma y, en fases siguientes, el video vertical que la presenta.
 
 ## Estructura
