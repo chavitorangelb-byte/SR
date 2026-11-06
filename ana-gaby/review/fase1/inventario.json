@@ -1,0 +1,244 @@
+{
+  "assets": [
+    {
+      "archivo": "logo_letrero_ag.png",
+      "nombre": "Letrero AG (foto recortada)",
+      "uso": "End card, sobre placa de cristal",
+      "estado": "Con límite",
+      "px": [
+        816,
+        872
+      ],
+      "rinde_px": 450,
+      "psnr_mitad_db": 45.6,
+      "nota": "Foto, no archivo de diseño: blanda y con las puntas de los ramos abajo. Máx. 450 px de ancho."
+    },
+    {
+      "archivo": "foto_00_local_letrero.jpg",
+      "nombre": "00 · Su local con el letrero",
+      "uso": "Portada dentro del celular",
+      "estado": "Con límite",
+      "px": [
+        1320,
+        2000
+      ],
+      "rinde_px": 730,
+      "psnr_mitad_db": 46.7,
+      "nota": "Foto de su ficha, blanda: push-in a la portada hasta 2.0×."
+    },
+    {
+      "archivo": "foto_04_frasco_galletas_corazon.jpg",
+      "nombre": "04 · Frasco de galletas de corazón",
+      "uso": "Galletas · tarjeta que sale en 3D",
+      "estado": "Lista",
+      "px": [
+        400,
+        500
+      ],
+      "rinde_px": 400,
+      "psnr_mitad_db": 32.9,
+      "nota": ""
+    },
+    {
+      "archivo": "foto_05_caja_galletas_chocolate.jpg",
+      "nombre": "05 · Caja de galletas de chocolate",
+      "uso": "Galletas · tarjeta que sale en 3D",
+      "estado": "Lista",
+      "px": [
+        400,
+        500
+      ],
+      "rinde_px": 400,
+      "psnr_mitad_db": 33.3,
+      "nota": ""
+    },
+    {
+      "archivo": "foto_06_galletas_chispas_chocolate.jpg",
+      "nombre": "06 · Galletas de chispas de chocolate",
+      "uso": "Galletas · tarjeta que sale en 3D",
+      "estado": "Lista",
+      "px": [
+        400,
+        500
+      ],
+      "rinde_px": 400,
+      "psnr_mitad_db": 30,
+      "nota": "La más nítida del set."
+    },
+    {
+      "archivo": "foto_07_galletas_corazon.jpg",
+      "nombre": "07 · Galletas con corazón",
+      "uso": "Galletas · cuadrícula",
+      "estado": "Lista",
+      "px": [
+        400,
+        500
+      ],
+      "rinde_px": 400,
+      "psnr_mitad_db": 34.8,
+      "nota": "¿Red velvet? Por confirmar con la dueña."
+    },
+    {
+      "archivo": "foto_01_pastel_fresas_crema.jpg",
+      "nombre": "01 · Pastel de fresas con crema",
+      "uso": "Pasteles · cuadrícula",
+      "estado": "Lista",
+      "px": [
+        400,
+        500
+      ],
+      "rinde_px": 400,
+      "psnr_mitad_db": 39.8,
+      "nota": "Un poco más suave que el resto."
+    },
+    {
+      "archivo": "foto_08_pastel_san_valentin.jpg",
+      "nombre": "08 · Pastel de San Valentín",
+      "uso": "Pasteles · cuadrícula",
+      "estado": "Lista",
+      "px": [
+        400,
+        500
+      ],
+      "rinde_px": 400,
+      "psnr_mitad_db": 32.3,
+      "nota": ""
+    },
+    {
+      "archivo": "foto_11_pastel_listones.jpg",
+      "nombre": "11 · Pastel con moños",
+      "uso": "Pasteles · cuadrícula",
+      "estado": "Lista",
+      "px": [
+        600,
+        750
+      ],
+      "rinde_px": 600,
+      "psnr_mitad_db": 34.2,
+      "nota": "Agregada de su ficha de Google."
+    },
+    {
+      "archivo": "foto_12_pastel_corazon.jpg",
+      "nombre": "12 · Pastel de corazón",
+      "uso": "Pasteles · cuadrícula",
+      "estado": "Lista",
+      "px": [
+        600,
+        750
+      ],
+      "rinde_px": 600,
+      "psnr_mitad_db": 34.3,
+      "nota": "Agregada de su ficha de Google."
+    },
+    {
+      "archivo": "foto_02_cupcakes_flores.jpg",
+      "nombre": "02 · Cupcakes de flores",
+      "uso": "Postres · cuadrícula",
+      "estado": "Lista",
+      "px": [
+        400,
+        500
+      ],
+      "rinde_px": 400,
+      "psnr_mitad_db": 34.8,
+      "nota": ""
+    },
+    {
+      "archivo": "foto_03_tarta_frutos_rojos.jpg",
+      "nombre": "03 · Tarta de frutos rojos",
+      "uso": "Postres · cuadrícula",
+      "estado": "Lista",
+      "px": [
+        400,
+        500
+      ],
+      "rinde_px": 400,
+      "psnr_mitad_db": 37.3,
+      "nota": ""
+    },
+    {
+      "archivo": "foto_09_mesa_postres.jpg",
+      "nombre": "09 · Mesa de postres",
+      "uso": "Postres · cuadrícula",
+      "estado": "Lista",
+      "px": [
+        400,
+        500
+      ],
+      "rinde_px": 400,
+      "psnr_mitad_db": 33.4,
+      "nota": "Sin nombres escritos a la vista."
+    },
+    {
+      "archivo": "foto_10_mesa_postres_pasteles.jpg",
+      "nombre": "10 · Pasteles para mesa de postres",
+      "uso": "Postres · cuadrícula",
+      "estado": "Lista",
+      "px": [
+        400,
+        500
+      ],
+      "rinde_px": 400,
+      "psnr_mitad_db": 33.7,
+      "nota": "Sin nombres escritos a la vista."
+    },
+    {
+      "archivo": "pastel_referencia_ilustrado.jpg",
+      "nombre": "Pastel de referencia (código)",
+      "uso": "A tu medida: la foto que manda el cliente",
+      "estado": "Código",
+      "px": [
+        1080,
+        1350
+      ],
+      "rinde_px": 1080,
+      "psnr_mitad_db": 41.4,
+      "nota": "Three.js: el mismo modelo se construye en 3D piso por piso."
+    }
+  ],
+  "faltantes": [
+    {
+      "que": "Clave de ElevenLabs",
+      "fase": "Fase 3",
+      "quien": "tú",
+      "detalle": "No hay ninguna guardada en este entorno. Te la pido con el formulario seguro al llegar a la fase 3, nunca por chat. Alternativa: me pasas tú las 2 tomas."
+    },
+    {
+      "que": "Biblioteca de SFX",
+      "fase": "Fase 5",
+      "quien": "tú o yo",
+      "detalle": "El brief dice «[tu biblioteca de SFX]» y no hay ninguna en assets/. Si no me pasas una, sintetizo los 70+ cues en código, como en Florería Roma."
+    },
+    {
+      "que": "Capturas ref_primersello_XX.png",
+      "fase": "Fase 4",
+      "quien": "opcional",
+      "detalle": "No llegaron. Sin ellas sigo las medidas del brief: celular al 60–75 % de la altura y kinetic fuera de la pantalla."
+    },
+    {
+      "que": "Logo de Elevate Negocios",
+      "fase": "Fase 5",
+      "quien": "opcional",
+      "detalle": "No está en assets/. En la end card «Elevate Negocios» va en texto; no invento logos."
+    },
+    {
+      "que": "Logo limpio de Ana Gaby",
+      "fase": "—",
+      "quien": "la dueña",
+      "detalle": "Solo hay la foto del letrero: va únicamente en la end card. No bloquea el video."
+    }
+  ],
+  "limites": {
+    "Celular al 60–75 % de la altura": "pantalla de 1.3 a 1.6 px por px de interfaz",
+    "Tarjetas de Instagram (400 px)": "máx. 400 px en cuadro: push-in con tarjetas hasta 2.5×",
+    "Fotos de su ficha (600 px)": "máx. 600 px en cuadro",
+    "Portada (detalle ~730 px)": "push-in a la portada hasta 2.0×",
+    "Letrero AG (detalle ~450 px)": "end card: máx. 450 px de ancho",
+    "Texto de la interfaz": "vectorial: push-in libre para leer (hasta tamaño de celular real, 2.8×)"
+  },
+  "recursos": {
+    "Letra de betún": "EMS Allure, fuente de un solo trazo (licencia OFL), para escribir «galletas aguascalientes». En la end card, el trazo sigue el esqueleto de Cormorant Garamond Itálica.",
+    "Música 98 BPM": "Guitarra de nylon y glockenspiel con el soundfont FluidR3 GM (licencia MIT) en FluidSynth; cucharas, shaker, palmas, bajo y golpes sintetizados en código.",
+    "3D y gráficos": "Celular de cristal, tarjetas 3D, pastel, betún, teclado y barra de búsqueda: en código (Three.js y canvas). Sin video ni imágenes generadas por IA."
+  }
+}
