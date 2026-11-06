@@ -3,3 +3,5 @@ review/**/*.png
 node_modules/
 video/build/
 audio/build/
+review/**/*_sinaudio.mp4
+review/**/_*
