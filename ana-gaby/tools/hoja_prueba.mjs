@@ -1,5 +1,5 @@
 // Fase 4: hoja de contactos de la prueba de estilo (cuadros clave del video + qué revisar en cada uno).
-// Uso: node tools/hoja_prueba.mjs   (lee review/fase4/prueba_estilo_540.mp4 y review/fase4/cuadro_1080_f440.png)
+// Uso: node tools/hoja_prueba.mjs   (lee review/fase4/prueba_estilo_540.mp4 y review/fase4/cuadro_1080_f428.png)
 import { createRequire } from 'node:module';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -21,7 +21,7 @@ const CUADROS = [
   [352, 'Borde de conchitas', 'El betún decora la primera tarjeta mientras se lee el título'],
   [414, 'Sale al espacio 3D', 'La tarjeta es la misma pieza de la página, con grosor y sombra'],
   [452, 'Cascada', 'Tres tarjetas en profundidad hacia el espacio libre'],
-  [488, 'Kinetic type', '«RECIÉN» entra por glifo en el pulso, fuera de la pantalla'],
+  [486, 'Kinetic type', '«RECIÉN» entra por glifo en el pulso, fuera de la pantalla'],
 ];
 
 const tmp = path.join(DIR, '_cuadros');
@@ -52,12 +52,12 @@ span{display:block;font:400 12.5px/1.4 D;color:rgba(251,245,243,.66)}
 footer{margin-top:30px;padding-top:14px;border-top:1px solid rgba(251,245,243,.12);display:flex;justify-content:space-between;font:400 12px/1.4 D;color:rgba(251,245,243,.5)}
 `;
 const figs = CUADROS.map(([f, t, d]) => `<figure><img src="file://${path.join(tmp, `f${f}.png`)}"><figcaption><b>${(f / 60).toFixed(2)} s · ${t}</b><span>${d}</span></figcaption></figure>`).join('');
-const det = path.join(DIR, 'cuadro_1080_f440.png');
+const det = path.join(DIR, 'cuadro_1080_f428.png');
 const html = `<!doctype html><html lang="es"><meta charset="utf-8"><style>${css}</style><body>
 <p class="k">Ana Gaby Repostería · Fase 4</p><h1>Prueba de estilo · 3.17–8.17 s</h1>
 <p class="sub">540 × 960 a 30 fps, motion blur de 8 subcuadros. La pantalla es la captura real de la página a 3x. Sin música ni SFX todavía (fase 5); se oye la voz.</p>
 <section class="g">${figs}</section>
-<section class="det"><img src="file://${det}"><div><h2>Detalle a 1080 × 1920 (f440)</h2>
+<section class="det"><img src="file://${det}"><div><h2>Detalle a 1080 × 1920 (f428)</h2>
 <p>La interfaz se lee nítida y con sus colores exactos: la pantalla no pasa por el tono del render.</p>
 <p>El betún tiene volumen, brillo húmedo, estrías de la boquilla y cada concha con cabeza y cola.</p>
 <p>Las tarjetas que salen son el recorte exacto de la página: misma foto, mismo texto, más canto blanco y sombra de contacto. La foto nunca pasa de su resolución real.</p>
