@@ -14,7 +14,8 @@ const { chromium } = require('/opt/node-tools/node_modules/playwright');
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 ? process.argv[i + 1] : d; };
 const W = +arg('w', 540), H = +arg('h', 960), SUB = +arg('sub', 8), FPS = +arg('fps', 30);
-const UI = arg('ui', '/video/build/ui_dsf2');
+const UI = arg('ui', '/video/build/ui');
+const FMT = arg('fmt', '916');
 const OUT = path.resolve(ROOT, arg('out', 'review/fase4/prueba_estilo.mp4'));
 const SOLO = arg('solo', null);
 const DESDE = +arg('desde', 144), HASTA = +arg('hasta', 450);
@@ -36,7 +37,7 @@ const browser = await chromium.launch({ args: ['--enable-unsafe-swiftshader', '-
 const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
 page.on('pageerror', (e) => console.error('ERROR página:', e.message));
 page.on('console', (m) => { if (m.type() === 'error') console.error('consola:', m.text()); });
-await page.goto(`${base}/video/render/index.html?w=${W}&h=${H}&ui=${encodeURIComponent(UI)}`);
+await page.goto(`${base}/video/render/index.html?w=${W}&h=${H}&fmt=${FMT}&ui=${encodeURIComponent(UI)}`);
 await page.waitForFunction(() => window.ready || window.initError, null, { timeout: 120000 });
 const initError = await page.evaluate(() => window.initError);
 if (initError) { console.error(initError); process.exit(1); }
@@ -46,7 +47,13 @@ async function frame(f) {
   return Buffer.from(url.split(',')[1], 'base64');
 }
 
-if (SOLO != null) {
+const LISTA = arg('lista', null);
+if (LISTA != null) {
+  // varios cuadros sueltos en una sola sesión: --lista 196,300,412 --out carpeta/
+  fs.mkdirSync(OUT, { recursive: true });
+  for (const f of LISTA.split(',').map(Number)) fs.writeFileSync(path.join(OUT, `g${f}.png`), await frame(f));
+  console.log(`${LISTA.split(',').length} cuadros → ${path.relative(ROOT, OUT)}`);
+} else if (SOLO != null) {
   const t0 = Date.now();
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
   fs.writeFileSync(OUT, await frame(+SOLO));
@@ -63,7 +70,8 @@ if (SOLO != null) {
   }
   console.log(`\n${n} cuadros en ${((Date.now() - t0) / 1000).toFixed(0)} s`);
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
-  const voz = path.join(ROOT, 'voz', 'voz_stem_48k.wav');
+  const mezcla = path.join(ROOT, 'audio', 'build', 'mezcla_master.wav');
+  const voz = fs.existsSync(mezcla) ? mezcla : path.join(ROOT, 'voz', 'voz_stem_48k.wav');
   const args = ['-y', '-v', 'error', '-framerate', String(FPS), '-i', path.join(dir, '%05d.png')];
   if (fs.existsSync(voz)) args.push('-ss', String(DESDE / 60), '-t', String((n) / FPS), '-i', voz);
   args.push('-c:v', 'libx264', '-preset', 'slow', '-crf', '16', '-pix_fmt', 'yuv420p', '-movflags', '+faststart');
