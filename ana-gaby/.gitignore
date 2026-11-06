@@ -1,0 +1,5 @@
+assets/_capturas/
+review/**/*.png
+node_modules/
+video/build/
+audio/build/

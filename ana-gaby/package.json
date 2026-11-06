@@ -1,0 +1,7 @@
+{
+  "name": "ana-gaby-reposteria",
+  "private": true,
+  "type": "module",
+  "description": "Página y video spec de Ana Gaby Repostería (Elevate Negocios)",
+  "dependencies": { "three": "0.187.0" }
+}

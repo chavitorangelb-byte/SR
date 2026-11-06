@@ -1,0 +1,176 @@
+{
+  "logo_letrero_ag": {
+    "centro": [
+      748.0,
+      1088.9
+    ],
+    "semiejes": [
+      407.6,
+      435.3
+    ],
+    "px": [
+      816,
+      872
+    ],
+    "puntos_borde": 212,
+    "rms_px": 3.53,
+    "nota": "Foto del letrero, no archivo de diseño: suave, con JPEG y las puntas de los ramos abajo."
+  },
+  "fotos": {
+    "foto_00_local_letrero": {
+      "tarjeta": "Portada",
+      "fuente": "maps_foto_local.png",
+      "px": [
+        1320,
+        2000
+      ],
+      "lo": 18.0,
+      "hi": 202.0,
+      "aplicada": true
+    },
+    "foto_01_pastel_fresas_crema": {
+      "tarjeta": "Pastel de fresas con crema",
+      "pestana": "pasteles",
+      "fuente": "ig_perfil.png",
+      "px": [
+        400,
+        500
+      ],
+      "lo": 21.0,
+      "hi": 225.0,
+      "aplicada": true
+    },
+    "foto_02_cupcakes_flores": {
+      "tarjeta": "Cupcakes de flores",
+      "pestana": "postres",
+      "fuente": "ig_perfil.png",
+      "px": [
+        400,
+        500
+      ],
+      "lo": 33.0,
+      "hi": 240.0,
+      "aplicada": true
+    },
+    "foto_03_tarta_frutos_rojos": {
+      "tarjeta": "Tarta de frutos rojos",
+      "pestana": "postres",
+      "fuente": "ig_perfil.png",
+      "px": [
+        400,
+        500
+      ],
+      "lo": 4.0,
+      "hi": 230.0,
+      "aplicada": true
+    },
+    "foto_04_frasco_galletas_corazon": {
+      "tarjeta": "Frasco de galletas de corazón",
+      "pestana": "galletas",
+      "fuente": "ig_grid_sanvalentin.png",
+      "px": [
+        400,
+        500
+      ],
+      "lo": 29.0,
+      "hi": 229.0,
+      "aplicada": true
+    },
+    "foto_05_caja_galletas_chocolate": {
+      "tarjeta": "Caja de galletas de chocolate",
+      "pestana": "galletas",
+      "fuente": "ig_grid_sanvalentin.png",
+      "px": [
+        400,
+        500
+      ],
+      "lo": 2.0,
+      "hi": 219.0,
+      "aplicada": true
+    },
+    "foto_06_galletas_chispas_chocolate": {
+      "tarjeta": "Galletas de chispas de chocolate",
+      "pestana": "galletas",
+      "fuente": "ig_grid_sanvalentin.png",
+      "px": [
+        400,
+        500
+      ],
+      "lo": 9.0,
+      "hi": 220.0,
+      "aplicada": true
+    },
+    "foto_07_galletas_corazon": {
+      "tarjeta": "Galletas con corazón",
+      "pestana": "galletas",
+      "fuente": "ig_grid_sanvalentin.png",
+      "px": [
+        400,
+        500
+      ],
+      "lo": 30.0,
+      "hi": 241.0,
+      "aplicada": true
+    },
+    "foto_08_pastel_san_valentin": {
+      "tarjeta": "Pastel de San Valentín",
+      "pestana": "pasteles",
+      "fuente": "ig_grid_sanvalentin.png",
+      "px": [
+        400,
+        500
+      ],
+      "lo": 41.0,
+      "hi": 227.0,
+      "aplicada": true
+    },
+    "foto_09_mesa_postres": {
+      "tarjeta": "Mesa de postres",
+      "pestana": "postres",
+      "fuente": "ig_grid_mesas.png",
+      "px": [
+        400,
+        500
+      ],
+      "lo": 19.0,
+      "hi": 239.0,
+      "aplicada": true
+    },
+    "foto_10_mesa_postres_pasteles": {
+      "tarjeta": "Pasteles para mesa de postres",
+      "pestana": "postres",
+      "fuente": "ig_grid_mesas.png",
+      "px": [
+        400,
+        500
+      ],
+      "lo": 15.0,
+      "hi": 234.0,
+      "aplicada": true
+    },
+    "foto_11_pastel_listones": {
+      "tarjeta": "Pastel con moños",
+      "pestana": "pasteles",
+      "fuente": "maps_fotos_1.png",
+      "px": [
+        600,
+        750
+      ],
+      "lo": 1.0,
+      "hi": 225.0,
+      "aplicada": true
+    },
+    "foto_12_pastel_corazon": {
+      "tarjeta": "Pastel de corazón",
+      "pestana": "pasteles",
+      "fuente": "maps_fotos_3.png",
+      "px": [
+        600,
+        750
+      ],
+      "lo": 35.0,
+      "hi": 214.0,
+      "aplicada": true
+    }
+  }
+}

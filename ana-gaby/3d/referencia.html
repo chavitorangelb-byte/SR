@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Foto de referencia · pastel ilustrado en código</title>
+<style>html,body{margin:0;background:#000}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head>
+<body>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { crearPastel } from './pastel.js';
+
+const q = new URLSearchParams(location.search);
+const W = +(q.get('w') || 1080), H = +(q.get('h') || 1350), DPR = +(q.get('dpr') || 2);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(DPR);
+renderer.setSize(W, H);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 0.94;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.VSMShadowMap;
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+scene.environmentIntensity = 0.55;
+
+// Fondo tipo estudio: pared rosa palo que se curva hacia una mesa crema (sin horizonte visible).
+function fondo() {
+  const geo = new THREE.PlaneGeometry(30, 16, 120, 80);
+  const p = geo.attributes.position;
+  const col = [];
+  const cPared = new THREE.Color('#DDAAA2'), cMesa = new THREE.Color('#F0DDD7');
+  for (let i = 0; i < p.count; i++) {
+    const x = p.getX(i), v = p.getY(i) + 8; // v: 0 (frente) … 16 (arriba)
+    let y, z;
+    const R = 2.2, curvaIni = 6;
+    if (v < curvaIni) { y = 0; z = 6 - v; }
+    else if (v < curvaIni + (Math.PI / 2) * R) { const a = (v - curvaIni) / R; y = R - Math.cos(a) * R; z = -Math.sin(a) * R; }
+    else { y = R + (v - curvaIni - (Math.PI / 2) * R); z = -R; }
+    p.setXYZ(i, x, y, z - 1.2);
+    const t = THREE.MathUtils.smoothstep(v, 3.5, 9.5);
+    const c = cMesa.clone().lerp(cPared, t);
+    col.push(c.r, c.g, c.b);
+  }
+  geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+  geo.computeVertexNormals();
+  const m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.95 }));
+  m.receiveShadow = true;
+  return m;
+}
+scene.add(fondo());
+
+const pastel = crearPastel(THREE);
+scene.add(pastel);
+
+scene.add(new THREE.HemisphereLight('#fff6f3', '#d9b9b1', 0.35));
+const llave = new THREE.DirectionalLight('#fff3ea', 2.8);
+llave.position.set(-3.2, 5.2, 4.2);
+llave.castShadow = true;
+llave.shadow.mapSize.set(2048, 2048);
+llave.shadow.camera.left = -3; llave.shadow.camera.right = 3; llave.shadow.camera.top = 3; llave.shadow.camera.bottom = -3;
+llave.shadow.camera.near = 1; llave.shadow.camera.far = 14;
+llave.shadow.radius = 10;
+llave.shadow.blurSamples = 20;
+llave.shadow.bias = -0.0004;
+scene.add(llave);
+const relleno = new THREE.DirectionalLight('#ffe9ee', 0.7);
+relleno.position.set(4, 2.2, 3);
+scene.add(relleno);
+const contra = new THREE.DirectionalLight('#ffd9e0', 1.1);
+contra.position.set(1.5, 3.5, -5);
+scene.add(contra);
+
+const cam = new THREE.PerspectiveCamera(26, W / H, 0.1, 60);
+const ang = +(q.get('ang') || 0) * Math.PI / 180;
+cam.position.set(Math.sin(ang) * 7.4, 2.55, Math.cos(ang) * 7.4);
+cam.lookAt(0, 0.9, 0);
+
+renderer.render(scene, cam);
+window.LISTO = true;
+</script>
+</body>
+</html>

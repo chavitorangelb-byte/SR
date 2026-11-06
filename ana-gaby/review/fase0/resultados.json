@@ -1,0 +1,310 @@
+{
+  "fecha": "2026-11-06T00:36:41.626Z",
+  "reloj_de_prueba": "2026-11-10T18:00:00.000Z",
+  "vista": {
+    "width": 390,
+    "height": 844
+  },
+  "pasaron": 51,
+  "total": 51,
+  "resultados": [
+    {
+      "nombre": "Fuentes locales cargadas (Cormorant Garamond itálica y DM Sans)",
+      "ok": true,
+      "detalle": "Cormorant Garamond 600 italic · DM Sans 400 normal · DM Sans 500 normal · DM Sans 600 normal · DM Sans 700 normal"
+    },
+    {
+      "nombre": "Sin desplazamiento horizontal a 390 px",
+      "ok": true,
+      "detalle": {
+        "sw": 390,
+        "iw": 390
+      }
+    },
+    {
+      "nombre": "Portada: foto de su local con el letrero",
+      "ok": true,
+      "detalle": "naturalWidth 1320"
+    },
+    {
+      "nombre": "Portada: «Repostería · Los Bosques, Aguascalientes»",
+      "ok": true,
+      "detalle": "Repostería · Los Bosques, Aguascalientes"
+    },
+    {
+      "nombre": "Portada: «5.0 en Google»",
+      "ok": true,
+      "detalle": "5.0 en Google"
+    },
+    {
+      "nombre": "Portada: botones «Ver catálogo» y «Cotiza tu pastel» sin hacer scroll",
+      "ok": true,
+      "detalle": "Ver catálogo / Cotiza tu pastel · borde inferior 765 px de 844"
+    },
+    {
+      "nombre": "«Ver catálogo» lleva al catálogo",
+      "ok": true,
+      "detalle": "catálogo a 76 px del borde superior"
+    },
+    {
+      "nombre": "Pestaña «pasteles»: tarjetas con sus fotos y nombre genérico",
+      "ok": true,
+      "detalle": "Pastel de fresas con crema · Pastel de San Valentín · Pastel con moños · Pastel de corazón"
+    },
+    {
+      "nombre": "Pestaña «pasteles»: precio con marcador «$ —»",
+      "ok": true,
+      "detalle": "$ — $ — $ — $ —"
+    },
+    {
+      "nombre": "Pestaña «pasteles»: la pastilla rosa queda bajo la pestaña",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Pestaña «postres»: tarjetas con sus fotos y nombre genérico",
+      "ok": true,
+      "detalle": "Cupcakes de flores · Tarta de frutos rojos · Mesa de postres · Pasteles para mesa de postres"
+    },
+    {
+      "nombre": "Pestaña «postres»: precio con marcador «$ —»",
+      "ok": true,
+      "detalle": "$ — $ — $ — $ —"
+    },
+    {
+      "nombre": "Pestaña «postres»: la pastilla rosa queda bajo la pestaña",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Pestaña «galletas»: tarjetas con sus fotos y nombre genérico",
+      "ok": true,
+      "detalle": "Frasco de galletas de corazón · Caja de galletas de chocolate · Galletas de chispas de chocolate · Galletas con corazón"
+    },
+    {
+      "nombre": "Pestaña «galletas»: precio con marcador «$ —»",
+      "ok": true,
+      "detalle": "$ — $ — $ — $ —"
+    },
+    {
+      "nombre": "Pestaña «galletas»: la pastilla rosa queda bajo la pestaña",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Pestañas con teclado (flecha derecha)",
+      "ok": true,
+      "detalle": "tab-pasteles / pasteles"
+    },
+    {
+      "nombre": "Botón de cada tarjeta: WhatsApp con el producto ya escrito",
+      "ok": true,
+      "detalle": "¡Hola, Ana Gaby! Me interesa: Frasco de galletas de corazón. ¿Me das informes?"
+    },
+    {
+      "nombre": "«Cotiza tu pastel» abre la pestaña «A tu medida»",
+      "ok": true,
+      "detalle": {
+        "tab": "medida",
+        "top": 76,
+        "hash": "#a-tu-medida"
+      }
+    },
+    {
+      "nombre": "Validación: no envía sin foto (o idea), personas y fecha",
+      "ok": true,
+      "detalle": "Sube la foto de tu pastel o cuéntanos tu idea en el paso 5. | Elige para cuántas personas, más o menos. | Elige la fecha."
+    },
+    {
+      "nombre": "Subir foto: vista previa con barra de carga",
+      "ok": true,
+      "detalle": "Preparando tu foto… → Foto lista · 1080px"
+    },
+    {
+      "nombre": "Personas: chip «20 a 30»",
+      "ok": true,
+      "detalle": "20 a 30"
+    },
+    {
+      "nombre": "Calendario: se abre en noviembre 2026",
+      "ok": true,
+      "detalle": "noviembre 2026"
+    },
+    {
+      "nombre": "Calendario: días pasados, domingos y lunes deshabilitados",
+      "ok": true,
+      "detalle": {
+        "abierta": true,
+        "mes": "noviembre 2026",
+        "pasadosOff": true,
+        "domLunOff": true,
+        "abiertos": true,
+        "antDeshab": true,
+        "horasOff": true
+      }
+    },
+    {
+      "nombre": "Sábado: solo «Mañana» 11:00 am – 2:00 pm (su horario)",
+      "ok": true,
+      "detalle": {
+        "m": false,
+        "t": true,
+        "tm": "11:00 am – 2:00 pm",
+        "tt": "Cerrado"
+      }
+    },
+    {
+      "nombre": "Viernes: mañana y tarde según su horario",
+      "ok": true,
+      "detalle": "11:30 am – 2:30 pm / 4:30 pm – 7:00 pm / false"
+    },
+    {
+      "nombre": "Fecha elegida en el campo",
+      "ok": true,
+      "detalle": "Sábado 14 de noviembre · mañana"
+    },
+    {
+      "nombre": "Mensaje del pastel con contador",
+      "ok": true,
+      "detalle": "16/40"
+    },
+    {
+      "nombre": "Enviar: abre WhatsApp a 449 406 3325",
+      "ok": true,
+      "detalle": "https://wa.me/524494063325?text=%C2%A1Hola%2C%20Ana%20Gaby!%…"
+    },
+    {
+      "nombre": "Enviar: el mensaje sale armado, con «te mando la foto en este chat»",
+      "ok": true,
+      "detalle": "¡Hola, Ana Gaby! ¿Me podrías ayudar con la cotización de un pastel personalizado? ⏎ Tamaño (número de personas): 20 a 30 ⏎ Diseño: te mando la foto en este chat. ⏎ Mensaje del pastel: “Feliz cumpleaños” ⏎ Fecha y hora: sábado 14 de noviembre, en la mañana (11:00 am – 2:00 pm) ⏎ ¡Muchas gracias!"
+    },
+    {
+      "nombre": "Enviar: hoja «Tu pedido, en un mensaje» con su foto para adjuntar",
+      "ok": true,
+      "detalle": "Se abrió WhatsApp con este mensaje para 449 406 3325."
+    },
+    {
+      "nombre": "Copiar mensaje",
+      "ok": true,
+      "detalle": "Mensaje copiado"
+    },
+    {
+      "nombre": "La hoja se cierra con Escape y regresa el scroll",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Sin foto: la idea escrita va como «Diseño»",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Reseñas: las 6 reseñas del brief, texto exacto",
+      "ok": true,
+      "detalle": "6 reseñas"
+    },
+    {
+      "nombre": "Reseñas: 5 estrellas y «Reseña en Google», sin nombres",
+      "ok": true,
+      "detalle": "Reseña en Google"
+    },
+    {
+      "nombre": "Carrusel: deslizar a la reseña 2 actualiza los puntos",
+      "ok": true,
+      "detalle": "1 / 1"
+    },
+    {
+      "nombre": "Visítanos: dirección",
+      "ok": true,
+      "detalle": "Paseo Sierra Hermosa 111, Los Bosques, Aguascalientes"
+    },
+    {
+      "nombre": "Visítanos: horario de su Instagram, con «Hoy» en el día actual",
+      "ok": true,
+      "detalle": "Martes a viernes 11:30 am – 2:30 pm 4:30 pm – 7:00 pm | Sábado 11:00 am – 2:00 pm | Domingo y lunes Cerrado · hoy: Martes a viernes"
+    },
+    {
+      "nombre": "Visítanos: estado en vivo (martes 12:00 → abierto)",
+      "ok": true,
+      "detalle": "Abierto ahora · cierra a las 2:30 pm"
+    },
+    {
+      "nombre": "Visítanos: botón de WhatsApp, cómo llegar y llamar",
+      "ok": true,
+      "detalle": "¡Hola, Ana Gaby! Vi tu página y quiero hacer un pedido. · tel:+524494063325"
+    },
+    {
+      "nombre": "Pie: Instagram @anagaby.reposteria",
+      "ok": true,
+      "detalle": "https://www.instagram.com/anagaby.reposteria/"
+    },
+    {
+      "nombre": "Horario: abierto/cerrado correcto en 8 momentos de la semana",
+      "ok": true,
+      "detalle": {
+        "mar 12:00": "Abierto ahora · cierra a las 2:30 pm",
+        "mar 15:00": "Cerrado · abre hoy a las 4:30 pm",
+        "mar 19:30": "Cerrado · abre mañana a las 11:30 am",
+        "sáb 13:00": "Abierto ahora · cierra a las 2:00 pm",
+        "sáb 14:30": "Cerrado · abre el martes a las 11:30 am",
+        "dom 12:00": "Cerrado · abre el martes a las 11:30 am",
+        "lun 12:00": "Cerrado · abre mañana a las 11:30 am",
+        "mar 11:00": "Cerrado · abre hoy a las 11:30 am"
+      }
+    },
+    {
+      "nombre": "Accesibilidad: botones y enlaces con nombre, imágenes con alt, campos con etiqueta",
+      "ok": true,
+      "detalle": {
+        "sinNombre": [],
+        "imgsSinAlt": 0,
+        "camposSinEtiqueta": []
+      }
+    },
+    {
+      "nombre": "Contraste AA (≥ 4.5:1) en texto y botones",
+      "ok": true,
+      "detalle": {
+        "tinta sobre crema": "15.96:1",
+        "tinta sobre rosa caja (botones)": "7.46:1",
+        "texto secundario (tinta 66 %) sobre crema": "5.39:1",
+        "texto secundario (tinta 66 %) sobre blanco": "5.53:1"
+      }
+    },
+    {
+      "nombre": "Sin errores de JavaScript ni recursos rotos",
+      "ok": true,
+      "detalle": "limpio"
+    },
+    {
+      "nombre": "Enlace directo #a-tu-medida abre la pestaña",
+      "ok": true,
+      "detalle": "medida"
+    },
+    {
+      "nombre": "Modo demo (?demo=1): muestra el mensaje y no abre WhatsApp",
+      "ok": true,
+      "detalle": "Modo demoAquí se abriría WhatsApp con este mensaje."
+    },
+    {
+      "nombre": "Captura a 3x (textura del celular del video)",
+      "ok": true,
+      "detalle": "1170×2532 · ampliación máx. de foto a 3x: 1.18×"
+    },
+    {
+      "nombre": "Responsive: también funciona en pantalla grande (1280 px)",
+      "ok": true,
+      "detalle": "scrollWidth 1280"
+    },
+    {
+      "nombre": "Archivo único (dist) se abre sin internet: fotos, fuentes y modo demo",
+      "ok": true,
+      "detalle": {
+        "fotos": true,
+        "serif": true,
+        "demo": true,
+        "externos": 0
+      }
+    }
+  ]
+}
