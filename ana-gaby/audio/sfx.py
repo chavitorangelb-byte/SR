@@ -404,7 +404,7 @@ def cues():
         C.append({'f': int(round(f)), 'id': ident, 'db': db, 'pan': pan, **extra})
 
     # HOOK: golpe suave, manga, cristal de la barra; el betún escribe «galletas aguascalientes» (letra i en 6+5.5·i)
-    c(0, 'golpe_suave', -6)
+    c(0, 'golpe_suave', -10)
     c(0, 'manga_aprieta', -4)
     c(2, 'cristal_aparece', -11)
     c(6, 'betun_cremoso', -12, dur=(128 - 6) / FPS)

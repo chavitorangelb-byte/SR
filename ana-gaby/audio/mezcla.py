@@ -164,6 +164,8 @@ def main():
     peor_s = min(r['sfx_bajo_voz_dB'] for r in reporte)
 
     mezcla = voz + mus_d + sfx_d
+    # 4 ms de entrada: el primer golpe no arranca de golpe desde la muestra 0 (evita sobrepicos al codificar en AAC)
+    mezcla[:int(0.004 * SR)] *= np.linspace(0, 1, int(0.004 * SR))[:, None]
     tmp = B / '_pre.wav'
     save(tmp, mezcla)
     i0, _ = lufs_tp(tmp)

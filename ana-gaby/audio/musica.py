@@ -290,7 +290,7 @@ def capas():
         if t >= T_PALMAS:
             poner(C['palmas'], palma(), t, pan=-0.1)
     # golpe suave en f0, riser y brillo del lift, golpe grave del cierre
-    poner(C['golpes'], bombo(60, 44, 0.45, 0.85), 0.0)
+    poner(C['golpes'], bombo(60, 44, 0.45, 0.5), 0.004)  # golpe suave: no debe llegar al limitador
     poner(C['golpes'], riser(T_LIFT - 0.7, T_LIFT), T_LIFT - 0.7)
     poner(C['golpes'], brillo(T_LIFT), T_LIFT)
     poner(C['golpes'], bombo(52, 34, 0.9, 1.25), T_GOLPE)
