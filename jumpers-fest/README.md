@@ -17,10 +17,12 @@ y, en fases siguientes, el video vertical de 27 s que la presenta. Proyecto inde
 - `brief/` — fase 2: línea de tiempo (`linea.mjs`, fuente única), brief cuadro por cuadro y `timeline.json`.
 - `voz/` — guion para ElevenLabs; `fuente/` la toma 1 y su transcripción (Whisper medium, `tools/transcribir.py` en un venv con faster-whisper); `voz_bloqueada.json` (cuadro de cada palabra), `voz_stem_48k.wav` (−16 LUFS) y `preview_voz_pulso.mp3`.
 - `review/fase3/` — la voz bloqueada (tablero) y la verificación de los inicios de palabra con la envolvente de energía.
-- `video/` — render en código: `render/escena.js` (frame(t) determinista con three.js: celular de cristal, piezas 3D, tubo y kinetic type; 8 subcuadros por cuadro) y `render.mjs` (lo corre en Chromium y arma el video con ffmpeg).
+- `video/` — render en código: `render/escena.js` (frame(t) determinista con three.js: celular de cristal, piezas 3D, tubo y kinetic type; 8 subcuadros por cuadro; `?fmt=916` vertical o `?fmt=11` cuadrado con su propia composición) y `render.mjs` (lo corre en Chromium y arma el video con ffmpeg); `finales.sh` y `codificar.sh` para los finales.
 - `review/fase4/` — prueba de estilo (f186–f446) en 540×960 a 30 fps, hoja de cuadros y un cuadro a 1080.
 - `audio/` — música, SFX y mezcla en código (`audio/build/` se regenera: stems y master).
 - `review/fase6/` — preview completo y hoja de 12 cuadros clave.
+- `review/fase7/` — hojas de 12 cuadros de los finales (9:16 y 1:1).
+- `entrega/` — lo que se le manda al dueño: mensaje, láminas y capturas, videos finales, stems y la página en un archivo (ver `entrega/LEEME.md`).
 
 ## Comandos
 ```bash
@@ -37,6 +39,11 @@ node video/render.mjs --desde 186 --hasta 446 --fps 30 --w 540 --h 960 --sub 8 -
 python3 audio/musica.py && python3 audio/sfx.py && python3 audio/mezcla.py   # fase 5: música, 138 SFX y mezcla (numpy + scipy)
 node video/render.mjs --desde 0 --hasta 1649 --fps 30 --w 540 --h 960 --sub 8 --out review/fase6/preview_540.mp4
 python3 tools/hoja.py build/frames_preview_540 review/fase6/hoja_12_cuadros.jpg
+bash video/finales.sh 916        # fase 7: final vertical 1080×1920 a 60 fps (reanudable) → entrega/jumpers-fest_9x16_*.mp4
+bash video/finales.sh 11         # fase 7: final cuadrado 1080×1080 → entrega/jumpers-fest_1x1_*.mp4
+python3 tools/hoja.py build/final_916 review/fase7/hoja_12_cuadros_9x16.jpg 1
+python3 tools/hoja.py build/final_11 review/fase7/hoja_12_cuadros_1x1.jpg 1
+bash tools/entrega.sh            # entrega/: página en un archivo, stems, recorrido y fotos para el dueño (tools/fotos_dueno.mjs)
 python3 tools/prep_img.py        # recortes, exposición suave y logo transparente → web/img
 node tools/build_web.mjs         # genera dist/
 node tools/test_web.mjs          # 26 pruebas en vista de celular 390×844 + capturas a 3× (review/fase0/pantallas_3x)

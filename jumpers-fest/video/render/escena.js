@@ -2,15 +2,28 @@
 // Hook (tubo que escribe en una barra de cristal) → celular 3D de cristal con la página real capturada →
 // piezas 3D que se inflan y salen de la pantalla (tarjetas, descripción, botón cojín, postal) → el tubo
 // se arquea en un arcoíris pastel 3D → end card con placa blanca y el logo real.
-// t en cuadros de 60 fps (puede ser fraccionario). Formato 9:16 (1080 × 1920 de diseño).
+// t en cuadros de 60 fps (puede ser fraccionario). ?fmt=916 (1080 × 1920 de diseño) o ?fmt=11 (1080 × 1080, re-layout propio).
 import * as THREE from 'three';
 import { typingFrames } from '/brief/tiempos.mjs';
 
 const Q = new URLSearchParams(location.search);
-const W = +(Q.get('w') || 540), H = +(Q.get('h') || 960);
+const FMT = Q.get('fmt') || '916';
+const W = +(Q.get('w') || 540), H = +(Q.get('h') || (FMT === '11' ? 540 : 960));
 const UI = Q.get('ui') || '/build/ui_video';
 const TEX = Q.get('tex') || '/review/fase0/texturas_3x';
-const DW = 1080, DH = 1920, S = W / DW;
+// ---------- composición por formato (px de diseño, 1080 de ancho) ----------
+// 916: vertical 1080 × 1920. 11: cuadrado 1080 × 1080, re-layout propio (no recorte): celular de 800 px de alto,
+// el texto a los lados a la misma altura del celular, búsqueda al centro y el cierre al 85 %.
+const LAYOUTS = {
+  916: { DH: 1920, phoneH: 1152, pose0: [540, 915], hookY: 0, lineas: [860, 948, 1036], xIzq: 64, xDer: 612,
+    arco: { cx: 540, cy: 1010, pata: 100, a: 31, R: [386, 318, 250, 182, 114] }, placa: { cx: 540, cy: 1150, w: 640, h: 370, r: 60 }, logoW: 520,
+    fin: { y: 1410, legalY: 1500 }, escDesc: 1.9 },
+  11: { DH: 1080, phoneH: 800, pose0: [540, 540], hookY: -420, lineas: [485, 573, 661], xIzq: 64, xDer: 540,
+    arco: { cx: 540, cy: 500, pata: 85, a: 26, R: [328, 270, 212, 155, 97] }, placa: { cx: 540, cy: 620, w: 544, h: 315, r: 51 }, logoW: 442,
+    fin: { y: 852, legalY: 942 }, escDesc: 2.3 },
+};
+const LAY = LAYOUTS[FMT];
+const DW = 1080, DH = LAY.DH, S = W / DW;
 const FPS = 60, DEG = Math.PI / 180;
 
 const TL = await (await fetch('/brief/timeline.json')).json();
@@ -53,7 +66,7 @@ const FOV = 22;
 const STATUS = 47, VIEW_H = 844;
 const SCR = { w: 3.90, h: (STATUS + VIEW_H) / 100, r: 0.50 };
 const BODY = { w: 4.32, h: 9.33, r: 0.70, d: 0.30 };
-const PXU = 1152 / BODY.h; // el celular mide 1152 px de alto (60 %): 1.236 px de video por px CSS
+const PXU = LAY.phoneH / BODY.h; // 9:16: el celular mide 1152 px de alto (60 %), 1.236 px de video por px CSS; 1:1: 800 px, 0.857
 const VIS_H = DH / PXU;
 const DIST = VIS_H / (2 * Math.tan((FOV / 2) * DEG));
 const FRONT_Z = BODY.d / 2;
@@ -134,7 +147,7 @@ const bgMat = new THREE.ShaderMaterial({
 const bgScene = quadScene(bgMat);
 
 // ---------- barra de búsqueda de cristal (hook): desenfoca lo de atrás, satura 140 %, borde de 1 px, ruido 2 % ----------
-const BAR = { cx: 540, cy: 960, w: 940, h: 132 };
+const BAR = { cx: 540, cy: 960 + LAY.hookY, w: 940, h: 132 };
 const barMat = new THREE.ShaderMaterial({
   uniforms: { uC: { value: new THREE.Vector2() }, uSize: { value: new THREE.Vector2() }, uR: { value: 1 }, uScale: { value: new THREE.Vector2(1, 1) }, uAlpha: { value: 0 }, uBack: { value: rtBlur.texture }, uRes: { value: new THREE.Vector2(W, H) }, uSeed: { value: 0 }, uPx: { value: S } },
   vertexShader: 'void main(){ gl_Position = vec4(position.xy, 0., 1.); }',
@@ -354,7 +367,7 @@ const PIEZAS = [
   { id: 'castle-jump', url: `${TEX}/tarjeta_castle-jump.png`, rect: R['castle-jump'], radio: 30, sale: 354, vuelve: 454, fin: 16, to: [-0.18, 2.35, 1.15], rot: [-5, 8, -3], recorte: true, fase: 0 },
   { id: 'rainbow-jump', url: `${TEX}/tarjeta_rainbow-jump.png`, rect: R['rainbow-jump'], radio: 30, sale: 370, vuelve: 462, fin: 16, to: [0.04, 0.05, 1.85], rot: [-4, 6, -1], recorte: true, fase: 2.1 },
   { id: 'magic-jump', url: `${TEX}/tarjeta_magic-jump.png`, rect: R['magic-jump'], radio: 30, sale: 386, vuelve: 446, fin: 16, to: [0.26, -2.25, 2.55], rot: [-3, 4, 1.5], recorte: true, fase: 4.2 },
-  { id: 'descripcion', url: `${TEX}/descripcion_rainbow.png`, rect: conMargen(R.descripcion, 18, 14), radio: 18, sale: 514, vuelve: 562, fin: 14, to: [0, 'arriba', 1.4], rot: [-3, 0, 0], esc: 1.9, flota: 0.5 },
+  { id: 'descripcion', url: `${TEX}/descripcion_rainbow.png`, rect: conMargen(R.descripcion, 18, 14), radio: 18, sale: 514, vuelve: 562, fin: 14, to: [0, 'arriba', 1.4], rot: [-3, 0, 0], esc: LAY.escDesc, flota: 0.5 },
   { id: 'boton', url: `${TEX}/boton_apartar_whatsapp.png`, rect: R.boton, radio: 29, grueso: 0.20, sale: 868, vuelve: 900, fin: 14, to: [null, 'arriba', 1.1], rot: [-12, 0, 0], esc: 1.14, cojin: true, flota: 0.3, puff: 0.13 },
   { id: 'postal', url: `${TEX}/postal_arma_tu_fiesta.png`, rect: R.postal, radio: 30, sale: 1016, vuelve: 1061, fin: 24, to: [0, -0.2, 2.0], rot: [-3, 10, -4], esc: 2.0 },
 ];
@@ -376,7 +389,7 @@ for (const P of PIEZAS) {
 const CLIP_PAGE = { x0: 0, y0: 64, x1: 390, y1: VIEW_H };
 
 // ---------- arcoíris inflable 3D (cierre y end card) ----------
-const ARCO = { cx: 540, cy: 1010, pata: 100, a: 31, R: [386, 318, 250, 182, 114] };
+const ARCO = LAY.arco;
 const BANDA_COL = ['#F3C7CF', '#F6E7A8', '#CDE8C9', '#C6DFEA', '#DCCDEB'];
 class CurvaArco extends THREE.Curve {
   constructor(R, pata) { super(); this.R = R; this.pata = pata; this.L = 2 * pata + Math.PI * R; }
@@ -469,7 +482,7 @@ placaCanvas.width = 1280; placaCanvas.height = 740;
 }
 const placaTex = new THREE.CanvasTexture(placaCanvas);
 placaTex.colorSpace = THREE.SRGBColorSpace;
-const PLACA = { cx: 540, cy: 1150, w: 640, h: 370, r: 60 };
+const PLACA = LAY.placa;
 const placa = piezaMesh(placaTex, PLACA.w / PXU, PLACA.h / PXU, PLACA.r / PXU, 0.22);
 placa.material.uniforms.uLift.value = 1; placa.material.uniforms.uRimW.value = 0.42; placa.material.uniforms.uPillow.value = 0.6;
 placa.renderOrder = 4;
@@ -477,7 +490,7 @@ const placaG = new THREE.Group();
 placaG.position.set(...D2W(PLACA.cx, PLACA.cy), 0.7);
 placaG.add(placa);
 const logoTex = cargaTex('/assets/derivados/logo_jumpers_transparente.png');
-const logoMesh = new THREE.Mesh(new THREE.PlaneGeometry(520 / PXU, (520 * 599 / 1030) / PXU), new THREE.MeshBasicMaterial({ map: logoTex, transparent: true, depthWrite: false, toneMapped: false }));
+const logoMesh = new THREE.Mesh(new THREE.PlaneGeometry(LAY.logoW / PXU, (LAY.logoW * 599 / 1030) / PXU), new THREE.MeshBasicMaterial({ map: logoTex, transparent: true, depthWrite: false, toneMapped: false }));
 logoMesh.position.z = 0.004;
 logoMesh.renderOrder = 6;
 placaG.add(logoMesh);
@@ -518,10 +531,23 @@ const F_ON = META.encender;
 const F_LAST = Math.max(...Object.keys(META.frames).map(Number));
 
 // ---------- pose del celular (cuadros del brief) ----------
-const POSE0 = { cx: 540, cy: 915, zoom: 1, rx: 1, ry: -3, rz: 0 };
+const POSE0 = { cx: LAY.pose0[0], cy: LAY.pose0[1], zoom: 1, rx: 1, ry: -3, rz: 0 };
 // encuadre a un punto de la página: el punto queda en (540, yCuadro)
-function foco(zoom, pageY, yCuadro = 960) { const F = pageToLocal(195, pageY); return { cx: 540 - zoom * F[0] * PXU, cy: yCuadro + zoom * F[1] * PXU, zoom }; }
-const POSES = [
+function foco(zoom, pageY, yCuadro = DH / 2) { const F = pageToLocal(195, pageY); return { cx: 540 - zoom * F[0] * PXU, cy: yCuadro + zoom * F[1] * PXU, zoom }; }
+const POSES = FMT === '11' ? [
+  { f: 257, d: 24, cx: 770, ry: -8 },                                        // a la derecha: "ELIGE / TU INFLABLE" a la izquierda
+  { f: 330, d: 38, zoom: 0.82, ry: -3 },
+  { f: 450, d: 28, zoom: 1, ry: -8 },
+  { f: 500, d: 30, cx: 540, ry: -2 },
+  { f: 579, d: 14, cx: 290, ry: 8 },                                         // a la izquierda: "APARTA / EN UN / MENSAJE" a la derecha
+  { f: 752, d: 28, ...foco(1.87, 600), ry: 0 },                              // push-in: 1.6 px por px CSS
+  { f: 836, d: 30, ...foco(1.75, (R.burbuja.y + R.boton.y + R.boton.h) / 2) }, // vista previa y botón: 1.5
+  { f: 900, d: 10, cx: 790, cy: 540, zoom: 1, ry: -8 },                      // "DIVERSIÓN + ELEGANCIA" a la izquierda
+  { f: 1008, d: 32, cx: 540, zoom: 0.917, ry: -2 },
+  { f: 1061, d: 32, zoom: 1 },
+  { f: 1157, d: 58, cx: 280, cy: 860, zoom: 0.53, ry: 20, rz: -5 },
+  { f: 1286, d: 44, cx: -240, cy: 1060, zoom: 0.45 },
+] : [
   { f: 257, d: 24, cx: 790, ry: -8 },                                        // truck a la derecha: espacio para "TU INFLABLE"
   { f: 330, d: 38, zoom: 0.82, ry: -3 },                                     // se aleja antes de que salgan las tarjetas
   { f: 450, d: 28, zoom: 1, ry: -8 },
@@ -717,18 +743,19 @@ const ARCO_PTS = (() => {
 const TEXTO_BUSQ = 'renta de inflables aguascalientes';
 const T_TECLAS = typingFrames(40, 76, TEXTO_BUSQ);
 function letras(t) { let n = 0; for (const f of T_TECLAS) if (t >= f) n++; return n; }
-const TXT = { x0: 166, y: 974, px: 40 };
+const HY = LAY.hookY; // el hook va centrado en el cuadro: en 1:1 todo sube 420 px
+const TXT = { x0: 166, y: 974 + HY, px: 40 };
 function cursorX(t) { octx.font = `400 ${TXT.px * S}px "DM Sans"`; return TXT.x0 + octx.measureText(TEXTO_BUSQ.slice(0, letras(t))).width / S; }
 function puntaHook(t) {
-  if (t < 34) return bez([-140, 1560], [20, 1250], [120, 1060], [150, 1004], eOutCubic(seg(t, 0, 34)));
-  if (t < 40) { const u = eInOutCubic(seg(t, 34, 40)); return [lerp(150, TXT.x0, u), lerp(1004, 1000, u)]; }
-  if (t < 116) return [cursorX(t) + 6, 1000 + Math.sin(t * 0.9) * 2];
+  if (t < 34) return bez([-140, 1560 + HY], [20, 1250 + HY], [120, 1060 + HY], [150, 1004 + HY], eOutCubic(seg(t, 0, 34)));
+  if (t < 40) { const u = eInOutCubic(seg(t, 34, 40)); return [lerp(150, TXT.x0, u), lerp(1004, 1000, u) + HY]; }
+  if (t < 116) return [cursorX(t) + 6, 1000 + HY + Math.sin(t * 0.9) * 2];
   const u = eInOutCubic(seg(t, 116, 128));
-  const a = [cursorX(116) + 6, 1000], b = [BAR.cx + BAR.w / 2 - 66, 1000];
+  const a = [cursorX(116) + 6, 1000 + HY], b = [BAR.cx + BAR.w / 2 - 66, 1000 + HY];
   return [lerp(a[0], b[0], u), lerp(a[1], b[1], u) - Math.sin(Math.PI * u) * 40 + 8 * bump(t, 128, 130, 131, 134)];
 }
 function mangueraHook(tip) {
-  return catmull([[-260, 2180], [-40, 1880], [lerp(60, tip[0], 0.45), lerp(1560, tip[1], 0.55)], [tip[0] - 50, tip[1] + 60], tip], NT);
+  return catmull([[-260, 2180 + HY], [-40, 1880 + HY], [lerp(60, tip[0], 0.45), lerp(1560 + HY, tip[1], 0.55)], [tip[0] - 50, tip[1] + 60], tip], NT);
 }
 function tubo(t) {
   const out = [];
@@ -786,8 +813,8 @@ function dibujaBarra(t, b) {
   c.translate(BAR.cx * S, BAR.cy * S); c.scale(b.sx, b.sy); c.translate(-BAR.cx * S, -BAR.cy * S);
   // lupa de línea
   c.strokeStyle = '#1B1B1B'; c.lineWidth = 3.4 * S; c.lineCap = 'round';
-  c.beginPath(); c.arc(116 * S, 954 * S, 14 * S, 0, Math.PI * 2); c.stroke();
-  c.beginPath(); c.moveTo(126 * S, 965 * S); c.lineTo(138 * S, 977 * S); c.stroke();
+  c.beginPath(); c.arc(116 * S, (954 + HY) * S, 14 * S, 0, Math.PI * 2); c.stroke();
+  c.beginPath(); c.moveTo(126 * S, (965 + HY) * S); c.lineTo(138 * S, (977 + HY) * S); c.stroke();
   // texto tecleado y cursor
   const n = letras(t);
   c.fillStyle = '#1B1B1B'; c.font = `400 ${TXT.px * S}px "DM Sans"`; c.textBaseline = 'alphabetic';
@@ -803,14 +830,14 @@ function dibujaBarra(t, b) {
 }
 
 // ---------- kinetic type ----------
-const LINEAS = { 1: 860, 2: 948, 3: 1036 };
+const LINEAS = { 1: LAY.lineas[0], 2: LAY.lineas[1], 3: LAY.lineas[2] };
 const PALABRAS = TL.tipo.map((k) => ({ ...k, linea: +((k.pos.match(/línea (\d)/) || [0, 1])[1]), lado: k.pos.startsWith('derecha') ? 'der' : 'izq' }));
 function layoutPalabras() {
   for (const k of PALABRAS) {
     const prev = PALABRAS.filter((o) => o !== k && o.sale === k.sale && o.linea === k.linea && o.lado === k.lado && o.aterriza < k.aterriza);
     octx.font = `600 ${k.px * S}px Fredoka`;
     const sp = octx.measureText(' ').width / S;
-    let x = k.lado === 'izq' ? 64 : 612;
+    let x = k.lado === 'izq' ? LAY.xIzq : LAY.xDer;
     for (const o of prev.sort((a, b) => a.aterriza - b.aterriza)) { octx.font = `600 ${o.px * S}px Fredoka`; x += octx.measureText(o.texto).width / S + sp; }
     k.x = x; k.y = LINEAS[k.linea];
   }
@@ -885,7 +912,7 @@ function dibujaToques(t, st) {
   if (t >= 893 && t < 922) {
     const b = pieces.boton.mesh;
     const [px, py] = proyectaObj(b);
-    const r0 = 22 * 1.236 * st.zoom;
+    const r0 = 22 * (PXU / 100) * st.zoom;
     if (t < 905) circulo(px, py, r0 * (t < 900 ? 0.92 : 1), t < 896 ? seg(t, 893, 896) : 1 - seg(t, 900, 905));
     const u = (t - 900) / 22;
     if (u >= 0 && u <= 1) circulo(px, py, r0 * (1 + 1.4 * eOutCubic(u)), 0.45 * (1 - u), false);
@@ -899,14 +926,14 @@ function dibujaFinal(t) {
   if (a1 > 0) {
     c.save(); c.globalAlpha = a1;
     c.font = `600 ${44 * S}px "DM Sans"`; c.fillStyle = '#1B1B1B'; c.textAlign = 'center'; c.textBaseline = 'alphabetic';
-    c.fillText('Así se vería tu página · Elevate Negocios', 540 * S, (1410 + 14 * (1 - a1)) * S);
+    c.fillText('Así se vería tu página · Elevate Negocios', 540 * S, (LAY.fin.y + 14 * (1 - a1)) * S);
     c.restore();
   }
   const a2 = eOutCubic(seg(t, 1556, 1576));
   if (a2 > 0) {
     c.save(); c.globalAlpha = a2;
     c.font = `400 ${28 * S}px "DM Sans"`; c.fillStyle = '#66635F'; c.textAlign = 'center'; c.textBaseline = 'alphabetic';
-    c.fillText('Demo de cortesía de Elevate Negocios · pieza no oficial', 540 * S, 1500 * S);
+    c.fillText('Demo de cortesía de Elevate Negocios · pieza no oficial', 540 * S, LAY.fin.legalY * S);
     c.restore();
   }
 }
