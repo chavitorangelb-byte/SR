@@ -21,13 +21,15 @@ const SOLO = arg('solo', null), LISTA = arg('lista', null);
 const DESDE = +arg("desde", 0), HASTA = +arg("hasta", 1649);
 const STEP = 60 / FPS;
 const SHUTTER = +arg('shutter', STEP / 2); // obturador de 180°: medio intervalo entre cuadros de salida
+const FMT = arg('fmt', '916'); // 916 = vertical 1080×1920; 11 = cuadrado 1080×1080 (re-layout propio, no recorte)
+const CUADROS = arg('cuadros', null); // finales: carpeta persistente, un PNG por cuadro de 60 fps; reanudable
 
 const srv = await servir(ROOT);
 const browser = await chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
 const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
 page.on('pageerror', (e) => console.error('ERROR página:', e.message));
 page.on('console', (m) => { if (m.type() === 'error') console.error('consola:', m.text()); });
-await page.goto(`${srv.url}video/render/index.html?w=${W}&h=${H}&ui=${encodeURIComponent(UI)}`);
+await page.goto(`${srv.url}video/render/index.html?w=${W}&h=${H}&fmt=${FMT}&ui=${encodeURIComponent(UI)}`);
 await page.waitForFunction(() => window.ready || window.initError, null, { timeout: 180000 });
 const initError = await page.evaluate(() => window.initError);
 if (initError) { console.error(initError); process.exit(1); }
@@ -46,6 +48,20 @@ if (LISTA != null) {
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
   fs.writeFileSync(OUT, await frame(+SOLO));
   console.log(`cuadro ${SOLO} → ${path.relative(ROOT, OUT)} en ${((Date.now() - t0) / 1000).toFixed(1)} s`);
+} else if (CUADROS != null) {
+  // finales por tramos (se pueden correr varios procesos con rangos distintos): si se corta, se vuelve a correr y sigue
+  const dir = path.resolve(ROOT, CUADROS);
+  fs.mkdirSync(dir, { recursive: true });
+  const t0 = Date.now();
+  let hechos = 0;
+  for (let f = DESDE; f <= HASTA; f += STEP) {
+    const file = path.join(dir, `${String(f).padStart(5, '0')}.png`);
+    if (fs.existsSync(file) && fs.statSync(file).size > 0) continue;
+    fs.writeFileSync(file + '.tmp', await frame(f));
+    fs.renameSync(file + '.tmp', file);
+    if (++hechos % 10 === 0) process.stdout.write(`f${f} (${((Date.now() - t0) / 1000 / hechos).toFixed(2)} s/cuadro) `);
+  }
+  console.log(`\n${hechos} cuadros nuevos en ${path.relative(ROOT, dir)} en ${((Date.now() - t0) / 1000).toFixed(0)} s`);
 } else {
   const dir = path.join(ROOT, 'build', 'frames_' + path.basename(OUT, path.extname(OUT)));
   fs.rmSync(dir, { recursive: true, force: true });
