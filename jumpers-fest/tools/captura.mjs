@@ -96,7 +96,7 @@ async function accion(a, f) {
     const A = a.dedo.arrastre;
     scrollCurve = curvaInercia(s0, s1, a.dur, A);
     scrollFrom = f;
-    for (let i = 0; i <= A + 6; i++) {
+    if (!a.sinDedo) for (let i = 0; i <= A + 6; i++) {
       const c = scrollCurve[Math.min(i, A)];
       setDedo(f + i, { x: a.dedo.x, y: a.dedo.y - c.drag, a: i <= A ? Math.min(1, 0.5 + i * 0.25) : 1 - (i - A) / 6, p: i <= A ? 1 : 0 });
     }
@@ -116,12 +116,13 @@ async function accion(a, f) {
   // rectángulo de maquetación (sin transformaciones) en px CSS del viewport, para poner la pieza 3D en su lugar
   if (a.tipo === 'rect') {
     for (const [nombre, sel] of Object.entries(a.items)) {
-      meta.rects[nombre] = { f, ...(await page.evaluate((s) => {
+      meta.rects[nombre] = { f, ...(await page.evaluate(([s, bcr]) => {
         const e = document.querySelector(s);
+        if (bcr) { const r = e.getBoundingClientRect(); return { x: r.x, y: r.y, w: r.width, h: r.height }; }
         let x = 0, y = 0;
         for (let n = e; n; n = n.offsetParent) { x += n.offsetLeft; y += n.offsetTop; }
         return { x: x - window.scrollX, y: y - window.scrollY, w: e.offsetWidth, h: e.offsetHeight };
-      }, sel)) };
+      }, [sel, !!a.bcr])) };
     }
   }
   if (a.tipo === 'ocultar' || a.tipo === 'mostrar') {

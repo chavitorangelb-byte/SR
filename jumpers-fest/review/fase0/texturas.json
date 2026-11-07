@@ -71,6 +71,22 @@
   "radio_css": 32,
   "escala": 3
  },
+ "descripcion_rainbow": {
+  "archivo": "descripcion_rainbow.png",
+  "selector": "#fichaDesc",
+  "rect_css": {
+   "x": 30,
+   "y": 559.515625,
+   "w": 330,
+   "h": 72
+  },
+  "pad_css": {
+   "x": 18,
+   "y": 14
+  },
+  "radio_css": 18,
+  "escala": 3
+ },
  "calendario": {
   "archivo": "calendario.png",
   "selector": "#cal",

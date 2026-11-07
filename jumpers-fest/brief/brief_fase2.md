@@ -117,16 +117,15 @@ En cuadros a 60 fps. Pistas: Cámara, Celular, Pantalla (captura real de la pág
 - **f677 · 11.28 s · Tipo.** “EN” aterriza sobre “en” (L4, f677) y se infla. *SFX: tipo_infla (f677).*
 - **f685 · 11.42 s · Tipo.** “UN” aterriza sobre “un” (L4, f685) y se infla. *SFX: tipo_infla (f685).*
 - **f695 · 11.58 s · Tipo.** “MENSAJE” aterriza sobre “mensaje” (L4, f695) y se infla. *SFX: tipo_infla (f695).*
-- **f707 · 11.78 s · Pantalla.** Tap en “Colonia o salón”: sube el teclado (genérico, en español, con ñ) y el campo sube por encima de él. *SFX: tap (f707), teclado_sube (f713).*
-- **f724–f764 · 12.07 s · Pantalla.** Se teclea “Las Américas”. *SFX: 12 teclas (f724–f764).*
+- **f739 · 12.32 s · Pantalla.** Tap en “Colonia o salón” (tiempo 4 del compás 6), ya cerrado el calendario: sube el teclado (genérico, en español, con ñ) y el campo sube por encima de él. *SFX: tap (f739), teclado_sube (f745).*
+- **f750–f786 · 12.50 s · Pantalla.** Se teclea “Las Américas”. *SFX: 12 teclas (f750–f786).*
+- **f752–f780 · 12.53 s · Cámara.** Mientras sale el texto, el celular regresa al centro y hace push-in a los campos y al teclado (1.236 → 1.75 px de video por px CSS). Solo quedan a la vista las miniaturas de 98 px CSS (171 px en cuadro).
 - **f752–f764 · 12.53 s · Tipo.** “APARTA / EN UN / MENSAJE” se desinfla y sale.
-- **f766–f794 · 12.77 s · Cámara.** El celular regresa al centro y hace push-in a los campos y al teclado (1.236 → 1.75 px de video por px CSS). Solo quedan a la vista las miniaturas de 98 px CSS (171 px en cuadro).
-- **f771 · 12.85 s · Pantalla.** Tap en “Horario aproximado” (tiempo fuerte del compás 7). *SFX: tap (f771).*
-- **f778–f802 · 12.97 s · Pantalla.** Se teclea “4:00 pm”. *SFX: 7 teclas (f778–f802).*
-- **f808 · 13.47 s · Pantalla.** Tap en “listo” del teclado: el teclado baja. *SFX: tap (f808), teclado_baja (f814).*
-- **f814–f838 · 13.57 s · Pantalla.** Arrastre corto: quedan a la vista la vista previa del mensaje y el botón “Apartar por WhatsApp” (ya activo, en negro). *SFX: scroll_friccion (f814).*
-- **f814–f862 · 13.57 s · Cámara.** Reencuadre a la vista previa (2.0 px por px CSS): el mensaje armado (Rainbow Jump, sábado 21 de noviembre, Las Américas, 4:00 pm) se lee al tamaño de un celular real. Sin fotos en cuadro.
-- **f862–f880 · 14.37 s · Cámara.** Se abre a 1.45 px por px CSS, centrada en el botón.
+- **f804 · 13.40 s · Pantalla.** Tap en “Horario aproximado” (tiempo 2 del compás 7). *SFX: tap (f804).*
+- **f810–f830 · 13.50 s · Pantalla.** Se teclea “4:00 pm”. *SFX: 7 teclas (f810–f830).*
+- **f836 · 13.93 s · Pantalla.** Tap en “listo” del teclado (tiempo 3 del compás 7): el teclado baja. *SFX: tap (f836), teclado_baja (f842).*
+- **f836–f866 · 13.93 s · Cámara.** Se abre a 1.5 px por px CSS, centrada en la vista previa del mensaje y el botón (sin fotos en cuadro).
+- **f840–f862 · 14.00 s · Pantalla.** Arrastre corto: quedan a la vista la vista previa del mensaje armado (Rainbow Jump, sábado 21 de noviembre, Las Américas, 4:00 pm) y el botón “Apartar por WhatsApp”, ya activo. *SFX: scroll_friccion (f840).*
 - **f868–f892 · 14.47 s · 3D.** En el tiempo 4 del compás 7, el botón “Apartar por WhatsApp” sale de la pantalla como cojín de vinil: la misma pieza (negra, texto blanco, ícono genérico de chat) toma volumen, las costuras se tensan, brillo especular suave, se infla con resorte (8 %) y avanza 60 px hacia la cámara. Su lugar queda vacío. *SFX: boton_infla (f868), pff_corto (f870).*
 - **f896 · 14.93 s · 3D.** Tap en el cojín: se aplasta (0.9) y hace pop justo en el lift de f900 (1.06 → 1). Es el “envío”: en la captura no se toca el botón real, así que la hoja “¡Tu mensaje está listo!” no sale y no se muestra WhatsApp (es de terceros). *SFX: tap (f896), boton_pop (f900).*
 
@@ -301,32 +300,32 @@ Original, hecha en código a 112 BPM en Do mayor: ukulele y pizzicato con cuerda
 | 79 | f681 · 11.35 s | fecha_infla | Pop afinado con aire |
 | 80 | f685 · 11.42 s | tipo_infla | Palabra que se infla: aire corto y pop, afinado al acorde |
 | 81 | f695 · 11.58 s | tipo_infla | Palabra que se infla: aire corto y pop, afinado al acorde |
-| 82 | f707 · 11.78 s | tap | Toque en cristal, seco y suave |
-| 83 | f712 · 11.87 s | calendario_cierra | Pliegue suave |
-| 84 | f713 · 11.88 s | teclado_sube | Teclado que sube |
-| 85 | f724 · 12.07 s | tecla “L” | Tecla de celular, suave; cada una con su pequeña variación |
-| 86 | f729 · 12.15 s | tecla “a” | Tecla de celular, suave; cada una con su pequeña variación |
-| 87 | f730 · 12.17 s | tecla “s” | Tecla de celular, suave; cada una con su pequeña variación |
-| 88 | f735 · 12.25 s | tecla “espacio” | Tecla de celular, suave; cada una con su pequeña variación |
-| 89 | f740 · 12.33 s | tecla “A” | Tecla de celular, suave; cada una con su pequeña variación |
-| 90 | f742 · 12.37 s | tecla “m” | Tecla de celular, suave; cada una con su pequeña variación |
-| 91 | f745 · 12.42 s | tecla “é” | Tecla de celular, suave; cada una con su pequeña variación |
-| 92 | f750 · 12.50 s | tecla “r” | Tecla de celular, suave; cada una con su pequeña variación |
-| 93 | f753 · 12.55 s | tecla “i” | Tecla de celular, suave; cada una con su pequeña variación |
-| 94 | f758 · 12.63 s | tecla “c” | Tecla de celular, suave; cada una con su pequeña variación |
-| 95 | f759 · 12.65 s | tecla “a” | Tecla de celular, suave; cada una con su pequeña variación |
-| 96 | f764 · 12.73 s | tecla “s” | Tecla de celular, suave; cada una con su pequeña variación |
-| 97 | f771 · 12.85 s | tap | Toque en cristal, seco y suave |
-| 98 | f778 · 12.97 s | tecla “4” | Tecla de celular, suave; cada una con su pequeña variación |
-| 99 | f783 · 13.05 s | tecla “:” | Tecla de celular, suave; cada una con su pequeña variación |
-| 100 | f785 · 13.08 s | tecla “0” | Tecla de celular, suave; cada una con su pequeña variación |
-| 101 | f790 · 13.17 s | tecla “0” | Tecla de celular, suave; cada una con su pequeña variación |
-| 102 | f795 · 13.25 s | tecla “espacio” | Tecla de celular, suave; cada una con su pequeña variación |
-| 103 | f798 · 13.30 s | tecla “p” | Tecla de celular, suave; cada una con su pequeña variación |
-| 104 | f802 · 13.37 s | tecla “m” | Tecla de celular, suave; cada una con su pequeña variación |
-| 105 | f808 · 13.47 s | tap | Toque en cristal, seco y suave |
-| 106 | f814 · 13.57 s | scroll_friccion | Dedo sobre cristal con inercia que frena |
-| 107 | f814 · 13.57 s | teclado_baja | Teclado que baja |
+| 82 | f712 · 11.87 s | calendario_cierra | Pliegue suave |
+| 83 | f739 · 12.32 s | tap | Toque en cristal, seco y suave |
+| 84 | f745 · 12.42 s | teclado_sube | Teclado que sube |
+| 85 | f750 · 12.50 s | tecla “L” | Tecla de celular, suave; cada una con su pequeña variación |
+| 86 | f754 · 12.57 s | tecla “a” | Tecla de celular, suave; cada una con su pequeña variación |
+| 87 | f756 · 12.60 s | tecla “s” | Tecla de celular, suave; cada una con su pequeña variación |
+| 88 | f760 · 12.67 s | tecla “espacio” | Tecla de celular, suave; cada una con su pequeña variación |
+| 89 | f764 · 12.73 s | tecla “A” | Tecla de celular, suave; cada una con su pequeña variación |
+| 90 | f766 · 12.77 s | tecla “m” | Tecla de celular, suave; cada una con su pequeña variación |
+| 91 | f769 · 12.82 s | tecla “é” | Tecla de celular, suave; cada una con su pequeña variación |
+| 92 | f774 · 12.90 s | tecla “r” | Tecla de celular, suave; cada una con su pequeña variación |
+| 93 | f776 · 12.93 s | tecla “i” | Tecla de celular, suave; cada una con su pequeña variación |
+| 94 | f780 · 13.00 s | tecla “c” | Tecla de celular, suave; cada una con su pequeña variación |
+| 95 | f782 · 13.03 s | tecla “a” | Tecla de celular, suave; cada una con su pequeña variación |
+| 96 | f786 · 13.10 s | tecla “s” | Tecla de celular, suave; cada una con su pequeña variación |
+| 97 | f804 · 13.40 s | tap | Toque en cristal, seco y suave |
+| 98 | f810 · 13.50 s | tecla “4” | Tecla de celular, suave; cada una con su pequeña variación |
+| 99 | f814 · 13.57 s | tecla “:” | Tecla de celular, suave; cada una con su pequeña variación |
+| 100 | f816 · 13.60 s | tecla “0” | Tecla de celular, suave; cada una con su pequeña variación |
+| 101 | f820 · 13.67 s | tecla “0” | Tecla de celular, suave; cada una con su pequeña variación |
+| 102 | f824 · 13.73 s | tecla “espacio” | Tecla de celular, suave; cada una con su pequeña variación |
+| 103 | f827 · 13.78 s | tecla “p” | Tecla de celular, suave; cada una con su pequeña variación |
+| 104 | f830 · 13.83 s | tecla “m” | Tecla de celular, suave; cada una con su pequeña variación |
+| 105 | f836 · 13.93 s | tap | Toque en cristal, seco y suave |
+| 106 | f840 · 14.00 s | scroll_friccion | Dedo sobre cristal con inercia que frena |
+| 107 | f842 · 14.03 s | teclado_baja | Teclado que baja |
 | 108 | f868 · 14.47 s | boton_infla | Cojín de vinil que se llena: aire más largo y costuras que se tensan |
 | 109 | f870 · 14.50 s | pff_corto | Soplo muy corto y más agudo, 90 ms |
 | 110 | f896 · 14.93 s | tap | Toque en cristal, seco y suave |
@@ -372,5 +371,5 @@ Original, hecha en código a 112 BPM en Do mayor: ukulele y pizzicato con cuerda
 - ✅ Kinetic type de 42 px o más.
 - ✅ Cada palabra se queda al menos 20 cuadros después de aterrizar.
 - ✅ Kinetic type amarrado a la voz: las 12 palabras aterrizan en el cuadro de su palabra (voz/voz_bloqueada.json).
-- ✅ Toques sobre un tiempo del compás: 5 de 7 (f482, f579, f675, f707, f771).
+- ✅ Toques sobre un tiempo del compás: 6 de 7 (f482, f579, f675, f739, f804, f836).
 - ✅ Todos los eventos terminan dentro del video.

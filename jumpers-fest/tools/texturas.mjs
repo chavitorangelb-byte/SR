@@ -47,6 +47,14 @@ await page.evaluate(() => window.scrollTo(0, 0));
 await page.locator('.card[data-id="rainbow-jump"] .card-foto').scrollIntoViewIfNeeded();
 await page.locator('.card[data-id="rainbow-jump"] .card-foto').tap(); await wait(1000);
 await textura('ficha_rainbow_jump', '#ficha .hoja', 32);
+// la descripción sola, con un margen blanco: es el panel que sale al 3D para leerse
+{
+  const PAD = { x: 18, y: 14 };
+  const r = await page.evaluate(() => { const e = document.getElementById('fichaDesc').getBoundingClientRect(); return { x: e.x, y: e.y, w: e.width, h: e.height }; });
+  const clip = { x: r.x - PAD.x, y: r.y - PAD.y, width: r.w + 2 * PAD.x, height: r.h + 2 * PAD.y };
+  await page.screenshot({ path: path.join(OUT, 'descripcion_rainbow.png'), clip, animations: 'disabled' });
+  info.descripcion_rainbow = { archivo: 'descripcion_rainbow.png', selector: '#fichaDesc', rect_css: r, pad_css: PAD, radio_css: 18, escala: 3 };
+}
 await page.keyboard.press('Escape'); await wait(600);
 // formulario completo: calendario con el sábado marcado y el botón listo
 await page.locator('.card[data-id="rainbow-jump"] [data-quiero]').tap(); await wait(2200);
