@@ -90,9 +90,9 @@ En cuadros a 60 fps. Pistas: Cámara, Celular, Pantalla (captura real de la pág
 - **f282 · 4.70 s · Voz.** L3: “Tus inflables, con foto, para elegir.”
 - **f285–f315 · 4.75 s · Pantalla.** La tarjeta de Castle Jump se infla dentro de la pantalla al entrar (animación real de la página). *SFX: tarjeta_infla (f285).*
 - **f296 · 4.93 s · Tipo.** “INFLABLE” aterriza sobre “inflables” (L3, f296) y se infla. *SFX: tipo_infla (f296).*
-- **f321–f373 · 5.35 s · Pantalla.** Segundo arrastre: Rainbow Jump queda al centro; se inflan ella y la parte de arriba de Magic Jump. *SFX: scroll_friccion (f321), tarjeta_infla (f340).*
+- **f321–f353 · 5.35 s · Pantalla.** Segundo arrastre, más corto: Rainbow Jump queda al centro antes de que salgan las tarjetas; se inflan ella y la parte de arriba de Magic Jump. *SFX: scroll_friccion (f321), tarjeta_infla (f340).*
 - **f354–f410 · 5.90 s · 3D.** Sobre “con foto”, las tres tarjetas salen de la pantalla al espacio 3D, una por medio tiempo: Castle Jump (f354), Rainbow Jump (f370) y Magic Jump (f386). Son la misma pieza de interfaz (misma foto, mismo texto) con 8 px de grueso de vinil blanco y sombra de cojín; al salir se inflan (escala 1 → 1.08 → 1). La punta del tubo les da un soplo. Su lugar queda vacío en la captura. *SFX: tarjeta_sale (f354), pff_corto (f356), tarjeta_sale (f370), pff_corto (f372), tarjeta_sale (f386), pff_corto (f388).*
-- **f354–f390 · 5.90 s · Cámara.** Dolly hacia atrás (celular de 60 % a 54 %) y órbita de 5°: las tarjetas flotan a tres profundidades con parallax y ninguna foto pasa de 408 px de ancho en cuadro.
+- **f354–f390 · 5.90 s · Cámara.** Dolly hacia atrás (celular de 60 % a 49 %) y órbita de 5°: las tarjetas quedan en escalera a tres profundidades (Castle atrás y arriba, Magic al frente y abajo), se ven las tres fotos y ninguna pasa de 408 px de ancho en cuadro.
 - **f390–f446 · 6.50 s · 3D.** Flotan: vaivén de ±6 px y ±2°. *SFX: aire_flota (f390).*
 - **f422 · 7.03 s · Tipo.** “ELIGE” aterriza sobre “elegir” (L3, f422) y se infla. *SFX: tipo_infla (f422).*
 - **f446–f478 · 7.43 s · 3D.** Regresan a su lugar con resorte: Magic (f446), Castle (f454) y Rainbow (f462). La pantalla se completa. *SFX: tarjeta_regresa (f446), tarjeta_regresa (f454), tarjeta_regresa (f462).*

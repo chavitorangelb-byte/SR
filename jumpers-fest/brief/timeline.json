@@ -732,9 +732,9 @@
   },
   {
    "f": 321,
-   "d": 52,
+   "d": 32,
    "p": "Pantalla",
-   "t": "Segundo arrastre: Rainbow Jump queda al centro; se inflan ella y la parte de arriba de Magic Jump.",
+   "t": "Segundo arrastre, más corto: Rainbow Jump queda al centro antes de que salgan las tarjetas; se inflan ella y la parte de arriba de Magic Jump.",
    "sfx": [
     "scroll_friccion",
     "tarjeta_infla+19"
@@ -758,7 +758,7 @@
    "f": 354,
    "d": 36,
    "p": "Cámara",
-   "t": "Dolly hacia atrás (celular de 60 % a 54 %) y órbita de 5°: las tarjetas flotan a tres profundidades con parallax y ninguna foto pasa de 408 px de ancho en cuadro."
+   "t": "Dolly hacia atrás (celular de 60 % a 49 %) y órbita de 5°: las tarjetas quedan en escalera a tres profundidades (Castle atrás y arriba, Magic al frente y abajo), se ven las tres fotos y ninguna pasa de 408 px de ancho en cuadro."
   },
   {
    "f": 390,

@@ -13,10 +13,10 @@ const require = createRequire(import.meta.url);
 const { chromium } = require('playwright');
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 ? process.argv[i + 1] : d; };
-const { PLAN, VIEWPORT, FECHA, QUERY, ULTIMO } = await import(`./${arg('plan', 'plan_fase0')}.mjs`);
+const { PLAN, VIEWPORT, FECHA, QUERY, ULTIMO, ENCENDER = 0 } = await import(`./${arg('plan', 'plan_fase0')}.mjs`);
 const DSF = +arg('dsf', 3);
 const OUT = path.resolve(ROOT, arg('out', 'build/captura_fase0'));
-const DESDE = +arg('desde', 0), HASTA = +arg('hasta', ULTIMO);
+const DESDE = +arg('desde', ENCENDER), HASTA = +arg('hasta', ULTIMO);
 const FPS = 60, DT = 1000 / FPS, HOLD = 6;
 fs.mkdirSync(OUT, { recursive: true });
 
@@ -61,7 +61,7 @@ await page.evaluate(async () => { await document.fonts.ready; await Promise.all(
 await page.addStyleTag({ content: '::-webkit-scrollbar{display:none} html{scroll-behavior:auto!important}' });
 await page.evaluate(() => window.__cap.sync());
 
-const meta = { viewport: VIEWPORT, dsf: DSF, fps: FPS, fecha: FECHA, frames: {}, eventos: [] };
+const meta = { viewport: VIEWPORT, dsf: DSF, fps: FPS, fecha: FECHA, encender: ENCENDER, frames: {}, eventos: [], rects: {} };
 const pend = new Map();
 const later = (f, fn) => { if (!pend.has(f)) pend.set(f, []); pend.get(f).push(fn); };
 const dedos = new Map();
@@ -73,7 +73,9 @@ const centro = (sel) => page.evaluate((s) => { const e = document.querySelector(
 const destinoY = (d) => page.evaluate(({ sel, off = 0, alinear = 'arriba' }) => {
   const r = document.querySelector(sel).getBoundingClientRect();
   const top = document.getElementById('topbar').offsetHeight;
-  const y = alinear === 'abajo' ? r.bottom + window.scrollY - innerHeight + off : r.top + window.scrollY - top + off;
+  const y = alinear === 'abajo' ? r.bottom + window.scrollY - innerHeight + off
+    : alinear === 'centro' ? r.top + window.scrollY - (top + (innerHeight - top - r.height) / 2) + off
+    : r.top + window.scrollY - top + off;
   return Math.round(Math.max(0, Math.min(y, document.documentElement.scrollHeight - innerHeight)));
 }, d);
 
@@ -111,6 +113,21 @@ async function accion(a, f) {
     });
   }
   if (a.tipo === 'subir') await page.evaluate((s) => window.__cap.subirCampo(s), a.sel);
+  // rectángulo de maquetación (sin transformaciones) en px CSS del viewport, para poner la pieza 3D en su lugar
+  if (a.tipo === 'rect') {
+    for (const [nombre, sel] of Object.entries(a.items)) {
+      meta.rects[nombre] = { f, ...(await page.evaluate((s) => {
+        const e = document.querySelector(s);
+        let x = 0, y = 0;
+        for (let n = e; n; n = n.offsetParent) { x += n.offsetLeft; y += n.offsetTop; }
+        return { x: x - window.scrollX, y: y - window.scrollY, w: e.offsetWidth, h: e.offsetHeight };
+      }, sel)) };
+    }
+  }
+  if (a.tipo === 'ocultar' || a.tipo === 'mostrar') {
+    await page.evaluate(([s, v]) => { document.querySelector(s).style.visibility = v; }, [a.sel, a.tipo === 'ocultar' ? 'hidden' : '']);
+    evento(f, a.tipo, { sel: a.sel });
+  }
   if (a.tipo === 'tipear') {
     const chars = [...a.texto];
     tiemposTecleo(f, a.dur, chars.length).forEach((fk, i) => later(fk, async () => {
@@ -130,7 +147,7 @@ async function accion(a, f) {
 }
 
 const t0 = Date.now();
-for (let f = 0; f <= HASTA; f++) {
+for (let f = ENCENDER; f <= HASTA; f++) {
   for (const a of PLAN.filter((x) => x.f === f)) await accion(a, f);
   if (pend.has(f)) { for (const fn of pend.get(f)) await fn(); pend.delete(f); }
   if (scrollCurve) {
