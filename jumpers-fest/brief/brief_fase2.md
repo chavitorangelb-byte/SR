@@ -146,14 +146,13 @@ En cuadros a 60 fps. Pistas: Cámara, Celular, Pantalla (captura real de la pág
 - **f1016–f1061 · 16.93 s · 3D.** La postal sale de la pantalla como postal grande: la misma pieza (foto_08, “Pregunta por mobiliario” y su botón) con grueso y sombra, crece a 2× (foto de ~816 px; su detalle real es de ~1300 px), gira 10° y flota al centro. *SFX: postal_sale (f1016), aire_flota (f1050).*
 - **f1061–f1085 · 17.68 s · 3D.** La postal regresa a su lugar con resorte (tiempo 2 del compás 9). *SFX: postal_regresa (f1061).*
 - **f1093–f1143 · 18.22 s · Pantalla.** Arrastre hasta “Cómo funciona”: los tres pasos se inflan uno a uno (rosa, amarillo y menta): Eliges, Apartas, Lo llevamos. *SFX: scroll_friccion (f1093), paso_infla (f1112), paso_infla (f1124), paso_infla (f1136).*
-- **f1112–f1152 · 18.53 s · Tubo.** La punta del tubo recorre la costura punteada que une los tres pasos. *SFX: costura (f1112).*
 
 ### Cierre · f1157–f1439 · 19.28–24.00 s
 
 *Compases 10 y 11 · se adelgaza; respiro en f1380.*
 
 - **f1157–f1215 · 19.28 s · Cámara.** El celular se aleja a la izquierda: baja a 32 % de alto, gira 20° en Y y −5° en Z y queda abajo a la izquierda; sale del cuadro entre f1286 y f1330. *SFX: celular_se_aleja (f1157).*
-- **f1165–f1235 · 19.42 s · Tubo.** El tubo se suelta del celular y sube en un arco grande que cruza el cuadro (x 150–930, cima en y 520, patas hasta y 1180). *SFX: tubo_arquea (f1165).*
+- **f1165–f1235 · 19.42 s · Tubo.** El tubo se suelta del celular y sube en un arco grande que cruza el cuadro (x 123–957, cima en y 593, patas hasta y 1110: la línea de la banda de afuera). *SFX: tubo_arquea (f1165).*
 - **f1235–f1290 · 20.58 s · 3D.** El arco se infla en un arcoíris pastel 3D: cinco bandas de vinil (rosa, amarillo, menta, celeste y lila) que se inflan de afuera hacia adentro cada 10 cuadros, con resorte (8 %), costuras y brillo especular suave, y sombra de contacto en el piso. *SFX: banda_infla (f1235), banda_infla (f1245), banda_infla (f1255), banda_infla (f1265), banda_infla (f1275).*
 - **f1286–f1380 · 21.43 s · Cámara.** Push-in lento y órbita de 3° alrededor del arcoíris.
 - **f1380–f1440 · 23.00 s · Música.** Respiro: la música se detiene y queda el aire; el arcoíris respira (escala 1.00 → 1.01 → 1.00). *SFX: respiro (f1380).*
@@ -163,10 +162,10 @@ En cuadros a 60 fps. Pistas: Cámara, Celular, Pantalla (captura real de la pág
 *Golpe grave suave en f1440 y cola hasta el final (3.5 s).*
 
 - **f1440 · 24.00 s · Música.** Golpe grave suave, como un rebote. *SFX: golpe_final (f1440).*
-- **f1440–f1476 · 24.00 s · End card.** Bajo el arcoíris se infla una placa blanca (cojín 3D con costura) con el logo real encima (logo_jumpers_transparente.png, 620 px de ancho; nunca se redibuja ni se recolorea). Centro en (540, 1080). *SFX: placa_infla (f1440), logo_pop (f1452).*
+- **f1440–f1476 · 24.00 s · End card.** Bajo el arcoíris se infla una placa blanca de 640 × 370 px (cojín 3D con costura), centrada en (540, 1150) y por delante de las patas del arco, con el logo real encima (logo_jumpers_transparente.png, 520 px de ancho; nunca se redibuja ni se recolorea). *SFX: placa_infla (f1440), logo_pop (f1452).*
 - **f1452 · 24.20 s · Voz.** L6: “Jumpers Fest. Así se vería con Elevate.”
-- **f1520–f1540 · 25.33 s · End card.** “Así se vería tu página · Elevate Negocios” (DM Sans SemiBold 44 px, tinta, y 1360) aparece sobre “Así” de la voz. Elevate va solo en texto. *SFX: texto_aparece (f1520).*
-- **f1556–f1576 · 25.93 s · End card.** Línea obligatoria: “Demo de cortesía de Elevate Negocios · pieza no oficial” (DM Sans 28 px, #66635F, y 1520).
+- **f1520–f1540 · 25.33 s · End card.** “Así se vería tu página · Elevate Negocios” (DM Sans SemiBold 44 px, tinta, y 1410) aparece sobre “Así” de la voz. Elevate va solo en texto. *SFX: texto_aparece (f1520).*
+- **f1556–f1576 · 25.93 s · End card.** Línea obligatoria: “Demo de cortesía de Elevate Negocios · pieza no oficial” (DM Sans 28 px, #66635F, y 1500).
 - **f1580–f1649 · 26.33 s · Música.** Cola del acorde final hasta el último cuadro; el arcoíris y la placa respiran.
 
 ## Kinetic type
@@ -215,7 +214,7 @@ Original, hecha en código a 112 BPM en Do mayor: ukulele y pizzicato con cuerda
 
 ## SFX
 
-**139 cues** (el mínimo era 70), todos generados en código.
+**138 cues** (el mínimo era 70), todos generados en código.
 
 | # | Cuadro | Cue | Sonido |
 |---|---|---|---|
@@ -342,29 +341,28 @@ Original, hecha en código a 112 BPM en Do mayor: ukulele y pizzicato con cuerda
 | 121 | f1050 · 17.50 s | aire_flota | Colchón de aire continuo, muy suave |
 | 122 | f1061 · 17.68 s | postal_regresa | Asentamiento con bump |
 | 123 | f1093 · 18.22 s | scroll_friccion | Dedo sobre cristal con inercia que frena |
-| 124 | f1112 · 18.53 s | costura | Deslizamiento a lo largo de una costura, como cierre suave |
-| 125 | f1112 · 18.53 s | paso_infla | Inflado corto afinado (sube una nota por paso) |
-| 126 | f1124 · 18.73 s | paso_infla | Inflado corto afinado (sube una nota por paso) |
-| 127 | f1136 · 18.93 s | paso_infla | Inflado corto afinado (sube una nota por paso) |
-| 128 | f1157 · 19.28 s | celular_se_aleja | Whoosh largo que se aleja |
-| 129 | f1165 · 19.42 s | tubo_arquea | Estiramiento largo de vinil |
-| 130 | f1235 · 20.58 s | banda_infla | Inflado de cada banda del arcoíris, afinado en la escala |
-| 131 | f1245 · 20.75 s | banda_infla | Inflado de cada banda del arcoíris, afinado en la escala |
-| 132 | f1255 · 20.92 s | banda_infla | Inflado de cada banda del arcoíris, afinado en la escala |
-| 133 | f1265 · 21.08 s | banda_infla | Inflado de cada banda del arcoíris, afinado en la escala |
-| 134 | f1275 · 21.25 s | banda_infla | Inflado de cada banda del arcoíris, afinado en la escala |
-| 135 | f1380 · 23.00 s | respiro | Aire de la sala |
-| 136 | f1440 · 24.00 s | golpe_final | Golpe grave suave, como rebote |
-| 137 | f1440 · 24.00 s | placa_infla | Cojín que se llena con calma |
-| 138 | f1452 · 24.20 s | logo_pop | Pop redondo de burbuja |
-| 139 | f1520 · 25.33 s | texto_aparece | Brillo corto y suave |
+| 124 | f1112 · 18.53 s | paso_infla | Inflado corto afinado (sube una nota por paso) |
+| 125 | f1124 · 18.73 s | paso_infla | Inflado corto afinado (sube una nota por paso) |
+| 126 | f1136 · 18.93 s | paso_infla | Inflado corto afinado (sube una nota por paso) |
+| 127 | f1157 · 19.28 s | celular_se_aleja | Whoosh largo que se aleja |
+| 128 | f1165 · 19.42 s | tubo_arquea | Estiramiento largo de vinil |
+| 129 | f1235 · 20.58 s | banda_infla | Inflado de cada banda del arcoíris, afinado en la escala |
+| 130 | f1245 · 20.75 s | banda_infla | Inflado de cada banda del arcoíris, afinado en la escala |
+| 131 | f1255 · 20.92 s | banda_infla | Inflado de cada banda del arcoíris, afinado en la escala |
+| 132 | f1265 · 21.08 s | banda_infla | Inflado de cada banda del arcoíris, afinado en la escala |
+| 133 | f1275 · 21.25 s | banda_infla | Inflado de cada banda del arcoíris, afinado en la escala |
+| 134 | f1380 · 23.00 s | respiro | Aire de la sala |
+| 135 | f1440 · 24.00 s | golpe_final | Golpe grave suave, como rebote |
+| 136 | f1440 · 24.00 s | placa_infla | Cojín que se llena con calma |
+| 137 | f1452 · 24.20 s | logo_pop | Pop redondo de burbuja |
+| 138 | f1520 · 25.33 s | texto_aparece | Brillo corto y suave |
 
 ## Verificaciones
 
 - ✅ Duración: 1650 cuadros (27.5 s): end card de 3.5 s porque L6 dura 2.85 s.
 - ✅ Las secciones cubren el video sin huecos ni encimes.
 - ✅ Las secciones empiezan en los tiempos del beat sheet (2.14, 4.28, 9.64, 15.00, 19.28 y 24.00 s).
-- ✅ SFX: 139 cues (mínimo 70).
+- ✅ SFX: 138 cues (mínimo 70).
 - ✅ Ninguna frase de voz se encima con la siguiente si respeta su duración máxima.
 - ✅ La última frase termina 0.4 s antes del final.
 - ✅ Kinetic type: máximo 4 palabras legibles a la vez (f671; límite 3 o 4).

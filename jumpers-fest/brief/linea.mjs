@@ -111,18 +111,17 @@ export const EVENTOS = [
   { f: 1016, d: 45, p: '3D', t: 'La postal sale de la pantalla como postal grande: la misma pieza (foto_08, “Pregunta por mobiliario” y su botón) con grueso y sombra, crece a 2× (foto de ~816 px; su detalle real es de ~1300 px), gira 10° y flota al centro.', sfx: ['postal_sale', 'aire_flota+34'] },
   { f: 1061, d: 24, p: '3D', t: 'La postal regresa a su lugar con resorte (tiempo 2 del compás 9).', sfx: ['postal_regresa'] },
   { f: 1093, d: 50, p: 'Pantalla', t: 'Arrastre hasta “Cómo funciona”: los tres pasos se inflan uno a uno (rosa, amarillo y menta): Eliges, Apartas, Lo llevamos.', sfx: ['scroll_friccion', 'paso_infla+19', 'paso_infla+31', 'paso_infla+43'] },
-  { f: 1112, d: 40, p: 'Tubo', t: 'La punta del tubo recorre la costura punteada que une los tres pasos.', sfx: ['costura'] },
   // ---------------- Cierre ----------------
   { f: 1157, d: 58, p: 'Cámara', t: 'El celular se aleja a la izquierda: baja a 32 % de alto, gira 20° en Y y −5° en Z y queda abajo a la izquierda; sale del cuadro entre f1286 y f1330.', sfx: ['celular_se_aleja'] },
-  { f: 1165, d: 70, p: 'Tubo', t: 'El tubo se suelta del celular y sube en un arco grande que cruza el cuadro (x 150–930, cima en y 520, patas hasta y 1180).', sfx: ['tubo_arquea'] },
+  { f: 1165, d: 70, p: 'Tubo', t: 'El tubo se suelta del celular y sube en un arco grande que cruza el cuadro (x 123–957, cima en y 593, patas hasta y 1110: la línea de la banda de afuera).', sfx: ['tubo_arquea'] },
   { f: 1235, d: 55, p: '3D', t: 'El arco se infla en un arcoíris pastel 3D: cinco bandas de vinil (rosa, amarillo, menta, celeste y lila) que se inflan de afuera hacia adentro cada 10 cuadros, con resorte (8 %), costuras y brillo especular suave, y sombra de contacto en el piso.', sfx: ['banda_infla', 'banda_infla+10', 'banda_infla+20', 'banda_infla+30', 'banda_infla+40'] },
   { f: 1286, d: 94, p: 'Cámara', t: 'Push-in lento y órbita de 3° alrededor del arcoíris.' },
   { f: 1380, d: 60, p: 'Música', t: 'Respiro: la música se detiene y queda el aire; el arcoíris respira (escala 1.00 → 1.01 → 1.00).', sfx: ['respiro'] },
   // ---------------- End card ----------------
   { f: 1440, p: 'Música', t: 'Golpe grave suave, como un rebote.', sfx: ['golpe_final'] },
-  { f: 1440, d: 36, p: 'End card', t: 'Bajo el arcoíris se infla una placa blanca (cojín 3D con costura) con el logo real encima (logo_jumpers_transparente.png, 620 px de ancho; nunca se redibuja ni se recolorea). Centro en (540, 1080).', sfx: ['placa_infla', 'logo_pop+12'] },
-  { f: 1520, d: 20, p: 'End card', t: '“Así se vería tu página · Elevate Negocios” (DM Sans SemiBold 44 px, tinta, y 1360) aparece sobre “Así” de la voz. Elevate va solo en texto.', sfx: ['texto_aparece'] },
-  { f: 1556, d: 20, p: 'End card', t: 'Línea obligatoria: “Demo de cortesía de Elevate Negocios · pieza no oficial” (DM Sans 28 px, #66635F, y 1520).' },
+  { f: 1440, d: 36, p: 'End card', t: 'Bajo el arcoíris se infla una placa blanca de 640 × 370 px (cojín 3D con costura), centrada en (540, 1150) y por delante de las patas del arco, con el logo real encima (logo_jumpers_transparente.png, 520 px de ancho; nunca se redibuja ni se recolorea).', sfx: ['placa_infla', 'logo_pop+12'] },
+  { f: 1520, d: 20, p: 'End card', t: '“Así se vería tu página · Elevate Negocios” (DM Sans SemiBold 44 px, tinta, y 1410) aparece sobre “Así” de la voz. Elevate va solo en texto.', sfx: ['texto_aparece'] },
+  { f: 1556, d: 20, p: 'End card', t: 'Línea obligatoria: “Demo de cortesía de Elevate Negocios · pieza no oficial” (DM Sans 28 px, #66635F, y 1500).' },
   { f: 1580, d: 69, p: 'Música', t: 'Cola del acorde final hasta el último cuadro; el arcoíris y la placa respiran.' },
 ];
 

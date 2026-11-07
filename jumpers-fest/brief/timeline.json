@@ -995,15 +995,6 @@
    ]
   },
   {
-   "f": 1112,
-   "d": 40,
-   "p": "Tubo",
-   "t": "La punta del tubo recorre la costura punteada que une los tres pasos.",
-   "sfx": [
-    "costura"
-   ]
-  },
-  {
    "f": 1157,
    "d": 58,
    "p": "Cámara",
@@ -1016,7 +1007,7 @@
    "f": 1165,
    "d": 70,
    "p": "Tubo",
-   "t": "El tubo se suelta del celular y sube en un arco grande que cruza el cuadro (x 150–930, cima en y 520, patas hasta y 1180).",
+   "t": "El tubo se suelta del celular y sube en un arco grande que cruza el cuadro (x 123–957, cima en y 593, patas hasta y 1110: la línea de la banda de afuera).",
    "sfx": [
     "tubo_arquea"
    ]
@@ -1061,7 +1052,7 @@
    "f": 1440,
    "d": 36,
    "p": "End card",
-   "t": "Bajo el arcoíris se infla una placa blanca (cojín 3D con costura) con el logo real encima (logo_jumpers_transparente.png, 620 px de ancho; nunca se redibuja ni se recolorea). Centro en (540, 1080).",
+   "t": "Bajo el arcoíris se infla una placa blanca de 640 × 370 px (cojín 3D con costura), centrada en (540, 1150) y por delante de las patas del arco, con el logo real encima (logo_jumpers_transparente.png, 520 px de ancho; nunca se redibuja ni se recolorea).",
    "sfx": [
     "placa_infla",
     "logo_pop+12"
@@ -1071,7 +1062,7 @@
    "f": 1520,
    "d": 20,
    "p": "End card",
-   "t": "“Así se vería tu página · Elevate Negocios” (DM Sans SemiBold 44 px, tinta, y 1360) aparece sobre “Así” de la voz. Elevate va solo en texto.",
+   "t": "“Así se vería tu página · Elevate Negocios” (DM Sans SemiBold 44 px, tinta, y 1410) aparece sobre “Así” de la voz. Elevate va solo en texto.",
    "sfx": [
     "texto_aparece"
    ]
@@ -1080,7 +1071,7 @@
    "f": 1556,
    "d": 20,
    "p": "End card",
-   "t": "Línea obligatoria: “Demo de cortesía de Elevate Negocios · pieza no oficial” (DM Sans 28 px, #66635F, y 1520)."
+   "t": "Línea obligatoria: “Demo de cortesía de Elevate Negocios · pieza no oficial” (DM Sans 28 px, #66635F, y 1500)."
   },
   {
    "f": 1580,
@@ -1754,10 +1745,6 @@
   {
    "f": 1093,
    "name": "scroll_friccion"
-  },
-  {
-   "f": 1112,
-   "name": "costura"
   },
   {
    "f": 1112,

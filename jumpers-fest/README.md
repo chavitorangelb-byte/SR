@@ -19,6 +19,8 @@ y, en fases siguientes, el video vertical de 27 s que la presenta. Proyecto inde
 - `review/fase3/` — la voz bloqueada (tablero) y la verificación de los inicios de palabra con la envolvente de energía.
 - `video/` — render en código: `render/escena.js` (frame(t) determinista con three.js: celular de cristal, piezas 3D, tubo y kinetic type; 8 subcuadros por cuadro) y `render.mjs` (lo corre en Chromium y arma el video con ffmpeg).
 - `review/fase4/` — prueba de estilo (f186–f446) en 540×960 a 30 fps, hoja de cuadros y un cuadro a 1080.
+- `audio/` — música, SFX y mezcla en código (`audio/build/` se regenera: stems y master).
+- `review/fase6/` — preview completo y hoja de 12 cuadros clave.
 
 ## Comandos
 ```bash
@@ -32,6 +34,9 @@ node tools/tablero_fase3.mjs     # fase 3: la voz bloqueada sobre la línea de t
 node tools/captura.mjs --plan plan_video --out build/ui_video   # fase 4/5: la página real a 60 fps y 3× con los tiempos del video
 (cd video && npm install)        # three.js para el render
 node video/render.mjs --desde 186 --hasta 446 --fps 30 --w 540 --h 960 --sub 8 --out review/fase4/prueba_estilo_540.mp4
+python3 audio/musica.py && python3 audio/sfx.py && python3 audio/mezcla.py   # fase 5: música, 138 SFX y mezcla (numpy + scipy)
+node video/render.mjs --desde 0 --hasta 1649 --fps 30 --w 540 --h 960 --sub 8 --out review/fase6/preview_540.mp4
+python3 tools/hoja.py build/frames_preview_540 review/fase6/hoja_12_cuadros.jpg
 python3 tools/prep_img.py        # recortes, exposición suave y logo transparente → web/img
 node tools/build_web.mjs         # genera dist/
 node tools/test_web.mjs          # 26 pruebas en vista de celular 390×844 + capturas a 3× (review/fase0/pantallas_3x)

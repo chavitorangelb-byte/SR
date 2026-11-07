@@ -18,7 +18,7 @@ const W = +arg('w', 540), H = +arg('h', 960), SUB = +arg('sub', 8), FPS = +arg('
 const UI = arg('ui', '/build/ui_video');
 const OUT = path.resolve(ROOT, arg('out', 'review/fase4/prueba_estilo.mp4'));
 const SOLO = arg('solo', null), LISTA = arg('lista', null);
-const DESDE = +arg('desde', 186), HASTA = +arg('hasta', 446);
+const DESDE = +arg("desde", 0), HASTA = +arg("hasta", 1649);
 const STEP = 60 / FPS;
 const SHUTTER = +arg('shutter', STEP / 2); // obturador de 180°: medio intervalo entre cuadros de salida
 
@@ -58,7 +58,8 @@ if (LISTA != null) {
   }
   console.log(`\n${n} cuadros en ${((Date.now() - t0) / 1000).toFixed(0)} s`);
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
-  const voz = path.join(ROOT, 'voz', 'voz_stem_48k.wav');
+  const mezcla = path.join(ROOT, 'audio', 'build', 'mezcla_master.wav');
+  const voz = fs.existsSync(mezcla) ? mezcla : path.join(ROOT, 'voz', 'voz_stem_48k.wav');
   const args = ['-y', '-v', 'error', '-framerate', String(FPS), '-i', path.join(dir, '%05d.png'), '-ss', String(DESDE / 60), '-t', String(n / FPS), '-i', voz,
     '-vf', 'scale=out_color_matrix=bt709:out_range=tv,format=yuv420p', '-c:v', 'libx264', '-preset', 'slow', '-crf', '16',
     '-colorspace', 'bt709', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-movflags', '+faststart', '-c:a', 'aac', '-b:a', '192k', '-shortest', OUT];
