@@ -3,83 +3,651 @@
   "bpm": 100,
   "compas_s": 2.4,
   "total_f": 1620,
-  "formatos": { "9x16": [1080, 1920], "1x1": [1080, 1080] },
-  "zona_segura_9x16": { "arriba": 250, "abajo": 340, "lados": 60 },
+  "formatos": {
+    "9x16": [
+      1080,
+      1920
+    ],
+    "1x1": [
+      1080,
+      1080
+    ]
+  },
+  "zona_segura_9x16": {
+    "arriba": 250,
+    "abajo": 340,
+    "lados": 60
+  },
   "escenas": [
-    { "id": "S1", "nombre": "Hook", "f0": 0, "f1": 144 },
-    { "id": "S2", "nombre": "La página llega", "f0": 144, "f1": 288 },
-    { "id": "S3", "nombre": "El color de tu día", "f0": 288, "f1": 576 },
-    { "id": "S4", "nombre": "Respiro: nubes asadas", "f0": 576, "f1": 720 },
-    { "id": "S5", "nombre": "Pide en un toque", "f0": 720, "f1": 1008 },
-    { "id": "S6", "nombre": "Visítanos", "f0": 1008, "f1": 1152 },
-    { "id": "S7", "nombre": "Revelación y cierre", "f0": 1152, "f1": 1440 },
-    { "id": "S8", "nombre": "End card", "f0": 1440, "f1": 1620 }
+    {
+      "id": "S1",
+      "nombre": "Hook",
+      "f0": 0,
+      "f1": 144
+    },
+    {
+      "id": "S2",
+      "nombre": "La página llega",
+      "f0": 144,
+      "f1": 288
+    },
+    {
+      "id": "S3",
+      "nombre": "El color de tu día",
+      "f0": 288,
+      "f1": 576
+    },
+    {
+      "id": "S4",
+      "nombre": "Respiro: nubes asadas",
+      "f0": 576,
+      "f1": 720
+    },
+    {
+      "id": "S5",
+      "nombre": "Pide en un toque",
+      "f0": 720,
+      "f1": 1008
+    },
+    {
+      "id": "S6",
+      "nombre": "Visítanos",
+      "f0": 1008,
+      "f1": 1152
+    },
+    {
+      "id": "S7",
+      "nombre": "Revelación y cierre",
+      "f0": 1152,
+      "f1": 1440
+    },
+    {
+      "id": "S8",
+      "nombre": "End card",
+      "f0": 1440,
+      "f1": 1620
+    }
   ],
   "eventos": [
-    { "f": 0, "que": "Golpe. La cinta cruza de lado a lado (f0–f8), destello f8–f11" },
-    { "f": 12, "que": "La cinta escribe en la barra de búsqueda: 'hamburguesas de colores aguascalientes' (f12–f96)" },
-    { "f": 102, "que": "Enter (tap). La barra se comprime" },
-    { "f": 114, "que": "La cinta empieza a dibujar el marco del celular (SDF línea → rectángulo redondeado)" },
-    { "f": 144, "que": "Celular entra en perspectiva 18° y se endereza (f144–f204)" },
-    { "f": 186, "que": "Se enciende el encabezado con el logo" },
-    { "f": 204, "que": "Héroe: titular, subtítulo y botón mostaza, en cascada (f204–f252)" },
-    { "f": 288, "que": "La cinta se abre en pétalos de mandala (SDF aro → 5 pétalos); cada pétalo cae como punto de color" },
-    { "f": 360, "que": "Tap en un color. Filtro. Tarjetas entran con inclinación 10° y destello: Point f366, Moksha f384, Purusha f438, Mandala f456" },
-    { "f": 504, "que": "Scroll con whoosh a Hotdogs y Entradas: Point Dog $49, Frenchies $79" },
-    { "f": 576, "que": "Scroll a Postres. Fogata ilustrada, bombones que se doran, chispas lentas" },
-    { "f": 720, "que": "Groove vuelve. La cinta sale de la fogata hacia la esquina" },
-    { "f": 744, "que": "La cinta se vuelve el botón flotante de WhatsApp (SDF cinta → círculo)" },
-    { "f": 768, "que": "Tap en el botón. Burbuja de chat: 'Hola, quiero hacer un pedido' (f780–f840)" },
-    { "f": 864, "que": "Tarjeta de reseñas: frase 1 f870, frase 2 f906, frase 3 f942" },
-    { "f": 1008, "que": "La cinta traza las calles del mapa (f1008–f1068) y cae el pin f1074" },
-    { "f": 1080, "que": "Tarjeta de cristal con horario y dirección; chips 'Pet friendly' y 'Tarjetas' f1104, f1116" },
-    { "f": 1152, "que": "Lift. El celular se desliza a la izquierda y entra el marco de navegador con el menú a 3 columnas (f1152–f1236)" },
-    { "f": 1296, "que": "Las dos pantallas se alejan; la cinta se enrosca en aro (SDF) y revela el logo por máscara circular (f1296–f1356)" },
-    { "f": 1404, "que": "Todo se detiene. Música a sub grave con filtro cerrado" },
-    { "f": 1440, "que": "End card: panel de cristal oscuro, logo, línea, Instagram, botón de WhatsApp, pie legal" },
-    { "f": 1620, "que": "Campanada suave con sub grave en el corte final" }
+    {
+      "f": 0,
+      "que": "Golpe. La cinta cruza de lado a lado (f0–f8), destello f8–f11"
+    },
+    {
+      "f": 12,
+      "que": "La cinta escribe en la barra de búsqueda: 'hamburguesas de colores aguascalientes' (f12–f96)"
+    },
+    {
+      "f": 102,
+      "que": "Enter (tap). La barra se comprime"
+    },
+    {
+      "f": 114,
+      "que": "La cinta empieza a dibujar el marco del celular (SDF línea → rectángulo redondeado)"
+    },
+    {
+      "f": 144,
+      "que": "Celular entra en perspectiva 18° y se endereza (f144–f204)"
+    },
+    {
+      "f": 186,
+      "que": "Se enciende el encabezado con el logo"
+    },
+    {
+      "f": 204,
+      "que": "Héroe: titular, subtítulo y botón mostaza, en cascada (f204–f252)"
+    },
+    {
+      "f": 288,
+      "que": "La cinta se abre en pétalos de mandala (SDF aro → 5 pétalos); cada pétalo cae como punto de color"
+    },
+    {
+      "f": 360,
+      "que": "Tap en un color. Filtro. Tarjetas entran con inclinación 10° y destello: Point f366, Moksha f384, Purusha f438, Mandala f456"
+    },
+    {
+      "f": 504,
+      "que": "Scroll con whoosh a Hotdogs y Entradas: Point Dog $49, Frenchies $79"
+    },
+    {
+      "f": 576,
+      "que": "Scroll a Postres. Fogata ilustrada, bombones que se doran, chispas lentas"
+    },
+    {
+      "f": 720,
+      "que": "Groove vuelve. La cinta sale de la fogata hacia la esquina"
+    },
+    {
+      "f": 744,
+      "que": "La cinta se vuelve el botón flotante de WhatsApp (SDF cinta → círculo)"
+    },
+    {
+      "f": 768,
+      "que": "Tap en el botón. Burbuja de chat: 'Hola, quiero hacer un pedido' (f780–f840)"
+    },
+    {
+      "f": 864,
+      "que": "Tarjeta de reseñas: frase 1 f870, frase 2 f906, frase 3 f942"
+    },
+    {
+      "f": 1008,
+      "que": "La cinta traza las calles del mapa (f1008–f1068) y cae el pin f1074"
+    },
+    {
+      "f": 1080,
+      "que": "Tarjeta de cristal con horario y dirección; chips 'Pet friendly' y 'Tarjetas' f1104, f1116"
+    },
+    {
+      "f": 1152,
+      "que": "Lift. El celular se desliza a la izquierda y entra el marco de navegador con el menú a 3 columnas (f1152–f1236)"
+    },
+    {
+      "f": 1296,
+      "que": "Las dos pantallas se alejan; la cinta se enrosca en aro (SDF) y revela el logo por máscara circular (f1296–f1356)"
+    },
+    {
+      "f": 1404,
+      "que": "Todo se detiene. Música a sub grave con filtro cerrado"
+    },
+    {
+      "f": 1440,
+      "que": "End card: panel de cristal oscuro, logo, línea, Instagram, botón de WhatsApp, pie legal"
+    },
+    {
+      "f": 1620,
+      "que": "Campanada suave con sub grave en el corte final"
+    }
   ],
   "kinetic": [
-    { "f": 30, "texto": "HAMBURGUESAS", "conducta": "golpea con squash" },
-    { "f": 72, "texto": "DE COLORES", "conducta": "la cinta cambia de color letra a letra" },
-    { "f": 174, "texto": "TU PÁGINA", "conducta": "se desliza como una página que carga" },
-    { "f": 300, "texto": "ELIGE", "conducta": "rebota como un dedo que toca" },
-    { "f": 330, "texto": "TU COLOR", "conducta": "se tiñe con el color tocado" },
-    { "f": 384, "texto": "PA' EL|CLÁSICO", "conducta": "se apila como una burger" },
-    { "f": 456, "texto": "PA' EL|ATREVIDO", "conducta": "se estampa torcido y se endereza" },
-    { "f": 516, "texto": "HOTDOGS", "conducta": "se estira a lo largo" },
-    { "f": 624, "texto": "NUBES|ASADAS", "conducta": "se infla y se dora de abajo hacia arriba" },
-    { "f": 660, "texto": "EN TU MESA", "conducta": "se posa suave" },
-    { "f": 756, "texto": "PIDE", "conducta": "se estampa" },
-    { "f": 792, "texto": "POR|WHATSAPP", "conducta": "sale como burbuja de chat" },
-    { "f": 936, "texto": "MANDALOVERS", "conducta": "late" },
-    { "f": 1020, "texto": "JUEVES|A DOMINGO", "conducta": "cae como pin" },
-    { "f": 1176, "texto": "EN CELULAR", "conducta": "angosto y vertical" },
-    { "f": 1218, "texto": "EN COMPU", "conducta": "se ensancha" },
-    { "f": 1320, "texto": "COLOR", "conducta": "cada glifo en un color de pan" },
-    { "f": 1356, "texto": "EN CADA|BURGER", "conducta": "se apila; composición más grande" }
+    {
+      "f": 25,
+      "texto": "HAMBURGUESAS",
+      "conducta": "golpea con squash",
+      "palabra_voz": "A:Hamburguesas"
+    },
+    {
+      "f": 72,
+      "texto": "DE COLORES",
+      "conducta": "la cinta cambia de color letra a letra",
+      "palabra_voz": "A:de"
+    },
+    {
+      "f": 196,
+      "texto": "TU PÁGINA",
+      "conducta": "se desliza como una página que carga",
+      "palabra_voz": "B:tu"
+    },
+    {
+      "f": 300,
+      "texto": "ELIGE",
+      "conducta": "rebota como un dedo que toca",
+      "palabra_voz": "C:Elige"
+    },
+    {
+      "f": 316,
+      "texto": "TU COLOR",
+      "conducta": "se tiñe con el color tocado",
+      "palabra_voz": "C:tu"
+    },
+    {
+      "f": 384,
+      "texto": "PA' EL|CLÁSICO",
+      "conducta": "se apila como una burger",
+      "palabra_voz": "D:Pa'"
+    },
+    {
+      "f": 456,
+      "texto": "PA' EL|ATREVIDO",
+      "conducta": "se estampa torcido y se endereza",
+      "palabra_voz": "E:pa'"
+    },
+    {
+      "f": 516,
+      "texto": "HOTDOGS",
+      "conducta": "se estira a lo largo",
+      "palabra_voz": "F:Hotdogs,"
+    },
+    {
+      "f": 624,
+      "texto": "NUBES|ASADAS",
+      "conducta": "se infla y se dora de abajo hacia arriba",
+      "palabra_voz": "H:nubes"
+    },
+    {
+      "f": 689,
+      "texto": "EN TU MESA",
+      "conducta": "se posa suave",
+      "palabra_voz": "I:en"
+    },
+    {
+      "f": 756,
+      "texto": "PIDE",
+      "conducta": "se estampa",
+      "palabra_voz": "J:Pide"
+    },
+    {
+      "f": 771,
+      "texto": "POR|WHATSAPP",
+      "conducta": "sale como burbuja de chat",
+      "palabra_voz": "J:por"
+    },
+    {
+      "f": 930,
+      "texto": "MANDALOVERS",
+      "conducta": "late",
+      "palabra_voz": "L1:Mandalovers,"
+    },
+    {
+      "f": 1020,
+      "texto": "JUEVES|A DOMINGO",
+      "conducta": "cae como pin",
+      "palabra_voz": "L2:jueves"
+    },
+    {
+      "f": 1176,
+      "texto": "EN CELULAR",
+      "conducta": "angosto y vertical",
+      "palabra_voz": "M:En"
+    },
+    {
+      "f": 1224,
+      "texto": "EN COMPU",
+      "conducta": "se ensancha",
+      "palabra_voz": "M:y"
+    },
+    {
+      "f": 1320,
+      "texto": "COLOR",
+      "conducta": "cada glifo en un color de pan",
+      "palabra_voz": "N:Color"
+    },
+    {
+      "f": 1351,
+      "texto": "EN CADA|BURGER",
+      "conducta": "se apila; composición más grande",
+      "palabra_voz": "N:en"
+    }
   ],
   "voz": [
-    { "f": 24, "t": 0.4, "texto": "Hamburguesas de colores." },
-    { "f": 168, "t": 2.8, "texto": "Así se vería tu página." },
-    { "f": 300, "t": 5.0, "texto": "Elige tu color. Pa' el clásico o pa' el atrevido." },
-    { "f": 516, "t": 8.6, "texto": "Hotdogs, papas, y nubes asadas en tu mesa." },
-    { "f": 756, "t": 12.6, "texto": "Pide por WhatsApp, en un toque." },
-    { "f": 924, "t": 15.4, "texto": "Mandalovers, de jueves a domingo." },
-    { "f": 1176, "t": 19.6, "texto": "En celular y en computadora." },
-    { "f": 1344, "t": 22.4, "texto": "Color en cada burger." }
+    {
+      "id": "A",
+      "f": 24,
+      "t": 0.4,
+      "termina_f": 126,
+      "dur": 1.7,
+      "texto": "Hamburguesas de colores.",
+      "palabras": [
+        {
+          "w": "Hamburguesas",
+          "f": 25
+        },
+        {
+          "w": "de",
+          "f": 72
+        },
+        {
+          "w": "colores.",
+          "f": 82
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "f": 150,
+      "t": 2.5,
+      "termina_f": 230,
+      "dur": 1.34,
+      "texto": "Así se vería tu página.",
+      "palabras": [
+        {
+          "w": "Así",
+          "f": 150
+        },
+        {
+          "w": "se",
+          "f": 164
+        },
+        {
+          "w": "vería",
+          "f": 175
+        },
+        {
+          "w": "tu",
+          "f": 196
+        },
+        {
+          "w": "página.",
+          "f": 201
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "f": 300,
+      "t": 5.0,
+      "termina_f": 349,
+      "dur": 0.82,
+      "texto": "Elige tu color.",
+      "palabras": [
+        {
+          "w": "Elige",
+          "f": 300
+        },
+        {
+          "w": "tu",
+          "f": 316
+        },
+        {
+          "w": "color.",
+          "f": 325
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "f": 384,
+      "t": 6.4,
+      "termina_f": 434,
+      "dur": 0.84,
+      "texto": "Pa' el clásico",
+      "palabras": [
+        {
+          "w": "Pa'",
+          "f": 384
+        },
+        {
+          "w": "el",
+          "f": 391
+        },
+        {
+          "w": "clásico",
+          "f": 395
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "f": 445,
+      "t": 7.41,
+      "termina_f": 514,
+      "dur": 1.15,
+      "texto": "o pa' el atrevido.",
+      "palabras": [
+        {
+          "w": "o",
+          "f": 445
+        },
+        {
+          "w": "pa'",
+          "f": 456
+        },
+        {
+          "w": "el",
+          "f": 470
+        },
+        {
+          "w": "atrevido.",
+          "f": 475
+        }
+      ]
+    },
+    {
+      "id": "F",
+      "f": 516,
+      "t": 8.6,
+      "termina_f": 563,
+      "dur": 0.78,
+      "texto": "Hotdogs,",
+      "palabras": [
+        {
+          "w": "Hotdogs,",
+          "f": 516
+        }
+      ]
+    },
+    {
+      "id": "G",
+      "f": 574,
+      "t": 9.56,
+      "termina_f": 609,
+      "dur": 0.59,
+      "texto": "papas,",
+      "palabras": [
+        {
+          "w": "papas,",
+          "f": 574
+        }
+      ]
+    },
+    {
+      "id": "H",
+      "f": 619,
+      "t": 10.32,
+      "termina_f": 683,
+      "dur": 1.06,
+      "texto": "y nubes asadas",
+      "palabras": [
+        {
+          "w": "y",
+          "f": 619
+        },
+        {
+          "w": "nubes",
+          "f": 624
+        },
+        {
+          "w": "asadas",
+          "f": 646
+        }
+      ]
+    },
+    {
+      "id": "I",
+      "f": 689,
+      "t": 11.48,
+      "termina_f": 734,
+      "dur": 0.76,
+      "texto": "en tu mesa.",
+      "palabras": [
+        {
+          "w": "en",
+          "f": 689
+        },
+        {
+          "w": "tu",
+          "f": 697
+        },
+        {
+          "w": "mesa.",
+          "f": 708
+        }
+      ]
+    },
+    {
+      "id": "J",
+      "f": 756,
+      "t": 12.6,
+      "termina_f": 808,
+      "dur": 0.86,
+      "texto": "Pide por WhatsApp,",
+      "palabras": [
+        {
+          "w": "Pide",
+          "f": 756
+        },
+        {
+          "w": "por",
+          "f": 771
+        },
+        {
+          "w": "WhatsApp,",
+          "f": 777
+        }
+      ]
+    },
+    {
+      "id": "K",
+      "f": 818,
+      "t": 13.64,
+      "termina_f": 856,
+      "dur": 0.63,
+      "texto": "en un toque.",
+      "palabras": [
+        {
+          "w": "en",
+          "f": 818
+        },
+        {
+          "w": "un",
+          "f": 825
+        },
+        {
+          "w": "toque.",
+          "f": 833
+        }
+      ]
+    },
+    {
+      "id": "L1",
+      "f": 930,
+      "t": 15.5,
+      "termina_f": 994,
+      "dur": 1.07,
+      "texto": "Mandalovers,",
+      "palabras": [
+        {
+          "w": "Mandalovers,",
+          "f": 930
+        }
+      ]
+    },
+    {
+      "id": "L2",
+      "f": 1012,
+      "t": 16.86,
+      "termina_f": 1095,
+      "dur": 1.39,
+      "texto": "de jueves a domingo.",
+      "palabras": [
+        {
+          "w": "de",
+          "f": 1012
+        },
+        {
+          "w": "jueves",
+          "f": 1020
+        },
+        {
+          "w": "a",
+          "f": 1050
+        },
+        {
+          "w": "domingo.",
+          "f": 1063
+        }
+      ]
+    },
+    {
+      "id": "M",
+      "f": 1176,
+      "t": 19.6,
+      "termina_f": 1281,
+      "dur": 1.75,
+      "texto": "En celular y en computadora.",
+      "palabras": [
+        {
+          "w": "En",
+          "f": 1176
+        },
+        {
+          "w": "celular",
+          "f": 1182
+        },
+        {
+          "w": "y",
+          "f": 1224
+        },
+        {
+          "w": "en",
+          "f": 1230
+        },
+        {
+          "w": "computadora.",
+          "f": 1236
+        }
+      ]
+    },
+    {
+      "id": "N",
+      "f": 1320,
+      "t": 22.0,
+      "termina_f": 1420,
+      "dur": 1.66,
+      "texto": "Color en cada burger.",
+      "palabras": [
+        {
+          "w": "Color",
+          "f": 1320
+        },
+        {
+          "w": "en",
+          "f": 1351
+        },
+        {
+          "w": "cada",
+          "f": 1361
+        },
+        {
+          "w": "burger.",
+          "f": 1387
+        }
+      ]
+    }
   ],
   "musica": [
-    { "f": 0, "capa": "Golpe con kick y sub, destello de sintetizador" },
-    { "f": 144, "capa": "Palmas y hi-hat" },
-    { "f": 288, "capa": "Bajo redondo" },
-    { "f": 432, "capa": "Clavinet y acordes" },
-    { "f": 576, "capa": "Respiro: marimba suave y pad" },
-    { "f": 720, "capa": "Groove completo" },
-    { "f": 864, "capa": "Coros de palmas y melodía" },
-    { "f": 1008, "capa": "Riser (hasta f1152)" },
-    { "f": 1152, "capa": "Lift con todas las capas" },
-    { "f": 1404, "capa": "Respiro: solo sub grave, filtro cerrado" },
-    { "f": 1620, "capa": "Campanada suave con sub grave" }
+    {
+      "f": 0,
+      "capa": "Golpe con kick y sub, destello de sintetizador"
+    },
+    {
+      "f": 144,
+      "capa": "Palmas y hi-hat"
+    },
+    {
+      "f": 288,
+      "capa": "Bajo redondo"
+    },
+    {
+      "f": 432,
+      "capa": "Clavinet y acordes"
+    },
+    {
+      "f": 576,
+      "capa": "Respiro: marimba suave y pad"
+    },
+    {
+      "f": 720,
+      "capa": "Groove completo"
+    },
+    {
+      "f": 864,
+      "capa": "Coros de palmas y melodía"
+    },
+    {
+      "f": 1008,
+      "capa": "Riser (hasta f1152)"
+    },
+    {
+      "f": 1152,
+      "capa": "Lift con todas las capas"
+    },
+    {
+      "f": 1404,
+      "capa": "Respiro: solo sub grave, filtro cerrado"
+    },
+    {
+      "f": 1620,
+      "capa": "Campanada suave con sub grave"
+    }
   ]
 }
