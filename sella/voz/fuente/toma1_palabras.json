@@ -1,0 +1,139 @@
+{
+ "palabras": [
+  {
+   "w": "Tu",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "w": "evento…",
+   "start": 0.2,
+   "end": 1.54
+  },
+  {
+   "w": "bien",
+   "start": 1.54,
+   "end": 1.96
+  },
+  {
+   "w": "sentado.",
+   "start": 1.96,
+   "end": 2.52
+  },
+  {
+   "w": "Sillas,",
+   "start": 2.92,
+   "end": 3.44
+  },
+  {
+   "w": "mesas",
+   "start": 3.64,
+   "end": 4.06
+  },
+  {
+   "w": "y",
+   "start": 4.06,
+   "end": 4.22
+  },
+  {
+   "w": "paquetes",
+   "start": 4.22,
+   "end": 4.78
+  },
+  {
+   "w": "completos…",
+   "start": 4.78,
+   "end": 5.78
+  },
+  {
+   "w": "con",
+   "start": 5.78,
+   "end": 5.92
+  },
+  {
+   "w": "precio",
+   "start": 5.92,
+   "end": 6.16
+  },
+  {
+   "w": "claro,",
+   "start": 6.16,
+   "end": 6.56
+  },
+  {
+   "w": "y",
+   "start": 6.94,
+   "end": 6.98
+  },
+  {
+   "w": "descuento",
+   "start": 6.98,
+   "end": 7.46
+  },
+  {
+   "w": "si",
+   "start": 7.46,
+   "end": 7.64
+  },
+  {
+   "w": "pasas",
+   "start": 7.64,
+   "end": 7.96
+  },
+  {
+   "w": "por",
+   "start": 7.96,
+   "end": 8.12
+  },
+  {
+   "w": "ellos.",
+   "start": 8.12,
+   "end": 8.36
+  },
+  {
+   "w": "Tú",
+   "start": 8.82,
+   "end": 8.94
+  },
+  {
+   "w": "pones",
+   "start": 8.94,
+   "end": 9.32
+  },
+  {
+   "w": "la",
+   "start": 9.32,
+   "end": 9.48
+  },
+  {
+   "w": "fiesta.",
+   "start": 9.48,
+   "end": 9.88
+  },
+  {
+   "w": "Cotiza",
+   "start": 10.26,
+   "end": 10.66
+  },
+  {
+   "w": "por",
+   "start": 10.66,
+   "end": 10.86
+  },
+  {
+   "w": "WhatsApp.",
+   "start": 10.86,
+   "end": 11.2
+  },
+  {
+   "w": "Sella",
+   "start": 11.86,
+   "end": 12.12
+  },
+  {
+   "w": "Eventos.",
+   "start": 12.12,
+   "end": 12.74
+  }
+ ]
+}

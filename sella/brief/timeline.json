@@ -1,0 +1,287 @@
+{
+  "fps": 60,
+  "bpm": 100,
+  "frames": 1620,
+  "secciones": [
+    {
+      "id": "gancho",
+      "f": 0,
+      "fin": 143
+    },
+    {
+      "id": "bien_sentado",
+      "f": 144,
+      "fin": 287
+    },
+    {
+      "id": "telefono_hero",
+      "f": 288,
+      "fin": 431
+    },
+    {
+      "id": "catalogo",
+      "f": 432,
+      "fin": 719
+    },
+    {
+      "id": "beneficios",
+      "f": 720,
+      "fin": 1007
+    },
+    {
+      "id": "galeria",
+      "f": 1008,
+      "fin": 1151
+    },
+    {
+      "id": "revelacion",
+      "f": 1152,
+      "fin": 1295
+    },
+    {
+      "id": "cta",
+      "f": 1296,
+      "fin": 1439
+    },
+    {
+      "id": "endcard",
+      "f": 1440,
+      "fin": 1619
+    }
+  ],
+  "voz": [
+    {
+      "id": "L1",
+      "f": 24,
+      "texto": "Tu evento…",
+      "max": 1.6,
+      "toma": {
+        "ini": 0.1,
+        "fin": 1.115
+      },
+      "dur": 1.015,
+      "termina_f": 85,
+      "palabras": [
+        {
+          "w": "Tu",
+          "f": 24,
+          "fin": 30
+        },
+        {
+          "w": "evento…",
+          "f": 30,
+          "fin": 110
+        }
+      ]
+    },
+    {
+      "id": "L2",
+      "f": 156,
+      "texto": "bien sentado.",
+      "max": 1.8,
+      "toma": {
+        "ini": 1.73,
+        "fin": 2.616
+      },
+      "dur": 0.886,
+      "termina_f": 209,
+      "palabras": [
+        {
+          "w": "bien",
+          "f": 156,
+          "fin": 170
+        },
+        {
+          "w": "sentado.",
+          "f": 170,
+          "fin": 203
+        }
+      ]
+    },
+    {
+      "id": "L3",
+      "f": 456,
+      "texto": "Sillas, mesas y paquetes completos…",
+      "max": 3.8,
+      "toma": {
+        "ini": 3.0,
+        "fin": 5.64
+      },
+      "dur": 2.64,
+      "termina_f": 614,
+      "palabras": [
+        {
+          "w": "Sillas,",
+          "f": 456,
+          "fin": 482
+        },
+        {
+          "w": "mesas",
+          "f": 494,
+          "fin": 520
+        },
+        {
+          "w": "y",
+          "f": 520,
+          "fin": 529
+        },
+        {
+          "w": "paquetes",
+          "f": 529,
+          "fin": 563
+        },
+        {
+          "w": "completos…",
+          "f": 563,
+          "fin": 623
+        }
+      ]
+    },
+    {
+      "id": "L4",
+      "f": 744,
+      "texto": "con precio claro, y descuento si pasas por ellos.",
+      "max": 4.6,
+      "toma": {
+        "ini": 5.82,
+        "fin": 8.53
+      },
+      "dur": 2.71,
+      "termina_f": 907,
+      "palabras": [
+        {
+          "w": "con",
+          "f": 744,
+          "fin": 750
+        },
+        {
+          "w": "precio",
+          "f": 750,
+          "fin": 764
+        },
+        {
+          "w": "claro,",
+          "f": 764,
+          "fin": 788
+        },
+        {
+          "w": "y",
+          "f": 811,
+          "fin": 814
+        },
+        {
+          "w": "descuento",
+          "f": 814,
+          "fin": 842
+        },
+        {
+          "w": "si",
+          "f": 842,
+          "fin": 853
+        },
+        {
+          "w": "pasas",
+          "f": 853,
+          "fin": 872
+        },
+        {
+          "w": "por",
+          "f": 872,
+          "fin": 882
+        },
+        {
+          "w": "ellos.",
+          "f": 882,
+          "fin": 896
+        }
+      ]
+    },
+    {
+      "id": "L5",
+      "f": 1164,
+      "texto": "Tú pones la fiesta.",
+      "max": 2.0,
+      "toma": {
+        "ini": 8.85,
+        "fin": 9.996
+      },
+      "dur": 1.146,
+      "termina_f": 1233,
+      "palabras": [
+        {
+          "w": "Tú",
+          "f": 1164,
+          "fin": 1169
+        },
+        {
+          "w": "pones",
+          "f": 1169,
+          "fin": 1192
+        },
+        {
+          "w": "la",
+          "f": 1192,
+          "fin": 1202
+        },
+        {
+          "w": "fiesta.",
+          "f": 1202,
+          "fin": 1226
+        }
+      ]
+    },
+    {
+      "id": "L6",
+      "f": 1308,
+      "texto": "Cotiza por WhatsApp.",
+      "max": 2.0,
+      "toma": {
+        "ini": 10.32,
+        "fin": 11.36
+      },
+      "dur": 1.04,
+      "termina_f": 1370,
+      "palabras": [
+        {
+          "w": "Cotiza",
+          "f": 1308,
+          "fin": 1328
+        },
+        {
+          "w": "por",
+          "f": 1328,
+          "fin": 1340
+        },
+        {
+          "w": "WhatsApp.",
+          "f": 1340,
+          "fin": 1361
+        }
+      ]
+    },
+    {
+      "id": "L7",
+      "f": 1476,
+      "texto": "Sella Eventos.",
+      "max": 1.8,
+      "toma": {
+        "ini": 11.72,
+        "fin": 12.95
+      },
+      "dur": 1.23,
+      "termina_f": 1550,
+      "palabras": [
+        {
+          "w": "Sella",
+          "f": 1484,
+          "fin": 1500
+        },
+        {
+          "w": "Eventos.",
+          "f": 1500,
+          "fin": 1537
+        }
+      ]
+    }
+  ]
+}
