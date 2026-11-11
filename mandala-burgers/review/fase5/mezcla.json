@@ -1,0 +1,7 @@
+{
+ "master_LUFS": -14.0,
+ "master_TP_dBFS": -1.4,
+ "voz_LUFS_en_master": -13.5,
+ "voz_LUFS_stem": -16.0,
+ "musica_menos_voz_peor_dB": -14.1
+}
