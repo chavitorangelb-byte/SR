@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mandala Burgers · Burgers de colores en Aguascalientes</title>
+<meta name="description" content="Demo de cortesía, no oficial: burgers de colores en Aguascalientes. Elige el color de tu pan y pide por WhatsApp.">
+<style>
+@font-face{font-family:Fredoka;font-weight:500;src:url(fonts/fredoka-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:Fredoka;font-weight:600;src:url(fonts/fredoka-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Nunito;font-weight:400;src:url(fonts/nunito-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Nunito;font-weight:600;src:url(fonts/nunito-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Nunito;font-weight:700;src:url(fonts/nunito-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:Nunito;font-weight:800;src:url(fonts/nunito-latin-800-normal.woff2) format("woff2")}
+:root{--carbon:#0E0E10;--tinta:#17171A;--crema:#F5F2EE;--mostaza:#F5C455;--verde:#A8D44A;--naranja:#F0784C;--rosa:#E872C0;--morado:#8E3FC9;--rojo:#D6232A;--gris:#5E5A55}
+*{box-sizing:border-box}
+html{background:var(--crema);scroll-behavior:smooth}
+body{margin:0;font-family:Nunito,system-ui,sans-serif;color:var(--carbon);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.35}
+h1,h2,h3{font-family:Fredoka,sans-serif;font-weight:600;margin:0;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;padding:0}
+.pagina{max-width:1180px;margin:0 auto;position:relative}
+.px{padding-left:16px;padding-right:16px}
+
+/* Encabezado */
+.enc{position:sticky;top:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:rgba(245,242,238,.82);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border-bottom:1px solid rgba(14,14,16,.06)}
+.enc img{width:46px;height:46px;border-radius:50%;display:block;box-shadow:0 2px 8px rgba(14,14,16,.14)}
+.enc nav{display:none;gap:28px;font-weight:700;font-size:15px}
+.hamb{width:46px;height:46px;border-radius:50%;background:var(--carbon);display:grid;place-content:center;gap:5px}
+.hamb i{display:block;width:20px;height:2.5px;border-radius:2px;background:var(--crema)}
+.hamb i:nth-child(2){width:14px;background:var(--mostaza)}
+
+/* Héroe */
+.heroe{padding-top:22px;padding-bottom:10px;display:grid;gap:18px}
+.heroe h1{font-size:50px;line-height:.96}
+.heroe h1 span{position:relative;white-space:nowrap}
+.heroe h1 span::after{content:"";position:absolute;left:-2px;right:-4px;bottom:-7px;height:9px;border-radius:9px;background:linear-gradient(90deg,var(--mostaza),var(--naranja),var(--rosa),var(--morado))}
+.sub{font-size:17px;font-weight:700;color:var(--gris);margin:14px 0 0}
+.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:58px;padding:0 26px;border-radius:29px;background:var(--mostaza);font-weight:800;font-size:18px;box-shadow:0 10px 22px -8px rgba(201,138,0,.7),inset 0 -3px 0 rgba(14,14,16,.12),inset 0 2px 0 rgba(255,255,255,.5)}
+.btn-wa svg{width:24px;height:24px}
+.lienzo{position:relative;border-radius:30px;background:radial-gradient(120% 100% at 50% 0%,#2a2030 0%,var(--tinta) 55%,#0b0b0d 100%);overflow:hidden;height:292px;box-shadow:0 22px 40px -22px rgba(14,14,16,.7)}
+.lienzo .mandala{position:absolute;width:430px;height:430px;left:50%;top:50%;margin:-215px 0 0 -215px}
+.lienzo .burger{position:absolute;width:232px;left:50%;top:50%;margin:-104px 0 0 -116px;filter:drop-shadow(0 14px 14px rgba(0,0,0,.45))}
+.cristal{position:absolute;display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:16px;font-weight:800;font-size:15px;color:#fff;background:linear-gradient(135deg,rgba(255,255,255,.26),rgba(255,255,255,.08));backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border:1px solid rgba(255,255,255,.34);box-shadow:0 8px 18px -8px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.35)}
+.lienzo .cristal{left:14px;bottom:14px}
+.cristal b{font-family:Fredoka,sans-serif;font-weight:600;font-size:17px}
+.punto{width:12px;height:12px;border-radius:50%;box-shadow:inset 0 -2px 0 rgba(0,0,0,.2)}
+
+/* Colores */
+.sec{padding-top:34px}
+.sec h2{font-size:30px;line-height:1.02}
+.nota{font-size:15px;color:var(--gris);margin:8px 0 0;font-weight:600}
+.panes{display:flex;gap:10px;margin-top:18px;justify-content:space-between}
+.pan{display:grid;justify-items:center;gap:6px;font-size:12px;font-weight:800;color:var(--gris)}
+.pan .bola{width:50px;height:50px;border-radius:50%;background:var(--c);box-shadow:inset 0 -5px 0 rgba(0,0,0,.16),inset 0 4px 0 rgba(255,255,255,.3),0 6px 12px -6px var(--c);position:relative;transition:transform .2s}
+.pan .bola::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:3px solid var(--carbon);opacity:0;transform:scale(.8);transition:.2s}
+.pan[aria-pressed=true]{color:var(--carbon)}
+.pan[aria-pressed=true] .bola::after{opacity:1;transform:none}
+.pan.todos .bola{background:conic-gradient(var(--mostaza) 0 20%,var(--rosa) 0 40%,var(--morado) 0 60%,var(--rojo) 0 80%,#3D7BD9 0)}
+
+/* Menú */
+.grupo{margin-top:26px}
+.grupo h3{font-size:23px;display:flex;align-items:center;gap:10px}
+.grupo h3::after{content:"";flex:1;height:2px;border-radius:2px;background:rgba(14,14,16,.1)}
+.grupo .nota{font-size:13.5px;margin-top:4px}
+.tarjetas{display:grid;gap:12px;margin-top:12px}
+.tarjeta{position:relative;display:grid;grid-template-columns:128px 1fr;align-items:center;gap:6px;min-height:138px;padding:8px 14px 8px 8px;border-radius:26px;background:linear-gradient(160deg,#1e1e22,#131316);color:var(--crema);box-shadow:0 16px 26px -18px rgba(14,14,16,.8);overflow:hidden}
+.tarjeta .foto{position:relative;height:122px;border-radius:20px;background:radial-gradient(90% 90% at 50% 30%,color-mix(in srgb,var(--c) 46%,#1a1a1e),#141417 100%)}
+.tarjeta .burger{position:absolute;width:118px;left:5px;top:6px}
+.tarjeta .cristal{right:-4px;bottom:4px;padding:5px 10px;border-radius:13px}
+.tarjeta h4{font-family:Fredoka,sans-serif;font-weight:600;font-size:28px;line-height:1;margin:0;color:var(--t)}
+.tarjeta p{margin:6px 0 0;font-size:15px;line-height:1.25;color:rgba(245,242,238,.84);font-weight:600}
+.tarjeta .pan-de{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:12px;font-weight:800;color:rgba(245,242,238,.62)}
+.tarjeta[hidden],.grupo[hidden],.filtrado .grupo .nota{display:none}
+
+/* Listas simples */
+.lista{display:grid;gap:10px;margin-top:12px}
+.fila{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:14px 16px;border-radius:20px;background:#fff;box-shadow:0 10px 20px -16px rgba(14,14,16,.5)}
+.fila b{font-family:Fredoka,sans-serif;font-weight:600;font-size:20px}
+.fila .precio{font-family:Fredoka,sans-serif;font-weight:600;font-size:20px;color:var(--naranja)}
+.fila p{grid-column:1/-1;margin:0;font-size:15px;color:var(--gris);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{padding:9px 14px;border-radius:999px;background:var(--carbon);color:var(--crema);font-weight:800;font-size:13px}
+.chip:nth-child(2){background:var(--morado)}.chip:nth-child(3){background:var(--naranja);color:var(--carbon)}
+
+.insta{display:flex;gap:12px;margin-top:14px}
+.insta figure{margin:0;width:150px;border-radius:18px;overflow:hidden;box-shadow:0 14px 22px -16px rgba(14,14,16,.7)}
+.insta img{display:block;width:150px;height:auto}
+
+.resenas{display:grid;gap:10px;margin-top:14px}
+.resena{margin:0;padding:16px 18px;border-radius:22px;background:#fff;font-size:15.5px;font-weight:600;box-shadow:0 10px 20px -16px rgba(14,14,16,.5);border-left:6px solid var(--c)}
+.resena small{display:block;margin-top:6px;font-size:12px;font-weight:800;color:var(--gris)}
+
+.visita{margin-top:14px;border-radius:26px;overflow:hidden;background:var(--tinta);color:var(--crema);position:relative}
+.visita .mapa{display:block;width:100%;height:230px}
+.visita .datos{padding:16px 18px 20px;display:grid;gap:6px;font-weight:700;font-size:16px}
+.visita .datos b{font-family:Fredoka,sans-serif;font-weight:600;font-size:21px;color:var(--mostaza)}
+.pie{padding:30px 16px 110px;text-align:center;font-size:12px;font-weight:700;color:var(--gris)}
+.pie img{width:150px;display:block;margin:0 auto 10px;mix-blend-mode:multiply}
+
+.fab{position:fixed;right:16px;bottom:18px;z-index:30;width:62px;height:62px;border-radius:50%;background:var(--verde);display:grid;place-items:center;box-shadow:0 12px 22px -8px rgba(60,90,10,.8),inset 0 -4px 0 rgba(0,0,0,.14),inset 0 3px 0 rgba(255,255,255,.4)}
+.fab svg{width:32px;height:32px}
+
+/* Computadora: menú a tres columnas */
+@media (min-width:900px){
+  .px{padding-left:40px;padding-right:40px}
+  .enc{padding:0 40px;height:72px}.enc nav{display:flex}.hamb{display:none}
+  .heroe{grid-template-columns:1.05fr 1fr;align-items:center;gap:40px;padding-top:40px}
+  .heroe h1{font-size:76px}.lienzo{height:380px}.lienzo .burger{width:300px;margin:-136px 0 0 -150px}
+  .panes{justify-content:flex-start;gap:22px}
+  .tarjetas{grid-template-columns:repeat(3,1fr);gap:16px}
+  .lista{grid-template-columns:repeat(3,1fr)}
+  .resenas{grid-template-columns:repeat(3,1fr)}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  .fab{right:32px;bottom:28px}
+}
+/* Modo captura para el video: sin elementos fijos */
+.captura .enc{position:relative;backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--crema)}
+.captura .fab{position:absolute;bottom:auto;top:700px}
+.captura *{transition:none!important}
+</style>
+</head>
+<body>
+<div class="pagina">
+  <header class="enc" data-s="enc">
+    <a href="#" aria-label="Mandala Burgers, inicio"><img src="img/logo-circulo.png" alt="Mandala Burgers"></a>
+    <nav><a href="#menu">Menú</a><a href="#postres">Postres</a><a href="#resenas">Reseñas</a><a href="#visitanos">Visítanos</a></nav>
+    <button class="hamb" aria-label="Abrir menú"><i></i><i></i><i></i></button>
+  </header>
+
+  <section class="heroe px">
+    <div>
+      <h1 data-s="h1">Burgers<br>de <span>colores</span></h1>
+      <p class="sub" data-s="sub">Aguascalientes · Jueves a domingo</p>
+      <p style="margin:20px 0 0"><a class="btn-wa wa" data-s="btn" href="#"><svg viewBox="0 0 24 24"><use href="#i-wa"/></svg>Pide por WhatsApp</a></p>
+    </div>
+    <div class="lienzo" data-s="lienzo" id="lienzo"></div>
+  </section>
+
+  <section class="sec px" id="menu">
+    <h2 data-s="col-h2">Elige el color<br>de tu día</h2>
+    <p class="nota" data-s="col-nota">El color del título indica el color del pan recomendado. También puedes elegir tu favorito.</p>
+    <div class="panes" id="panes" role="group" aria-label="Filtrar por color de pan"></div>
+    <div id="grupos"></div>
+  </section>
+
+  <section class="sec px">
+    <div class="dos">
+      <div><h2 data-s="hd-h2">Hotdogs</h2><div class="lista" id="hotdogs"></div><p class="nota" data-s="hd-nota" id="hd-nota"></p></div>
+      <div><h2 data-s="en-h2" style="margin-top:30px">Entradas</h2><div class="lista" id="entradas"></div></div>
+    </div>
+  </section>
+
+  <section class="sec px" id="postres">
+    <h2 data-s="po-h2">Postres</h2>
+    <div class="lista" id="lpostres"></div>
+    <div class="chips" data-s="chips"><span class="chip">Cerveza artesanal</span><span class="chip">Menú Kids</span><span class="chip">Pet friendly</span></div>
+  </section>
+
+  <section class="sec px">
+    <h2 data-s="ig-h2">De su Instagram</h2>
+    <div class="insta" data-s="insta">
+      <figure><img src="img/foto_ig_01_halloween_burger.jpg" alt="Burger de pan azul, publicación de Mandala Burgers" width="150"></figure>
+      <figure><img src="img/foto_ig_02_moksha_pan_jalapeno.jpg" alt="Moksha en pan de jalapeño, publicación de Mandala Burgers" width="150"></figure>
+    </div>
+  </section>
+
+  <section class="sec px" id="resenas">
+    <h2 data-s="re-h2">Reseñas</h2>
+    <div class="resenas" id="lresenas"></div>
+  </section>
+
+  <section class="sec px" id="visitanos">
+    <h2 data-s="vi-h2">Visítanos</h2>
+    <div class="visita" data-s="visita">
+      <svg class="mapa" viewBox="0 0 358 230" preserveAspectRatio="xMidYMid slice" aria-label="Mapa ilustrado">
+        <rect width="358" height="230" fill="#1d1d21"/>
+        <g stroke="#2c2c32" stroke-width="10" stroke-linecap="round" fill="none"><path d="M-10 60L140 40L380 76"/><path d="M60 -10L92 250"/><path d="M250 -10L226 250"/><path d="M-10 190L380 160"/></g>
+        <path d="M-10 128C80 96 160 150 250 118S340 96 380 104" stroke="#F5C455" stroke-width="12" stroke-linecap="round" fill="none"/>
+        <g transform="translate(206 126)"><path d="M0 0C-22 -26 -20 -52 0 -52S22 -26 0 0z" fill="#D6232A"/><circle cy="-34" r="8" fill="#F5F2EE"/></g>
+      </svg>
+      <div class="datos"><b id="horario"></b><span id="dir1"></span><span id="dir2" style="font-weight:600;opacity:.75;font-size:14px"></span></div>
+    </div>
+  </section>
+
+  <footer class="pie" data-s="pie">
+    <img src="img/logo-wordmark.jpg" alt="Mandala Burgers">
+    <span id="pie-legal"></span>
+  </footer>
+
+  <a class="fab wa" data-s="fab" href="#" aria-label="Pedir por WhatsApp"><svg viewBox="0 0 24 24"><use href="#i-wa"/></svg></a>
+</div>
+
+<svg width="0" height="0" style="position:absolute"><symbol id="i-wa" viewBox="0 0 24 24"><path fill="#0E0E10" d="M12 2.2a9.700 9.700 0 0 0-8.300 14.700L2.400 21.700l4.900-1.300A9.700 9.700 0 1 0 12 2.200zm0 1.800a7.900 7.900 0 1 1-4.200 14.600l-.3-.2-2.600.7.700-2.500-.2-.3A7.900 7.900 0 0 1 12 4zm-3 3.600c-.2 0-.5.1-.7.400-.3.300-1 .9-1 2.300s1 2.700 1.200 2.900c.1.200 2 3.100 4.900 4.200 2.400.9 2.900.8 3.400.7.500-.1 1.700-.7 1.900-1.300.2-.700.2-1.200.2-1.300-.1-.2-.3-.200-.6-.400l-1.900-.9c-.3-.1-.5-.1-.7.200l-.8 1c-.2.200-.3.200-.6.100-.3-.2-1.200-.5-2.300-1.400-.8-.8-1.400-1.700-1.600-2-.1-.3 0-.4.200-.6l.4-.5c.1-.2.2-.3.300-.5.1-.2 0-.4 0-.5l-.9-2.100c-.2-.5-.4-.4-.6-.4z"/></symbol></svg>
+
+<script src="menu.js"></script>
+<script src="ilustra.js"></script>
+<script>
+(async function () {
+  const q = new URLSearchParams(location.search);
+  if (q.has('captura')) document.documentElement.classList.add('captura');
+  const N = await (await fetch('../config/negocio.json')).json();
+  const wa = 'https://wa.me/' + N.whatsapp_e164 + '?text=' + encodeURIComponent(N.whatsapp_mensaje);
+  document.querySelectorAll('.wa').forEach((a) => { a.href = wa; a.target = '_blank'; a.rel = 'noopener'; });
+  document.getElementById('horario').textContent = N.horario_largo;
+  document.getElementById('dir1').textContent = N.direccion_1;
+  document.getElementById('dir2').textContent = N.direccion_2;
+  document.getElementById('pie-legal').textContent = N.pie_legal;
+  const $ = (h) => { const t = document.createElement('template'); t.innerHTML = h.trim(); return t.content.firstChild; };
+
+  document.getElementById('lienzo').innerHTML = mandalaSVG() + burgerSVG(PANES.morado.pan, 'cereza') +
+    '<span class="cristal"><i class="punto" style="background:' + PANES.morado.pan + '"></i><b>Mandala</b> $169</span>';
+
+  const panes = document.getElementById('panes');
+  const filtros = [['todos', 'Todos', '']].concat(Object.entries(PANES).map(([k, v]) => [k, v.nombre, v.pan]));
+  filtros.forEach(([k, nombre, c]) => panes.appendChild($(
+    `<button class="pan ${k === 'todos' ? 'todos' : ''}" data-pan="${k}" data-s="pan-${k}" aria-pressed="${k === 'todos'}" style="--c:${c || '#0E0E10'}"><span class="bola"></span>${nombre}</button>`)));
+
+  const grupos = document.getElementById('grupos');
+  MENU.burgers.forEach((g) => {
+    const el = $(`<div class="grupo" data-g="${g.id}"><h3 data-s="g-${g.id}">${g.titulo}</h3>${g.nota ? `<p class="nota" data-s="gn-${g.id}">${g.nota}</p>` : ''}<div class="tarjetas"></div></div>`);
+    g.items.forEach((it) => {
+      const p = PANES[it.pan];
+      el.querySelector('.tarjetas').appendChild($(
+        `<article class="tarjeta" data-pan="${it.pan}" data-s="t-${it.id}" style="--c:${p.pan};--t:${p.texto}">
+          <div class="foto">${burgerSVG(p.pan, it.extra)}<span class="cristal"><b>$${it.precio}</b></span></div>
+          <div><h4>${it.nombre}</h4><p>${it.desc}</p><span class="pan-de"><i class="punto" style="background:${p.pan}"></i>Pan ${p.nombre.toLowerCase()}</span></div>
+        </article>`));
+    });
+    grupos.appendChild(el);
+  });
+
+  window.filtrar = function (k) {
+    grupos.classList.toggle('filtrado', k !== 'todos');
+    panes.querySelectorAll('.pan').forEach((b) => b.setAttribute('aria-pressed', b.dataset.pan === k));
+    grupos.querySelectorAll('.grupo').forEach((g) => {
+      let n = 0;
+      g.querySelectorAll('.tarjeta').forEach((t) => { const ok = k === 'todos' || t.dataset.pan === k; t.hidden = !ok; n += ok; });
+      g.hidden = !n;
+    });
+  };
+  panes.addEventListener('click', (e) => { const b = e.target.closest('.pan'); if (b) filtrar(b.dataset.pan); });
+
+  const fila = (pre) => (it) => `<div class="fila" data-s="${pre}-${it.id}"><b>${it.nombre}</b><span class="precio">$${it.precio}</span><p>${it.desc}</p></div>`;
+  document.getElementById('hotdogs').innerHTML = MENU.hotdogs.map(fila('f')).join('');
+  document.getElementById('hd-nota').textContent = MENU.hotdogsNota;
+  document.getElementById('entradas').innerHTML = MENU.entradas.map(fila('f')).join('');
+  document.getElementById('lpostres').innerHTML = MENU.postres.map(fila('f')).join('');
+  const cs = ['var(--mostaza)', 'var(--rosa)', 'var(--morado)'];
+  document.getElementById('lresenas').innerHTML = MENU.resenas.map((r, i) => `<blockquote class="resena" data-s="r-${i}" style="--c:${cs[i]}">“${r}”<small>Reseña en Google</small></blockquote>`).join('');
+  await document.fonts.ready;
+  window.lista = true;
+})();
+</script>
+</body>
+</html>
