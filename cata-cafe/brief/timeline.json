@@ -1,0 +1,305 @@
+{
+ "fps": 60,
+ "bpm": 120,
+ "frames": 1080,
+ "secciones": [
+  {
+   "id": "hook",
+   "nombre": "Hook",
+   "f": 0,
+   "fin": 119,
+   "musica": "sub grave y pad"
+  },
+  {
+   "id": "encabezado",
+   "nombre": "Encabezado",
+   "f": 120,
+   "fin": 239,
+   "musica": ""
+  },
+  {
+   "id": "metodos",
+   "nombre": "Métodos",
+   "f": 240,
+   "fin": 359,
+   "musica": "entra el pluck"
+  },
+  {
+   "id": "grano",
+   "nombre": "Café en grano o molido",
+   "f": 360,
+   "fin": 479,
+   "musica": ""
+  },
+  {
+   "id": "tarjeta",
+   "nombre": "Cliente frecuente",
+   "f": 480,
+   "fin": 599,
+   "musica": "entra el shaker"
+  },
+  {
+   "id": "revelacion",
+   "nombre": "Revelación",
+   "f": 600,
+   "fin": 719,
+   "musica": "riser f660–719"
+  },
+  {
+   "id": "pedido",
+   "nombre": "Pedido, horario y ubicación",
+   "f": 720,
+   "fin": 839,
+   "musica": "lift pleno en f720"
+  },
+  {
+   "id": "cierre",
+   "nombre": "Cierre",
+   "f": 840,
+   "fin": 959,
+   "musica": "respiro f840–899, golpe grave en f960"
+  },
+  {
+   "id": "end",
+   "nombre": "End card",
+   "f": 960,
+   "fin": 1079,
+   "musica": "cola del golpe"
+  }
+ ],
+ "voz": [
+  {
+   "id": "L1",
+   "f": 24,
+   "texto": "Todo buen café empieza con un solo trazo.",
+   "toma": {
+    "ini": 0.126,
+    "fin": 3.109
+   },
+   "dur": 2.983,
+   "termina_f": 203,
+   "palabras": [
+    {
+     "w": "Todo",
+     "f": 24
+    },
+    {
+     "w": "buen",
+     "f": 32
+    },
+    {
+     "w": "café",
+     "f": 56
+    },
+    {
+     "w": "empieza",
+     "f": 78
+    },
+    {
+     "w": "con",
+     "f": 115
+    },
+    {
+     "w": "un",
+     "f": 134
+    },
+    {
+     "w": "solo",
+     "f": 153
+    },
+    {
+     "w": "trazo",
+     "f": 172
+    }
+   ]
+  },
+  {
+   "id": "L2",
+   "f": 237,
+   "texto": "Y tu negocio, con una página que lo cuente.",
+   "toma": {
+    "ini": 3.777,
+    "fin": 6.252
+   },
+   "dur": 2.475,
+   "termina_f": 386,
+   "palabras": [
+    {
+     "w": "Y",
+     "f": 237
+    },
+    {
+     "w": "tu",
+     "f": 241
+    },
+    {
+     "w": "negocio",
+     "f": 247
+    },
+    {
+     "w": "con",
+     "f": 276
+    },
+    {
+     "w": "una",
+     "f": 302
+    },
+    {
+     "w": "página",
+     "f": 315
+    },
+    {
+     "w": "que",
+     "f": 338
+    },
+    {
+     "w": "lo",
+     "f": 352
+    },
+    {
+     "w": "cuente",
+     "f": 361
+    }
+   ]
+  },
+  {
+   "id": "L3",
+   "f": 417,
+   "texto": "Tus métodos, tu café en grano y tu tarjeta de puntos, ahora en el celular.",
+   "toma": {
+    "ini": 6.914,
+    "fin": 11.532
+   },
+   "dur": 4.618,
+   "termina_f": 694,
+   "palabras": [
+    {
+     "w": "Tus",
+     "f": 417
+    },
+    {
+     "w": "métodos",
+     "f": 423
+    },
+    {
+     "w": "tu",
+     "f": 479
+    },
+    {
+     "w": "café",
+     "f": 480
+    },
+    {
+     "w": "en",
+     "f": 493
+    },
+    {
+     "w": "grano",
+     "f": 504
+    },
+    {
+     "w": "y",
+     "f": 524
+    },
+    {
+     "w": "tu",
+     "f": 536
+    },
+    {
+     "w": "tarjeta",
+     "f": 542
+    },
+    {
+     "w": "de",
+     "f": 567
+    },
+    {
+     "w": "puntos",
+     "f": 573
+    },
+    {
+     "w": "ahora",
+     "f": 617
+    },
+    {
+     "w": "en",
+     "f": 633
+    },
+    {
+     "w": "el",
+     "f": 655
+    },
+    {
+     "w": "celular",
+     "f": 662
+    }
+   ]
+  },
+  {
+   "id": "L4",
+   "f": 726,
+   "texto": "Así se vería Cata Café.",
+   "toma": {
+    "ini": 22.909,
+    "fin": 24.421
+   },
+   "dur": 1.512,
+   "termina_f": 817,
+   "palabras": [
+    {
+     "w": "Así",
+     "f": 726
+    },
+    {
+     "w": "se",
+     "f": 741
+    },
+    {
+     "w": "vería",
+     "f": 754
+    },
+    {
+     "w": "Cata Café",
+     "f": 773
+    }
+   ]
+  },
+  {
+   "id": "L5",
+   "f": 840,
+   "texto": "Si te gusta, la hacemos realidad.",
+   "toma": {
+    "ini": 14.773,
+    "fin": 16.861
+   },
+   "dur": 2.088,
+   "termina_f": 965,
+   "palabras": [
+    {
+     "w": "Si",
+     "f": 840
+    },
+    {
+     "w": "te",
+     "f": 848
+    },
+    {
+     "w": "gusta",
+     "f": 856
+    },
+    {
+     "w": "la",
+     "f": 894
+    },
+    {
+     "w": "hacemos",
+     "f": 906
+    },
+    {
+     "w": "realidad",
+     "f": 929
+    }
+   ]
+  }
+ ]
+}

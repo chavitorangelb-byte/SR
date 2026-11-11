@@ -40,16 +40,34 @@ Video vertical de 18 s que le enseña al dueño cómo se vería su página. Un s
 
 Nada de precios, teléfono, reseñas, seguidores, personas, zine ni ilustración de la manga. Los precios del menú kraft son rayas neutras.
 
+## Voz (bloqueada en la fase 3)
+
+Toma 1 (voz "Hope", eleven v4, 27.0 s). La transcripción coincide palabra por palabra con el guion. Stem en `voz/voz_stem_48k.wav` a −16 LUFS; preview sobre pulso de 120 BPM en `voz/preview_voz_pulso.mp3`. Cuadros exactos en `brief/timeline.json`.
+
+| # | Entra | Termina | Dura | Frase |
+|---|---|---|---|---|
+| L1 | f24 · 0.40 s | f203 · 3.38 s | 2.98 s | Todo buen café empieza con un solo trazo. |
+| L2 | f237 · 3.95 s | f386 · 6.43 s | 2.47 s | Y tu negocio, con una página que lo cuente. |
+| L3 | f417 · 6.95 s | f694 · 11.57 s | 4.62 s | Tus métodos, tu café en grano y tu tarjeta de puntos, ahora en el celular. |
+| L4 | f726 · 12.10 s | f817 · 13.61 s | 1.51 s | Así se vería Cata Café. (versión corta) |
+| L5 | f840 · 14.00 s | f965 · 16.09 s | 2.09 s | Si te gusta, la hacemos realidad. |
+
+- **L3 entra 0.95 s antes** (6.95 s en vez de 7.90 s): la frase completa dura 4.62 s y así se conserva el texto original. "grano" cae en f504, "tarjeta" en f542 (dentro del compás de la tarjeta) y "celular" en f662, justo cuando empieza el lift.
+- **L4 usa la versión corta:** la original dura 2.17 s y no deja lugar a L5.
+- **L5 entra en 14.00 s** y la cola de "realidad" termina 5 cuadros después del corte; el golpe grave de f960 se atenúa bajo la voz.
+- **L2 entra 0.15 s antes** para repartir las pausas (0.57 s antes y 0.52 s después).
+- Palabras clave: un f134 · solo f153 · trazo f172 · página f315 · celular f662 · Cata Café f773 · realidad f929.
+
 ## Kinetic type
 
 Por glifo, stagger de 25 ms, máximo 3 palabras a la vez. Los cuadros exactos se amarran a la palabra de la voz en la fase 3.
 
 | Texto | Aterriza en | Coreografía |
 |---|---|---|
-| UN SOLO TRAZO | "un solo trazo" (L1, hacia f110–160) | Cada palabra sale del anillo; "TRAZO" se escribe con el propio trazo |
-| UNA PÁGINA | "página" (L2) | Sube con el scroll y se queda pegada al encabezado un tiempo |
-| EN EL CELULAR | "celular" (L3, hacia f690–715) | Entra en profundidad y se vuelve el borde del teléfono |
-| Cata Café | "Cata Café" (L4) y cierre | Lo escribe el trazo al recogerse |
+| UN SOLO TRAZO | "un" f134 · "solo" f153 · "trazo" f172 | Cada palabra sale del anillo; "TRAZO" se escribe con el propio trazo |
+| UNA PÁGINA | "página" f315 | Sube con el scroll y se queda pegada al encabezado un tiempo |
+| EN EL CELULAR | "celular" f662 | Entra en profundidad y se vuelve el borde del teléfono |
+| Cata Café | "Cata Café" f773 (aparece el nombre en el encabezado del teléfono) y cierre f870–936 | Lo escribe el trazo al recogerse |
 
 Los nombres de los tuestes y los chips son interfaz, no kinetic type.
 
@@ -70,7 +88,7 @@ Los nombres de los tuestes y los chips son interfaz, no kinetic type.
 
 ### Compás 3 · Métodos · f240–359
 - **f240** El hilo baja y la página se desplaza con él. Ticks de scroll en f240, f270 y f300.
-- **f246** Entra L2. "UNA PÁGINA" en su palabra.
+- **f237** Entra L2 (final del compás 2). "UNA PÁGINA" en f315.
 - **f252 / f270 / f288** Tres paneles de cristal; el primero dice "V60" y lleva el dripper; los otros dos llevan una Chemex y una prensa francesa como objetos, sin texto.
 - **f300–359** El hilo pasa por detrás de los paneles y se ve desenfocado a través del cristal.
 - Música: entra el pluck.
@@ -80,7 +98,7 @@ Los nombres de los tuestes y los chips son interfaz, no kinetic type.
 - **f384–432** El trazo la rodea una vuelta.
 - **f432–450** El trazo se parte en cinco.
 - **f438 / f446 / f454 / f462 / f470** Cinco vasitos de vidrio con grano, del más claro al más oscuro, cada uno con su nombre.
-- **f474** Entra L3.
+- **f417** Entra L3 ("grano" en f504, ya con los vasitos en pantalla).
 
 ### Compás 5 · Cliente frecuente · f480–599
 - **f480–520** La tarjeta sale de la barra (mostrador de madera con canto y grosor).
@@ -95,14 +113,14 @@ Los nombres de los tuestes y los chips son interfaz, no kinetic type.
 
 ### Compás 7 · Pedido, horario y ubicación · f720–839
 - **f720** Lift pleno de la música.
-- **f744** Entra L4.
+- **f726** Entra L4.
 - **f750** Pulsación en "Hacer pedido"; onda de contacto f750–790. Sin número visible.
 - **f768** Chip de horario. **f786** Chip de ubicación. Los dos fuera del teléfono, a tamaño de cuadro.
 - **f792–834** El trazo dibuja la mini ruta: Entrada principal (f798), Pasaje Arteaga (f813), Módulo de cristal (f828).
 
 ### Compás 8 · Cierre · f840–959
 - **f840–870** Respiro: solo pad. Paneles, chips y teléfono se recogen en una sola línea (SDF).
-- **f870** Entra L5 (se ajusta al medir la toma).
+- **f840** Entra L5; "realidad" en f929.
 - **f870–936** El trazo escribe "Cata Café".
 - **f870–950** Giro de cámara de 14° alrededor del nombre (3D); el trazo muestra grosor y brillo.
 - **f960** Golpe grave y corte a la end card.
