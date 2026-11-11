@@ -3,3 +3,5 @@ assets/_capturas/
 review/**/*.png
 video/build/
 audio/build/
+assets-src/
+__pycache__/

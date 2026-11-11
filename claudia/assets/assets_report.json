@@ -1,0 +1,44 @@
+{
+ "claudia-logo.png": {
+  "size": [
+   272,
+   154
+  ],
+  "origen": "facebook-portada.pdf, recorte (277, 50, 549, 204)"
+ },
+ "claudia-insignia.jpg": {
+  "size": [
+   200,
+   200
+  ],
+  "origen": "facebook-portada.pdf, foto de perfil"
+ },
+ "01-boda-barra.jpg": {
+  "size": [
+   1200,
+   1600
+  ],
+  "origen": "foto-pastel-boda-barra.jpg (2656, 3541)"
+ },
+ "02-cumpleanos-rosa.jpg": {
+  "size": [
+   1080,
+   1080
+  ],
+  "origen": "foto-pastel-cumpleanos-rosa.jpg (1080, 1080)"
+ },
+ "03-calavera.jpg": {
+  "size": [
+   720,
+   720
+  ],
+  "origen": "foto-pastel-calavera.jpg (720, 720)"
+ },
+ "04-cupcakes.jpg": {
+  "size": [
+   640,
+   1136
+  ],
+  "origen": "foto-cupcakes-1.jpg (640, 1136)"
+ }
+}
