@@ -1,0 +1,31 @@
+// Fotos de la página para enseñarle al dueño: pantallas de celular (390×844 @2x) y una de computadora.
+import { createRequire } from 'node:module';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { servidor } from '../video/captura.mjs';
+const require = createRequire(import.meta.url);
+const { chromium } = require('playwright');
+const OUT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'entrega', 'fotos');
+const server = await servidor(); const base = `http://127.0.0.1:${server.address().port}`;
+const browser = await chromium.launch();
+const p = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2 });
+await p.goto(`${base}/web/index.html?fijo=1`); await p.waitForFunction(() => window.lista);
+await p.addStyleTag({ content: 'html{scroll-behavior:auto!important}' });
+const foto = async (nombre, sel, filtro, dy = 76) => {
+  await p.evaluate(([sel, filtro, dy]) => { filtrar(filtro || 'todos'); const e = sel ? document.querySelector(sel) : null; scrollTo(0, e ? e.getBoundingClientRect().top + scrollY - dy : 0); }, [sel, filtro, dy]);
+  await p.waitForTimeout(350); await p.screenshot({ path: path.join(OUT, nombre + '.jpg'), type: 'jpeg', quality: 90 });
+};
+await foto('01_portada');
+await foto('02_elige_tu_color', '[data-s="col-h2"]');
+await foto('03_filtro_pan_morado', '[data-s="col-h2"]', 'morado');
+await foto('04_menu_burgers', '[data-g="atrevido"]');
+await foto('05_hotdogs_y_entradas', '[data-s="hd-h2"]');
+await foto('06_postres_nubes_asadas', '[data-s="po-h2"]');
+await foto('07_resenas', '[data-s="re-h2"]');
+await foto('08_visitanos', '[data-s="vi-h2"]');
+const d = await browser.newPage({ viewport: { width: 1280, height: 800 }, deviceScaleFactor: 1.5 });
+await d.goto(`${base}/web/index.html?fijo=1`); await d.waitForFunction(() => window.lista);
+await d.screenshot({ path: path.join(OUT, '09_computadora_portada.jpg'), type: 'jpeg', quality: 90 });
+await d.evaluate(() => { document.documentElement.style.scrollBehavior = 'auto'; scrollTo(0, document.querySelector('#menu').getBoundingClientRect().top + scrollY - 90); });
+await d.waitForTimeout(300); await d.screenshot({ path: path.join(OUT, '10_computadora_menu.jpg'), type: 'jpeg', quality: 90 });
+await browser.close(); server.close();
