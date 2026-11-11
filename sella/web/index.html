@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f0e0d">
+<meta name="robots" content="noindex">
+<title>Sella Eventos · Renta de sillas y mesas en Aguascalientes</title>
+<meta name="description" content="Renta de sillas, mesas y mobiliario para eventos en Aguascalientes. Cotiza por WhatsApp al 449 509 3260.">
+<style>
+@font-face{font-family:"Cormorant Garamond";font-weight:500;font-style:normal;font-display:swap;src:url(fonts/cormorant-garamond-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-weight:500;font-style:italic;font-display:swap;src:url(fonts/cormorant-garamond-latin-500-italic.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-weight:600;font-style:normal;font-display:swap;src:url(fonts/cormorant-garamond-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-weight:700;font-style:normal;font-display:swap;src:url(fonts/cormorant-garamond-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-weight:400;font-style:normal;font-display:swap;src:url(fonts/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-weight:500;font-style:normal;font-display:swap;src:url(fonts/inter-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-weight:600;font-style:normal;font-display:swap;src:url(fonts/inter-latin-600-normal.woff2) format("woff2")}
+
+:root{
+  --carbon:#0f0e0d; --carbon-2:#171512; --marfil:#f6f1e7; --marfil-2:rgba(246,241,231,.68); --marfil-3:rgba(246,241,231,.42);
+  --champ:#e8cf9a; --champ-2:#c9a968; --champ-osc:#8a6d3a;
+  --vidrio:rgba(246,241,231,.07); --vidrio-borde:rgba(246,241,231,.16);
+  --serif:"Cormorant Garamond","Times New Roman",serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:22px; --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--carbon);color:var(--marfil);font-family:var(--sans);font-size:16px;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.pagina{position:relative;max-width:520px;margin:0 auto;padding:0 20px 120px;isolation:isolate}
+
+/* Luz cálida detrás del cristal */
+.luz{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.luz i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55}
+.luz i:nth-child(1){width:420px;height:420px;left:-180px;top:-120px;background:radial-gradient(circle,#b98f4a 0%,transparent 70%)}
+.luz i:nth-child(2){width:380px;height:380px;right:-200px;top:620px;background:radial-gradient(circle,#7a4f2a 0%,transparent 70%);opacity:.6}
+.luz i:nth-child(3){width:460px;height:460px;left:-220px;top:1500px;background:radial-gradient(circle,#a8844a 0%,transparent 70%);opacity:.4}
+.luz i:nth-child(4){width:420px;height:420px;right:-180px;top:2500px;background:radial-gradient(circle,#8a5a34 0%,transparent 70%);opacity:.5}
+.luz i:nth-child(5){width:480px;height:480px;left:-160px;bottom:-140px;background:radial-gradient(circle,#b98f4a 0%,transparent 70%);opacity:.45}
+
+.vidrio{position:relative;background:linear-gradient(145deg,rgba(246,241,231,.12),rgba(246,241,231,.04) 55%);border:1px solid var(--vidrio-borde);
+  border-radius:var(--r);-webkit-backdrop-filter:blur(32px) saturate(140%);backdrop-filter:blur(32px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 18px 40px -18px rgba(0,0,0,.7)}
+.vidrio::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:.02;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:screen;opacity:.06}
+
+/* Barra */
+.barra{position:sticky;top:10px;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;margin:10px -6px 0;padding:8px 8px 8px 10px;border-radius:999px}
+.barra .marca{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;font-size:19px;letter-spacing:.14em}
+.barra .marca img{width:36px;height:36px;border-radius:50%}
+.barra .mini{font-size:13px;font-weight:600;padding:9px 14px;border-radius:999px;background:var(--champ);color:#1b1610;transition:transform .18s var(--ease),filter .18s}
+.barra .mini:hover{filter:brightness(1.08)} .barra .mini:active{transform:scale(.95)}
+
+/* Hero */
+.hero{padding:44px 0 34px;text-align:center}
+.hero .logo{width:132px;height:132px;border-radius:50%;margin:0 auto 26px;box-shadow:0 0 0 1px rgba(232,207,154,.5),0 0 0 7px rgba(232,207,154,.08),0 24px 50px -16px rgba(0,0,0,.8)}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(46px,13.6vw,64px);line-height:.96;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--champ)}
+.camino{display:block;width:172px;height:14px;margin:18px auto 20px}
+.camino path{stroke-dasharray:240;stroke-dashoffset:240;animation:trazo 1.4s .3s var(--ease) forwards}
+@keyframes trazo{to{stroke-dashoffset:0}}
+.hero p{color:var(--marfil-2);font-size:17px;max-width:300px;margin:0 auto 28px}
+
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 26px;border-radius:999px;font-weight:600;font-size:17px;
+  color:#1b1610;background:linear-gradient(180deg,#f3dfb2,var(--champ) 45%,var(--champ-2));overflow:hidden;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -2px 0 rgba(0,0,0,.14),0 14px 30px -10px rgba(232,207,154,.5);
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease),filter .2s}
+.btn svg{width:22px;height:22px;flex:none}
+.btn::before{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);transition:left .7s var(--ease)}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.04)} .btn:hover::before{left:120%}
+.btn:active,.btn.press{transform:translateY(1px) scale(.965);box-shadow:inset 0 2px 6px rgba(0,0,0,.28),0 4px 12px -6px rgba(232,207,154,.4)}
+.btn:focus-visible,.tarjeta a:focus-visible,.mini:focus-visible{outline:2px solid var(--marfil);outline-offset:3px}
+
+/* Secciones */
+section{padding:34px 0}
+.kicker{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--champ);margin-bottom:10px}
+.kicker::before{content:"";width:26px;height:2px;border-radius:2px;background:var(--champ)}
+h2{font-family:var(--serif);font-weight:600;font-size:38px;line-height:1.02;margin-bottom:20px}
+
+/* Catálogo */
+.catalogo{display:grid;gap:14px}
+.tarjeta{display:grid;grid-template-columns:116px 1fr;gap:14px;align-items:center;padding:10px;transition:transform .25s var(--ease),border-color .25s}
+.tarjeta:hover{transform:translateY(-3px);border-color:rgba(232,207,154,.45)}
+.tarjeta:active{transform:scale(.985)}
+.tarjeta .foto{width:116px;height:116px;border-radius:15px;overflow:hidden;background:var(--carbon-2)}
+.tarjeta .foto img{width:100%;height:100%;object-fit:cover}
+.tarjeta h3{font-family:var(--serif);font-weight:600;font-size:25px;line-height:1.05;margin-bottom:6px}
+.precio{font-family:var(--serif);font-weight:700;font-size:40px;line-height:1;color:var(--champ);font-variant-numeric:lining-nums}
+.precio small{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--marfil-3);margin-left:6px}
+.cotiza{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:600;color:var(--champ);padding:8px 0}
+.cotiza svg{width:16px;height:16px}
+.cotiza::after{content:"→";transition:transform .2s var(--ease)} .tarjeta:hover .cotiza::after{transform:translateX(4px)}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dos .tarjeta{grid-template-columns:1fr;gap:10px;align-items:start}
+.dos .tarjeta .foto{width:100%;height:118px}
+.dos .tarjeta h3{font-size:22px;padding:0 4px}
+.dos .tarjeta .cotiza{padding:4px 4px 6px;font-size:13px}
+
+/* Cintillo */
+.cintillo{display:flex;align-items:center;gap:16px;padding:20px 20px;border-color:rgba(232,207,154,.4);overflow:hidden}
+.cintillo .pct{font-family:var(--serif);font-weight:700;font-size:62px;line-height:.9;color:var(--champ);white-space:nowrap;font-variant-numeric:lining-nums}
+.cintillo .pct sup{font-size:.5em;vertical-align:top;position:relative;top:.12em;margin-left:2px}
+.cintillo b{display:block;font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.1}
+.cintillo span{font-size:14px;color:var(--marfil-2)}
+
+/* Galería */
+.galeria{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:4px 20px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.galeria::-webkit-scrollbar{display:none}
+.galeria figure{flex:none;width:74%;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;scroll-snap-align:center;border:1px solid var(--vidrio-borde);box-shadow:0 20px 40px -20px rgba(0,0,0,.8);transition:transform .3s var(--ease)}
+.galeria figure:active{transform:scale(.98)}
+.galeria img{width:100%;height:100%;object-fit:cover}
+.puntos{display:flex;justify-content:center;gap:7px;margin-top:6px}
+.puntos i{width:6px;height:6px;border-radius:6px;background:var(--marfil-3);transition:width .3s var(--ease),background .3s}
+.puntos i.on{width:22px;background:var(--champ)}
+
+/* Reseñas y cierre */
+.resena{padding:26px 22px;text-align:center}
+.resena .sillas{display:flex;justify-content:center;gap:8px;margin-bottom:14px;color:var(--champ)}
+.resena .sillas svg{width:26px;height:30px}
+.resena b{display:block;font-family:var(--serif);font-weight:600;font-size:30px;line-height:1.05;margin-bottom:8px}
+.resena span{font-size:15px;color:var(--marfil-2)}
+.cierre{text-align:center;padding-top:44px}
+.cierre h2{font-size:46px;margin-bottom:8px} .cierre h2 em{font-style:italic;font-weight:500;color:var(--champ)}
+.cierre p{color:var(--marfil-2);margin-bottom:24px}
+.cierre .btn{width:100%;font-size:16px;padding:0 14px;min-height:62px}
+footer{margin-top:44px;text-align:center;font-size:12px;color:var(--marfil-3);line-height:1.7}
+
+/* Aparición al hacer scroll */
+.rev{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--i,0)*70ms)}
+.rev.vis{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}.camino path{animation:none;stroke-dashoffset:0}html{scroll-behavior:auto}}
+@media (min-width:700px){.pagina{padding-top:20px}.galeria figure{width:58%}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 1.8a8.2 8.2 0 1 1-4.3 15.2l-.4-.2-2.7.7.7-2.6-.2-.4A8.2 8.2 0 0 1 12 3.800Zm-3.300 3.900c-.2 0-.5 0-.7.300-.3.300-1 1-1 2.300s1 2.700 1.200 2.900c.1.200 2 3.100 4.900 4.200 2.400.9 2.900.8 3.400.7.500-.1 1.700-.7 1.900-1.300.2-.700.2-1.200.2-1.300-.1-.1-.3-.2-.6-.300l-1.900-.9c-.3-.1-.5-.1-.7.100l-.800 1c-.2.200-.3.200-.6.100-.3-.2-1.200-.4-2.200-1.400-.800-.7-1.400-1.600-1.500-1.900-.2-.3 0-.4.100-.6l.400-.5c.2-.2.2-.3.300-.5.100-.2 0-.4 0-.5l-.9-2.100c-.2-.5-.4-.5-.6-.5h-.9Z"/></symbol>
+  <symbol id="silla" viewBox="0 0 26 30"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 3h14a2 2 0 0 1 2 2v6H4V5a2 2 0 0 1 2-2ZM7 11v6m12-6v6M4 17h18v3H4zM7 20 4 28m15-8 3 8M8 24h10"/></symbol>
+</svg>
+
+<div class="pagina">
+  <div class="luz" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+  <header class="barra vidrio">
+    <a class="marca" href="#inicio"><img src="img/logo-circulo.png" alt="" width="36" height="36">SELLA</a>
+    <a class="mini wa-link" href="#" data-msg="Hola, quiero cotizar mobiliario para mi evento.">Cotizar</a>
+  </header>
+
+  <section class="hero" id="inicio">
+    <img class="logo" src="img/logo-circulo.png" alt="Sella Eventos" width="132" height="132">
+    <h1>Tu evento,<br><em>bien sentado.</em></h1>
+    <svg class="camino" viewBox="0 0 172 14" aria-hidden="true"><path d="M3 9c28-8 52 6 82 0s54-7 84-1" fill="none" stroke="#e8cf9a" stroke-width="4" stroke-linecap="round"/></svg>
+    <p>Renta de sillas, mesas y mobiliario en Aguascalientes</p>
+    <a class="btn wa-link" href="#" data-msg="Hola, quiero cotizar mobiliario para mi evento."><svg><use href="#wa"/></svg>Cotiza por WhatsApp</a>
+  </section>
+
+  <section id="catalogo">
+    <div class="kicker rev">Catálogo</div>
+    <h2 class="rev">Sillas, mesas y paquetes completos</h2>
+    <div class="catalogo">
+      <article class="tarjeta vidrio rev" data-precio="8">
+        <div class="foto"><img src="img/foto_05_patio_mesas_blancas.jpg" alt="Sillas plegables negras con mesas blancas" loading="lazy" style="object-position:70% 62%"></div>
+        <div><h3>Silla plegable</h3><div class="precio">$8<small>renta</small></div></div>
+      </article>
+      <article class="tarjeta vidrio rev" data-precio="135">
+        <div class="foto"><img src="img/foto_06_mesa_dorado.jpg" alt="Mesa con mantel blanco y camino dorado con sillas" loading="lazy"></div>
+        <div><h3>Paquete 8 personas</h3><div class="precio">$135<small>renta</small></div></div>
+      </article>
+      <article class="tarjeta vidrio rev" data-precio="155">
+        <div class="foto"><img src="img/foto_01_mesas_morado.jpg" alt="Mesas con mantel blanco y cubremantel morado" loading="lazy" style="object-position:40% 50%"></div>
+        <div><h3>Paquete 10 personas</h3><div class="precio">$155<small>renta</small></div></div>
+      </article>
+      <div class="dos">
+        <article class="tarjeta vidrio rev"><div class="foto"><img src="img/foto_04_mesas_alberca.jpg" alt="Mesas rectangulares blancas junto a una alberca" loading="lazy" style="object-position:40% 88%"></div>
+          <h3>Mesas rectangulares</h3><a class="cotiza wa-link" href="#" data-msg="Hola, quiero cotizar mesas rectangulares.">Cotiza por WhatsApp</a></article>
+        <article class="tarjeta vidrio rev" style="--i:1"><div class="foto"><img src="img/foto_07_mesa_infantil_roja.jpg" alt="Mesa infantil roja con sillas de colores" loading="lazy" style="object-position:40% 30%"></div>
+          <h3>Sillas y mesa infantil</h3><a class="cotiza wa-link" href="#" data-msg="Hola, quiero cotizar mobiliario infantil.">Cotiza por WhatsApp</a></article>
+        <article class="tarjeta vidrio rev"><div class="foto"><img src="img/foto_08_sillas_tiffany_flores.jpg" alt="Sillas Tiffany blancas con mesa redonda" loading="lazy" style="object-position:30% 40%"></div>
+          <h3>Sillas Tiffany blancas</h3><a class="cotiza wa-link" href="#" data-msg="Hola, quiero cotizar sillas Tiffany blancas.">Cotiza por WhatsApp</a></article>
+        <article class="tarjeta vidrio rev" style="--i:1"><div class="foto"><img src="img/foto_02_patio_ladrillo.jpg" alt="Patio con mesas y sillas listas para un evento" loading="lazy" style="object-position:30% 60%"></div>
+          <h3>Mobiliario para evento</h3><a class="cotiza wa-link" href="#" data-msg="Hola, quiero cotizar mobiliario para mi evento.">Cotiza por WhatsApp</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="beneficios">
+    <div class="cintillo vidrio rev">
+      <div class="pct">10<sup>%</sup></div>
+      <div><b>Pick up: 10 % de descuento</b><span>Pasas por tu mobiliario y ahorras.</span></div>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <div class="kicker rev">Galería</div>
+    <h2 class="rev">Así llegan a tu evento</h2>
+    <div class="galeria rev" id="carrusel">
+      <figure><img src="img/foto_01_mesas_morado.jpg" alt="Mesas con cubremantel morado en jardín" loading="lazy"></figure>
+      <figure><img src="img/foto_04_mesas_alberca.jpg" alt="Mesas y sillas junto a una alberca" loading="lazy" style="object-position:50% 80%"></figure>
+      <figure><img src="img/foto_03_mesas_azul_blanco.jpg" alt="Mesas con mantel blanco y cubremantel azul" loading="lazy"></figure>
+      <figure><img src="img/foto_02_patio_ladrillo.jpg" alt="Patio de ladrillo con mesas y sillas" loading="lazy" style="object-position:35% 50%"></figure>
+      <figure><img src="img/foto_05_patio_mesas_blancas.jpg" alt="Mesas blancas con sillas negras en patio" loading="lazy" style="object-position:50% 40%"></figure>
+      <figure><img src="img/foto_06_mesa_dorado.jpg" alt="Mesa con camino dorado" loading="lazy"></figure>
+    </div>
+    <div class="puntos" id="puntos" aria-hidden="true"></div>
+  </section>
+
+  <section id="resenas">
+    <div class="resena vidrio rev">
+      <div class="sillas" aria-hidden="true"><svg><use href="#silla"/></svg><svg><use href="#silla"/></svg><svg><use href="#silla"/></svg></div>
+      <b>Clientes que recomiendan a Sella</b>
+      <span>Búscanos en Google como Sella Eventos.</span>
+    </div>
+  </section>
+
+  <section class="cierre" id="cotiza">
+    <h2 class="rev">Tú pones <em>la fiesta.</em></h2>
+    <p class="rev">Nosotros, las sillas y las mesas.</p>
+    <a class="btn wa-link rev" id="cta" href="#" data-msg="Hola, quiero cotizar mobiliario para mi evento."><svg><use href="#wa"/></svg>Cotiza por WhatsApp · 449 509 3260</a>
+    <footer>Sella Eventos · Aguascalientes<br>Demo de cortesía de Elevate Negocios · pieza no oficial</footer>
+  </section>
+</div>
+
+<script>
+// Datos editables
+const NEGOCIO = { nombre: "Sella Eventos", whatsapp: "524495093260" };
+
+document.querySelectorAll(".wa-link").forEach(a => {
+  a.href = "https://wa.me/" + NEGOCIO.whatsapp + "?text=" + encodeURIComponent(a.dataset.msg || "Hola");
+  a.target = "_blank"; a.rel = "noopener";
+});
+
+// Aparición al hacer scroll
+const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add("vis"); io.unobserve(e.target); }
+}), { threshold: .15, rootMargin: "0px 0px -6% 0px" }) : null;
+document.querySelectorAll(".rev").forEach(el => io ? io.observe(el) : el.classList.add("vis"));
+
+// Puntos de la galería
+const car = document.getElementById("carrusel"), pts = document.getElementById("puntos");
+const figs = [...car.querySelectorAll("figure")];
+figs.forEach(() => pts.appendChild(document.createElement("i")));
+function marca() {
+  const c = car.scrollLeft + car.clientWidth / 2;
+  let best = 0, d = 1e9;
+  figs.forEach((f, i) => { const x = Math.abs(f.offsetLeft + f.offsetWidth / 2 - c); if (x < d) { d = x; best = i; } });
+  [...pts.children].forEach((p, i) => p.classList.toggle("on", i === best));
+}
+car.addEventListener("scroll", () => requestAnimationFrame(marca), { passive: true });
+marca();
+</script>
+</body>
+</html>
