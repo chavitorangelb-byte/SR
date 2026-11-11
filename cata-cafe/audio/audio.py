@@ -147,7 +147,7 @@ def sfx():
     # compás 4
     a(348, 'panel de grano', s_ting(1175), 0.2); a(356, 'scroll a grano', s_whoosh(0.8, 250, 1700), 0.24); a(360, 'tick de scroll', s_tick(2600), 0.2, 0.4)
     a(360, 'entra la bolsa', s_whoosh(0.5, 500, 1400), 0.2, -0.4); a(388, 'la bolsa asienta', s_thump(110), 0.3, -0.4)
-    a(384, 'el trazo rodea la bolsa', s_scribble(0.8), 0.13, -0.4); a(392, 'sale UNA PÁGINA', s_whoosh(0.3, 2500, 700), 0.12)
+    a(384, 'el trazo rodea la bolsa', s_scribble(0.8), 0.13, -0.4); a(346, 'sale UNA PÁGINA', s_whoosh(0.3, 2500, 700), 0.12)
     for i in range(5):
         a(432 + i * 2, f'rama {i + 1}', s_drop(), 0.09, 0.1); a(438 + i * 8, f'vasito {ROAST[i]}', s_pop(380 + i * 70), 0.22, 0.2)
         a(444 + i * 8, f'grano en vidrio {i + 1}', s_tick(3400 - i * 300), 0.16, 0.25)

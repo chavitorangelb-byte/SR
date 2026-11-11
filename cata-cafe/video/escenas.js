@@ -13,10 +13,10 @@ const LY = V ? {
   kt1: [1200, 150, 1390, 190], kt2: [1300, 110, 1480, 190], kt3: [1340, 110, 1520, 180],
   chipX: 540, chipW: 500, chipY: [420, 620], routeY: [880, 1020, 1160], nameY: 930, nameW: 860, endY: 930,
 } : {
-  cam: [[0, flat(540, 272, 0.78)], [236, flat(540, 272, 0.78)], [300, flat(540, 920, 1)], [356, flat(540, 920, 1)], [404, flat(540, 1320, 1)],
+  cam: [[0, flat(540, 262, 0.72)], [236, flat(540, 262, 0.72)], [300, flat(540, 920, 1)], [356, flat(540, 920, 1)], [404, flat(540, 1320, 1)],
     [476, flat(540, 1320, 1)], [520, flat(540, 1990, 1)], [598, flat(540, 1990, 1)], [650, flat(540, 2000, 1)], [660, flat(540, 2000, 1)],
     [720, iso(388, 70, 0.325)], [742, iso(388, 70, 0.325)], [772, iso(80, 100, 0.31)], [960, iso(76, 96, 0.313), (t) => t]],
-  kt1: [800, 120, 960, 160], kt2: [770, 90, 910, 150], kt3: [900, 76, 1020, 130],
+  kt1: [810, 120, 965, 160], kt2: [770, 90, 910, 150], kt3: [900, 76, 1020, 130],
   chipX: 440, chipW: 580, chipY: [110, 290], routeY: [540, 680, 820], nameY: 520, nameW: 860, endY: 520,
 };
 CAMKEYS = LY.cam;
@@ -203,8 +203,8 @@ function overlay(c, f, m) {
   // UNA PÁGINA
   if (f >= 296 && f < 420) {
     const [y1, s1, y2, s2] = LY.kt2;
-    ktLine(c, y1, s1, 392, f, () => gtext(c, 'UNA', 540, y1, `500 ${s1}px ${SG}`, 'rgba(251,243,213,0.8)', f, 299, { align: 'center', mode: 'drop', stagger: 1.6 }));
-    ktLine(c, y2, s2, 396, f, () => gtext(c, 'PÁGINA', 540, y2, `700 ${s2}px ${SG}`, COL.crema, f, 311, { align: 'center', stagger: 1.9 }));
+    ktLine(c, y1, s1, 346, f, () => gtext(c, 'UNA', 540, y1, `500 ${s1}px ${SG}`, 'rgba(251,243,213,0.8)', f, 299, { align: 'center', mode: 'drop', stagger: 1.6 }));
+    ktLine(c, y2, s2, 350, f, () => gtext(c, 'PÁGINA', 540, y2, `700 ${s2}px ${SG}`, COL.crema, f, 311, { align: 'center', stagger: 1.9 }));
   }
   // EN EL CELULAR → se va hacia el teléfono
   if (f >= 628 && f < 724) {
@@ -277,7 +277,7 @@ function subframe(f) {
   const showPage = f < 868;
   if (sq > 0) { const k = 1 - sq * 0.997, y0 = LY.nameY + 62; GP = [1, 0, 0, k, 0, y0 * (1 - k)]; }
   if (showPage) {
-    ['head', 'mA', 'mB', 'mC', 'roast'].forEach((id) => { const r = panelRect(id, f); if (r) shadow(B, m, r.x, r.y, r.w, r.h, r.r, id === 'head' ? seg(f, 20, 60) : 1); });
+    ['head', 'mA', 'mB', 'mC', 'roast'].forEach((id) => { const r = panelRect(id, f); if (r) shadow(B, m, r.x, r.y, r.w, r.h, r.r, clamp(r.w / PAN[id].w) * (id === 'head' ? seg(f, 20, 60) : 1)); });
     phoneBack(B, m, f, isoK);
     if (f > 672) { // pantalla: cristal oscuro que entra desde los bordes
       blurInto(cBb2, Bb2, cB, 34);
