@@ -39,14 +39,14 @@ window.MENU = {
     },
   ],
   hotdogs: [
-    { id: 'pointdog', nombre: 'Point Dog', precio: 49, desc: 'Pan brioche, salchicha jumbo de pavo, jitomate, cebolla asada y aderezo Mandala' },
+    { id: 'pointdog', ico: 'hotdog', nombre: 'Point Dog', precio: 49, desc: 'Pan brioche, salchicha jumbo de pavo, jitomate, cebolla asada y aderezo Mandala' },
   ],
   hotdogsNota: 'Ármalo a tu gusto con extras desde $15',
   entradas: [
-    { id: 'frenchies', nombre: 'Frenchies', precio: 79, desc: '400 gr de papas francesa con sal y paprika' },
-    { id: 'gajos', nombre: 'Gajos', precio: 79, desc: '400 gr de papas gajo con sal y paprika' },
-    { id: 'aros', nombre: 'Aros de cebolla', precio: 99, desc: '10 piezas con mermelada de tocino' },
-    { id: 'porkypapas', nombre: 'Porkypapas', precio: 135, desc: 'Papas, mix de queso fundido, salsa BBQ y tocino' },
+    { id: 'frenchies', ico: 'papas', nombre: 'Frenchies', precio: 79, desc: '400 gr de papas francesa con sal y paprika' },
+    { id: 'gajos', ico: 'papas', nombre: 'Gajos', precio: 79, desc: '400 gr de papas gajo con sal y paprika' },
+    { id: 'aros', ico: 'aros', nombre: 'Aros de cebolla', precio: 99, desc: '10 piezas con mermelada de tocino' },
+    { id: 'porkypapas', ico: 'papas', nombre: 'Porkypapas', precio: 135, desc: 'Papas, mix de queso fundido, salsa BBQ y tocino' },
   ],
   postres: [
     { id: 'nubes', nombre: 'Nubes asadas', precio: 79, desc: '10 bombones con una fogata personal para asarlos en la mesa' },

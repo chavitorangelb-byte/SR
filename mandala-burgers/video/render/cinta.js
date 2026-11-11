@@ -11,7 +11,7 @@ uniform vec2 uPts[40]; uniform float uCum[40]; uniform int uN; uniform float uLe
 uniform int uTA, uTB; uniform vec4 uA1, uA2, uB1, uB2;
 uniform float uM, uM2, uOW; uniform vec4 uFill;
 uniform vec4 uBl1[6]; uniform vec4 uBl2[6]; uniform int uBN;
-uniform vec3 uPal[6]; uniform float uPhase, uBands; uniform int uMode;
+uniform vec3 uPal[6]; uniform float uPhase, uBands; uniform int uMode; uniform vec4 uSolid; uniform float uVol;
 
 vec3 pal(float x){
   float i = floor(x); float f = fract(x);
@@ -66,10 +66,17 @@ void main(){
     float dS = uOW > 0. ? abs(dF) - uOW * .5 : dF;
     if (uMode == 2) { d = dS; col = cS; } else { d = mix(dP, dS, uM); col = mix(cP, cS, uM); }
   }
+  col = mix(col, uSolid.rgb, uSolid.a);
   float aa = .9 / uK;
   float al = 1. - smoothstep(-aa, aa, d);
   col *= 1. - .2 * smoothstep(-9., 0., d);          // borde un poco más oscuro: volumen de cinta impresa
   col += .1 * smoothstep(-5., -16., d);             // centro más claro
+  if (uVol > 0. && uTA == 4) {                      // aro con volumen: sección de toro iluminada (único aro 3D del video)
+    vec2 q = p - uA1.xy; float rr = length(q); float x = clamp((rr - uA1.z) / (uA1.w * .5), -1., 1.);
+    vec3 n = normalize(vec3(q / max(rr, 1e-3) * x, sqrt(max(0., 1. - x * x)))); vec3 Ld = normalize(vec3(-.5, -.7, .62));
+    float dif = max(dot(n, Ld), 0.); float sp = pow(max(reflect(-Ld, n).z, 0.), 26.);
+    col = mix(col, col * (.42 + .9 * dif) + sp * .65, uVol);
+  }
   o = vec4(col * al, al);
   if (uFill.a > 0. && uMode >= 2) { float fa = (1. - smoothstep(-aa, aa, dFill)) * uFill.a; o += vec4(uFill.rgb * fa, fa) * (1. - al); }
 }`;
@@ -117,6 +124,7 @@ export function crearCinta(W, H, K, paleta) {
     bl.slice(0, 6).forEach((b, i) => { B1.set([b.x, b.y, b.ang, b.hl], i * 4); B2.set([b.hw, ...b.col], i * 4); });
     gl.uniform4fv(U('uBl1'), B1); gl.uniform4fv(U('uBl2'), B2); gl.uniform1i(U('uBN'), Math.min(6, bl.length));
     gl.uniform1f(U('uPhase'), c.fase || 0); gl.uniform1f(U('uBands'), c.bandas ?? 5);
+    gl.uniform4fv(U('uSolid'), c.solido || [0, 0, 0, 0]); gl.uniform1f(U('uVol'), c.vol || 0);
     gl.uniform1i(U('uMode'), c.modo);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
     return cv;

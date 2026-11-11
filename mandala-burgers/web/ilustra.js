@@ -51,6 +51,62 @@ ${semillas}
 </svg>`;
   };
 
+  // Iconos de la lista: hotdog, papas y aros de cebolla.
+  window.iconoSVG = function (tipo) {
+    const cab = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" class="icono" aria-hidden="true">';
+    if (tipo === 'hotdog') return cab + `<ellipse cx="60" cy="90" rx="50" ry="6" fill="#000" opacity=".16"/>
+<path d="M12 56a14 14 0 0 1 14-14h68a14 14 0 0 1 14 14v6a22 22 0 0 1-22 22H34a22 22 0 0 1-22-22z" fill="#E9A54A"/>
+<rect x="4" y="34" width="112" height="26" rx="13" fill="#C4472E"/><path d="M14 42h74" stroke="#E97C5E" stroke-width="4" stroke-linecap="round"/>
+<path d="M16 47q9-12 18 0t18 0t18 0t18 0t16 0" fill="none" stroke="#F5C455" stroke-width="5" stroke-linecap="round"/>
+<path d="M12 60h96v2a22 22 0 0 1-22 22H34a22 22 0 0 1-22-22z" fill="#F2BC66"/><circle cx="36" cy="72" r="2" fill="#FFF4DA"/><circle cx="62" cy="76" r="2" fill="#FFF4DA"/><circle cx="86" cy="70" r="2" fill="#FFF4DA"/></svg>`;
+    if (tipo === 'aros') return cab + `<ellipse cx="60" cy="90" rx="46" ry="6" fill="#000" opacity=".16"/>` +
+      [[42, 60, 26], [78, 58, 24], [60, 38, 22]].map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="none" stroke="#D9952F" stroke-width="12"/><circle cx="${x}" cy="${y - 2}" r="${r}" fill="none" stroke="#F3C877" stroke-width="4"/>`).join('') + '</svg>';
+    return cab + `<ellipse cx="60" cy="92" rx="40" ry="6" fill="#000" opacity=".16"/>` +
+      [[34, 8, -14], [46, 2, -6], [58, 6, 2], [70, 0, 8], [82, 8, 16], [52, 14, -2], [66, 12, 6]].map(([x, y, r]) => `<rect x="${x}" y="${y}" width="10" height="58" rx="3" transform="rotate(${r} ${x + 5} 60)" fill="#F5C455"/><rect x="${x}" y="${y}" width="4" height="58" rx="2" transform="rotate(${r} ${x + 5} 60)" fill="#FBE08E"/>`).join('') +
+      `<path d="M26 44h68l-8 44a6 6 0 0 1-6 5H40a6 6 0 0 1-6-5z" fill="#D6232A"/><path d="M26 44h68l-2 10H28z" fill="#F0554F"/><circle cx="60" cy="70" r="9" fill="#F5F2EE"/></svg>`;
+  };
+
+  // Fogata personal con bombones (canvas). t en segundos; tueste 0..1 dora los bombones.
+  window.dibujarFogata = function (c, w, h, t, tueste) {
+    const cx = w / 2, base = h * 0.66, u = Math.min(w / 360, h / 262);
+    c.save();
+    const g = c.createRadialGradient(cx, base - 50 * u, 0, cx, base - 50 * u, 190 * u);
+    g.addColorStop(0, 'rgba(240,120,76,.55)'); g.addColorStop(0.5, 'rgba(240,120,76,.14)'); g.addColorStop(1, 'rgba(240,120,76,0)');
+    c.fillStyle = g; c.fillRect(0, 0, w, h);
+    const llama = (ancho, alto, col, fase, dx) => {
+      const k = Math.sin(t * 5.2 + fase), k2 = Math.sin(t * 8.1 + fase * 2.3);
+      const a = ancho * u, al = alto * u * (1 + 0.1 * k2), x = cx + dx * u, px = x + k * 9 * u;
+      c.beginPath(); c.moveTo(x - a, base - 8 * u);
+      c.bezierCurveTo(x - a * 1.25, base - al * 0.5, x - a * 0.3 + k * 5 * u, base - al * 0.72, px, base - al);
+      c.bezierCurveTo(x + a * 0.5 + k * 5 * u, base - al * 0.7, x + a * 1.25, base - al * 0.45, x + a, base - 8 * u);
+      c.closePath(); c.fillStyle = col; c.fill();
+    };
+    llama(44, 120, '#F0784C', 0, -8); llama(34, 96, '#F0784C', 2.1, 22); llama(30, 92, '#F5A04C', 4.0, -26);
+    llama(26, 78, '#F5C455', 1.2, 4); llama(15, 48, '#FFF1C9', 3.3, 2);
+    // brasero
+    c.fillStyle = '#2B2B31'; c.beginPath(); c.moveTo(cx - 74 * u, base - 14 * u); c.lineTo(cx + 74 * u, base - 14 * u); c.lineTo(cx + 54 * u, base + 26 * u); c.lineTo(cx - 54 * u, base + 26 * u); c.closePath(); c.fill();
+    c.fillStyle = '#44444C'; c.beginPath(); c.roundRect(cx - 82 * u, base - 22 * u, 164 * u, 14 * u, 7 * u); c.fill();
+    c.fillStyle = 'rgba(245,196,85,.9)'; c.beginPath(); c.roundRect(cx - 60 * u, base - 19 * u, 60 * u, 3 * u, 2 * u); c.fill();
+    // bombones en su palito
+    const tu = Math.max(0, Math.min(1, tueste));
+    const mez = (a, b, k) => 'rgb(' + a.map((v, i) => Math.round(v + (b[i] - v) * k)).join(',') + ')';
+    [[-1, 0], [1, 0.6]].forEach(([lado, fase]) => {
+      const bx = cx + lado * (58 + Math.sin(t * 1.3 + fase) * 4) * u, by = base - (118 + Math.sin(t * 1.7 + fase) * 5) * u;
+      c.strokeStyle = '#C9A26A'; c.lineWidth = 5 * u; c.lineCap = 'round'; c.beginPath(); c.moveTo(cx + lado * 170 * u, base - 30 * u); c.lineTo(bx, by); c.stroke();
+      c.save(); c.translate(bx, by); c.rotate(lado * -0.5);
+      c.fillStyle = mez([255, 250, 240], [226, 160, 84], tu); c.beginPath(); c.roundRect(-24 * u, -20 * u, 48 * u, 40 * u, 13 * u); c.fill();
+      c.fillStyle = mez([255, 255, 255], [246, 205, 140], tu); c.beginPath(); c.roundRect(-18 * u, -15 * u, 22 * u, 9 * u, 5 * u); c.fill();
+      c.globalAlpha = tu; c.fillStyle = '#8A4A1E'; c.beginPath(); c.roundRect(-24 * u, 6 * u, 48 * u, 14 * u, [0, 0, 13 * u, 13 * u]); c.fill(); c.globalAlpha = 1;
+      c.restore();
+    });
+    // chispas lentas
+    for (let i = 0; i < 9; i++) {
+      const v = ((t * (0.16 + (i % 4) * 0.035) + i * 0.137) % 1), x = cx + Math.sin(i * 2.4 + v * 5) * (30 + i * 7) * u, y = base - 40 * u - v * 150 * u;
+      c.globalAlpha = (1 - v) * 0.9; c.fillStyle = i % 2 ? '#F5C455' : '#FFD9A0'; c.beginPath(); c.arc(x, y, (2.6 - v * 1.4) * u, 0, 7); c.fill();
+    }
+    c.restore();
+  };
+
   // Mandala genérico: anillos de pétalos alargados y un anillo de puntos. Colores de la paleta, sin azul ni turquesa.
   window.mandalaSVG = function (opts) {
     const o = Object.assign({ fondo: 'none' }, opts || {});

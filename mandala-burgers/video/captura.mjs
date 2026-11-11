@@ -50,6 +50,11 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     await page.screenshot({ path: path.join(OUT, id + '.png'), clip, omitBackground: true });
     sprites[id] = { dx: clip.x - r.x, dy: clip.y - r.y, w: clip.width, h: clip.height };
   }
+  // versión de computadora: la misma página a 1280 px, menú a tres columnas
+  const pd = await browser.newPage({ viewport: { width: 1280, height: 800 }, deviceScaleFactor: 1.5 });
+  await pd.goto(`${base}/web/index.html?fijo=1`); await pd.waitForFunction(() => window.lista);
+  await pd.addStyleTag({ content: '.fab{display:none}.enc{position:relative}' });
+  await pd.screenshot({ path: path.join(OUT, '_escritorio.png'), clip: { x: 0, y: 0, width: 1280, height: 2300 }, fullPage: true });
   fs.writeFileSync(path.join(OUT, 'layout.json'), JSON.stringify({ dsf: DSF, ancho: 390, estados, sprites }, null, 1));
   console.log(Object.keys(sprites).length, 'sprites · alto de página', alto);
   await browser.close(); server.close();

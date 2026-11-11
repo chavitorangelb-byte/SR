@@ -66,7 +66,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;paddin
 .tarjetas{display:grid;gap:12px;margin-top:12px}
 .tarjeta{position:relative;display:grid;grid-template-columns:128px 1fr;align-items:center;gap:6px;min-height:138px;padding:8px 14px 8px 8px;border-radius:26px;background:linear-gradient(160deg,#1e1e22,#131316);color:var(--crema);box-shadow:0 16px 26px -18px rgba(14,14,16,.8);overflow:hidden}
 .tarjeta .foto{position:relative;height:122px;border-radius:20px;background:radial-gradient(90% 90% at 50% 30%,color-mix(in srgb,var(--c) 46%,#1a1a1e),#141417 100%)}
-.tarjeta .burger{position:absolute;width:118px;left:5px;top:6px}
+.tarjeta .burger{position:absolute;width:134px;left:-3px;top:1px}
 .tarjeta .cristal{right:-4px;bottom:4px;padding:5px 10px;border-radius:13px}
 .tarjeta h4{font-family:Fredoka,sans-serif;font-weight:600;font-size:28px;line-height:1;margin:0;color:var(--t)}
 .tarjeta p{margin:6px 0 0;font-size:15px;line-height:1.25;color:rgba(245,242,238,.84);font-weight:600}
@@ -78,7 +78,12 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;paddin
 .fila{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:14px 16px;border-radius:20px;background:#fff;box-shadow:0 10px 20px -16px rgba(14,14,16,.5)}
 .fila b{font-family:Fredoka,sans-serif;font-weight:600;font-size:20px}
 .fila .precio{font-family:Fredoka,sans-serif;font-weight:600;font-size:20px;color:var(--naranja)}
+.fila.con{grid-template-columns:76px 1fr auto;align-items:center}.fila.con .icono{grid-row:1/3;width:72px}.fila.con p{grid-column:2/-1}
 .fila p{grid-column:1/-1;margin:0;font-size:15px;color:var(--gris);font-weight:600}
+.nubes{position:relative;height:236px;border-radius:26px;margin-top:12px;overflow:hidden;background:radial-gradient(120% 100% at 50% 100%,#3a1d14 0%,var(--tinta) 60%,#0b0b0d 100%);box-shadow:0 22px 40px -22px rgba(14,14,16,.7)}
+.nubes canvas{position:absolute;inset:0;width:100%;height:100%}
+.nubes .cristal{left:14px;top:14px}
+.nubes .desc{position:absolute;left:16px;right:16px;bottom:12px;margin:0;color:rgba(245,242,238,.86);font-size:15px;font-weight:700;text-align:center}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .chip{padding:9px 14px;border-radius:999px;background:var(--carbon);color:var(--crema);font-weight:800;font-size:13px}
 .chip:nth-child(2){background:var(--morado)}.chip:nth-child(3){background:var(--naranja);color:var(--carbon)}
@@ -110,6 +115,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;paddin
   .panes{justify-content:flex-start;gap:22px}
   .tarjetas{grid-template-columns:repeat(3,1fr);gap:16px}
   .lista{grid-template-columns:repeat(3,1fr)}
+  .dos .lista{grid-template-columns:1fr 1fr}.dos #hotdogs{grid-template-columns:1fr}.dos{grid-template-columns:1fr 2fr!important}
   .resenas{grid-template-columns:repeat(3,1fr)}
   .dos{display:grid;grid-template-columns:1fr 1fr;gap:40px}
   .fab{right:32px;bottom:28px}
@@ -118,6 +124,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;paddin
 .captura .enc{position:relative;backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--crema)}
 .captura .fab{position:absolute;bottom:auto;top:700px}
 .captura *{transition:none!important}
+.captura .ruta,.captura .nubes canvas{visibility:hidden}
 </style>
 </head>
 <body>
@@ -153,6 +160,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;paddin
 
   <section class="sec px" id="postres">
     <h2 data-s="po-h2">Postres</h2>
+    <div class="nubes" data-s="nubes"><canvas id="fogata" width="716" height="472"></canvas><span class="cristal"><b>Nubes asadas</b> $79</span><p class="desc">10 bombones con una fogata personal para asarlos en la mesa</p></div>
     <div class="lista" id="lpostres"></div>
     <div class="chips" data-s="chips"><span class="chip">Cerveza artesanal</span><span class="chip">Menú Kids</span><span class="chip">Pet friendly</span></div>
   </section>
@@ -176,8 +184,8 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;paddin
       <svg class="mapa" viewBox="0 0 358 230" preserveAspectRatio="xMidYMid slice" aria-label="Mapa ilustrado">
         <rect width="358" height="230" fill="#1d1d21"/>
         <g stroke="#2c2c32" stroke-width="10" stroke-linecap="round" fill="none"><path d="M-10 60L140 40L380 76"/><path d="M60 -10L92 250"/><path d="M250 -10L226 250"/><path d="M-10 190L380 160"/></g>
-        <path d="M-10 128C80 96 160 150 250 118S340 96 380 104" stroke="#F5C455" stroke-width="12" stroke-linecap="round" fill="none"/>
-        <g transform="translate(206 126)"><path d="M0 0C-22 -26 -20 -52 0 -52S22 -26 0 0z" fill="#D6232A"/><circle cy="-34" r="8" fill="#F5F2EE"/></g>
+        <path class="ruta" d="M-10 128C80 96 160 150 250 118S340 96 380 104" stroke="#F5C455" stroke-width="12" stroke-linecap="round" fill="none"/>
+        <g class="ruta" transform="translate(206 126)"><path d="M0 0C-22 -26 -20 -52 0 -52S22 -26 0 0z" fill="#D6232A"/><circle cy="-34" r="8" fill="#F5F2EE"/></g>
       </svg>
       <div class="datos"><b id="horario"></b><span id="dir1"></span><span id="dir2" style="font-weight:600;opacity:.75;font-size:14px"></span></div>
     </div>
@@ -241,13 +249,16 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;paddin
   };
   panes.addEventListener('click', (e) => { const b = e.target.closest('.pan'); if (b) filtrar(b.dataset.pan); });
 
-  const fila = (pre) => (it) => `<div class="fila" data-s="${pre}-${it.id}"><b>${it.nombre}</b><span class="precio">$${it.precio}</span><p>${it.desc}</p></div>`;
+  const fila = (pre) => (it) => `<div class="fila ${it.ico ? 'con' : ''}" data-s="${pre}-${it.id}">${it.ico ? iconoSVG(it.ico) : ''}<b>${it.nombre}</b><span class="precio">$${it.precio}</span><p>${it.desc}</p></div>`;
   document.getElementById('hotdogs').innerHTML = MENU.hotdogs.map(fila('f')).join('');
   document.getElementById('hd-nota').textContent = MENU.hotdogsNota;
   document.getElementById('entradas').innerHTML = MENU.entradas.map(fila('f')).join('');
-  document.getElementById('lpostres').innerHTML = MENU.postres.map(fila('f')).join('');
+  document.getElementById('lpostres').innerHTML = MENU.postres.filter((p) => p.id !== 'nubes').map(fila('f')).join('');
   const cs = ['var(--mostaza)', 'var(--rosa)', 'var(--morado)'];
   document.getElementById('lresenas').innerHTML = MENU.resenas.map((r, i) => `<blockquote class="resena" data-s="r-${i}" style="--c:${cs[i]}">“${r}”<small>Reseña en Google</small></blockquote>`).join('');
+  const fg = document.getElementById('fogata');
+  if (q.has('fijo')) dibujarFogata(fg.getContext('2d'), 716, 472, 1.2, 0.6);
+  else if (!q.has('captura')) (function anima(ms) { const c = fg.getContext('2d'); c.clearRect(0, 0, 716, 472); dibujarFogata(c, 716, 472, ms / 1000, (Math.sin(ms / 2600) + 1) / 2); requestAnimationFrame(anima); })(0);
   await document.fonts.ready;
   window.lista = true;
 })();

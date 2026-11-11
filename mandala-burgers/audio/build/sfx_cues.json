@@ -1,0 +1,1101 @@
+[
+ {
+  "f": 0,
+  "name": "swipe",
+  "d": 0,
+  "nota": "la cinta cruza",
+  "idx": 0
+ },
+ {
+  "f": 6,
+  "name": "cristal_aparece",
+  "d": 0,
+  "nota": "barra de cristal",
+  "idx": 0
+ },
+ {
+  "f": 8,
+  "name": "texto_aparece",
+  "d": 0,
+  "nota": "destello inicial",
+  "idx": 0
+ },
+ {
+  "f": 8,
+  "name": "whoosh_corto",
+  "d": 0,
+  "nota": "retorno de carro",
+  "idx": 0
+ },
+ {
+  "f": 12,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 0
+ },
+ {
+  "f": 14,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 1
+ },
+ {
+  "f": 16,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 2
+ },
+ {
+  "f": 19,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 3
+ },
+ {
+  "f": 21,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 4
+ },
+ {
+  "f": 23,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 5
+ },
+ {
+  "f": 25,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra HAMBURGUESAS",
+  "idx": 0
+ },
+ {
+  "f": 25,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 6
+ },
+ {
+  "f": 27,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 7
+ },
+ {
+  "f": 30,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 8
+ },
+ {
+  "f": 32,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 9
+ },
+ {
+  "f": 34,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 10
+ },
+ {
+  "f": 36,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 11
+ },
+ {
+  "f": 39,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 12
+ },
+ {
+  "f": 41,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 13
+ },
+ {
+  "f": 43,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 14
+ },
+ {
+  "f": 45,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 15
+ },
+ {
+  "f": 47,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 16
+ },
+ {
+  "f": 50,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 17
+ },
+ {
+  "f": 52,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 18
+ },
+ {
+  "f": 54,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 19
+ },
+ {
+  "f": 56,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 20
+ },
+ {
+  "f": 58,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 21
+ },
+ {
+  "f": 61,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 22
+ },
+ {
+  "f": 63,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 23
+ },
+ {
+  "f": 65,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 24
+ },
+ {
+  "f": 67,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 25
+ },
+ {
+  "f": 69,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 26
+ },
+ {
+  "f": 72,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra DE COLORES",
+  "idx": 1
+ },
+ {
+  "f": 72,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 27
+ },
+ {
+  "f": 74,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 28
+ },
+ {
+  "f": 76,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 29
+ },
+ {
+  "f": 78,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 30
+ },
+ {
+  "f": 81,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 31
+ },
+ {
+  "f": 83,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 32
+ },
+ {
+  "f": 85,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 33
+ },
+ {
+  "f": 87,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 34
+ },
+ {
+  "f": 89,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 35
+ },
+ {
+  "f": 92,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 36
+ },
+ {
+  "f": 94,
+  "name": "tecla",
+  "d": 0,
+  "nota": "tecla de la búsqueda",
+  "idx": 37
+ },
+ {
+  "f": 102,
+  "name": "enter",
+  "d": 0,
+  "nota": "Enter",
+  "idx": 0
+ },
+ {
+  "f": 106,
+  "name": "swipe",
+  "d": 0,
+  "nota": "salta al celular",
+  "idx": 1
+ },
+ {
+  "f": 116,
+  "name": "trazo_contorno",
+  "d": 0.4,
+  "nota": "dibuja el marco",
+  "idx": 0
+ },
+ {
+  "f": 140,
+  "name": "whoosh_corto",
+  "d": 0,
+  "nota": "marco a trazo",
+  "idx": 1
+ },
+ {
+  "f": 144,
+  "name": "aire_push",
+  "d": 0,
+  "nota": "el celular gira",
+  "idx": 0
+ },
+ {
+  "f": 150,
+  "name": "pantalla_enciende",
+  "d": 0,
+  "nota": "",
+  "idx": 0
+ },
+ {
+  "f": 172,
+  "name": "tarjeta_regresa",
+  "d": 0,
+  "nota": "encabezado",
+  "idx": 0
+ },
+ {
+  "f": 194,
+  "name": "subraya",
+  "d": 0,
+  "nota": "subraya TU PÁGINA",
+  "idx": 0
+ },
+ {
+  "f": 196,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra TU PÁGINA",
+  "idx": 2
+ },
+ {
+  "f": 198,
+  "name": "tarjeta_regresa",
+  "d": 0,
+  "nota": "ilustración",
+  "idx": 1
+ },
+ {
+  "f": 212,
+  "name": "boton_pop",
+  "d": 0,
+  "nota": "botón de WhatsApp",
+  "idx": 0
+ },
+ {
+  "f": 224,
+  "name": "texto_aparece",
+  "d": 0,
+  "nota": "destello del botón",
+  "idx": 1
+ },
+ {
+  "f": 250,
+  "name": "logo_pop",
+  "d": 0,
+  "nota": "botón flotante",
+  "idx": 0
+ },
+ {
+  "f": 256,
+  "name": "scroll_friccion",
+  "d": 0.6,
+  "nota": "scroll",
+  "idx": 0
+ },
+ {
+  "f": 284,
+  "name": "rodea",
+  "d": 0,
+  "nota": "trazo a aro",
+  "idx": 0
+ },
+ {
+  "f": 288,
+  "name": "lift",
+  "d": 0,
+  "nota": "riser a los pétalos",
+  "idx": 0
+ },
+ {
+  "f": 298,
+  "name": "resorte",
+  "d": 0,
+  "nota": "se abre en pétalos",
+  "idx": 0
+ },
+ {
+  "f": 300,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra ELIGE",
+  "idx": 3
+ },
+ {
+  "f": 316,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra TU COLOR",
+  "idx": 4
+ },
+ {
+  "f": 340,
+  "name": "petalo",
+  "d": 0,
+  "nota": "pétalo a punto de color",
+  "idx": 0
+ },
+ {
+  "f": 344,
+  "name": "petalo",
+  "d": 0,
+  "nota": "pétalo a punto de color",
+  "idx": 1
+ },
+ {
+  "f": 348,
+  "name": "petalo",
+  "d": 0,
+  "nota": "pétalo a punto de color",
+  "idx": 2
+ },
+ {
+  "f": 352,
+  "name": "petalo",
+  "d": 0,
+  "nota": "pétalo a punto de color",
+  "idx": 3
+ },
+ {
+  "f": 356,
+  "name": "petalo",
+  "d": 0,
+  "nota": "pétalo a punto de color",
+  "idx": 4
+ },
+ {
+  "f": 358,
+  "name": "scroll_friccion",
+  "d": 0.3,
+  "nota": "scroll",
+  "idx": 1
+ },
+ {
+  "f": 360,
+  "name": "tap",
+  "d": 0,
+  "nota": "toque en un color",
+  "idx": 0
+ },
+ {
+  "f": 361,
+  "name": "tarjeta_regresa",
+  "d": 0,
+  "nota": "tarjeta de burger",
+  "idx": 2
+ },
+ {
+  "f": 362,
+  "name": "filtro",
+  "d": 0,
+  "nota": "filtra el menú",
+  "idx": 0
+ },
+ {
+  "f": 378,
+  "name": "tap",
+  "d": 0,
+  "nota": "toque en un color",
+  "idx": 1
+ },
+ {
+  "f": 379,
+  "name": "tarjeta_regresa",
+  "d": 0,
+  "nota": "tarjeta de burger",
+  "idx": 3
+ },
+ {
+  "f": 380,
+  "name": "filtro",
+  "d": 0,
+  "nota": "filtra el menú",
+  "idx": 1
+ },
+ {
+  "f": 382,
+  "name": "tarjeta_regresa",
+  "d": 0,
+  "nota": "tarjeta de burger",
+  "idx": 4
+ },
+ {
+  "f": 384,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra PA' EL",
+  "idx": 5
+ },
+ {
+  "f": 395,
+  "name": "asienta",
+  "d": 0,
+  "nota": "palabra CLÁSICO",
+  "idx": 0
+ },
+ {
+  "f": 432,
+  "name": "tap",
+  "d": 0,
+  "nota": "toque en un color",
+  "idx": 2
+ },
+ {
+  "f": 433,
+  "name": "tarjeta_regresa",
+  "d": 0,
+  "nota": "tarjeta de burger",
+  "idx": 5
+ },
+ {
+  "f": 434,
+  "name": "filtro",
+  "d": 0,
+  "nota": "filtra el menú",
+  "idx": 2
+ },
+ {
+  "f": 436,
+  "name": "tarjeta_regresa",
+  "d": 0,
+  "nota": "tarjeta de burger",
+  "idx": 6
+ },
+ {
+  "f": 448,
+  "name": "tap",
+  "d": 0,
+  "nota": "toque en un color",
+  "idx": 3
+ },
+ {
+  "f": 449,
+  "name": "tarjeta_regresa",
+  "d": 0,
+  "nota": "tarjeta de burger",
+  "idx": 7
+ },
+ {
+  "f": 450,
+  "name": "filtro",
+  "d": 0,
+  "nota": "filtra el menú",
+  "idx": 3
+ },
+ {
+  "f": 452,
+  "name": "tarjeta_regresa",
+  "d": 0,
+  "nota": "tarjeta de burger",
+  "idx": 8
+ },
+ {
+  "f": 455,
+  "name": "tarjeta_regresa",
+  "d": 0,
+  "nota": "tarjeta de burger",
+  "idx": 9
+ },
+ {
+  "f": 456,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra PA' EL",
+  "idx": 6
+ },
+ {
+  "f": 475,
+  "name": "asienta",
+  "d": 0,
+  "nota": "palabra ATREVIDO",
+  "idx": 1
+ },
+ {
+  "f": 504,
+  "name": "scroll_friccion",
+  "d": 0.45,
+  "nota": "scroll",
+  "idx": 2
+ },
+ {
+  "f": 516,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra HOTDOGS",
+  "idx": 7
+ },
+ {
+  "f": 518,
+  "name": "filtro",
+  "d": 0,
+  "nota": "Point Dog",
+  "idx": 4
+ },
+ {
+  "f": 574,
+  "name": "filtro",
+  "d": 0,
+  "nota": "Frenchies",
+  "idx": 5
+ },
+ {
+  "f": 578,
+  "name": "scroll_friccion",
+  "d": 0.5,
+  "nota": "scroll",
+  "idx": 3
+ },
+ {
+  "f": 606,
+  "name": "fogata",
+  "d": 0,
+  "nota": "fogata",
+  "idx": 0
+ },
+ {
+  "f": 612,
+  "name": "chispa",
+  "d": 0,
+  "nota": "",
+  "idx": 0
+ },
+ {
+  "f": 624,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra NUBES",
+  "idx": 8
+ },
+ {
+  "f": 640,
+  "name": "chispa",
+  "d": 0,
+  "nota": "",
+  "idx": 1
+ },
+ {
+  "f": 646,
+  "name": "asienta",
+  "d": 0,
+  "nota": "palabra ASADAS",
+  "idx": 2
+ },
+ {
+  "f": 668,
+  "name": "chispa",
+  "d": 0,
+  "nota": "",
+  "idx": 2
+ },
+ {
+  "f": 689,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra EN TU MESA",
+  "idx": 9
+ },
+ {
+  "f": 690,
+  "name": "resorte",
+  "d": 0,
+  "nota": "bombón dorado",
+  "idx": 1
+ },
+ {
+  "f": 700,
+  "name": "swipe",
+  "d": 0,
+  "nota": "sale de la fogata",
+  "idx": 2
+ },
+ {
+  "f": 705,
+  "name": "chispa",
+  "d": 0,
+  "nota": "",
+  "idx": 3
+ },
+ {
+  "f": 738,
+  "name": "logo_pop",
+  "d": 0,
+  "nota": "se vuelve el botón",
+  "idx": 1
+ },
+ {
+  "f": 756,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra PIDE",
+  "idx": 10
+ },
+ {
+  "f": 768,
+  "name": "tap",
+  "d": 0,
+  "nota": "toque en WhatsApp",
+  "idx": 4
+ },
+ {
+  "f": 771,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra POR",
+  "idx": 11
+ },
+ {
+  "f": 774,
+  "name": "hoja_abre",
+  "d": 0,
+  "nota": "hoja de chat",
+  "idx": 0
+ },
+ {
+  "f": 777,
+  "name": "asienta",
+  "d": 0,
+  "nota": "palabra WHATSAPP",
+  "idx": 3
+ },
+ {
+  "f": 790,
+  "name": "burbuja",
+  "d": 0,
+  "nota": "burbuja",
+  "idx": 0
+ },
+ {
+  "f": 796,
+  "name": "tecla_tactil",
+  "d": 0,
+  "nota": "tecla del mensaje",
+  "idx": 0
+ },
+ {
+  "f": 799,
+  "name": "tecla_tactil",
+  "d": 0,
+  "nota": "tecla del mensaje",
+  "idx": 1
+ },
+ {
+  "f": 803,
+  "name": "tecla_tactil",
+  "d": 0,
+  "nota": "tecla del mensaje",
+  "idx": 2
+ },
+ {
+  "f": 806,
+  "name": "tecla_tactil",
+  "d": 0,
+  "nota": "tecla del mensaje",
+  "idx": 3
+ },
+ {
+  "f": 809,
+  "name": "tecla_tactil",
+  "d": 0,
+  "nota": "tecla del mensaje",
+  "idx": 4
+ },
+ {
+  "f": 812,
+  "name": "tecla_tactil",
+  "d": 0,
+  "nota": "tecla del mensaje",
+  "idx": 5
+ },
+ {
+  "f": 816,
+  "name": "tecla_tactil",
+  "d": 0,
+  "nota": "tecla del mensaje",
+  "idx": 6
+ },
+ {
+  "f": 819,
+  "name": "tecla_tactil",
+  "d": 0,
+  "nota": "tecla del mensaje",
+  "idx": 7
+ },
+ {
+  "f": 822,
+  "name": "tecla_tactil",
+  "d": 0,
+  "nota": "tecla del mensaje",
+  "idx": 8
+ },
+ {
+  "f": 826,
+  "name": "tecla_tactil",
+  "d": 0,
+  "nota": "tecla del mensaje",
+  "idx": 9
+ },
+ {
+  "f": 834,
+  "name": "tap",
+  "d": 0,
+  "nota": "enviar",
+  "idx": 5
+ },
+ {
+  "f": 850,
+  "name": "hoja_cierra",
+  "d": 0,
+  "nota": "",
+  "idx": 0
+ },
+ {
+  "f": 858,
+  "name": "scroll_friccion",
+  "d": 0.45,
+  "nota": "scroll",
+  "idx": 4
+ },
+ {
+  "f": 870,
+  "name": "cristal_aparece",
+  "d": 0,
+  "nota": "reseña",
+  "idx": 1
+ },
+ {
+  "f": 906,
+  "name": "cristal_aparece",
+  "d": 0,
+  "nota": "reseña",
+  "idx": 2
+ },
+ {
+  "f": 930,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra MANDALOVERS",
+  "idx": 12
+ },
+ {
+  "f": 942,
+  "name": "cristal_aparece",
+  "d": 0,
+  "nota": "reseña",
+  "idx": 3
+ },
+ {
+  "f": 990,
+  "name": "scroll_friccion",
+  "d": 0.4,
+  "nota": "scroll",
+  "idx": 5
+ },
+ {
+  "f": 998,
+  "name": "swipe",
+  "d": 0,
+  "nota": "sale del botón",
+  "idx": 3
+ },
+ {
+  "f": 1008,
+  "name": "trazo_contorno",
+  "d": 1.0,
+  "nota": "traza el mapa",
+  "idx": 1
+ },
+ {
+  "f": 1020,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra JUEVES",
+  "idx": 13
+ },
+ {
+  "f": 1050,
+  "name": "asienta",
+  "d": 0,
+  "nota": "palabra A DOMINGO",
+  "idx": 4
+ },
+ {
+  "f": 1074,
+  "name": "detente",
+  "d": 0,
+  "nota": "cae el pin",
+  "idx": 0
+ },
+ {
+  "f": 1080,
+  "name": "cristal_cuerpo",
+  "d": 0,
+  "nota": "tarjeta de horario",
+  "idx": 0
+ },
+ {
+  "f": 1104,
+  "name": "logo_pop",
+  "d": 0,
+  "nota": "chip",
+  "idx": 2
+ },
+ {
+  "f": 1116,
+  "name": "logo_pop",
+  "d": 0,
+  "nota": "chip",
+  "idx": 3
+ },
+ {
+  "f": 1150,
+  "name": "scroll_friccion",
+  "d": 0.8,
+  "nota": "scroll",
+  "idx": 6
+ },
+ {
+  "f": 1150,
+  "name": "whoosh_corto",
+  "d": 0,
+  "nota": "deja el mapa",
+  "idx": 2
+ },
+ {
+  "f": 1152,
+  "name": "celular_se_aleja",
+  "d": 0,
+  "nota": "el celular se desliza",
+  "idx": 0
+ },
+ {
+  "f": 1152,
+  "name": "lift",
+  "d": 0,
+  "nota": "riser del lift",
+  "idx": 1
+ },
+ {
+  "f": 1166,
+  "name": "swipe",
+  "d": 0,
+  "nota": "entra el navegador",
+  "idx": 4
+ },
+ {
+  "f": 1176,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra EN CELULAR",
+  "idx": 14
+ },
+ {
+  "f": 1176,
+  "name": "subraya",
+  "d": 0,
+  "nota": "subraya EN CELULAR",
+  "idx": 1
+ },
+ {
+  "f": 1224,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra EN COMPU",
+  "idx": 15
+ },
+ {
+  "f": 1236,
+  "name": "asienta",
+  "d": 0,
+  "nota": "navegador en su sitio",
+  "idx": 5
+ },
+ {
+  "f": 1296,
+  "name": "rodea",
+  "d": 0,
+  "nota": "se enrosca en aro",
+  "idx": 1
+ },
+ {
+  "f": 1312,
+  "name": "logo_aparece",
+  "d": 0,
+  "nota": "logo por máscara",
+  "idx": 0
+ },
+ {
+  "f": 1320,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra COLOR",
+  "idx": 16
+ },
+ {
+  "f": 1326,
+  "name": "logo_aparece",
+  "d": 0,
+  "nota": "aro con volumen",
+  "idx": 1
+ },
+ {
+  "f": 1351,
+  "name": "golpe_suave",
+  "d": 0,
+  "nota": "palabra EN CADA",
+  "idx": 17
+ },
+ {
+  "f": 1387,
+  "name": "asienta",
+  "d": 0,
+  "nota": "palabra BURGER",
+  "idx": 6
+ },
+ {
+  "f": 1440,
+  "name": "cristal_cuerpo",
+  "d": 0,
+  "nota": "panel final",
+  "idx": 1
+ },
+ {
+  "f": 1460,
+  "name": "texto_aparece",
+  "d": 0,
+  "nota": "",
+  "idx": 2
+ },
+ {
+  "f": 1478,
+  "name": "boton_pop",
+  "d": 0,
+  "nota": "botón final",
+  "idx": 1
+ },
+ {
+  "f": 1500,
+  "name": "asienta",
+  "d": 0,
+  "nota": "",
+  "idx": 7
+ },
+ {
+  "f": 1500,
+  "name": "texto_aparece",
+  "d": 0,
+  "nota": "brillo del botón final",
+  "idx": 3
+ }
+]
