@@ -160,8 +160,21 @@ footer img{width:100px;margin:0 auto 8px;border-radius:12px}
   </section>
 
   <div class="dos">
+  <section class="cotizar" id="cotizar">
+    <div class="kicker" data-a="k-kicker">Cómo cotizar</div>
+    <h2>Un mensaje y listo</h2>
+    <div class="caja" data-a="k-caja">
+      <h3>Cotiza tu pastel</h3>
+      <div class="chat">
+        <div class="bub yo" data-a="k-yo">Hola, quiero cotizar un pastel</div>
+        <div class="bub ella" data-a="k-ella">Escríbenos por WhatsApp</div>
+      </div>
+      <a class="btn" data-a="k-btn">Cotiza por WhatsApp</a>
+    </div>
+  </section>
+
   <section class="resenas" id="resenas">
-    <div class="kicker">Reseñas</div>
+    <div class="kicker" data-a="r-kicker">Reseñas</div>
     <h2>Lo que dicen en Google</h2>
     <div class="caja" data-a="r-caja">
       <div class="nota">
@@ -177,23 +190,10 @@ footer img{width:100px;margin:0 auto 8px;border-radius:12px}
       <div class="fuente" data-a="r-fuente">Opinión publicada en Google</div>
     </div>
   </section>
-
-  <section class="cotizar" id="cotizar">
-    <div class="kicker">Cómo cotizar</div>
-    <h2>Un mensaje y listo</h2>
-    <div class="caja" data-a="k-caja">
-      <h3>Escríbenos por WhatsApp</h3>
-      <div class="chat">
-        <div class="bub yo" data-a="k-yo">Hola, quiero cotizar un pastel</div>
-        <div class="bub ella" data-a="k-ella">Escríbenos por WhatsApp</div>
-      </div>
-      <a class="btn" data-a="k-btn">Cotiza por WhatsApp</a>
-    </div>
-  </section>
   </div>
 
   <section id="visitanos">
-    <div class="kicker">Visítanos</div>
+    <div class="kicker" data-a="m-kicker">Visítanos</div>
     <h2>Horario y ubicación</h2>
     <div class="mapa" data-a="m-mapa">
       <svg viewBox="0 0 358 250" preserveAspectRatio="xMidYMid slice" data-a="m-svg">
@@ -207,7 +207,8 @@ footer img{width:100px;margin:0 auto 8px;border-radius:12px}
           <path d="M236-10c-8 70 14 170 6 270" stroke-width="8"/>
           <path d="M40-10c8 60 2 130 16 270M300-10c6 60-2 140 12 270M-10 30c120 6 240-10 378-24M-10 226c130-10 250-2 378-26" stroke-width="4"/>
         </g>
-        <path data-a="m-ruta" d="M20 214C70 200 96 178 132 150s44-62 96-70" fill="none" stroke="#7A6420" stroke-width="3" stroke-dasharray="1 8" stroke-linecap="round"/>
+        <clipPath id="rc"><rect data-a="m-clip" x="0" y="0" width="358" height="250"/></clipPath>
+        <path data-a="m-ruta" clip-path="url(#rc)" d="M20 214C70 200 96 178 132 150s44-62 96-70" fill="none" stroke="#7A6420" stroke-width="3" stroke-dasharray="1 8" stroke-linecap="round"/>
         <g data-a="m-pin" transform="translate(228 80)">
           <ellipse cx="0" cy="2" rx="11" ry="4" fill="rgba(42,26,21,.25)"/>
           <path d="M0 0c-9-12-15-18-15-27a15 15 0 0 1 30 0c0 9-6 15-15 27z" fill="#2A1A15"/>

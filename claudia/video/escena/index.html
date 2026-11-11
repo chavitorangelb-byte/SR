@@ -19,7 +19,7 @@ html,body{margin:0;background:#000;overflow:hidden}
   radial-gradient(1000px 700px at 50% 104%,rgba(242,194,60,.16),transparent 70%),
   radial-gradient(1300px 1500px at 50% 46%,#2A1A15,#1B1210 72%)}
 #world{left:0;top:0;width:1080px;height:1920px;transform-origin:0 0}
-#phone{position:absolute;left:134px;top:224px;width:812px;height:1432px;transform-origin:50% 50%}
+#phone{z-index:2;position:absolute;left:134px;top:224px;width:812px;height:1432px;transform-origin:50% 50%}
 #phone .sombra{position:absolute;left:30px;right:30px;top:60px;bottom:-40px;border-radius:120px;background:rgba(8,4,3,.75);filter:blur(60px)}
 #phone .body{position:absolute;inset:0;border-radius:100px;background:linear-gradient(145deg,#2c211d,#0c0706 38%,#150e0c 70%,#33261f);box-shadow:0 0 0 1.5px rgba(255,236,190,.14) inset,0 2px 3px rgba(255,255,255,.18) inset}
 #phone .bisel{position:absolute;inset:0;border-radius:100px;padding:5px;background:conic-gradient(from var(--ang,200deg),rgba(255,240,200,0) 0deg,rgba(255,240,200,.75) 28deg,rgba(255,240,200,0) 62deg,rgba(255,240,200,0) 170deg,rgba(255,225,170,.45) 205deg,rgba(255,240,200,0) 240deg);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
@@ -29,6 +29,25 @@ html,body{margin:0;background:#000;overflow:hidden}
 #phone .glare{position:absolute;inset:0;border-radius:84px;overflow:hidden;pointer-events:none}
 #phone .glare i{position:absolute;inset:-10% -60%;background:linear-gradient(112deg,transparent 40%,rgba(255,250,235,.20) 47%,rgba(255,250,235,.05) 53%,transparent 60%)}
 #phone .isla{position:absolute;left:50%;top:34px;width:150px;height:36px;margin-left:-75px;border-radius:20px;background:#0b0706}
+#browser{position:absolute;left:60px;top:430px;width:960px;height:652px;transform-origin:50% 50%}
+#browser .sombra{position:absolute;left:40px;right:40px;top:60px;bottom:-50px;border-radius:60px;background:rgba(8,4,3,.8);filter:blur(50px)}
+#browser .win{position:absolute;inset:0;border-radius:26px;overflow:hidden;background:#241713;box-shadow:0 0 0 1.5px rgba(255,236,190,.16) inset}
+#browser .bar{height:52px;display:flex;align-items:center;gap:9px;padding:0 20px;background:linear-gradient(#35241d,#281a15)}
+#browser .bar i{width:13px;height:13px;border-radius:50%;background:#7A6420}#browser .bar i:nth-child(1){background:#E8A5B3}#browser .bar i:nth-child(2){background:#F2C23C}
+#browser .bar span{margin-left:22px;flex:1;height:32px;border-radius:16px;background:rgba(255,244,220,.1);display:flex;align-items:center;gap:9px;padding:0 15px;font:700 17px Nunito,sans-serif;color:#FFF4DC}
+#browser .vp{width:960px;height:600px;overflow:hidden;background:#fff4dc}
+#browser iframe{border:0;width:1280px;height:800px;transform:scale(.75);transform-origin:0 0;display:block}
+#logoCard{position:absolute;left:0;top:0;width:400px;height:400px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 40px 70px -30px rgba(0,0,0,.8),0 0 0 1px rgba(122,100,32,.2) inset}
+#end{left:0;top:0;width:1080px;height:1920px;pointer-events:none}
+#end>*{position:absolute}
+#end .panel{left:90px;top:300px;width:900px;height:1262px;border-radius:64px;background:linear-gradient(165deg,rgba(64,40,31,.62),rgba(20,13,11,.82));-webkit-backdrop-filter:blur(36px) saturate(140%);backdrop-filter:blur(36px) saturate(140%);border:1px solid rgba(255,236,190,.26);box-shadow:0 1px 0 rgba(255,255,255,.2) inset,0 60px 90px -40px rgba(0,0,0,.8)}
+#end .panel::after{content:"";position:absolute;inset:0;border-radius:64px;background:var(--ruido);opacity:.5;mix-blend-mode:overlay}
+#end .e1{left:150px;width:780px;top:850px;text-align:center;font:italic 600 62px/1.12 "Playfair Display",serif;color:#FFF4DC}
+#end .e1 small{display:block;margin-top:16px;font:800 30px Nunito,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#F2C23C}
+#end .e2{left:140px;width:800px;top:1110px;height:112px;border-radius:56px;background:#F2C23C;display:flex;align-items:center;justify-content:center;gap:16px;font:800 38px Nunito,sans-serif;color:#1B1210;box-shadow:0 2px 0 rgba(255,255,255,.55) inset,0 -4px 0 rgba(122,100,32,.3) inset,0 26px 40px -18px rgba(0,0,0,.7);white-space:nowrap}
+#end .e2 svg{width:46px;height:46px;flex:none}
+#end .e3{left:150px;width:780px;top:1262px;text-align:center;font:700 38px Nunito,sans-serif;color:#FFF4DC}
+#end .e4{left:150px;width:780px;top:1478px;text-align:center;font:700 25px Nunito,sans-serif;color:rgba(255,244,220,.72)}
 #kt{left:0;top:0;width:1080px;height:1920px;pointer-events:none}
 .kw{position:absolute;left:0;top:0;white-space:nowrap;font-family:Outfit,sans-serif;font-weight:700;letter-spacing:-.012em;line-height:1;color:#FFF4DC;will-change:transform}
 .kw .g{display:inline-block;transform-origin:50% 78%;will-change:transform;text-shadow:0 2px 0 rgba(27,18,16,.35),0 14px 22px rgba(10,5,4,.55)}
@@ -53,7 +72,22 @@ canvas{display:block}
       <div class="screen"><iframe id="ui" src="/web/index.html" scrolling="no"></iframe><div class="apagada"></div><div class="glare"><i></i></div></div>
       <div class="isla"></div>
     </div>
+    <div id="browser">
+      <div class="sombra"></div>
+      <div class="win">
+        <div class="bar"><i></i><i></i><i></i><span><svg width="18" height="20" viewBox="0 0 18 20"><rect x="2" y="9" width="14" height="10" rx="3" fill="#7A6420"/><path d="M5 9V6a4 4 0 0 1 8 0v3" fill="none" stroke="#7A6420" stroke-width="2.2"/></svg>Claudia Repostería Casera</span></div>
+        <div class="vp"><iframe id="desk" src="/web/index.html" scrolling="no"></iframe></div>
+      </div>
+    </div>
   </div>
+  <div id="end">
+    <div class="panel"></div>
+    <div class="e1" id="e1"></div>
+    <div class="e2" id="e2"><svg viewBox="0 0 24 24" fill="none" stroke="#1B1210" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5l1.3-4A8 8 0 1 1 8.6 19z"/><path d="M9.2 9.1c.2 2.6 2 4.6 4.9 5.2l1.3-1.4"/></svg><span></span></div>
+    <div class="e3" id="e3"></div>
+    <div class="e4" id="e4"></div>
+  </div>
+  <div id="logoCard"><img src="/assets/claudia-logo.png" width="272" height="154" alt=""></div>
   <canvas id="line" class="full" width="1080" height="1920"></canvas>
   <canvas id="pMid" class="full" width="1080" height="1920"></canvas>
   <div id="kt"></div>

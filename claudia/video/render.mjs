@@ -16,7 +16,7 @@ const FPS = +arg('fps', 30), ESC = +arg('escala', 0.5), SUB = +arg('sub', 8), FM
 const DESDE = +arg('desde', 0), HASTA = +arg('hasta', 330), STEP = 60 / FPS, SHUTTER = 0.5 * STEP; // obturador de 180°
 const OUT = path.resolve(ROOT, arg('out', 'review/fase3/prueba.mp4'));
 const LISTA = arg('lista', null), CUADROS = arg('cuadros', null);
-const DW = 1080, DH = FMT === '11' ? 1080 : 1920;
+const DW = 1080, DH = FMT === "11" ? 1080 : 1920;
 
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'application/json', '.jpg': 'image/jpeg', '.png': 'image/png', '.woff2': 'font/woff2' };
 const server = http.createServer((req, res) => {
