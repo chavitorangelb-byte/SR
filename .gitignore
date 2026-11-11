@@ -3,3 +3,8 @@ assets/_capturas/
 review/**/*.png
 video/build/
 audio/build/
+
+# Mandala: referencias de clientes (Google Maps), no se versionan ni se insertan
+mandala-burgers/ref/ref-maps/
+mandala-burgers/build/
+__pycache__/

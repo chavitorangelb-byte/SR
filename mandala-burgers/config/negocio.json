@@ -1,0 +1,18 @@
+{
+  "_nota": "Datos de contacto y textos del end card. Se cambian aquí, sin tocar el código. Todo pendiente de confirmar con el dueño.",
+  "nombre": "Mandala Burgers",
+  "lema": "Burgers de colores",
+  "ciudad": "Aguascalientes",
+  "instagram": "@mandalaburgers.ags",
+  "whatsapp_e164": "524494140043",
+  "whatsapp_visible": "449 414 0043",
+  "whatsapp_mensaje": "Hola, quiero hacer un pedido",
+  "correo": "mandalaburgers@gmail.com",
+  "horario_largo": "Jueves a domingo · 2:30 pm a 10:30 pm",
+  "horario_corto": "Jueves a domingo · 2:30 a 10:30 pm",
+  "direccion_1": "Blvd. Juan Pablo II 1377",
+  "direccion_2": "Residencial Xenia, 20200 Aguascalientes",
+  "endcard_linea": "Burgers de colores · Aguascalientes",
+  "endcard_boton": "Pide por WhatsApp · 449 414 0043",
+  "pie_legal": "Demo de cortesía de Elevate Negocios · pieza no oficial"
+}
