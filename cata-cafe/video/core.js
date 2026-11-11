@@ -166,7 +166,7 @@ function glass(c, m, x, y, w, h, r, o = {}) {
 }
 function shadow(c, m, x, y, w, h, r, k = 1) { // sombra de contacto hacia abajo-derecha (luz arriba-izquierda)
   if (w < 2 || h < 2 || k < 0.05) return;
-  c.save(); setM(c, m); c.filter = `blur(${22 * k * zoomOf(m) * S}px)`; c.fillStyle = 'rgba(0,0,0,0.55)';
+  c.save(); setM(c, m); c.filter = `blur(${22 * k * zoomOf(m) * S}px)`; c.fillStyle = `rgba(0,0,0,${0.55 * Math.min(1, k)})`;
   rr(c, x + 10 * k, y + 18 * k, w, h, r); c.fill(); c.restore();
 }
 
