@@ -3,3 +3,6 @@ assets/_capturas/
 review/**/*.png
 video/build/
 audio/build/
+
+# Sella Eventos
+sella/capturas-originales/
