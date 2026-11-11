@@ -24,7 +24,7 @@ await new Promise((r) => server.listen(0, r));
 const browser = await chromium.launch({ args: ['--enable-unsafe-swiftshader', '--use-angle=swiftshader', '--ignore-gpu-blocklist'] });
 const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
 page.on('pageerror', (e) => { console.error('ERROR página:', e.message); process.exitCode = 1; });
-await page.goto(`http://127.0.0.1:${server.address().port}/index.html?fmt=${FMT}&w=${W}&h=${H}`);
+await page.goto(`http://127.0.0.1:${server.address().port}/index.html?fmt=${FMT}&w=${W}&h=${H}${arg('cam', null) ? '&cam=' + arg('cam') : ''}`);
 await page.waitForFunction(() => window.ready || window.initError, null, { timeout: 60000 });
 const err = await page.evaluate(() => window.initError); if (err) { console.error(err); process.exit(1); }
 const frame = async (f, type = 'image/png') => Buffer.from((await page.evaluate(([f, sub, shutter, type]) => window.renderFrame(f, { sub, shutter, type }), [f, SUB, SHUTTER, type])).split(',')[1], 'base64');

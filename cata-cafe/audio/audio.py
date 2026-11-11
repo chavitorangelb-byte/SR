@@ -164,10 +164,10 @@ def sfx():
     # compás 7
     a(742, 'el teléfono se desliza', s_whoosh(0.55, 400, 1500), 0.2, -0.3); a(750, 'pulsación', s_click(), 0.4, -0.2); a(750, 'botón hundido', s_thump(150), 0.22, -0.2)
     a(752, 'onda de contacto', s_shimmer(0.8), 0.12, -0.2); a(759, 'segunda onda', s_whoosh(0.6, 800, 2600), 0.1, -0.2); a(752, 'el trazo sale del teléfono', s_scribble(0.5), 0.1)
-    a(768, 'chip de horario', s_ting(1568), 0.2, 0.4); a(776, 'texto de horario', s_tick(), 0.18, 0.4); a(786, 'chip de ubicación', s_ting(1760), 0.2, 0.4); a(794, 'texto de ubicación', s_tick(), 0.18, 0.4)
-    for i, f in enumerate((798, 813, 828)): a(f, ('Entrada principal', 'Pasaje Arteaga', 'Módulo de cristal')[i], s_pop(440 + i * 110), 0.24, 0.3); a(f + 3, f'texto de ruta {i + 1}', s_tick(2000 + i * 300), 0.14, 0.4)
+    a(764, 'chip de horario', s_ting(1568), 0.2, 0.4); a(772, 'texto de horario', s_tick(), 0.18, 0.4); a(776, 'chip de ubicación', s_ting(1760), 0.2, 0.4); a(784, 'texto de ubicación', s_tick(), 0.18, 0.4)
+    for i, f in enumerate((790, 801, 812)): a(f, ('Entrada principal', 'Pasaje Arteaga', 'Módulo de cristal')[i], s_pop(440 + i * 110), 0.24, 0.3); a(f + 3, f'texto de ruta {i + 1}', s_tick(2000 + i * 300), 0.14, 0.4)
     # compás 8
-    a(840, 'todo se recoge', s_whoosh(0.5, 4000, 300), 0.24); a(846, 'la línea', s_whoosh(0.4, 600, 2400), 0.14); a(862, 'giro de cámara', s_whoosh(1.4, 250, 900), 0.16)
+    a(844, 'todo se recoge', s_whoosh(0.5, 4000, 300), 0.24); a(846, 'la línea', s_whoosh(0.4, 600, 2400), 0.14); a(862, 'giro de cámara', s_whoosh(1.4, 250, 900), 0.16)
     a(868, 'el trazo escribe Cata Café', s_scribble(1.0), 0.11)
     for i, ch in enumerate('CataCafé'): a(868 + round((i + (i > 3)) * 4.5) + 9, f'letra {ch}', s_tick(1700 + i * 140), 0.13, -0.4 + i * 0.1)
     a(934, 'brillo final', s_shimmer(0.6), 0.07)

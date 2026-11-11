@@ -115,11 +115,12 @@ Los nombres de los tuestes y los chips son interfaz, no kinetic type.
 - **f720** Lift pleno de la música.
 - **f726** Entra L4.
 - **f750** Pulsación en "Hacer pedido"; onda de contacto f750–790. Sin número visible.
-- **f768** Chip de horario. **f786** Chip de ubicación. Los dos fuera del teléfono, a tamaño de cuadro.
-- **f792–834** El trazo dibuja la mini ruta: Entrada principal (f798), Pasaje Arteaga (f813), Módulo de cristal (f828).
+- **f742–772** El teléfono, que entra grande y centrado, se desliza a la izquierda.
+- **f764** Chip de horario. **f776** Chip de ubicación. Los dos fuera del teléfono, a tamaño de cuadro.
+- **f776–812** El trazo dibuja la mini ruta: Entrada principal (f790), Pasaje Arteaga (f801), Módulo de cristal (f812). Se adelantó para que el último texto se lea completo antes del cierre.
 
 ### Compás 8 · Cierre · f840–959
-- **f840–870** Respiro: solo pad. Paneles, chips y teléfono se recogen en una sola línea (SDF).
+- **f844–868** Respiro: solo pad. Paneles, chips y teléfono se recogen en una sola línea.
 - **f840** Entra L5; "realidad" en f929.
 - **f870–936** El trazo escribe "Cata Café".
 - **f870–950** Giro de cámara de 14° alrededor del nombre (3D); el trazo muestra grosor y brillo.

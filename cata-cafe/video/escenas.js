@@ -20,6 +20,8 @@ const LY = V ? {
   chipX: 440, chipW: 580, chipY: [110, 290], routeY: [540, 680, 820], nameY: 520, nameW: 860, endY: 520,
 };
 CAMKEYS = LY.cam;
+// modo foto: ?cam=cx,cy,z fija una cámara frontal para sacar capturas de la página
+if (Q.get('cam')) { const [cx, cy, z] = Q.get('cam').split(',').map(Number); CAMKEYS = [[0, flat(cx, cy, z)]]; }
 
 // ---------- página ----------
 const PAN = {
@@ -218,10 +220,10 @@ function overlay(c, f, m) {
   if (f >= 752 && f < 872) {
     const X = LY.chipX, Wc = LY.chipW, [c1, c2] = LY.chipY, [r1, r2, r3] = LY.routeY, s0 = P(m, 1112, 760), CH = 168;
     const path = prepPath([s0, [X - 34, c1 + 150], [X - 22, c1 + CH / 2], [X - 22, c2 + CH / 2], [X - 10, c2 + CH + 30], [X + 34, r1], [X + 34, r2], [X + 34, r3]], 5);
-    const K = [[752, 0], [768, lenAtIndex(path, 2)], [786, lenAtIndex(path, 3)], [798, lenAtIndex(path, 5)], [813, lenAtIndex(path, 6)], [828, path.len]];
+    const K = [[752, 0], [764, lenAtIndex(path, 2)], [776, lenAtIndex(path, 3)], [790, lenAtIndex(path, 5)], [801, lenAtIndex(path, 6)], [812, path.len]];
     const end = stroke(c, ID, path, 0, keyed(K, f), 7);
-    if (end && f < 834) bead(c, ID, end[0], end[1], 9);
-    const TXT = [[['Lun–Sáb 7:30–16:00', 'Dom 7:30–15:00'], c1, 768], [['Mercado Terán', 'Módulo IV'], c2, 786]];
+    if (end && f < 818) bead(c, ID, end[0], end[1], 9);
+    const TXT = [[['Lun–Sáb 7:30–16:00', 'Dom 7:30–15:00'], c1, 764], [['Mercado Terán', 'Módulo IV'], c2, 776]];
     TXT.forEach(([ls, y, f0]) => {
       const k = back(eo(seg(f, f0, f0 + 22)), 0.9); if (k <= 0) return;
       const w = Wc * k, h = CH * k, x = X, yy = y + (CH - h) / 2;
@@ -231,10 +233,10 @@ function overlay(c, f, m) {
       gtext(c, ls[1], x + 38, y + 128, `600 42px ${IN}`, 'rgba(251,243,213,0.86)', f, f0 + 14, { stagger: 0.7 });
       c.restore();
     });
-    [['Entrada principal', r1, 798], ['Pasaje Arteaga', r2, 813], ['Módulo de cristal', r3, 828]].forEach(([t, y, f0]) => {
+    [['Entrada principal', r1, 790], ['Pasaje Arteaga', r2, 801], ['Módulo de cristal', r3, 812]].forEach(([t, y, f0]) => {
       const k = back(eo(seg(f, f0, f0 + 14)), 2); if (k <= 0) return;
       bead(c, ID, X + 34, y, 17 * k, COL.terra); setD(c);
-      gtext(c, t, X + 74, y + 15, `500 42px ${IN}`, COL.crema, f, f0 + 3, { stagger: 0.7 });
+      gtext(c, t, X + 74, y + 15, `500 42px ${IN}`, COL.crema, f, f0 + 3, { stagger: 0.4, dur: 12 });
     });
   }
 }
@@ -273,7 +275,7 @@ function subframe(f) {
   drawField(f, fieldState(f, m));
   B.setTransform(1, 0, 0, 1, 0, 0); B.drawImage(cGL, 0, 0);
   if (f >= 960) { A.setTransform(1, 0, 0, 1, 0, 0); A.drawImage(cB, 0, 0); endCard(A, f); return; }
-  const sq = eio(seg(f, 840, 868)); // colapso: todo se recoge en una línea
+  const sq = eio(seg(f, 844, 868)); // colapso: todo se recoge en una línea
   const showPage = f < 868;
   if (sq > 0) { const k = 1 - sq * 0.997, y0 = LY.nameY + 62; GP = [1, 0, 0, k, 0, y0 * (1 - k)]; }
   if (showPage) {
