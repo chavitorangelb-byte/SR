@@ -5,9 +5,16 @@
   "whatsapp_visible": "449 115 0903",
   "whatsapp_e164": "524491150903",
   "instagram": "@claudia.reposteriacasera",
-  "horario": ["Lunes a sábado · 10:00 a 19:00", "Domingo cerrado"],
-  "google": { "estrellas": "4.7", "resenas": 12 },
+  "horario": [
+    "Lunes a sábado · 10:00 a 19:00",
+    "Domingo cerrado"
+  ],
+  "google": {
+    "estrellas": "4.7",
+    "resenas": 12
+  },
   "resena": "Recomiendo mucho sus pasteles y galletas. Son de alta calidad y de rico sabor",
   "cta": "Cotiza por WhatsApp",
-  "pie": "Demo de cortesía de Elevate Negocios · pieza no oficial"
+  "pie": "Demo de cortesía de Elevate Negocios · pieza no oficial",
+  "resena_con_comillas": false
 }

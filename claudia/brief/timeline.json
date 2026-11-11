@@ -1,90 +1,672 @@
 {
-  "fps": 60, "bpm": 120, "compas_s": 2.0, "total_f": 1620,
-  "nota": "Los cuadros marcados voz:true son provisionales: en la fase 2 se mueven al inicio real de su palabra en la locución.",
+  "fps": 60,
+  "bpm": 120,
+  "compas_s": 2.0,
+  "total_f": 1620,
+  "nota": "Bloqueado a la voz (toma 1, Hope, Eleven v4). voz[].palabras trae el cuadro de cada palabra; kinetic y cues ya usan esos cuadros.",
   "escenas": [
-    {"id":"S1","de":0,"a":120,"nombre":"HOOK"},
-    {"id":"S2","de":120,"a":360,"nombre":"LA PÁGINA LLEGA"},
-    {"id":"S3","de":360,"a":720,"nombre":"LO QUE HACE"},
-    {"id":"S4","de":720,"a":840,"nombre":"RESPIRO"},
-    {"id":"S5","de":840,"a":1080,"nombre":"COTIZAR"},
-    {"id":"S6","de":1080,"a":1200,"nombre":"VISÍTANOS"},
-    {"id":"S7","de":1200,"a":1440,"nombre":"REVELACIÓN Y CIERRE"},
-    {"id":"S8","de":1440,"a":1620,"nombre":"END CARD"}
+    {
+      "id": "S1",
+      "de": 0,
+      "a": 120,
+      "nombre": "HOOK"
+    },
+    {
+      "id": "S2",
+      "de": 120,
+      "a": 360,
+      "nombre": "LA PÁGINA LLEGA"
+    },
+    {
+      "id": "S3",
+      "de": 360,
+      "a": 720,
+      "nombre": "LO QUE HACE"
+    },
+    {
+      "id": "S4",
+      "de": 720,
+      "a": 840,
+      "nombre": "RESPIRO"
+    },
+    {
+      "id": "S5",
+      "de": 840,
+      "a": 1080,
+      "nombre": "COTIZAR"
+    },
+    {
+      "id": "S6",
+      "de": 1080,
+      "a": 1200,
+      "nombre": "VISÍTANOS"
+    },
+    {
+      "id": "S7",
+      "de": 1200,
+      "a": 1440,
+      "nombre": "REVELACIÓN Y CIERRE"
+    },
+    {
+      "id": "S8",
+      "de": 1440,
+      "a": 1620,
+      "nombre": "END CARD"
+    }
   ],
   "voz": [
-    {"f":24,"texto":"Repostería casera, hecha sobre pedido."},
-    {"f":168,"texto":"Así se vería tu página."},
-    {"f":378,"texto":"Pasteles personalizados para bodas, cumpleaños y XV años."},
-    {"f":576,"texto":"Cupcakes, galletas y gelatinas."},
-    {"f":870,"texto":"Para cotizar, un solo botón: WhatsApp."},
-    {"f":1020,"texto":"Cuatro punto siete en Google."},
-    {"f":1092,"texto":"Horario y ubicación, a la vista."},
-    {"f":1224,"texto":"En celular y en computadora."},
-    {"f":1356,"texto":"Claudia Repostería Casera."}
+    {
+      "f": 20,
+      "texto": "Repostería casera, hecha sobre pedido.",
+      "id": "L1",
+      "toma": {
+        "ini": 0.12,
+        "fin": 2.64
+      },
+      "dur": 2.52,
+      "termina_f": 171,
+      "palabras": [
+        {
+          "w": "Repostería",
+          "f": 20,
+          "fin": 58
+        },
+        {
+          "w": "casera,",
+          "f": 58,
+          "fin": 88
+        },
+        {
+          "w": "hecha",
+          "f": 102,
+          "fin": 122
+        },
+        {
+          "w": "sobre",
+          "f": 122,
+          "fin": 136
+        },
+        {
+          "w": "pedido.",
+          "f": 136,
+          "fin": 170
+        }
+      ]
+    },
+    {
+      "f": 177,
+      "texto": "Así se vería tu página.",
+      "id": "L2",
+      "toma": {
+        "ini": 3.11,
+        "fin": 4.47
+      },
+      "dur": 1.36,
+      "termina_f": 259,
+      "palabras": [
+        {
+          "w": "Así",
+          "f": 177,
+          "fin": 190
+        },
+        {
+          "w": "se",
+          "f": 190,
+          "fin": 202
+        },
+        {
+          "w": "vería",
+          "f": 202,
+          "fin": 218
+        },
+        {
+          "w": "tu",
+          "f": 218,
+          "fin": 227
+        },
+        {
+          "w": "página.",
+          "f": 227,
+          "fin": 245
+        }
+      ]
+    },
+    {
+      "f": 348,
+      "texto": "Pasteles personalizados para bodas, cumpleaños y XV años.",
+      "id": "L3",
+      "dicho": "Pasteles personalizados para bodas, cumpleaños y quince años.",
+      "toma": {
+        "ini": 4.86,
+        "fin": 9.12
+      },
+      "dur": 4.26,
+      "termina_f": 604,
+      "palabras": [
+        {
+          "w": "Pasteles",
+          "f": 348,
+          "fin": 370
+        },
+        {
+          "w": "personalizados",
+          "f": 370,
+          "fin": 425
+        },
+        {
+          "w": "para",
+          "f": 425,
+          "fin": 442
+        },
+        {
+          "w": "bodas,",
+          "f": 442,
+          "fin": 482
+        },
+        {
+          "w": "cumpleaños",
+          "f": 491,
+          "fin": 539
+        },
+        {
+          "w": "y",
+          "f": 539,
+          "fin": 552
+        },
+        {
+          "w": "quince",
+          "f": 552,
+          "fin": 572
+        },
+        {
+          "w": "años.",
+          "f": 572,
+          "fin": 593
+        }
+      ]
+    },
+    {
+      "f": 609,
+      "texto": "Cupcakes, galletas y gelatinas.",
+      "id": "L4",
+      "toma": {
+        "ini": 9.36,
+        "fin": 11.66
+      },
+      "dur": 2.3,
+      "termina_f": 747,
+      "palabras": [
+        {
+          "w": "Cupcakes,",
+          "f": 609,
+          "fin": 640
+        },
+        {
+          "w": "galletas",
+          "f": 652,
+          "fin": 683
+        },
+        {
+          "w": "y",
+          "f": 683,
+          "fin": 699
+        },
+        {
+          "w": "gelatinas.",
+          "f": 699,
+          "fin": 734
+        }
+      ]
+    },
+    {
+      "f": 843,
+      "texto": "Para cotizar, un solo botón: WhatsApp.",
+      "id": "L5",
+      "toma": {
+        "ini": 11.95,
+        "fin": 14.67
+      },
+      "dur": 2.72,
+      "termina_f": 1006,
+      "palabras": [
+        {
+          "w": "Para",
+          "f": 843,
+          "fin": 851
+        },
+        {
+          "w": "cotizar,",
+          "f": 851,
+          "fin": 881
+        },
+        {
+          "w": "un",
+          "f": 895,
+          "fin": 907
+        },
+        {
+          "w": "solo",
+          "f": 907,
+          "fin": 926
+        },
+        {
+          "w": "botón:",
+          "f": 926,
+          "fin": 958
+        },
+        {
+          "w": "WhatsApp.",
+          "f": 974,
+          "fin": 995
+        }
+      ]
+    },
+    {
+      "f": 1011,
+      "texto": "Cuatro punto siete en Google.",
+      "id": "L6",
+      "dicho": "4 7 en Google.",
+      "toma": {
+        "ini": 14.99,
+        "fin": 16.63
+      },
+      "dur": 1.64,
+      "termina_f": 1109,
+      "palabras": [
+        {
+          "w": "4",
+          "f": 1013,
+          "fin": 1026
+        },
+        {
+          "w": "7",
+          "f": 1026,
+          "fin": 1063
+        },
+        {
+          "w": "en",
+          "f": 1063,
+          "fin": 1081
+        },
+        {
+          "w": "Google.",
+          "f": 1081,
+          "fin": 1096
+        }
+      ]
+    },
+    {
+      "f": 1116,
+      "texto": "Horario y ubicación, a la vista.",
+      "id": "L7",
+      "toma": {
+        "ini": 16.92,
+        "fin": 18.93
+      },
+      "dur": 2.01,
+      "termina_f": 1237,
+      "palabras": [
+        {
+          "w": "Horario",
+          "f": 1116,
+          "fin": 1140
+        },
+        {
+          "w": "y",
+          "f": 1140,
+          "fin": 1148
+        },
+        {
+          "w": "ubicación,",
+          "f": 1148,
+          "fin": 1182
+        },
+        {
+          "w": "a",
+          "f": 1182,
+          "fin": 1201
+        },
+        {
+          "w": "la",
+          "f": 1201,
+          "fin": 1207
+        },
+        {
+          "w": "vista.",
+          "f": 1207,
+          "fin": 1225
+        }
+      ]
+    },
+    {
+      "f": 1248,
+      "texto": "En celular y en computadora.",
+      "id": "L8",
+      "toma": {
+        "ini": 19.18,
+        "fin": 20.89
+      },
+      "dur": 1.71,
+      "termina_f": 1351,
+      "palabras": [
+        {
+          "w": "En",
+          "f": 1248,
+          "fin": 1256
+        },
+        {
+          "w": "celular",
+          "f": 1256,
+          "fin": 1278
+        },
+        {
+          "w": "y",
+          "f": 1278,
+          "fin": 1300
+        },
+        {
+          "w": "en",
+          "f": 1300,
+          "fin": 1306
+        },
+        {
+          "w": "computadora.",
+          "f": 1306,
+          "fin": 1343
+        }
+      ]
+    },
+    {
+      "f": 1362,
+      "texto": "Claudia Repostería Casera.",
+      "id": "L9",
+      "toma": {
+        "ini": 21.22,
+        "fin": 22.91
+      },
+      "dur": 1.69,
+      "termina_f": 1463,
+      "palabras": [
+        {
+          "w": "Claudia",
+          "f": 1362,
+          "fin": 1382
+        },
+        {
+          "w": "Repostería",
+          "f": 1382,
+          "fin": 1429
+        },
+        {
+          "w": "Casera.",
+          "f": 1429,
+          "fin": 1456
+        }
+      ]
+    }
   ],
   "kinetic": [
-    {"f":27,"texto":"REPOSTERÍA","entrada":"golpe 140→100 % con squash + 2 cuadros de sacudida","voz":true},
-    {"f":60,"texto":"CASERA","entrada":"aterriza y rebota","voz":true},
-    {"f":87,"texto":"SOBRE PEDIDO","entrada":"se espolvorea, tamaño menor","voz":true},
-    {"f":168,"texto":"TU PÁGINA","entrada":"estampa","voz":true},
-    {"f":384,"texto":"PASTELES","entrada":"golpe con migas","voz":true},
-    {"f":582,"texto":"CUPCAKES","entrada":"rebota","voz":true},
-    {"f":876,"texto":"COTIZA","entrada":"estampa","voz":true},
-    {"f":912,"texto":"POR WHATSAPP","entrada":"se desliza con blur horizontal","voz":true},
-    {"f":1224,"texto":"EN CELULAR","entrada":"barrido","voz":true},
-    {"f":1266,"texto":"EN COMPUTADORA","entrada":"barrido, dos líneas si pasa de 960 px","voz":true},
-    {"f":1344,"texto":"DELICIOSA","entrada":"se derrite hacia su sitio"},
-    {"f":1380,"texto":"REPOSTERÍA / CASERA","entrada":"golpe, composición más grande","voz":true}
+    {
+      "f": 20,
+      "texto": "REPOSTERÍA",
+      "entrada": "golpe 140→100 % con squash + 2 cuadros de sacudida"
+    },
+    {
+      "f": 58,
+      "texto": "CASERA",
+      "entrada": "aterriza y rebota"
+    },
+    {
+      "f": 122,
+      "texto": "SOBRE PEDIDO",
+      "entrada": "se espolvorea, tamaño menor"
+    },
+    {
+      "f": 218,
+      "texto": "TU PÁGINA",
+      "entrada": "estampa"
+    },
+    {
+      "f": 348,
+      "texto": "PASTELES",
+      "entrada": "golpe con migas"
+    },
+    {
+      "f": 609,
+      "texto": "CUPCAKES",
+      "entrada": "rebota"
+    },
+    {
+      "f": 851,
+      "texto": "COTIZA",
+      "entrada": "estampa"
+    },
+    {
+      "f": 974,
+      "texto": "POR WHATSAPP",
+      "entrada": "se desliza con blur horizontal"
+    },
+    {
+      "f": 1248,
+      "texto": "EN CELULAR",
+      "entrada": "barrido"
+    },
+    {
+      "f": 1300,
+      "texto": "EN COMPUTADORA",
+      "entrada": "barrido, dos líneas si pasa de 960 px"
+    },
+    {
+      "f": 1344,
+      "texto": "DELICIOSA",
+      "entrada": "se derrite hacia su sitio"
+    },
+    {
+      "f": 1382,
+      "texto": "REPOSTERÍA / CASERA",
+      "entrada": "golpe, composición más grande"
+    }
   ],
   "cues": [
-    {"f":0,"que":"golpe; la línea cruza de lado a lado (f0–f8)"},
-    {"f":8,"que":"destello de 3 cuadros (f8–f11)"},
-    {"f":11,"que":"la línea dibuja el marco del celular, punteada→sólida (f11–f96)"},
-    {"f":120,"que":"el celular se endereza de 18° a frontal (f120–f168)"},
-    {"f":126,"que":"la pantalla enciende"},
-    {"f":138,"que":"encabezado con logo y menú"},
-    {"f":186,"que":"héroe: titular (SDF)"},
-    {"f":210,"que":"héroe: subtítulo"},
-    {"f":228,"que":"héroe: botón Cotiza por WhatsApp"},
-    {"f":246,"que":"héroe: foto 02 enmarcada por la línea"},
-    {"f":288,"que":"empuje de cámara al héroe 1.00→1.28 (f288–f348)"},
-    {"f":360,"que":"scroll con blur a Qué hacemos (f360–f396)"},
-    {"f":390,"que":"ficha Pasteles personalizados","voz":true},
-    {"f":450,"que":"ficha Bodas","voz":true},
-    {"f":480,"que":"ficha Cumpleaños","voz":true},
-    {"f":516,"que":"ficha XV años","voz":true},
-    {"f":504,"que":"scroll corto: la galería sube bajo las fichas (f504–f528)"},
-    {"f":510,"que":"tarjeta galería 1 Bodas (10°→0°, destello)"},
-    {"f":528,"que":"tarjeta galería 2 Cumpleaños"},
-    {"f":546,"que":"tarjeta galería 3 Temáticos"},
-    {"f":564,"que":"tarjeta galería 4 Cupcakes"},
-    {"f":582,"que":"ficha Cupcakes","voz":true},
-    {"f":618,"que":"ficha Galletas","voz":true},
-    {"f":654,"que":"ficha Gelatinas","voz":true},
-    {"f":720,"que":"la cámara se aleja: página completa como tira (f720–f780); azúcar glas"},
-    {"f":816,"que":"regreso al celular en Cómo cotizar (f816–f864)"},
-    {"f":864,"que":"la línea se vuelve el botón flotante de WhatsApp (SDF)"},
-    {"f":924,"que":"burbuja: Hola, quiero cotizar un pastel"},
-    {"f":960,"que":"respuesta: Escríbenos por WhatsApp"},
-    {"f":1002,"que":"scroll a Reseñas (f1002–f1020)"},
-    {"f":1020,"que":"tarjeta de reseñas; 4.7"},
-    {"f":1032,"que":"estrellas 1–5 (f1032, 1040, 1048, 1056, 1064)"},
-    {"f":1068,"que":"12 reseñas en Google + frase"},
-    {"f":1080,"que":"scroll a Visítanos (f1080–f1096); la tarjeta de reseña queda flotando hasta f1110"},
-    {"f":1096,"que":"la línea traza el mapa (f1096–f1140)"},
-    {"f":1116,"que":"tarjeta de cristal: horario (f1122), domingo (f1134), Aguascalientes (f1146)"},
-    {"f":1140,"que":"cae el pin"},
-    {"f":1200,"que":"lift; el celular se desliza y entra el navegador (f1200–f1236)"},
-    {"f":1272,"que":"scroll en computadora: héroe a 2 columnas → galería a 4 (f1272–f1310)"},
-    {"f":1320,"que":"ambas pantallas se alejan (f1320–f1356)"},
-    {"f":1332,"que":"la línea rodea el logo: aro sólido plano (f1332–f1368)"},
-    {"f":1416,"que":"todo se detiene; solo sub grave (f1416–f1440)"},
-    {"f":1440,"que":"end card: panel de cristal (f1440–f1464)"},
-    {"f":1452,"que":"logo sobre tarjeta"},
-    {"f":1470,"que":"Repostería casera personalizada · Aguascalientes"},
-    {"f":1488,"que":"botón Cotiza por WhatsApp · 449 115 0903"},
-    {"f":1506,"que":"@claudia.reposteriacasera"},
-    {"f":1524,"que":"pie: Demo de cortesía de Elevate Negocios · pieza no oficial"},
-    {"f":1584,"que":"campanada suave con sub grave (cola hasta f1620)"}
+    {
+      "f": 0,
+      "que": "golpe; la línea cruza de lado a lado (f0–f8)"
+    },
+    {
+      "f": 8,
+      "que": "destello de 3 cuadros (f8–f11)"
+    },
+    {
+      "f": 11,
+      "que": "la línea dibuja el marco del celular, punteada→sólida (f11–f96)"
+    },
+    {
+      "f": 120,
+      "que": "el celular se endereza de 18° a frontal (f120–f168)"
+    },
+    {
+      "f": 126,
+      "que": "la pantalla enciende"
+    },
+    {
+      "f": 138,
+      "que": "encabezado con logo y menú"
+    },
+    {
+      "f": 180,
+      "que": "héroe: titular (SDF)"
+    },
+    {
+      "f": 196,
+      "que": "héroe: subtítulo"
+    },
+    {
+      "f": 210,
+      "que": "héroe: botón Cotiza por WhatsApp"
+    },
+    {
+      "f": 232,
+      "que": "héroe: foto 02 enmarcada por la línea"
+    },
+    {
+      "f": 270,
+      "que": "empuje de cámara al héroe 1.00→1.28 (f270–f322)"
+    },
+    {
+      "f": 334,
+      "que": "scroll con blur a Qué hacemos (f334–f366)"
+    },
+    {
+      "f": 370,
+      "que": "ficha Pasteles personalizados"
+    },
+    {
+      "f": 442,
+      "que": "ficha Bodas"
+    },
+    {
+      "f": 491,
+      "que": "ficha Cumpleaños"
+    },
+    {
+      "f": 504,
+      "que": "scroll corto: la galería sube bajo las fichas (f504–f528)"
+    },
+    {
+      "f": 510,
+      "que": "tarjeta galería 1 Bodas (10°→0°, destello)"
+    },
+    {
+      "f": 528,
+      "que": "tarjeta galería 2 Cumpleaños"
+    },
+    {
+      "f": 546,
+      "que": "tarjeta galería 3 Temáticos"
+    },
+    {
+      "f": 552,
+      "que": "ficha XV años"
+    },
+    {
+      "f": 564,
+      "que": "tarjeta galería 4 Cupcakes"
+    },
+    {
+      "f": 609,
+      "que": "ficha Cupcakes"
+    },
+    {
+      "f": 652,
+      "que": "ficha Galletas"
+    },
+    {
+      "f": 699,
+      "que": "ficha Gelatinas"
+    },
+    {
+      "f": 736,
+      "que": "la cámara se aleja: página completa como tira (f736–f792); azúcar glas"
+    },
+    {
+      "f": 808,
+      "que": "regreso al celular en Cómo cotizar (f808–f846)"
+    },
+    {
+      "f": 895,
+      "que": "la línea se vuelve el botón flotante de WhatsApp (SDF), en «un solo botón»"
+    },
+    {
+      "f": 932,
+      "que": "burbuja: Hola, quiero cotizar un pastel"
+    },
+    {
+      "f": 982,
+      "que": "respuesta: Escríbenos por WhatsApp"
+    },
+    {
+      "f": 996,
+      "que": "scroll a Reseñas (f996–f1011)"
+    },
+    {
+      "f": 1013,
+      "que": "tarjeta de reseñas; 4.7"
+    },
+    {
+      "f": 1026,
+      "que": "estrellas 1–5 (f1026, 1034, 1042, 1050, 1058)"
+    },
+    {
+      "f": 1066,
+      "que": "frase de la reseña (sin comillas)"
+    },
+    {
+      "f": 1081,
+      "que": "12 reseñas en Google"
+    },
+    {
+      "f": 1100,
+      "que": "scroll a Visítanos (f1100–f1116); la tarjeta de reseña queda flotando hasta f1130"
+    },
+    {
+      "f": 1116,
+      "que": "tarjeta de cristal de horario: Lunes a sábado (f1118), Domingo cerrado (f1130)"
+    },
+    {
+      "f": 1120,
+      "que": "la línea traza el mapa (f1120–f1164)"
+    },
+    {
+      "f": 1148,
+      "que": "cae el pin; Aguascalientes (f1152)"
+    },
+    {
+      "f": 1200,
+      "que": "lift; el celular se desliza y entra el navegador (f1200–f1240)"
+    },
+    {
+      "f": 1310,
+      "que": "scroll en computadora: héroe a 2 columnas → galería a 4 (f1310–f1336)"
+    },
+    {
+      "f": 1324,
+      "que": "ambas pantallas se alejan (f1324–f1360)"
+    },
+    {
+      "f": 1336,
+      "que": "la línea rodea el logo: aro sólido plano (f1336–f1372)"
+    },
+    {
+      "f": 1416,
+      "que": "todo se detiene; solo sub grave (f1416–f1440)"
+    },
+    {
+      "f": 1440,
+      "que": "end card: panel de cristal (f1440–f1464)"
+    },
+    {
+      "f": 1452,
+      "que": "logo sobre tarjeta"
+    },
+    {
+      "f": 1470,
+      "que": "Repostería casera personalizada · Aguascalientes"
+    },
+    {
+      "f": 1488,
+      "que": "botón Cotiza por WhatsApp · 449 115 0903"
+    },
+    {
+      "f": 1506,
+      "que": "@claudia.reposteriacasera"
+    },
+    {
+      "f": 1524,
+      "que": "pie: Demo de cortesía de Elevate Negocios · pieza no oficial"
+    },
+    {
+      "f": 1584,
+      "que": "campanada suave con sub grave (cola hasta f1620)"
+    }
   ]
 }
