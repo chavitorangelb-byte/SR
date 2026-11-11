@@ -443,7 +443,7 @@ function frame(f) {
   if (f >= 7) { // 2) marco del celular: punteada → sólida; canto del celular; contorno de la tira
     const ph = { cx: PH.cx + pT.x, cy: PH.cy + pT.y, hw: PH.w / 2 * pT.s, hh: PH.h / 2 * pT.s, r: 100 * pT.s };
     const tira = { cx: PH.cx, cy: (sr.top + sr.bot) / 2, hw: PH.sw / 2 + 9, hh: (sr.bot - sr.top) / 2 + 9, r: lerp(100, 52, sr.u) };
-    const a = sr.u > 0 ? mix(ph, tira, Math.min(1, sr.u * 3)) : ph;
+    const a = sr.u > 0 ? mix(ph, tira, Math.min(1, sr.u * 8)) : ph;
     L.A = toScreen({ ...a, rev: eIO(seg(f, 8, 86)), solid: eIO(seg(f, 44, 104)), th: lerp(5.2, 2.6, eIO(seg(f, 120, 170))) * (1 + sr.u * 1.2) * (1 - rec) }, cam);
     if (rec >= 1) L.A = null;
   }
