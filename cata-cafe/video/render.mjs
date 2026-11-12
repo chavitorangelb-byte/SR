@@ -14,7 +14,7 @@ const DIR = path.dirname(fileURLToPath(import.meta.url));
 const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 ? process.argv[i + 1] : d; };
 const FMT = arg('fmt', '916'), W = +arg('w', 540), H = FMT === '916' ? (W * 16) / 9 : W, SUB = +arg('sub', 8), FPS = +arg('fps', 60);
 const DESDE = +arg('desde', 0), HASTA = +arg('hasta', 1079), STEP = 60 / FPS, SHUTTER = STEP * 0.5;
-const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.woff2': 'font/woff2' };
+const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.woff2': 'font/woff2', '.png': 'image/png', '.json': 'application/json' };
 const server = http.createServer((req, res) => {
   const file = path.join(DIR, decodeURIComponent(new URL(req.url, 'http://x').pathname));
   if (!file.startsWith(DIR) || !fs.existsSync(file) || fs.statSync(file).isDirectory()) { res.writeHead(404); res.end(); return; }

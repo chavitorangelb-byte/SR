@@ -1,60 +1,74 @@
 // Línea de tiempo de Cata Café: una sola función determinista frame(f) para 9:16 y 1:1.
+// La interfaz es la página real (web/index.html) capturada por tools/captura_ui.mjs: video/ui/page.png + ui.json.
+// Coordenadas: "pantalla" = el viewport del celular (1080 × 2337); "página" = pantalla + scroll.
 'use strict';
 const ID = [1, 0, 0, 1, 0, 0];
 let GP = null; // matriz global (colapso final)
 { const _setD = setD; setD = (c) => { _setD(c); if (GP) c.transform(...GP); };
   const _setM = setM; setM = (c, m) => { if (GP) { c.setTransform(S, 0, 0, S, 0, 0); c.transform(...GP); c.transform(...m); } else _setM(c, m); }; }
 
-// ---------- layout por formato ----------
-const LY = V ? {
-  cam: [[0, flat(540, 380, 1)], [60, flat(540, 380, 1)], [119, flat(540, 374, 1.05)], [172, flat(540, 380, 1)], [236, flat(540, 380, 1)],
-    [300, flat(540, 840, 1)], [356, flat(540, 840, 1)], [404, flat(540, 1330, 1)], [476, flat(540, 1330, 1)], [520, flat(540, 1930, 1)],
-    [598, flat(540, 1930, 1)], [650, flat(540, 2060, 1)], [660, flat(540, 2060, 1)], [720, iso(305, 255, 0.46)], [742, iso(305, 255, 0.46)], [772, iso(70, 300, 0.42)], [960, iso(64, 294, 0.426), (t) => t]],
-  kt1: [1200, 150, 1390, 190], kt2: [1300, 110, 1480, 190], kt3: [1340, 110, 1520, 180],
-  chipX: 540, chipW: 500, chipY: [420, 620], routeY: [880, 1020, 1160], nameY: 930, nameW: 860, endY: 930,
-} : {
-  cam: [[0, flat(540, 262, 0.72)], [236, flat(540, 262, 0.72)], [300, flat(540, 920, 1)], [356, flat(540, 920, 1)], [404, flat(540, 1320, 1)],
-    [476, flat(540, 1320, 1)], [520, flat(540, 1990, 1)], [598, flat(540, 1990, 1)], [650, flat(540, 2000, 1)], [660, flat(540, 2000, 1)],
-    [720, iso(388, 70, 0.325)], [742, iso(388, 70, 0.325)], [772, iso(80, 100, 0.31)], [960, iso(76, 96, 0.313), (t) => t]],
-  kt1: [810, 120, 965, 160], kt2: [770, 90, 910, 150], kt3: [900, 76, 1020, 130],
-  chipX: 440, chipW: 580, chipY: [110, 290], routeY: [540, 680, 820], nameY: 520, nameW: 860, endY: 520,
-};
-CAMKEYS = LY.cam;
-// modo foto: ?cam=cx,cy,z fija una cámara frontal para sacar capturas de la página
-if (Q.get('cam')) { const [cx, cy, z] = Q.get('cam').split(',').map(Number); CAMKEYS = [[0, flat(cx, cy, z)]]; }
+let UI, E, VH, IMG, BARIMG, V60IMG, LY, SCROLL, THREAD, TKEY, TIP, LOOP, BRANCH, BAG, EL, BY0;
+const RG = 61, GX = 1058; // radio del cristal y canal derecho por donde baja el hilo
+const keyed = (K, f) => { if (f <= K[0][0]) return K[0][1]; for (let i = 1; i < K.length; i++) if (f <= K[i][0]) return lerp(K[i - 1][1], K[i][1], eio(seg(f, K[i - 1][0], K[i][0]))); return K[K.length - 1][1]; };
+const sY = (Y, Fy, vcy, z) => Y - vcy - (Fy - DH / 2) / z; // scroll para que la y de página Y caiga en la y de cuadro Fy
+const pageM = (m, s) => [m[0], m[1], m[2], m[3], m[4] - m[2] * s, m[5] - m[3] * s];
 
-// ---------- página ----------
-const PAN = {
-  head: { x: 60, y: 60, w: 960, h: 340, r: 44 },
-  mA: { x: 60, y: 440, w: 500, h: 520, r: 44, f0: 252, ax: 560, ay: 700 },
-  mB: { x: 600, y: 440, w: 420, h: 250, r: 40, f0: 270, ax: 600, ay: 565 },
-  mC: { x: 600, y: 710, w: 420, h: 250, r: 40, f0: 288, ax: 600, ay: 835 },
-  roast: { x: 60, y: 1000, w: 960, h: 640, r: 44, f0: 348, ax: 60, ay: 1320 },
-};
-const CARD = { x: 110, y: 1700, w: 860, h: 340 }, BTN = { x: 110, y: 2110, w: 860, h: 140 };
-const ROWY = (i) => 1100 + i * 112;
-
-function headRect(f) {
-  const a = eo(seg(f, 0, 30)), R = 170 * a, b = eio(seg(f, 24, 58));
-  const hw = lerp(R, 480, b), hh = lerp(R, 170, b), r = lerp(R, 44, b);
-  return { x: 540 - hw, y: 230 - hh, w: hw * 2, h: hh * 2, r, th: f < 30 ? lerp(16, 8, a) : lerp(8, 0, eio(seg(f, 44, 84))) };
+function build() {
+  E = UI.els; VH = UI.vh;
+  const tueEnd = E.escala.y + E.escala.h;
+  if (V) {
+    const S1 = sY(E.hero.y, 250, 1168, 0.8), S3 = sY(E.metSh.y, 260, 1168, 1), S4 = sY(E.tueSh.y, 260, 1168, 1), S4b = sY(tueEnd, 1560, 1168, 1), S5 = sY(E.tarSh.y, 300, 1168, 1), S6 = sY(E.tarSh.y, 250, 1700, 1);
+    const hb = 250 + E.hero.h * 0.8, mb = 260 + (E.chips.y + E.chips.h - E.metSh.y), cb = 250 + (E.card.y + E.card.h - E.tarSh.y);
+    LY = { cam: [[0, flat(540, 1168, 0.8)], [236, flat(540, 1168, 0.8)], [300, flat(540, 1168, 1)], [598, flat(540, 1168, 1)], [650, flat(540, 1700, 1)], [660, flat(540, 1700, 1)],
+        [720, iso(305, 255, 0.46)], [742, iso(305, 255, 0.46)], [772, iso(70, 300, 0.42)], [960, iso(64, 294, 0.426), (t) => t]],
+      scroll: [[0, S1], [236, S1], [300, S3], [356, S3], [404, S4], [446, S4], [474, S4b], [486, S4b], [524, S5], [598, S5], [650, S6], [722, S6], [748, 92]],
+      kt1: [hb + 160, 120, hb + 330, 160], kt2: [mb + 20, 0, mb + 180, 150], kt3: [0, 0, (cb + 1403) / 2 + 40, 118],
+      bagY: E.tueSh.y + 1250, bagS: 1.3, barraGap: 120,
+      chipX: 540, chipW: 500, chipY: [420, 620], routeY: [880, 1020, 1160], nameY: 930, nameW: 860, endY: 930 };
+  } else {
+    const S1 = sY(E.hero.y, 40, 1168, 0.62), S3 = sY(E.metSh.y, 40, 1168, 0.7), S4 = sY(E.tueSh.y, 40, 1168, 0.8), S4b = sY(tueEnd, 1040, 1168, 0.8), S5 = sY(E.tarSh.y, 40, 1168, 0.8), S6 = sY(E.tarSh.y, 30, 1718, 0.8);
+    const hb = 40 + E.hero.h * 0.62, mb = 40 + (E.chips.y + E.chips.h - E.metSh.y) * 0.7, cb = 30 + (E.card.y + E.card.h - E.tarSh.y) * 0.8;
+    LY = { cam: [[0, flat(540, 1168, 0.62)], [236, flat(540, 1168, 0.62)], [300, flat(540, 1168, 0.7)], [356, flat(540, 1168, 0.7)], [404, flat(540, 1168, 0.8)], [598, flat(540, 1168, 0.8)],
+        [650, flat(540, 1718, 0.8)], [660, flat(540, 1718, 0.8)], [720, iso(388, 70, 0.325)], [742, iso(388, 70, 0.325)], [772, iso(80, 100, 0.31)], [960, iso(76, 96, 0.313), (t) => t]],
+      scroll: [[0, S1], [236, S1], [300, S3], [356, S3], [404, S4], [446, S4], [474, S4b], [486, S4b], [524, S5], [598, S5], [650, S6], [722, S6], [748, 92]],
+      kt1: [hb + 130, 100, hb + 275, 135], kt2: [mb + 110, 80, mb + 250, 140], kt3: [0, 0, (cb + 880) / 2 + 34, 100],
+      bagY: E.tueSh.y + 1120, bagS: 1.2, barraGap: 90,
+      chipX: 440, chipW: 580, chipY: [110, 290], routeY: [540, 680, 820], nameY: 520, nameW: 860, endY: 520 };
+  }
+  CAMKEYS = LY.cam; SCROLL = LY.scroll;
+  if (Q.get('cam')) { const [cx, cy, z] = Q.get('cam').split(',').map(Number); CAMKEYS = [[0, flat(cx, cy, z)]]; }
+  // punta del V60 del encabezado: de ahí cae el hilo
+  TIP = [E.v60.x + E.v60.w * (140 / 300), E.v60.y + E.v60.h * (240 / 250)];
+  const hbP = E.hero.y + E.hero.h;
+  THREAD = prepPath([TIP, [TIP[0] + 3, TIP[1] + 70], [960, TIP[1] + 140], [1040, TIP[1] + 180], [GX, TIP[1] + 250], [GX, hbP], [GX, E.metSh.y], [GX, E.chips.y + E.chips.h], [GX, E.r0.y], [GX, E.r4.y + E.r4.h],
+    [GX, E.menu.y + E.menu.h], [GX, E.card.y], [GX, E.card.y + E.card.h * 0.4], [E.card.x + E.card.w - 6, E.card.y + E.card.h * 0.5]], 8);
+  const li = (i) => lenAtIndex(THREAD, i);
+  TKEY = [[130, 0], [160, li(3)], [228, li(5)], [246, li(6)], [340, li(7)], [404, li(8)], [474, li(9)], [516, li(10)], [526, li(11)], [560, THREAD.len]];
+  // bolsa (toque 3D), la vuelta del trazo y las cinco ramas hacia las tarjetas de tueste
+  const sB = LY.bagS, bcy = LY.bagY - 205 * sB;
+  BAG = { x: 540, y: LY.bagY, s: sB };
+  LOOP = prepPath(Array.from({ length: 33 }, (_, i) => { const a = Math.PI + (i / 32) * Math.PI * 2; return [540 + 215 * sB * Math.cos(a), bcy + 300 * sB * Math.sin(a)]; }), 6);
+  const xL = 540 - 215 * sB;
+  BRANCH = [0, 1, 2, 3, 4].map((i) => { const r = E['r' + i], cy = r.y + r.h / 2; return prepPath([[xL, bcy], [60, lerp(bcy, cy, 0.35)], [22, lerp(bcy, cy, 0.75)], [46, cy]], 6); });
+  BY0 = E.card.y + E.card.h + LY.barraGap;
+  // elementos de la página: [clave, tipo, cuadro de entrada, extra]
+  EL = [['logo', 'pop', 150], ['h1', 'wipe', 168, 36], ['lema', 'wipe', 198, 24], ['donde', 'wipe', 208, 18], ['btn1', 'pop', 214], ['btn2', 'pop', 220],
+    ['metSh', 'wipe', 246, 20], ['met0', 'grow', 252, 'R'], ['met1', 'grow', 270, 'R'], ['met2', 'grow', 288, 'R'], ['chips', 'wipe', 300, 30],
+    ['tueSh', 'wipe', 350, 20], ['grind', 'pop', 356], ['r0', 'grow', 438, 'L'], ['r1', 'grow', 446, 'L'], ['r2', 'grow', 454, 'L'], ['r3', 'grow', 462, 'L'], ['r4', 'grow', 470, 'L'], ['escala', 'wipe', 480, 16],
+    ['menuSh', 'wipe', 472, 12], ['tabs', 'pop', 474], ['menu', 'grow', 476, 'R'], ['menuNota', 'wipe', 482, 12],
+    ['tarSh', 'wipe', 500, 20], ['tarNota', 'wipe', 704, 14], ['demo', 'wipe', 706, 10], ['visSh', 'wipe', 706, 10], ['visita', 'grow', 706, 'R'], ['links', 'pop', 710], ['pie', 'wipe', 710, 10]];
 }
-function grown(p, f) {
-  const t = seg(f, p.f0, p.f0 + 24); if (t <= 0) return null; const k = back(eo(t), 0.8);
-  return { x: lerp(p.ax, p.x, k), y: lerp(p.ay, p.y, k), w: p.w * k, h: p.h * k, r: p.r * Math.min(1, k) };
+
+function heroRect(f) {
+  const h = E.hero, cx = h.x + h.w / 2, cy = h.y + h.h / 2, a = eo(seg(f, 0, 30)), R = 240 * a, b = eio(seg(f, 24, 58));
+  const hw = lerp(R, h.w / 2, b), hh = lerp(R, h.h / 2, b), r = lerp(R, RG, b);
+  return { x: cx - hw, y: cy - hh, w: hw * 2, h: hh * 2, r, th: f < 30 ? lerp(18, 9, a) : lerp(9, 0, eio(seg(f, 44, 84))) };
 }
-const panelRect = (id, f) => (id === 'head' ? (f > 4 ? headRect(f) : null) : grown(PAN[id], f));
-
-// hilo maestro (coordenadas de página)
-const THREAD = prepPath([[540, -40], [540, 60], [540, 400], [552, 418], [580, 446], [580, 700], [580, 950], [560, 978], [300, 982], [60, 984], [30, 1010],
-  [30, 1320], [30, 1630], [60, 1660], [540, 1662], [1020, 1660], [1050, 1690], [1050, 2140], [1040, 2176], [975, 2180]]);
-const TKEY = [[130, 0], [150, 1], [228, 2], [246, 4], [300, 5], [340, 6], [354, 9], [362, 10], [420, 11], [470, 12], [482, 13], [500, 15], [560, 17], [606, 19]]
-  .map(([f, i]) => [f, lenAtIndex(THREAD, i)]);
-function keyed(K, f) { if (f <= K[0][0]) return K[0][1]; for (let i = 1; i < K.length; i++) if (f <= K[i][0]) return lerp(K[i - 1][1], K[i][1], eio(seg(f, K[i - 1][0], K[i][0]))); return K[K.length - 1][1]; }
-
-const LOOP = prepPath(Array.from({ length: 33 }, (_, i) => { const a = (i / 32) * Math.PI * 2; return [245 + 205 * Math.cos(a), 1352 + 292 * Math.sin(a)]; }), 5);
-const BRANCH = [0, 1, 2, 3, 4].map((i) => prepPath([[450, 1352], [458, (1352 + ROWY(i)) / 2], [474, ROWY(i)]], 4));
-
+function grown(e, f0, side, f) {
+  const t = seg(f, f0, f0 + 24); if (t <= 0) return null; const k = back(eo(t), 0.7), ax = side === 'L' ? e.x : e.x + e.w, ay = e.y + e.h / 2;
+  return { x: lerp(ax, e.x, k), y: lerp(ay, e.y, k), w: e.w * k, h: e.h * k, r: RG * Math.min(1, k), k };
+}
+function crop(c, e, pad = 3) { c.drawImage(IMG, e.x - pad, e.y - pad, e.w + 2 * pad, e.h + 2 * pad, e.x - pad, e.y - pad, e.w + 2 * pad, e.h + 2 * pad); }
 function trace(c, m, x, y, w, h, r, p, width, color = COL.terra) { // el trazo recorre un borde
   if (p <= 0 || width <= 0.2) return;
   const per = 2 * (w + h);
@@ -62,39 +76,42 @@ function trace(c, m, x, y, w, h, r, p, width, color = COL.terra) { // el trazo r
   c.lineWidth = width + 3; c.strokeStyle = 'rgba(40,14,6,0.8)'; c.stroke();
   c.lineWidth = width; c.strokeStyle = color; c.stroke(); c.restore();
 }
+const clipScreen = (c, m) => { setM(c, m); c.beginPath(); c.roundRect(0, 0, 1080, VH, 124); c.clip(); };
 
 // ---------- estado del campo líquido ----------
-const RIPS = [[0, 540, 230, 3.4], [7, 540, 230, 1.8], [17, 540, 230, 1.1], [150, 540, 60, 0.9], [228, 540, 400, 0.7], [300, 580, 700, 0.6], [362, 30, 1010, 0.6],
-  [432, 450, 1352, 0.9], [482, 60, 1660, 0.5], [570, 540, 1870, 1.0], [606, 975, 2180, 0.7], [750, 540, 2180, 2.2], [758, 540, 2180, 1.2]];
-function fieldState(f, m) {
+function fieldState(f, m, mp) {
   const z = zoomOf(m), st = { rip: [], blobs: [], caps: [], box: null, glows: [] };
   if (f >= 960) { st.glows.push([DW * 0.2, DH * 0.3, 700, 0.10]); return st; }
-  RIPS.filter((r) => f > r[0] && f - r[0] < 150).slice(-NR).forEach((r) => { const p = P(m, r[1], r[2]); st.rip.push([p[0], p[1], f - r[0], r[3] * Math.min(1, z + 0.3)]); });
-  if (f > 846 && f < 960) st.rip.push([540, LY.nameY + 60, f - 846, 1.4]);
-  // gota: corona, montículo central y gota de rebote que sube a la punta del V60
-  if (f < 46) {
+  const hc = [E.hero.x + E.hero.w / 2, E.hero.y + E.hero.h / 2];
+  const R = [[0, hc, 3.4], [7, hc, 1.8], [17, hc, 1.1], [132, TIP, 0.8]];
+  [228, 300, 362, 432, 482, 570].forEach((f0) => R.push([f0, pointAt(THREAD, keyed(TKEY, f0)), 0.7]));
+  R.filter((r) => f > r[0] && f - r[0] < 150).slice(-6).forEach((r) => { const p = P(mp, r[1][0], r[1][1]); st.rip.push([p[0], p[1], f - r[0], r[2] * Math.min(1, z + 0.3)]); });
+  [[750, 2.2], [758, 1.2]].forEach(([f0, a]) => { if (f > f0 && f - f0 < 150) { const p = P(m, 540, E.bar.y + E.bar.h / 2); st.rip.push([p[0], p[1], f - f0, a]); } });
+  if (f > 846) st.rip.push([540, LY.nameY + 60, f - 846, 1.4]);
+  if (f < 46) { // corona de la gota y montículo central
     const t = seg(f, 0, 30);
-    for (let i = 0; i < 11; i++) { const a = (i / 11) * 6.283 + hash(i + 20) * 0.5, d = 30 + (120 + hash(i) * 230) * eo(t), p = P(m, 540 + Math.cos(a) * d, 230 + Math.sin(a) * d * 0.8 + 70 * t * t); st.blobs.push([p[0], p[1], (6 + hash(i + 3) * 13) * (1 - t * t) * z]); }
-    const p = P(m, 540, 230); st.blobs.push([p[0], p[1], 64 * (1 - eo(seg(f, 0, 44))) * z]);
+    for (let i = 0; i < 11; i++) { const a = (i / 11) * 6.283 + hash(i + 20) * 0.5, d = 30 + (150 + hash(i) * 280) * eo(t), p = P(mp, hc[0] + Math.cos(a) * d, hc[1] + Math.sin(a) * d * 0.8 + 80 * t * t); st.blobs.push([p[0], p[1], (7 + hash(i + 3) * 15) * (1 - t * t) * z]); }
+    const p = P(mp, hc[0], hc[1]); st.blobs.push([p[0], p[1], 78 * (1 - eo(seg(f, 0, 44))) * z]);
   }
-  if (f < 152) { const t = eo5(seg(f, 2, 70)), y = lerp(230, -26, t) + Math.sin(f * 0.12) * 3 * t, p = P(m, 540, y); st.blobs.push([p[0], p[1], 17 * z * (1 - eio(seg(f, 132, 152)))]); }
-  const hr = headRect(f);
-  if (f < 84 && hr.th > 0.05) { const p = P(m, 540, 230); st.box = { x: p[0], y: p[1], hw: (hr.w / 2) * z, hh: (hr.h / 2) * z, r: hr.r * z, th: hr.th * z }; }
-  [[900, 250, 520, 0.16], [120, 1150, 560, 0.15], [960, 1800, 520, 0.16], [250, 2420, 520, 0.13]].forEach((g) => { const p = P(m, g[0], g[1]); st.glows.push([p[0], p[1], g[2] * z, g[3]]); });
+  if (f < 152) { // gota de rebote: sube a la punta del V60 y ahí se estira en hilo
+    const t = eo5(seg(f, 2, 70)), p = P(mp, lerp(hc[0], TIP[0], t), lerp(hc[1], TIP[1] + 6, t) - Math.sin(t * Math.PI) * 220 + Math.sin(f * 0.12) * 3 * t);
+    st.blobs.push([p[0], p[1], 19 * z * (1 - eio(seg(f, 132, 152)))]);
+  }
+  const hr = heroRect(f);
+  if (f < 84 && hr.th > 0.05) { const p = P(mp, hc[0], hc[1]); st.box = { x: p[0], y: p[1], hw: (hr.w / 2) * z, hh: (hr.h / 2) * z, r: hr.r * z, th: hr.th * z }; }
+  for (let i = 0; i < 8; i++) { const p = P(mp, i % 2 ? 140 : 930, 250 + i * 1350); if (p[1] > -700 && p[1] < DH + 700 && st.glows.length < 4) st.glows.push([p[0], p[1], 560 * z, 0.16]); }
   return st;
 }
 
 // ---------- teléfono ----------
-const BZ = { x: -30, y: -30, w: 1140, h: 2400, r: 150 };
+const BZ = { x: -30, y: -30, w: 1140, h: 2397, r: 150 };
 function phoneBack(c, m, f, k) {
   if (k <= 0) return;
   const th = 44 * k, z = zoomOf(m);
-  // sombra de contacto en el piso, crece con el giro
   const bl = P(m, BZ.x, BZ.y + BZ.h), br = P(m, BZ.x + BZ.w, BZ.y + BZ.h);
-  c.save(); setM(c, ID); c.filter = `blur(${26 * S}px)`; c.fillStyle = `rgba(0,0,0,${0.7 * k})`;
+  c.save(); setM(c, ID); c.filter = `blur(${26 * S}px)`; c.fillStyle = `rgba(0,0,0,${0.7 * k})`; // sombra de contacto, crece con el giro
   c.beginPath(); c.moveTo(bl[0], bl[1] - 20); c.lineTo(br[0], br[1] - 20); c.lineTo(br[0] + 150 * k, br[1] + 34); c.lineTo(bl[0] + 110 * k, bl[1] + 34); c.closePath(); c.fill(); c.restore();
-  // grosor: el cuerpo se extruye hacia atrás (arriba-derecha)
-  for (let i = 14; i >= 1; i--) {
+  for (let i = 14; i >= 1; i--) { // grosor: el cuerpo se extruye hacia atrás (arriba-derecha)
     const o = (th * i) / 14;
     c.save(); setM(c, ID); c.translate(o * C30, -o * 0.5); c.transform(...m);
     rr(c, BZ.x, BZ.y, BZ.w, BZ.h, BZ.r);
@@ -106,84 +123,82 @@ function phoneBack(c, m, f, k) {
   c.lineWidth = 2.2 / z; c.strokeStyle = g; c.stroke(); c.restore();
 }
 
-// ---------- contenido de la página (sobre el cristal) ----------
-function pageContent(c, m, f) {
-  // encabezado
-  const hr = panelRect('head', f);
-  if (hr) {
-    glass(c, m, hr.x, hr.y, hr.w, hr.h, hr.r);
-    if (f >= 160) {
-      c.save(); setM(c, m);
-      inkText(c, 'Cata Café', 112, 236, `700 132px ${SG}`, f, 168, { stagger: 4, draw: 14, fillDur: 14, tracking: -2 });
-      gtext(c, 'Orgánico, cooperativo', 116, 308, `500 42px ${IN}`, 'rgba(251,243,213,0.86)', f, 198, { stagger: 0.8 });
-      gtext(c, 'y de pueblos originarios', 116, 362, `500 42px ${IN}`, 'rgba(251,243,213,0.86)', f, 208, { stagger: 0.8 });
-      c.restore();
-    }
+// ---------- la página real ----------
+function pageContent(c, m, mp, f, sc) {
+  // encabezado (hero): el anillo de la gota se vuelve su panel de cristal
+  if (f > 4) {
+    const hr = heroRect(f), h = E.hero;
+    glass(c, mp, hr.x, hr.y, hr.w, hr.h, hr.r);
+    c.save(); setM(c, mp); rr(c, hr.x, hr.y, hr.w, hr.h, hr.r); c.clip();
+    const vk = back(eo(seg(f, 124, 160)), 1.2);
+    if (vk > 0) { c.save(); c.translate(TIP[0], TIP[1]); c.rotate((1 - eo(seg(f, 124, 170))) * -0.3); c.scale(vk, vk); c.translate(-TIP[0], -TIP[1]); c.drawImage(V60IMG, E.v60.x, E.v60.y, E.v60.w, E.v60.h); c.restore(); }
+    c.restore();
   }
-  // métodos
-  ['mA', 'mB', 'mC'].forEach((id) => {
-    const p = PAN[id], g = grown(p, f); if (!g) return;
-    glass(c, m, g.x, g.y, g.w, g.h, g.r);
-    trace(c, m, g.x, g.y, g.w, g.h, g.r, eio(seg(f, p.f0, p.f0 + 30)), lerp(7, 0, seg(f, p.f0 + 24, p.f0 + 46)));
-    const k = back(eo(seg(f, p.f0 + 10, p.f0 + 32)), 1.2); if (k <= 0) return;
-    if (id === 'mA') { local(c, m, 310, 812, 0.86 * k, 0, () => v60(c, f)); c.save(); setM(c, m); gtext(c, 'V60', 110, 922, `700 104px ${SG}`, COL.crema, f, p.f0 + 16, { stagger: 2.2 }); c.restore(); }
-    if (id === 'mB') local(c, m, 810, 565, 0.98 * k, 0, () => chemex(c));
-    if (id === 'mC') local(c, m, 806, 836, 0.96 * k, 0, () => prensa(c));
-  });
-  // café en grano o molido
-  const g = grown(PAN.roast, f);
-  if (g) {
-    glass(c, m, g.x, g.y, g.w, g.h, g.r);
-    trace(c, m, g.x, g.y, g.w, g.h, g.r, eio(seg(f, 348, 380)), lerp(7, 0, seg(f, 374, 396)));
-    const lw = lerp(8, 3.5, eio(seg(f, 452, 476))), la = LOOP.len * eio(seg(f, 384, 432));
-    stroke(c, m, LOOP, 0, la, lw); // la vuelta completa (la mitad de atrás queda tapada por la bolsa)
-    const bk = back(eo(seg(f, 360, 386)), 1.1);
-    if (bk > 0) local(c, m, 245, 1566 - (1 - eo(seg(f, 360, 392))) * 70, bk, 0, () => bolsa(c, lerp(0.44, -0.17, eio(seg(f, 360, 404))) + Math.sin(f * 0.02) * 0.02 * seg(f, 404, 440), f));
-    if (la > 0) { // la mitad de enfrente pasa por delante de la bolsa
-      c.save(); setM(c, m); c.beginPath(); c.rect(0, 1352, 1080, 400); c.clip(); stroke(c, m, LOOP, 0, la, lw); c.restore();
-      if (f < 436) { const h = pointAt(LOOP, la); bead(c, m, h[0], h[1], 9); }
+  EL.forEach(([k, type, f0, x]) => {
+    if (f < f0) return; const e = E[k];
+    const top = (e.y - sc), vis = top < VH + 400 && top + e.h > -400; if (!vis) return;
+    if (type === 'grow') {
+      const g = grown(e, f0, x, f); if (!g) return;
+      glass(c, mp, g.x, g.y, g.w, g.h, g.r);
+      c.save(); setM(c, mp); rr(c, g.x, g.y, g.w, g.h, g.r); c.clip(); crop(c, e); c.restore();
+      trace(c, mp, g.x, g.y, g.w, g.h, g.r, eio(seg(f, f0, f0 + 30)), lerp(8, 0, seg(f, f0 + 24, f0 + 46)));
+    } else if (type === 'pop') {
+      const kk = back(eo(seg(f, f0, f0 + 16)), 1.5); if (kk <= 0) return;
+      c.save(); setM(c, mp); c.translate(e.x + e.w / 2, e.y + e.h / 2); c.scale(kk, kk); c.translate(-e.x - e.w / 2, -e.y - e.h / 2); crop(c, e, 12); c.restore();
+    } else {
+      const p = eo(seg(f, f0, f0 + x));
+      c.save(); setM(c, mp); c.beginPath(); c.rect(e.x - 6, e.y - 6, (e.w + 12) * p, e.h + 12); c.clip(); crop(c, e); c.restore();
+      if (k === 'h1' && p < 1) { bead(c, mp, e.x + (e.w + 12) * p * 0.62, e.y + e.h - 6, 12); } // la gota del trazo escribe el nombre
     }
-    ROAST.forEach((r, i) => {
-      const f0 = 432 + i * 2, bp = eio(seg(f, f0, f0 + 18));
-      const end = stroke(c, m, BRANCH[i], 0, BRANCH[i].len * bp, lw * 0.8);
-      if (end && f < 476) bead(c, m, end[0], end[1], 8 * (1 - seg(f, 460, 476)));
-      const cf = 438 + i * 8, k = back(eo(seg(f, cf, cf + 16)), 1.6);
-      if (k > 0) local(c, m, 526, ROWY(i), 0.92 * k, 0, () => vasito(c, r[1], i));
-      c.save(); setM(c, m); gtext(c, r[0], 606, ROWY(i) + 17, `600 46px ${IN}`, COL.crema, f, cf + 4, { stagger: 1.2 }); c.restore();
+  });
+  // bolsa con grano (toque 3D): el trazo la rodea y se parte en cinco
+  if (f >= 360 && f < 490) {
+    const lw = 9, la = LOOP.len * eio(seg(f, 384, 432)), l0 = LOOP.len * eio(seg(f, 434, 456));
+    stroke(c, mp, LOOP, l0, la, lw);
+    const bk = back(eo(seg(f, 360, 386)), 1.1) * (1 - eio(seg(f, 432, 454)));
+    if (bk > 0.01) local(c, mp, BAG.x, BAG.y - (1 - eo(seg(f, 360, 392))) * 90, BAG.s * bk, 0, () => bolsa(c, lerp(0.44, -0.17, eio(seg(f, 360, 404))) + Math.sin(f * 0.02) * 0.02 * seg(f, 404, 440), f));
+    if (la > l0) { c.save(); setM(c, mp); c.beginPath(); c.rect(0, BAG.y - 205 * BAG.s, 1080, 600); c.clip(); stroke(c, mp, LOOP, l0, la, lw); c.restore(); if (f < 434) { const h = pointAt(LOOP, la); bead(c, mp, h[0], h[1], 11); } }
+    BRANCH.forEach((br, i) => {
+      const f0 = 432 + i * 2, end = stroke(c, mp, br, br.len * eio(seg(f, 464 + i * 2, 486 + i * 2)), br.len * eio(seg(f, f0, f0 + 16 + i * 2)), 7);
+      if (end && f < 470) bead(c, mp, end[0], end[1], 10 * (1 - seg(f, 456, 470)));
     });
   }
-  // tarjeta de cliente frecuente: sale de la barra y aterriza en la página
+  // tarjeta de cliente frecuente: sale de la barra y aterriza en su lugar de la página
   if (f >= 462) {
-    const bo = f < 520 ? (1 - eo(seg(f, 462, 488))) * 800 : ei(seg(f, 572, 602)) * 1100, BY = 2130 + bo;
+    const cd = E.card, bo = f < 520 ? (1 - eo(seg(f, 462, 488))) * 1100 : ei(seg(f, 572, 602)) * 1400, BY = BY0 + bo;
     const p1 = eo(seg(f, 482, 522)), p2 = eio(seg(f, 520, 570));
-    const cy = lerp(lerp(2240, 1620, p1), CARD.y, p2), rot = lerp(lerp(-0.02, -0.11, p1), 0, p2), sc = lerp(lerp(0.9, 1.07, p1), 1, p2);
-    const lift = p1 * (1 - p2);
-    if (f < 602) local(c, m, 0, BY, 1, 0, () => { c.beginPath(); c.moveTo(40, 0); c.lineTo(1040, 0); c.lineTo(1080, 54); c.lineTo(0, 54); c.closePath(); c.fillStyle = '#C0915A'; c.fill(); });
+    const cy = lerp(lerp(BY0 + 120, cd.y - 90, p1), cd.y, p2), rot = lerp(lerp(-0.02, -0.11, p1), 0, p2), s2 = lerp(lerp(0.9, 1.06, p1), 1, p2), lift = p1 * (1 - p2);
+    if (f < 602) local(c, mp, 0, BY, 1, 0, () => { c.beginPath(); c.moveTo(40, 0); c.lineTo(1040, 0); c.lineTo(1080, 54); c.lineTo(0, 54); c.closePath(); c.fillStyle = '#C0915A'; c.fill(); });
     if (f >= 482) {
-      c.save(); setM(c, m);
-      if (p2 <= 0) { c.beginPath(); c.rect(-200, -4000, 1500, 4000 + BY + 26); c.clip(); }
-      if (p2 > 0) { c.save(); c.filter = `blur(${(14 + 26 * lift) * zoomOf(m) * S}px)`; c.fillStyle = 'rgba(0,0,0,0.5)'; rr(c, CARD.x + 12 + 40 * lift, CARD.y + 20 + 70 * lift, CARD.w, CARD.h, 34); c.fill(); c.restore(); }
-      c.translate(CARD.x + CARD.w / 2, cy + CARD.h / 2); c.rotate(rot); c.scale(sc, sc); c.translate(-CARD.w / 2, -CARD.h / 2);
-      tarjeta(c, CARD.w, CARD.h, f, 506, seg(f, 572, 600));
+      c.save(); setM(c, mp);
+      if (p2 <= 0) { c.beginPath(); c.rect(-200, BY - 6000, 1500, 6000 + 26); c.clip(); }
+      if (p2 > 0) { c.save(); c.filter = `blur(${(14 + 26 * lift) * zoomOf(m) * S}px)`; c.fillStyle = 'rgba(0,0,0,0.5)'; rr(c, cd.x + 12 + 40 * lift, cd.y + 20 + 70 * lift, cd.w, cd.h, 66); c.fill(); c.restore(); }
+      c.translate(cd.x + cd.w / 2, cy + cd.h / 2); c.rotate(rot); c.scale(s2, s2); c.translate(-cd.x - cd.w / 2, -cd.y - cd.h / 2);
+      c.drawImage(IMG, cd.x - 4, cd.y - 4, cd.w + 8, cd.h + 24, cd.x - 4, cd.y - 4, cd.w + 8, cd.h + 24);
+      const sh = seg(f, 572, 600); // brillo que la recorre al aterrizar
+      if (sh > 0 && sh < 1) { rr(c, cd.x, cd.y, cd.w, cd.h, 66); c.clip(); const x = lerp(cd.x - cd.w * 0.4, cd.x + cd.w * 1.2, sh), gs = c.createLinearGradient(x, 0, x + 260, 90); gs.addColorStop(0, 'rgba(255,255,255,0)'); gs.addColorStop(0.5, 'rgba(255,240,215,0.45)'); gs.addColorStop(1, 'rgba(255,255,255,0)'); c.fillStyle = gs; c.fillRect(cd.x, cd.y, cd.w, cd.h); }
       c.restore();
-      trace(c, m, CARD.x, CARD.y, CARD.w, CARD.h, 34, eio(seg(f, 562, 592)), lerp(6, 0, seg(f, 586, 604)), COL.terraL);
+      trace(c, mp, cd.x, cd.y, cd.w, cd.h, 66, eio(seg(f, 562, 592)), lerp(7, 0, seg(f, 586, 604)), COL.terraL);
     }
-    if (f < 602) local(c, m, 0, BY, 1, 0, () => { c.save(); c.beginPath(); c.rect(-10, 26, 1100, 700); c.clip(); barra(c, 1080); c.restore(); });
+    if (f < 602) local(c, mp, 0, BY, 1, 0, () => { c.save(); c.beginPath(); c.rect(-10, 26, 1100, 900); c.clip(); barra(c, 1080); c.restore(); });
   }
-  // botón de pedido
-  const bk = back(eo(seg(f, 606, 630)), 1.0);
+}
+// elementos fijos de la pantalla: barra superior y botón "Hacer pedido"
+function stickyUI(c, m, f, sc) {
+  const dk = eo(seg(f, 672, 702));
+  if (dk > 0) {
+    const t = E.top, y = Math.max(0, t.y - sc) - (1 - dk) * 260;
+    glass(c, m, 0, y, 1080, t.h, 0, { tint: 'rgba(18,14,11,0.55)', border: 'rgba(251,243,213,0.14)' });
+    c.save(); setM(c, m); c.drawImage(IMG, t.x, t.y, t.w, t.h, 0, y, t.w, t.h); c.restore();
+  }
+  const b = E.bar, bk = back(eo(seg(f, 606, 630)), 1.2);
   if (bk > 0) {
-    const pr = Math.sin(seg(f, 750, 774) * Math.PI), sc = 1 - 0.06 * pr;
-    // onda de contacto
-    [0, 9].forEach((d) => { const t = seg(f, 750 + d, 796 + d); if (t > 0 && t < 1) { c.save(); setM(c, m); ell(c, 540, 2180, 80 + 620 * eo(t), 80 + 620 * eo(t)); c.lineWidth = 14 * (1 - t); c.strokeStyle = 'rgba(251,243,213,0.85)'; c.stroke(); c.restore(); } });
-    c.save(); setM(c, m); c.translate(lerp(975, 540, bk), 2180); c.scale(bk * sc, bk * sc); c.translate(-430, -70);
-    c.filter = `blur(${16 * zoomOf(m) * S}px)`; c.fillStyle = 'rgba(0,0,0,0.5)'; rr(c, 10, 22, 860, 140, 70); c.fill(); c.filter = 'none';
-    rr(c, 0, 9 * (1 - pr), 860, 140, 70); c.fillStyle = '#5E2610'; c.fill();
-    const gb = c.createLinearGradient(0, 0, 0, 140); gb.addColorStop(0, mixc('#D8753F', '#A84A22', pr)); gb.addColorStop(1, mixc('#A84A22', '#8A3A1A', pr));
-    rr(c, 0, 0, 860, 140, 70); c.fillStyle = gb; c.fill();
-    rr(c, 2, 2, 856, 136, 68); c.lineWidth = 2.5; const gh = c.createLinearGradient(0, 0, 0, 140); gh.addColorStop(0, 'rgba(255,230,200,0.85)'); gh.addColorStop(0.5, 'rgba(255,230,200,0)'); c.strokeStyle = gh; c.stroke();
-    gtext(c, 'Hacer pedido', 430, 91, `700 60px ${IN}`, COL.crema, f, 618, { align: 'center', stagger: 1.2 });
-    if (pr > 0.02) { ell(c, 430, 70, 60 * pr, 60 * pr); c.fillStyle = 'rgba(251,243,213,0.35)'; c.fill(); }
+    const pr = Math.sin(seg(f, 750, 774) * Math.PI), s2 = bk * (1 - 0.06 * pr), cx = b.x + b.w / 2, cy = b.y + b.h / 2;
+    [0, 9].forEach((d) => { const t = seg(f, 750 + d, 796 + d); if (t > 0 && t < 1) { c.save(); setM(c, m); ell(c, cx, cy, 80 + 640 * eo(t), 80 + 640 * eo(t)); c.lineWidth = 14 * (1 - t); c.strokeStyle = 'rgba(251,243,213,0.85)'; c.stroke(); c.restore(); } });
+    c.save(); setM(c, m); c.translate(cx, cy + 10 * pr); c.scale(s2, s2); c.translate(-cx, -cy);
+    c.filter = `blur(${18 * zoomOf(m) * S}px)`; c.fillStyle = 'rgba(0,0,0,0.55)'; rr(c, b.x + 8, b.y + 26, b.w, b.h, 78); c.fill(); c.filter = 'none';
+    c.drawImage(BARIMG, b.x, b.y, b.w, b.h);
+    if (pr > 0.02) { ell(c, cx, cy, 70 * pr, 70 * pr); c.fillStyle = 'rgba(251,243,213,0.4)'; c.fill(); }
     c.restore();
   }
 }
@@ -196,35 +211,31 @@ function ktLine(c, y, size, exitF, f, fn) {
 }
 function overlay(c, f, m) {
   setD(c);
-  // UN SOLO TRAZO
-  if (f >= 130 && f < 240) {
+  if (f >= 130 && f < 240) { // UN SOLO TRAZO
     const [y1, s1, y2, s2] = LY.kt1, F1 = `700 ${s1}px ${SG}`, wUN = glyphs('UN', F1).w, wS = glyphs('SOLO', F1).w, gap = s1 * 0.3, x0 = 540 - (wUN + gap + wS) / 2;
     ktLine(c, y1, s1, 214, f, () => { gtext(c, 'UN', x0, y1, F1, COL.crema, f, 130, { mode: 'drop', stagger: 1.8 }); gtext(c, 'SOLO', x0 + wUN + gap, y1, F1, COL.crema, f, 149, { mode: 'left', stagger: 1.8 }); });
     ktLine(c, y2, s2, 218, f, () => inkText(c, 'TRAZO', 540, y2, `700 ${s2}px ${SG}`, f, 166, { align: 'center', stagger: 2.5, draw: 12, fillDur: 12, color: COL.terraL, ink: COL.crema }));
   }
-  // UNA PÁGINA
-  if (f >= 296 && f < 420) {
+  if (f >= 296 && f < 380) { // UNA PÁGINA
     const [y1, s1, y2, s2] = LY.kt2;
-    ktLine(c, y1, s1, 346, f, () => gtext(c, 'UNA', 540, y1, `500 ${s1}px ${SG}`, 'rgba(251,243,213,0.8)', f, 299, { align: 'center', mode: 'drop', stagger: 1.6 }));
-    ktLine(c, y2, s2, 350, f, () => gtext(c, 'PÁGINA', 540, y2, `700 ${s2}px ${SG}`, COL.crema, f, 311, { align: 'center', stagger: 1.9 }));
+    if (s1) { ktLine(c, y1, s1, 346, f, () => gtext(c, 'UNA', 540, y1, `500 ${s1}px ${SG}`, 'rgba(251,243,213,0.8)', f, 299, { align: 'center', mode: 'drop', stagger: 1.6 })); ktLine(c, y2, s2, 350, f, () => gtext(c, 'PÁGINA', 540, y2, `700 ${s2}px ${SG}`, COL.crema, f, 311, { align: 'center', stagger: 1.9 })); }
+    else ktLine(c, y2, s2, 348, f, () => { const F = `700 ${s2}px ${SG}`, F0 = `500 ${s2}px ${SG}`, w1 = glyphs('UNA', F0).w, w2 = glyphs('PÁGINA', F).w, g = s2 * 0.28, x0 = 540 - (w1 + g + w2) / 2;
+      gtext(c, 'UNA', x0, y2, F0, 'rgba(251,243,213,0.8)', f, 299, { mode: 'drop', stagger: 1.6 }); gtext(c, 'PÁGINA', x0 + w1 + g, y2, F, COL.crema, f, 311, { stagger: 1.9 }); });
   }
-  // EN EL CELULAR → se va hacia el teléfono
-  if (f >= 628 && f < 724) {
-    const [y1, s1, y2, s2] = LY.kt3, q = eio(seg(f, 700, 723)), T = P(m, 540, 1170);
+  if (f >= 628 && f < 724) { // EN EL CELULAR → se va hacia el teléfono
+    const y2 = LY.kt3[2], s2 = LY.kt3[3], q = eio(seg(f, 700, 723)), T = P(m, 540, VH / 2);
+    const F = `700 ${s2}px ${SG}`, F0 = `500 ${s2}px ${SG}`, w1 = glyphs('EN EL', F0).w, w2 = glyphs('CELULAR', F).w, g = s2 * 0.28, x0 = 540 - (w1 + g + w2) / 2;
     c.save(); c.translate(lerp(0, T[0], q), lerp(0, T[1], q)); c.scale(1 - q, 1 - q); c.translate(lerp(0, -540, q), lerp(0, -y2, q));
-    ktLine(c, y1, s1, null, f, () => gtext(c, 'EN EL', 540, y1, `500 ${s1}px ${SG}`, 'rgba(251,243,213,0.8)', f, 630, { align: 'center', mode: 'left', stagger: 1.6 }));
-    ktLine(c, y2, s2, null, f, () => gtext(c, 'CELULAR', 540, y2, `700 ${s2}px ${SG}`, COL.crema, f, 657, { align: 'center', stagger: 1.8 }));
+    ktLine(c, y2, s2, null, f, () => { gtext(c, 'EN EL', x0, y2, F0, 'rgba(251,243,213,0.8)', f, 630, { mode: 'left', stagger: 1.6 }); gtext(c, 'CELULAR', x0 + w1 + g, y2, F, COL.crema, f, 657, { stagger: 1.8 }); });
     c.restore();
   }
-  // chips, ruta y el trazo que los une
-  if (f >= 752 && f < 872) {
+  if (f >= 752 && f < 872) { // chips, ruta y el trazo que los une
     const X = LY.chipX, Wc = LY.chipW, [c1, c2] = LY.chipY, [r1, r2, r3] = LY.routeY, s0 = P(m, 1112, 760), CH = 168;
     const path = prepPath([s0, [X - 34, c1 + 150], [X - 22, c1 + CH / 2], [X - 22, c2 + CH / 2], [X - 10, c2 + CH + 30], [X + 34, r1], [X + 34, r2], [X + 34, r3]], 5);
     const K = [[752, 0], [764, lenAtIndex(path, 2)], [776, lenAtIndex(path, 3)], [790, lenAtIndex(path, 5)], [801, lenAtIndex(path, 6)], [812, path.len]];
     const end = stroke(c, ID, path, 0, keyed(K, f), 7);
     if (end && f < 818) bead(c, ID, end[0], end[1], 9);
-    const TXT = [[['Lun–Sáb 7:30–16:00', 'Dom 7:30–15:00'], c1, 764], [['Mercado Terán', 'Módulo IV'], c2, 776]];
-    TXT.forEach(([ls, y, f0]) => {
+    [[['Lun–Sáb 7:30–16:00', 'Dom 7:30–15:00'], c1, 764], [['Mercado Terán', 'Módulo IV'], c2, 776]].forEach(([ls, y, f0]) => {
       const k = back(eo(seg(f, f0, f0 + 22)), 0.9); if (k <= 0) return;
       const w = Wc * k, h = CH * k, x = X, yy = y + (CH - h) / 2;
       glass(c, ID, x, yy, w, h, 40 * Math.min(1, k), { tint: 'rgba(251,243,213,0.10)' });
@@ -253,14 +264,12 @@ function finale(c, f) {
   for (let k = N; k >= 0; k--) {
     c.save(); setD(c); c.translate(540 - k * 3.2 * sn, uy + k * 0.6); c.transform(cs, -sn * 0.10, 0, 1, 0, 0);
     const col = k === 0 ? null : mixc('#5A2410', COL.terra, 1 - k / N);
-    // subrayado: la línea en la que se recogió todo
-    c.lineCap = 'round'; c.beginPath(); c.moveTo(x1 - 540, 0); c.lineTo(x2 - 540, 0); c.lineWidth = 11 * grow;
+    c.lineCap = 'round'; c.beginPath(); c.moveTo(x1 - 540, 0); c.lineTo(x2 - 540, 0); c.lineWidth = 11 * grow; // la línea en la que se recogió todo
     c.strokeStyle = k === 0 ? COL.terraL : col; c.stroke();
     if (f >= 868) inkText(c, 'Cata Café', 0, y0 - uy, font, f, 868, { align: 'center', stagger: 4.5, draw: 14, fillDur: 14, tracking: -2, color: k === 0 ? COL.crema : col, ink: k === 0 ? COL.terraL : col, lw: k === 0 ? 4 : 2 });
     c.restore();
   }
 }
-
 function endCard(c, f) {
   setD(c); const y = LY.endY;
   const p = eo5(seg(f, 962, 990)); c.save(); c.lineCap = 'round'; c.beginPath(); c.moveTo(540 - 90 * p, y); c.lineTo(540 + 90 * p, y); c.lineWidth = 6; c.strokeStyle = COL.terra; if (p > 0) c.stroke(); c.restore();
@@ -270,37 +279,39 @@ function endCard(c, f) {
 
 // ---------- un subcuadro ----------
 function subframe(f) {
-  const m = camAt(f), isoK = eio(seg(f, 660, 720));
+  const m = camAt(f), sc = keyed(SCROLL, f), mp = pageM(m, sc), isoK = eio(seg(f, 660, 720)), inPhone = f >= 660;
   GP = null;
-  drawField(f, fieldState(f, m));
+  drawField(f, fieldState(f, m, mp));
   B.setTransform(1, 0, 0, 1, 0, 0); B.drawImage(cGL, 0, 0);
   if (f >= 960) { A.setTransform(1, 0, 0, 1, 0, 0); A.drawImage(cB, 0, 0); endCard(A, f); return; }
-  const sq = eio(seg(f, 844, 868)); // colapso: todo se recoge en una línea
-  const showPage = f < 868;
+  const sq = eio(seg(f, 844, 868)), showPage = f < 868; // colapso: todo se recoge en una línea
   if (sq > 0) { const k = 1 - sq * 0.997, y0 = LY.nameY + 62; GP = [1, 0, 0, k, 0, y0 * (1 - k)]; }
   if (showPage) {
-    ['head', 'mA', 'mB', 'mC', 'roast'].forEach((id) => { const r = panelRect(id, f); if (r) shadow(B, m, r.x, r.y, r.w, r.h, r.r, clamp(r.w / PAN[id].w) * (id === 'head' ? seg(f, 20, 60) : 1)); });
     phoneBack(B, m, f, isoK);
     if (f > 672) { // pantalla: cristal oscuro que entra desde los bordes
       blurInto(cBb2, Bb2, cB, 34);
       const d = eio(seg(f, 672, 716)) * 545;
-      B.save(); setM(B, m); B.beginPath(); B.roundRect(0, 0, 1080, 2340, 124); if (d < 540) B.rect(d, d, 1080 - 2 * d, 2340 - 2 * d); B.clip('evenodd');
+      B.save(); setM(B, m); B.beginPath(); B.roundRect(0, 0, 1080, VH, 124); if (d < 540) B.rect(d, d, 1080 - 2 * d, VH - 2 * d); B.clip('evenodd');
       B.setTransform(1, 0, 0, 1, 0, 0); B.drawImage(cBb2, 0, 0, W, H); B.fillStyle = 'rgba(16,12,9,0.66)'; B.fillRect(0, 0, W, H); B.restore();
     }
-    // hilo maestro
-    const tl = keyed(TKEY, f);
-    if (f >= 130) { const end = stroke(B, m, THREAD, 0, tl, 10); if (end && f < 640) bead(B, m, end[0], end[1], 11 * (1 - seg(f, 620, 640))); }
+    B.save(); if (inPhone) clipScreen(B, m);
+    if (f > 4) { const r = heroRect(f); shadow(B, mp, r.x, r.y, r.w, r.h, r.r, seg(f, 20, 60)); }
+    EL.forEach(([k, type, f0, x]) => { if (type !== 'grow' || f < f0) return; const e = E[k]; if (e.y - sc > VH + 400 || e.y + e.h - sc < -400) return; const g = grown(e, f0, x, f); if (g) shadow(B, mp, g.x, g.y, g.w, g.h, g.r, clamp(g.k)); });
+    if (f >= 130) { const end = stroke(B, mp, THREAD, 0, keyed(TKEY, f), 11); if (end && f < 580) bead(B, mp, end[0], end[1], 12 * (1 - seg(f, 560, 580))); } // hilo maestro
+    B.restore();
   }
   blurInto(cBb, Bb, cB, 32);
   A.setTransform(1, 0, 0, 1, 0, 0); A.drawImage(cB, 0, 0);
   if (showPage) {
-    // V60 grande: de su punta cae el hilo
-    if (f >= 120 && f < 420) { const k = back(eo(seg(f, 124, 160)), 1.3); if (k > 0) local(A, m, 540, -40, k, (1 - eo(seg(f, 124, 170))) * -0.25, () => v60(A, f)); }
-    pageContent(A, m, f);
+    A.save(); if (inPhone) clipScreen(A, m);
+    pageContent(A, m, mp, f, sc);
+    if (f >= 130 && f < 420) stroke(A, mp, THREAD, 0, Math.min(keyed(TKEY, f), lenAtIndex(THREAD, 4)), 11); // el servido cae del V60 por delante del cristal
+    stickyUI(A, m, f, sc);
+    A.restore();
     if (isoK > 0) { // contorno del teléfono dibujado por el trazo, cámara frontal y barra de inicio
       trace(A, m, BZ.x, BZ.y, BZ.w, BZ.h, BZ.r, eio(seg(f, 660, 712)), lerp(16, 0, eio(seg(f, 700, 736))), COL.terra);
-      A.save(); setM(A, m); ell(A, 540, 34, 15 * isoK, 15 * isoK); A.fillStyle = '#050403'; A.fill(); A.lineWidth = 3; A.strokeStyle = 'rgba(251,243,213,0.25)'; A.stroke();
-      rr(A, 540 - 130 * isoK, 2298, 260 * isoK, 11, 6); A.fillStyle = 'rgba(251,243,213,0.6)'; A.fill(); A.restore();
+      A.save(); setM(A, m); ell(A, 540, 30, 14 * isoK, 14 * isoK); A.fillStyle = '#050403'; A.fill(); A.lineWidth = 3; A.strokeStyle = 'rgba(251,243,213,0.25)'; A.stroke();
+      rr(A, 540 - 130 * isoK, VH - 26, 260 * isoK, 10, 5); A.fillStyle = 'rgba(251,243,213,0.6)'; A.fill(); A.restore();
     }
     overlay(A, f, m);
   }
@@ -319,6 +330,13 @@ window.renderFrame = (f, { sub = 8, shutter = 0.5, type = 'image/png', q = 0.95 
   octx.globalAlpha = 1;
   return out.toDataURL(type, q);
 };
-Promise.all([document.fonts.load(`700 40px ${SG}`), document.fonts.load(`500 40px ${SG}`), document.fonts.load(`500 40px ${IN}`), document.fonts.load(`600 40px ${IN}`), document.fonts.load(`700 40px ${IN}`)])
-  .then(() => { if (!document.fonts.check(`700 40px ${SG}`)) window.initError = 'Falta Space Grotesk'; window.ready = true; })
-  .catch((e) => { window.initError = String(e); });
+const loadImg = (src) => new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = () => rej(new Error('No carga ' + src)); i.src = src; });
+(async () => {
+  try {
+    UI = await (await fetch('ui/ui.json')).json();
+    [IMG, BARIMG, V60IMG] = await Promise.all([loadImg('ui/page.png'), loadImg('ui/bar.png'), loadImg('ui/v60.png')]);
+    await Promise.all([`700 40px ${SG}`, `500 40px ${SG}`, `500 40px ${IN}`, `600 40px ${IN}`, `700 40px ${IN}`].map((s) => document.fonts.load(s)));
+    if (!document.fonts.check(`700 40px ${SG}`)) throw new Error('Falta Space Grotesk');
+    build(); window.ready = true;
+  } catch (e) { window.initError = String(e); }
+})();
