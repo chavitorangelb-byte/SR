@@ -12,6 +12,18 @@ Video vertical de 18 s que le enseña al dueño cómo se vería su página. Un s
 
 **Corrección a la fase 1:** adelantar la última línea a 14.2 s le quita espacio a "Así se vería la página de Cata Café.", que ya va justa (1.9 s de ventana para unos 2.4 s de frase). Por eso el guion de ElevenLabs lleva versiones cortas de reserva en la misma toma; se decide al medirla (ver `voz/guion_elevenlabs.md`).
 
+## Cambio mayor: el video muestra la página real
+
+A pedido del cliente de Elevate, la interfaz ya no se dibuja a mano: el video usa la página real (`web/index.html`), capturada a 1080 px de ancho por `tools/captura_ui.mjs` con la posición exacta de cada elemento (`video/ui/`). El trazo, el cristal con blur real y el teléfono trabajan sobre esa captura. Lo que cambia frente a la línea de tiempo de abajo:
+
+- **Compases 1 y 2:** el anillo se vuelve la tarjeta de inicio real (logo, nombre, descripción, ubicación y botones). El hilo cae del V60 de esa tarjeta; ya no hay un V60 suelto.
+- **Compás 3:** entran las tres tarjetas reales de método y la fila de chips. Se leen todos los métodos, no solo "V60".
+- **Compás 4:** la bolsa 3D va sobre la página; el trazo la rodea (f384–432), se parte en cinco y cada rama abre una tarjeta real de tueste (f438, 444, 450, 456, 462). La cámara baja por la lista (f442–468) y se detiene hasta f496.
+- **Compás 5:** scroll rápido por el menú (f496–528); la tarjeta real de cliente frecuente sale de la barra y aterriza en su lugar (f482–570).
+- **Compás 6:** aparece el botón fijo "Hacer pedido" (f606); el teléfono se forma alrededor de la pantalla real y entra la barra superior (f672–702).
+- **Compás 7:** dentro del teléfono la página sube al inicio (f722–748), justo sobre "Así se vería Cata Café". Pulsación en f750; chips en f764 y f776; ruta en f790, f801 y f812.
+- **Logo:** se usa el de la página (recorte de la captura de Instagram, a tamaño chico), sin redibujarlo. El cierre sigue con el nombre en texto.
+
 ## Especificaciones
 
 - **Duración:** 1080 cuadros a 60 fps (18.0 s): 960 de pieza y 120 de end card. A 120 BPM un tiempo son 30 cuadros y un compás, 120.
