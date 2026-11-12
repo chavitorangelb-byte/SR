@@ -280,8 +280,8 @@ function brillo(c, x, y, w, h, radio, p) {
   g.addColorStop(0, 'rgba(255,255,255,0)'); g.addColorStop(.5, 'rgba(255,248,228,.34)'); g.addColorStop(1, 'rgba(255,255,255,0)');
   c.transform(1, 0, -.4, 1, (y + h / 2) * .4, 0); c.fillStyle = g; c.fillRect(x - w, y - 20, w * 3, h + 40); c.restore();
 }
-const ENTRA = [504, 540, 576, 796, 804, 820, 828];
-const ENTRA_CINT = 838;
+const ENTRA = [504, 540, 576, 786, 790, 802, 808];
+const ENTRA_CINT = 826;
 function numero(c, txt, x, base, alto, f, ini, pop) {
   // sube enmascarado (sin fundido) y remata con un pequeño salto
   const p = prog(f, ini, ini + 10); if (p <= 0) return 0;

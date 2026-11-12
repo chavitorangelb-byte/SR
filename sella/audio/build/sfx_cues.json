@@ -348,67 +348,67 @@
   "idx": 1
  },
  {
+  "f": 786,
+  "name": "tarjeta_sale",
+  "d": 0.0,
+  "idx": 3
+ },
+ {
+  "f": 790,
+  "name": "tarjeta_sale",
+  "d": 0.0,
+  "idx": 4
+ },
+ {
   "f": 792,
   "name": "detente",
   "d": 0.0,
   "idx": 2
  },
  {
-  "f": 796,
-  "name": "tarjeta_sale",
-  "d": 0.0,
-  "idx": 3
- },
- {
-  "f": 804,
-  "name": "tarjeta_sale",
-  "d": 0.0,
-  "idx": 4
- },
- {
-  "f": 820,
+  "f": 802,
   "name": "tarjeta_sale",
   "d": 0.0,
   "idx": 5
  },
  {
-  "f": 828,
+  "f": 808,
   "name": "tarjeta_sale",
   "d": 0.0,
   "idx": 6
  },
  {
-  "f": 838,
+  "f": 826,
   "name": "tarjeta_sale",
   "d": 0.0,
   "idx": 7
  },
  {
-  "f": 854,
+  "f": 842,
   "name": "tic",
   "d": 0.0,
   "idx": 12
  },
  {
-  "f": 860,
+  "f": 848,
   "name": "tic",
   "d": 0.0,
   "idx": 13
  },
  {
-  "f": 866,
+  "f": 854,
   "name": "tic",
   "d": 0.0,
   "idx": 14
  },
  {
-  "f": 872,
+  "f": 860,
   "name": "tic",
   "d": 0.0,
   "idx": 15
  },
  {
-  "f": 878,
+  "f": 866,
   "name": "logo_pop",
   "d": 0.0,
   "idx": 3
