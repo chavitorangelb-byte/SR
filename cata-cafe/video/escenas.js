@@ -21,7 +21,7 @@ function build() {
     const hb = 250 + E.hero.h * 0.8, mb = 260 + (E.chips.y + E.chips.h - E.metSh.y), cb = 250 + (E.card.y + E.card.h - E.tarSh.y);
     LY = { cam: [[0, flat(540, 1168, 0.8)], [236, flat(540, 1168, 0.8)], [300, flat(540, 1168, 1)], [598, flat(540, 1168, 1)], [650, flat(540, 1700, 1)], [660, flat(540, 1700, 1)],
         [720, iso(305, 255, 0.46)], [742, iso(305, 255, 0.46)], [772, iso(70, 300, 0.42)], [960, iso(64, 294, 0.426), (t) => t]],
-      scroll: [[0, S1], [236, S1], [300, S3], [356, S3], [404, S4], [446, S4], [474, S4b], [486, S4b], [524, S5], [598, S5], [650, S6], [722, S6], [748, 92]],
+      scroll: [[0, S1], [236, S1], [300, S3], [356, S3], [404, S4], [442, S4], [468, S4b], [496, S4b], [528, S5], [598, S5], [650, S6], [722, S6], [748, 92]],
       kt1: [hb + 160, 120, hb + 330, 160], kt2: [mb + 20, 0, mb + 180, 150], kt3: [0, 0, (cb + 1403) / 2 + 40, 118],
       bagY: E.tueSh.y + 1250, bagS: 1.3, barraGap: 120,
       chipX: 540, chipW: 500, chipY: [420, 620], routeY: [880, 1020, 1160], nameY: 930, nameW: 860, endY: 930 };
@@ -30,7 +30,7 @@ function build() {
     const hb = 40 + E.hero.h * 0.62, mb = 40 + (E.chips.y + E.chips.h - E.metSh.y) * 0.7, cb = 30 + (E.card.y + E.card.h - E.tarSh.y) * 0.8;
     LY = { cam: [[0, flat(540, 1168, 0.62)], [236, flat(540, 1168, 0.62)], [300, flat(540, 1168, 0.7)], [356, flat(540, 1168, 0.7)], [404, flat(540, 1168, 0.8)], [598, flat(540, 1168, 0.8)],
         [650, flat(540, 1718, 0.8)], [660, flat(540, 1718, 0.8)], [720, iso(388, 70, 0.325)], [742, iso(388, 70, 0.325)], [772, iso(80, 100, 0.31)], [960, iso(76, 96, 0.313), (t) => t]],
-      scroll: [[0, S1], [236, S1], [300, S3], [356, S3], [404, S4], [446, S4], [474, S4b], [486, S4b], [524, S5], [598, S5], [650, S6], [722, S6], [748, 92]],
+      scroll: [[0, S1], [236, S1], [300, S3], [356, S3], [404, S4], [442, S4], [468, S4b], [496, S4b], [528, S5], [598, S5], [650, S6], [722, S6], [748, 92]],
       kt1: [hb + 130, 100, hb + 275, 135], kt2: [mb + 110, 80, mb + 250, 140], kt3: [0, 0, (cb + 880) / 2 + 34, 100],
       bagY: E.tueSh.y + 1120, bagS: 1.2, barraGap: 90,
       chipX: 440, chipW: 580, chipY: [110, 290], routeY: [540, 680, 820], nameY: 520, nameW: 860, endY: 520 };
@@ -43,7 +43,7 @@ function build() {
   THREAD = prepPath([TIP, [TIP[0] + 3, TIP[1] + 70], [960, TIP[1] + 140], [1040, TIP[1] + 180], [GX, TIP[1] + 250], [GX, hbP], [GX, E.metSh.y], [GX, E.chips.y + E.chips.h], [GX, E.r0.y], [GX, E.r4.y + E.r4.h],
     [GX, E.menu.y + E.menu.h], [GX, E.card.y], [GX, E.card.y + E.card.h * 0.4], [E.card.x + E.card.w - 6, E.card.y + E.card.h * 0.5]], 8);
   const li = (i) => lenAtIndex(THREAD, i);
-  TKEY = [[130, 0], [160, li(3)], [228, li(5)], [246, li(6)], [340, li(7)], [404, li(8)], [474, li(9)], [516, li(10)], [526, li(11)], [560, THREAD.len]];
+  TKEY = [[130, 0], [160, li(3)], [228, li(5)], [246, li(6)], [340, li(7)], [404, li(8)], [468, li(9)], [522, li(10)], [530, li(11)], [560, THREAD.len]];
   // bolsa (toque 3D), la vuelta del trazo y las cinco ramas hacia las tarjetas de tueste
   const sB = LY.bagS, bcy = LY.bagY - 205 * sB;
   BAG = { x: 540, y: LY.bagY, s: sB };
@@ -54,8 +54,8 @@ function build() {
   // elementos de la página: [clave, tipo, cuadro de entrada, extra]
   EL = [['logo', 'pop', 150], ['h1', 'wipe', 168, 36], ['lema', 'wipe', 198, 24], ['donde', 'wipe', 208, 18], ['btn1', 'pop', 214], ['btn2', 'pop', 220],
     ['metSh', 'wipe', 246, 20], ['met0', 'grow', 252, 'R'], ['met1', 'grow', 270, 'R'], ['met2', 'grow', 288, 'R'], ['chips', 'wipe', 300, 30],
-    ['tueSh', 'wipe', 350, 20], ['grind', 'pop', 356], ['r0', 'grow', 438, 'L'], ['r1', 'grow', 446, 'L'], ['r2', 'grow', 454, 'L'], ['r3', 'grow', 462, 'L'], ['r4', 'grow', 470, 'L'], ['escala', 'wipe', 480, 16],
-    ['menuSh', 'wipe', 472, 12], ['tabs', 'pop', 474], ['menu', 'grow', 476, 'R'], ['menuNota', 'wipe', 482, 12],
+    ['tueSh', 'wipe', 350, 20], ['grind', 'pop', 356], ['r0', 'grow', 438, 'L'], ['r1', 'grow', 444, 'L'], ['r2', 'grow', 450, 'L'], ['r3', 'grow', 456, 'L'], ['r4', 'grow', 462, 'L'], ['escala', 'wipe', 470, 16],
+    ['menuSh', 'wipe', 488, 12], ['tabs', 'pop', 490], ['menu', 'grow', 492, 'R'], ['menuNota', 'wipe', 500, 12],
     ['tarSh', 'wipe', 500, 20], ['tarNota', 'wipe', 704, 14], ['demo', 'wipe', 706, 10], ['visSh', 'wipe', 706, 10], ['visita', 'grow', 706, 'R'], ['links', 'pop', 710], ['pie', 'wipe', 710, 10]];
 }
 
@@ -159,8 +159,8 @@ function pageContent(c, m, mp, f, sc) {
     if (bk > 0.01) local(c, mp, BAG.x, BAG.y - (1 - eo(seg(f, 360, 392))) * 90, BAG.s * bk, 0, () => bolsa(c, lerp(0.44, -0.17, eio(seg(f, 360, 404))) + Math.sin(f * 0.02) * 0.02 * seg(f, 404, 440), f));
     if (la > l0) { c.save(); setM(c, mp); c.beginPath(); c.rect(0, BAG.y - 205 * BAG.s, 1080, 600); c.clip(); stroke(c, mp, LOOP, l0, la, lw); c.restore(); if (f < 434) { const h = pointAt(LOOP, la); bead(c, mp, h[0], h[1], 11); } }
     BRANCH.forEach((br, i) => {
-      const f0 = 432 + i * 2, end = stroke(c, mp, br, br.len * eio(seg(f, 464 + i * 2, 486 + i * 2)), br.len * eio(seg(f, f0, f0 + 16 + i * 2)), 7);
-      if (end && f < 470) bead(c, mp, end[0], end[1], 10 * (1 - seg(f, 456, 470)));
+      const f0 = 432 + i * 2, end = stroke(c, mp, br, br.len * eio(seg(f, 458 + i * 2, 478 + i * 2)), br.len * eio(seg(f, f0, f0 + 12 + i * 2)), 7);
+      if (end && f < 464) bead(c, mp, end[0], end[1], 10 * (1 - seg(f, 450, 464)));
     });
   }
   // tarjeta de cliente frecuente: sale de la barra y aterriza en su lugar de la página
@@ -196,8 +196,8 @@ function stickyUI(c, m, f, sc) {
     const pr = Math.sin(seg(f, 750, 774) * Math.PI), s2 = bk * (1 - 0.06 * pr), cx = b.x + b.w / 2, cy = b.y + b.h / 2;
     [0, 9].forEach((d) => { const t = seg(f, 750 + d, 796 + d); if (t > 0 && t < 1) { c.save(); setM(c, m); ell(c, cx, cy, 80 + 640 * eo(t), 80 + 640 * eo(t)); c.lineWidth = 14 * (1 - t); c.strokeStyle = 'rgba(251,243,213,0.85)'; c.stroke(); c.restore(); } });
     c.save(); setM(c, m); c.translate(cx, cy + 10 * pr); c.scale(s2, s2); c.translate(-cx, -cy);
-    c.filter = `blur(${18 * zoomOf(m) * S}px)`; c.fillStyle = 'rgba(0,0,0,0.55)'; rr(c, b.x + 8, b.y + 26, b.w, b.h, 78); c.fill(); c.filter = 'none';
-    c.drawImage(BARIMG, b.x, b.y, b.w, b.h);
+    c.shadowColor = 'rgba(0,0,0,0.6)'; c.shadowBlur = 36 * zoomOf(m) * S; c.shadowOffsetY = 22 * zoomOf(m) * S;
+    c.drawImage(BARIMG, b.x, b.y, b.w, b.h); c.shadowColor = 'transparent';
     if (pr > 0.02) { ell(c, cx, cy, 70 * pr, 70 * pr); c.fillStyle = 'rgba(251,243,213,0.4)'; c.fill(); }
     c.restore();
   }
