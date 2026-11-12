@@ -28,7 +28,7 @@ const work = mk(W, H), wctx = work.getContext('2d');
 const acc = mk(W, H), actx = acc.getContext('2d');
 const tel = mk(W, H), tctx = tel.getContext('2d');   // capa del teléfono (plana, antes de la perspectiva)
 
-let hero, heroMeta, grano, fondo;
+let ui, pagina, logo, grano, fondo; const sprites = {}, fotos = [];
 let SUBPASO = 1 / 8;   // duración de un subcuadro, en cuadros
 const medidas = {};
 
@@ -38,8 +38,12 @@ async function init() {
     const ff = new FontFace('Cormorant Garamond', `url(/web/fonts/cormorant-garamond-latin-${w}-${st}.woff2)`, { weight: w, style: st });
     document.fonts.add(await ff.load());
   }
-  hero = await img(UI + '/hero.png');
-  heroMeta = await (await fetch(UI + '/hero.json')).json();
+  for (const w of ['500', '600']) document.fonts.add(await new FontFace('Inter', `url(/web/fonts/inter-latin-${w}-normal.woff2)`, { weight: w }).load());
+  ui = await (await fetch(UI + '/ui.json')).json();
+  pagina = await img(UI + '/pagina.png'); logo = await img('/web/img/logo-circulo.png');
+  for (const n of [...ui.cards.map((_, i) => 'card' + i), 'cintillo', 'cta']) sprites[n] = await img(`${UI}/${n}.png`);
+  for (const g of ui.figs) fotos.push(await img('/web/' + g.src));
+  prepararScroll(); prepararTrazos();
   // grano 2 %, con semilla
   grano = mk(256, 256); const g = grano.getContext('2d'); const id = g.createImageData(256, 256); const r = rng(20261111);
   for (let i = 0; i < id.data.length; i += 4) { const v = r() * 255 | 0; id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 255; }
@@ -78,6 +82,13 @@ function medir(texto, peso, anchoMax, tamMax, tracking = 0.04) {
 function prepararTexto() {
   medidas.tu = medir('TU EVENTO', 600, 780, 190);
   medidas.bien = medir('BIEN SENTADO.', 700, 780, 150, 0.02);
+  medidas.tuPones = medir('TÚ PONES', 600, 760, 150);
+  medidas.laFiesta = medir('LA FIESTA', 700, 900, 200, 0.02);
+  medidas.tel = medir('449 509 3260', 700, 860, 132, 0.01);
+  medidas.sella = medir('Sella Eventos', 600, 860, 150, 0);
+  medidas.ags = medir('AGUASCALIENTES', 600, 700, 58, 0.22);
+  medidas.demo1 = medir('Demo de cortesía de Elevate Negocios', 500, 900, 54, 0);
+  medidas.demo2 = medir('pieza no oficial', 500, 900, 54, 0);
 }
 
 // ───────── la cinta (camino de mesa)
@@ -130,11 +141,13 @@ function dibujaCinta(c, f) {
   g.addColorStop(0, '#fbeecb'); g.addColorStop(.22, C.champ); g.addColorStop(.62, '#d3b578'); g.addColorStop(1, '#a8884c');
   c.fillStyle = g; c.fillRect(k.x0 - 20, ym - 400, k.x1 - k.x0 + 40, 900);
   // pliegues: cada tramo se aclara u oscurece según su pendiente (luz arriba-izquierda)
-  for (let i = 0; i < pts.length - 1; i++) {
-    const [xa, ya] = pts[i], [xb, yb] = pts[i + 1];
-    const m = (yb - ya) / (xb - xa), a = clamp(Math.abs(m) * 1.6, 0, .34);
-    c.fillStyle = m > 0 ? `rgba(60,40,10,${a})` : `rgba(255,248,225,${a})`;
-    c.fillRect(xa, Math.min(ya, yb) - h - 2, xb - xa + .6, k.T + Math.abs(yb - ya) + 4);
+  {
+    const pg = c.createLinearGradient(pts[0][0], 0, pts[pts.length - 1][0], 0), ancho = pts[pts.length - 1][0] - pts[0][0];
+    for (let i = 0; i < pts.length - 1; i += 2) {
+      const j = Math.min(pts.length - 1, i + 2), m = (pts[j][1] - pts[i][1]) / (pts[j][0] - pts[i][0]), a = clamp(Math.abs(m) * 1.6, 0, .34);
+      pg.addColorStop(clamp((pts[i][0] - pts[0][0]) / ancho), m > 0 ? `rgba(60,40,10,${a})` : `rgba(255,248,225,${a})`);
+    }
+    c.fillStyle = pg; c.fillRect(k.x0 - 20, ym - 400, k.x1 - k.x0 + 40, 900);
   }
   // brillo de satén que viaja por la tela
   if (k.T > 30) {
@@ -208,53 +221,239 @@ function bienSentado(c, f, k) {
     }
     if (d < CAE) {
       // caída rápida: se reparte en 5 muestras dentro del subcuadro para que el barrido sea continuo
-      const v = 2 * 1150 * (d / CAE) / CAE, N = 5;
-      c.save(); c.globalAlpha = 1 / N * 1.6;
+      const v = 2 * 1150 * (d / CAE) / CAE, N = 10;
+      c.save(); c.globalAlpha = 1 / N * 1.9;
       for (let j = 0; j < N; j++) glifo(c, m, g, x, y + ((j + .5) / N - .5) * v * SUBPASO, rot, 1, 1, colorChamp(c, y, m.tam));
       c.restore();
     } else glifo(c, m, g, x, y, rot, 1 + (1 - sy) * .6, sy, colorChamp(c, y, m.tam));
   });
 }
 
-// ───────── teléfono: la cinta se desenrolla y se vuelve su marco
+// ───────── cámara, scroll y marco (un solo plano continuo)
 const TEL = { x: 140, y: 95, w: 800, h: 1731, r: 96 };
-function telefono(f) {
-  const a = inOut(prog(f, 236, 294));
-  const top = lerp(962, TEL.y, a), bot = lerp(976, TEL.y + TEL.h, a);
-  const giro = 18 * Math.sin(Math.PI * Math.pow(prog(f, 240, 372), .55)) * (1 - prog(f, 240, 372)) * 1.9;   // entra girado y se endereza
-  return { a, top, bot, r: lerp(7, TEL.r, a), borde: lerp(14, 13, a), giro: clamp(giro, 0, 18), esc: lerp(.955, 1, inOut(prog(f, 250, 372))) };
+const K = TEL.w / 390;                       // px de diseño por px CSS de la página
+const ANILLO = { cx: 540, cy: 640, d: 350 };  // end card: el marco se cierra en un aro alrededor del logo
+function kf(f, keys, ease = inOut) {
+  if (f <= keys[0][0]) return keys[0][1];
+  for (let i = 1; i < keys.length; i++) if (f <= keys[i][0]) { const [a, va] = keys[i - 1], [b, vb] = keys[i]; return lerp(va, vb, ease((f - a) / (b - a))); }
+  return keys[keys.length - 1][1];
 }
-function rr(c, x, y, w, h, r) { c.beginPath(); c.roundRect(x, y, w, h, Math.min(r, w / 2, h / 2)); }
+const camara = f => ({
+  z: kf(f, [[432, 1], [504, 1.22], [1152, 1.22], [1204, .7], [1296, .7], [1350, 1.22], [1440, 1.22], [1494, 1]]),
+  oy: kf(f, [[432, 0], [504, 125], [1152, 125], [1204, 346], [1296, 346], [1350, -692], [1440, -692], [1494, 0]]),
+});
+let SCROLL;
+function prepararScroll() {
+  const sCat = ui.catH2[1] - 100, sCat2 = ui.cards[0].r[1] - 150, sBen = ui.cintillo[1] - 400, sGal = ui.galKicker[1] - 100, sMax = ui.alto - 844;
+  SCROLL = [[432, 0], [500, sCat], [590, sCat], [650, sCat2], [770, sCat2], [850, sBen], [950, sBen], [1020, sGal], [1160, sGal], [1300, sMax]];
+}
+const scroll = f => kf(f, SCROLL);
 
-function capaTelefono(f, t) {
-  const c = tctx; c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, W, H); c.setTransform(S, 0, 0, S, 0, 0);
-  const x = TEL.x, w = TEL.w, y = t.top, h = t.bot - t.top;
-  // sombra del aparato
+function marco(f) {
+  if (f < 1440) {
+    const a = inOut(prog(f, 236, 294));
+    return { a, x: TEL.x, y: lerp(962, TEL.y, a), w: TEL.w, h: lerp(14, TEL.h, a), r: lerp(7, TEL.r, a), borde: lerp(14, 13, a), fin: 0 };
+  }
+  const e = inOut(prog(f, 1440, 1496)), d = ANILLO.d;
+  return { a: 1, x: lerp(TEL.x, ANILLO.cx - d / 2, e), y: lerp(TEL.y, ANILLO.cy - d / 2, e), w: lerp(TEL.w, d, e), h: lerp(TEL.h, d, e), r: lerp(TEL.r, d / 2, e), borde: lerp(13, 12, e), fin: e };
+}
+const giroTel = f => clamp(18 * Math.sin(Math.PI * Math.pow(prog(f, 240, 372), .55)) * (1 - prog(f, 240, 372)) * 1.9, 0, 18);
+const escTel = f => lerp(.955, 1, inOut(prog(f, 250, 372)));
+function rr(c, x, y, w, h, r) { c.beginPath(); c.roundRect(x, y, w, h, Math.max(0, Math.min(r, w / 2, h / 2))); }
+
+// ───────── piezas de la página
+// Tarjeta que se desenrolla de arriba hacia abajo y llega inclinada (toque 3D #2, ≤ 10°), por filas con perspectiva.
+function pieza(c, im, dx, dy, dw, dh, tilt, rev, radio) {
+  const hv = dh * rev; if (hv < 1) return;
+  if (tilt < .08) { c.save(); rr(c, dx, dy, dw, hv + (rev < 1 ? 0 : 0), radio); c.clip(); c.drawImage(im, dx, dy, dw, dh); c.restore(); return; }
+  const t = tilt * Math.PI / 180, d = 1500, paso = 2, ky = im.height / dh, cos = Math.cos(t), sin = Math.sin(t);
+  const Y = v => { const s = d / (d - v * sin); return [dy + v * cos * s, s]; };
+  for (let v = 0; v < hv; v += paso) {
+    const [ya, s] = Y(v), [yb] = Y(v + paso), w = dw * s;
+    c.drawImage(im, 0, v * ky, im.width, paso * ky, dx + dw / 2 - w / 2, ya, w, yb - ya + .5);
+  }
+}
+function brillo(c, x, y, w, h, radio, p) {
+  if (p <= 0 || p >= 1) return;
+  c.save(); rr(c, x, y, w, h, radio); c.clip();
+  const sx = x + lerp(-w * .5, w * 1.5, inOut(p)), g = c.createLinearGradient(sx - w * .22, 0, sx + w * .22, 0);
+  g.addColorStop(0, 'rgba(255,255,255,0)'); g.addColorStop(.5, 'rgba(255,248,228,.34)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+  c.transform(1, 0, -.4, 1, (y + h / 2) * .4, 0); c.fillStyle = g; c.fillRect(x - w, y - 20, w * 3, h + 40); c.restore();
+}
+const ENTRA = [504, 540, 576, 796, 804, 820, 828];
+const ENTRA_CINT = 838;
+function numero(c, txt, x, base, alto, f, ini, pop) {
+  // sube enmascarado (sin fundido) y remata con un pequeño salto
+  const p = prog(f, ini, ini + 10); if (p <= 0) return 0;
+  c.save(); c.beginPath(); c.rect(x - 10, base - alto * 1.02, 600, alto * 1.24); c.clip();
+  c.translate(x, base + (1 - outCubic(p)) * alto * 1.15); c.scale(pop, pop);
+  c.font = `700 ${alto}px ${SERIF}`; c.textBaseline = 'alphabetic'; c.fontVariantNumeric = 'lining-nums';
+  c.fillStyle = colorChamp(c, 0, alto); c.fillText(txt, 0, 0); const w = c.measureText(txt).width; c.restore();
+  return w * pop;
+}
+
+function pantalla(c, f) {
+  const sc = scroll(f), X = x => TEL.x + x * K, Y = y => TEL.y + (y - sc) * K, D = ui.dpr;
+  const visible = (y, h) => y + h > sc - 40 && y < sc + 884;
+  c.drawImage(pagina, 0, sc * D, 390 * D, 844 * D, TEL.x, TEL.y, TEL.w, TEL.h);
+  // brillo del botón dorado del hero
+  if (sc < 600) brillo(c, X(ui.btn[0]), Y(ui.btn[1]), ui.btn[2] * K, ui.btn[3] * K, ui.btn[3] * K / 2, prog(f, 318, 356));
+
+  // tarjetas
+  ui.cards.forEach((cd, i) => {
+    const [x, y, w, h] = cd.r, e = ENTRA[i]; if (f < e || !visible(y, h)) return;
+    const rev = outCubic(prog(f, e, e + 18)), tilt = 10 * (1 - outCubic(prog(f, e, e + 30)));
+    pieza(c, sprites['card' + i], X(x), Y(y), w * K, h * K, tilt, rev, 22 * K);
+    brillo(c, X(x), Y(y), w * K, h * K, 22 * K, prog(f, e + 12, e + 44));
+    if (i < 3) brillo(c, X(x), Y(y), w * K, h * K, 22 * K, prog(f, 664 + i * 12, 700 + i * 12));
+    if (cd.precio) {
+      const [px, py, , ph] = cd.precio, alto = 40 * K, base = Y(py) + ph * K * .86;
+      const val = Math.round(cd.valor * outCubic(prog(f, e + 16, e + 40)));
+      const pop = 1 + .22 * Math.sin(Math.PI * prog(f, e + 38, e + 52));
+      const w = numero(c, '$' + val, X(px), base, alto, f, e + 14, pop);
+      if (w && f > e + 40) {
+        const p = prog(f, e + 40, e + 50);
+        c.save(); c.beginPath(); c.rect(X(px), base - 16 * K, 600, 20 * K); c.clip();
+        c.font = `500 ${12 * K}px Inter`; c.letterSpacing = `${12 * K * .08}px`; c.fillStyle = 'rgba(246,241,231,.5)';
+        c.fillText('RENTA', X(px) + w + 8 * K, base - 1 + (1 - outCubic(p)) * 20 * K); c.restore();
+      }
+    }
+  });
+  // la cinta enlaza los tres precios con un trazo continuo
+  trazo(c, f, trazos.precios, 700, 792, X(0), Y(0));
+
+  // cintillo de pick up con su 10 %
+  { const [x, y, w, h] = ui.cintillo, e = ENTRA_CINT;
+    if (f >= e && visible(y, h)) {
+      pieza(c, sprites.cintillo, X(x), Y(y), w * K, h * K, 10 * (1 - outCubic(prog(f, e, e + 30))), outCubic(prog(f, e, e + 18)), 22 * K);
+      brillo(c, X(x), Y(y), w * K, h * K, 22 * K, prog(f, e + 12, e + 44));
+      const [px, py, , ph] = ui.pct, alto = 62 * K, base = Y(py) + ph * K * .9;
+      const val = Math.round(10 * outCubic(prog(f, e + 14, e + 40))), pop = 1 + .2 * Math.sin(Math.PI * prog(f, e + 38, e + 54));
+      const wn = numero(c, String(val), X(px), base, alto, f, e + 12, pop);
+      if (wn) numero(c, '%', X(px) + wn + 3 * K, base - alto * .3, alto * .5, f, e + 20, pop);
+      trazo(c, f, trazos.cintillo, 884, 950, X(0), Y(0));
+    } }
+
+  // galería: carrusel con paralaje 2.5D (toque 3D #3)
+  if (visible(ui.figs[0].r[1], ui.figs[0].r[3])) {
+    const [fx, fy, fw, fh] = ui.figs[0].r, pasoG = fw + 12;
+    const gs = kf(f, [[1016, 0], [1150, 2 * pasoG], [1215, 2.35 * pasoG]], t => t * t * (3 - 2 * t));
+    const orden = ui.figs.map((g, i) => ({ g, i, dx: (fx + i * pasoG + fw / 2 - gs - 195) / 195 })).sort((a, b) => Math.abs(b.dx) - Math.abs(a.dx));
+    for (const { g, i, dx } of orden) {
+      if (Math.abs(dx) > 2.2) continue;
+      const esc = 1 - .1 * Math.min(1, Math.abs(dx)), w = fw * K * esc, h = fh * K * esc;
+      const cx = X(195 + dx * 195 * (1 - .06 * Math.min(1, Math.abs(dx)))), cy = Y(fy + fh / 2);
+      const x = cx - w / 2, y = cy - h / 2, im = fotos[i];
+      c.save(); c.shadowColor = 'rgba(0,0,0,.65)'; c.shadowBlur = 40 * esc * S; c.shadowOffsetY = 22 * S; rr(c, x, y, w, h, 22 * K * esc); c.fillStyle = '#0b0a09'; c.fill(); c.restore();
+      c.save(); rr(c, x, y, w, h, 22 * K * esc); c.clip();
+      // la foto es más ancha que su marco y se desliza en contra del movimiento (profundidad)
+      const k2 = Math.max(w * 1.22 / im.width, h * 1.04 / im.height), iw = im.width * k2, ih = im.height * k2;
+      const [pxs, pys] = g.pos.split(' ').map(v => parseFloat(v) / 100);
+      c.drawImage(im, x - (iw - w) * clamp(pxs + dx * .42), y - (ih - h) * pys, iw, ih);
+      c.fillStyle = `rgba(15,14,13,${.38 * Math.min(1, Math.abs(dx))})`; c.fillRect(x, y, w, h);
+      c.restore();
+      c.lineWidth = 1.5; c.strokeStyle = 'rgba(246,241,231,.22)'; rr(c, x, y, w, h, 22 * K * esc); c.stroke();
+    }
+    // puntos
+    const act = gs / pasoG; let px = X(195) - (6 * 6 + 5 * 7 + 16) * K / 2; const py = Y(ui.puntos[1]) + 3 * K;
+    for (let i = 0; i < 6; i++) {
+      const on = clamp(1 - Math.abs(i - act)), w = (6 + 16 * on) * K;
+      c.fillStyle = on > .5 ? C.champ : 'rgba(246,241,231,.42)'; rr(c, px, py, w, 6 * K, 3 * K); c.fill(); px += w + 7 * K;
+    }
+  }
+
+  // botón final con press real
+  { const [x, y, w, h] = ui.cta;
+    if (visible(y, h)) {
+      const d = f - 1368, pr = d < 0 ? 0 : d < 5 ? outCubic(d / 5) : d < 9 ? 1 : 1 - outCubic(clamp((d - 9) / 16));
+      const s = 1 - .045 * pr, cx = X(x + w / 2), cy = Y(y + h / 2) + 3 * pr;
+      c.save(); c.translate(cx, cy); c.scale(s, s); c.translate(-cx, -cy);
+      rr(c, X(x), Y(y), w * K, h * K, h * K / 2); c.save(); c.clip(); c.drawImage(sprites.cta, X(x), Y(y), w * K, h * K);
+      c.fillStyle = `rgba(60,40,10,${.26 * pr})`; c.fillRect(X(x), Y(y), w * K, h * K); c.restore(); c.restore();
+      brillo(c, X(x), Y(y), w * K, h * K, h * K / 2, prog(f, 1392, 1430));
+      // onda del toque
+      if (d > 2 && d < 40) { const q = (d - 2) / 38; c.save(); c.lineWidth = 6 * (1 - q) + 1; c.strokeStyle = `rgba(246,241,231,${.7 * (1 - q)})`; c.beginPath(); c.arc(cx + 60, cy, 40 + 260 * outCubic(q), 0, 7); c.stroke(); c.restore(); }
+      // dedo de cristal
+      const en = outCubic(prog(f, 1338, 1366)), sale = inOut(prog(f, 1382, 1410));
+      if (en > 0 && sale < 1) {
+        const tx = cx + 60 + (1 - en) * 300 + sale * 340, ty = cy + (1 - en) * 520 + sale * 600, r = 44 * (1 - .14 * pr);
+        c.save(); c.shadowColor = 'rgba(0,0,0,.5)'; c.shadowBlur = 24 * S; c.shadowOffsetY = 12 * (1 - pr) * S;
+        const g = c.createRadialGradient(tx - 14, ty - 16, 2, tx, ty, r); g.addColorStop(0, 'rgba(255,255,255,.5)'); g.addColorStop(1, 'rgba(246,241,231,.16)');
+        c.fillStyle = g; c.beginPath(); c.arc(tx, ty, r, 0, 7); c.fill(); c.restore();
+        c.lineWidth = 2.5; c.strokeStyle = 'rgba(255,255,255,.7)'; c.beginPath(); c.arc(tx, ty, r, 0, 7); c.stroke();
+      }
+    } }
+}
+
+// Trazo de cinta que se dibuja de principio a fin (coordenadas CSS de la página).
+const trazos = {};
+function prepararTrazos() {
+  const largo = d => { const p = document.createElementNS('http://www.w3.org/2000/svg', 'path'); p.setAttribute('d', d); return p.getTotalLength(); };
+  const u = ui.cards.slice(0, 3).map(cd => { const [x, y, , h] = cd.precio; return { l: x - 2, r: x + 150, y: y + h + 7 }; });
+  let d = `M${u[0].l} ${u[0].y} L${u[0].r} ${u[0].y}`;
+  d += ` C${u[0].r + 52} ${u[0].y} ${u[1].r + 52} ${u[1].y} ${u[1].r} ${u[1].y} L${u[1].l} ${u[1].y}`;
+  d += ` C${u[1].l - 24} ${u[1].y} ${u[2].l - 24} ${u[2].y} ${u[2].l} ${u[2].y} L${u[2].r} ${u[2].y}`;
+  trazos.precios = { d, L: largo(d), p2: new Path2D(d) };
+  const [x, y, w, h] = ui.cintillo, m = 5, r = 26, a = x - m, b = y - m, ww = w + 2 * m, hh = h + 2 * m;
+  d = `M${a + r} ${b} H${a + ww - r} A${r} ${r} 0 0 1 ${a + ww} ${b + r} V${b + hh - r} A${r} ${r} 0 0 1 ${a + ww - r} ${b + hh} H${a + r} A${r} ${r} 0 0 1 ${a} ${b + hh - r} V${b + r} A${r} ${r} 0 0 1 ${a + r} ${b}`;
+  trazos.cintillo = { d, L: largo(d), p2: new Path2D(d) };
+}
+function trazo(c, f, t, a, b, ox, oy) {
+  const p = inOut(prog(f, a, b)); if (p <= 0) return;
+  c.save(); c.translate(ox, oy); c.scale(K, K);
+  c.lineCap = 'round'; c.lineJoin = 'round'; c.setLineDash([t.L * p, t.L * 2]);
+  c.shadowColor = 'rgba(0,0,0,.55)'; c.shadowBlur = 10 * S; c.shadowOffsetY = 4 * S;
+  c.lineWidth = 4.6; c.strokeStyle = C.champ2; c.stroke(t.p2);
+  c.shadowColor = 'transparent'; c.lineWidth = 3.2; c.strokeStyle = C.champ; c.stroke(t.p2);
+  c.lineWidth = 1; c.strokeStyle = 'rgba(255,250,230,.8)'; c.translate(0, -1); c.stroke(t.p2);
+  c.restore();
+}
+
+// Barra superior de cristal real: desenfoca lo que tiene detrás.
+function barra(c, f, M) {
+  const [bx, by, bw, bh] = ui.barra, x = TEL.x + bx * K, y = TEL.y + by * K, w = bw * K, h = bh * K;
+  const dev = (px, py) => [M.a * px + M.e, M.d * py + M.f];
+  const [x0, y0] = dev(x, y), [x1, y1] = dev(x + w, y + h), mg = 60 * M.a;
+  if (y1 < -20 || y0 > H + 20) return;
+  c.save(); rr(c, x, y, w, h, h / 2); c.clip();
+  c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.filter = `blur(${32 * K * M.a}px) saturate(140%)`;
+  c.drawImage(tel, x0 - mg, y0 - mg, x1 - x0 + 2 * mg, y1 - y0 + 2 * mg, x0 - mg, y0 - mg, x1 - x0 + 2 * mg, y1 - y0 + 2 * mg); c.restore();
+  const g = c.createLinearGradient(x, y, x + w, y + h); g.addColorStop(0, 'rgba(246,241,231,.16)'); g.addColorStop(.6, 'rgba(246,241,231,.06)');
+  c.fillStyle = 'rgba(20,18,15,.35)'; c.fillRect(x, y, w, h); c.fillStyle = g; c.fillRect(x, y, w, h); c.restore();
+  c.lineWidth = 1.2; c.strokeStyle = 'rgba(246,241,231,.2)'; rr(c, x, y, w, h, h / 2); c.stroke();
+  const cy = y + h / 2, lr = 18 * K;
+  c.save(); c.beginPath(); c.arc(x + 10 * K + lr, cy, lr, 0, 7); c.clip(); c.drawImage(logo, x + 10 * K, cy - lr, lr * 2, lr * 2); c.restore();
+  c.font = `600 ${19 * K}px ${SERIF}`; c.letterSpacing = `${19 * K * .14}px`; c.textBaseline = 'middle'; c.fillStyle = C.marfil; c.fillText('SELLA', x + 56 * K, cy + 1);
+  const pw = 76 * K, ph = 35 * K, px = x + w - 8 * K - pw; c.fillStyle = C.champ; rr(c, px, cy - ph / 2, pw, ph, ph / 2); c.fill();
+  c.font = `600 ${13 * K}px Inter`; c.letterSpacing = '0px'; c.textAlign = 'center'; c.fillStyle = '#1b1610'; c.fillText('Cotizar', px + pw / 2, cy + 1);
+  c.textAlign = 'left'; c.textBaseline = 'alphabetic';
+}
+
+function capaTelefono(f) {
+  const c = tctx, t = marco(f), cam = camara(f);
+  c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, W, H);
+  const M = { a: S * cam.z, d: S * cam.z, e: S * 540 * (1 - cam.z), f: S * (960 * (1 - cam.z) + cam.oy) };
+  c.setTransform(M.a, 0, 0, M.d, M.e, M.f);
+  const { x, y, w, h } = t;
   c.save(); c.shadowColor = 'rgba(0,0,0,.7)'; c.shadowBlur = lerp(14, 90, t.a) * S; c.shadowOffsetY = lerp(8, 50, t.a) * S; c.shadowOffsetX = 18 * t.a * S;
   rr(c, x, y, w, h, t.r); c.fillStyle = '#0b0a09'; c.fill(); c.restore();
-  const k0 = cinta(f); tuEvento(c, f, k0); bienSentado(c, f, k0);
-  // pantalla: la página real, descubierta por la apertura (sin fundidos)
+  if (f < 300) { const k0 = cinta(f); tuEvento(c, f, k0); bienSentado(c, f, k0); }
   c.save(); rr(c, x, y, w, h, t.r); c.clip();
-  c.drawImage(hero, TEL.x, TEL.y, TEL.w, TEL.h);
-  // barrido de brillo del botón dorado
-  const k = TEL.w / heroMeta.vw, [bx, by, bw, bh] = heroMeta.btn.map(v => v * k), p = prog(f, 318, 356);
-  if (p > 0 && p < 1) {
-    c.save(); rr(c, TEL.x + bx, TEL.y + by, bw, bh, bh / 2); c.clip();
-    const sx = TEL.x + bx + lerp(-160, bw + 160, inOut(p)), g = c.createLinearGradient(sx - 90, 0, sx + 90, 0);
-    g.addColorStop(0, 'rgba(255,255,255,0)'); g.addColorStop(.5, 'rgba(255,255,255,.7)'); g.addColorStop(1, 'rgba(255,255,255,0)');
-    c.transform(1, 0, -.3, 1, 0, 0); c.fillStyle = g; c.fillRect(TEL.x + bx - 200, TEL.y + by - 20, bw + 900, bh + 40); c.restore();
+  pantalla(c, f);
+  barra(c, f, M);
+  if (t.fin > 0) {   // el logo aparece dentro del aro por una máscara circular que crece (sin fundido)
+    const r = (ANILLO.d / 2) * outCubic(prog(f, 1448, 1494));
+    if (r > 1) { c.save(); c.beginPath(); c.arc(ANILLO.cx, ANILLO.cy, r, 0, 7); c.clip(); c.fillStyle = C.carbon; c.fillRect(0, 0, DW, DH);
+      c.drawImage(logo, ANILLO.cx - ANILLO.d / 2, ANILLO.cy - ANILLO.d / 2, ANILLO.d, ANILLO.d); c.restore(); }
   }
-  // reflejo del cristal: una banda diagonal que cruza al enderezarse
   const rp = prog(f, 262, 372);
   if (rp > 0 && rp < 1) {
     const gx = lerp(-500, 1500, outCubic(rp)), g = c.createLinearGradient(gx - 320, 0, gx + 320, 0);
     g.addColorStop(0, 'rgba(255,255,255,0)'); g.addColorStop(.5, `rgba(255,246,225,${.16 * Math.sin(Math.PI * rp)})`); g.addColorStop(1, 'rgba(255,255,255,0)');
     c.save(); c.transform(1, 0, -.45, 1, 0, 0); c.fillStyle = g; c.fillRect(-400, 0, 2600, DH); c.restore();
   }
-  // sombra interior del marco
-  c.lineWidth = 40; c.strokeStyle = 'rgba(0,0,0,.35)'; c.filter = `blur(${12 * S}px)`; rr(c, x, y, w, h, t.r); c.stroke(); c.filter = 'none';
+  c.lineWidth = 40; c.strokeStyle = 'rgba(0,0,0,.35)'; c.filter = `blur(${12 * S * cam.z}px)`; rr(c, x, y, w, h, t.r); c.stroke(); c.filter = 'none';
   c.restore();
-  // marco champaña con bisel (es la misma cinta)
   const g = c.createLinearGradient(x, y, x + w, y + Math.max(h, 40));
   g.addColorStop(0, '#fbeecb'); g.addColorStop(.3, C.champ); g.addColorStop(.7, '#c7a665'); g.addColorStop(1, '#a8884c');
   c.lineWidth = t.borde; c.strokeStyle = g; rr(c, x, y, w, h, t.r); c.stroke();
@@ -262,29 +461,88 @@ function capaTelefono(f, t) {
   c.strokeStyle = 'rgba(70,50,18,.7)'; rr(c, x + t.borde / 2 - 1, y + t.borde / 2 - 1, w - t.borde + 2, h - t.borde + 2, Math.max(1, t.r - t.borde / 2)); c.stroke();
 }
 // Giro en Y con perspectiva real, por columnas (toque 3D #1, ≤ 18°).
-function proyectaTelefono(c, t) {
-  const th = t.giro * Math.PI / 180;
-  if (th < 0.002 && t.esc > .9995) { c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.drawImage(tel, 0, 0); c.restore(); return; }
+function proyectaTelefono(c, f) {
+  const th = giroTel(f) * Math.PI / 180, esc = escTel(f);
+  if (th < 0.002 && esc > .9995) { c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.drawImage(tel, 0, 0); c.restore(); return; }
   const cx = W / 2, cy = H * (TEL.y + TEL.h / 2) / DH, d = 2600 * S, cos = Math.cos(th), sin = Math.sin(th), paso = 2;
   c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.imageSmoothingQuality = 'high';
-  const X = x => { const u = (x - cx) * t.esc, z = u * sin, s = d / (d + z); return [cx + u * cos * s, s * t.esc]; };
-  for (let x = 0; x < W; x += paso) {
-    const [xa, sa] = X(x), [xb] = X(x + paso);
-    c.drawImage(tel, x, 0, paso, H, xa, cy - cy * sa, xb - xa + .6, H * sa);
-  }
+  const X = x => { const u = (x - cx) * esc, z = u * sin, s = d / (d + z); return [cx + u * cos * s, s * esc]; };
+  for (let x = 0; x < W; x += paso) { const [xa, sa] = X(x), [xb] = X(x + paso); c.drawImage(tel, x, 0, paso, H, xa, cy - cy * sa, xb - xa + .6, H * sa); }
   c.restore();
+}
+
+// ───────── texto cinético de la segunda mitad
+// Letras que suben enmascaradas (sin fundido), una por una.
+function sube(c, m, cx, base, f, ini, paso, color, dur = 20) {
+  const xi = cx - m.ancho / 2;
+  m.gl.forEach((g, i) => {
+    if (g.ch === ' ') return; const p = prog(f, ini + i * paso, ini + i * paso + dur); if (p <= 0) return;
+    c.save(); c.beginPath(); c.rect(xi + g.x - 30, base - m.tam * .95, g.w + 60, m.tam * 1.22); c.clip();
+    glifo(c, m, g, xi + g.x, base + (1 - outCubic(p)) * m.tam * 1.2, 0, 1, 1, typeof color === 'function' ? color(c, base, m.tam) : color);
+    c.restore();
+  });
+}
+const ser = rng(4495093260 % 2147483647);
+const SERPENTINAS = Array.from({ length: 22 }, (_, i) => ({ a: -Math.PI * (.12 + .76 * ser()), v: 16 + 20 * ser(), w: 34 + 40 * ser(), g: .5 + .4 * ser(), r: ser() * 6, vr: (ser() - .5) * .5, x: 300 + 480 * ser(), col: i % 3 }));
+function fiesta(c, f) {
+  if (f < 1160 || f > 1360) return;
+  const a = medidas.tuPones, b = medidas.laFiesta;
+  // "TÚ PONES": cada letra entra deslizándose desde la izquierda y frena, como sillas que se alinean
+  const xa = 540 - a.ancho / 2;
+  a.gl.forEach((g, i) => {
+    if (g.ch === ' ') return; const ini = 1172 + i * 1.6, p = prog(f, ini, ini + 22); if (p <= 0) return;
+    const x = xa + g.x - (1 - outBack(p, 1.3)) * 620;
+    glifo(c, a, g, x, 430, (1 - outCubic(p)) * -.12, 1, 1, colorMarfil(c, 430, a.tam));
+  });
+  // "LA FIESTA": cada letra brinca desde abajo con giro, como confeti que cae en su lugar
+  const xb = 540 - b.ancho / 2;
+  b.gl.forEach((g, i) => {
+    if (g.ch === ' ') return; const ini = (i < 2 ? 1192 : 1202 - 3 * 1.8) + i * 1.8, d = f - ini; if (d < 0) return;
+    const p = clamp(d / 20), e = outBack(p, 2.2), esc = lerp(.2, 1, e);
+    const y = 640 + (1 - e) * 120 - 26 * Math.exp(-d / 9) * Math.abs(Math.sin(d * .32)) * (p >= 1 ? 1 : 0);
+    glifo(c, b, g, xb + g.x, y, (1 - outCubic(p)) * (i % 2 ? .5 : -.5), esc, esc, colorChamp(c, y, b.tam));
+  });
+  // serpentinas de la misma tela champaña
+  const d0 = f - 1204;
+  if (d0 > 0 && d0 < 110) for (const s of SERPENTINAS) {
+    const x = s.x + Math.cos(s.a) * s.v * d0 * Math.exp(-d0 / 60) * 2.2, y = 600 + Math.sin(s.a) * s.v * d0 * 1.5 + s.g * d0 * d0 * .5;
+    if (y > 2000) continue;
+    c.save(); c.translate(x, y); c.rotate(s.r + s.vr * d0); c.scale(1, Math.cos(d0 * .2 + s.r));
+    c.fillStyle = [C.champ, '#fbeecb', '#c7a665'][s.col]; rr(c, -s.w / 2, -7, s.w, 14, 4); c.fill(); c.restore();
+  }
+}
+function telefonoGrande(c, f) {
+  // "449 509 3260" en grande bajo el teléfono; se queda para la end card
+  if (f < 1344) return;
+  const m = medidas.tel, base = kf(f, [[1440, 1500], [1500, 1238]]);
+  sube(c, m, 540, base, f, 1344, 1.4, colorChamp, 18);
+}
+function endCard(c, f) {
+  if (f < 1470) return;
+  sube(c, medidas.sella, 540, 990, f, 1482, 1.6, colorMarfil, 22);
+  // la cinta subraya el nombre
+  const p = inOut(prog(f, 1506, 1540));
+  if (p > 0) { const w = 300 * p; c.save(); c.shadowColor = 'rgba(0,0,0,.5)'; c.shadowBlur = 10 * S; c.shadowOffsetY = 5 * S;
+    const g = c.createLinearGradient(0, 1022, 0, 1034); g.addColorStop(0, '#fbeecb'); g.addColorStop(1, '#b8975a'); c.fillStyle = g; rr(c, 540 - w / 2, 1022, w, 11, 5.5); c.fill(); c.restore(); }
+  sube(c, medidas.ags, 540, 1108, f, 1516, 1.2, C.champ, 18);
+  sube(c, medidas.demo1, 540, 1420, f, 1536, .5, 'rgba(246,241,231,.62)', 18);
+  sube(c, medidas.demo2, 540, 1486, f, 1548, .5, 'rgba(246,241,231,.62)', 18);
+  // pulso de luz en el golpe final
+  const d = f - 1596; if (d > 0) { const a = .12 * Math.exp(-d / 10); const g = c.createRadialGradient(540, 640, 0, 540, 640, 900); g.addColorStop(0, `rgba(232,207,154,${a})`); g.addColorStop(1, 'rgba(232,207,154,0)'); c.fillStyle = g; c.fillRect(0, 0, DW, DH); }
 }
 
 // ───────── un subcuadro
 function escena(c, f) {
   c.setTransform(1, 0, 0, 1, 0, 0); c.drawImage(fondo, 0, 0);
   c.setTransform(S, 0, 0, S, 0, 0);
-  // destello cálido que acompaña el cruce de la cinta
   const dest = Math.exp(-Math.max(0, f) / 16);
   if (dest > .01) { const g = c.createRadialGradient(540, Y_CINTA, 0, 540, Y_CINTA, 900); g.addColorStop(0, `rgba(232,207,154,${.2 * dest})`); g.addColorStop(1, 'rgba(232,207,154,0)'); c.fillStyle = g; c.fillRect(0, 0, DW, DH); }
-  const k = cinta(f), t = telefono(f);
-  if (f < 236) { tuEvento(c, f, k); bienSentado(c, f, k); dibujaCinta(c, f); }
-  else { capaTelefono(f, t); proyectaTelefono(c, t); }
+  if (f < 236) { const k = cinta(f); tuEvento(c, f, k); bienSentado(c, f, k); dibujaCinta(c, f); return; }
+  fiesta(c, f);
+  capaTelefono(f); proyectaTelefono(c, f);
+  c.setTransform(S, 0, 0, S, 0, 0);
+  telefonoGrande(c, f);
+  endCard(c, f);
 }
 
 window.renderFrame = async (f, { sub = 8, shutter = 1 } = {}) => {
@@ -294,7 +552,6 @@ window.renderFrame = async (f, { sub = 8, shutter = 1 } = {}) => {
     actx.globalAlpha = 1 / (i + 1); actx.drawImage(work, 0, 0);
   }
   octx.globalAlpha = 1; octx.drawImage(acc, 0, 0);
-  // grano 2 %
   const r = rng(Math.floor(f) * 7919 + 13), ox = r() * 256 | 0, oy = r() * 256 | 0;
   octx.save(); octx.globalAlpha = .028; octx.globalCompositeOperation = 'overlay'; octx.fillStyle = octx.createPattern(grano, 'repeat');
   octx.translate(-ox, -oy); octx.fillRect(ox, oy, W, H); octx.restore();

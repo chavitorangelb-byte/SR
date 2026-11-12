@@ -1,0 +1,758 @@
+[
+ {
+  "f": 0,
+  "name": "boom",
+  "d": 0.5666666666666667,
+  "idx": 0
+ },
+ {
+  "f": 0,
+  "name": "tela",
+  "d": 0.5666666666666667,
+  "idx": 0
+ },
+ {
+  "f": 24,
+  "name": "tipo_entra",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 26,
+  "name": "tipo_entra",
+  "d": 0.0,
+  "idx": 1
+ },
+ {
+  "f": 30,
+  "name": "tipo_entra",
+  "d": 0.0,
+  "idx": 2
+ },
+ {
+  "f": 32,
+  "name": "tipo_entra",
+  "d": 0.0,
+  "idx": 3
+ },
+ {
+  "f": 34,
+  "name": "tipo_entra",
+  "d": 0.0,
+  "idx": 4
+ },
+ {
+  "f": 36,
+  "name": "tipo_entra",
+  "d": 0.0,
+  "idx": 5
+ },
+ {
+  "f": 38,
+  "name": "tipo_entra",
+  "d": 0.0,
+  "idx": 6
+ },
+ {
+  "f": 40,
+  "name": "tipo_entra",
+  "d": 0.0,
+  "idx": 7
+ },
+ {
+  "f": 138,
+  "name": "tela_corta",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 168,
+  "name": "asienta",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 168,
+  "name": "silla",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 170,
+  "name": "silla",
+  "d": 0.0,
+  "idx": 1
+ },
+ {
+  "f": 171,
+  "name": "silla",
+  "d": 0.0,
+  "idx": 2
+ },
+ {
+  "f": 173,
+  "name": "silla",
+  "d": 0.0,
+  "idx": 3
+ },
+ {
+  "f": 182,
+  "name": "silla",
+  "d": 0.0,
+  "idx": 4
+ },
+ {
+  "f": 183,
+  "name": "asienta",
+  "d": 0.0,
+  "idx": 1
+ },
+ {
+  "f": 184,
+  "name": "silla",
+  "d": 0.0,
+  "idx": 5
+ },
+ {
+  "f": 185,
+  "name": "silla",
+  "d": 0.0,
+  "idx": 6
+ },
+ {
+  "f": 187,
+  "name": "silla",
+  "d": 0.0,
+  "idx": 7
+ },
+ {
+  "f": 188,
+  "name": "silla",
+  "d": 0.0,
+  "idx": 8
+ },
+ {
+  "f": 190,
+  "name": "silla",
+  "d": 0.0,
+  "idx": 9
+ },
+ {
+  "f": 191,
+  "name": "silla",
+  "d": 0.0,
+  "idx": 10
+ },
+ {
+  "f": 193,
+  "name": "silla",
+  "d": 0.0,
+  "idx": 11
+ },
+ {
+  "f": 200,
+  "name": "subraya",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 236,
+  "name": "hoja_abre",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 242,
+  "name": "aire_push",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 294,
+  "name": "detente",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 300,
+  "name": "pantalla_enciende",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 320,
+  "name": "cristal_aparece",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 372,
+  "name": "asienta",
+  "d": 0.0,
+  "idx": 2
+ },
+ {
+  "f": 432,
+  "name": "scroll_friccion",
+  "d": 1.1333333333333333,
+  "idx": 0
+ },
+ {
+  "f": 500,
+  "name": "detente",
+  "d": 0.0,
+  "idx": 1
+ },
+ {
+  "f": 504,
+  "name": "tarjeta_sale",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 520,
+  "name": "tic",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 526,
+  "name": "tic",
+  "d": 0.0,
+  "idx": 1
+ },
+ {
+  "f": 532,
+  "name": "tic",
+  "d": 0.0,
+  "idx": 2
+ },
+ {
+  "f": 538,
+  "name": "tic",
+  "d": 0.0,
+  "idx": 3
+ },
+ {
+  "f": 540,
+  "name": "tarjeta_sale",
+  "d": 0.0,
+  "idx": 1
+ },
+ {
+  "f": 544,
+  "name": "logo_pop",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 556,
+  "name": "tic",
+  "d": 0.0,
+  "idx": 4
+ },
+ {
+  "f": 562,
+  "name": "tic",
+  "d": 0.0,
+  "idx": 5
+ },
+ {
+  "f": 568,
+  "name": "tic",
+  "d": 0.0,
+  "idx": 6
+ },
+ {
+  "f": 574,
+  "name": "tic",
+  "d": 0.0,
+  "idx": 7
+ },
+ {
+  "f": 576,
+  "name": "tarjeta_sale",
+  "d": 0.0,
+  "idx": 2
+ },
+ {
+  "f": 580,
+  "name": "logo_pop",
+  "d": 0.0,
+  "idx": 1
+ },
+ {
+  "f": 590,
+  "name": "scroll_corto",
+  "d": 1.0,
+  "idx": 0
+ },
+ {
+  "f": 592,
+  "name": "tic",
+  "d": 0.0,
+  "idx": 8
+ },
+ {
+  "f": 598,
+  "name": "tic",
+  "d": 0.0,
+  "idx": 9
+ },
+ {
+  "f": 604,
+  "name": "tic",
+  "d": 0.0,
+  "idx": 10
+ },
+ {
+  "f": 610,
+  "name": "tic",
+  "d": 0.0,
+  "idx": 11
+ },
+ {
+  "f": 616,
+  "name": "logo_pop",
+  "d": 0.0,
+  "idx": 2
+ },
+ {
+  "f": 664,
+  "name": "cristal_aparece",
+  "d": 0.0,
+  "idx": 1
+ },
+ {
+  "f": 676,
+  "name": "cristal_aparece",
+  "d": 0.0,
+  "idx": 2
+ },
+ {
+  "f": 688,
+  "name": "cristal_aparece",
+  "d": 0.0,
+  "idx": 3
+ },
+ {
+  "f": 700,
+  "name": "rodea",
+  "d": 1.5333333333333334,
+  "idx": 0
+ },
+ {
+  "f": 770,
+  "name": "scroll_friccion",
+  "d": 1.3333333333333333,
+  "idx": 1
+ },
+ {
+  "f": 792,
+  "name": "detente",
+  "d": 0.0,
+  "idx": 2
+ },
+ {
+  "f": 796,
+  "name": "tarjeta_sale",
+  "d": 0.0,
+  "idx": 3
+ },
+ {
+  "f": 804,
+  "name": "tarjeta_sale",
+  "d": 0.0,
+  "idx": 4
+ },
+ {
+  "f": 820,
+  "name": "tarjeta_sale",
+  "d": 0.0,
+  "idx": 5
+ },
+ {
+  "f": 828,
+  "name": "tarjeta_sale",
+  "d": 0.0,
+  "idx": 6
+ },
+ {
+  "f": 838,
+  "name": "tarjeta_sale",
+  "d": 0.0,
+  "idx": 7
+ },
+ {
+  "f": 854,
+  "name": "tic",
+  "d": 0.0,
+  "idx": 12
+ },
+ {
+  "f": 860,
+  "name": "tic",
+  "d": 0.0,
+  "idx": 13
+ },
+ {
+  "f": 866,
+  "name": "tic",
+  "d": 0.0,
+  "idx": 14
+ },
+ {
+  "f": 872,
+  "name": "tic",
+  "d": 0.0,
+  "idx": 15
+ },
+ {
+  "f": 878,
+  "name": "logo_pop",
+  "d": 0.0,
+  "idx": 3
+ },
+ {
+  "f": 884,
+  "name": "rodea",
+  "d": 1.1,
+  "idx": 1
+ },
+ {
+  "f": 950,
+  "name": "detente",
+  "d": 0.0,
+  "idx": 3
+ },
+ {
+  "f": 950,
+  "name": "scroll_friccion",
+  "d": 1.1666666666666667,
+  "idx": 2
+ },
+ {
+  "f": 1008,
+  "name": "campana",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 1016,
+  "name": "swipe",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 1044,
+  "name": "campana",
+  "d": 0.0,
+  "idx": 1
+ },
+ {
+  "f": 1080,
+  "name": "campana",
+  "d": 0.0,
+  "idx": 2
+ },
+ {
+  "f": 1083,
+  "name": "detente",
+  "d": 0.0,
+  "idx": 4
+ },
+ {
+  "f": 1116,
+  "name": "campana",
+  "d": 0.0,
+  "idx": 3
+ },
+ {
+  "f": 1150,
+  "name": "detente",
+  "d": 0.0,
+  "idx": 5
+ },
+ {
+  "f": 1152,
+  "name": "celular_se_aleja",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 1152,
+  "name": "golpe_suave",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 1152,
+  "name": "lift",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 1172,
+  "name": "tipo_entra",
+  "d": 0.0,
+  "idx": 8
+ },
+ {
+  "f": 1177,
+  "name": "tipo_entra",
+  "d": 0.0,
+  "idx": 9
+ },
+ {
+  "f": 1182,
+  "name": "tipo_entra",
+  "d": 0.0,
+  "idx": 10
+ },
+ {
+  "f": 1187,
+  "name": "tipo_entra",
+  "d": 0.0,
+  "idx": 11
+ },
+ {
+  "f": 1192,
+  "name": "logo_pop",
+  "d": 0.0,
+  "idx": 4
+ },
+ {
+  "f": 1194,
+  "name": "logo_pop",
+  "d": 0.0,
+  "idx": 5
+ },
+ {
+  "f": 1202,
+  "name": "logo_pop",
+  "d": 0.0,
+  "idx": 6
+ },
+ {
+  "f": 1204,
+  "name": "cristal_aparece",
+  "d": 0.0,
+  "idx": 4
+ },
+ {
+  "f": 1204,
+  "name": "logo_pop",
+  "d": 0.0,
+  "idx": 7
+ },
+ {
+  "f": 1206,
+  "name": "campana",
+  "d": 0.0,
+  "idx": 4
+ },
+ {
+  "f": 1206,
+  "name": "logo_pop",
+  "d": 0.0,
+  "idx": 8
+ },
+ {
+  "f": 1208,
+  "name": "logo_pop",
+  "d": 0.0,
+  "idx": 9
+ },
+ {
+  "f": 1210,
+  "name": "logo_pop",
+  "d": 0.0,
+  "idx": 10
+ },
+ {
+  "f": 1212,
+  "name": "campana",
+  "d": 0.0,
+  "idx": 5
+ },
+ {
+  "f": 1212,
+  "name": "logo_pop",
+  "d": 0.0,
+  "idx": 11
+ },
+ {
+  "f": 1218,
+  "name": "campana",
+  "d": 0.0,
+  "idx": 6
+ },
+ {
+  "f": 1296,
+  "name": "aire_push",
+  "d": 0.0,
+  "idx": 1
+ },
+ {
+  "f": 1338,
+  "name": "swipe",
+  "d": 0.0,
+  "idx": 1
+ },
+ {
+  "f": 1344,
+  "name": "tecla_tactil",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 1346,
+  "name": "tecla_tactil",
+  "d": 0.0,
+  "idx": 1
+ },
+ {
+  "f": 1347,
+  "name": "tecla_tactil",
+  "d": 0.0,
+  "idx": 2
+ },
+ {
+  "f": 1349,
+  "name": "tecla_tactil",
+  "d": 0.0,
+  "idx": 3
+ },
+ {
+  "f": 1350,
+  "name": "tecla_tactil",
+  "d": 0.0,
+  "idx": 4
+ },
+ {
+  "f": 1352,
+  "name": "tecla_tactil",
+  "d": 0.0,
+  "idx": 5
+ },
+ {
+  "f": 1354,
+  "name": "tecla_tactil",
+  "d": 0.0,
+  "idx": 6
+ },
+ {
+  "f": 1355,
+  "name": "tecla_tactil",
+  "d": 0.0,
+  "idx": 7
+ },
+ {
+  "f": 1357,
+  "name": "tecla_tactil",
+  "d": 0.0,
+  "idx": 8
+ },
+ {
+  "f": 1358,
+  "name": "tecla_tactil",
+  "d": 0.0,
+  "idx": 9
+ },
+ {
+  "f": 1368,
+  "name": "boton_pop",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 1368,
+  "name": "tap",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 1377,
+  "name": "boton_regresa",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 1392,
+  "name": "cristal_aparece",
+  "d": 0.0,
+  "idx": 5
+ },
+ {
+  "f": 1440,
+  "name": "golpe_grave",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 1440,
+  "name": "hoja_cierra",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 1448,
+  "name": "logo_giro",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 1482,
+  "name": "texto_aparece",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 1494,
+  "name": "detente",
+  "d": 0.0,
+  "idx": 6
+ },
+ {
+  "f": 1494,
+  "name": "logo_aparece",
+  "d": 0.0,
+  "idx": 0
+ },
+ {
+  "f": 1500,
+  "name": "texto_aparece",
+  "d": 0.0,
+  "idx": 1
+ },
+ {
+  "f": 1506,
+  "name": "subraya",
+  "d": 0.0,
+  "idx": 1
+ },
+ {
+  "f": 1516,
+  "name": "texto_aparece",
+  "d": 0.0,
+  "idx": 2
+ },
+ {
+  "f": 1536,
+  "name": "texto_aparece",
+  "d": 0.0,
+  "idx": 3
+ },
+ {
+  "f": 1548,
+  "name": "texto_aparece",
+  "d": 0.0,
+  "idx": 4
+ },
+ {
+  "f": 1596,
+  "name": "golpe_grave",
+  "d": 0.0,
+  "idx": 1
+ }
+]
