@@ -1,0 +1,30 @@
+OK  · sin errores de consola al cargar · 
+OK  · sin scroll horizontal · 
+OK  · todas las imágenes cargan · 
+OK  · Space Grotesk cargada · 
+OK  · estado: abierto un miércoles 10:30 · 
+OK  · estado: domingo 15:30 cerrado · 
+OK  · estado: sábado 15:59 abierto, domingo 7:00 abre hoy · 
+OK  · hoy resaltado en el horario · 
+OK  · 5 tuestes en orden · 
+OK  · 7 métodos · 
+OK  · menú caliente: 13 productos · 
+OK  · texto base de 16 px y botones de 38 px o más · 
+OK  · enlaces: teléfono, Maps e Instagram · 
+OK  · ningún precio ni número de WhatsApp en la página · 
+OK  · método V60: resalta Canela y Medio, atenúa los otros 3 · 
+OK  · volver a tocar quita el filtro · 
+OK  · método Moka italiana: solo City · 
+OK  · agrega café City molido · 
+OK  · menú frío: 11 productos · 
+OK  · contador del pedido: 4 · 
+OK  · sellos de muestra se marcan · 
+OK  · la hoja de pedido lista 3 productos · 
+OK  · quitar uno baja a 3 · 
+OK  · mensaje con nombre y productos · 
+OK  · demo: el botón copia en vez de abrir WhatsApp · 
+OK  · con número configurado arma el enlace wa.me con el mensaje · 
+OK  · Escape cierra la hoja · 
+OK  · sin errores de consola al terminar · 
+
+28 de 28 pruebas pasan (celular 390×844)

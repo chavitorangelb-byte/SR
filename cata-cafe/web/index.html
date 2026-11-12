@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#120E0B">
+<meta name="robots" content="noindex">
+<title>Cata Café · Mercado Terán, Aguascalientes</title>
+<meta name="description" content="Venta de café en Aguascalientes. Orgánico, cooperativo y de pueblos originarios. Mercado Terán.">
+<link rel="icon" href="img/logo_cata.png">
+<style>
+@font-face{font-family:"Space Grotesk";font-weight:500;font-display:swap;src:url(fonts/space-grotesk-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Space Grotesk";font-weight:700;font-display:swap;src:url(fonts/space-grotesk-latin-700-normal.woff2) format("woff2")}
+:root{--bg:#120E0B;--terra:#B65832;--terra-l:#E08A55;--terra-d:#7A3116;--crema:#FBF3D5;--soft:rgba(251,243,213,.72);--line:rgba(251,243,213,.16);
+  --glass:rgba(251,243,213,.07);--r:22px;--sg:"Space Grotesk",system-ui,sans-serif;--in:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--crema);font:400 16px/1.45 var(--in);-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:calc(92px + env(safe-area-inset-bottom))}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(60% 34% at 88% 6%,rgba(182,88,50,.34),transparent 70%),radial-gradient(70% 30% at 4% 46%,rgba(182,88,50,.26),transparent 70%),radial-gradient(60% 30% at 92% 86%,rgba(182,88,50,.28),transparent 70%),var(--bg)}
+h1,h2,h3,p{margin:0}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+a{color:inherit}
+.wrap{max-width:520px;margin:0 auto;padding:0 16px}
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:var(--r);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 1px 1px 0 rgba(255,250,235,.22),0 14px 30px rgba(0,0,0,.35)}
+.demo{background:#2a1a10;color:var(--soft);font-size:12.5px;text-align:center;padding:7px 12px;border-bottom:1px solid var(--line)}
+header.top{position:sticky;top:0;z-index:20;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);background:rgba(18,14,11,.72);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:10px;height:60px}
+header.top img{width:40px;height:40px;border-radius:50%}
+header.top b{font:700 18px var(--sg);letter-spacing:-.01em;flex:1}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:6px 11px;border-radius:99px;border:1px solid var(--line);background:var(--glass);white-space:nowrap}
+.pill i{width:8px;height:8px;border-radius:50%;background:#8a7f6c}
+.pill.on i{background:#7BD389;box-shadow:0 0 0 4px rgba(123,211,137,.18)}
+.hero{margin-top:16px;padding:22px 20px 20px;position:relative;overflow:hidden}
+.hero .logo{width:76px;height:76px;border-radius:50%;box-shadow:0 8px 22px rgba(0,0,0,.45)}
+.hero h1{font:700 44px/1 var(--sg);letter-spacing:-.02em;margin-top:14px}
+.hero p{color:var(--soft);font-size:17px;margin-top:10px;max-width:15em}
+.hero .v60{position:absolute;right:-56px;top:-4px;width:190px;pointer-events:none;filter:drop-shadow(0 16px 18px rgba(0,0,0,.45))}
+.where{display:flex;align-items:center;gap:6px;margin-top:14px;font-size:14px;font-weight:600;color:var(--crema)}
+.cta{display:flex;gap:10px;margin-top:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 18px;border-radius:99px;font-weight:700;font-size:16px;text-decoration:none;transition:transform .15s}
+.btn:active{transform:scale(.96)}
+.btn.pri{flex:1;background:linear-gradient(#D8753F,#A84A22);color:var(--crema);box-shadow:0 5px 0 #5E2610,0 14px 22px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,230,200,.7)}
+.btn.sec{background:var(--glass);border:1px solid var(--line)}
+svg.ic{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+section{margin-top:34px;scroll-margin-top:72px}
+.sh{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:12px}
+.sh h2{font:700 26px/1.1 var(--sg);letter-spacing:-.01em}
+.sh span{font-size:13px;color:var(--soft)}
+.sub{color:var(--soft);font-size:14.5px;margin:-4px 0 12px}
+/* métodos */
+.met{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr;gap:10px}
+.met button{position:relative;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:12px 14px;min-height:112px;text-align:left;overflow:hidden;transition:border-color .2s,background .2s}
+.met button:first-child{grid-row:1/3}
+.met img{position:absolute;pointer-events:none}
+.met button:first-child img{width:86%;right:-6%;top:10px}
+.met button:not(:first-child) img{height:70%;right:4px;top:8%}
+.met b{font:700 19px/1.1 var(--sg);position:relative;max-width:6em}
+.met button:first-child b{font-size:34px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:12px 16px 2px;margin:0 -16px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:40px;padding:0 15px;border-radius:99px;border:1px solid var(--line);background:var(--glass);font-weight:600;font-size:14.5px}
+[aria-pressed="true"]{background:rgba(182,88,50,.34)!important;border-color:var(--terra-l)!important}
+/* tuestes */
+.grind{display:inline-flex;padding:4px;border-radius:99px;background:var(--glass);border:1px solid var(--line);margin-bottom:12px}
+.grind button{min-height:38px;padding:0 16px;border-radius:99px;font-weight:600;font-size:14.5px}
+.grind [aria-pressed="true"]{background:var(--crema)!important;color:#2a1508}
+.roast{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:12px 12px 12px 10px;margin-bottom:10px;transition:opacity .25s,transform .25s}
+.roast img{width:64px}
+.roast h3{font:700 19px var(--sg)}
+.roast p{font-size:13.5px;color:var(--soft);margin-top:2px}
+.roast .for{font-size:12.5px;color:var(--terra-l);margin-top:4px;font-weight:600}
+.roast.dim{opacity:.32;transform:scale(.985)}
+.add{width:44px;height:44px;border-radius:50%;background:var(--glass);border:1px solid var(--line);font-size:24px;line-height:1;display:grid;place-items:center;flex:none}
+.add.has{background:var(--terra);border-color:var(--terra-l);font:700 16px var(--in)}
+.scale{display:flex;justify-content:space-between;font-size:12.5px;color:var(--soft);margin:2px 4px 0}
+/* menú */
+.tabs{display:grid;grid-template-columns:1fr 1fr;padding:4px;border-radius:99px;background:var(--glass);border:1px solid var(--line);margin-bottom:10px}
+.tabs button{min-height:42px;border-radius:99px;font-weight:700;font-size:15px}
+.tabs [aria-selected="true"]{background:var(--crema);color:#2a1508}
+.menu{padding:4px 6px 4px 16px}
+.menu li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid rgba(251,243,213,.09)}
+.menu li:last-child{border:0}
+.menu ul{list-style:none;margin:0;padding:0}
+.menu span{font:500 17px var(--sg);letter-spacing:.01em}
+.note{font-size:12.5px;color:var(--soft);margin-top:8px}
+/* tarjeta */
+.card{position:relative;border-radius:24px;padding:20px 20px 22px;background:linear-gradient(135deg,#CF6C3C,#B65832 55%,#98401F);box-shadow:0 6px 0 #5A2410,0 22px 34px rgba(0,0,0,.45),inset 1px 1px 0 rgba(255,235,205,.7);overflow:hidden}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,240,215,.28) 45%,transparent 60%);transform:translateX(-100%);animation:sheen 5s 1s infinite}
+@keyframes sheen{0%,70%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.card .row{display:flex;align-items:center;gap:10px}
+.card img{width:44px;height:44px;border-radius:50%}
+.card h3{font:700 21px var(--sg)}
+.card small{display:block;font-size:13px;opacity:.85}
+.stamps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px;position:relative;z-index:1}
+.stamps button{aspect-ratio:1;border-radius:50%;background:#8A371A;box-shadow:inset 2px 3px 6px rgba(40,12,4,.7),1px 1.5px 0 rgba(255,225,190,.35);display:grid;place-items:center;transition:transform .2s}
+.stamps svg{width:58%;opacity:0;transform:scale(.4) rotate(-40deg);transition:all .3s cubic-bezier(.3,1.6,.5,1)}
+.stamps .on svg{opacity:1;transform:rotate(-28deg)}
+/* visita */
+.visit{padding:18px}
+.hours{width:100%;border-collapse:collapse;font-size:16px}
+.hours td{padding:7px 0}.hours td:last-child{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.hours tr.today td{color:var(--terra-l)}
+.addr{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-weight:600}
+.addr small{display:block;font-weight:400;color:var(--soft);font-size:14px}
+.route{list-style:none;margin:16px 0 0;padding:0;position:relative}
+.route::before{content:"";position:absolute;left:9px;top:12px;bottom:14px;width:4px;border-radius:4px;background:var(--terra)}
+.route li{position:relative;padding:0 0 14px 34px;font-size:15px}
+.route li::before{content:"";position:absolute;left:0;top:2px;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFD9B0,var(--terra) 45%,#4A1B0B)}
+.route b{display:block;font:700 16px var(--sg)}
+.route span{color:var(--soft);font-size:14px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.links .btn{font-size:15px;padding:0 10px}
+.links .btn:first-child{grid-column:1/3}
+footer{margin-top:36px;text-align:center;color:var(--soft);font-size:13px;padding:0 16px}
+/* barra de pedido y hoja */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:12px 16px calc(14px + env(safe-area-inset-bottom));background:linear-gradient(transparent,rgba(18,14,11,.94) 34%)}
+.bar .btn{width:100%;max-width:488px;margin:0 auto;display:flex;min-height:56px;font-size:18px}
+.bar .n{min-width:26px;height:26px;border-radius:13px;background:var(--crema);color:#7A3116;font-size:14px;display:grid;place-items:center;padding:0 7px}
+.bar .n:empty{display:none}
+.veil{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .25s}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:50;max-width:520px;margin:0 auto;max-height:88vh;overflow:auto;background:#1c1510;border:1px solid var(--line);border-bottom:0;border-radius:26px 26px 0 0;padding:10px 18px calc(18px + env(safe-area-inset-bottom));transform:translateY(105%);transition:transform .32s cubic-bezier(.2,.9,.3,1)}
+.open .veil{opacity:1;pointer-events:auto}.open .sheet{transform:none}
+.sheet .grab{width:44px;height:5px;border-radius:5px;background:var(--line);margin:0 auto 12px}
+.sheet h2{font:700 24px var(--sg)}
+.items{list-style:none;margin:12px 0;padding:0}
+.items li{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid rgba(251,243,213,.09);font-size:16px}
+.items li span{flex:1}
+.q{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--glass);font-size:20px}
+.items b{min-width:20px;text-align:center}
+.empty{color:var(--soft);padding:14px 0}
+label{display:block;font-size:13.5px;color:var(--soft);margin:12px 0 5px}
+input{width:100%;min-height:48px;border-radius:14px;border:1px solid var(--line);background:rgba(0,0,0,.25);color:var(--crema);font:inherit;padding:0 14px}
+input:focus{outline:2px solid var(--terra-l)}
+.msg{white-space:pre-wrap;background:#0d2a1c;border:1px solid #1f5a3d;border-radius:16px 16px 4px 16px;padding:12px 14px;font-size:15px;margin:12px 0}
+.sheet .btn{width:100%;margin-top:12px}
+.sheet .btn.wa{background:#1FA855;color:#fff;box-shadow:0 5px 0 #0f6a33}
+.sheet .btn[disabled]{opacity:.4}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s cubic-bezier(.2,.8,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.card::after{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="demo">Demo de cortesía de Elevate Negocios · pieza no oficial</div>
+<header class="top"><div class="wrap">
+  <img src="img/logo_cata.png" alt="Logo de Cata Café" width="40" height="40">
+  <b>Cata Café</b>
+  <span class="pill" id="estado"><i></i><span>Horario</span></span>
+</div></header>
+
+<main class="wrap">
+  <div class="hero glass" id="inicio">
+    <img class="v60" src="img/v60.png" alt="">
+    <img class="logo" src="img/logo_cata.png" alt="" width="76" height="76">
+    <h1>Cata Café</h1>
+    <p>Orgánico, cooperativo y de pueblos originarios.</p>
+    <div class="where"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.800-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Mercado Terán · Aguascalientes</div>
+    <div class="cta">
+      <button class="btn pri" data-open>Hacer pedido</button>
+      <a class="btn sec" href="#visita">Cómo llegar</a>
+    </div>
+  </div>
+
+  <section id="metodos" class="rv">
+    <div class="sh"><h2>Métodos</h2><span>Toca uno y ve qué tueste le va</span></div>
+    <div class="met" id="met3"></div>
+    <div class="chips" id="metChips"></div>
+  </section>
+
+  <section id="tuestes" class="rv">
+    <div class="sh"><h2>Café para llevar</h2><span>5 tuestes</span></div>
+    <div class="grind" role="group" aria-label="Presentación">
+      <button aria-pressed="true" data-grind="en grano">En grano</button><button aria-pressed="false" data-grind="molido">Molido</button>
+    </div>
+    <div id="roasts"></div>
+    <div class="scale"><span>↑ Mayor cafeína</span><span>Sabor más intenso ↓</span></div>
+  </section>
+
+  <section id="menu" class="rv">
+    <div class="sh"><h2>Menú</h2><span>Agrega con +</span></div>
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="caliente">Barra caliente</button><button role="tab" aria-selected="false" data-tab="fria">Barra fría</button>
+    </div>
+    <div class="menu glass"><ul id="menuList"></ul></div>
+    <p class="note" id="precioNota"></p>
+  </section>
+
+  <section id="tarjeta" class="rv">
+    <div class="sh"><h2>Cliente frecuente</h2><span>Tu tarjeta, en tu celular</span></div>
+    <div class="card">
+      <div class="row"><img src="img/logo_cata.png" alt="" width="44" height="44"><div><h3>Cliente frecuente</h3><small>Cata Café · Mercado Terán</small></div></div>
+      <div class="stamps" id="stamps" aria-label="Sellos"></div>
+    </div>
+    <p class="note" id="tarjetaNota"></p>
+  </section>
+
+  <section id="visita" class="rv">
+    <div class="sh"><h2>Visítanos</h2><span id="hoyTxt"></span></div>
+    <div class="visit glass">
+      <table class="hours" id="hours"></table>
+      <div class="addr">Mercado Terán<small>Módulo IV de cristal, planta baja, por el pasaje · Aguascalientes</small></div>
+      <ol class="route">
+        <li><b>Entrada principal</b><span>Llega a la entrada principal del Mercado Terán.</span></li>
+        <li><b>Pasaje Arteaga</b><span>A la derecha, toma el Pasaje Arteaga y camina en línea recta.</span></li>
+        <li><b>Módulo de cristal</b><span>A la mitad del pasaje está nuestro módulo.</span></li>
+      </ol>
+    </div>
+    <div class="links">
+      <a class="btn sec" id="lnkMaps" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg>Abrir en Maps</a>
+      <a class="btn sec" id="lnkTel"><svg class="ic" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span id="telTxt"></span></a>
+      <a class="btn sec" id="lnkIg" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24"><rect x="3.500" y="3.500" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.200" cy="6.800" r=".6" fill="currentColor"/></svg>@cata_cafe</a>
+    </div>
+  </section>
+</main>
+<footer>Demo de cortesía de Elevate Negocios · pieza no oficial.<br>Datos tomados del Instagram público de @cata_cafe; el negocio debe confirmarlos.</footer>
+
+<div class="bar"><button class="btn pri" data-open><svg class="ic" viewBox="0 0 24 24"><path d="M4 20l1.300-4A8 8 0 1 1 8 18.700L4 20z"/></svg>Hacer pedido <span class="n" id="count"></span></button></div>
+<div class="veil" data-close></div>
+<div class="sheet" role="dialog" aria-modal="true" aria-labelledby="shT">
+  <div class="grab"></div>
+  <div id="paso1">
+    <h2 id="shT">Tu pedido</h2>
+    <ul class="items" id="items"></ul>
+    <label for="nombre">¿A nombre de quién?</label>
+    <input id="nombre" autocomplete="given-name" placeholder="Tu nombre" maxlength="40">
+    <button class="btn pri" id="revisar">Revisar mensaje</button>
+  </div>
+  <div id="paso2" hidden>
+    <h2>Así llega tu pedido</h2>
+    <div class="msg" id="msg"></div>
+    <p class="note" id="waNota"></p>
+    <a class="btn wa" id="enviar" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24"><path d="M4 20l1.300-4A8 8 0 1 1 8 18.700L4 20z"/></svg><span>Enviar por WhatsApp</span></a>
+    <button class="btn sec" id="volver">Cambiar pedido</button>
+  </div>
+</div>
+
+<script>
+// ===== Datos editables (solo lo que el negocio publicó; lo demás queda pendiente) =====
+const NEGOCIO = {
+  nombre: 'Cata Café', instagram: 'cata_cafe', telefono: '4493095524',
+  whatsapp: '',          // pendiente: confirmar con el dueño si el 449 309 55 24 recibe WhatsApp (formato 52449XXXXXXX)
+  precios: false,        // pendiente: el menú publicado trae dos cifras por bebida sin decir a qué corresponden
+  maps: 'https://www.google.com/maps/search/?api=1&query=Mercado+Ter%C3%A1n+Aguascalientes',
+  horario: [ // 0 = domingo. Historia destacada "HORARIO".
+    ['Lunes a sábado', [1, 2, 3, 4, 5, 6], '7:30', '16:00'], ['Domingo', [0], '7:30', '15:00'] ],
+};
+const METODOS = ['V60', 'Chemex', 'Prensa francesa', 'Filtrados', 'Moka italiana', 'Expreso', 'Americano'];
+const TUESTES = [ // historias destacadas "TUESTES"
+  { n: 'Canela', notas: 'Notas cítricas y frutales · fragancia floral', para: ['Chemex', 'V60'] },
+  { n: 'Medio', notas: 'Notas florales · acidez destacada, retrogusto sutil', para: ['Chemex', 'V60', 'Filtrados'] },
+  { n: 'Medio alto', notas: 'Versátil y equilibrado · notas dulces y de chocolate', para: ['Expreso', 'Filtrados', 'Prensa francesa'] },
+  { n: 'City', notas: 'Chocolate amargo · acidez mínima, retrogusto alto', para: ['Filtrados', 'Moka italiana', 'Prensa francesa'] },
+  { n: 'Vienés', notas: 'Resinas de madera · intensidad alta, acidez nula', para: ['Expreso', 'Americano'] },
+];
+const MENU = { // historia destacada "MENÚ"
+  caliente: ['Expreso', 'Macchiato', 'Americano', 'Latte', 'Capuchino', 'Flat white', 'Chai', 'Chai sucio', 'Matcha', 'Moka', 'Chocolate', 'Prensa francesa', 'Galleta'],
+  fria: ['Americano', 'Latte', 'Chai', 'Chai sucio', 'Matcha', 'Moka', 'Chocolate', 'Frappe', 'Expreso tonic', 'Coldbrew', 'Smoothie'],
+};
+const DEMO = new URLSearchParams(location.search).has('demo') || !NEGOCIO.whatsapp;
+
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const el = (h) => { const t = document.createElement('template'); t.innerHTML = h.trim(); return t.content.firstChild; };
+const pedido = new Map(); // nombre → cantidad
+let molienda = 'en grano', metodo = null, tab = 'caliente';
+
+// ----- métodos: filtra los tuestes recomendados -----
+const IMG = { 'V60': 'v60', 'Chemex': 'chemex', 'Prensa francesa': 'prensa' };
+METODOS.forEach((m, i) => {
+  const b = el(i < 3 ? `<button class="glass" aria-pressed="false"><img src="img/${IMG[m]}.png" alt=""><b>${m}</b></button>` : `<button class="chip" aria-pressed="false">${m}</button>`);
+  b.dataset.metodo = m; (i < 3 ? $('#met3') : $('#metChips')).append(b);
+  b.onclick = () => { metodo = metodo === m ? null : m; pintaTuestes(); if (metodo) $('#tuestes').scrollIntoView({ block: 'start' }); };
+});
+
+function clave(t) { return `Café ${t.n} (${molienda})`; }
+function pintaTuestes() {
+  $$('[data-metodo]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.metodo === metodo));
+  $('#roasts').replaceChildren(...TUESTES.map((t, i) => {
+    const q = pedido.get(clave(t)) || 0;
+    const r = el(`<article class="roast glass${metodo && !t.para.includes(metodo) ? ' dim' : ''}" data-tueste="${t.n}"><img src="img/tueste_${i + 1}.png" alt="Grano de tueste ${t.n}">
+      <div><h3>${t.n}</h3><p>${t.notas}</p><p class="for">Recomendado: ${t.para.join(', ')}</p></div>
+      <button class="add${q ? ' has' : ''}" aria-label="Agregar café ${t.n} ${molienda} al pedido">${q || '+'}</button></article>`);
+    $('.add', r).onclick = () => suma(clave(t), 1);
+    return r;
+  }));
+}
+$$('[data-grind]').forEach((b) => (b.onclick = () => { molienda = b.dataset.grind; $$('[data-grind]').forEach((x) => x.setAttribute('aria-pressed', x === b)); pintaTuestes(); }));
+
+// ----- menú -----
+function pintaMenu() {
+  $$('[data-tab]').forEach((b) => b.setAttribute('aria-selected', b.dataset.tab === tab));
+  $('#menuList').replaceChildren(...MENU[tab].map((n) => {
+    const k = `${n} (${tab === 'caliente' ? 'caliente' : 'frío'})`.replace('Galleta (caliente)', 'Galleta').replace('Prensa francesa (caliente)', 'Prensa francesa'), q = pedido.get(k) || 0;
+    const li = el(`<li><span>${n}</span><button class="add${q ? ' has' : ''}" aria-label="Agregar ${n} al pedido">${q || '+'}</button></li>`);
+    $('.add', li).onclick = () => suma(k, 1); return li;
+  }));
+}
+$$('[data-tab]').forEach((b) => (b.onclick = () => { tab = b.dataset.tab; pintaMenu(); }));
+$('#precioNota').textContent = NEGOCIO.precios ? '' : 'Precios: pendientes de confirmar con el negocio; se agregan aquí.';
+
+// ----- pedido -----
+function suma(k, d) { const q = (pedido.get(k) || 0) + d; if (q <= 0) pedido.delete(k); else pedido.set(k, Math.min(q, 20)); pinta(); }
+function total() { let n = 0; pedido.forEach((q) => (n += q)); return n; }
+function mensaje() {
+  const nom = $('#nombre').value.trim();
+  return `Hola, Cata Café. Quiero hacer un pedido${nom ? ' a nombre de ' + nom : ''}:\n` + [...pedido].map(([k, q]) => `• ${q} × ${k}`).join('\n') + '\n¿Me confirman el total y en cuánto tiempo paso por él?';
+}
+function pinta() {
+  pintaTuestes(); pintaMenu();
+  const n = total(); $('#count').textContent = n || '';
+  $('#items').replaceChildren(...(n ? [...pedido].map(([k, q]) => {
+    const li = el(`<li><span>${k}</span><button class="q" aria-label="Quitar uno">−</button><b>${q}</b><button class="q" aria-label="Agregar uno">+</button></li>`);
+    const [a, b] = $$('.q', li); a.onclick = () => suma(k, -1); b.onclick = () => suma(k, 1); return li;
+  }) : [el('<li class="empty">Aún no agregas nada. Usa los botones + del menú o de los tuestes.</li>')]));
+  $('#revisar').disabled = !n;
+}
+function abre(v) { document.body.classList.toggle('open', v); if (v) { $('#paso1').hidden = false; $('#paso2').hidden = true; } }
+$$('[data-open]').forEach((b) => (b.onclick = () => abre(true)));
+$$('[data-close]').forEach((b) => (b.onclick = () => abre(false)));
+document.addEventListener('keydown', (e) => e.key === 'Escape' && abre(false));
+$('#revisar').onclick = () => {
+  const m = mensaje(); $('#msg').textContent = m; $('#paso1').hidden = true; $('#paso2').hidden = false;
+  const a = $('#enviar');
+  if (NEGOCIO.whatsapp) { a.href = `https://wa.me/${NEGOCIO.whatsapp}?text=${encodeURIComponent(m)}`; $('#waNota').textContent = ''; }
+  else { a.removeAttribute('href'); $('span', a).textContent = 'Copiar mensaje'; $('#waNota').textContent = 'Demo: falta confirmar el WhatsApp del negocio. Con el número, este botón abre el chat con el mensaje ya escrito.'; }
+};
+$('#enviar').onclick = async (e) => { if (NEGOCIO.whatsapp) return; e.preventDefault(); try { await navigator.clipboard.writeText(mensaje()); } catch (_) {} $('#enviar span').textContent = 'Mensaje copiado ✓'; };
+$('#volver').onclick = () => { $('#paso1').hidden = false; $('#paso2').hidden = true; };
+
+// ----- tarjeta: sellos de muestra (las reglas las define el negocio) -----
+const BEAN = '<svg viewBox="0 0 40 28"><ellipse cx="20" cy="14" rx="19" ry="13" fill="#FBF3D5"/><path d="M4 15c9-6 23 6 32-2" stroke="#8A371A" stroke-width="3" fill="none" stroke-linecap="round"/></svg>';
+for (let i = 0; i < 10; i++) { const b = el(`<button aria-label="Sello ${i + 1}" aria-pressed="false">${BEAN}</button>`); b.onclick = () => { b.classList.toggle('on'); b.setAttribute('aria-pressed', b.classList.contains('on')); }; $('#stamps').append(b); }
+$('#tarjetaNota').textContent = 'Demo: toca un sello para ver cómo se marca. Las reglas de la tarjeta (cuántos sellos, premio y vigencia) las define el negocio.';
+
+// ----- horario: abierto o cerrado según la hora de Aguascalientes -----
+function ahoraAgs(d = new Date()) {
+  const p = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: 'America/Mexico_City', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(d).map((x) => [x.type, x.value]));
+  return { dia: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(p.weekday), min: +p.hour * 60 + +p.minute };
+}
+const aMin = (h) => { const [a, b] = h.split(':'); return +a * 60 + +b; };
+function estado(now = ahoraAgs()) {
+  const h = NEGOCIO.horario.find((x) => x[1].includes(now.dia));
+  const abierto = h && now.min >= aMin(h[2]) && now.min < aMin(h[3]);
+  return { abierto, texto: abierto ? `Abierto · cierra ${h[3]}` : (h && now.min < aMin(h[2]) ? `Abre hoy ${h[2]}` : 'Cerrado'), hoy: h };
+}
+window.estado = estado;
+(function pintaHorario() {
+  const now = ahoraAgs(), e = estado(now);
+  $('#estado').classList.toggle('on', e.abierto); $('#estado span').textContent = e.texto;
+  $('#hours').innerHTML = NEGOCIO.horario.map((h) => `<tr class="${h[1].includes(now.dia) ? 'today' : ''}"><td>${h[0]}</td><td>${h[2]} – ${h[3]}</td></tr>`).join('');
+  $('#hoyTxt').textContent = e.hoy ? `Hoy ${e.hoy[2]} – ${e.hoy[3]}` : '';
+})();
+const t = NEGOCIO.telefono; $('#telTxt').textContent = `${t.slice(0, 3)} ${t.slice(3, 6)} ${t.slice(6, 8)} ${t.slice(8)}`;
+$('#lnkTel').href = 'tel:+52' + t; $('#lnkMaps').href = NEGOCIO.maps; $('#lnkIg').href = 'https://www.instagram.com/' + NEGOCIO.instagram + '/';
+
+pinta();
+const io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && e.target.classList.add('in')), { threshold: 0.08 });
+$$('.rv').forEach((s) => io.observe(s));
+</script>
+</body>
+</html>
