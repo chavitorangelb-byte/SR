@@ -1,0 +1,222 @@
+{
+ "fecha": "2026-11-12T21:47:00.861Z",
+ "total": 43,
+ "fallos": 0,
+ "pruebas": [
+  {
+   "prueba": "sin errores de consola",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "h1 dice el nombre",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "7 pestañas de menú",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "platillos pintados (burgers = 4)",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "barra de pedido oculta con carrito vacío",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "agregar convierte el botón en contador",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "el foco queda en \"+\" tras agregar",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "cuenta del nav = 2",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "barra muestra total $300",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "aviso para lector de pantalla",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "precio cambia con la opción",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "total = $520",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "diálogo abierto",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "2 líneas en el pedido",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "DEMO_MODE muestra el mensaje antes de WhatsApp",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "mensaje lleva productos, total, tipo, nombre y notas",
+   "ok": true,
+   "detalle": "Hola, quiero hacer un pedido en The Cheese Burger: /  / • 2 x Superbacon: $300 / • 1 x Boneless (16 pzas): $220 /  / Total estimado: $520 / Pedido: Paso a recoger / Nombre: Salvador / Notas: Sin tomate /  / ¿Me confirmas el total y el tiempo? Gracias."
+  },
+  {
+   "prueba": "enlace wa.me al número del negocio con el texto",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "vaciar deja el estado vacío",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "Escape cierra el diálogo",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "el pedido se conserva al recargar",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "sin desborde horizontal (390)",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "áreas táctiles ≥ 40 px",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "primer Tab = enlace \"Saltar al menú\"",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "flecha derecha cambia de pestaña",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "End va a la última pestaña",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "foco visible en pestañas",
+   "ok": true,
+   "detalle": "solid 3px"
+  },
+  {
+   "prueba": "foco dentro del diálogo al abrir",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "el foco regresa al botón que abrió",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "imágenes con alt",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "un solo h1 y títulos en orden",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "reduced motion: sin errores",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "reduced motion: la burger no fija la pantalla",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "reduced motion: título visible sin animar",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "reduced motion: gotas dibujadas estáticas",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "SHOW_OFFER=false oculta la oferta",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "SHOW_DEMO_BADGE=false quita la nota",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "SHOW_PENDIENTES=false quita \"por confirmar\"",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "DEMO_MODE=false abre WhatsApp directo",
+   "ok": true,
+   "detalle": "https://wa.me/528181618030?text=Hola%2C%20quiero%2"
+  },
+  {
+   "prueba": "si data.js falla hay mensaje de error con teléfono",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "foto que no carga = placeholder de tablero",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "sin JavaScript: título, textos y aviso visibles",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "carga inicial < 700 KB sin comprimir",
+   "ok": true,
+   "detalle": "357 KB en 21 archivos, load 156 ms"
+  },
+  {
+   "prueba": "cero peticiones a terceros",
+   "ok": true,
+   "detalle": ""
+  }
+ ]
+}

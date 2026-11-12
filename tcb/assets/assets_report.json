@@ -1,0 +1,68 @@
+[
+ {
+  "archivo": "burger-carne-y-pollo",
+  "captura": 2,
+  "w": 1320,
+  "h": 1761,
+  "alt": "Hamburguesa con carne y pollo empanizado, queso derretido, lechuga y tomate en pan brioche"
+ },
+ {
+  "archivo": "burger-queso-panela",
+  "captura": 3,
+  "w": 1320,
+  "h": 1614,
+  "alt": "Hamburguesa con queso derretido y panela a la plancha, lechuga y tomate, servida con papas a la francesa"
+ },
+ {
+  "archivo": "burgers-para-llevar",
+  "captura": 4,
+  "w": 1135,
+  "h": 1534,
+  "alt": "Dos hamburguesas con papas a la francesa en sus cajas de The Cheese Burger"
+ },
+ {
+  "archivo": "burger-con-mac",
+  "captura": 5,
+  "w": 1320,
+  "h": 1614,
+  "alt": "Hamburguesa con carne, pollo empanizado y macarrón con queso, junto a una malteada"
+ },
+ {
+  "archivo": "burger-con-papas",
+  "captura": 6,
+  "w": 1320,
+  "h": 1614,
+  "alt": "Hamburguesa con tocino, queso derretido y papas a la francesa dentro del pan"
+ },
+ {
+  "archivo": "burger-guacamole",
+  "captura": 7,
+  "w": 1320,
+  "h": 1614,
+  "alt": "Hamburguesa con guacamole, queso, trozos de carne dorada y aderezo"
+ },
+ {
+  "archivo": "tenders-con-salsa",
+  "captura": 10,
+  "w": 1320,
+  "h": 1614,
+  "alt": "Tender de pollo empanizado bañado en salsa sobre una charola con papas"
+ },
+ {
+  "archivo": "chicken-sandwich",
+  "captura": 11,
+  "w": 1320,
+  "h": 1614,
+  "alt": "Sándwich de pollo empanizado bañado en salsa, con lechuga, en pan brioche"
+ },
+ {
+  "archivo": "logo",
+  "captura": 1,
+  "box": [
+   225,
+   827,
+   1093,
+   1695
+  ]
+ }
+]

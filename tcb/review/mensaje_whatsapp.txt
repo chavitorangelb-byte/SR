@@ -1,0 +1,11 @@
+Hola, quiero hacer un pedido en The Cheese Burger:
+
+• 2 x Superbacon: $300
+• 1 x Boneless (16 pzas): $220
+
+Total estimado: $520
+Pedido: Paso a recoger
+Nombre: Salvador
+Notas: Sin tomate
+
+¿Me confirmas el total y el tiempo? Gracias.
