@@ -1,0 +1,297 @@
+{
+ "fps": 60,
+ "frames": 1380,
+ "bpm": 120,
+ "secciones": [
+  {
+   "id": "golpe",
+   "f": 0
+  },
+  {
+   "id": "pliegues",
+   "f": 30
+  },
+  {
+   "id": "revelacion",
+   "f": 120
+  },
+  {
+   "id": "telefono",
+   "f": 180
+  },
+  {
+   "id": "galletas",
+   "f": 360
+  },
+  {
+   "id": "muro",
+   "f": 540
+  },
+  {
+   "id": "pasteles",
+   "f": 720
+  },
+  {
+   "id": "whatsapp",
+   "f": 900
+  },
+  {
+   "id": "cierre",
+   "f": 1020
+  },
+  {
+   "id": "endcard",
+   "f": 1200
+  }
+ ],
+ "voz": [
+  {
+   "id": "L1",
+   "f": 30,
+   "texto": "Cada pliegue cuenta.",
+   "toma": {
+    "ini": 0.12,
+    "fin": 1.63
+   },
+   "dur": 1.51,
+   "termina_f": 121,
+   "palabras": [
+    {
+     "w": "Cada",
+     "f": 30
+    },
+    {
+     "w": "pliegue",
+     "f": 55
+    },
+    {
+     "w": "cuenta",
+     "f": 87
+    }
+   ]
+  },
+  {
+   "id": "L2",
+   "f": 180,
+   "texto": "Hojaldres, berlinesas y pasteles.",
+   "toma": {
+    "ini": 2.15,
+    "fin": 4.78
+   },
+   "dur": 2.63,
+   "termina_f": 338,
+   "palabras": [
+    {
+     "w": "Hojaldres",
+     "f": 180
+    },
+    {
+     "w": "berlinesas",
+     "f": 233
+    },
+    {
+     "w": "y",
+     "f": 290
+    },
+    {
+     "w": "pasteles",
+     "f": 299
+    }
+   ]
+  },
+  {
+   "id": "L3",
+   "f": 360,
+   "texto": "Ocho sabores de galletas, recién horneadas.",
+   "toma": {
+    "ini": 5.12,
+    "fin": 7.8
+   },
+   "dur": 2.68,
+   "termina_f": 521,
+   "palabras": [
+    {
+     "w": "Ocho",
+     "f": 360
+    },
+    {
+     "w": "sabores",
+     "f": 378
+    },
+    {
+     "w": "de",
+     "f": 404
+    },
+    {
+     "w": "galletas",
+     "f": 410
+    },
+    {
+     "w": "recién",
+     "f": 449
+    },
+    {
+     "w": "horneadas",
+     "f": 473
+    }
+   ]
+  },
+  {
+   "id": "L4",
+   "f": 552,
+   "texto": "Imagina todo esto en tu propia página.",
+   "toma": {
+    "ini": 8.06,
+    "fin": 10.55
+   },
+   "dur": 2.49,
+   "termina_f": 701,
+   "palabras": [
+    {
+     "w": "Imagina",
+     "f": 552
+    },
+    {
+     "w": "todo",
+     "f": 594
+    },
+    {
+     "w": "esto",
+     "f": 607
+    },
+    {
+     "w": "en",
+     "f": 625
+    },
+    {
+     "w": "tu",
+     "f": 635
+    },
+    {
+     "w": "propia",
+     "f": 649
+    },
+    {
+     "w": "página",
+     "f": 671
+    }
+   ]
+  },
+  {
+   "id": "L5",
+   "f": 726,
+   "texto": "Flan parisino. Mille-feuille. Trianon.",
+   "toma": {
+    "ini": 10.87,
+    "fin": 13.79
+   },
+   "dur": 2.92,
+   "termina_f": 901,
+   "palabras": [
+    {
+     "w": "Flan",
+     "f": 726
+    },
+    {
+     "w": "parisino",
+     "f": 747
+    },
+    {
+     "w": "Mille-feuille",
+     "f": 811
+    },
+    {
+     "w": "Trianon",
+     "f": 872
+    }
+   ]
+  },
+  {
+   "id": "L6",
+   "f": 924,
+   "texto": "Pide por WhatsApp.",
+   "toma": {
+    "ini": 14.16,
+    "fin": 14.96
+   },
+   "dur": 0.8,
+   "termina_f": 972,
+   "palabras": [
+    {
+     "w": "Pide",
+     "f": 924
+    },
+    {
+     "w": "por",
+     "f": 940
+    },
+    {
+     "w": "WhatsApp",
+     "f": 958
+    }
+   ]
+  },
+  {
+   "id": "L7",
+   "f": 1044,
+   "texto": "Maison Rose. San Jerónimo.",
+   "toma": {
+    "ini": 15.34,
+    "fin": 17.39
+   },
+   "dur": 2.05,
+   "termina_f": 1167,
+   "palabras": [
+    {
+     "w": "Maison",
+     "f": 1044
+    },
+    {
+     "w": "Rose",
+     "f": 1078
+    },
+    {
+     "w": "San",
+     "f": 1114
+    },
+    {
+     "w": "Jerónimo",
+     "f": 1132
+    }
+   ]
+  },
+  {
+   "id": "L8",
+   "f": 1218,
+   "texto": "Tu página, desde mil pesos.",
+   "toma": {
+    "ini": 17.66,
+    "fin": 19.67
+   },
+   "dur": 2.01,
+   "termina_f": 1339,
+   "palabras": [
+    {
+     "w": "Tu",
+     "f": 1218
+    },
+    {
+     "w": "página",
+     "f": 1229
+    },
+    {
+     "w": "desde",
+     "f": 1265
+    },
+    {
+     "w": "mil",
+     "f": 1289
+    },
+    {
+     "w": "pesos",
+     "f": 1310
+    }
+   ]
+  }
+ ]
+}

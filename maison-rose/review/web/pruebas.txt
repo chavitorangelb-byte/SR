@@ -1,0 +1,10 @@
+OK  sin desborde horizontal
+OK  10 productos en el menú
+OK  todas las fotos cargan
+OK  botones de al menos 40 px
+OK  filtro Pasteles deja 3 productos
+OK  el contador marca 4
+OK  la hoja de pedido lista 3 productos
+OK  el mensaje lleva productos, cantidades y nombre
+OK  la hoja se cierra
+OK  sin errores de consola

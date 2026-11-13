@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1B1210">
+<title>Maison Rose · Repostería y panadería francesa</title>
+<style>
+@font-face{font-family:"Playfair Display";font-weight:600;font-display:swap;src:url(fonts/playfair-display-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Playfair Display";font-weight:600;font-style:italic;font-display:swap;src:url(fonts/playfair-display-latin-600-italic.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:400;font-display:swap;src:url(fonts/dm-sans-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:600;font-display:swap;src:url(fonts/dm-sans-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:700;font-display:swap;src:url(fonts/dm-sans-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:Parisienne;font-weight:400;font-display:swap;src:url(fonts/parisienne-latin-400-normal.woff2) format("woff2")}
+:root{--cacao:#1B1210;--cacao2:#261914;--crema:#F3E6D6;--rosa:#E5A898;--caramelo:#C98B4E;--choco:#4A2A1C;--tenue:rgba(243,230,214,.68);--linea:rgba(243,230,214,.14);--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{background:var(--cacao);color:var(--crema);font:400 16px/1.5 var(--sans);-webkit-font-smoothing:antialiased;padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+.wrap{max-width:520px;margin:0 auto;padding:0 20px}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--rosa);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;text-wrap:balance}
+.kicker{font:700 12px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--rosa)}
+
+/* barra superior */
+.top{position:sticky;top:0;z-index:20;background:rgba(27,18,16,.72);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border-bottom:1px solid var(--linea)}
+.top .wrap{display:flex;align-items:center;gap:12px;height:64px}
+.top img{width:40px;height:40px;border-radius:50%}
+.top b{font:italic 600 22px/1 var(--serif);flex:1}
+.mini{display:flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-radius:20px;background:var(--rosa);color:var(--cacao);font-weight:700;font-size:14px}
+.mini svg{width:18px;height:18px}
+
+/* portada */
+.hero{position:relative;padding:34px 20px 18px;overflow:hidden}
+.hero h1{font-size:clamp(40px,11.5vw,54px);margin:14px 0 14px}
+.hero h1 em{display:block;font-style:italic;color:var(--rosa)}
+.hero p{color:var(--tenue);max-width:30ch}
+.cta{display:flex;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:26px;font-weight:700;text-decoration:none}
+.btn.p{background:var(--rosa);color:var(--cacao)}
+.btn.s{border:1px solid rgba(243,230,214,.4);color:var(--crema);background:rgba(243,230,214,.06)}
+.btn svg{width:20px;height:20px}
+.pila{position:relative;height:330px;margin-top:30px}
+.pila figure{position:absolute;border-radius:24px;padding:8px;background:linear-gradient(160deg,rgba(243,230,214,.34),rgba(243,230,214,.08));box-shadow:0 30px 50px -24px rgba(0,0,0,.85),inset 0 0 0 1px rgba(243,230,214,.3)}
+.pila img{display:block;width:100%;height:100%;object-fit:cover;border-radius:17px}
+.pila .a{left:0;top:26px;width:58%;height:280px;transform:rotate(-3deg)}
+.pila .b{right:0;top:0;width:46%;height:190px;transform:rotate(4deg)}
+.pila .c{right:6%;bottom:0;width:40%;height:150px;transform:rotate(-2deg)}
+.cinta{display:block;width:100%;height:34px;margin:26px 0 4px}
+
+/* menú */
+.chips{position:sticky;top:64px;z-index:15;background:rgba(27,18,16,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+.chips .row{display:flex;gap:8px;overflow-x:auto;padding:12px 20px;scrollbar-width:none;max-width:520px;margin:0 auto}
+.chips .row::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:40px;padding:0 16px;border-radius:20px;border:1px solid rgba(243,230,214,.32);font-weight:600;font-size:14px;transition:background .2s,color .2s}
+.chip[aria-pressed=true]{background:var(--rosa);border-color:var(--rosa);color:var(--cacao)}
+section{padding:34px 0 6px}
+section h2{font-size:34px;margin:10px 0 6px}
+section .sub{color:var(--tenue);margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{display:flex;flex-direction:column;border-radius:22px;overflow:hidden;background:linear-gradient(170deg,rgba(243,230,214,.12),rgba(243,230,214,.04));border:1px solid var(--linea);transition:transform .25s,opacity .25s}
+.card.grande{grid-column:1/-1}
+.card img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
+.card.grande img{aspect-ratio:16/11}
+.card .t{padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card .cat{font:700 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--rosa)}
+.card h3{font-size:19px}
+.card p{font-size:13.5px;line-height:1.4;color:var(--tenue);flex:1}
+.card .pie{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.precio{font-weight:700;color:var(--crema)}
+.precio small{display:block;font-weight:400;font-size:11px;color:var(--tenue)}
+.mas{width:44px;height:44px;border-radius:50%;background:var(--rosa);color:var(--cacao);font:700 24px/1 var(--sans);display:grid;place-items:center;transition:transform .15s}
+.mas:active{transform:scale(.9)}
+.card.oculta{display:none}
+
+/* visítanos */
+.info{display:grid;gap:12px;margin-top:8px}
+.info div{padding:16px 18px;border-radius:18px;background:rgba(243,230,214,.06);border:1px solid var(--linea)}
+.info b{display:block;font:700 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--rosa);margin-bottom:6px}
+.pend{color:var(--tenue);font-style:italic}
+footer{margin-top:34px;padding:22px 0;border-top:1px solid var(--linea);color:var(--tenue);font-size:13px;text-align:center}
+
+/* barra de pedido y hoja */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(27,18,16,0),rgba(27,18,16,.94) 34%)}
+.barra .btn{width:100%;max-width:488px;margin:0 auto;display:flex;box-shadow:0 16px 30px -12px rgba(0,0,0,.8)}
+.barra .n{min-width:26px;height:26px;border-radius:13px;background:var(--cacao);color:var(--rosa);display:grid;place-items:center;font-size:13px;padding:0 7px}
+.velo{position:fixed;inset:0;z-index:40;background:rgba(10,6,5,.6);opacity:0;pointer-events:none;transition:opacity .25s}
+.hoja{position:fixed;left:0;right:0;bottom:0;z-index:50;max-width:520px;margin:0 auto;max-height:88vh;overflow:auto;border-radius:28px 28px 0 0;background:var(--cacao2);border:1px solid var(--linea);padding:10px 20px calc(22px + env(safe-area-inset-bottom));transform:translateY(105%);transition:transform .32s cubic-bezier(.2,.8,.2,1)}
+.abierta .velo{opacity:1;pointer-events:auto}.abierta .hoja{transform:none}
+.hoja .asa{width:44px;height:5px;border-radius:3px;background:rgba(243,230,214,.3);margin:0 auto 14px}
+.hoja h2{font-size:28px;margin-bottom:12px}
+.fila{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--linea)}
+.fila img{width:52px;height:52px;border-radius:12px;object-fit:cover}
+.fila span{flex:1;font-weight:600}
+.cant{display:flex;align-items:center;gap:4px}
+.cant button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(243,230,214,.3);font-size:20px}
+.cant output{min-width:22px;text-align:center;font-weight:700}
+label{display:block;font:700 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--rosa);margin:18px 0 8px}
+input{width:100%;height:52px;border-radius:14px;border:1px solid rgba(243,230,214,.3);background:rgba(243,230,214,.06);color:var(--crema);font:400 16px var(--sans);padding:0 14px}
+.vacio{color:var(--tenue);padding:8px 0 4px}
+.hoja .btn{width:100%;margin-top:18px}
+.burbuja{margin-top:16px;padding:14px 16px;border-radius:18px 18px 18px 4px;background:var(--crema);color:#2a1b16;font-size:14.5px;line-height:1.45;white-space:pre-wrap}
+.nota{font-size:13px;color:var(--tenue);margin-top:10px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <img src="img/logo.jpg" alt="" width="40" height="40">
+  <b>Maison Rose</b>
+  <button class="mini" data-abre><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.4A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 8.5c.3 3 2.6 5.600 6 6.300" stroke-width="2.8"/></svg>Pedir</button>
+</div></header>
+
+<main>
+<div class="wrap hero">
+  <p class="kicker">Plaza Periférika · San Jerónimo</p>
+  <h1>Repostería y panadería <em>francesa</em></h1>
+  <p>Hojaldres, berlinesas, pasteles y galletas recién horneadas. Elige lo que se te antoja y pídelo por WhatsApp.</p>
+  <div class="cta"><a class="btn p" href="#menu">Ver el menú</a><button class="btn s" data-abre>Mi pedido</button></div>
+  <div class="pila" aria-hidden="true">
+    <figure class="a"><img src="img/trianon.jpg" alt=""></figure>
+    <figure class="b"><img src="img/painsuisse.jpg" alt=""></figure>
+    <figure class="c"><img src="img/galleta_nueces.jpg" alt=""></figure>
+  </div>
+  <svg class="cinta" viewBox="0 0 400 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 C80 2 120 32 200 16 S330 4 400 18 L400 26 C330 12 280 30 200 24 S80 12 0 28Z" fill="#E5A898"/><path d="M0 28 C80 12 120 40 200 24 S330 12 400 26 L400 30 C330 16 280 34 200 28 S80 16 0 32Z" fill="#C98B4E"/></svg>
+</div>
+
+<nav class="chips" aria-label="Categorías"><div class="row" id="chips"></div></nav>
+
+<div class="wrap">
+  <section id="menu">
+    <p class="kicker">Notre menu</p>
+    <h2>Nuestro menú</h2>
+    <p class="sub">Toca el botón + para agregar a tu pedido.</p>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="visitanos">
+    <p class="kicker">Visítanos</p>
+    <h2>Te esperamos en tienda</h2>
+    <div class="info">
+      <div><b>Dónde</b>Plaza Periférika, San Jerónimo, Monterrey</div>
+      <div><b>Horario</b><span class="pend">Tu horario aquí</span></div>
+      <div><b>Pedidos</b>Por WhatsApp, directo desde esta página</div>
+    </div>
+  </section>
+  <footer>Demo de cortesía de Elevate Negocios · pieza no oficial</footer>
+</div>
+</main>
+
+<div class="barra"><button class="btn p" data-abre><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.4A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 8.5c.3 3 2.6 5.6 6 6.3" stroke-width="2.8"/></svg>Pedir por WhatsApp <span class="n" id="cuenta">0</span></button></div>
+<div class="velo" data-cierra></div>
+<div class="hoja" role="dialog" aria-modal="true" aria-labelledby="th" id="hoja">
+  <div class="asa"></div>
+  <h2 id="th">Tu pedido</h2>
+  <div id="lista"></div>
+  <label for="nombre">Tu nombre</label>
+  <input id="nombre" autocomplete="given-name" placeholder="¿A nombre de quién?">
+  <button class="btn p" id="enviar">Enviar pedido por WhatsApp</button>
+  <div id="salida"></div>
+</div>
+
+<script>
+// ===== Datos editables =====
+// whatsapp: número con lada, solo dígitos (ej. "5281XXXXXXXX"). Vacío = modo demo: muestra el mensaje en lugar de abrir WhatsApp.
+const NEGOCIO = { nombre: 'Maison Rose', whatsapp: '' };
+// precio: número en pesos, o null mientras no esté confirmado (se muestra "$ —").
+const MENU = [
+  { id: 'painsuisse', cat: 'Hojaldres', nombre: 'Pain suisse', desc: 'Descubre los rellenos disponibles en tienda.', img: 'painsuisse.jpg', precio: null, grande: true },
+  { id: 'hojaldres', cat: 'Hojaldres', nombre: 'Hojaldres con fruta', desc: 'Tu descripción aquí.', img: 'hojaldres_fruta.jpg', precio: null },
+  { id: 'berlinesas', cat: 'Berlinesas', nombre: 'Berlinesas rellenas', desc: 'Tus rellenos aquí.', img: 'berlinesas.jpg', precio: null },
+  { id: 'trianon', cat: 'Pasteles', nombre: 'Trianon', desc: 'Con frutos rojos.', img: 'trianon.jpg', precio: null, grande: true },
+  { id: 'millefeuille', cat: 'Pasteles', nombre: 'Mille-feuille', desc: 'Capas de hojaldre y crema.', img: 'millefeuille.jpg', precio: null },
+  { id: 'flan', cat: 'Pasteles', nombre: 'Flan parisino', desc: 'Masa sucrée y crema pastelera horneada. De vainilla, chocolate o marmoleado.', img: 'flan.jpg', precio: null },
+  { id: 'galletas', cat: 'Galletas', nombre: 'Galletas recién horneadas', desc: '8 sabores diferentes. Dinos cuál quieres en tu pedido.', img: 'galleta_nueces.jpg', precio: null, grande: true },
+  { id: 'galleta2', cat: 'Galletas', nombre: 'Tu sabor aquí', desc: 'Nombre y descripción del sabor.', img: 'galletas_apiladas.jpg', precio: null },
+  { id: 'galleta3', cat: 'Galletas', nombre: 'Tu sabor aquí', desc: 'Nombre y descripción del sabor.', img: 'galleta_partida.jpg', precio: null },
+  { id: 'panes', cat: 'Panes', nombre: 'Panes', desc: 'Tu selección del día aquí.', img: 'conchas.jpg', precio: null, grande: true },
+];
+// ===== Fin de datos =====
+const DEMO = !NEGOCIO.whatsapp || new URLSearchParams(location.search).has('demo');
+const $ = (s) => document.querySelector(s);
+const pedido = new Map();
+const cats = ['Todo', ...new Set(MENU.map((m) => m.cat))];
+const precio = (p) => (p == null ? '$ —<small>Precio por confirmar</small>' : '$' + p.toLocaleString('es-MX'));
+
+$('#chips').innerHTML = cats.map((c, i) => `<button class="chip" aria-pressed="${i === 0}" data-cat="${c}">${c}</button>`).join('');
+$('#grid').innerHTML = MENU.map((m) => `<article class="card${m.grande ? ' grande' : ''}" data-cat="${m.cat}">
+  <img src="img/${m.img}" alt="${m.nombre}" loading="lazy">
+  <div class="t"><span class="cat">${m.cat}</span><h3>${m.nombre}</h3><p>${m.desc}</p>
+  <div class="pie"><span class="precio">${precio(m.precio)}</span><button class="mas" data-add="${m.id}" aria-label="Agregar ${m.nombre} al pedido">+</button></div></div></article>`).join('');
+
+$('#chips').addEventListener('click', (e) => {
+  const b = e.target.closest('.chip'); if (!b) return;
+  document.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', c === b));
+  document.querySelectorAll('.card').forEach((c) => c.classList.toggle('oculta', b.dataset.cat !== 'Todo' && c.dataset.cat !== b.dataset.cat));
+  b.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+});
+
+function pinta() {
+  const n = [...pedido.values()].reduce((a, b) => a + b, 0);
+  $('#cuenta').textContent = n;
+  $('#lista').innerHTML = n ? [...pedido].map(([id, q]) => { const m = MENU.find((x) => x.id === id);
+    return `<div class="fila"><img src="img/${m.img}" alt=""><span>${m.nombre}</span><div class="cant"><button data-q="-1" data-id="${id}" aria-label="Quitar uno">−</button><output>${q}</output><button data-q="1" data-id="${id}" aria-label="Agregar uno">+</button></div></div>`; }).join('')
+    : '<p class="vacio">Todavía no agregas nada. Toca el + de lo que se te antoje.</p>';
+  $('#salida').innerHTML = '';
+}
+function suma(id, d) { const q = (pedido.get(id) || 0) + d; if (q <= 0) pedido.delete(id); else pedido.set(id, q); pinta(); }
+function mensaje() {
+  const nombre = $('#nombre').value.trim();
+  const lineas = [...pedido].map(([id, q]) => `• ${q} × ${MENU.find((x) => x.id === id).nombre}`);
+  return `¡Hola, ${NEGOCIO.nombre}! Quiero hacer un pedido:\n${lineas.join('\n')}\n${nombre ? `A nombre de: ${nombre}\n` : ''}¿Me confirman precio y disponibilidad? Gracias.`;
+}
+document.addEventListener('click', (e) => {
+  const add = e.target.closest('[data-add]'); if (add) { suma(add.dataset.add, 1); return; }
+  const q = e.target.closest('[data-q]'); if (q) { suma(q.dataset.id, +q.dataset.q); return; }
+  if (e.target.closest('[data-abre]')) { pinta(); document.body.classList.add('abierta'); $('#hoja').focus?.(); return; }
+  if (e.target.closest('[data-cierra]')) document.body.classList.remove('abierta');
+});
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') document.body.classList.remove('abierta'); });
+$('#enviar').addEventListener('click', () => {
+  if (!pedido.size) { $('#salida').innerHTML = '<p class="nota">Agrega al menos un producto para armar tu pedido.</p>'; return; }
+  const txt = mensaje();
+  if (DEMO) { $('#salida').innerHTML = '<div class="burbuja"></div><p class="nota">Vista de demo: así llegaría el mensaje al WhatsApp de la tienda.</p>'; $('.burbuja').textContent = txt; $('.burbuja').scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+  else location.href = `https://wa.me/${NEGOCIO.whatsapp}?text=${encodeURIComponent(txt)}`;
+});
+pinta();
+</script>
+</body>
+</html>
