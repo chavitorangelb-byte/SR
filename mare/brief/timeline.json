@@ -1,0 +1,363 @@
+{
+  "fps": 60,
+  "bpm": 120,
+  "frames": 1380,
+  "secciones": [
+    {
+      "id": "golpe",
+      "f0": 0,
+      "f1": 30
+    },
+    {
+      "id": "zigzag",
+      "f0": 30,
+      "f1": 120
+    },
+    {
+      "id": "corte",
+      "f0": 120,
+      "f1": 180
+    },
+    {
+      "id": "telefono",
+      "f0": 180,
+      "f1": 360
+    },
+    {
+      "id": "lealtad",
+      "f0": 360,
+      "f1": 570
+    },
+    {
+      "id": "menu",
+      "f0": 570,
+      "f1": 750
+    },
+    {
+      "id": "cajita",
+      "f0": 750,
+      "f1": 930
+    },
+    {
+      "id": "boton",
+      "f0": 930,
+      "f1": 1020
+    },
+    {
+      "id": "cierre",
+      "f0": 1020,
+      "f1": 1200
+    },
+    {
+      "id": "endcard",
+      "f0": 1200,
+      "f1": 1380
+    }
+  ],
+  "voz": [
+    {
+      "id": "L1",
+      "f": 30,
+      "texto": "Lo mejor está adentro.",
+      "toma": {
+        "ini": 0.0,
+        "fin": 1.543
+      },
+      "dur": 1.543,
+      "termina_f": 123,
+      "palabras": [
+        {
+          "w": "Lo",
+          "f": 30,
+          "fin": 49
+        },
+        {
+          "w": "mejor",
+          "f": 49,
+          "fin": 73
+        },
+        {
+          "w": "está",
+          "f": 73,
+          "fin": 88
+        },
+        {
+          "w": "adentro.",
+          "f": 88,
+          "fin": 123
+        }
+      ]
+    },
+    {
+      "id": "L2",
+      "f": 180,
+      "texto": "Galletas, brownies y pasteles.",
+      "toma": {
+        "ini": 1.953,
+        "fin": 4.329
+      },
+      "dur": 2.376,
+      "termina_f": 323,
+      "palabras": [
+        {
+          "w": "Galletas,",
+          "f": 180,
+          "fin": 226
+        },
+        {
+          "w": "brownies",
+          "f": 226,
+          "fin": 269
+        },
+        {
+          "w": "y",
+          "f": 269,
+          "fin": 279
+        },
+        {
+          "w": "pasteles.",
+          "f": 279,
+          "fin": 323
+        }
+      ]
+    },
+    {
+      "id": "L3",
+      "f": 372,
+      "texto": "Cinco sellos, y veinte por ciento de descuento.",
+      "toma": {
+        "ini": 4.671,
+        "fin": 7.695
+      },
+      "dur": 3.024,
+      "termina_f": 553,
+      "palabras": [
+        {
+          "w": "Cinco",
+          "f": 372,
+          "fin": 399
+        },
+        {
+          "w": "sellos,",
+          "f": 399,
+          "fin": 437
+        },
+        {
+          "w": "y",
+          "f": 437,
+          "fin": 452
+        },
+        {
+          "w": "veinte por ciento",
+          "f": 452,
+          "fin": 505
+        },
+        {
+          "w": "de",
+          "f": 505,
+          "fin": 514
+        },
+        {
+          "w": "descuento.",
+          "f": 514,
+          "fin": 553
+        }
+      ]
+    },
+    {
+      "id": "L4",
+      "f": 582,
+      "texto": "Imagina todo esto en tu propia página.",
+      "toma": {
+        "ini": 8.001,
+        "fin": 10.46
+      },
+      "dur": 2.459,
+      "termina_f": 730,
+      "palabras": [
+        {
+          "w": "Imagina",
+          "f": 582,
+          "fin": 625
+        },
+        {
+          "w": "todo",
+          "f": 625,
+          "fin": 644
+        },
+        {
+          "w": "esto",
+          "f": 644,
+          "fin": 659
+        },
+        {
+          "w": "en",
+          "f": 659,
+          "fin": 668
+        },
+        {
+          "w": "tu",
+          "f": 668,
+          "fin": 678
+        },
+        {
+          "w": "propia",
+          "f": 678,
+          "fin": 697
+        },
+        {
+          "w": "página.",
+          "f": 697,
+          "fin": 730
+        }
+      ]
+    },
+    {
+      "id": "L5",
+      "f": 762,
+      "texto": "Elige tu cajita. Elige tus toppings.",
+      "toma": {
+        "ini": 10.784,
+        "fin": 13.331
+      },
+      "dur": 2.547,
+      "termina_f": 915,
+      "palabras": [
+        {
+          "w": "Elige",
+          "f": 762,
+          "fin": 782
+        },
+        {
+          "w": "tu",
+          "f": 782,
+          "fin": 792
+        },
+        {
+          "w": "cajita.",
+          "f": 792,
+          "fin": 835
+        },
+        {
+          "w": "Elige",
+          "f": 835,
+          "fin": 864
+        },
+        {
+          "w": "tus",
+          "f": 864,
+          "fin": 878
+        },
+        {
+          "w": "toppings.",
+          "f": 878,
+          "fin": 915
+        }
+      ]
+    },
+    {
+      "id": "L6",
+      "f": 936,
+      "texto": "Haz tu pedido por WhatsApp.",
+      "toma": {
+        "ini": 13.598,
+        "fin": 14.935
+      },
+      "dur": 1.337,
+      "termina_f": 1016,
+      "palabras": [
+        {
+          "w": "Haz",
+          "f": 936,
+          "fin": 946
+        },
+        {
+          "w": "tu",
+          "f": 946,
+          "fin": 955
+        },
+        {
+          "w": "pedido",
+          "f": 955,
+          "fin": 979
+        },
+        {
+          "w": "por",
+          "f": 979,
+          "fin": 989
+        },
+        {
+          "w": "WhatsApp.",
+          "f": 989,
+          "fin": 1016
+        }
+      ]
+    },
+    {
+      "id": "L7",
+      "f": 1038,
+      "texto": "MaRe Repostería. Aguascalientes.",
+      "toma": {
+        "ini": 15.231,
+        "fin": 17.606
+      },
+      "dur": 2.375,
+      "termina_f": 1181,
+      "palabras": [
+        {
+          "w": "MaRe",
+          "f": 1038,
+          "fin": 1065
+        },
+        {
+          "w": "Repostería.",
+          "f": 1065,
+          "fin": 1118
+        },
+        {
+          "w": "Aguascalientes.",
+          "f": 1118,
+          "fin": 1181
+        }
+      ]
+    },
+    {
+      "id": "L8",
+      "f": 1224,
+      "texto": "Tu página, desde mil pesos.",
+      "toma": {
+        "ini": 17.873,
+        "fin": 20.05
+      },
+      "dur": 2.177,
+      "termina_f": 1355,
+      "palabras": [
+        {
+          "w": "Tu",
+          "f": 1224,
+          "fin": 1232
+        },
+        {
+          "w": "página,",
+          "f": 1232,
+          "fin": 1270
+        },
+        {
+          "w": "desde",
+          "f": 1270,
+          "fin": 1289
+        },
+        {
+          "w": "mil",
+          "f": 1289,
+          "fin": 1323
+        },
+        {
+          "w": "pesos.",
+          "f": 1323,
+          "fin": 1355
+        }
+      ]
+    }
+  ]
+}

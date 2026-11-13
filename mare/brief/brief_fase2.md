@@ -61,3 +61,22 @@ Son cuatro líneas en 2 s: las líneas 2 y 3 entran escalonadas (f966 y f990) y 
 ## Fuera de pantalla
 
 Precios del menú, teléfono, usuario de Instagram, dirección, horarios, eslogan, marcas de terceros, reseñas, y el asset 12 como imagen.
+
+## Tiempos bloqueados a la voz (Fase 3)
+
+Toma: Jessica (Eleven v4), 20.1 s con las 8 frases completas. La voz no se aceleró; la pieza queda en **20 s + 3 s de end card = 23 s (1380 cuadros)**. Estos tiempos sustituyen a la tabla provisional; la fuente es `brief/timeline.json`.
+
+| Sección | Cuadros | Tiempo | Voz (entra → termina) |
+|---|---|---|---|
+| Golpe | f0–f30 | 0.00–0.50 | — |
+| Zigzag | f30–f120 | 0.50–2.00 | L1 f30 → f123 |
+| Corte | f120–f180 | 2.00–3.00 | — |
+| Teléfono y tarjetas | f180–f360 | 3.00–6.00 | L2 f180 → f323 |
+| Lealtad | f360–f570 | 6.00–9.50 | L3 f372 → f553 |
+| Menú | f570–f750 | 9.50–12.50 | L4 f582 → f730 |
+| Cajita y toppings | f750–f930 | 12.50–15.50 | L5 f762 → f915 |
+| Botón | f930–f1020 | 15.50–17.00 | L6 f936 → f1016 |
+| Cierre | f1020–f1200 | 17.00–20.00 | L7 f1038 → f1181 |
+| End card | f1200–f1380 | 20.00–23.00 | L8 f1224 → f1355 |
+
+Palabras clave para el kinetic type: "LO MEJOR" f30, "ESTÁ ADENTRO" f73, "5 SELLOS" f372, "20 %" f452, "TU PROPIA PÁGINA" f668, "ELIGE TU CAJITA" f762, "TUS TOPPINGS" f864, "HAZ TU PEDIDO" f936, "MaRe Repostería" f1038, "Aguascalientes" f1118. Los 5 sellos se estampan en f390, f405, f420, f435 y f450; el quinto se vuelve la insignia justo en "veinte".
