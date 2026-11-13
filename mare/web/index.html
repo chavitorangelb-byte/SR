@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MaRe Repostería · Aguascalientes</title>
+<meta name="description" content="Galletas, brownies y pasteles por pedido en Aguascalientes.">
+<style>
+@font-face{font-family:B;font-weight:700;src:url(../video/fonts/baloo-2-latin-700-normal.woff2)}
+@font-face{font-family:B;font-weight:800;src:url(../video/fonts/baloo-2-latin-800-normal.woff2)}
+@font-face{font-family:D;font-weight:500;src:url(../video/fonts/dm-sans-latin-500-normal.woff2)}
+@font-face{font-family:D;font-weight:700;src:url(../video/fonts/dm-sans-latin-700-normal.woff2)}
+:root{--esp:#1E120C;--choco:#4A2A1C;--kraft:#C9A27A;--rosa:#E48BB0;--rosa-d:#C9628F;--crema:#FFF8E1;--tinta:#5B3B2A;--wa:#1FA855}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--crema);color:var(--choco);font:500 16px/1.5 D,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+h1,h2,h3{font-family:B;line-height:1.02;letter-spacing:-.01em}
+.wrap{max-width:560px;margin:0 auto}
+header{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:12px;padding:10px 16px;background:rgba(255,248,225,.78);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border-bottom:1px solid rgba(74,42,28,.10)}
+header .av{flex:none;width:44px;height:44px;border-radius:50%;background:url(../assets/11_logo_sello_rosa_MaRe.jpg) -11.5px -11.6px/67px 67px no-repeat}
+header b{font:800 20px/1 B;display:block}
+header small{font:500 12px/1.2 D;color:#8A6242}
+header a{margin-left:auto;font:700 13px/1 D;color:var(--crema);background:var(--choco);padding:10px 14px;border-radius:99px;text-decoration:none}
+.hero{position:relative;background:var(--esp);color:var(--crema);overflow:hidden}
+.hero .ph{aspect-ratio:4/4.3;background:url(../assets/02_galletas_sobre_kraft.jpg) 50% 42%/cover}
+.hero .tx{position:relative;margin:-110px 16px 0;padding:22px 20px 24px;border-radius:28px;background:rgba(30,18,12,.62);backdrop-filter:blur(30px) saturate(140%);-webkit-backdrop-filter:blur(30px) saturate(140%);border:1px solid rgba(255,255,255,.18)}
+.hero h1{font-size:46px;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--rosa)}
+.hero p{margin-top:10px;color:rgba(255,248,225,.86)}
+.zz{display:block;width:84px;height:16px;margin-top:14px}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:18px;padding:16px;border-radius:99px;background:var(--rosa);color:var(--esp);font:800 19px/1 B;text-decoration:none;box-shadow:0 14px 30px -14px rgba(228,139,176,.9)}
+.cta svg{width:26px;height:26px}
+.hero .pad{height:26px}
+section{padding:40px 16px 8px}
+.k{font:700 12px/1 D;letter-spacing:.16em;text-transform:uppercase;color:var(--rosa-d)}
+h2{margin-top:8px;font-size:36px;font-weight:800}
+h2+p{margin-top:8px;color:var(--tinta)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+.it{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 10px 26px -18px rgba(74,42,28,.55)}
+.it img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.it div{padding:10px 12px 12px}
+.it h3{font-size:19px;font-weight:700}
+.it a{display:inline-block;margin-top:4px;font:700 13px/1 D;color:var(--rosa-d);text-decoration:none}
+.it.w{grid-column:1/-1}.it.w img{aspect-ratio:16/8.4}
+.mix{margin-top:20px;border-radius:26px;overflow:hidden;background:var(--esp);color:var(--crema)}
+.mix .mc{padding:0;overflow:hidden;aspect-ratio:1/0.92}.mix img{width:100%;height:100%;object-fit:cover;object-position:50% 100%;transform:scale(1.34);transform-origin:100% 100%}
+.mix div{padding:18px 18px 20px}
+.mix q{font:800 24px/1.1 B;quotes:none}
+.mix p{margin-top:8px;color:rgba(255,248,225,.8);font-size:14px}
+.mix .chips{padding:0}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips span{padding:8px 12px;border-radius:99px;background:rgba(255,248,225,.12);border:1px solid rgba(255,248,225,.22);font:700 13px/1 D}
+.card{position:relative;margin-top:20px;padding:20px 18px;border-radius:26px;color:var(--crema);background:linear-gradient(135deg,#5a3424,#2a1810);overflow:hidden}
+.card:before{content:"";position:absolute;inset:-40% -20% auto auto;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(228,139,176,.35),transparent 70%)}
+.card h3{position:relative;font:800 22px/1 B;letter-spacing:.02em;text-align:center}
+.st{position:relative;display:flex;justify-content:space-between;margin:18px 0 14px}
+.st i{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font:800 15px/1 B;font-style:normal;color:var(--esp);background:var(--rosa);box-shadow:inset 0 -4px 0 rgba(0,0,0,.12),0 6px 12px -6px rgba(0,0,0,.6)}
+.st i.o{background:transparent;border:2px dashed rgba(255,248,225,.45);box-shadow:none}
+.st i.b{background:var(--choco);color:var(--crema);border:3px solid var(--rosa)}
+.card p{position:relative;text-align:center;font-size:14px;color:rgba(255,248,225,.86)}
+ol{list-style:none;padding:0;margin-top:18px;display:grid;gap:12px;counter-reset:p}
+ol li{counter-increment:p;display:flex;gap:14px;align-items:flex-start;padding:14px;border-radius:20px;background:#fff;box-shadow:0 10px 26px -20px rgba(74,42,28,.6)}
+ol li:before{content:counter(p);flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--rosa);color:var(--esp);font:800 18px/1 B}
+ol b{display:block;font:700 18px/1.15 B}
+ol span{font-size:14px;color:var(--tinta)}
+footer{margin-top:36px;padding:30px 16px 40px;background:var(--esp);color:var(--crema);text-align:center}
+footer .lg{width:220px;margin:0 auto;border-radius:20px}
+footer .row{display:flex;gap:10px;justify-content:center;margin-top:18px}
+footer .row a{flex:1;max-width:180px;padding:13px;border-radius:99px;font:700 14px/1 D;text-decoration:none;color:var(--crema);border:1px solid rgba(255,248,225,.3)}
+footer .row a.w{background:var(--wa);border-color:var(--wa)}
+footer small{display:block;margin-top:20px;font-size:11px;color:rgba(255,248,225,.5)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><i class="av" role="img" aria-label="MaRe Repostería"></i><div><b>MaRe Repostería</b><small>Aguascalientes</small></div><a href="#pedir">Pedir</a></header>
+<div class="hero">
+  <div class="ph" role="img" aria-label="Galletas de MaRe sobre papel kraft"></div>
+  <div class="tx">
+    <span class="k" style="color:var(--rosa)">Repostería artesanal por pedido</span>
+    <h1 style="margin-top:8px">Lo mejor está <em>adentro</em>.</h1>
+    <svg class="zz" viewBox="0 0 84 16"><path d="M3 13 15 3l12 10 12-10 12 10 12-10 12 10" fill="none" stroke="#E48BB0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <p>Galletas, brownies y pasteles hechos para ti en Aguascalientes.</p>
+    <a class="cta" href="#pedir"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="#1E120C"/><path d="M16 7.5a8.5 8.5 0 0 0-7.3 12.8L7.5 24.5l4.3-1.1A8.5 8.5 0 1 0 16 7.5Z" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M12.7 11.8c.3-.6.6-.6.9-.6h.6c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.6l-.5.6c-.1.2-.2.3 0 .6.5.8 1.9 2.2 3 2.6.3.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.3.1.4.2.4.4 0 .5-.2 1.2-.8 1.5-.6.4-1.6.6-3.6-.3-2.4-1.1-3.9-3.4-4.1-3.7-.2-.3-.9-1.3-.9-2.4 0-.8.3-1.3.5-1.6Z" fill="#fff"/></svg>Haz tu pedido por WhatsApp</a>
+  </div>
+  <div class="pad"></div>
+</div>
+
+<section id="menu">
+  <span class="k">Menú</span>
+  <h2>Elige tu antojo</h2>
+  <p>Todo se hace por pedido. Pregúntanos por sabores y disponibilidad.</p>
+  <div class="grid">
+    <div class="it w"><img src="../assets/03_mega_galletas_corte.jpg" alt="Mega galletas rellenas cortadas"><div><h3>Mega galletas</h3><a href="#pedir">Pedir →</a></div></div>
+    <div class="it"><img src="../assets/06_brownies_ganache.jpg" alt="Brownies con ganache"><div><h3>Brownies</h3><a href="#pedir">Pedir →</a></div></div>
+    <div class="it"><img src="../assets/07_brookie_corte.jpg" alt="Brookie cortado"><div><h3>Brookies</h3><a href="#pedir">Pedir →</a></div></div>
+    <div class="it w"><img src="../assets/04_monster_cookie_corte.jpg" alt="Monster cookie cortada"><div><h3>Monster cookie</h3><a href="#pedir">Pedir →</a></div></div>
+    <div class="it"><img src="../assets/08_lemonies.jpg" alt="Lemonies"><div><h3>Lemonies</h3><a href="#pedir">Pedir →</a></div></div>
+    <div class="it"><img src="../assets/10_cuchareable_frambuesa.jpg" alt="Cuchareable de frambuesa" style="object-position:50% 20%"><div><h3>Cuchareable</h3><a href="#pedir">Pedir →</a></div></div>
+    <div class="it w"><img src="../assets/09_pasteles_pistache_frambuesa_y_sacher.jpg" alt="Pasteles de pistache con frambuesa y de chocolate" style="object-position:50% 30%"><div><h3>Pasteles</h3><a href="#pedir">Pedir →</a></div></div>
+  </div>
+</section>
+
+<section id="cajita">
+  <span class="k">Cajita de galletas</span>
+  <h2>Arma tu mix</h2>
+  <div class="mix">
+    <div class="mc"><img src="../assets/05_cajita_de_galletas.jpg" alt="Cajita con galletas surtidas"></div>
+    <div><q>Elige tu cajita, elige tus toppings y crea tu mix perfecto.</q>
+      <div class="chips"><span>1 · Tu cajita</span><span>2 · Tus galletas</span><span>3 · Tus toppings</span></div></div>
+  </div>
+</section>
+
+<section id="lealtad">
+  <span class="k">Cliente frecuente</span>
+  <h2>Tu tarjeta de lealtad</h2>
+  <div class="card">
+    <h3>TARJETA DE LEALTAD</h3>
+    <div class="st"><i></i><i></i><i></i><i class="o"></i><i class="b">20%</i></div>
+    <p>1 sello por compra de $120 o más.<br>Con 5 sellos, 20 % de descuento en tu siguiente compra.</p>
+  </div>
+</section>
+
+<section id="pedir">
+  <span class="k">Así se pide</span>
+  <h2>¿Cómo pedir?</h2>
+  <ol>
+    <li><div><b>Elige en el menú</b><span>Galletas, brownies, pasteles o tu cajita.</span></div></li>
+    <li><div><b>Pide con anticipación</b><span>Por Instagram o WhatsApp.</span></div></li>
+    <li><div><b>Deja tu anticipo</b><span>Así apartamos tu fecha.</span></div></li>
+    <li><div><b>Recoge tu pedido</b><span>En la fecha que reservaste.</span></div></li>
+  </ol>
+  <a class="cta" href="#" style="background:var(--wa);color:#fff;box-shadow:0 14px 30px -14px rgba(31,168,85,.8)"><svg viewBox="0 0 32 32"><path d="M16 4.5a11.5 11.5 0 0 0-9.9 17.3L4.5 27.5l5.8-1.5A11.5 11.5 0 1 0 16 4.5Z" fill="none" stroke="#fff" stroke-width="2.2"/><path d="M11.6 10.4c.4-.8.8-.8 1.2-.8h.8c.3 0 .6 0 .8.7l1.1 2.6c.1.3 0 .6-.1.8l-.7.8c-.2.2-.3.4 0 .8.7 1.1 2.6 3 4.1 3.5.4.1.6.1.8-.1l1-1.1c.2-.3.5-.3.8-.2l2.4 1.2c.4.2.5.3.5.5 0 .7-.3 1.6-1.1 2.1-.8.5-2.2.8-4.9-.4-3.3-1.5-5.3-4.6-5.6-5-.3-.4-1.2-1.8-1.2-3.3 0-1.1.4-1.8.6-2.1Z" fill="#fff"/></svg>Haz tu pedido por WhatsApp</a>
+</section>
+
+<footer>
+  <img class="lg" src="../assets/01_logo_MaRe_reposteria.jpg" alt="Logo de MaRe Repostería">
+  <p style="margin-top:14px;font:700 15px/1.3 D">Repostería artesanal por pedido · Aguascalientes</p>
+  <div class="row"><a class="w" href="#">WhatsApp</a><a href="#">Instagram</a></div>
+  <small>Demo de cortesía de Elevate Negocios · pieza no oficial</small>
+</footer>
+</div>
+</body>
+</html>
