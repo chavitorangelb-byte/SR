@@ -1,0 +1,488 @@
+[
+ {
+  "cuadro": 0,
+  "t": 0.0,
+  "sonido": "impacto",
+  "movimiento": "la línea roja irrumpe"
+ },
+ {
+  "cuadro": 0,
+  "t": 0.0,
+  "sonido": "whoosh corto",
+  "movimiento": "la línea se abre de lado a lado"
+ },
+ {
+  "cuadro": 5,
+  "t": 0.083,
+  "sonido": "zing",
+  "movimiento": "la línea llega a los bordes"
+ },
+ {
+  "cuadro": 8,
+  "t": 0.133,
+  "sonido": "aire",
+  "movimiento": "la línea sube a su posición"
+ },
+ {
+  "cuadro": 30,
+  "t": 0.5,
+  "sonido": "pulidora",
+  "movimiento": "barrido de la línea sobre el lienzo"
+ },
+ {
+  "cuadro": 36,
+  "t": 0.6,
+  "sonido": "chispa 1",
+  "movimiento": "aparece una fila de puntos de luz"
+ },
+ {
+  "cuadro": 38,
+  "t": 0.633,
+  "sonido": "tick cristal",
+  "movimiento": "aterriza DETALLADO"
+ },
+ {
+  "cuadro": 44,
+  "t": 0.733,
+  "sonido": "chispa 2",
+  "movimiento": "aparece una fila de puntos de luz"
+ },
+ {
+  "cuadro": 52,
+  "t": 0.867,
+  "sonido": "chispa 3",
+  "movimiento": "aparece una fila de puntos de luz"
+ },
+ {
+  "cuadro": 60,
+  "t": 1.0,
+  "sonido": "chispa 4",
+  "movimiento": "aparece una fila de puntos de luz"
+ },
+ {
+  "cuadro": 68,
+  "t": 1.133,
+  "sonido": "chispa 5",
+  "movimiento": "aparece una fila de puntos de luz"
+ },
+ {
+  "cuadro": 76,
+  "t": 1.267,
+  "sonido": "chispa 6",
+  "movimiento": "aparece una fila de puntos de luz"
+ },
+ {
+  "cuadro": 82,
+  "t": 1.367,
+  "sonido": "tick cristal",
+  "movimiento": "aterriza BOUTIQUE"
+ },
+ {
+  "cuadro": 84,
+  "t": 1.4,
+  "sonido": "chispa 7",
+  "movimiento": "aparece una fila de puntos de luz"
+ },
+ {
+  "cuadro": 92,
+  "t": 1.533,
+  "sonido": "chispa 8",
+  "movimiento": "aparece una fila de puntos de luz"
+ },
+ {
+  "cuadro": 100,
+  "t": 1.667,
+  "sonido": "chispa 9",
+  "movimiento": "aparece una fila de puntos de luz"
+ },
+ {
+  "cuadro": 104,
+  "t": 1.733,
+  "sonido": "swish",
+  "movimiento": "las palabras se encogen al antetítulo"
+ },
+ {
+  "cuadro": 108,
+  "t": 1.8,
+  "sonido": "chispa 10",
+  "movimiento": "aparece una fila de puntos de luz"
+ },
+ {
+  "cuadro": 118,
+  "t": 1.967,
+  "sonido": "tick cristal",
+  "movimiento": "aterriza ALTO"
+ },
+ {
+  "cuadro": 120,
+  "t": 2.0,
+  "sonido": "sub swell",
+  "movimiento": "se forma el celular de cristal"
+ },
+ {
+  "cuadro": 125,
+  "t": 2.083,
+  "sonido": "barrido",
+  "movimiento": "la línea sube descubriendo la página"
+ },
+ {
+  "cuadro": 127,
+  "t": 2.117,
+  "sonido": "tick cristal",
+  "movimiento": "aterriza NIVEL"
+ },
+ {
+  "cuadro": 165,
+  "t": 2.75,
+  "sonido": "glass tap",
+  "movimiento": "el cristal del celular termina de formarse"
+ },
+ {
+  "cuadro": 183,
+  "t": 3.05,
+  "sonido": "shimmer",
+  "movimiento": "aparece el logo"
+ },
+ {
+  "cuadro": 196,
+  "t": 3.267,
+  "sonido": "zip",
+  "movimiento": "la línea cae al título"
+ },
+ {
+  "cuadro": 222,
+  "t": 3.7,
+  "sonido": "tick",
+  "movimiento": "la línea se asienta bajo ALTO NIVEL"
+ },
+ {
+  "cuadro": 236,
+  "t": 3.933,
+  "sonido": "whoosh",
+  "movimiento": "la cámara empuja hacia el sello"
+ },
+ {
+  "cuadro": 240,
+  "t": 4.0,
+  "sonido": "vuelo 1",
+  "movimiento": "sale un punto de luz"
+ },
+ {
+  "cuadro": 246,
+  "t": 4.1,
+  "sonido": "vuelo 2",
+  "movimiento": "sale un punto de luz"
+ },
+ {
+  "cuadro": 252,
+  "t": 4.2,
+  "sonido": "vuelo 3",
+  "movimiento": "sale un punto de luz"
+ },
+ {
+  "cuadro": 258,
+  "t": 4.3,
+  "sonido": "vuelo 4",
+  "movimiento": "sale un punto de luz"
+ },
+ {
+  "cuadro": 264,
+  "t": 4.4,
+  "sonido": "ping estrella 1",
+  "movimiento": "el punto se abre en estrella"
+ },
+ {
+  "cuadro": 264,
+  "t": 4.4,
+  "sonido": "vuelo 5",
+  "movimiento": "sale un punto de luz"
+ },
+ {
+  "cuadro": 270,
+  "t": 4.5,
+  "sonido": "ping estrella 2",
+  "movimiento": "el punto se abre en estrella"
+ },
+ {
+  "cuadro": 276,
+  "t": 4.6,
+  "sonido": "ping estrella 3",
+  "movimiento": "el punto se abre en estrella"
+ },
+ {
+  "cuadro": 282,
+  "t": 4.7,
+  "sonido": "ping estrella 4",
+  "movimiento": "el punto se abre en estrella"
+ },
+ {
+  "cuadro": 288,
+  "t": 4.8,
+  "sonido": "ping estrella 5",
+  "movimiento": "el punto se abre en estrella"
+ },
+ {
+  "cuadro": 335,
+  "t": 5.583,
+  "sonido": "whoosh",
+  "movimiento": "la cámara se abre y la página baja a servicios"
+ },
+ {
+  "cuadro": 345,
+  "t": 5.75,
+  "sonido": "pop",
+  "movimiento": "entra el botón fijo"
+ },
+ {
+  "cuadro": 378,
+  "t": 6.3,
+  "sonido": "contacto",
+  "movimiento": "se detiene en la tarjeta PPF"
+ },
+ {
+  "cuadro": 392,
+  "t": 6.533,
+  "sonido": "aire",
+  "movimiento": "scroll hacia polarizado"
+ },
+ {
+  "cuadro": 440,
+  "t": 7.333,
+  "sonido": "contacto",
+  "movimiento": "pasa la tarjeta de polarizado"
+ },
+ {
+  "cuadro": 478,
+  "t": 7.967,
+  "sonido": "contacto",
+  "movimiento": "se detiene en nano cerámico"
+ },
+ {
+  "cuadro": 482,
+  "t": 8.033,
+  "sonido": "whoosh",
+  "movimiento": "scroll rápido a reseñas"
+ },
+ {
+  "cuadro": 512,
+  "t": 8.533,
+  "sonido": "contacto",
+  "movimiento": "se detiene en la calificación"
+ },
+ {
+  "cuadro": 524,
+  "t": 8.733,
+  "sonido": "aire",
+  "movimiento": "scroll a la segunda reseña"
+ },
+ {
+  "cuadro": 550,
+  "t": 9.167,
+  "sonido": "zip",
+  "movimiento": "la línea subraya la frase"
+ },
+ {
+  "cuadro": 568,
+  "t": 9.467,
+  "sonido": "tick",
+  "movimiento": "termina el subrayado"
+ },
+ {
+  "cuadro": 600,
+  "t": 10.0,
+  "sonido": "whoosh",
+  "movimiento": "scroll al taller"
+ },
+ {
+  "cuadro": 640,
+  "t": 10.667,
+  "sonido": "contacto",
+  "movimiento": "se detiene en la foto del taller"
+ },
+ {
+  "cuadro": 650,
+  "t": 10.833,
+  "sonido": "aire",
+  "movimiento": "la cámara se aleja"
+ },
+ {
+  "cuadro": 672,
+  "t": 11.2,
+  "sonido": "tick cristal",
+  "movimiento": "aterriza TU"
+ },
+ {
+  "cuadro": 690,
+  "t": 11.5,
+  "sonido": "tick cristal",
+  "movimiento": "aterriza PÁGINA"
+ },
+ {
+  "cuadro": 708,
+  "t": 11.8,
+  "sonido": "swish",
+  "movimiento": "sale TU PÁGINA"
+ },
+ {
+  "cuadro": 714,
+  "t": 11.9,
+  "sonido": "whoosh",
+  "movimiento": "la cámara vuelve a acercarse"
+ },
+ {
+  "cuadro": 716,
+  "t": 11.933,
+  "sonido": "zip",
+  "movimiento": "la línea entra hacia el botón"
+ },
+ {
+  "cuadro": 738,
+  "t": 12.3,
+  "sonido": "tick",
+  "movimiento": "la línea queda de subrayado del botón"
+ },
+ {
+  "cuadro": 780,
+  "t": 13.0,
+  "sonido": "pulso",
+  "movimiento": "primer pulso del anillo"
+ },
+ {
+  "cuadro": 810,
+  "t": 13.5,
+  "sonido": "pulso",
+  "movimiento": "segundo pulso del anillo"
+ },
+ {
+  "cuadro": 810,
+  "t": 13.5,
+  "sonido": "click",
+  "movimiento": "se presiona el botón"
+ },
+ {
+  "cuadro": 814,
+  "t": 13.567,
+  "sonido": "whoosh",
+  "movimiento": "sube la hoja de cita"
+ },
+ {
+  "cuadro": 846,
+  "t": 14.1,
+  "sonido": "contacto",
+  "movimiento": "la hoja se asienta"
+ },
+ {
+  "cuadro": 856,
+  "t": 14.267,
+  "sonido": "reverse swell",
+  "movimiento": "retroceso de cámara"
+ },
+ {
+  "cuadro": 862,
+  "t": 14.367,
+  "sonido": "power down",
+  "movimiento": "se apagan las luces"
+ },
+ {
+  "cuadro": 868,
+  "t": 14.467,
+  "sonido": "apagado 1",
+  "movimiento": "se apaga una franja de puntos"
+ },
+ {
+  "cuadro": 878,
+  "t": 14.633,
+  "sonido": "apagado 2",
+  "movimiento": "se apaga una franja de puntos"
+ },
+ {
+  "cuadro": 888,
+  "t": 14.8,
+  "sonido": "apagado 3",
+  "movimiento": "se apaga una franja de puntos"
+ },
+ {
+  "cuadro": 896,
+  "t": 14.933,
+  "sonido": "ping",
+  "movimiento": "queda un solo punto de luz"
+ },
+ {
+  "cuadro": 898,
+  "t": 14.967,
+  "sonido": "apagado 4",
+  "movimiento": "se apaga una franja de puntos"
+ },
+ {
+  "cuadro": 908,
+  "t": 15.133,
+  "sonido": "apagado 5",
+  "movimiento": "se apaga una franja de puntos"
+ },
+ {
+  "cuadro": 932,
+  "t": 15.533,
+  "sonido": "hit",
+  "movimiento": "el punto se abre en el logo"
+ },
+ {
+  "cuadro": 936,
+  "t": 15.6,
+  "sonido": "zing",
+  "movimiento": "último barrido de la línea"
+ },
+ {
+  "cuadro": 958,
+  "t": 15.967,
+  "sonido": "tick",
+  "movimiento": "la línea se asienta bajo el logo"
+ },
+ {
+  "cuadro": 960,
+  "t": 16.0,
+  "sonido": "sub drop",
+  "movimiento": "entra el end card"
+ },
+ {
+  "cuadro": 962,
+  "t": 16.033,
+  "sonido": "tick suave",
+  "movimiento": "aterriza PRECIOS ACCESIBLES"
+ },
+ {
+  "cuadro": 968,
+  "t": 16.133,
+  "sonido": "tick suave",
+  "movimiento": "aterriza DESDE $1,000 PESOS"
+ },
+ {
+  "cuadro": 976,
+  "t": 16.267,
+  "sonido": "tick suave",
+  "movimiento": "aterriza POR TU PÁGINA"
+ },
+ {
+  "cuadro": 978,
+  "t": 16.3,
+  "sonido": "atmósfera",
+  "movimiento": "end card en reposo"
+ },
+ {
+  "cuadro": 990,
+  "t": 16.5,
+  "sonido": "tick suave",
+  "movimiento": "aterriza línea del paquete"
+ },
+ {
+  "cuadro": 1004,
+  "t": 16.733,
+  "sonido": "tick suave",
+  "movimiento": "aterriza firma de Elevate"
+ },
+ {
+  "cuadro": 1012,
+  "t": 16.867,
+  "sonido": "tick suave",
+  "movimiento": "aterriza leyenda de demo"
+ }
+]
