@@ -1,0 +1,13 @@
+{
+ "fps": 60, "bpm": 120, "frames": 1080,
+ "voz": [
+  {"id": "L1", "texto": "Detallado boutique, de alto nivel.", "f": 38, "corte": [0.13, 2.31]},
+  {"id": "L2", "texto": "Cinco estrellas en Google.", "f": 240, "corte": [2.83, 4.16]},
+  {"id": "L3", "texto": "PPF, polarizado y nano cerámico.", "f": 372, "corte": [4.85, 7.33]},
+  {"id": "L4", "texto": "Imagina todo esto en tu propia página.", "f": 573, "corte": [7.88, 10.25]},
+  {"id": "L5", "texto": "Agenda tu cita por WhatsApp.", "f": 732, "corte": [10.71, 12.14]},
+  {"id": "L6", "texto": "Pro Detailing Car Care.", "f": 843, "corte": [12.68, 14.28]},
+  {"id": "L7", "texto": "Tu página, desde mil pesos.", "f": 957, "corte": [14.72, 16.73]}
+ ],
+ "palabras": {"DETALLADO": 38, "BOUTIQUE": 82, "ALTO NIVEL": 120, "PPF": 372, "POLARIZADO": 423, "NANO": 456, "TU PAGINA": 690, "AGENDA": 732}
+}

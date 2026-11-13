@@ -1,0 +1,1 @@
+{ "name": "pdcc-video", "private": true, "type": "module", "dependencies": { "@fontsource/barlow-condensed": "^5.0.0" } }
