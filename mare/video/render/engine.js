@@ -3,6 +3,7 @@
 const Q = new URLSearchParams(location.search);
 const W = +Q.get('w') || 540, H = +Q.get('h') || 960, FMT = Q.get('fmt') || '916';
 const DW = 1080, DH = FMT === '11' ? 1080 : 1920, S = W / DW;
+const SW = { willReadFrequently: true }; // canvas 2D por software: resultado determinista
 const COL = { espresso: '#1E120C', choco: '#4A2A1C', kraft: '#C9A27A', rosa: '#E48BB0', crema: '#FFF8E1' };
 
 // ---------- utilidades ----------
@@ -233,6 +234,7 @@ function paperTex(base, seed, n, dark) {
 }
 function noiseTex() { const c = mk(256, 256), x = c.getContext('2d'), d = x.createImageData(256, 256), r = rng(99); for (let i = 0; i < d.data.length; i += 4) { const v = r() * 255; d.data[i] = d.data[i + 1] = d.data[i + 2] = v; d.data[i + 3] = 255; } x.putImageData(d, 0, 0); return c; }
 let TEX = {}, PAGE = null;
+const HDR = { a: document.createElement('canvas'), b: document.createElement('canvas') };
 const PAGE_K = 1.15; // la página se dibuja un poco más grande que su tamaño en pantalla para que quede nítida con el zoom
 
 function buildPage() {
@@ -337,21 +339,27 @@ function drawPhone(c, back, f) {
   const k = (sw * 2) / 520, scroll = pageScroll(f);
   c.imageSmoothingQuality = 'high';
   const vis = sh * 2 / k;
-  const drawPage = (cc) => {
-    cc.drawImage(PAGE.c, 0, scroll * PAGE.ps, 520 * PAGE.ps, vis * PAGE.ps, ph.x - sw, ph.y - sh, sw * 2, sh * 2);
+  // la página se dibuja en un origen (ox, oy) con kk unidades por unidad de página
+  const pageInto = (cc, ox, oy, kk, from, h) => {
+    cc.drawImage(PAGE.c, 0, from * PAGE.ps, 520 * PAGE.ps, h * PAGE.ps, ox, oy, 520 * kk, h * kk);
     for (const p of PAGE.photos) {
-      if (p.y + p.bh < scroll || p.y > scroll + vis) continue;
+      if (p.y + p.bh < from || p.y > from + h) continue;
       const g = IMG[p.k], [sx0, sy0, sW, sH] = p.src, s2 = Math.max(p.bw / sW, (p.bh * 1.3) / sH), cw = p.bw / s2, chh = p.bh / s2;
       const u = clamp(((p.y + p.bh / 2) - (scroll + vis / 2)) / vis, -1, 1), sy = sy0 + (sH - chh) * (0.5 + 0.45 * u), sx = sx0 + (sW - cw) / 2;
-      const X = ph.x - sw + p.x * k, Y = ph.y - sh + (p.y - scroll) * k;
-      cc.save(); cc.beginPath(); rr(cc, X, Y, p.bw * k, p.bh * k, 28 * k); cc.clip(); cc.drawImage(g, sx, sy, cw, chh, X, Y, p.bw * k, p.bh * k); cc.restore();
+      const X = ox + p.x * kk, Y = oy + (p.y - from) * kk;
+      cc.save(); cc.beginPath(); rr(cc, X, Y, p.bw * kk, p.bh * kk, 28 * kk); cc.clip(); cc.drawImage(g, sx, sy, cw, chh, X, Y, p.bw * kk, p.bh * kk); cc.restore();
     }
   };
-  drawPage(c);
-  // encabezado fijo de cristal sobre la página
-  const hh = 160 * k;
+  pageInto(c, ph.x - sw, ph.y - sh, k, scroll, vis);
+  // encabezado fijo de cristal: se desenfoca en un canvas aparte, sin la órbita de la cámara, y se pega ya transformado
+  const hh = 160 * k, pw = Math.round(520 * PAGE.ps), phh = Math.round(160 * PAGE.ps);
+  HDR.a.width = pw; HDR.a.height = phh; HDR.b.width = pw; HDR.b.height = phh;
+  const ha = HDR.a.getContext('2d', SW), hb = HDR.b.getContext('2d', SW);
+  ha.fillStyle = COL.crema; ha.fillRect(0, 0, pw, phh); pageInto(ha, 0, 0, PAGE.ps, scroll, 160);
+  hb.fillStyle = COL.crema; hb.fillRect(0, 0, pw, phh);
+  hb.filter = `blur(${(26 * PAGE.ps / k).toFixed(2)}px) saturate(140%)`; hb.drawImage(HDR.a, 0, 0); hb.filter = 'none';
   c.save(); c.beginPath(); c.rect(ph.x - sw, ph.y - sh, sw * 2, hh); c.clip();
-  c.filter = `blur(${(26 * S * camZoom).toFixed(2)}px) saturate(140%)`; drawPage(c); c.filter = 'none';
+  c.drawImage(HDR.b, ph.x - sw, ph.y - sh, sw * 2, hh);
   c.fillStyle = 'rgba(255,248,225,0.62)'; c.fillRect(ph.x - sw, ph.y - sh, sw * 2, hh);
   c.restore();
   c.fillStyle = 'rgba(255,255,255,0.7)'; c.fillRect(ph.x - sw, ph.y - sh + hh, sw * 2, 1 / (S * camZoom));
@@ -621,9 +629,9 @@ function line(c, f, list, x, y, px, wt, fam, fOut, outStyle) {
 }
 
 // ---------- cuadro ----------
-const main = mk(W, H), mc = main.getContext('2d');
-const snap = mk(W, H), sc2 = snap.getContext('2d');
-const acc = mk(W, H), ac = acc.getContext('2d');
+const main = mk(W, H), mc = main.getContext('2d', SW);
+const snap = mk(W, H), sc2 = snap.getContext('2d', SW);
+const acc = mk(W, H), ac = acc.getContext('2d', SW);
 let camZoom = 1;
 function scene(f) {
   const c = mc, cam = camera(f); camZoom = cam.zoom;
