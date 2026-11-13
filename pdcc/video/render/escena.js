@@ -111,7 +111,7 @@ function line(t, c) {
     hor(lerp(-420, wx(B.x + B.w / 2), k), y, lerp(260, B.w * CS * 0.28, k)); I = 1 - hojaK(t);
   } else {                                    // último barrido bajo el logo → raya del end card
     const k = eO4(prog(t, F(936), F(958))), e = eIO(prog(t, F(960), F(990))); yW = -1e4;
-    a = [540 - lerp(0, 215, k) * lerp(1, 0.42, e), lerp(LAY.ly, LAY.ly2, e)]; b = [540 + lerp(0, 215, k) * lerp(1, 0.42, e), lerp(LAY.ly, LAY.ly2, e)]; hI = 1.1 * (1 - k) * prog(t, F(934), F(937));
+    a = [540 - lerp(3, 215, k) * lerp(1, 0.42, e), lerp(LAY.ly, LAY.ly2, e)]; b = [540 + lerp(3, 215, k) * lerp(1, 0.42, e), lerp(LAY.ly, LAY.ly2, e)]; hI = 1.1 * (1 - k) * prog(t, F(934), F(937));
   }
   return { a, b, I, w: w * Math.max(c.z / ZM, 0.8), hI, yW, flash: Math.pow(1 - prog(t, 0, 0.22), 2.2) * 1.5 + 0.5 * Math.pow(1 - prog(t, F(960), F(972)), 2) * (t >= F(960)) };
 }
