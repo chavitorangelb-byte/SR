@@ -1,0 +1,152 @@
+[
+ {
+  "n": "Sin errores de JavaScript",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Sin recursos rotos",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Fuentes cargadas",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Sin desborde horizontal",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "El fondo de reflejos pinta algo",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Sin azul en colores de la página",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Todos los botones y enlaces miden 44 px o más de alto",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "No se muestra: teléfono",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "No se muestra: precios",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "No se muestra: XPEL",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "No se muestra: garantía",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "No se muestra: dirección exacta",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Reseña textual: ¡El mejor servicio de detailing! A…",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Reseña textual: me dejaron mi auto mejor que en la…",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Reseña textual: desde inicio la atención es muy cá…",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Enlace de Instagram",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "La barra fija aparece al bajar",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Las secciones se revelan al hacer scroll",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Cotizar PPF abre la hoja en el paso 2",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Siguiente bloqueado sin elegir",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Siguiente se habilita",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Enlace de WhatsApp al número del negocio",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Mensaje con servicio, cobertura, vehículo y nombre",
+  "ok": true,
+  "d": "Hola, Pro Detailing Car Care. Quiero agendar una cita. / • Servicio: PPF (Frontal completo) / • Vehículo: SUV · Mazda CX-5 2023 / • Nombre: Ana / ¿Qué día tienen disponible?"
+ },
+ {
+  "n": "Modo demo: no abre WhatsApp y muestra el mensaje",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Atrás regresa al paso 1 con PPF marcado",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Cambiar de servicio limpia la cobertura anterior",
+  "ok": true,
+  "d": "Hola, Pro Detailing Car Care. Quiero agendar una cita. / • Servicio: Corrección de pintura / • Vehículo: Pickup · Mazda CX-5 2023 / • Nombre: Ana / ¿Qué día tienen disponible?"
+ },
+ {
+  "n": "La hoja se cierra",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Agenda tu cita (portada) abre en el paso 1",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Sin desborde en 320 px",
+  "ok": true,
+  "d": ""
+ },
+ {
+  "n": "Sin desborde en 1280 px",
+  "ok": true,
+  "d": ""
+ }
+]
