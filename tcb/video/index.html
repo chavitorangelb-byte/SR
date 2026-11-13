@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TCB · video promo (reproducible)</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="video.css">
+</head>
+<body>
+<div id="marco"><div id="lienzo" aria-label="Video promocional de The Cheese Burger"></div></div>
+<div id="controles">
+  <button id="play" type="button" aria-label="Reproducir o pausar">Reproducir</button>
+  <input id="barra" type="range" min="0" max="1" step="0.001" value="0" aria-label="Posición en el video">
+  <output id="reloj">0.0 s</output>
+  <a href="?f=v" id="fv">9:16</a><a href="?f=h" id="fh">16:9</a>
+</div>
+<script src="../data.js"></script>
+<script src="config.js"></script>
+<script src="../js/vendor/gsap.min.js"></script>
+<script src="../js/liquid.js"></script>
+<script src="../js/burger.js"></script>
+<script src="motor.js"></script>
+<script src="escenas/01-nombre.js"></script>
+<script src="escenas/02-platillos.js"></script>
+<script src="escenas/03-liquido.js"></script>
+<script src="escenas/04-burger.js"></script>
+<script src="escenas/05-cierre.js"></script>
+<script>TCBVideo.iniciar();</script>
+</body>
+</html>

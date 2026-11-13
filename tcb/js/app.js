@@ -232,7 +232,10 @@
       if (foco) t.focus();
       t.scrollIntoView({ block: 'nearest', inline: 'center', behavior: reducido ? 'auto' : 'smooth' });
       animarPanel($('#' + t.getAttribute('aria-controls')));
+      try { const u = new URL(location.href); u.searchParams.set('cat', t.id.replace('tab-', '')); history.replaceState(null, '', u); } catch (e) { /* file:// sin historial: no pasa nada */ }
     };
+    const inicial = $('#tab-' + (new URLSearchParams(location.search).get('cat') || ''));   // ?cat=pollo abre esa categoría
+    if (inicial && inicial !== tabs[0]) { tabs.forEach(x => { const on = x === inicial; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; $('#' + x.getAttribute('aria-controls')).hidden = !on; }); }
     $('#tabs').addEventListener('click', e => { const t = e.target.closest('.tab'); if (t) activar(t); });
     $('#tabs').addEventListener('keydown', e => {
       const i = tabs.indexOf(document.activeElement); if (i < 0) return;
@@ -271,7 +274,12 @@
       const [id, op] = b.closest('[data-k]').dataset.k.split('::');
       cambiar(id, op, b.hasAttribute('data-dec') ? -1 : 1, 'pedido');
     });
-    $('#vaciar').addEventListener('click', () => { carrito = {}; guardar(); pintarCarrito(); $$('.plato').forEach(li => ($('[data-acc]', li).innerHTML = accionHTML(ITEMS[li.dataset.id]))); avisar('Pedido vaciado.'); $('[data-ir-menu]').focus(); });
+    let vaciarT;                                     // vaciar pide confirmación: dos toques
+    $('#vaciar').addEventListener('click', (e) => {
+      const b = e.currentTarget;
+      if (!b.dataset.seguro) { b.dataset.seguro = '1'; b.textContent = '¿Vaciar todo? Toca otra vez para confirmar'; clearTimeout(vaciarT); vaciarT = setTimeout(() => { delete b.dataset.seguro; b.textContent = 'Vaciar pedido'; }, 5000); return; }
+      clearTimeout(vaciarT); delete b.dataset.seguro; b.textContent = 'Vaciar pedido';
+      carrito = {}; guardar(); pintarCarrito(); $$('.plato').forEach(li => ($('[data-acc]', li).innerHTML = accionHTML(ITEMS[li.dataset.id]))); avisar('Pedido vaciado.'); $('[data-ir-menu]').focus(); });
     $('#pedidoForm').addEventListener('submit', e => {
       e.preventDefault(); if (!cuenta()) return;
       const txt = mensaje(), url = waUrl(N.whatsappPedidos.valor, txt);

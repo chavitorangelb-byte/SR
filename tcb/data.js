@@ -82,13 +82,13 @@ window.TCB = {
         nota: 'Todas van en pan brioche, con papas a la francesa. Puedes cambiar tu pan por lechuga.',
         items: [
           { id: 'cheeseburger', nombre: 'Cheeseburger', precio: 120,
-            desc: 'La clásica, sencilla pero inigualable. 150 g de carne, queso suizo americano, aderezo de la casa, lechuga italiana y tomate. Con aderezo chipotle.' },
+            desc: 'La clásica, sencilla pero inigualable. 150 g de carne, queso suizo americano, aderezo de la casa, lechuga italiana y tomate. Con aderezo chipotle.' },
           { id: 'superbacon', nombre: 'Superbacon', precio: 150, sello: 'La más pedida',
-            desc: '150 g de carne, queso suizo americano, aderezo hot BBQ, aros de cebolla empanizados, tocino y cebolla caramelizada. Con aderezo ranch.' },
+            desc: '150 g de carne, queso suizo americano, aderezo hot BBQ, aros de cebolla empanizados, tocino y cebolla caramelizada. Con aderezo ranch.' },
           { id: 'tres-cheeses', nombre: "3x Cheese's", precio: 150,
-            desc: '¿Muy fan del queso? 150 g de carne de res, queso suizo americano, cheddar y panela a la plancha, aderezo de la casa, lechuga italiana y tomate. Con aderezo chipotle.' },
+            desc: '¿Muy fan del queso? 150 g de carne de res, queso suizo americano, cheddar y panela a la plancha, aderezo de la casa, lechuga italiana y tomate. Con aderezo chipotle.' },
           { id: 'jalapeno-burger', nombre: 'Jalapeño Burger', precio: 155,
-            desc: 'La combinación perfecta. 150 g de carne, queso suizo americano, aderezo de jalapeño, champiñones y tocino. Con chipotle.' }
+            desc: 'La combinación perfecta. 150 g de carne, queso suizo americano, aderezo de jalapeño, champiñones y tocino. Con chipotle.' }
         ]
       },
       {
@@ -170,7 +170,7 @@ window.TCB = {
   // Ingredientes tomados de la descripción de su Cheeseburger.
   capas: [
     { id: 'pan-abajo',  nombre: 'Pan brioche',           nota: 'La base de todas.' },
-    { id: 'carne',      nombre: '150 g de carne',        nota: 'En cada burger.' },
+    { id: 'carne',      nombre: '150 g de carne',        nota: 'En cada burger.' },
     { id: 'queso',      nombre: 'Queso suizo americano', nota: 'Derretido encima.' },
     { id: 'lechuga',    nombre: 'Lechuga italiana',      nota: 'O en lugar del pan, si quieres.' },
     { id: 'tomate',     nombre: 'Tomate',                nota: 'En rodajas.' },

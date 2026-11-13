@@ -44,7 +44,9 @@ const nueva = async (o = {}, ruta = '') => { const c = await b.newContext({ view
   ok('enlace wa.me al número del negocio con el texto', href.startsWith('https://wa.me/528181618030?text=') && decodeURIComponent(href.split('text=')[1]) === msg);
   await p.screenshot({ path: `${OUT}/estado-mensaje.png` });
   fs.writeFileSync(`${OUT}/mensaje_whatsapp.txt`, msg);
-  await p.locator('#volver').click(); await p.locator('#vaciar').click(); await p.waitForTimeout(300);
+  await p.locator('#volver').click(); await p.locator('#vaciar').click();
+  ok('vaciar pide confirmación', (await p.locator('#vaciar').textContent()).includes('confirmar') && (await p.locator('.linea-p').count()) === 2);
+  await p.locator('#vaciar').click(); await p.waitForTimeout(300);
   ok('vaciar deja el estado vacío', await p.locator('#pedidoVacio').isVisible());
   await p.screenshot({ path: `${OUT}/estado-vacio.png` });
   await p.keyboard.press('Escape'); await p.waitForTimeout(300);
@@ -63,6 +65,7 @@ const nueva = async (o = {}, ruta = '') => { const c = await b.newContext({ view
   ok('primer Tab = enlace "Saltar al menú"', await p.evaluate(() => document.activeElement.classList.contains('saltar')));
   await p.locator('#tab-burgers').focus(); await p.keyboard.press('ArrowRight');
   ok('flecha derecha cambia de pestaña', await p.evaluate(() => document.activeElement.id === 'tab-pollo' && document.activeElement.getAttribute('aria-selected') === 'true' && !document.getElementById('panel-pollo').hidden && document.getElementById('panel-burgers').hidden));
+  ok('la categoría queda en la URL', (await p.evaluate(() => location.search)) === '?cat=pollo');
   await p.keyboard.press('End');
   ok('End va a la última pestaña', await p.evaluate(() => document.activeElement.id === 'tab-mas'));
   await p.keyboard.press('Home');

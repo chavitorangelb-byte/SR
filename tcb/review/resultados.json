@@ -1,6 +1,6 @@
 {
- "fecha": "2026-11-12T21:47:00.861Z",
- "total": 43,
+ "fecha": "2026-11-13T01:50:55.831Z",
+ "total": 45,
  "fallos": 0,
  "pruebas": [
   {
@@ -89,6 +89,11 @@
    "detalle": ""
   },
   {
+   "prueba": "vaciar pide confirmación",
+   "ok": true,
+   "detalle": ""
+  },
+  {
    "prueba": "vaciar deja el estado vacío",
    "ok": true,
    "detalle": ""
@@ -120,6 +125,11 @@
   },
   {
    "prueba": "flecha derecha cambia de pestaña",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "prueba": "la categoría queda en la URL",
    "ok": true,
    "detalle": ""
   },
@@ -211,7 +221,7 @@
   {
    "prueba": "carga inicial < 700 KB sin comprimir",
    "ok": true,
-   "detalle": "357 KB en 21 archivos, load 156 ms"
+   "detalle": "272 KB en 21 archivos, load 165 ms"
   },
   {
    "prueba": "cero peticiones a terceros",
