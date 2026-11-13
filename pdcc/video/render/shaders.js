@@ -36,14 +36,14 @@ vec3 dots(vec2 p, vec3 cam, float blurK){
 export const SCENE = COMMON + `
 uniform vec4 uLine;     // ax, ay, bx, by
 uniform vec4 uLineP;    // intensidad, ancho del núcleo, cabeza(0..1 a lo largo), fuerza de la cabeza
-uniform float uFlash, uRevY, uRevGain, uT;
+uniform float uFlash, uRevY, uRevGain, uT, uOffY;
 uniform vec3 uCam;
 void main(){
   vec2 p = vec2(vUV.x, 1.-vUV.y)*uDes;
   vec2 c = (p-uDes*0.5)/uDes.y;
   vec3 col = vec3(0.036) - 0.02*dot(c,c);
   // zona ya pulida por la línea
-  float rev = smoothstep(uRevY+6., uRevY-70., p.y) * uRevGain;
+  float rev = smoothstep(uRevY+6., uRevY-70., p.y) * uRevGain * smoothstep(uOffY-40., uOffY+40., p.y);
   float fresh = exp(-max(uRevY-p.y,0.)/190.) * step(p.y, uRevY+6.);
   float micro = n1(p.y*0.9 + n1(p.x*0.004)*40.)*0.5 + n1(p.y*0.23)*0.5;
   col += rev * (0.012 + 0.010*micro + 0.035*exp(-pow((p.y-uDes.y*0.42)/520.,2.)));
@@ -116,7 +116,7 @@ void main(){
   vec2 p = vec2(vUV.x, 1.-vUV.y)*uDes;
   vec3 col = texture(uScene, vUV).rgb;
   float dPhone = sdPanel(0, p);
-  float inPhone = smoothstep(0.7,-0.7,dPhone);
+  float inPhone = smoothstep(0.7,-0.7,dPhone+18.*uScl[0]);
   vec2 Ld = normalize(vec2(-0.6,-0.8)); float cover = 0.;
   for(int i=0;i<NP;i++){
     if(i>=uN) break;
@@ -140,9 +140,11 @@ void main(){
     float l = dot(bl, vec3(0.2126,0.7152,0.0722)); bl = max(mix(vec3(l), bl, 1.4), 0.);
     float tint = uPar[i].x;
     vec3 g = bl*(1.-tint*0.45) + vec3(0.102,0.102,0.110)*tint;
+    if(i==0) g = mix(g, texture(uScene, vUV).rgb*0.62 + 0.006, inPhone*uMorph); // pantalla: la página sobre los reflejos
     float lit = max(dot(gr, Ld),0.), shd = max(dot(gr,-Ld),0.);
     g += rim*(0.40*lit*lit + 0.015) - rim*0.05*shd;
-    g += 0.06*smoothstep(1.3,0.,abs(d+bev))*lit;       // segunda arista: grosor del vidrio
+    g += 0.06*smoothstep(1.3,0.,abs(d+bev))*lit;
+    if(i==0) g += 0.05*smoothstep(1.2,0.,abs(d+18.*uScl[0]))*uMorph;       // segunda arista: grosor del vidrio
     g += 0.14*smoothstep(1.1,0.,abs(d+0.8));           // borde de 1 px
     vec2 q = (uInv[i]*vec3(p,1.)).xy;
     g += 0.030*smoothstep(0.6,-1.0,q.y/uBox[i].y)*tint; // degradado interior desde arriba

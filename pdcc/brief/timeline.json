@@ -1,5 +1,5 @@
 {
- "fps": 60, "bpm": 120, "frames": 1080,
+ "fps": 60, "bpm": 120, "frames": 1110,
  "voz": [
   {"id": "L1", "texto": "Detallado boutique, de alto nivel.", "f": 38, "corte": [0.13, 2.31]},
   {"id": "L2", "texto": "Cinco estrellas en Google.", "f": 240, "corte": [2.83, 4.16]},

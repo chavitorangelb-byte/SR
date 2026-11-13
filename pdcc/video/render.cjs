@@ -2,13 +2,13 @@
 const { chromium } = require('playwright'); const http = require('http'), fs = require('fs'), path = require('path'), { spawn } = require('child_process');
 const A = Object.fromEntries(process.argv.slice(2).join(' ').split('--').filter(Boolean).map(s => { const [k, ...v] = s.trim().split(' '); return [k, v.join(' ')]; }));
 const ROOT = path.resolve(__dirname, '..'), s = +(A.s || 0.5), fps = +(A.fps || 30), sub = +(A.sub || 8);
-const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'application/json', '.jpg': 'image/jpeg', '.woff2': 'font/woff2' };
+const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'application/json', '.jpg': 'image/jpeg', '.png': 'image/png', '.woff2': 'font/woff2' };
 const srv = http.createServer((q, r) => { const f = path.join(ROOT, decodeURIComponent(q.url.split('?')[0])); if (!f.startsWith(ROOT) || !fs.existsSync(f)) { r.writeHead(404); return r.end(); } r.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); fs.createReadStream(f).pipe(r); });
 (async () => {
   await new Promise(r => srv.listen(0, r)); const port = srv.address().port;
   const b = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
   const p = await b.newPage(); p.on('console', m => console.log('[pg]', m.text())); p.on('pageerror', e => { console.error('[err]', e.message); process.exit(1); });
-  await p.goto(`http://localhost:${port}/video/render/index.html?s=${s}&sub=${sub}`); await p.waitForFunction('window.ready', null, { timeout: 60000 });
+  await p.goto(`http://localhost:${port}/video/render/index.html?s=${s}&sub=${sub}&fmt=${A.fmt || '9x16'}`); await p.waitForFunction('window.ready', null, { timeout: 60000 });
   if (A.stills) {
     fs.mkdirSync(A.dir, { recursive: true });
     for (const t of A.stills.split(',').map(Number)) fs.writeFileSync(path.join(A.dir, `t${t.toFixed(2)}.jpg`), Buffer.from(await p.evaluate(t => shot(t, undefined, 0.93), t), 'base64'));
