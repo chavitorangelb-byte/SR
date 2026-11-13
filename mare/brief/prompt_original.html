@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MaRe Repostería · Prompt de video</title>
+<style>
+  :root{--bg:#1e120c;--card:#2a1a12;--line:#4a2a1c;--ink:#fff8e1;--mute:#c9a27a;--green:#e48bb0;--pink:#e48bb0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,Segoe UI,Arial,sans-serif;padding:16px;max-width:900px;margin-inline:auto}
+  h1{font-size:20px;margin:6px 0 4px}
+  p.sub{color:var(--mute);margin:0 0 14px}
+  .bar{position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:2;display:flex;gap:10px;align-items:center}
+  button{background:var(--green);color:#2a170f;border:0;border-radius:10px;padding:12px 18px;font-weight:700;font-size:15px;cursor:pointer}
+  button:active{transform:scale(.98)}
+  #st{color:var(--pink);font-size:14px}
+  pre{white-space:pre-wrap;word-wrap:break-word;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;font:13.5px/1.55 ui-monospace,Menlo,Consolas,monospace;color:var(--ink)}
+  h2{font-size:15px;margin:22px 0 8px;color:var(--green)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+  .grid figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .grid img{width:100%;height:150px;object-fit:cover;display:block}
+  .grid figcaption{font-size:12px;color:var(--mute);padding:6px 8px}
+</style>
+</head>
+<body>
+<h1>MaRe Repostería · Prompt de video</h1>
+<p class="sub">Aguascalientes · 16 s + 2 s end card · 9:16 y 1:1</p>
+<div class="bar"><button id="cp">Copiar prompt</button><span id="st"></span></div>
+
+<pre id="prompt">OBJETIVO
+Produce en código un video promocional spec de 16 s + 2 s de end card para MaRe Repostería (Aguascalientes), pastelería artesanal de galletas, brownies y pasteles por pedido. Meta: que la dueña piense &quot;quiero una publicidad así&quot; y que el video le muestre cómo se vería su propia página web con menú, tarjeta de lealtad y botón de WhatsApp. Trabaja como &quot;el mejor diseñador gráfico del mundo con un equipo enorme y presupuesto ilimitado&quot;. Formato principal 9:16 (1080x1920) y un re-layout real en 1:1 (no recorte). Master a 60 fps y versión H.264 a 30 fps para WhatsApp e Instagram. Nada de video generado por IA: todo en código.
+
+PRIORIDADES
+1. Gancho de un golpe fuerte en el primer beat (0.00-0.50 s).
+2. Una sola idea, un solo trazo que hace todo.
+3. Fotos reales de MaRe, bien protagonizadas, una cosa importante por cuadro.
+4. Kinetic type y motion graphics como protagonistas.
+5. Cero datos inventados. Ante la duda, fuera de la pantalla.
+
+IDEA
+&quot;El hilo de chocolate&quot;. Una sola línea de chocolate (el mismo zigzag de las galletas con chocolate de MaRe) golpea la pantalla, hace zigzag sobre papel kraft, corta una mega galleta y revela el relleno, se convierte por morph de campo de distancia (SDF) en el sello rosa de MaRe, luego en el marco de cristal de un teléfono con la &quot;página&quot; de la repostería, después en la tarjeta de lealtad, y termina como el subrayado del botón &quot;HAZ TU PEDIDO&quot;. Un solo plano continuo, cero cortes duros. La frase &quot;Lo mejor está adentro&quot; amarra la idea: la línea abre la galleta y abre la página.
+
+LOOK
+Glassmorphism real, motion graphics y kinetic type (los dos más importantes), liquid morph, isométrico minimalista con mucho espacio negativo. Cálido, goloso y premium, no infantil. SIN AZUL en fondos ni acentos.
+Paleta: espresso #1E120C (fondo), chocolate #4A2A1C, kraft #C9A27A, rosa MaRe #E48BB0, crema #FFF8E1. El azul marino del logo aparece solo dentro de los archivos de logo, sin tocarlos.
+Tipografía: sans geométrica redondeada y gruesa para titulares (afín al logo), sans limpia para apoyo. Sin tipografías deformadas.
+
+TÉCNICAS OBLIGATORIAS
+- Renderizador 2.5D en código (canvas/WebGL o numpy/OpenCV). Motor sugerido: Node + Playwright + ffmpeg.
+- Función determinista frame(t) y supermuestreo temporal de 8 subcuadros para el motion blur.
+- Un solo campo líquido y una sola cámara compartidos por todas las escenas. Los morphs interpolan campos de distancia (SDF), nunca fundidos de opacidad.
+- Glass que desenfoca de verdad lo que tiene detrás: blur 28 a 40 px, saturación 140 %, borde de 1 px, ruido 2 %.
+- Isométrico real a 30° con luz fija arriba-izquierda y sombras de contacto que crecen.
+- Kinetic type por glifo con stagger de 20 a 35 ms, máximo 3 o 4 palabras en pantalla, cada palabra con coreografía propia y aterrizando en su palabra de la locución.
+- Objetos reales (biseles, grosor, refracción), nunca siluetas planas ni barras de relleno.
+- La tarjeta de lealtad se RECONSTRUYE en código con la paleta de este prompt (el asset 12 es solo referencia de estructura, no se usa como imagen en pantalla).
+
+DATOS VERIFICADOS
+- Negocio: MaRe Repostería. Ciudad: Aguascalientes (etiqueta de ubicación en sus publicaciones de Instagram).
+- Canales: Instagram y WhatsApp (sus publicaciones muestran el botón de WhatsApp).
+- Eslogan del sello de su perfil: &quot;Horneando momentos que se quedan en el corazón&quot;.
+- Texto propio de una publicación (10 ago): &quot;Elige tu cajita, elige tus toppings y crea tu mix perfecto&quot;.
+- Tarjeta de cliente frecuente (historia del 25 jul): 1 sello por compra de $120 MXN o más; 5 sellos = 20 % de descuento en la siguiente compra.
+- Productos del menú (nombres genéricos para pantalla): Mega galletas, Monster cookie, Cajita de galletas, Cookie cake, Cuchareable, Brownies, Brookies, Lemonies, Pasteles.
+- Forma de pedir (según su infografía): menú en el link del perfil, pedir con anticipación por Instagram o WhatsApp, anticipo, recoger en la fecha reservada.
+- Google Maps y reseñas: NO ENCONTRADO. No hay sección de reseñas ni calificación en el video.
+
+NO USAR SIN CONFIRMAR CON EL DUEÑO
+- Precios del menú (son suyos pero sin fecha): no mostrar.
+- Teléfono, usuario de Instagram (hay dos variantes con distinto número de guiones bajos: sin confirmar), dirección u horarios: no mostrar.
+- Nombres de marcas de terceros en sabores (Oreo, Lotus, Nutella, Kinder, Biscoff, etc.): nunca escribirlos en pantalla.
+- El eslogan del sello: usarlo solo si la dueña lo confirma como suyo; si no, omitirlo.
+- Imágenes marcadas como posible contenido de IA (historia del 17 jul con galletas apiladas, imagen de la infografía &quot;¿Cómo pedir?&quot; del 30 jul): no usar como visuales.
+- Fotos con manos, zapatos o reloj visibles: no usar.
+- Texto &quot;We will miss you&quot; del cookie cake, y errores ortográficos de sus gráficas (&quot;Clasic&quot;, &quot;Ultra Chocollate&quot;, &quot;rellan&quot;): no copiar.
+- Descuento del 20 % y regla de sellos: confirmar que sigue vigente antes de enseñar la pieza.
+
+ASSETS
+Carpeta ./assets (usar solo estos, sin recolorear):
+01_logo_MaRe_reposteria.jpg (logo, 734x401, resolución moderada: solo en end card y a tamaño moderado)
+02_galletas_sobre_kraft.jpg (5 galletas sobre kraft; héroe de la escena del teléfono)
+03_mega_galletas_corte.jpg (cortes con relleno; la línea corta aquí)
+04_monster_cookie_corte.jpg
+05_cajita_de_galletas.jpg (contiene texto manuscrito &quot;mixed box cookies&quot;: recortar o desenfocar esa zona)
+06_brownies_ganache.jpg
+07_brookie_corte.jpg
+08_lemonies.jpg
+09_pasteles_pistache_frambuesa_y_sacher.jpg
+10_cuchareable_frambuesa.jpg
+11_logo_sello_rosa_MaRe.jpg (sello rosa con anillo del eslogan y usuario de IG: al ser logo oficial solo se mueve, escala, desenfoca o enmascara; enmascarar el anillo de texto si el eslogan o el usuario no están confirmados)
+12_tarjeta_lealtad_referencia.jpg (SOLO referencia, no mostrar)
+Si un asset trae texto no confirmado, enmascararlo.
+
+BEAT SHEET
+60 fps, 120 BPM (1 beat = 0.5 s, compás = 2.0 s), 16.00 s + 2.00 s de end card.
+0.00-0.50 Golpe: la línea de chocolate cruza la pantalla y estalla en el primer beat. Sub grave.
+0.50-2.00 Zigzag de chocolate sobre kraft (fondo espresso con textura kraft). Kinetic &quot;LO MEJOR&quot; / &quot;ESTÁ ADENTRO&quot;, cada palabra con su coreografía.
+2.00-3.00 La línea corta la mega galleta (asset 03) y revela el relleno; morph SDF al sello rosa (asset 11).
+3.00-6.00 El sello se vuelve marco de teléfono de cristal; héroe asset 02 dentro. Tres tarjetas isométricas de cristal entran en profundidad: MEGA GALLETAS (03), BROWNIES (06), PASTELES (09).
+6.00-8.00 Tarjeta de lealtad de cristal, reconstruida en código: 5 sellos que se estampan al ritmo del kick y una insignia &quot;20 %&quot;. Kinetic &quot;5 SELLOS&quot; / &quot;20 %&quot;.
+8.00-10.00 Secciones del menú en parallax (06, 07, 08, 10) dentro del teléfono; cámara orbita suave.
+10.00-12.00 Cajita y toppings (05, 06, 07). Kinetic &quot;ELIGE TU CAJITA&quot; / &quot;TUS TOPPINGS&quot;.
+12.00-14.00 Botón de cristal &quot;HAZ TU PEDIDO&quot; con icono de WhatsApp; la línea de chocolate se vuelve el subrayado y pulsa con el kick.
+14.00-16.00 Pull-back de cámara, el teléfono se cierra al sello; &quot;MaRe Repostería · Aguascalientes&quot;. Respiro musical.
+16.00-18.00 End card sobre fondo espresso: &quot;Precios accesibles desde $1,000 pesos por tu página&quot; / &quot;Paquete de 3 videos promocionales: $1,500&quot; / &quot;Elevate Negocios · Aguascalientes&quot; / &quot;Demo de cortesía de Elevate Negocios · pieza no oficial&quot;. Golpe grave en el corte final.
+
+LOCUCIÓN
+ElevenLabs, español de México, voz femenina cálida y natural, nunca acelerada. Guion en una sola llamada, 2 tomas. Tiempos de inicio:
+0.50 &quot;Lo mejor está adentro.&quot;
+3.00 &quot;Galletas, brownies y pasteles.&quot;
+6.00 &quot;Cinco sellos, y veinte por ciento de descuento.&quot;
+8.20 &quot;Imagina todo esto en tu propia página.&quot;
+10.40 &quot;Elige tu cajita. Elige tus toppings.&quot;
+12.40 &quot;Haz tu pedido por WhatsApp.&quot;
+14.40 &quot;MaRe Repostería. Aguascalientes.&quot;
+16.30 &quot;Tu página, desde mil pesos.&quot;
+Después de generar la voz, bloquear la línea de tiempo a las duraciones reales.
+
+MÚSICA
+Original, hecha en código, 120 BPM entero, compás de 2.0 s. Cálida y juguetona (marimba suave, bajo redondo, palmas), una capa nueva por sección, lift en la revelación del teléfono (3.00 s), respiro antes del end card (14.00-16.00) y golpe grave en el corte final (16.00 s). Al menos 12 dB por debajo de la voz en cada palabra.
+
+SONIDO
+Al menos 70 cues de [tu biblioteca de SFX], uno por cada movimiento visible: trazo de chocolate, corte de galleta, crujido, sello, estampado de cada sello de lealtad, deslizamientos de cristal, clic del botón, pulso del subrayado. Mezcla: voz alrededor de -16 LUFS, master -14 LUFS / -1.25 dBTP.
+
+MARCA
+Los logos (01 y 11) solo se mueven, escalan, desenfocan o enmascaran; jamás se redibujan ni se recolorean. El 01 está en resolución moderada: solo en la end card y a tamaño moderado.
+
+SEGURIDAD EN PANTALLA
+Contenido clave lejos de los 250 px superiores y los 340 px inferiores en 9:16. Máximo 3 o 4 palabras a la vez, alto contraste, ortografía correcta en español. Sin precios, teléfono, usuario de Instagram, dirección ni horarios. Sin personas identificables. Sin marcas de terceros.
+
+REGLAS DE CALIDAD
+- Un solo plano continuo, cero cortes duros; ningún morph por fundido de opacidad.
+- Nada de estética PowerPoint, fotos con zoom y transiciones predeterminadas, glow excesivo ni siluetas planas.
+- Las fotos se ven nítidas: no escalar por encima de su resolución; si una foto no alcanza, reducir su tamaño en pantalla.
+- Cada movimiento tiene intención y un SFX; cada palabra aterriza en su palabra de la locución.
+- No inventar nada: si un dato no está en DATOS VERIFICADOS, no aparece.
+- Verificar fotograma por fotograma y en un celular real antes de enseñar la pieza. No afirmar que se renderizó o probó algo que no se ejecutó.
+- Es una pieza spec privada: no publicar sin permiso de la dueña.
+
+PROCESO
+Trabaja por fases y espera mi aprobación en cada una.
+1. Revisar assets (resolución, texto no confirmado a enmascarar) y reportar.
+2. Brief con tiempos exactos por fotograma a 60 fps.
+3. Generar primero la voz y bloquear la línea de tiempo a ella.
+4. Construir en partes paralelas con una función frame(t) compartida, un solo campo líquido y una sola cámara.
+5. Prueba corta de dirección (3 a 5 s, baja resolución, 30 fps) y esperar aprobación antes del render completo.
+6. Preview, hoja de contactos y chequeo cuadro por cuadro, con una ronda de arreglos.
+7. Finales: 9:16 y 1:1 (re-layout real), master 60 fps y H.264 30 fps, más stems de voz, música y SFX.
+</pre>
+
+<h2>Assets de apoyo (carpeta ./assets)</h2>
+<div class="grid"><figure><img src="assets/01_logo_MaRe_reposteria.jpg" loading="lazy"><figcaption>01_logo_MaRe_reposteria</figcaption></figure><figure><img src="assets/02_galletas_sobre_kraft.jpg" loading="lazy"><figcaption>02_galletas_sobre_kraft</figcaption></figure><figure><img src="assets/03_mega_galletas_corte.jpg" loading="lazy"><figcaption>03_mega_galletas_corte</figcaption></figure><figure><img src="assets/04_monster_cookie_corte.jpg" loading="lazy"><figcaption>04_monster_cookie_corte</figcaption></figure><figure><img src="assets/05_cajita_de_galletas.jpg" loading="lazy"><figcaption>05_cajita_de_galletas</figcaption></figure><figure><img src="assets/06_brownies_ganache.jpg" loading="lazy"><figcaption>06_brownies_ganache</figcaption></figure><figure><img src="assets/07_brookie_corte.jpg" loading="lazy"><figcaption>07_brookie_corte</figcaption></figure><figure><img src="assets/08_lemonies.jpg" loading="lazy"><figcaption>08_lemonies</figcaption></figure><figure><img src="assets/09_pasteles_pistache_frambuesa_y_sacher.jpg" loading="lazy"><figcaption>09_pasteles_pistache_frambuesa_y_sacher</figcaption></figure><figure><img src="assets/10_cuchareable_frambuesa.jpg" loading="lazy"><figcaption>10_cuchareable_frambuesa</figcaption></figure><figure><img src="assets/11_logo_sello_rosa_MaRe.jpg" loading="lazy"><figcaption>11_logo_sello_rosa_MaRe</figcaption></figure><figure><img src="assets/12_tarjeta_lealtad_referencia.jpg" loading="lazy"><figcaption>12_tarjeta_lealtad_referencia</figcaption></figure></div>
+<script>
+document.getElementById('cp').addEventListener('click', function(){
+  var t = document.getElementById('prompt').innerText, st = document.getElementById('st');
+  function ok(){ st.textContent = 'Copiado'; setTimeout(function(){ st.textContent=''; }, 2000); }
+  function fb(){
+    try {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('prompt'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      document.execCommand('copy'); ok();
+    } catch(e){ st.textContent = 'Selecciona el texto y copia'; }
+  }
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(ok, fb); else fb();
+  } catch(e){ fb(); }
+});
+</script>
+</body>
+</html>
