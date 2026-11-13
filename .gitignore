@@ -3,3 +3,6 @@ assets/_capturas/
 review/**/*.png
 video/build/
 audio/build/
+pdcc/assets/_capturas/
+pdcc/video/build/
+pdcc/audio/build/

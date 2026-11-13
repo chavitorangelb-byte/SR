@@ -1,0 +1,58 @@
+{
+ "01_logo_baja_resolucion.jpg": {
+  "captura": "IMG_8506_logo_perfil.png",
+  "caja": [
+   215,
+   820,
+   1105,
+   1705
+  ],
+  "px": [
+   890,
+   885
+  ],
+  "nota": "Foto de perfil. Círculo ≈ 870 px en la captura (ampliación de pantalla). Dice \"DETAILIG\" (falta la N)."
+ },
+ "01b_logo_flyer_ortografia_correcta.jpg": {
+  "captura": "IMG_8507_flyer_ppf.png",
+  "caja": [
+   0,
+   720,
+   620,
+   1080
+  ],
+  "px": [
+   620,
+   360
+  ],
+  "nota": "Mismo logo en su flyer de PPF (4-jul-2024, no marcado como IA). Dice \"DETAILING\". Sin panal."
+ },
+ "02_taller_pared_logo.jpg": {
+  "captura": "IMG_8513_taller.png",
+  "caja": [
+   330,
+   335,
+   1300,
+   1215
+  ],
+  "px": [
+   970,
+   880
+  ],
+  "nota": "Cuadro de un reel. Sin emblema ni póster en el recorte; la silueta del auto sigue siendo reconocible."
+ },
+ "03_pulido_pintura_roja.jpg": {
+  "captura": "IMG_8507_flyer_ppf.png",
+  "caja": [
+   612,
+   1195,
+   1320,
+   1710
+  ],
+  "px": [
+   708,
+   515
+  ],
+  "nota": "Foto dentro de un flyer. Zona útil como textura sin faro ni boquilla: (250,120)-(610,400) del recorte."
+ }
+}
