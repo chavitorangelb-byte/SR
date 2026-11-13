@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maison Rose · Prompt de video</title>
+<style>
+  :root{--bg:#1b1210;--card:#2a1b17;--line:#4a2a1c;--ink:#f3e6d6;--mute:#c98b4e;--green:#e5a898;--pink:#e5a898;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,Segoe UI,Arial,sans-serif;padding:16px;max-width:900px;margin-inline:auto}
+  h1{font-size:20px;margin:6px 0 4px}
+  p.sub{color:var(--mute);margin:0 0 14px}
+  .bar{position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:2;display:flex;gap:10px;align-items:center}
+  button{background:var(--green);color:#2a170f;border:0;border-radius:10px;padding:12px 18px;font-weight:700;font-size:15px;cursor:pointer}
+  button:active{transform:scale(.98)}
+  #st{color:var(--pink);font-size:14px}
+  pre{white-space:pre-wrap;word-wrap:break-word;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;font:13.5px/1.55 ui-monospace,Menlo,Consolas,monospace;color:var(--ink)}
+  h2{font-size:15px;margin:22px 0 8px;color:var(--green)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+  .grid figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .grid img{width:100%;height:150px;object-fit:cover;display:block}
+  .grid figcaption{font-size:12px;color:var(--mute);padding:6px 8px}
+</style>
+</head>
+<body>
+<h1>Maison Rose · Prompt de video</h1>
+<p class="sub">San Jerónimo, Monterrey · 16 s + 2 s end card · 9:16 y 1:1</p>
+<div class="bar"><button id="cp">Copiar prompt</button><span id="st"></span></div>
+
+<pre id="prompt">OBJETIVO
+Produce en código un video promocional spec de 16 s + 2 s de end card para Maison Rose, repostería y panadería francesa en Plaza Periférika, San Jerónimo (Monterrey). Meta: que el equipo piense &quot;quiero una publicidad así&quot; y vea cómo se vería su propia página web con menú por categorías y botón de WhatsApp. Trabaja como &quot;el mejor diseñador gráfico del mundo con un equipo enorme y presupuesto ilimitado&quot;. Formato principal 9:16 (1080x1920) y un re-layout real en 1:1 (no recorte). Master a 60 fps y versión H.264 a 30 fps para WhatsApp e Instagram. Nada de video generado por IA: todo en código.
+
+PRIORIDADES
+1. Gancho de un golpe fuerte en el primer beat (0.00-0.50 s).
+2. Una sola idea, un solo trazo que hace todo.
+3. Las fotos reales de sus productos como protagonistas, una cosa importante por cuadro.
+4. Kinetic type y motion graphics como protagonistas.
+5. Cero datos inventados. Ante la duda, fuera de la pantalla.
+
+IDEA
+&quot;El pliegue&quot;. Una sola cinta rosa-dorada se dobla como masa de hojaldre laminada: cada pliegue crea una capa y la capa se abre para revelar el producto (una galleta que se parte, una berlinesa que se abre, la rebanada de un mille-feuille). Después los pliegues se asientan en la silueta de su logo, el logo se vuelve el marco de cristal de un teléfono con su &quot;página&quot;, y al final la cinta es el subrayado del botón de WhatsApp. Frase eje, de su propio perfil: &quot;Pâtisserie française&quot;. La línea es la idea; el hojaldre es lo que ellos saben hacer.
+
+LOOK
+Glassmorphism real, motion graphics y kinetic type (los dos más importantes), liquid morph, isométrico minimalista con mucho espacio negativo. Elegante, parisino y cálido, oscuro. SIN AZUL en fondos ni acentos.
+Paleta (de su marca y sus productos): cacao profundo #1B1210 (fondo), crema #F3E6D6, rosa de su silueta #E5A898 (cinta y acentos), caramelo #C98B4E, chocolate #4A2A1C. Textura sutil de mantequilla y papel pergamino solo como grano muy fino en el glass.
+Tipografía: serif editorial elegante (afín a su menú: &quot;Notre MENU&quot; en serif de alto contraste) para titulares y un script suave solo para un acento; sans limpia para apoyo. Sin tipografías deformadas.
+
+TÉCNICAS OBLIGATORIAS
+- Renderizador 2.5D en código (canvas/WebGL o numpy/OpenCV). Motor sugerido: Node + Playwright + ffmpeg.
+- Función determinista frame(t) y supermuestreo temporal de 8 subcuadros para el motion blur.
+- Un solo plano continuo, cero cortes duros. Un solo campo líquido y una sola cámara compartidos por todas las escenas. Los morphs interpolan campos de distancia (SDF), nunca fundidos de opacidad. Los pliegues son una simulación de cinta con grosor (no una máscara plana).
+- Glass que desenfoca de verdad lo que tiene detrás: blur 28 a 40 px, saturación 140 %, borde de 1 px, ruido 2 %.
+- Isométrico real a 30° con luz fija arriba-izquierda y sombras de contacto que crecen.
+- Kinetic type por glifo con stagger de 20 a 35 ms, máximo 3 o 4 palabras en pantalla, cada palabra con coreografía propia y aterrizando en su palabra de la locución.
+- Objetos reales (biseles, grosor, refracción), nunca siluetas planas ni barras de relleno.
+- Las fotos entran como paneles de cristal con grosor y reflejo; no escalar por encima de su resolución (son capturas de pantalla de Instagram: en un teléfono caben bien, a pantalla completa pueden verse suaves).
+
+DATOS VERIFICADOS
+- Negocio: Maison Rose. Descripción de su WhatsApp Business: &quot;Repostería y Panadería Francesa. Encuéntranos en Plaza Periférika!&quot;. Bio de Instagram: &quot;Pâtisserie française&quot;, Plaza Periférika, San Jerónimo.
+- Instagram: maisonrose.mx (343 publicaciones, 17.6 mil seguidores al 13-nov-2026, según captura). El enlace &quot;maisonrose.mx&quot; de su bio es su Threads, no una página web: no tiene sitio propio.
+- WhatsApp Business activo con catálogo. Producto del catálogo: &quot;Galletas: manejamos 8 sabores diferentes de galletas recién horneadas&quot;.
+- Categorías de su menú (historias): Hojaldres, Berlinesas, Brownies con cheesecake, Galletas, Panes, Pan de muerto, Banana bread, Croffles, y Pasteles (Trianon, Mille feuilles, Charlotte, Flan parisino, otras tartas).
+- Texto propio de una publicación (6-sep): &quot;Manejamos más de 10 toppings diferentes, ármalos como prefieras&quot; (croffles). Otra (26-abr): &quot;Ya manejamos Pain Suisse, descubre todos los rellenos disponibles en tienda&quot;.
+- Reseñas y calificación de Google: no se usan en el video.
+
+NO USAR SIN CONFIRMAR CON EL DUEÑO
+- Precios del menú y del catálogo: no mostrar (sin fecha y el catálogo difiere de los carteles).
+- Teléfono, usuario de Instagram, horarios y dirección exacta en pantalla: no mostrar. El horario de la bio (&quot;M-V 10am-7pm, S-D 10am-3pm, lunes cerrado&quot;) se contradice a sí mismo y con Maps (martes a viernes).
+- Nombres de marcas de terceros en productos (Biscoff, Nutella, Lotus, etc.): nunca escribirlos ni mostrar fotos donde se lean. Por eso se excluyeron los croffles con galleta de marca.
+- Publicaciones marcadas como contenido de IA (&quot;Perdónanos…&quot;, pan de muerto relleno de chocolate): no usar.
+- Fotos con personas o creadores/influencers y clips de colaboraciones: no usar.
+- Mención &quot;la dueña es francesa&quot; (aparece en prensa, no en su perfil): no usar.
+- Menú con precios: no mostrar los carteles tal cual.
+- Fotos tomadas de capturas: confirmar con el negocio y pedir los originales antes de publicar.
+
+ASSETS
+Carpeta ./assets (usar solo estos, sin recolorear, sin rellenar con IA):
+00_logo_maison_rose_silueta.jpg (silueta rosa de su foto de perfil sobre círculo blanco; es su marca: solo mover, escalar, desenfocar o enmascarar en círculo; hay esquinas grises fuera del círculo)
+01_galleta_chispas_nueces.jpg
+02_galleta_chocolate_partida.jpg (sostenida por una mano: solo mano, sin cara)
+03_pastel_trianon_frutos_rojos.jpg
+04_mille_feuille_corte.jpg
+05_flan_parisino.jpg (trae texto propio en la parte superior: recortar o desenfocar esa franja si se usa a pantalla completa)
+06_pain_suisse_hojaldre.jpg (acercamiento de hojaldre)
+07_berlinesas_rellenas.jpg (manos con guantes; sin cara)
+08_conchas_galleta_chispas.jpg
+09_charola_hojaldres_fruta.jpg
+10_galletas_apiladas_catalogo.jpg
+Si un asset trae texto o personas no previstos, recortar o enmascarar.
+
+BEAT SHEET
+60 fps, 120 BPM (1 beat = 0.5 s, compás = 2.0 s), 16.00 s + 2.00 s de end card.
+0.00-0.50 Golpe: la cinta rosa cruza la pantalla y se dobla en el primer beat. Sub grave.
+0.50-2.00 La cinta se pliega capa por capa sobre fondo cacao. Kinetic &quot;CADA PLIEGUE&quot; / &quot;CUENTA&quot;, cada palabra con su coreografía.
+2.00-3.00 Un pliegue se abre y revela la galleta partida (02); la cinta se ajusta a la silueta del logo (asset 00).
+3.00-6.00 La silueta se vuelve el marco de cristal de un teléfono; entran tres tarjetas isométricas de cristal que se estampan en el kick: HOJALDRES (06), BERLINESAS (07), PASTELES (03).
+6.00-8.00 &quot;OCHO SABORES&quot; de galletas: 01, 10 y 02 como paneles de cristal en profundidad (parallax); kinetic &quot;GALLETAS&quot; / &quot;RECIÉN HORNEADAS&quot;.
+8.00-10.00 Muro de menú: 04, 05, 09 y 08 en isométrico orbitando suave; las categorías (HOJALDRES · BERLINESAS · PASTELES · GALLETAS) aparecen como chips de cristal.
+10.00-12.00 Tres pasteles uno a uno, cada uno aterrizando con su nombre: &quot;FLAN PARISINO&quot; (05), &quot;MILLE-FEUILLE&quot; (04), &quot;TRIANON&quot; (03).
+12.00-14.00 Botón de cristal &quot;PIDE POR WHATSAPP&quot; con icono de WhatsApp; la cinta se vuelve el subrayado y pulsa con el kick.
+14.00-16.00 Pull-back de cámara, el teléfono se cierra a la silueta rosa; &quot;Maison Rose · San Jerónimo&quot;. Respiro musical.
+16.00-18.00 End card sobre fondo cacao: &quot;Precios accesibles desde $1,000 pesos por tu página&quot; / &quot;Paquete de 3 videos promocionales: $1,500&quot; / &quot;Elevate Negocios · Aguascalientes&quot; / &quot;Demo de cortesía de Elevate Negocios · pieza no oficial&quot;. Golpe grave en el corte final.
+
+LOCUCIÓN
+ElevenLabs, español de México, voz femenina cálida y natural, nunca acelerada. Guion en una sola llamada, 2 tomas. Tiempos de inicio:
+0.50 &quot;Cada pliegue cuenta.&quot;
+3.00 &quot;Hojaldres, berlinesas y pasteles.&quot;
+6.00 &quot;Ocho sabores de galletas, recién horneadas.&quot;
+8.20 &quot;Imagina todo esto en tu propia página.&quot;
+10.40 &quot;Flan parisino. Mille-feuille. Trianon.&quot;
+12.40 &quot;Pide por WhatsApp.&quot;
+14.40 &quot;Maison Rose. San Jerónimo.&quot;
+16.30 &quot;Tu página, desde mil pesos.&quot;
+Después de generar la voz, bloquear la línea de tiempo a las duraciones reales.
+
+MÚSICA
+Original, hecha en código, 120 BPM entero, compás de 2.0 s. Parisina y cálida (acordeón suave o celesta, contrabajo, brushes), una capa nueva por sección, lift en la revelación del teléfono (3.00 s), respiro antes del end card (14.00-16.00) y golpe grave en el corte final (16.00 s). Al menos 12 dB por debajo de la voz en cada palabra.
+
+SONIDO
+Al menos 70 cues de [tu biblioteca de SFX], uno por cada movimiento visible: pliegue de cinta, crujido de hojaldre, galleta que se parte, estampado de cada tarjeta, deslizamientos de cristal, clic del botón, pulso del subrayado. Mezcla: voz alrededor de -16 LUFS, master -14 LUFS / -1.25 dBTP.
+
+MARCA
+La silueta (asset 00) solo se mueve, escala, desenfoca o enmascara; jamás se redibuja ni se recolorea. Es una foto de perfil de baja resolución: usarla a tamaño moderado y pedir el logo en alta resolución antes de la versión final.
+
+SEGURIDAD EN PANTALLA
+Contenido clave lejos de los 250 px superiores y los 340 px inferiores en 9:16. Máximo 3 o 4 palabras a la vez, alto contraste, ortografía correcta en español (con acentos: &quot;Pâtisserie&quot; solo si la dueña lo confirma como parte de su marca). Sin precios, teléfono, usuario de Instagram, dirección ni horarios. Sin nombres de marcas de terceros. Sin personas identificables.
+
+REGLAS DE CALIDAD
+- Un solo plano continuo, cero cortes duros; ningún morph por fundido de opacidad.
+- Nada de estética PowerPoint, fotos con zoom y transiciones predeterminadas, glow excesivo ni siluetas planas.
+- Fotos nítidas: si una no alcanza resolución, reducir su tamaño en pantalla.
+- Cada movimiento tiene intención y un SFX; cada palabra aterriza en su palabra de la locución.
+- No inventar nada: si un dato no está en DATOS VERIFICADOS, no aparece.
+- Verificar fotograma por fotograma y en un celular real antes de enseñar la pieza. No afirmar que se renderizó o probó algo que no se ejecutó.
+- Es una pieza spec privada: no publicar sin permiso del negocio.
+
+PROCESO
+Trabaja por fases y espera mi aprobación en cada una.
+1. Revisar assets (resolución, texto o personas a recortar) y reportar.
+2. Brief con tiempos exactos por fotograma a 60 fps.
+3. Generar primero la voz y bloquear la línea de tiempo a ella.
+4. Construir en partes paralelas con una función frame(t) compartida, un solo campo líquido y una sola cámara.
+5. Prueba corta de dirección (3 a 5 s, baja resolución, 30 fps) y esperar aprobación antes del render completo.
+6. Preview, hoja de contactos y chequeo cuadro por cuadro, con una ronda de arreglos.
+7. Finales: 9:16 y 1:1 (re-layout real), master 60 fps y H.264 30 fps, más stems de voz, música y SFX.
+</pre>
+
+<h2>Assets de apoyo (carpeta ./assets)</h2>
+<div class="grid"><figure><img src="assets/00_logo_maison_rose_silueta.jpg" loading="lazy"><figcaption>00_logo_maison_rose_silueta</figcaption></figure><figure><img src="assets/01_galleta_chispas_nueces.jpg" loading="lazy"><figcaption>01_galleta_chispas_nueces</figcaption></figure><figure><img src="assets/02_galleta_chocolate_partida.jpg" loading="lazy"><figcaption>02_galleta_chocolate_partida</figcaption></figure><figure><img src="assets/03_pastel_trianon_frutos_rojos.jpg" loading="lazy"><figcaption>03_pastel_trianon_frutos_rojos</figcaption></figure><figure><img src="assets/04_mille_feuille_corte.jpg" loading="lazy"><figcaption>04_mille_feuille_corte</figcaption></figure><figure><img src="assets/05_flan_parisino.jpg" loading="lazy"><figcaption>05_flan_parisino</figcaption></figure><figure><img src="assets/06_pain_suisse_hojaldre.jpg" loading="lazy"><figcaption>06_pain_suisse_hojaldre</figcaption></figure><figure><img src="assets/07_berlinesas_rellenas.jpg" loading="lazy"><figcaption>07_berlinesas_rellenas</figcaption></figure><figure><img src="assets/08_conchas_galleta_chispas.jpg" loading="lazy"><figcaption>08_conchas_galleta_chispas</figcaption></figure><figure><img src="assets/09_charola_hojaldres_fruta.jpg" loading="lazy"><figcaption>09_charola_hojaldres_fruta</figcaption></figure><figure><img src="assets/10_galletas_apiladas_catalogo.jpg" loading="lazy"><figcaption>10_galletas_apiladas_catalogo</figcaption></figure></div>
+<script>
+document.getElementById('cp').addEventListener('click', function(){
+  var t = document.getElementById('prompt').innerText, st = document.getElementById('st');
+  function ok(){ st.textContent = 'Copiado'; setTimeout(function(){ st.textContent=''; }, 2000); }
+  function fb(){
+    try {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('prompt'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      document.execCommand('copy'); ok();
+    } catch(e){ st.textContent = 'Selecciona el texto y copia'; }
+  }
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(ok, fb); else fb();
+  } catch(e){ fb(); }
+});
+</script>
+</body>
+</html>
