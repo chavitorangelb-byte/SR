@@ -1,0 +1,313 @@
+{
+ "fps": 60,
+ "bpm": 120,
+ "frames": 1080,
+ "end": 960,
+ "ev": {
+  "golpe": 0,
+  "corte": 24,
+  "daD": [
+   34,
+   92
+  ],
+  "daA": [
+   48,
+   100
+  ],
+  "saborSale": 112,
+  "aCirculo": [
+   120,
+   146
+  ],
+  "logoAbre": [
+   140,
+   168
+  ],
+  "aRosetas": [
+   166,
+   192
+  ],
+  "revela02": [
+   184,
+   212
+  ],
+  "celularForma": [
+   196,
+   222
+  ],
+  "iso": [
+   206,
+   246
+  ],
+  "tarjeta": [
+   240,
+   270,
+   300
+  ],
+  "aParallax": [
+   336,
+   380
+  ],
+  "liston06": [
+   372,
+   402
+  ],
+  "liston02": [
+   408,
+   436
+  ],
+  "aPagina": [
+   474,
+   528
+  ],
+  "chips": [
+   606,
+   612,
+   618
+  ],
+  "lineaChips": [
+   612,
+   652
+  ],
+  "chipPostres": 640,
+  "muro": [
+   648,
+   700
+  ],
+  "boton": [
+   720,
+   752
+  ],
+  "subrayado": [
+   740,
+   762
+  ],
+  "pulsos": [
+   750,
+   780,
+   810
+  ],
+  "toque": 780,
+  "aCierre": [
+   836,
+   884
+  ],
+  "logoCierre": [
+   872,
+   900
+  ],
+  "endCorte": 960,
+  "endTextos": [
+   966,
+   974,
+   990,
+   1006,
+   1016
+  ],
+  "endSubrayado": [
+   992,
+   1014
+  ]
+ },
+ "voz": [
+  {
+   "id": "L1",
+   "texto": "Sabor inigualable en cada pastel.",
+   "f": 30,
+   "termina_f": 130,
+   "palabras": {
+    "Sabor": 30,
+    "inigualable": 54,
+    "pastel": 100
+   }
+  },
+  {
+   "id": "L2",
+   "texto": "Pasteles personalizados, a tu gusto.",
+   "f": 180,
+   "termina_f": 280,
+   "palabras": {
+    "Pasteles": 180,
+    "personalizados": 214,
+    "a": 282,
+    "gusto": 300
+   }
+  },
+  {
+   "id": "L3",
+   "texto": "Diseños únicos para tu celebración.",
+   "f": 360,
+   "termina_f": 460,
+   "palabras": {
+    "Diseños": 360,
+    "únicos": 392,
+    "celebración": 438
+   }
+  },
+  {
+   "id": "L4",
+   "texto": "Imagina todo esto en tu propia página.",
+   "f": 492,
+   "termina_f": 592,
+   "palabras": {
+    "Imagina": 492,
+    "propia": 576,
+    "página": 596
+   }
+  },
+  {
+   "id": "L5",
+   "texto": "Y postres para cada antojo.",
+   "f": 624,
+   "termina_f": 724,
+   "palabras": {
+    "postres": 634,
+    "cada": 668,
+    "antojo": 684
+   }
+  },
+  {
+   "id": "L6",
+   "texto": "Pide por WhatsApp.",
+   "f": 744,
+   "termina_f": 844,
+   "palabras": {
+    "Pide": 744,
+    "WhatsApp": 774
+   }
+  },
+  {
+   "id": "L7",
+   "texto": "DeliciArte. Pastelería.",
+   "f": 864,
+   "termina_f": 964,
+   "palabras": {
+    "DeliciArte": 864,
+    "Pastelería": 912
+   }
+  },
+  {
+   "id": "L8",
+   "texto": "Tu página, desde mil pesos.",
+   "f": 978,
+   "termina_f": 1078,
+   "palabras": {
+    "página": 984,
+    "mil": 1030
+   }
+  }
+ ],
+ "kinetic": [
+  {
+   "id": "sabor",
+   "texto": "SABOR",
+   "estilo": "sans",
+   "voz": [
+    "L1",
+    "Sabor"
+   ],
+   "sale": 112,
+   "f": 30
+  },
+  {
+   "id": "inigualable",
+   "texto": "inigualable",
+   "estilo": "script",
+   "voz": [
+    "L1",
+    "inigualable"
+   ],
+   "sale": 116,
+   "f": 54
+  },
+  {
+   "id": "gusto",
+   "texto": "A TU GUSTO",
+   "estilo": "sans",
+   "voz": [
+    "L2",
+    "a"
+   ],
+   "sale": 352,
+   "f": 282
+  },
+  {
+   "id": "disenos",
+   "texto": "DISEÑOS ÚNICOS",
+   "estilo": "sans",
+   "voz": [
+    "L3",
+    "Diseños"
+   ],
+   "sale": 424,
+   "f": 360
+  },
+  {
+   "id": "celebracion",
+   "texto": "tu celebración",
+   "estilo": "script",
+   "voz": [
+    "L3",
+    "celebración"
+   ],
+   "sale": 478,
+   "f": 438
+  },
+  {
+   "id": "propia",
+   "texto": "TU PROPIA",
+   "estilo": "sans",
+   "voz": [
+    "L4",
+    "propia"
+   ],
+   "sale": 598,
+   "f": 576
+  },
+  {
+   "id": "paginaK",
+   "texto": "PÁGINA",
+   "estilo": "sans",
+   "voz": [
+    "L4",
+    "página"
+   ],
+   "sale": 598,
+   "f": 596
+  },
+  {
+   "id": "antojo",
+   "texto": "CADA ANTOJO",
+   "estilo": "sans",
+   "voz": [
+    "L5",
+    "cada"
+   ],
+   "sale": 708,
+   "f": 668
+  },
+  {
+   "id": "marca",
+   "texto": "DeliciArte",
+   "estilo": "marca",
+   "voz": [
+    "L7",
+    "DeliciArte"
+   ],
+   "sale": 958,
+   "f": 864
+  },
+  {
+   "id": "pasteleria",
+   "texto": "PASTELERÍA",
+   "estilo": "caps",
+   "voz": [
+    "L7",
+    "Pastelería"
+   ],
+   "sale": 958,
+   "f": 912
+  }
+ ],
+ "voz_real": false
+}
