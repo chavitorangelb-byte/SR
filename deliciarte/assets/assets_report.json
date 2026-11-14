@@ -1,0 +1,224 @@
+[
+  {
+    "archivo": "00_logo_deliciarte.jpg",
+    "preparado": "00_logo_deliciarte.png",
+    "original_px": [
+      800,
+      800
+    ],
+    "preparado_px": [
+      776,
+      776
+    ],
+    "nitidez_var": 239.6,
+    "nitidez": "alta",
+    "max_pantalla_px": 700,
+    "recorte": null,
+    "desenfoque": [],
+    "fondo_desenfocado": null,
+    "mascara_circulo": [
+      405,
+      407,
+      388
+    ],
+    "nota": "Círculo recortado casi al borde (radio real ≈410 px, sale de la imagen por los 4 lados) y esquinas grises. Máscara circular de radio 388 px centrada en (405, 407): conserva el anillo crema completo (llega a 335 px). PNG con transparencia."
+  },
+  {
+    "archivo": "01_pastel_personalizado_a.jpg",
+    "preparado": "01_pastel_personalizado_a.jpg",
+    "original_px": [
+      900,
+      954
+    ],
+    "preparado_px": [
+      900,
+      933
+    ],
+    "nitidez_var": 115.3,
+    "nitidez": "media",
+    "max_pantalla_px": 760,
+    "recorte": [
+      0,
+      21,
+      900,
+      954
+    ],
+    "desenfoque": [],
+    "fondo_desenfocado": {
+      "ymax": 340,
+      "smin": 70,
+      "vmin": 60,
+      "semilla": [
+        450,
+        900
+      ],
+      "ytop": 186,
+      "xmin": 0,
+      "sigma": 22,
+      "neon_hasta": 215
+    },
+    "mascara_circulo": null,
+    "nota": "Franja blanca de 20 px arriba (captura). Detrás del pastel se lee parcial su letrero de neón (\"…liciArte\" / \"…TELERIA FI…\"): se desenfoca el fondo (máscara que sigue la silueta del pastel), queda como bokeh. El personaje se muestra como diseño del local, sin nombrarlo."
+  },
+  {
+    "archivo": "02_pastel_rosetas_rosa.jpg",
+    "preparado": "02_pastel_rosetas_rosa.jpg",
+    "original_px": [
+      900,
+      1092
+    ],
+    "preparado_px": [
+      888,
+      1092
+    ],
+    "nitidez_var": 248.6,
+    "nitidez": "alta",
+    "max_pantalla_px": 880,
+    "recorte": [
+      0,
+      0,
+      888,
+      1092
+    ],
+    "desenfoque": [],
+    "fondo_desenfocado": {
+      "ymax": 520,
+      "smin": 28,
+      "vmin": 90,
+      "semilla": [
+        300,
+        900
+      ],
+      "ytop": 0,
+      "xmin": 430,
+      "sigma": 22
+    },
+    "mascara_circulo": null,
+    "nota": "Neón parcial \"Arte / FINA\" a la derecha del piso superior: se desenfoca el fondo siguiendo la silueta del pastel. Barra de interfaz de 12 px en el borde derecho: se recorta."
+  },
+  {
+    "archivo": "03_pastel_cumpleanos_infantil.jpg",
+    "preparado": "03_pastel_cumpleanos_infantil.jpg",
+    "original_px": [
+      900,
+      1073
+    ],
+    "preparado_px": [
+      885,
+      1073
+    ],
+    "nitidez_var": 330.9,
+    "nitidez": "alta",
+    "max_pantalla_px": 880,
+    "recorte": [
+      0,
+      0,
+      885,
+      1073
+    ],
+    "desenfoque": [
+      [
+        128,
+        220,
+        332,
+        304,
+        10
+      ],
+      [
+        552,
+        200,
+        750,
+        310,
+        10
+      ]
+    ],
+    "fondo_desenfocado": null,
+    "mascara_circulo": null,
+    "nota": "\"Perlita\" en el topper de concha (nombre de personaje o de persona) y el letrero \"La más cool de Bikini Bottom\" (nombre de un lugar de una marca): se desenfocan. \"Feliz Cumpleaños\" y \"Grande como sus sueños\" se quedan. Barra de interfaz en el borde derecho: se recorta."
+  },
+  {
+    "archivo": "04_rollos_canela_horno.jpg",
+    "preparado": "04_rollos_canela_horno.jpg",
+    "original_px": [
+      900,
+      1193
+    ],
+    "preparado_px": [
+      900,
+      1193
+    ],
+    "nitidez_var": 10.2,
+    "nitidez": "baja",
+    "max_pantalla_px": 480,
+    "recorte": null,
+    "desenfoque": [],
+    "fondo_desenfocado": null,
+    "mascara_circulo": null,
+    "nota": "Sin texto ni personas. Es la foto más suave (cuadro de video): usarla chica. Ojo: son rollos crudos en molde, todavía sin hornear."
+  },
+  {
+    "archivo": "05_pastel_corazon_verde_rosa.jpg",
+    "preparado": "05_pastel_corazon_verde_rosa.jpg",
+    "original_px": [
+      900,
+      1022
+    ],
+    "preparado_px": [
+      732,
+      1022
+    ],
+    "nitidez_var": 38.1,
+    "nitidez": "baja",
+    "max_pantalla_px": 600,
+    "recorte": [
+      0,
+      0,
+      732,
+      1022
+    ],
+    "desenfoque": [],
+    "fondo_desenfocado": null,
+    "mascara_circulo": null,
+    "nota": "Texto parcial \"Wit… / …ev\" en el borde derecho del corazón (x ≥ 745): se recorta a 732 px de ancho. Foto algo suave."
+  },
+  {
+    "archivo": "06_pastel_crema_dorado.jpg",
+    "preparado": "06_pastel_crema_dorado.jpg",
+    "original_px": [
+      900,
+      1173
+    ],
+    "preparado_px": [
+      900,
+      1173
+    ],
+    "nitidez_var": 152.9,
+    "nitidez": "media",
+    "max_pantalla_px": 820,
+    "recorte": null,
+    "desenfoque": [],
+    "fondo_desenfocado": null,
+    "mascara_circulo": null,
+    "nota": "\"Happy Birthday\" escrito con betún: es parte del diseño del pastel, no un nombre ni una marca. Se queda tal cual."
+  },
+  {
+    "archivo": "07_pastelitos_cuchareables.jpg",
+    "preparado": "07_pastelitos_cuchareables.jpg",
+    "original_px": [
+      900,
+      930
+    ],
+    "preparado_px": [
+      900,
+      930
+    ],
+    "nitidez_var": 98.2,
+    "nitidez": "media",
+    "max_pantalla_px": 700,
+    "recorte": null,
+    "desenfoque": [],
+    "fondo_desenfocado": null,
+    "mascara_circulo": null,
+    "nota": "La etiqueta del vaso dice \"Chocolate\" con su propio monograma DA: es de ellos, no de un tercero. Se queda."
+  }
+]
