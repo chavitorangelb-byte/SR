@@ -1,8 +1,8 @@
 {
  "fps": 60,
  "bpm": 120,
- "frames": 1080,
- "end": 960,
+ "frames": 1140,
+ "end": 990,
  "ev": {
   "golpe": 0,
   "corte": 24,
@@ -57,56 +57,55 @@
    436
   ],
   "aPagina": [
-   474,
-   528
+   490,
+   544
   ],
   "chips": [
-   606,
-   612,
-   618
+   656,
+   662,
+   668
   ],
   "lineaChips": [
-   612,
-   652
+   662,
+   702
   ],
-  "chipPostres": 640,
+  "chipPostres": 680,
   "muro": [
-   648,
-   700
+   696,
+   748
   ],
   "boton": [
-   720,
-   752
+   776,
+   808
   ],
   "subrayado": [
-   740,
-   762
+   794,
+   814
   ],
   "pulsos": [
-   750,
-   780,
-   810
+   810,
+   840
   ],
-  "toque": 780,
+  "toque": 840,
   "aCierre": [
-   836,
-   884
-  ],
-  "logoCierre": [
-   872,
+   852,
    900
   ],
-  "endCorte": 960,
+  "logoCierre": [
+   888,
+   916
+  ],
+  "endCorte": 990,
   "endTextos": [
-   966,
-   974,
-   990,
    1006,
-   1016
+   1014,
+   1030,
+   1044,
+   1054
   ],
   "endSubrayado": [
-   992,
-   1014
+   1030,
+   1052
   ]
  },
  "voz": [
@@ -114,86 +113,101 @@
    "id": "L1",
    "texto": "Sabor inigualable en cada pastel.",
    "f": 30,
-   "termina_f": 130,
+   "termina_f": 188,
    "palabras": {
     "Sabor": 30,
-    "inigualable": 54,
-    "pastel": 100
+    "inigualable": 64,
+    "en": 115,
+    "cada": 137,
+    "pastel": 157
    }
   },
   {
    "id": "L2",
    "texto": "Pasteles personalizados, a tu gusto.",
-   "f": 180,
-   "termina_f": 280,
+   "f": 204,
+   "termina_f": 337,
    "palabras": {
-    "Pasteles": 180,
-    "personalizados": 214,
-    "a": 282,
-    "gusto": 300
+    "Pasteles": 204,
+    "personalizados": 231,
+    "a": 297,
+    "tu": 306,
+    "gusto": 314
    }
   },
   {
    "id": "L3",
    "texto": "Diseños únicos para tu celebración.",
-   "f": 360,
-   "termina_f": 460,
+   "f": 354,
+   "termina_f": 488,
    "palabras": {
-    "Diseños": 360,
-    "únicos": 392,
-    "celebración": 438
+    "Diseños": 354,
+    "únicos": 391,
+    "para": 408,
+    "tu": 438,
+    "celebración": 444
    }
   },
   {
    "id": "L4",
    "texto": "Imagina todo esto en tu propia página.",
-   "f": 492,
-   "termina_f": 592,
+   "f": 502,
+   "termina_f": 653,
    "palabras": {
-    "Imagina": 492,
-    "propia": 576,
-    "página": 596
+    "Imagina": 502,
+    "todo": 543,
+    "esto": 554,
+    "en": 576,
+    "tu": 589,
+    "propia": 601,
+    "página": 626
    }
   },
   {
    "id": "L5",
    "texto": "Y postres para cada antojo.",
-   "f": 624,
-   "termina_f": 724,
+   "f": 667,
+   "termina_f": 782,
    "palabras": {
-    "postres": 634,
-    "cada": 668,
-    "antojo": 684
+    "Y": 667,
+    "postres": 680,
+    "para": 698,
+    "cada": 733,
+    "antojo": 761
    }
   },
   {
    "id": "L6",
    "texto": "Pide por WhatsApp.",
-   "f": 744,
-   "termina_f": 844,
+   "f": 796,
+   "termina_f": 848,
    "palabras": {
-    "Pide": 744,
-    "WhatsApp": 774
+    "Pide": 796,
+    "por": 816,
+    "WhatsApp": 830
    }
   },
   {
    "id": "L7",
    "texto": "DeliciArte. Pastelería.",
-   "f": 864,
-   "termina_f": 964,
+   "f": 862,
+   "termina_f": 975,
    "palabras": {
-    "DeliciArte": 864,
-    "Pastelería": 912
+    "DeliciArte": 862,
+    "Pastelería": 934
    }
   },
   {
    "id": "L8",
    "texto": "Tu página, desde mil pesos.",
-   "f": 978,
-   "termina_f": 1078,
+   "f": 990,
+   "termina_f": 1110,
    "palabras": {
-    "página": 984,
-    "mil": 1030
+    "Tu": 990,
+    "página": 1000,
+    "desde": 1051,
+    "mil": 1070,
+    "pesos": 1079
    }
   }
  ],
@@ -218,7 +232,7 @@
     "inigualable"
    ],
    "sale": 116,
-   "f": 54
+   "f": 64
   },
   {
    "id": "gusto",
@@ -228,8 +242,8 @@
     "L2",
     "a"
    ],
-   "sale": 352,
-   "f": 282
+   "sale": 338,
+   "f": 297
   },
   {
    "id": "disenos",
@@ -239,8 +253,8 @@
     "L3",
     "Diseños"
    ],
-   "sale": 424,
-   "f": 360
+   "sale": 428,
+   "f": 354
   },
   {
    "id": "celebracion",
@@ -250,8 +264,8 @@
     "L3",
     "celebración"
    ],
-   "sale": 478,
-   "f": 438
+   "sale": 490,
+   "f": 444
   },
   {
    "id": "propia",
@@ -261,8 +275,8 @@
     "L4",
     "propia"
    ],
-   "sale": 598,
-   "f": 576
+   "sale": 650,
+   "f": 601
   },
   {
    "id": "paginaK",
@@ -272,8 +286,8 @@
     "L4",
     "página"
    ],
-   "sale": 598,
-   "f": 596
+   "sale": 650,
+   "f": 626
   },
   {
    "id": "antojo",
@@ -283,8 +297,8 @@
     "L5",
     "cada"
    ],
-   "sale": 708,
-   "f": 668
+   "sale": 772,
+   "f": 733
   },
   {
    "id": "marca",
@@ -294,8 +308,8 @@
     "L7",
     "DeliciArte"
    ],
-   "sale": 958,
-   "f": 864
+   "sale": 980,
+   "f": 862
   },
   {
    "id": "pasteleria",
@@ -305,9 +319,9 @@
     "L7",
     "Pastelería"
    ],
-   "sale": 958,
-   "f": 912
+   "sale": 980,
+   "f": 934
   }
  ],
- "voz_real": false
+ "voz_real": true
 }

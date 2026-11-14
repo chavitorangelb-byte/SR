@@ -25,18 +25,21 @@ from scipy import signal
 ROOT = Path(__file__).resolve().parent.parent
 SR = 48000
 FPS = 60
-TOTAL_F = 1080
+TOTAL_F = 1140
 
 LINEAS = [
     ('L1', 30, 'Sabor inigualable en cada pastel.'),
-    ('L2', 180, 'Pasteles personalizados, a tu gusto.'),
-    ('L3', 360, 'Diseños únicos para tu celebración.'),
-    ('L4', 492, 'Imagina todo esto en tu propia página.'),
-    ('L5', 624, 'Y postres para cada antojo.'),
-    ('L6', 744, 'Pide por WhatsApp.'),
-    ('L7', 864, 'DeliciArte. Pastelería.'),
-    ('L8', 978, 'Tu página, desde mil pesos.'),
+    ('L2', 204, 'Pasteles personalizados, a tu gusto.'),
+    ('L3', 354, 'Diseños únicos para tu celebración.'),
+    ('L4', 502, 'Imagina todo esto en tu propia página.'),
+    ('L5', 667, 'Y postres para cada antojo.'),
+    ('L6', 796, 'Pide por WhatsApp.'),
+    ('L7', 862, 'DeliciArte. Pastelería.'),
+    ('L8', 990, 'Tu página, desde mil pesos.'),
 ]
+# Ataques medidos a mano en la envolvente de la toma (caídas de 35 dB o más antes de la palabra), en cuadros desde el
+# inicio de su frase. Mandan sobre la estimación por sílabas en las palabras que mueven el kinetic.
+AJUSTES = {'L1.inigualable': 34, 'L3.celebración': 90, 'L5.cada': 66, 'L5.antojo': 94, 'L7.Pastelería': 72, 'L8.mil': 80, 'L8.pesos': 89}
 # sílabas de palabras que el conteo automático no resuelve bien
 SILABAS = {'whatsapp': 2, 'deliciarte': 5, 'pastelería': 5, 'únicos': 3, 'celebración': 4, 'personalizados': 6, 'imagina': 4, 'propia': 2, 'página': 3, 'antojo': 3}
 
@@ -115,8 +118,28 @@ def onsets(x, h):
     return np.concatenate([[0], flux])
 
 
-def palabras_de(texto, a, b, flux, h):
-    """Reparte las palabras de una frase entre a y b (s) por sílabas y ajusta cada inicio al ataque más cercano."""
+def candidatos(x, h, a, b):
+    """Inicios de bloques de energía dentro de la frase: el punto donde la envolvente sale de una caída de ≥ 6 dB."""
+    db, _ = envolvente(x, h / SR)
+    k = np.ones(4) / 4
+    db = np.convolve(db, k, 'same')
+    i0, i1 = int(a * SR / h), int(b * SR / h)
+    out = []
+    w = int(0.08 * SR / h)
+    for i in range(max(i0 + 2, 1), min(i1 - 2, len(db) - 1)):
+        if db[i] <= db[i - 1] and db[i] <= db[i + 1]:
+            izq, der = db[max(0, i - w):i].max(), db[i + 1:i + 1 + w].max()
+            prof = min(izq, der) - db[i]
+            if prof >= 6:
+                j = i
+                while j < i + w and db[j] < db[i] + prof * 0.5:
+                    j += 1
+                out.append(j * h / SR)
+    return out
+
+
+def palabras_de(texto, a, b, flux, h, x=None):
+    """Reparte las palabras de una frase entre a y b (s) por sílabas y ajusta cada inicio al bloque de energía más cercano."""
     ws = texto.split()
     syl = np.array([silabas(w) for w in ws], dtype=float)
     pausa = np.array([0.12 if re.search(r'[,.]$', w) else 0.0 for w in ws])  # pausa breve tras coma o punto interno
@@ -127,14 +150,19 @@ def palabras_de(texto, a, b, flux, h):
     for i, s in enumerate(syl):
         est.append(t)
         t += dur * s / syl.sum() + pausa[i]
+    cand = candidatos(x, h, a, b) if x is not None else []
     out = []
     for i, (w, t0) in enumerate(zip(ws, est)):
         if i == 0:
             out.append((w, a))
             continue
-        lo, hi = int((t0 - 0.08) * SR / h), int((t0 + 0.08) * SR / h)
-        seg = flux[max(0, lo):max(lo + 1, hi)]
-        tt = (max(0, lo) + int(np.argmax(seg))) * h / SR if len(seg) else t0
+        near = [c for c in cand if abs(c - t0) <= 0.16 and c > out[-1][1] + 0.06]
+        if near:
+            tt = min(near, key=lambda c: abs(c - t0))
+        else:
+            lo, hi = int((t0 - 0.08) * SR / h), int((t0 + 0.08) * SR / h)
+            seg = flux[max(0, lo):max(lo + 1, hi)]
+            tt = (max(0, lo) + int(np.argmax(seg))) * h / SR if len(seg) else t0
         tt = max(tt, out[-1][1] + 0.06)
         out.append((w, tt))
     return out
@@ -196,11 +224,13 @@ def main():
         seg[-fo:] *= np.linspace(1, 0, fo) ** 2
         at = int(round((start - pre) * SR))
         stem[at:at + len(seg)] += seg[: len(stem) - at]
-        pals = palabras_de(texto, a, b, flux, h)
+        pals = palabras_de(texto, a, b, flux, h, x)
         pf = {}
         for w, tw in pals:
             key = unicodedata.normalize('NFC', w.strip('.,'))
             fr = int(round(f + (tw - a) * FPS))
+            if f'{lid}.{key}' in AJUSTES:
+                fr = f + AJUSTES[f'{lid}.{key}']
             pf[key] = fr
             PAL[f'{lid}.{key}'] = fr
         termina = int(round(f + dur * FPS))

@@ -3,7 +3,7 @@
 // que se interpola entre formas (nunca fundidos de opacidad). Una sola cámara para el plano continuo.
 // t en cuadros de 60 fps (puede ser fraccionario). ?fmt=916 (1080×1920) o ?fmt=11 (1080×1080).
 import * as THREE from 'three';
-import { FPS, BEAT, END, VOZ, EV, KINETIC } from '/brief/timeline.mjs';
+import { FPS, BEAT, END, FRAMES as FRAMES_T, VOZ, EV, KINETIC } from '/brief/timeline.mjs';
 
 const Q = new URLSearchParams(location.search);
 const FMT = Q.get('fmt') || '916';
@@ -18,13 +18,13 @@ const LAYOUTS = {
     par: { p06: { x: 420, y: 1010, z: 0.8, w: 560, h: 730 }, p02: { x: 780, y: 720, z: -3, w: 400, h: 600 } },
     wall: { w07: { x: 250, y: 1250, z: 1.6, w: 380, h: 392 }, w04: { x: 840, y: 1330, z: 2.2, w: 300, h: 398 } },
     chips: { y: 820, dx: [-300, 0, 300], w: 260, h: 92, z: 2.4, px: 30 },
-    btn: { x: 540, y: 1200, w: 880, h: 168, z: 3.2, px: 48 }, under: { y: 1322, w: 700 },
-    cierre: { x: 540, y: 820, d: 560 },
+    btn: { x: 540, y: 1200, w: 760, h: 150, z: 3.2, px: 42 }, under: { y: 1308, w: 620 },
+    cierre: { x: 540, y: 1000, d: 560 },
     k: {
       sabor: { x: 540, y: 520, px: 132 }, inig: { x: 540, y: 1370, px: 190 }, gusto: { x: 540, y: 300, px: 92 },
       disenos: { x: 540, y: 330, px: 88 }, celeb: { x: 540, y: 1500, px: 150 },
       propia: { x: 540, y: 300, px: 80 }, pagina: { x: 540, y: 410, px: 120 }, antojo: { x: 540, y: 330, px: 92 },
-      marca: { x: 540, y: 1225, px: 104 }, past: { x: 540, y: 1330, px: 40 },
+      marca: { x: 540, y: 300, px: 104 }, past: { x: 540, y: 408, px: 40 },
     },
     end: { logo: { x: 540, y: 430, d: 250 }, l1: { y: 760, px: 44 }, l2: { y: 905, px: 170 }, l3: { y: 1075, px: 44 }, l4: { y: 1215, px: 36 }, l5: { y: 1325, px: 34 }, l6: { y: 1500, px: 24 }, under: { y: 1000, w: 430 } },
   },
@@ -37,12 +37,12 @@ const LAYOUTS = {
     wall: { w07: { x: 230, y: 760, z: 1.6, w: 320, h: 330 }, w04: { x: 300, y: 330, z: 2.2, w: 250, h: 332 } },
     chips: { y: 420, dx: [-230, 0, 230], w: 200, h: 76, z: 2.4, px: 24 },
     btn: { x: 540, y: 760, w: 640, h: 140, z: 3.2, px: 36 }, under: { y: 862, w: 560 },
-    cierre: { x: 540, y: 460, d: 440 },
+    cierre: { x: 720, y: 560, d: 420 },
     k: {
       sabor: { x: 540, y: 150, px: 100 }, inig: { x: 540, y: 960, px: 140 }, gusto: { x: 540, y: 1010, px: 72 },
       disenos: { x: 540, y: 100, px: 70 }, celeb: { x: 540, y: 990, px: 120 },
       propia: { x: 290, y: 480, px: 64 }, pagina: { x: 290, y: 590, px: 92 }, antojo: { x: 290, y: 545, px: 56 },
-      marca: { x: 540, y: 800, px: 84 }, past: { x: 540, y: 890, px: 34 },
+      marca: { x: 290, y: 500, px: 76 }, past: { x: 290, y: 590, px: 30 },
     },
     end: { logo: { x: 540, y: 175, d: 190 }, l1: { y: 355, px: 36 }, l2: { y: 470, px: 130 }, l3: { y: 590, px: 36 }, l4: { y: 700, px: 30 }, l5: { y: 790, px: 28 }, l6: { y: 1010, px: 21 }, under: { y: 552, w: 330 } },
   },
@@ -1275,7 +1275,7 @@ function campo(t, st) {
 
 function logoEnd(t) {
   const C = LAY.cierre, E = LAY.end.logo;
-  const u = eInOutCubic(seg(t, EV.endCorte, EV.endCorte + 26));
+  const u = eInOutCubic(seg(t, EV.endCorte, EV.endCorte + 20));
   return { x: lerp(C.x, E.x, u), y: lerp(C.y, E.y, u), d: lerp(C.d, E.d, u) };
 }
 
@@ -1283,9 +1283,11 @@ function logoEnd(t) {
 function estado(t) {
   const st = { cam: { x: 0, y: 0, z: DIST }, glow: 0, logo: null, phone: null, form: 0, blobs: null, scr: null, cards: [], par: {}, wall: {}, chips: [], btn: null };
   // cámara: una sola, física
-  st.cam.z = DIST * keys(t, [[0, 1], [30, 1], [200, 0.94], [336, 0.94], [400, 0.9], [474, 0.9], [528, 1.0], [720, 1.0], [762, 0.86], [836, 0.86], [884, 1.0], [960, 1.0], [1079, 0.97]]);
-  st.cam.x = keys(t, [[0, 0], [360, 0], [372, -0.5], [470, 0.55], [500, 0]], eInOutSine);
-  st.cam.y = keys(t, [[0, 0], [720, 0], [762, (DH / 2 - LAY.btn.y) / 100 * 0.6], [836, (DH / 2 - LAY.btn.y) / 100 * 0.6], [884, 0]]);
+  const E = EV;
+  st.cam.z = DIST * keys(t, [[0, 1], [30, 1], [200, 0.94], [E.aParallax[0], 0.94], [400, 0.9], [E.aPagina[0], 0.9], [E.aPagina[1], 1.0], [E.boton[0], 1.0], [E.boton[0] + 42, 0.86], [E.aCierre[0], 0.86], [E.aCierre[1], 1.0], [END, 1.0], [FRAMES_T - 1, 0.97]]);
+  st.cam.x = keys(t, [[0, 0], [360, 0], [372, -0.5], [E.aPagina[0] - 4, 0.55], [E.aPagina[0] + 26, 0]], eInOutSine);
+  const by = (DH / 2 - LAY.btn.y) / 100 * 0.6;
+  st.cam.y = keys(t, [[0, 0], [E.boton[0], 0], [E.boton[0] + 42, by], [E.aCierre[0], by], [E.aCierre[1], 0]]);
   st.glow = 0.4 + 0.6 * eOutCubic(seg(t, 0, 40));
   setCam(st.cam); // las proyecciones de este t (contornos, mosaicos) usan la cámara de este t
 

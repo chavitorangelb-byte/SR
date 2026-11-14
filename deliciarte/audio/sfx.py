@@ -258,7 +258,7 @@ def cues():
     for i in range(3):
         add(EV['aParallax'][0] + 10 + i * 6, 'paso')
     add(EV['aParallax'][0] + 4 + 30, 'llega'); add(EV['aParallax'][0] + 14 + 30, 'llega')
-    add(EV['liston06'][0], 'liston'); add(EV['liston02'][0], 'liston'); add(372, 'aire'); add(430, 'aire')
+    add(EV['liston06'][0], 'liston'); add(EV['liston02'][0], 'liston'); add(EV['aParallax'][0] + 36, 'aire'); add(EV['aParallax'][0] + 94, 'aire')
     add(kf('disenos') - 14, 'tipo_entra'); add(kf('disenos'), 'glifo'); add(KIN['disenos']['sale'], 'tipo_sale')
     add(kf('celebracion') - 12, 'trazo_fino', 28 / FPS); add(KIN['celebracion']['sale'], 'tipo_sale')
     # página

@@ -1,0 +1,177 @@
+{
+ "toma": "toma1_hope_eleven_v4.mp3",
+ "lineas": [
+  {
+   "id": "L1",
+   "f": 30,
+   "termina_f": 188,
+   "dur": 2.64,
+   "palabras": {
+    "Sabor": 30,
+    "inigualable": 64,
+    "en": 115,
+    "cada": 137,
+    "pastel": 157
+   },
+   "toma": {
+    "ini": 0.07,
+    "fin": 2.71
+   }
+  },
+  {
+   "id": "L2",
+   "f": 204,
+   "termina_f": 337,
+   "dur": 2.215,
+   "palabras": {
+    "Pasteles": 204,
+    "personalizados": 231,
+    "a": 297,
+    "tu": 306,
+    "gusto": 314
+   },
+   "toma": {
+    "ini": 3.23,
+    "fin": 5.445
+   }
+  },
+  {
+   "id": "L3",
+   "f": 354,
+   "termina_f": 488,
+   "dur": 2.235,
+   "palabras": {
+    "Diseños": 354,
+    "únicos": 391,
+    "para": 408,
+    "tu": 438,
+    "celebración": 444
+   },
+   "toma": {
+    "ini": 5.945,
+    "fin": 8.18
+   }
+  },
+  {
+   "id": "L4",
+   "f": 502,
+   "termina_f": 653,
+   "dur": 2.515,
+   "palabras": {
+    "Imagina": 502,
+    "todo": 543,
+    "esto": 554,
+    "en": 576,
+    "tu": 589,
+    "propia": 601,
+    "página": 626
+   },
+   "toma": {
+    "ini": 8.7,
+    "fin": 11.215
+   }
+  },
+  {
+   "id": "L5",
+   "f": 667,
+   "termina_f": 782,
+   "dur": 1.92,
+   "palabras": {
+    "Y": 667,
+    "postres": 680,
+    "para": 698,
+    "cada": 733,
+    "antojo": 761
+   },
+   "toma": {
+    "ini": 11.675,
+    "fin": 13.595
+   }
+  },
+  {
+   "id": "L6",
+   "f": 796,
+   "termina_f": 848,
+   "dur": 0.865,
+   "palabras": {
+    "Pide": 796,
+    "por": 816,
+    "WhatsApp": 830
+   },
+   "toma": {
+    "ini": 14.155,
+    "fin": 15.02
+   }
+  },
+  {
+   "id": "L7",
+   "f": 862,
+   "termina_f": 975,
+   "dur": 1.88,
+   "palabras": {
+    "DeliciArte": 862,
+    "Pastelería": 934
+   },
+   "toma": {
+    "ini": 15.47,
+    "fin": 17.35
+   }
+  },
+  {
+   "id": "L8",
+   "f": 990,
+   "termina_f": 1110,
+   "dur": 1.995,
+   "palabras": {
+    "Tu": 990,
+    "página": 1000,
+    "desde": 1051,
+    "mil": 1070,
+    "pesos": 1079
+   },
+   "toma": {
+    "ini": 17.775,
+    "fin": 19.77
+   }
+  }
+ ],
+ "palabras": {
+  "L1.Sabor": 30,
+  "L1.inigualable": 64,
+  "L1.en": 115,
+  "L1.cada": 137,
+  "L1.pastel": 157,
+  "L2.Pasteles": 204,
+  "L2.personalizados": 231,
+  "L2.a": 297,
+  "L2.tu": 306,
+  "L2.gusto": 314,
+  "L3.Diseños": 354,
+  "L3.únicos": 391,
+  "L3.para": 408,
+  "L3.tu": 438,
+  "L3.celebración": 444,
+  "L4.Imagina": 502,
+  "L4.todo": 543,
+  "L4.esto": 554,
+  "L4.en": 576,
+  "L4.tu": 589,
+  "L4.propia": 601,
+  "L4.página": 626,
+  "L5.Y": 667,
+  "L5.postres": 680,
+  "L5.para": 698,
+  "L5.cada": 733,
+  "L5.antojo": 761,
+  "L6.Pide": 796,
+  "L6.por": 816,
+  "L6.WhatsApp": 830,
+  "L7.DeliciArte": 862,
+  "L7.Pastelería": 934,
+  "L8.Tu": 990,
+  "L8.página": 1000,
+  "L8.desde": 1051,
+  "L8.mil": 1070,
+  "L8.pesos": 1079
+ }
+}

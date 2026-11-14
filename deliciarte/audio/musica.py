@@ -34,9 +34,9 @@ N = int(DUR * SR)
 rng = np.random.default_rng(23)
 EV = TL['ev']
 T_LIFT = 3.0
-T_RESPIRO = 14.0
-T_GOLPE = TL['end'] / FPS  # 16.0
-KICK_ON = (4.0, 14.0)
+T_GOLPE = TL['end'] / FPS  # 16.5
+T_RESPIRO = T_GOLPE - 1.5
+KICK_ON = (4.0, T_RESPIRO)
 STAMPS = [f / FPS for f in EV['tarjeta']]
 PULSOS = [f / FPS for f in EV['pulsos']]
 
@@ -63,7 +63,7 @@ ACORDES = [
     (6, 0, 4, 'Db2', ['F3', 'Ab3', 'C4', 'F4']),         # D♭maj7
     (7, 0, 2, 'Bb1', ['Db4', 'F4', 'Ab4', 'C5']),        # B♭m9
     (7, 2, 2, 'Eb2', ['Db4', 'F4', 'G4', 'Bb4']),        # E♭9
-    (8, 0, 4, 'F2', ['Ab3', 'C4', 'Eb4', 'G4']),         # Fm9 (respiro)
+    (8, 0, 5, 'F2', ['Ab3', 'C4', 'Eb4', 'G4']),         # Fm9 (respiro)
     (9, 0, 4, 'Ab1', ['Ab3', 'C4', 'Eb4', 'Bb4']),       # A♭add9 (golpe grave y cola)
 ]
 
@@ -116,7 +116,10 @@ def piano():
             ev += [(T_GOLPE + 0.025 * i, DUR, n, 64) for i, n in enumerate(notes)]
             continue
         if bar == 8:
-            # respiro: dos notas que se quedan
+            # el compás 8 sigue con su pulsación hasta el respiro, donde quedan tres notas
+            for i in range(int((T_RESPIRO - t0) / (BEAT / 2))):
+                t = t0 + i * BEAT / 2
+                ev.append((t + rng.normal(0, 0.004), t + BEAT * 0.45, notes[[0, 2, 1, 3][i % 4]], 50 + rng.integers(-3, 4)))
             ev += [(T_RESPIRO, T_GOLPE + 0.2, m('Eb5'), 40), (T_RESPIRO + 0.5, T_GOLPE + 0.2, m('Bb4'), 34), (T_RESPIRO + 1.0, T_GOLPE + 0.2, m('C5'), 30)]
             continue
         lh = m(bass) + 12

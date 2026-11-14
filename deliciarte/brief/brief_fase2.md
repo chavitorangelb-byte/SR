@@ -53,3 +53,24 @@ Re-layout, no recorte: celular de 800 px de alto al centro, kinetic a los lados 
 - **Música:** original y hecha en código, a 120 BPM. Piano suave y celesta desde f0, pizzicato desde f120, cuerdas y bajo desde f240 y lift en f180, cuando aparece el celular. Respiro de f840 a f960 y golpe grave en f960.
 - **SFX:** al menos 70 cues amarrados a los eventos de `timeline.mjs`: trazo, corte, brotes, estampados, cristal, parallax, chips, clic y pulsos.
 - **Mezcla:** voz cerca de −16 LUFS; master a −14 LUFS y −1.25 dBTP. La música va al menos 12 dB debajo de cada palabra.
+
+
+## Fase 3 · Voz bloqueada (toma "Hope", eleven v4)
+
+Las frases reales duran más que las ventanas del prompt: suman 16.3 s de habla (por ejemplo, L1 dura 2.64 s y L4, 2.52 s). Para no acelerar la voz ni dejar pausas de menos de 0.2 s entre frases:
+
+- **La pieza dura 19 s: 16.5 s más 2.5 s de end card (1140 cuadros).** El golpe grave cae en f990, en tiempo de compás.
+- Las frases van seguidas, con pausas de 0.23 a 0.28 s. La última ("Tu página, desde mil pesos") entra justo con el corte a la end card.
+- Las secciones visuales se recorrieron para seguir a la voz: la página va de f490 a f655, los postres de f656 a f775, WhatsApp de f776 a f851 y el cierre de f852 a f989. El respiro musical va de 15.0 a 16.5 s.
+- **Cómo se ubicaron las palabras:** como no hay transcripción automática (los servidores de modelos están bloqueados), cada palabra se ubicó por sílabas dentro de su frase. Las que mueven el kinetic se midieron a mano sobre la envolvente de la toma, en las caídas de 35 dB o más antes de cada palabra.
+
+| # | Entra | Termina | Dura | Palabras (cuadro) |
+|---|---|---|---|---|
+| L1 | f30 · 0.50 s | f188 | 2.64 s | Sabor f30 · inigualable f64 · en f115 · cada f137 · pastel f157 |
+| L2 | f204 · 3.40 s | f337 | 2.21 s | Pasteles f204 · personalizados f231 · a f297 · tu f306 · gusto f314 |
+| L3 | f354 · 5.90 s | f488 | 2.23 s | Diseños f354 · únicos f391 · para f408 · tu f438 · celebración f444 |
+| L4 | f502 · 8.37 s | f653 | 2.52 s | Imagina f502 · todo f543 · esto f554 · en f576 · tu f589 · propia f601 · página f626 |
+| L5 | f667 · 11.12 s | f782 | 1.92 s | Y f667 · postres f680 · para f698 · cada f733 · antojo f761 |
+| L6 | f796 · 13.27 s | f848 | 0.86 s | Pide f796 · por f816 · WhatsApp f830 |
+| L7 | f862 · 14.37 s | f975 | 1.88 s | DeliciArte f862 · Pastelería f934 |
+| L8 | f990 · 16.50 s | f1110 | 2.00 s | Tu f990 · página f1000 · desde f1051 · mil f1070 · pesos f1079 |
