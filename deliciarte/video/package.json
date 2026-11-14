@@ -1,0 +1,6 @@
+{
+  "name": "deliciarte-video",
+  "private": true,
+  "type": "module",
+  "dependencies": { "three": "0.187.0", "@fontsource/jost": "5.2.5", "@fontsource/sacramento": "5.2.5" }
+}
