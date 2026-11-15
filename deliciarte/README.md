@@ -28,5 +28,6 @@ Requisitos de audio: `pip install scipy mido` y `apt-get install fluidsynth flui
 
 ## Estado
 - Fases 1, 2, 4 y 5: listas.
-- Música y SFX: listos (111 cues); la mezcla sin voz queda en −14 LUFS / −1.4 dBTP.
-- Fase 3: el guion está en `voz/guion_elevenlabs.md`; falta la toma de ElevenLabs.
+- Música y SFX: 110 cues; mezcla final −14.1 LUFS / −1.4 dBTP, música ≥ 12.7 dB bajo cada frase.
+- Fases 6 y 7: preview con voz y finales 9:16 y 1:1 (master 60 fps y WhatsApp 30 fps) en `entrega/`.
+- Fase 3: voz bloqueada a la toma "Hope" (eleven v4); la pieza quedó en 19 s (16.5 + 2.5).
