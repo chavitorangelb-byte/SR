@@ -38,7 +38,7 @@ const browser = await chromium.launch({ args: ['--enable-unsafe-swiftshader', '-
 const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
 page.on('pageerror', (e) => console.error('ERROR página:', e.message));
 page.on('console', (m) => { if (m.type() === 'error') console.error('consola:', m.text()); });
-await page.goto(`${base}/video/render/index.html?w=${W}&h=${H}&fmt=${FMT}`);
+await page.goto(`${base}/video/render/index.html?w=${W}&h=${H}&fmt=${FMT}&${arg('q', '')}`);
 await page.waitForFunction(() => window.ready || window.initError, null, { timeout: 120000 });
 const initError = await page.evaluate(() => window.initError);
 if (initError) { console.error(initError); process.exit(1); }

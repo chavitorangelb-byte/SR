@@ -7,6 +7,7 @@ import { FPS, BEAT, END, FRAMES as FRAMES_T, VOZ, EV, KINETIC } from '/brief/tim
 
 const Q = new URLSearchParams(location.search);
 const FMT = Q.get('fmt') || '916';
+const LAMINA = +(Q.get('lamina') || 0); // láminas fijas para presentar la página (sin kinetic)
 
 // ---------- composición por formato (px de diseño, 1080 de ancho) ----------
 const LAYOUTS = {
@@ -878,11 +879,28 @@ function ondaToque(ctx, t, st) {
   ctx.restore();
 }
 
+// títulos de las láminas de presentación
+const LAMINAS = {
+  1: ['Así se vería tu página', 'Tus pasteles, tu logo y tus colores'],
+  2: ['Tu catálogo por categorías', 'Pasteles · Postres · Café'],
+  3: ['Te piden directo por WhatsApp', 'Un toque y el pedido llega a tu chat'],
+};
+function lamina(ctx) {
+  const [t1, t2] = LAMINAS[LAMINA];
+  const y = FMT === '916' ? 300 : 110;
+  ctx.textBaseline = 'alphabetic';
+  ctx.fillStyle = CREMA; textTracked(ctx, t1, DW / 2, y, `600 ${FMT === '916' ? 64 : 54}px Jost`, 1.5);
+  ctx.fillStyle = ARENA; textTracked(ctx, t2, DW / 2, y + (FMT === '916' ? 74 : 60), `400 ${FMT === '916' ? 34 : 28}px Jost`, 3);
+  ctx.globalAlpha = 0.6; ctx.fillStyle = CREMA;
+  textTracked(ctx, 'Demo de cortesía de Elevate Negocios · pieza no oficial', DW / 2, DH - 60, '400 22px Jost', 0.8);
+  ctx.globalAlpha = 1;
+}
 function capa2D(t, st, dx, dy) {
   const ctx = octx;
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   ctx.clearRect(0, 0, W, H);
   ctx.setTransform(S, 0, 0, S, dx * S, dy * S);
+  if (LAMINA) { lamina(ctx); ovTex.needsUpdate = true; return; }
   const K = LAY.k, KS = Object.fromEntries(KINETIC.map((k) => [k.id, k]));
   chispa(ctx, t, st);
   kRise(ctx, t, 'SABOR', K.sabor, palabra('L1', 'Sabor'), KS.sabor.sale);
@@ -916,12 +934,14 @@ const CHIP_Y = 428, CHIP_H = 38;
 const BTN_PAGE = { x: 24, y: 812, w: 342, h: 48 };
 const HERO = { y: 0, h: 380 };
 let scrKey = '';
-function pantalla(st) {
+function pantalla(st, destino = null, escala = 2) {
   const sc = st.scr; if (!sc) return;
-  const key = JSON.stringify(sc);
-  if (key === scrKey) return;
-  scrKey = key;
-  const ctx = scrCtx; const k = 2;
+  if (!destino) {
+    const key = JSON.stringify(sc);
+    if (key === scrKey) return;
+    scrKey = key;
+  }
+  const ctx = destino || scrCtx; const k = escala;
   ctx.setTransform(k, 0, 0, k, 0, 0);
   ctx.fillStyle = FONDO; ctx.fillRect(0, 0, SCR_CSS.w, SCR_CSS.h);
   if (sc.modo === 'hero') {
@@ -982,8 +1002,14 @@ function pantalla(st) {
   }
   // encabezado: el logo (asset 00, solo escalado)
   if (sc.logo) { const d = 64; ctx.drawImage(IMG.logo, 195 - d / 2, 50 - d / 2, d, d); }
-  scrTex.needsUpdate = true;
+  if (!destino) scrTex.needsUpdate = true;
 }
+// captura plana de la página (para las fotos de presentación)
+window.exportPantalla = (sc, k = 3) => {
+  const c = document.createElement('canvas'); c.width = SCR_CSS.w * k; c.height = SCR_CSS.h * k;
+  pantalla({ scr: sc }, c.getContext('2d'), k);
+  return c.toDataURL('image/png');
+};
 // coordenadas de la página (CSS) → locales del celular
 const pageToLocal = (x, y) => [(x - SCR_CSS.w / 2) / 100, (SCR_CSS.h / 2 - y) / 100];
 
@@ -1289,6 +1315,7 @@ function estado(t) {
   const by = (DH / 2 - LAY.btn.y) / 100 * 0.6;
   st.cam.y = keys(t, [[0, 0], [E.boton[0], 0], [E.boton[0] + 42, by], [E.aCierre[0], by], [E.aCierre[1], 0]]);
   st.glow = 0.4 + 0.6 * eOutCubic(seg(t, 0, 40));
+  if (LAMINA) st.cam = { x: 0, y: 0, z: DIST }; // láminas: cámara en reposo para que el título no se encime
   setCam(st.cam); // las proyecciones de este t (contornos, mosaicos) usan la cámara de este t
 
   // logo: aparece en el anillo, vuela al encabezado (S2); vuelve en el cierre y sube en la end card
